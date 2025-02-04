@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE GARRISON</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <!-- Text Logo -->
+    <a class="navbar-brand" href="#" style="font-family: 'Playfair Display', serif; font-weight: 700; color: var(--accent-color);">
+      The Garrison
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#feature-section">Availability</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section with Two Columns -->
+<header class="hero-section">
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <!-- Left Column: Video and Hero Content -->
+      <div class="col-lg-8 h-100 d-flex align-items-center justify-content-center position-relative">
+        <div class="video-container">
+          <video autoplay muted loop id="hero-video">
+            <source src="assets/videos/hero2_340Myrtle.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="hero-content">
+          <div class="container">
+            <div class="row align-items-center">
+              <!-- Left Column: Logo -->
+              <div class="col-lg-6 text-center text-lg-start">
+                <div class="logo-container">
+                  <img src="assets/images/logo.png" alt="The Garrison Logo" class="hero-logo">
+                </div>
+              </div>
+              <!-- Right Column: Text and Button -->
+              <div class="col-lg-6 text-center text-lg-start">
+                <h1 class="display-4" style="font-family: Arial, sans-serif;">Welcome to your dream home in the heart of Brooklyn!</h1> <!-- Default font -->
+                <p class="lead" style="font-family: Arial, sans-serif;">340 Mrytle Avenue, Brooklyn, NY 11205</p> <!-- Default font -->
+                <a href="#contact" class="btn btn-primary btn-lg">Check Availability</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-lg-4 d-flex flex-column">
+        <!-- Panel 1 -->
+        <div class="panel flex-grow-1 position-relative mb-3">
+          <img src="assets/images/panel1.png" alt="Panel 1" class="img-fluid w-100">
+          <div class="panel-text">
+            <h3>Luxury Amenities</h3>
+            <p>Fitness center, rooftop terrace, and more.</p>
+          </div>
+        </div>
+        <!-- Panel 2 -->
+        <div class="panel flex-grow-1 position-relative mb-3">
+          <img src="assets/images/panel2.png" alt="Panel 2" class="img-fluid w-100">
+          <div class="panel-text">
+            <h3>Modern Design</h3>
+            <p>Contemporary architecture with sleek finishes.</p>
+          </div>
+        </div>
+        <!-- Panel 3 -->
+        <div class="panel flex-grow-1 position-relative">
+          <img src="assets/images/panel3.png" alt="Panel 3" class="img-fluid w-100">
+          <div class="panel-text">
+            <h3>Luxury Amenities</h3>
+            <p>Fitness center, rooftop terrace, and more.</p>
+          </div>
+        </div>
+      </div>
+
+
+  </div>
+</header>
+
+  <!-- About Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">About the The Garrison</h2>
+      <p class="text-center">Discover the perfect blend of modern living and classic Brooklyn charm. Our new real estate project offers state-of-the-art amenities, spacious layouts, and breathtaking views of the city skyline.</p>
+      <p class="text-center">Discover the perfect blend of modern living and classic Brooklyn charm. Our new real estate project offers state-of-the-art amenities, spacious layouts, and breathtaking views of the city skyline.</p>
+    </div>
+  </section>
+
+
+  <section id="features-section">
+    <div class="video-container">
+      <video autoplay loop muted playsinline class="feature-video">
+        <source src="assets/videos/rooftop-features.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="feature-overlay text-center">
+        <h2>Experience Luxury Living</h2>
+        <p>Discover our state-of-the-art amenities and breathtaking views.</p>
+        <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#galleryModal">See More</button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Photo Gallery Modal -->
+<div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Bootstrap Carousel -->
+        <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner" id="carouselImages">
+            <!-- Images will be inserted dynamically here -->
+          </div>
+          <!-- Carousel Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Availability Section -->
+<section id="availability" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Availability</h2>
+    <p class="text-center mb-5">Imagine your ideal NYC living experience... Then find and capture it at The Garrison. Explore our expansive collection of studio, one-, and two-bedroom residences.</p>
+
+    <!-- Filter Buttons -->
+    <div class="text-center mb-4">
+      <button class="btn btn-outline-primary filter-btn active" data-filter="all">All</button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="studio">Studio</button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="1-bed">1 Bed</button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="2-bed">2 Bed</button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Unit</th>
+            <th>Bed/Bath</th>
+            <th>Rent</th>
+          </tr>
+        </thead>
+        <tbody id="unit-table">
+          <!-- Rows will be dynamically populated here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Pop-up Modal -->
+<div class="modal fade" id="unitModal" tabindex="-1" aria-labelledby="unitModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="unitModalLabel">Unit Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Image Carousel -->
+        <div id="unitCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <!-- Carousel items will be dynamically populated here -->
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#unitCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#unitCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <!-- Unit Description -->
+        <div class="mt-4">
+          <h4>Description</h4>
+          <ul id="unitDescription">
+            <!-- Description bullet points will be dynamically populated here -->
+          </ul>
+        </div>
+
+        <!-- Interest Form -->
+        <form action="form-handler.php" method="POST" class="mt-4">
+          <!-- Hidden Input for Unit -->
+          <input type="hidden" id="unit" name="unit">
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="firstName" name="firstName" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="lastName" name="lastName" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="moveInDate" class="form-label">Move-In Date</label>
+              <input type="date" class="form-control" id="moveInDate" name="moveInDate" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="budget" class="form-label">Budget</label>
+              <input type="text" class="form-control" id="budget" name="budget" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="hearAboutUs" class="form-label">How Did You Hear About Us?</label>
+            <select class="form-select" id="hearAboutUs" name="hearAboutUs" required>
+              <option value="">Select an option</option>
+              <option value="Google">Google</option>
+              <option value="Friend">Friend</option>
+              <option value="Social Media">Social Media</option>
+              <option value="Advertisement">Advertisement</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message (Optional)</label>
+            <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Amenities Section -->
+<section id="amenities" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Amenities</h2>
+    <div class="row g-4">
+      <!-- Fitness Center Panel -->
+      <div class="col-lg-6">
+        <div class="amenity-panel">
+          <div class="amenity-video-container">
+            <video autoplay muted loop class="amenity-video">
+              <source src="assets/videos/fitness-center-loop.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="amenity-content">
+            <h3>Stay Fit & Energized at 340 Myrtle Avenue</h3>
+            <p class="amenity-summary">Our state-of-the-art 1,016 SF fitness center offers a spacious and modern workout environment designed for both comfort and performance.</p>
+            <button class="btn btn-primary toggle-details">View Details</button>
+            <div class="amenity-details">
+              <p><strong>Key Features:</strong></p>
+              <ul>
+                <li>Expansive Space: Plenty of room for cardio, strength training, and functional workouts.</li>
+                <li>Open Concept Design: 486 SF of open-to-above space enhances airiness and natural light.</li>
+                <li>Premium Flooring & Finishes: High-quality materials ensure durability and comfort.</li>
+                <li>Dedicated Bike Storage: 413 SF bike storage room for secure and easy access.</li>
+                <li>Nearby Restrooms: Multiple restrooms located conveniently close to the fitness center.</li>
+                <li>Modern Lighting & Ventilation: Designed for optimal airflow and comfort during workouts.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resident Lounge Panel -->
+      <div class="col-lg-6">
+        <div class="amenity-panel">
+          <div class="amenity-video-container">
+            <video autoplay muted loop class="amenity-video">
+              <source src="assets/videos/resident_lounge.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="amenity-content">
+            <h3>Relax & Socialize in the Resident Lounge</h3>
+            <p class="amenity-summary">Designed for comfort and style, the Resident Lounge at 340 Myrtle Avenue provides a sophisticated space to unwind, connect with neighbors, or host gatherings.</p>
+            <button class="btn btn-primary toggle-details">View Details</button>
+            <div class="amenity-details">
+              <p><strong>Key Features:</strong></p>
+              <ul>
+                <li>Spacious & Elegant: 980 SF of beautifully designed space for socializing and relaxation.</li>
+                <li>Modern Aesthetic: Featuring recessed LED lighting, stylish décor, and premium wood finishes.</li>
+                <li>Sleek Kitchenette: Equipped with modern appliances for convenience.</li>
+                <li>Easy Accessibility: Conveniently located near the retail lobby and parking.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coworking Space Panel -->
+      <div class="col-lg-6">
+        <div class="amenity-panel">
+          <div class="amenity-video-container">
+            <video autoplay muted loop class="amenity-video">
+              <source src="assets/videos/coworking-space.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="amenity-content">
+            <h3>Elevate Your Productivity in the Coworking Space</h3>
+            <p class="amenity-summary">For those who work from home or need a productive escape, the Coworking Space at 340 Myrtle Avenue offers a sprawling 3,120 SF workspace designed for focus and collaboration.</p>
+            <button class="btn btn-primary toggle-details">View Details</button>
+            <div class="amenity-details">
+              <p><strong>Key Features:</strong></p>
+              <ul>
+                <li>Expansive Work Area: 3,120 SF of thoughtfully designed coworking space.</li>
+                <li>Flexible Workspaces: Includes private booths, communal desks, and lounge seating.</li>
+                <li>Premium Finishes: Modern LED lighting and high-end materials create an inspiring atmosphere.</li>
+                <li>Tech-Ready Setup: Strategically placed outlets and data connections for seamless productivity.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <!-- Rooftop Panel -->
+            <div class="col-lg-6">
+              <div class="amenity-panel">
+                <div class="amenity-video-container">
+                  <video autoplay muted loop class="amenity-video">
+                    <source src="assets/videos/rooftop-amenities.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div class="amenity-content">
+                  <h3>Experience Breathtaking Views from the Rooftop at 340 Myrtle Avenue</h3>
+                  <p class="amenity-summary">The rooftop at 340 Myrtle Avenue offers a luxurious outdoor retreat with stunning city views, high-end finishes, and thoughtfully designed amenities.</p>
+                  <button class="btn btn-primary toggle-details">View Details</button>
+                  <div class="amenity-details">
+                    <p><strong>Key Features:</strong></p>
+                    <ul>
+                      <li>Spacious Outdoor Area: Designed for relaxation, entertainment, and enjoying fresh air.</li>
+                      <li>Outdoor Kitchen & Grilling Station: Dedicated power supply for electric grills to enhance your dining experience.</li>
+                      <li>Elegant Paving System: Raised pedestal pavers for a sleek and modern outdoor flooring solution.</li>
+                      <li>Ambient Lighting: Strategically placed outdoor lighting ensures a warm and inviting atmosphere at all times.</li>
+                      <li>Secure & Stylish Fencing: Steel post fencing with wood cladding for privacy and aesthetics.</li>
+                      <li>Lush Greenery & Planters: Thoughtfully incorporated landscaping elements for a natural touch.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+      <!-- Add more panels for other amenities as needed -->
+    </div>
+  </div>
+</section>
+
+
+
+ <!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="text-center mb-4">Contact Us</h2>
+    <form action="form-handler.php" method="POST" class="contact-form">
+      <!-- Hidden Input for Unit -->
+      <input type="hidden" id="unit" name="unit">
+
+      <div class="row">
+        <!-- First Name -->
+        <div class="col-md-6 mb-3">
+          <label for="firstName" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="firstName" name="firstName" required>
+        </div>
+        <!-- Last Name -->
+        <div class="col-md-6 mb-3">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="lastName" name="lastName" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Email -->
+        <div class="col-md-6 mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <!-- Phone -->
+        <div class="col-md-6 mb-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" class="form-control" id="phone" name="phone" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Move-In Date -->
+        <div class="col-md-6 mb-3">
+          <label for="moveInDate" class="form-label">Move-In Date</label>
+          <input type="date" class="form-control" id="moveInDate" name="moveInDate" required>
+        </div>
+        <!-- Budget -->
+        <div class="col-md-6 mb-3">
+          <label for="budget" class="form-label">Budget</label>
+          <input type="text" class="form-control" id="budget" name="budget" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- How Did You Hear About Us? -->
+        <div class="col-md-6 mb-3">
+          <label for="hearAboutUs" class="form-label">How Did You Hear About Us?</label>
+          <select class="form-select" id="hearAboutUs" name="hearAboutUs" required>
+            <option value="">Select an option</option>
+            <option value="Google">Google</option>
+            <option value="Friend">Friend</option>
+            <option value="Social Media">Social Media</option>
+            <option value="Advertisement">Advertisement</option>
+          </select>
+        </div>
+        <!-- Unit Type -->
+        <div class="col-md-6 mb-3">
+          <label for="unitType" class="form-label">Unit Type</label>
+          <select class="form-select" id="unitType" name="unitType" required>
+            <option value="">Select Unit Type</option>
+            <option value="Studio">Studio</option>
+            <option value="1 Bedroom">1 Bedroom</option>
+            <option value="2 Bedroom">2 Bedroom</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div class="mb-3">
+        <label for="message" class="form-label">Message (Optional)</label>
+        <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</section>
+
+
+  <!-- Map Section -->
+<section class="map-section">
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.746636983048!2d-73.97941822369013!3d40.693940171386535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25ba7208e1b09%3A0x299e2ddfcd52a5e5!2s340%20Myrtle%20Ave%2C%20Brooklyn%2C%20NY%2011205!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Left Section: Logo & Address -->
+        <div class="col-md-4 text-center text-md-start">
+          <img src="assets/images/logo.png" alt="Company Logo" class="footer-logo">
+          <p class="footer-address">340 Myrtle Avenue, Brooklyn, NY 11205</p>
+        </div>
+  
+        <!-- Center Section: Navigation Links -->
+        <div class="col-md-4 text-center">
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+  
+        <!-- Right Section: Social Media -->
+        <div class="col-md-4 text-center text-md-end">
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+  
+      <!-- Bottom Line -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 The Garrison. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts/availability.js"></script>
+  <script src="scripts/amenities.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const imageFiles = [
+        "apartment.png", "bathroom1.png", "bathroom2.png", "building.png",
+        "co-working.png", "corridor.png", "fitness.png", "lobby.png",
+        "lounge.png", "rooftop.png"
+      ];
+    
+      const carouselInner = document.getElementById("carouselImages");
+    
+      if (carouselInner) {
+        imageFiles.forEach((image, index) => {
+          let item = document.createElement("div");
+          item.classList.add("carousel-item");
+          if (index === 0) item.classList.add("active"); // First image is active
+    
+          let imgElement = document.createElement("img");
+          imgElement.src = `assets/images/shuffle/${image}`;
+          imgElement.classList.add("d-block", "w-100");
+          imgElement.alt = "Gallery Image";
+    
+          item.appendChild(imgElement);
+          carouselInner.appendChild(item);
+        });
+      }
+    });
+    </script>
+    
+    
+  
+
+</body>
+</html>

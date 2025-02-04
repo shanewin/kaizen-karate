@@ -1,0 +1,846 @@
+/* Color Scheme */
+:root {
+    --base-color: #654321; /* Brown base color */
+    --accent-color: #FFD700; /* Yellow accent color */
+    --text-color: #FFFFFF; /* White text for contrast */
+    --background-color: #F5F5DC; /* Light beige background */
+  }
+  
+  /* Apply colors to the body */
+  body {
+    background-color: var(--background-color);
+    color: var(--base-color);
+    padding-top: 56px; /* Adjust for fixed navbar */
+    font-family: 'Arial', sans-serif; /* Default body font */
+  }
+
+
+  
+  /* Navigation Bar */
+.navbar {
+  background-color: var(--base-color) !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem; /* Adjust the size as needed */
+  color: var(--text-color) !important; /* Use the accent color */
+  text-transform: uppercase;
+}
+
+.nav-link {
+  color: var(--text-color) !important;
+  font-family: 'Arial', sans-serif; /* Default font for nav links */
+}
+
+.nav-link:hover {
+  color: var(--accent-color) !important;
+}
+  
+
+
+/* Hero Section with Two Columns */
+.hero-section {
+  height: auto; /* Allow height to adjust based on content */
+  min-height: 100vh; /* Ensure it covers at least the viewport height */
+  overflow: hidden; /* Ensure no overflow */
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+/* Left Column: Video and Hero Content */
+.col-lg-8 {
+  position: relative; /* Constrain the absolutely positioned video container */
+  height: auto; /* Allow height to adjust based on content */
+  min-height: 100vh; /* Ensure it covers at least the viewport height */
+  overflow: hidden; /* Ensure no overflow */
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Place behind the content */
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the video fills the container */
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 1; /* Place above the video */
+  background-color: rgba(101, 67, 33, 0.8);
+  padding: 40px; /* Increased padding for better spacing */
+  border-radius: 10px;
+  width: 90%;
+  max-width: 1200px; /* Adjusted max-width for the new layout */
+  margin: 0 auto; /* Center the hero content */
+  transform: translateY(-10%); /* Adjust vertical positioning */
+  display: flex;
+  align-items: center;
+}
+
+/* Logo Container */
+.logo-container {
+  flex: 1; /* Take up half the width */
+  text-align: center; /* Center the logo */
+}
+
+.hero-logo {
+  max-width: 225px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease;
+}
+
+.hero-logo:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Text and Button Container */
+.text-container {
+  flex: 1; /* Take up half the width */
+  text-align: left; /* Align text to the left */
+  padding-left: 40px; /* Add spacing between logo and text */
+}
+
+.hero-content h1.display-4 {
+  font-family: Arial, sans-serif; /* Default font for "Welcome to" */
+  font-size: 1.5rem; /* Smaller font size for "Welcome to" */
+  margin-bottom: 0.5rem; /* Space below "Welcome to" */
+}
+
+.hero-content .lead {
+  font-family: Arial, sans-serif; /* Default font for the lead text */
+  font-size: 1.25rem; /* Adjusted font size for "Your dream home..." */
+  margin-top: 1rem; /* Increased space above "Your dream home..." */
+  margin-bottom: 1.5rem; /* Space above the button */
+}
+
+.hero-content .btn {
+  font-size: 1rem; /* Adjusted button text size */
+  padding: 10px 20px; /* Adjusted button padding */
+  background-color: var(--accent-color);
+  color: var(--base-color);
+  border: none;
+}
+
+.hero-content .btn:hover {
+  background-color: #e6b800; /* Darker yellow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hero-content {
+    flex-direction: column; /* Stack logo and text vertically on smaller screens */
+    padding: 20px; /* Reduced padding for smaller screens */
+    transform: translateY(-40%); /* Adjust vertical positioning */
+  }
+
+  .logo-container {
+    margin-bottom: 20px; /* Add spacing between logo and text */
+  }
+
+  .text-container {
+    text-align: center; /* Center text on smaller screens */
+    padding-left: 0; /* Remove left padding */
+  }
+
+  .hero-logo {
+    max-width: 150px; /* Smaller logo for smaller screens */
+  }
+
+  .hero-content h1.display-4 {
+    font-size: 1.25rem; /* Smaller font size for smaller screens */
+  }
+
+  .hero-content .lead {
+    font-size: 1.1rem; /* Smaller font size for smaller screens */
+  }
+}
+
+/* Right Column: Three Panels */
+.col-lg-4 {
+  height: auto; /* Allow the height to adjust on smaller screens */
+  padding: 10px; /* Reduced padding for better spacing */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute space evenly between panels */
+}
+
+.panel {
+  overflow: hidden;
+  position: relative;
+  transition: opacity 0.5s ease;
+  margin-bottom: 10px; /* Reduced spacing between panels */
+  flex: 1; /* Ensure panels take up equal space */
+}
+
+.panel img {
+  width: 100%;
+  height: 250px; /* Increased height for the images */
+  object-fit: cover; /* Ensure the image covers the container */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.panel:hover img,
+.panel.active img { /* Add active class for JavaScript-controlled effect */
+  transform: scale(1.1);
+}
+
+.panel-text {
+  position: absolute;
+  bottom: -100%; /* Hide text box by default */
+  left: 0;
+  width: 100%;
+  background-color: rgba(101, 67, 33, 0.9); /* Semi-transparent brown overlay */
+  color: var(--text-color);
+  padding: 15px;
+  transition: bottom 0.3s ease; /* Smooth slide-up effect */
+}
+
+.panel-text h3 {
+  font-size: 1.25rem; /* Smaller font size for mobile */
+  margin-bottom: 10px;
+}
+
+.panel-text p {
+  font-size: 0.9rem; /* Smaller font size for mobile */
+  margin-bottom: 0;
+}
+
+.panel:hover .panel-text,
+.panel.active .panel-text { /* Also trigger animation on 'active' */
+  bottom: 0;
+}
+
+/* Responsive Design for Panels */
+@media (max-width: 992px) {
+  .col-lg-4 {
+    height: auto; /* Allow the height to adjust on smaller screens */
+    padding: 5px; /* Further reduced padding for smaller screens */
+  }
+
+  .panel {
+    margin-bottom: 5px; /* Further reduced spacing between panels on smaller screens */
+  }
+
+  .panel img {
+    height: 200px; /* Adjusted height for mobile */
+  }
+
+  .panel-text {
+    padding: 10px; /* Less padding for mobile */
+  }
+
+  .panel-text h3 {
+    font-size: 1.1rem; /* Smaller font size for mobile */
+  }
+
+  .panel-text p {
+    font-size: 0.8rem; /* Smaller font size for mobile */
+  }
+}
+  
+  
+
+  /* Sections (About, Features, Contact) */
+  section {
+    background-color: var(--background-color);
+    padding: 60px 0;
+  }
+  
+  section h2 {
+    color: var(--base-color);
+    font-family: 'Playfair Display', serif; /* Luxury font */
+    font-weight: 700;
+  }
+
+
+
+/* Contact Section */
+.contact-section {
+background-color: #FFFFFF; /* White background */
+padding: 80px 0;
+border-radius: 10px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.contact-section h2 {
+font-family: 'Playfair Display', serif; /* Elegant font */
+font-weight: 700;
+color: var(--base-color);
+font-size: 2.5rem;
+margin-bottom: 30px;
+text-align: center;
+}
+
+/* Contact Form */
+.contact-form {
+background-color: var(--background-color); /* Light beige */
+padding: 30px;
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Soft shadow */
+}
+
+/* Form Labels */
+.contact-form .form-label {
+font-weight: 600;
+color: var(--base-color);
+}
+
+/* Form Inputs */
+.contact-form .form-control,
+.contact-form .form-select {
+border: 1px solid rgba(101, 67, 33, 0.2); /* Light brown border */
+border-radius: 5px;
+background-color: #FFF;
+color: var(--base-color);
+}
+
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+border-color: var(--accent-color); /* Yellow accent */
+box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Subtle yellow glow */
+}
+
+/* Submit Button */
+.contact-form .btn-primary {
+background-color: var(--base-color);
+color: var(--accent-color);
+border: none;
+font-weight: 600;
+padding: 12px 20px;
+border-radius: 25px;
+transition: all 0.3s ease;
+display: block;
+width: 100%; /* Full-width button */
+text-align: center;
+}
+
+.contact-form .btn-primary:hover {
+background-color: #543c1f; /* Darker brown */
+color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.contact-section {
+  padding: 50px 20px;
+}
+
+.contact-form {
+  padding: 20px;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+}
+
+.contact-form .btn-primary {
+  font-size: 1rem;
+}
+}
+
+
+
+/* Map Section */
+.map-section {
+width: 100%;
+height: 100vh; /* Full height of viewport */
+position: relative;
+}
+
+.map-container {
+width: 100%;
+height: 100%; /* Full height of parent */
+}
+
+.map-container iframe {
+width: 100%;
+height: 100%;
+border: none;
+}
+
+
+
+/* Features Section  */
+#features-section {
+  position: relative;
+  height: 100vh; /* Full screen height */
+  overflow: hidden; /* Prevents any scrollbars */
+}
+
+/* Full-Width Video */
+#features-section .video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#features-section .feature-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire section */
+}
+
+.feature-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-color);
+  text-align: center;
+  z-index: 1;
+  background-color: rgba(101, 67, 33, 0.8);
+  padding: 40px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+
+.feature-overlay h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.feature-overlay p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.feature-overlay .btn {
+  font-size: 1.2rem;
+  padding: 10px 30px;
+  background-color: var(--accent-color);
+  color: var(--base-color);
+  border: none;
+}
+
+.feature-overlay .btn:hover {
+  background-color: #e6b800; /* Darker yellow on hover */
+}
+
+
+
+/* Availability Section */
+#availability {
+  background-color: #FFFFFF; /* White background */
+  padding: 80px 0; /* Increased padding for more elegance */
+}
+
+#availability h2 {
+  font-family: 'Playfair Display', serif; /* Luxury font for the heading */
+  font-weight: 700;
+  color: var(--base-color); /* Brown base color */
+  font-size: 2.5rem; /* Larger font size for emphasis */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#availability p {
+  font-family: 'Arial', sans-serif; /* Clean sans-serif font for the description */
+  color: var(--base-color); /* Brown base color */
+  font-size: 1.2rem;
+  line-height: 1.8; /* Improved readability with more line height */
+  text-align: center;
+  max-width: 800px; /* Limit width for better readability */
+  margin: 0 auto 40px; /* Center the text and add bottom margin */
+}
+
+/* Filter Buttons */
+.filter-btn {
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--base-color); /* Brown base color */
+  background-color: transparent;
+  border: 2px solid var(--accent-color); /* Yellow accent color */
+  border-radius: 25px;
+  padding: 10px 20px;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: var(--accent-color); /* Yellow accent color */
+  color: var(--base-color); /* Brown base color */
+  border-color: var(--accent-color); /* Yellow accent color */
+}
+
+.filter-btn.active {
+  background-color: var(--accent-color); /* Yellow accent color */
+  color: var(--base-color); /* Brown base color */
+  border-color: var(--accent-color); /* Yellow accent color */
+}
+
+/* Table Styling */
+.table {
+  background-color: #FFFFFF; /* White background */
+  border-collapse: separate;
+  border-spacing: 0 10px; /* Add spacing between rows */
+}
+
+.table thead th {
+  font-family: 'Playfair Display', serif; /* Luxury font for table headers */
+  font-weight: 700;
+  color: var(--base-color); /* Brown base color */
+  border-bottom: 2px solid var(--accent-color); /* Yellow accent color */
+}
+
+.table tbody tr {
+  background-color: #FFFFFF; /* White background */
+  border: 1px solid rgba(101, 67, 33, 0.1); /* Light brown border */
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(255, 215, 0, 0.1); /* Light yellow hover effect */
+  cursor: pointer;
+}
+
+.table tbody td {
+  font-family: 'Arial', sans-serif; /* Clean sans-serif font for table data */
+  color: var(--base-color); /* Brown base color */
+  padding: 15px;
+}
+
+
+/* Modal Styling */
+.modal-content {
+  background-color: var(--accent-color); /* Yellowish accent color */
+  border-radius: 10px;
+  border: 1px solid rgba(101, 67, 33, 0.1); /* Light brown border */
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(101, 67, 33, 0.1); /* Light brown border */
+}
+
+.modal-title {
+  font-family: 'Playfair Display', serif; /* Luxury font for modal title */
+  font-weight: 700;
+  color: var(--base-color); /* Brown base color */
+}
+
+.modal-body {
+  padding: 20px;
+  background-color: var(--background-color);
+}
+
+/* Carousel Styling */
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: rgba(101, 67, 33, 0.5); /* Semi-transparent brown */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: brightness(0) invert(1); /* Make arrows white */
+}
+
+/* Unit Description */
+#unitDescription {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-family: 'Arial', sans-serif; /* Clean sans-serif font for description */
+  color: var(--base-color); /* Brown base color */
+}
+
+/* Interest Form */
+#interestForm {
+  background-color: #FFFFFF; /* White background for the form */
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(101, 67, 33, 0.1); /* Light brown border */
+}
+
+#interestForm label {
+  font-family: 'Arial', sans-serif; /* Clean sans-serif font for labels */
+  color: var(--base-color); /* Brown base color */
+  font-weight: 500;
+}
+
+#interestForm input,
+#interestForm select,
+#interestForm textarea {
+  background-color: #FFFFFF; /* White background */
+  border: 1px solid rgba(101, 67, 33, 0.1); /* Light brown border */
+  border-radius: 5px;
+  color: var(--base-color); /* Brown base color */
+}
+
+#interestForm input:focus,
+#interestForm select:focus,
+#interestForm textarea:focus {
+  border-color: var(--accent-color); /* Yellow accent color */
+  box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Yellow glow */
+}
+
+#interestForm .btn-primary {
+  background-color: var(--base-color); /* Brown base color */
+  color: var(--accent-color); /* Yellow accent color */
+  border: none;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+#interestForm .btn-primary:hover {
+  background-color: #543c1f; /* Darker brown on hover */
+  color: var(--accent-color); /* Yellow accent color */
+}
+
+
+
+
+/* Amenities Section */
+#amenities {
+  background-color: var(--background-color);
+  padding: 80px 0;
+}
+
+#amenities h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--base-color);
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.amenity-panel {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.amenity-panel:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.amenity-video-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.amenity-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.amenity-content {
+  padding: 20px;
+}
+
+.amenity-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--base-color);
+  font-size: 1.75rem;
+  margin-bottom: 15px;
+}
+
+.amenity-summary {
+  font-family: 'Arial', sans-serif;
+  color: var(--base-color);
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.amenity-details {
+  display: none; /* Hidden by default */
+  margin-top: 20px;
+}
+
+.amenity-details p {
+  font-family: 'Arial', sans-serif;
+  color: var(--base-color);
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.amenity-details ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+.amenity-details li {
+  font-family: 'Arial', sans-serif;
+  color: var(--base-color);
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.toggle-details {
+  background-color: var(--accent-color);
+  color: var(--base-color);
+  border: none;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.toggle-details:hover {
+  background-color: #e6b800; /* Darker yellow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .amenity-video-container {
+    height: 200px;
+  }
+
+  .amenity-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .amenity-summary {
+    font-size: 0.95rem;
+  }
+
+  .amenity-details li {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+/* Footer Styles */
+.footer {
+background-color: var(--base-color);
+color: var(--text-color);
+padding: 40px 0;
+}
+
+.footer-logo {
+max-width: 200px; /* Large logo */
+height: auto;
+margin-bottom: 15px;
+}
+
+.footer-address {
+font-size: 1rem;
+color: var(--text-color);
+margin-bottom: 0;
+}
+
+/* Center Navigation Links */
+.footer-links {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.footer-links li {
+display: inline;
+margin: 0 10px;
+}
+
+.footer-links a {
+color: var(--accent-color);
+font-weight: 500;
+text-decoration: none;
+}
+
+.footer-links a:hover {
+color: #e6b800; /* Darker yellow on hover */
+}
+
+/* Social Media Icons */
+.social-icon {
+display: inline-block;
+margin: 0 8px;
+font-size: 1.5rem;
+color: var(--accent-color);
+transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+color: #e6b800; /* Darker yellow */
+}
+
+/* Bottom Footer */
+.footer-bottom {
+text-align: center;
+margin-top: 20px;
+font-size: 0.9rem;
+opacity: 0.8;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem; /* Smaller font size for mobile */
+  }
+
+  .hero-content .lead {
+    font-size: 1.2rem; /* Smaller font size for mobile */
+  }
+
+  .panel-text {
+    padding: 10px; /* Less padding for mobile */
+  }
+
+  .feature-overlay h2 {
+      font-size: 2rem; /* Smaller font size for mobile */
+    }
+  
+    .feature-overlay p {
+      font-size: 1.2rem; /* Smaller font size for mobile */
+    }
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.gallery-container img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.gallery-container img:hover {
+  transform: scale(1.1);
+}
