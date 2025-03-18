@@ -1,0 +1,23 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3867246, 2020-12-16T11:57:38-0500
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Quorthon Dark IV by Monotype
+ * URL: https://www.myfonts.com/collections/monotype-imaging-foundry
+ * Copyright: Copyright © 2025 Monotype Imaging Inc. All rights reserved.
+ * 
+ * © 2025 MyFonts Inc. */
+
+
+  
+@font-face {
+  font-family: "QuorthonDarkIV";
+  src: url('webFonts/QuorthonDarkIV/font.woff2') format('woff2'), url('webFonts/QuorthonDarkIV/font.woff') format('woff');
+}
+

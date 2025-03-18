@@ -1,68 +1,183 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* Color Scheme */
 :root {
-    --base-color: #654321; /* Brown base color */
-    --accent-color: #FFD700; /* Yellow accent color */
-    --text-color: #FFFFFF; /* White text for contrast */
-    --background-color: #F5F5DC; /* Light beige background */
+    --base-color: #dcd8cc;
+    --accent-color: #bcb4b4;
+    --text-color: #000000;
+    --background-color: #dcd8cc;
+    --button-color: #8a7f7f;
   }
   
   /* Apply colors to the body */
   body {
     background-color: var(--background-color);
     color: var(--base-color);
-    padding-top: 56px; /* Adjust for fixed navbar */
+    padding-top: 105px; /* Adjust for fixed navbar */
     font-family: 'Arial', sans-serif; /* Default body font */
   }
 
 
   
-  /* Navigation Bar */
+/* Navigation Bar */
 .navbar {
   background-color: var(--base-color) !important;
   padding-top: 10px;
   padding-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
+/* Logo and Address */
 .navbar-brand {
-  font-family: 'Playfair Display', serif;
+  font-family: 'QuorthonDarkIV', serif;
   font-weight: 700;
-  font-size: 1.5rem; /* Adjust the size as needed */
-  color: var(--text-color) !important; /* Use the accent color */
-  text-transform: uppercase;
+  font-size: 2.2rem; /* Slightly smaller for better balance */
+  color: var(--text-color) !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align logo and address to the left */
 }
 
+.navbar-address {
+  color: var(--text-color);
+  font-family: 'Arial', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-style: italic;
+  margin-top: 0.25rem;
+  letter-spacing: 0.5px;
+}
+
+/* General Nav Links */
 .nav-link {
   color: var(--text-color) !important;
-  font-family: 'Arial', sans-serif; /* Default font for nav links */
+  font-family: 'Arial', sans-serif;
+  font-weight: 500; /* Slightly bolder for better readability */
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+  position: relative; /* For hover effect */
 }
 
-.nav-link:hover {
-  color: var(--accent-color) !important;
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
-  
 
+.nav-link:hover::after {
+  width: 100%; /* Underline effect on hover */
+}
+
+/* Special Styling for 'Wait List' and 'Email List' Links */
+.nav-item.waitlist-item,
+.nav-item.email-list-item {
+  margin-left: 10px;
+}
+
+.nav-link.waitlist-link,
+.nav-link.email-list-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  border-radius: 25px; /* More rounded corners */
+  font-weight: 600; /* Bolder text */
+}
+
+/* Wait List Link */
+.nav-link.waitlist-link {
+  background-color: var(--accent-color);
+  color: var(--text-color) !important;
+  border: 2px solid transparent; /* Add a border for distinction */
+}
+
+.nav-link.waitlist-link:hover {
+  background-color: darken(var(--accent-color), 10%);
+  border-color: var(--text-color); /* Add a border on hover */
+}
+
+/* Email List Link */
+.nav-link.email-list-link {
+  background-color: transparent;
+  color: var(--text-color) !important;
+  border: 2px solid var(--accent-color); /* Add a border for distinction */
+}
+
+.nav-link.email-list-link:hover {
+  background-color: var(--accent-color);
+  color: var(--text-color) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .navbar-brand {
+    font-size: 1.8rem; /* Smaller logo for mobile */
+  }
+
+  .navbar-address {
+    font-size: 0.8rem; /* Smaller address for mobile */
+  }
+
+  .nav-item.waitlist-item,
+  .nav-item.email-list-item {
+    margin-left: 0;
+    margin-top: 10px; /* Add spacing between stacked links */
+  }
+
+  .nav-link.waitlist-link,
+  .nav-link.email-list-link {
+    width: 100%; /* Full width for mobile */
+    text-align: center;
+  }
+
+  .nav-link {
+    padding: 8px 12px; /* Smaller padding for mobile */
+  }
+}
 
 /* Hero Section with Two Columns */
 .hero-section {
-  height: auto; /* Allow height to adjust based on content */
+  height: 100vh; /* Full viewport height */
   min-height: 100vh; /* Ensure it covers at least the viewport height */
   overflow: hidden; /* Ensure no overflow */
   color: var(--text-color);
   background-color: var(--background-color);
+  display: flex; /* Add flexbox to the hero section */
+  align-items: stretch; /* Ensure columns stretch to the same height */
+}
+
+/* Container for the row */
+.container-fluid.h-100 {
+  height: 100%; /* Ensure the container takes full height */
+}
+
+/* Row inside the container */
+.row.h-100 {
+  display: flex; /* Use flexbox to stretch columns */
+  align-items: stretch; /* Ensure columns stretch to the same height */
+  height: 100%; /* Ensure the row takes full height */
 }
 
 /* Left Column: Video and Hero Content */
 .col-lg-8 {
   position: relative; /* Constrain the absolutely positioned video container */
-  height: auto; /* Allow height to adjust based on content */
-  min-height: 100vh; /* Ensure it covers at least the viewport height */
-  overflow: hidden; /* Ensure no overflow */
+  height: 100%; /* Take full height */
+  flex: 2; /* Take up 2/3 of the available space */
+  display: flex; /* Add flexbox to the left column */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
 }
 
 .video-container {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   z-index: 0; /* Place behind the content */
@@ -74,167 +189,195 @@
   object-fit: cover; /* Ensure the video fills the container */
 }
 
-/* Hero Content */
-.hero-content {
-  position: relative;
-  z-index: 1; /* Place above the video */
-  background-color: rgba(101, 67, 33, 0.8);
-  padding: 40px; /* Increased padding for better spacing */
-  border-radius: 10px;
-  width: 90%;
-  max-width: 1200px; /* Adjusted max-width for the new layout */
-  margin: 0 auto; /* Center the hero content */
-  transform: translateY(-10%); /* Adjust vertical positioning */
-  display: flex;
-  align-items: center;
-}
-
-/* Logo Container */
-.logo-container {
-  flex: 1; /* Take up half the width */
-  text-align: center; /* Center the logo */
-}
-
-.hero-logo {
-  max-width: 225px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
-  transition: transform 0.3s ease;
-}
-
-.hero-logo:hover {
-  transform: scale(1.05); /* Slightly enlarge on hover */
-}
-
-/* Text and Button Container */
-.text-container {
-  flex: 1; /* Take up half the width */
-  text-align: left; /* Align text to the left */
-  padding-left: 40px; /* Add spacing between logo and text */
-}
-
-.hero-content h1.display-4 {
-  font-family: Arial, sans-serif; /* Default font for "Welcome to" */
-  font-size: 1.5rem; /* Smaller font size for "Welcome to" */
-  margin-bottom: 0.5rem; /* Space below "Welcome to" */
-}
-
-.hero-content .lead {
-  font-family: Arial, sans-serif; /* Default font for the lead text */
-  font-size: 1.25rem; /* Adjusted font size for "Your dream home..." */
-  margin-top: 1rem; /* Increased space above "Your dream home..." */
-  margin-bottom: 1.5rem; /* Space above the button */
-}
-
-.hero-content .btn {
-  font-size: 1rem; /* Adjusted button text size */
-  padding: 10px 20px; /* Adjusted button padding */
-  background-color: var(--accent-color);
-  color: var(--base-color);
-  border: none;
-}
-
-.hero-content .btn:hover {
-  background-color: #e6b800; /* Darker yellow on hover */
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-  .hero-content {
-    flex-direction: column; /* Stack logo and text vertically on smaller screens */
-    padding: 20px; /* Reduced padding for smaller screens */
-    transform: translateY(-40%); /* Adjust vertical positioning */
-  }
-
-  .logo-container {
-    margin-bottom: 20px; /* Add spacing between logo and text */
-  }
-
-  .text-container {
-    text-align: center; /* Center text on smaller screens */
-    padding-left: 0; /* Remove left padding */
-  }
-
-  .hero-logo {
-    max-width: 150px; /* Smaller logo for smaller screens */
-  }
-
-  .hero-content h1.display-4 {
-    font-size: 1.25rem; /* Smaller font size for smaller screens */
-  }
-
-  .hero-content .lead {
-    font-size: 1.1rem; /* Smaller font size for smaller screens */
-  }
-}
-
 /* Right Column: Three Panels */
 .col-lg-4 {
-  height: auto; /* Allow the height to adjust on smaller screens */
+  height: 100%; /* Take full height */
   padding: 10px; /* Reduced padding for better spacing */
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Distribute space evenly between panels */
+  flex: 1; /* Take up 1/3 of the available space */
 }
 
 .panel {
-  overflow: hidden;
+  flex: 1;
+  margin-top: 10px;
+  margin-bottom: 20px;
   position: relative;
-  transition: opacity 0.5s ease;
-  margin-bottom: 10px; /* Reduced spacing between panels */
-  flex: 1; /* Ensure panels take up equal space */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .panel img {
   width: 100%;
-  height: 250px; /* Increased height for the images */
-  object-fit: cover; /* Ensure the image covers the container */
-  transition: transform 0.3s ease; /* Smooth hover effect */
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.panel:hover img,
-.panel.active img { /* Add active class for JavaScript-controlled effect */
+.panel:hover {
+  transform: translateY(-5px); /* Lift the panel slightly */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+}
+
+.panel:hover img {
   transform: scale(1.1);
+  filter: brightness(0.8); /* Darken the image on hover */
 }
 
 .panel-text {
   position: absolute;
-  bottom: -100%; /* Hide text box by default */
+  bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(101, 67, 33, 0.9); /* Semi-transparent brown overlay */
-  color: var(--text-color);
-  padding: 15px;
-  transition: bottom 0.3s ease; /* Smooth slide-up effect */
+  background: rgba(188, 180, 180, 0.9); /* Lower opacity (0.8) */
+  color: #ffffff;
+  padding: 10px 15px; /* Reduce padding to bring text closer */
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Reduce gap between h3 and p */
+  padding-bottom: 20px;
 }
 
 .panel-text h3 {
-  font-size: 1.25rem; /* Smaller font size for mobile */
-  margin-bottom: 10px;
+  font-size: 1.25rem;
+  margin: 0; /* Remove bottom margin */
+  letter-spacing: 1px;
+  color: #ffffff;
+  white-space: nowrap;
 }
 
 .panel-text p {
-  font-size: 0.9rem; /* Smaller font size for mobile */
-  margin-bottom: 0;
+  font-size: 1rem;
+  line-height: 1; /* Reduce line height for tighter spacing */
+  margin: 0;
+  font-style: italic;
+  opacity: 0.8;
+  white-space: nowrap;
 }
 
-.panel:hover .panel-text,
-.panel.active .panel-text { /* Also trigger animation on 'active' */
-  bottom: 0;
+.panel-text .icon {
+  font-size: 1.2rem;
+  margin-left: 3px; /* Slightly reduce spacing before the arrow */
+  transition: transform 0.3s ease;
 }
 
-/* Responsive Design for Panels */
+.panel:hover .panel-text .icon {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  background-color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.media-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.lightbox-media {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 5px;
+}
+
+.lightbox-caption {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 2rem;
+  z-index: 1001;
+}
+
+.lightbox-nav.prev {
+  left: 10px;
+}
+
+.lightbox-nav.next {
+  right: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Responsive Design */
 @media (max-width: 992px) {
+  .hero-section {
+    height: auto; /* Allow height to adjust on smaller screens */
+    min-height: auto; 
+  }
+
+  .row.h-100 {
+    flex-direction: column; /* Stack columns vertically on smaller screens */
+  }
+
+  .col-lg-8,
   .col-lg-4 {
-    height: auto; /* Allow the height to adjust on smaller screens */
-    padding: 5px; /* Further reduced padding for smaller screens */
+    flex: 1; /* Reset flex to take full width on smaller screens */
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .col-lg-8,
+  .col-lg-4 {
+    flex: 1; /* Equal height for both columns on mobile */
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+
+  .video-container {
+    height: 800px; /* Fixed height for video on mobile */
+  }
+
+  .col-lg-4 {
+    padding: 0; /* Remove padding on mobile */
   }
 
   .panel {
-    margin-bottom: 5px; /* Further reduced spacing between panels on smaller screens */
-  }
-
-  .panel img {
-    height: 200px; /* Adjusted height for mobile */
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .panel-text {
@@ -249,10 +392,136 @@
     font-size: 0.8rem; /* Smaller font size for mobile */
   }
 }
+
+
+/* Pop-up Form Styles */
+.popup-form-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-form-content {
+  background-color: var(--background-color); /* Light beige */
+  padding: 25px;
+  border-radius: 8px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--base-color); /* Brown border */
+}
+
+.popup-form-content h2 {
+  margin-bottom: 10px;
+  color: var(--text-color); /* Brown text */
+  font-size: 1.8rem;
+}
+
+.popup-form-content p {
+  color: var(--text-color); /* Brown text */
+  font-size: 1rem;
+}
+
+.popup-form-content input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: 1px solid var(--base-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #fff; /* White input field */
+  color: var(--text-color);
+}
+
+.popup-form-content input::placeholder {
+  color: #999; /* Light placeholder */
+}
+
+.popup-form-content button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--accent-color); /* Gold */
+  color: var(--base-color); /* Brown text */
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.popup-form-content button:hover {
+  background-color: #e6c200; /* Slightly darker gold */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--base-color); /* Brown close button */
+}
+
+.close-btn:hover {
+  color: var(--accent-color); /* Gold hover effect */
+}
+
+
   
+/* About Section Styling */
+#about {
+  background-color: white; /* White background */
+  padding: 80px 0;
+}
+
+#about h2 {
+  color: var(--text-color); /* Black text for the heading */
+  font-family: QuorthonDarkIV, sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 20px; /* Added spacing below the heading */
+}
+
+#about p {
+  color: var(--text-color); 
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+
+#about .lead {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--text-color); /* Use accent color for the lead paragraph */
+}
+
+#about .btn-primary {
+  background-color: var(--button-color); /* Button color */
+  border: none;
+  padding: 10px 30px;
+  font-size: 1rem;
+  color: var(--base-color); /* Light text for the button */
+  transition: background-color 0.3s ease;
+}
+
+#about .btn-primary:hover {
+  background-color: var(--accent-color); /* Hover effect for the button */
+  color: var(--text-color); /* Black text on hover */
+}
   
 
-  /* Sections (About, Features, Contact) */
+  /* Sections (About, Luxury, Contact) */
   section {
     background-color: var(--background-color);
     padding: 60px 0;
@@ -260,7 +529,7 @@
   
   section h2 {
     color: var(--base-color);
-    font-family: 'Playfair Display', serif; /* Luxury font */
+    font-family: QuorthonDarkIV;
     font-weight: 700;
   }
 
@@ -275,7 +544,7 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .contact-section h2 {
-font-family: 'Playfair Display', serif; /* Elegant font */
+font-family: QuorthonDarkIV;
 font-weight: 700;
 color: var(--base-color);
 font-size: 2.5rem;
@@ -294,7 +563,7 @@ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Soft shadow */
 /* Form Labels */
 .contact-form .form-label {
 font-weight: 600;
-color: var(--base-color);
+color: var(--text-color);
 }
 
 /* Form Inputs */
@@ -303,7 +572,7 @@ color: var(--base-color);
 border: 1px solid rgba(101, 67, 33, 0.2); /* Light brown border */
 border-radius: 5px;
 background-color: #FFF;
-color: var(--base-color);
+color: var(--text-color);
 }
 
 .contact-form .form-control:focus,
@@ -352,35 +621,15 @@ color: var(--accent-color);
 
 
 
-/* Map Section */
-.map-section {
-width: 100%;
-height: 100vh; /* Full height of viewport */
-position: relative;
-}
-
-.map-container {
-width: 100%;
-height: 100%; /* Full height of parent */
-}
-
-.map-container iframe {
-width: 100%;
-height: 100%;
-border: none;
-}
-
-
-
-/* Features Section  */
-#features-section {
+/* Luxury Section */
+#luxury {
   position: relative;
   height: 100vh; /* Full screen height */
   overflow: hidden; /* Prevents any scrollbars */
 }
 
 /* Full-Width Video */
-#features-section .video-container {
+#luxury .video-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -388,13 +637,13 @@ border: none;
   height: 100%;
 }
 
-#features-section .feature-video {
+#luxury .luxury-video {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensures the video covers the entire section */
 }
 
-.feature-overlay {
+.luxury-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -408,20 +657,19 @@ border: none;
   margin: 0 auto;
 }
 
-
-.feature-overlay h2 {
-  font-family: 'Playfair Display', serif;
+.luxury-overlay h2 {
+  font-family: QuorthonDarkIV;
   font-size: 3rem;
   margin-bottom: 1rem;
   color: var(--text-color);
 }
 
-.feature-overlay p {
+.luxury-overlay p {
   font-size: 1.5rem;
   margin-bottom: 2rem;
 }
 
-.feature-overlay .btn {
+.luxury-overlay .btn {
   font-size: 1.2rem;
   padding: 10px 30px;
   background-color: var(--accent-color);
@@ -429,7 +677,7 @@ border: none;
   border: none;
 }
 
-.feature-overlay .btn:hover {
+.luxury-overlay .btn:hover {
   background-color: #e6b800; /* Darker yellow on hover */
 }
 
@@ -438,23 +686,23 @@ border: none;
 /* Availability Section */
 #availability {
   background-color: #FFFFFF; /* White background */
-  padding: 80px 0; /* Increased padding for more elegance */
+  padding: 80px 0; /* Consistent padding */
 }
 
 #availability h2 {
-  font-family: 'Playfair Display', serif; /* Luxury font for the heading */
+  font-family: QuorthonDarkIV;
   font-weight: 700;
-  color: var(--base-color); /* Brown base color */
+  color: var(--text-color); /* Black text for better contrast */
   font-size: 2.5rem; /* Larger font size for emphasis */
   margin-bottom: 20px;
   text-align: center;
 }
 
 #availability p {
-  font-family: 'Arial', sans-serif; /* Clean sans-serif font for the description */
-  color: var(--base-color); /* Brown base color */
+  font-family: 'Arial', sans-serif;
+  color: var(--text-color); /* Black text for better contrast */
   font-size: 1.2rem;
-  line-height: 1.8; /* Improved readability with more line height */
+  line-height: 1.8; /* Improved readability */
   text-align: center;
   max-width: 800px; /* Limit width for better readability */
   margin: 0 auto 40px; /* Center the text and add bottom margin */
@@ -465,25 +713,20 @@ border: none;
   font-family: 'Arial', sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  color: var(--base-color); /* Brown base color */
+  color: var(--text-color); /* Black text for better contrast */
   background-color: transparent;
-  border: 2px solid var(--accent-color); /* Yellow accent color */
+  border: 2px solid var(--accent-color); /* Accent color for border */
   border-radius: 25px;
   padding: 10px 20px;
   margin: 5px;
   transition: all 0.3s ease;
 }
 
-.filter-btn:hover {
-  background-color: var(--accent-color); /* Yellow accent color */
-  color: var(--base-color); /* Brown base color */
-  border-color: var(--accent-color); /* Yellow accent color */
-}
-
+.filter-btn:hover,
 .filter-btn.active {
-  background-color: var(--accent-color); /* Yellow accent color */
-  color: var(--base-color); /* Brown base color */
-  border-color: var(--accent-color); /* Yellow accent color */
+  background-color: var(--accent-color); /* Accent color for background */
+  color: #FFFFFF; /* White text for better contrast */
+  border-color: var(--accent-color); /* Accent color for border */
 }
 
 /* Table Styling */
@@ -494,130 +737,133 @@ border: none;
 }
 
 .table thead th {
-  font-family: 'Playfair Display', serif; /* Luxury font for table headers */
+  font-family: QuorthonDarkIV;
   font-weight: 700;
-  color: var(--base-color); /* Brown base color */
-  border-bottom: 2px solid var(--accent-color); /* Yellow accent color */
+  color: var(--text-color); /* Black text for better contrast */
+  border-bottom: 2px solid var(--accent-color); /* Accent color for border */
 }
 
 .table tbody tr {
   background-color: #FFFFFF; /* White background */
-  border: 1px solid rgba(101, 67, 33, 0.1); /* Light brown border */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Light border for separation */
   border-radius: 10px;
   transition: all 0.3s ease;
 }
 
 .table tbody tr:hover {
-  background-color: rgba(255, 215, 0, 0.1); /* Light yellow hover effect */
+  background-color: rgba(0, 0, 0, 0.05); /* Light hover effect */
   cursor: pointer;
 }
 
 .table tbody td {
-  font-family: 'Arial', sans-serif; /* Clean sans-serif font for table data */
-  color: var(--base-color); /* Brown base color */
+  font-family: 'Arial', sans-serif;
+  color: var(--text-color); /* Black text for better contrast */
   padding: 15px;
 }
 
-
 /* Modal Styling */
 .modal-content {
-  background-color: var(--accent-color); /* Yellowish accent color */
+  background-color: #dcd8cc !important;
   border-radius: 10px;
-  border: 1px solid rgba(101, 67, 33, 0.1); /* Light brown border */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
+  color: #000 !important;
 }
 
 .modal-header {
-  border-bottom: 1px solid rgba(101, 67, 33, 0.1); /* Light brown border */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
+  padding: 20px; /* Add padding for better spacing */
+  background-color: #dcd8cc;
+  color: #000; 
 }
 
 .modal-title {
-  font-family: 'Playfair Display', serif; /* Luxury font for modal title */
+  font-family: QuorthonDarkIV;
   font-weight: 700;
-  color: var(--base-color); /* Brown base color */
+  color: #000000; /* Black text for better contrast */
+  font-size: 1.5rem; /* Larger font size for emphasis */
 }
 
 .modal-body {
   padding: 20px;
-  background-color: var(--background-color);
+  background-color: #FFFFFF; /* White background */
 }
 
-/* Carousel Styling */
-.carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
+/* Image in Modal */
+.modal-body img {
+  width: 100%; /* Full width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Consistent border radius */
+  margin-bottom: 20px; /* Add spacing below the image */
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-  background-color: rgba(101, 67, 33, 0.5); /* Semi-transparent brown */
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  top: 50%;
-  transform: translateY(-50%);
+/* Description Text */
+.modal-body h4 {
+  text-align: left;
+  font-weight: 700;
+  color: #000000; /* Black text for better contrast */
+  font-size: 1.25rem; /* Larger font size for emphasis */
+  margin-bottom: 10px; /* Add spacing below the heading */
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: brightness(0) invert(1); /* Make arrows white */
-}
-
-/* Unit Description */
 #unitDescription {
+  text-align: left;
   list-style-type: disc;
   padding-left: 20px;
-  font-family: 'Arial', sans-serif; /* Clean sans-serif font for description */
-  color: var(--base-color); /* Brown base color */
+  font-family: 'Arial', sans-serif;
+  color: #000000; /* Black text for better contrast */
+  font-size: 1rem; /* Consistent font size */
+  line-height: 1.6; /* Improved readability */
 }
 
-/* Interest Form */
-#interestForm {
-  background-color: #FFFFFF; /* White background for the form */
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid rgba(101, 67, 33, 0.1); /* Light brown border */
-}
-
+/* Form Styling */
 #interestForm label {
-  font-family: 'Arial', sans-serif; /* Clean sans-serif font for labels */
-  color: var(--base-color); /* Brown base color */
+  font-family: 'Arial', sans-serif;
+  color: #000000 !important;
   font-weight: 500;
+  font-size: 1rem; /* Consistent font size */
 }
 
 #interestForm input,
 #interestForm select,
 #interestForm textarea {
   background-color: #FFFFFF; /* White background */
-  border: 1px solid rgba(101, 67, 33, 0.1); /* Light brown border */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
   border-radius: 5px;
-  color: var(--base-color); /* Brown base color */
+  color: #000000 !important;
+  font-size: 1rem; /* Consistent font size */
+  padding: 10px; /* Add padding for better input field size */
 }
 
 #interestForm input:focus,
 #interestForm select:focus,
 #interestForm textarea:focus {
-  border-color: var(--accent-color); /* Yellow accent color */
-  box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Yellow glow */
+  border-color: var(--accent-color); /* Accent color for focus */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
+.btn-primary {
+  --bs-btn-bg: #8a7f7f !important;  /* Custom button background */
+  --bs-btn-color: #fff !important; /* Force white text */
+  --bs-btn-border-color: #8a7f7f !important; /* Border color */
+  --bs-btn-hover-bg: #756b6b !important; /* Darker hover color */
+  --bs-btn-hover-border-color: #756b6b !important; /* Hover border */
+}
+
+
 #interestForm .btn-primary {
-  background-color: var(--base-color); /* Brown base color */
-  color: var(--accent-color); /* Yellow accent color */
-  border: none;
-  font-weight: 500;
-  padding: 10px 20px;
-  border-radius: 25px;
-  transition: all 0.3s ease;
+  background-color: #8a7f7f !important; /* Force background */
+  color: #FFFFFF !important; /* Force white text */
+  border: none !important;
+  font-weight: 600 !important;
+  padding: 12px 20px !important;
+  border-radius: 25px !important;
+  transition: all 0.3s ease !important;
+  font-size: 1rem !important;
 }
 
 #interestForm .btn-primary:hover {
-  background-color: #543c1f; /* Darker brown on hover */
-  color: var(--accent-color); /* Yellow accent color */
+  background-color: #756b6b !important; /* Darker hover effect */
 }
-
-
 
 
 /* Amenities Section */
@@ -627,7 +873,7 @@ border: none;
 }
 
 #amenities h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: QuorthonDarkIV;
   font-weight: 700;
   color: var(--base-color);
   font-size: 2.5rem;
@@ -666,7 +912,7 @@ border: none;
 }
 
 .amenity-content h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: QuorthonDarkIV;
   font-weight: 700;
   color: var(--base-color);
   font-size: 1.75rem;
@@ -735,6 +981,190 @@ border: none;
 
   .amenity-details li {
     font-size: 0.9rem;
+  }
+}
+
+
+/* Map Section */
+.map-section {
+  background-color: #ffffff; /* White background */
+  padding: 80px 0; /* Increased padding for better spacing */
+}
+
+/* Neighborhood Content */
+.neighborhood-content {
+  padding: 0 40px; /* Adjusted padding */
+}
+
+.neighborhood-heading {
+  font-size: 2.5rem; /* Slightly reduced font size */
+  font-weight: 700;
+  color: #000000; /* Black for better contrast */
+  margin-bottom: 20px;
+  line-height: 1.2; /* Improved line height */
+}
+
+.neighborhood-text {
+  font-size: 1.1rem;
+  color: #333333; /* Dark gray for readability */
+  line-height: 1.6; /* Improved line height */
+  margin-bottom: 30px; /* Added spacing */
+}
+
+/* Carousel Section */
+.neighborhood-carousel {
+  width: 100%;
+  max-width: 600px; /* Slightly wider */
+  margin: 0 auto 30px; /* Centered and added bottom margin */
+  border-radius: 12px; /* Smoother border radius */
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.carousel-inner,
+.carousel-item {
+  height: 300px; /* Fixed height for consistency */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure images fill the container */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 40px; /* Larger controls */
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  border-radius: 50%; /* Circular buttons */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: brightness(0) invert(1); /* White arrows */
+}
+
+/* Tabs for Filtering Info */
+/* Tabs for Filtering Info */
+.nav-pills {
+  margin-bottom: 30px; /* Added spacing */
+}
+
+.nav-pills .nav-link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333333; /* Dark gray for readability */
+  padding: 10px 20px; /* Larger padding */
+  margin: 5px; /* Spacing between tabs */
+  border-radius: 25px; /* Rounded corners */
+  transition: all 0.3s ease;
+  background-color: #f8f9fa; /* Light background for inactive tabs */
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--button-color); /* Accent color for active tab */
+  color: #ffffff; /* White text for contrast */
+}
+
+.nav-pills .nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Light hover effect */
+}
+
+/* Info List */
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Center Tab Content */
+.tab-content {
+  text-align: center; /* Center-align all text */
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto; /* Center the list */
+  max-width: 600px; /* Limit width for better readability */
+}
+
+.info-list li {
+  font-size: 1rem;
+  color: #555555; /* Medium gray for readability */
+  padding: 8px 0; /* Added spacing between items */
+  display: flex;
+  align-items: center; /* Align icons with text */
+  justify-content: center; /* Center-align list items */
+}
+
+.info-list li strong {
+  font-weight: 600;
+  margin-right: 8px; /* Spacing between icon and text */
+}
+
+/* Center CTA Link */
+.cta-link {
+  display: inline-block;
+  margin-top: 15px; /* Added spacing */
+  font-weight: 600;
+  color: var(--button-color); /* Accent color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-align: center; /* Center-align the link */
+}
+
+.cta-link:hover {
+  color: #000000; /* Darker on hover */
+  text-decoration: underline;
+}
+
+/* Disclaimer */
+.disclaimer {
+  font-size: 0.9rem;
+  color: #777777; /* Light gray for subtlety */
+  margin-top: 10px; /* Added spacing */
+}
+
+/* Map Container */
+.map-container {
+  height: 500px; /* Slightly taller */
+  border-radius: 12px; /* Smoother border radius */
+  overflow: hidden; /* Ensure rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0; /* Remove default border */
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .map-section .row {
+    flex-direction: column; /* Stack columns on smaller screens */
+  }
+
+  .neighborhood-content {
+    padding: 20px; /* Reduced padding */
+    text-align: center; /* Center align content */
+  }
+
+  .neighborhood-heading {
+    font-size: 2rem; /* Smaller font size for mobile */
+  }
+
+  .neighborhood-text {
+    font-size: 1rem; /* Smaller font size for mobile */
+  }
+
+  .map-container {
+    height: 350px; /* Smaller height for mobile */
+    margin-top: 20px; /* Added spacing */
   }
 }
 
@@ -843,4 +1273,35 @@ opacity: 0.8;
 
 .gallery-container img:hover {
   transform: scale(1.1);
+}
+
+
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between buttons */
+  margin-top: 20px;
+}
+
+#pagination button {
+  background-color: var(--button-color); /* Use your custom button color */
+  color: #ffffff; /* White text */
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 25px; /* Rounded corners */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#pagination button:hover {
+  background-color: #756b6b; /* Slightly darker on hover */
+  transform: scale(1.05); /* Slight pop effect */
+}
+
+#pagination button:disabled {
+  background-color: #ccc; /* Disabled button color */
+  cursor: not-allowed;
+  transform: none;
 }

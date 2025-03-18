@@ -1,9 +1,9 @@
 gsap.registerPlugin(ScrollTrigger);
 
 // Set initial states
-gsap.set("#logo_white", { autoAlpha: 1, display: "none", height: 'auto', zIndex: 'auto' });
-gsap.set("#logo_black", { autoAlpha: 0, display: "block", height: 'auto', zIndex: 'auto' });
-gsap.set("#logo_main", { autoAlpha: 1, display: "none" });
+gsap.set("#logo_white", { autoAlpha: 0, display: "none", height: 'auto', zIndex: 'auto' });
+gsap.set("#logo_black", { autoAlpha: 0, display: "none", height: 'auto', zIndex: 'auto' });
+gsap.set("#logo_main", { autoAlpha: 0, display: "none" });
 gsap.set("#bg_grids", { autoAlpha: 1, display: "block" });
 gsap.set("#bg_build", { autoAlpha: 1, display: "block", width: '100%' });
 gsap.set("#bg_buildCropped", { autoAlpha: 1, display: "block", width: '51%' });
@@ -11,7 +11,7 @@ gsap.set("#bg_buildCropped", { autoAlpha: 1, display: "block", width: '51%' });
 // Create a timeline for animations
 let tl = gsap.timeline({
     scrollTrigger: {
-        trigger: ".hero_secion",
+        trigger: ".hero_section", // Fixed typo
         start: "top top",
         end: "+=1200px", // Pin for 1200 pixels of scroll
         scrub: true,
@@ -24,45 +24,34 @@ tl.to("#logo_main", {
     autoAlpha: 1,
     display: "block",
     duration: 2,
-    delay: 0.5,
 })
 .to("#bg_build", {
-    autoAlpha: 1,
     width: '75.5%',
-    duration: 0,
-    delay: 2,
+    duration: 2,
 })
 .set("#bg_build", {
     autoAlpha: 0,
-    width: '75.5%',
-    duration: 0,
-    delay: 4,
-})
-.to('#logo_main', {
-    autoAlpha: 1,
-    display: "block",
-    duration: 0,
-    zIndex: 0,
-    delay: 0,
 })
 .to('#logo_white', {
     autoAlpha: 1,
-    display: "block",
-    duration: 0,
-    zIndex: 40,
-    delay: 0,
-})
-.to('#logo_white', {
-    autoAlpha: 1,
-    display: "block",
-    duration: 0,
     zIndex: 99,
-    delay: 3,
 })
 .to('#logo_main', {
-    autoAlpha: 1,
+    autoAlpha: 0,
     display: "none",
-    duration: 0,
-    zIndex: 0,
-    delay: 2,
+});
+
+// Add parallax effect to panels
+document.querySelectorAll('.panel').forEach((panel, index) => {
+    gsap.from(panel, {
+        y: 30 * (index + 1), // Smaller parallax distance for smoother effect
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+            trigger: panel,
+            start: "top 80%",
+            end: "bottom 20%",
+            scrub: true,
+        },
+    });
 });

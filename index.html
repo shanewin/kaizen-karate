@@ -11,16 +11,36 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles/style.css">
+  <!--
+    /**
+    * @license
+    * MyFonts Webfont Build ID 892684
+    *
+    * The fonts listed in this notice are subject to the End User License
+    * Agreement(s) entered into by the website owner. All other parties are
+    * explicitly restricted from using the Licensed Webfonts(s).
+    *
+    * You may obtain a valid license from one of MyFonts official sites.
+    * http://www.fonts.com
+    * http://www.myfonts.com
+    * http://www.linotype.com
+    *
+    */
+    -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/MyWebfontsKit/MyWebfontsKit.css">
 </head>
 <body>
 
 
-  <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-sm  navbar-light bg-light fixed-top">
   <div class="container">
-    <!-- Text Logo -->
-    <a class="navbar-brand" href="#" style="font-family: 'Playfair Display', serif; font-weight: 700; color: var(--accent-color);">
+    <!-- Text Logo with Address -->
+    <a class="navbar-brand" href="#" style="font-family: 'QuorthonDarkIV', serif; font-weight: 700; color: var(--accent-color);">
       The Garrison
+      <div class="navbar-address" style="font-size: 1rem; color: var(--text-color); font-family: Arial, sans-serif;">
+        151 Carlton Avenue, Brooklyn, NY 11205
+      </div>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -31,97 +51,143 @@
           <a class="nav-link" href="#about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#feature-section">Availability</a>
+          <a class="nav-link" href="#luxury">Luxury Living</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
+          <a class="nav-link" href="#availability">Availability</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#amenities">Amenities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#neighborhood">Neighborhood</a>
+        </li>
+        <!-- Email List Link -->
+        <li class="nav-item email-list-item">
+          <a class="nav-link email-list-link" href="#" id="openEmailPopupBtn">Email List</a>
+        </li>
+        <!-- Wait List Link -->
+        <li class="nav-item waitlist-item">
+          <a class="nav-link waitlist-link" href="#contact">Wait List</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Hero Section with Two Columns -->
-<header class="hero-section">
-  <div class="container-fluid h-100">
-    <div class="row h-100">
-      <!-- Left Column: Video and Hero Content -->
-      <div class="col-lg-8 h-100 d-flex align-items-center justify-content-center position-relative">
-        <div class="video-container">
-          <video autoplay muted loop id="hero-video">
-            <source src="assets/videos/hero2_340Myrtle.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+  <!-- Hero Section with Two Columns -->
+  <header class="hero-section">
+    <div class="container-fluid h-100">
+      <div class="row h-100">
+        <!-- Left Column: Video and Hero Content -->
+        <div class="col-lg-8 h-100 d-flex align-items-center justify-content-center position-relative">
+          <div class="video-container">
+            <video autoplay muted loop playsinline id="hero-video">
+              <source src="assets/videos/hero1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
-        <div class="hero-content">
-          <div class="container">
-            <div class="row align-items-center">
-              <!-- Left Column: Logo -->
-              <div class="col-lg-6 text-center text-lg-start">
-                <div class="logo-container">
-                  <img src="assets/images/logo.png" alt="The Garrison Logo" class="hero-logo">
-                </div>
+      
+
+        <!-- Right Column (Panels) -->
+        <div class="col-lg-4 d-flex flex-column">
+            <!-- Panel 1 -->
+            <div class="panel flex-grow-1 position-relative" 
+                 data-media='[{"type": "image", "src": "assets/images/panel1.jpg", "caption": "Spacious Living Room"}, 
+                             {"type": "video", "src": "assets/videos/living-room.mp4", "caption": "Living Room"},
+                             {"type": "image", "src": "assets/images/Living-1.jpg","caption": "Living Room"}  ]'>
+              <img src="assets/images/panel1.jpg" alt="Panel 1" class="img-fluid w-100">
+              <div class="panel-text">
+                <h3>Spacious Living</h3>
+                <p>Click for more <span class="icon">→</span></p>
               </div>
-              <!-- Right Column: Text and Button -->
-              <div class="col-lg-6 text-center text-lg-start">
-                <h1 class="display-4" style="font-family: Arial, sans-serif;">Welcome to your dream home in the heart of Brooklyn!</h1> <!-- Default font -->
-                <p class="lead" style="font-family: Arial, sans-serif;">340 Mrytle Avenue, Brooklyn, NY 11205</p> <!-- Default font -->
-                <a href="#contact" class="btn btn-primary btn-lg">Check Availability</a>
+            </div>
+          
+            <!-- Panel 2 -->
+            <div class="panel flex-grow-1 position-relative mb-3" 
+                 data-media='[{"type": "video", "src": "assets/videos/bedroom1.mp4", "caption": "Restful Bedroom"}, 
+                             {"type": "image", "src": "assets/images/panel2.jpg", "caption": "Bedroom Image"}]'>
+              <img src="assets/images/panel2.jpg" alt="Panel 2" class="img-fluid w-100">
+              <div class="panel-text">
+                <h3>Restful Nights</h3>
+                <p>Click for more <span class="icon">→</span></p>
+              </div>
+            </div>
+          
+            <!-- Panel 3 (Fix apostrophe issue) -->
+            <div class="panel flex-grow-1 position-relative" 
+                 data-media='[{"type": "image", "src": "assets/images/panel3.jpg", "caption": "Chef&apos;s Dream Kitchen"}, 
+                             {"type": "video", "src": "assets/videos/kitchen.mp4", "caption": "Kitchen Video"}]'>
+              <img src="assets/images/panel3.jpg" alt="Panel 3" class="img-fluid w-100">
+              <div class="panel-text">
+                <h3>Chef's Dream Kitchen</h3>
+                <p>Click for more <span class="icon">→</span></p>
               </div>
             </div>
           </div>
-        </div>
+          
+
+        <!-- Lightbox Container -->
+          <div id="lightbox" class="lightbox">
+            <div class="lightbox-content">
+              <!-- Media Container -->
+              <div class="media-container">
+                <video controls autoplay muted loop class="lightbox-media" id="lightbox-video">
+                  <source src="" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <img src="" alt="" class="lightbox-media" id="lightbox-image" style="display: none;">
+              </div>
+              <!-- Caption -->
+              <div class="lightbox-caption" id="lightbox-caption"></div>
+              <!-- Navigation Arrows -->
+              <button class="lightbox-nav prev">&#10094;</button>
+              <button class="lightbox-nav next">&#10095;</button>
+              <!-- Close Button -->
+              <span class="close-btn">&times;</span>
+            </div>
+          </div>
+
+
       </div>
-
-      
-      <div class="col-lg-4 d-flex flex-column">
-        <!-- Panel 1 -->
-        <div class="panel flex-grow-1 position-relative mb-3">
-          <img src="assets/images/panel1.png" alt="Panel 1" class="img-fluid w-100">
-          <div class="panel-text">
-            <h3>Luxury Amenities</h3>
-            <p>Fitness center, rooftop terrace, and more.</p>
-          </div>
-        </div>
-        <!-- Panel 2 -->
-        <div class="panel flex-grow-1 position-relative mb-3">
-          <img src="assets/images/panel2.png" alt="Panel 2" class="img-fluid w-100">
-          <div class="panel-text">
-            <h3>Modern Design</h3>
-            <p>Contemporary architecture with sleek finishes.</p>
-          </div>
-        </div>
-        <!-- Panel 3 -->
-        <div class="panel flex-grow-1 position-relative">
-          <img src="assets/images/panel3.png" alt="Panel 3" class="img-fluid w-100">
-          <div class="panel-text">
-            <h3>Luxury Amenities</h3>
-            <p>Fitness center, rooftop terrace, and more.</p>
-          </div>
-        </div>
-      </div>
-
-
-  </div>
-</header>
-
-  <!-- About Section -->
-  <section id="about" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">About the The Garrison</h2>
-      <p class="text-center">Discover the perfect blend of modern living and classic Brooklyn charm. Our new real estate project offers state-of-the-art amenities, spacious layouts, and breathtaking views of the city skyline.</p>
-      <p class="text-center">Discover the perfect blend of modern living and classic Brooklyn charm. Our new real estate project offers state-of-the-art amenities, spacious layouts, and breathtaking views of the city skyline.</p>
     </div>
-  </section>
+  </header>
+
+  <!-- Pop-up Form Container -->
+  <div id="popupForm" class="popup-form-container">
+    <div class="popup-form-content">
+      <span class="close-btn" id="closePopupBtn">&times;</span>
+      <h2>Stay Updated</h2>
+      <p>Be the first to know about leasing updates at 151 Carlton Avenue.</p>
+      <form id="emailSignupForm" action="YOUR_FORM_HANDLER_URL" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </div>
 
 
-  <section id="features-section">
+
+<!-- About Section -->
+<section id="about" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">About The Garrison</h2>
+    <p class="text-center lead">Located at 151 Carlton Avenue, The Garrison offers modern living in the heart of Brooklyn. With spacious residences, sleek interiors, and premium amenities, this thoughtfully designed building blends style, comfort, and convenience. Steps from top dining, shopping, and transit, The Garrison is where urban luxury meets everyday ease.</p>
+    <div class="text-center mt-4">
+      <a href="#contact" class="btn btn-primary">Learn More</a>
+    </div>
+  </div>
+</section>
+
+
+  <section id="luxury" class="py-5">
     <div class="video-container">
-      <video autoplay loop muted playsinline class="feature-video">
+      <video autoplay muted loop class="luxury-video">
         <source src="assets/videos/rooftop-features.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      <div class="feature-overlay text-center">
+      <div class="luxury-overlay text-center">
         <h2>Experience Luxury Living</h2>
         <p>Discover our state-of-the-art amenities and breathtaking views.</p>
         <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#galleryModal">See More</button>
@@ -159,73 +225,65 @@
 
 
 
-<!-- Availability Section -->
+<!--  Availability Section -->
 <section id="availability" class="py-5">
   <div class="container">
     <h2 class="text-center mb-4">Availability</h2>
-    <p class="text-center mb-5">Imagine your ideal NYC living experience... Then find and capture it at The Garrison. Explore our expansive collection of studio, one-, and two-bedroom residences.</p>
+    <p class="text-center mb-5">Imagine your ideal NYC living experience... Then find and capture it at The Garrison. Explore our expansive collection of one-, two-, and three-bedroom residences.</p>
 
-    <!-- Filter Buttons -->
+    
     <div class="text-center mb-4">
       <button class="btn btn-outline-primary filter-btn active" data-filter="all">All</button>
-      <button class="btn btn-outline-primary filter-btn" data-filter="studio">Studio</button>
       <button class="btn btn-outline-primary filter-btn" data-filter="1-bed">1 Bed</button>
       <button class="btn btn-outline-primary filter-btn" data-filter="2-bed">2 Bed</button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="3-bed">3 Bed</button>
     </div>
 
-    <!-- Table -->
     <div class="table-responsive">
       <table class="table table-hover">
         <thead>
           <tr>
             <th>Unit</th>
             <th>Bed/Bath</th>
+            <th>Square Footage</th> 
+            <th>Outdoor Space</th>
             <th>Rent</th>
           </tr>
         </thead>
         <tbody id="unit-table">
-          <!-- Rows will be dynamically populated here -->
+          
         </tbody>
       </table>
     </div>
+      <!-- Pagination Controls -->
+      <div id="pagination" class="text-center mt-4">
+        <!-- Next and Previous buttons will be dynamically inserted here -->
+      </div>
   </div>
 </section>
 
-<!-- Pop-up Modal -->
+  <!-- Modal -->
 <div class="modal fade" id="unitModal" tabindex="-1" aria-labelledby="unitModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
+      
       <div class="modal-header">
         <h5 class="modal-title" id="unitModalLabel">Unit Details</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <!-- Image Carousel -->
-        <div id="unitCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <!-- Carousel items will be dynamically populated here -->
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#unitCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#unitCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
 
-        <!-- Unit Description -->
+      <div class="modal-body text-center">
+        <img id="unitImage" class="img-fluid" alt="Unit Image"> <!-- Image to display -->
+        
         <div class="mt-4">
           <h4>Description</h4>
-          <ul id="unitDescription">
-            <!-- Description bullet points will be dynamically populated here -->
-          </ul>
+          <ul id="unitDescription" class="mt-3"></ul> <!-- Description list -->
         </div>
+      </div> <!-- END of modal-body -->
 
-        <!-- Interest Form -->
-        <form action="form-handler.php" method="POST" class="mt-4">
-          <!-- Hidden Input for Unit -->
+      <!-- Form should be inside modal-content but outside modal-body -->
+      <div class="modal-footer">
+        <form action="form-handler.php" method="POST" class="w-100 px-3">
           <input type="hidden" id="unit" name="unit">
 
           <div class="row">
@@ -238,6 +296,7 @@
               <input type="text" class="form-control" id="lastName" name="lastName" required>
             </div>
           </div>
+
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="email" class="form-label">Email</label>
@@ -248,6 +307,7 @@
               <input type="tel" class="form-control" id="phone" name="phone" required>
             </div>
           </div>
+
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="moveInDate" class="form-label">Move-In Date</label>
@@ -258,6 +318,7 @@
               <input type="text" class="form-control" id="budget" name="budget" required>
             </div>
           </div>
+
           <div class="mb-3">
             <label for="hearAboutUs" class="form-label">How Did You Hear About Us?</label>
             <select class="form-select" id="hearAboutUs" name="hearAboutUs" required>
@@ -268,16 +329,20 @@
               <option value="Advertisement">Advertisement</option>
             </select>
           </div>
+
           <div class="mb-3">
             <label for="message" class="form-label">Message (Optional)</label>
             <textarea class="form-control" id="message" name="message" rows="3"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+
+          <button type="submit" class="btn btn-primary w-100">Submit</button>
         </form>
-      </div>
-    </div>
+      </div> <!-- END of modal-footer -->
+
+    </div> <!-- END of modal-content -->
   </div>
 </div>
+
 
 
 <!-- Amenities Section -->
@@ -399,11 +464,137 @@
 </section>
 
 
+<section class="map-section">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Left Column: Neighborhood & Carousel -->
+      <div class="col-lg-6 neighborhood-content">
+        <h2 class="neighborhood-heading">Discover Fort Greene</h2>
+        <p class="neighborhood-text">
+          Nestled in <strong>Fort Greene</strong>, one of Brooklyn’s most vibrant neighborhoods, The Garrison is steps away from iconic parks, renowned schools, and excellent transit options.
+        </p>
+
+        <!-- Carousel Section -->
+        <div id="neighborhoodCarousel" class="carousel slide neighborhood-carousel" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/images/neighborhood/neighborhood-1.jpg" class="d-block w-100" alt="Fort Greene Park">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/neighborhood/neighborhood-2.jpg" class="d-block w-100" alt="Local Cafe">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/neighborhood/neighborhood-3.jpg" class="d-block w-100" alt="Brooklyn Streets">
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#neighborhoodCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#neighborhoodCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column: Map -->
+      <div class="col-lg-6 map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.048853038659!2d-73.9699876845947!3d40.68964497933206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25ba6b3c1b0a5%3A0x8f1a7c1b0e1b0e1b!2s151%20Carlton%20Ave%2C%20Brooklyn%2C%20NY%2011205!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+          width="600"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- New Row: Tabs and Tab Content -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <!-- Tabs for Filtering Info -->
+        <ul class="nav nav-pills mb-3 justify-content-center" id="info-tabs" role="tablist">
+          <li class="nav-item">
+            <button class="nav-link active" id="transport-tab" data-bs-toggle="pill" data-bs-target="#transport" type="button" role="tab">🚇 Transport</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" id="schools-tab" data-bs-toggle="pill" data-bs-target="#schools" type="button" role="tab">🏫 Schools</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" id="colleges-tab" data-bs-toggle="pill" data-bs-target="#colleges" type="button" role="tab">🎓 Colleges</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" id="parks-tab" data-bs-toggle="pill" data-bs-target="#parks" type="button" role="tab">🌳 Parks</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" id="museums-tab" data-bs-toggle="pill" data-bs-target="#museums" type="button" role="tab">🏛 Museums</button>
+          </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="info-tabs-content">
+          <div class="tab-pane fade show active" id="transport" role="tabpanel">
+            <ul class="info-list">
+              <li>🚇 <strong>G</strong> at Clinton-Washington Avs – 0.43 miles</li>
+              <li>🚇 <strong>G</strong> at Fulton St – 0.45 miles</li>
+              <li>🚇 <strong>C</strong> at Lafayette Av – 0.46 miles</li>
+              <li>🚇 <strong>B Q R</strong> at DeKalb Av – 0.5 miles</li>
+              <li>🚇 <strong>2 3 4 5</strong> at Nevins St – 0.53 miles</li>
+            </ul>
+            <a href="https://www.google.com/maps/search/subway+stations+near+151+Carlton+Avenue,+Brooklyn,+NY" target="_blank" class="cta-link">🔍 View subway lines on Google Maps</a>
+          </div>
+
+          <div class="tab-pane fade" id="schools" role="tabpanel">
+            <ul class="info-list">
+              <li>🏫 P.S. 020 Clinton Hill (PK-5)</li>
+            </ul>
+            <p class="disclaimer">*School attendance zone boundaries are subject to change. Check with the district for accuracy.</p>
+          </div>
+
+          <div class="tab-pane fade" id="colleges" role="tabpanel">
+            <ul class="info-list">
+              <li>🎓 St. Joseph's College – 0.31 miles</li>
+              <li>🎓 Long Island University - Brooklyn – 0.46 miles</li>
+              <li>🎓 Pratt Institute – 0.51 miles</li>
+              <li>🎓 ASA College – 0.72 miles</li>
+            </ul>
+          </div>
+
+          <div class="tab-pane fade" id="parks" role="tabpanel">
+            <ul class="info-list">
+              <li>🌳 Fort Greene Park – 0.08 miles</li>
+              <li>🌳 Commodore Barry Park – 0.36 miles</li>
+              <li>🌳 Underwood Park – 0.44 miles</li>
+            </ul>
+          </div>
+
+          <div class="tab-pane fade" id="museums" role="tabpanel">
+            <ul class="info-list">
+              <li>🏛 MoCADA – 0.55 miles</li>
+              <li>🏛 Brooklyn Historical Society – 1.05 miles</li>
+              <li>🏛 Brooklyn Museum – 1.59 miles</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
 
  <!-- Contact Section -->
 <section id="contact" class="contact-section">
   <div class="container">
-    <h2 class="text-center mb-4">Contact Us</h2>
+    <h2 class="text-center mb-4">Wait List</h2>
+    <p class="text-center">
+    Secure your place in line for exclusive priority access when leasing opportunities open to the public.
+  </p>
     <form action="form-handler.php" method="POST" class="contact-form">
       <!-- Hidden Input for Unit -->
       <input type="hidden" id="unit" name="unit">
@@ -484,16 +675,7 @@
 </section>
 
 
-  <!-- Map Section -->
-<section class="map-section">
-  <div class="map-container">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.746636983048!2d-73.97941822369013!3d40.693940171386535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25ba7208e1b09%3A0x299e2ddfcd52a5e5!2s340%20Myrtle%20Ave%2C%20Brooklyn%2C%20NY%2011205!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
-      allowfullscreen="" 
-      loading="lazy">
-    </iframe>
-  </div>
-</section>
+
 
 
   <!-- Footer -->
@@ -509,10 +691,11 @@
         <!-- Center Section: Navigation Links -->
         <div class="col-md-4 text-center">
           <ul class="footer-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#luxury">Luxury Living</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#neighborhood">Neighborhood</a></li>
+            <li><a href="#contact">Wait List</a></li>
           </ul>
         </div>
   
@@ -535,7 +718,9 @@
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="scripts/availability.js"></script>
+  <script src="scripts/lightbox.js"></script>
   <script src="scripts/amenities.js"></script>
+  <script src="scripts/popup-form.js" defer></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const imageFiles = [
