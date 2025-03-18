@@ -881,7 +881,7 @@ color: var(--accent-color);
 #amenities h2 {
   font-family: QuorthonDarkIV;
   font-weight: 700;
-  color: var(--base-color);
+  color: var(--text-color);
   font-size: 2.5rem;
   margin-bottom: 40px;
   text-align: center;
@@ -918,16 +918,16 @@ color: var(--accent-color);
 }
 
 .amenity-content h3 {
-  font-family: QuorthonDarkIV;
+  font-family: 'Arial', sans-serif;
   font-weight: 700;
-  color: var(--base-color);
+  color: var(--text-color);
   font-size: 1.75rem;
   margin-bottom: 15px;
 }
 
 .amenity-summary {
   font-family: 'Arial', sans-serif;
-  color: var(--base-color);
+  color: var(--text-color);
   font-size: 1rem;
   margin-bottom: 20px;
 }
@@ -939,7 +939,7 @@ color: var(--accent-color);
 
 .amenity-details p {
   font-family: 'Arial', sans-serif;
-  color: var(--base-color);
+  color: var(--text-color);
   font-size: 1rem;
   margin-bottom: 10px;
 }
@@ -952,14 +952,14 @@ color: var(--accent-color);
 
 .amenity-details li {
   font-family: 'Arial', sans-serif;
-  color: var(--base-color);
+  color: var(--text-color);
   font-size: 0.95rem;
   margin-bottom: 8px;
 }
 
 .toggle-details {
   background-color: var(--accent-color);
-  color: var(--base-color);
+  color: var(--text-color);
   border: none;
   font-weight: 500;
   padding: 10px 20px;
@@ -968,7 +968,7 @@ color: var(--accent-color);
 }
 
 .toggle-details:hover {
-  background-color: #e6b800; /* Darker yellow on hover */
+  background-color: var(--button-color);
 }
 
 /* Responsive Design */
