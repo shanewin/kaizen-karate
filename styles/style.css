@@ -144,6 +144,10 @@ html {
   }
 }
 
+
+
+
+
 /* Hero Section with Two Columns */
 .hero-section {
   height: 100vh; /* Full viewport height */
@@ -394,9 +398,10 @@ html {
 }
 
 
+
 /* Pop-up Form Styles */
 .popup-form-container {
-  display: none;
+  display: none; /* Hidden by default */
   position: fixed;
   top: 0;
   left: 0;
@@ -409,24 +414,22 @@ html {
 }
 
 .popup-form-content {
-  background-color: var(--background-color); /* Light beige */
+  background-color: white;
   padding: 25px;
   border-radius: 8px;
   text-align: center;
   width: 100%;
   max-width: 400px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  border: 2px solid var(--base-color); /* Brown border */
 }
 
 .popup-form-content h2 {
-  margin-bottom: 10px;
-  color: var(--text-color); /* Brown text */
+  color: black;
   font-size: 1.8rem;
 }
 
 .popup-form-content p {
-  color: var(--text-color); /* Brown text */
+  color: black;
   font-size: 1rem;
 }
 
@@ -434,23 +437,17 @@ html {
   width: 100%;
   padding: 12px;
   margin-top: 10px;
-  border: 1px solid var(--base-color);
+  border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
-  background-color: #fff; /* White input field */
-  color: var(--text-color);
-}
-
-.popup-form-content input::placeholder {
-  color: #999; /* Light placeholder */
 }
 
 .popup-form-content button {
   margin-top: 15px;
   width: 100%;
   padding: 12px;
-  background-color: var(--accent-color); /* Gold */
-  color: var(--base-color); /* Brown text */
+  background-color: var(--button-color);
+  color: white;
   border: none;
   font-size: 1rem;
   font-weight: bold;
@@ -460,7 +457,7 @@ html {
 }
 
 .popup-form-content button:hover {
-  background-color: #e6c200; /* Slightly darker gold */
+  background-color: #756b6b;
 }
 
 .close-btn {
@@ -469,11 +466,11 @@ html {
   right: 15px;
   font-size: 24px;
   cursor: pointer;
-  color: var(--base-color); /* Brown close button */
+  color: black;
 }
 
 .close-btn:hover {
-  color: var(--accent-color); /* Gold hover effect */
+  color: #8a7f7f;
 }
 
 
@@ -651,7 +648,7 @@ color: var(--accent-color);
   color: var(--text-color);
   text-align: center;
   z-index: 1;
-  background-color: rgba(101, 67, 33, 0.8);
+  background-color: rgba(220, 216, 204, 0.8);
   padding: 40px;
   border-radius: 10px;
   margin: 0 auto;
@@ -671,14 +668,23 @@ color: var(--accent-color);
 
 .luxury-overlay .btn {
   font-size: 1.2rem;
-  padding: 10px 30px;
-  background-color: var(--accent-color);
-  color: var(--base-color);
+  font-weight: 600;
+  padding: 12px 30px;
+  background-color: var(--button-color); /* Use your button color */
+  color: #ffffff; /* Ensure white text */
   border: none;
+  border-radius: 25px; /* Rounded corners */
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .luxury-overlay .btn:hover {
-  background-color: #e6b800; /* Darker yellow on hover */
+  background-color: #756b6b; /* Slightly darker on hover */
+  transform: scale(1.05); /* Subtle hover effect */
+}
+
+.luxury-overlay .btn:active {
+  background-color: #625b5b; /* Darker shade on click */
+  transform: scale(0.98); /* Slight click effect */
 }
 
 
