@@ -94,9 +94,10 @@
         <div class="col-lg-4 d-flex flex-column">
             <!-- Panel 1 -->
             <div class="panel flex-grow-1 position-relative" 
-                 data-media='[{"type": "image", "src": "assets/images/panel1.jpg", "caption": "Spacious Living Room"}, 
-                             {"type": "video", "src": "assets/videos/living-room.mp4", "caption": "Living Room"},
-                             {"type": "image", "src": "assets/images/Living-1.jpg","caption": "Living Room"}  ]'>
+                 data-media='[{"type": "image", "src": "assets/images/panel1.jpg", "caption": "Spacious Living Rooms"}, 
+                             {"type": "video", "src": "assets/videos/living-1-panel.mp4", "caption": "Spacious Living Rooms"},
+                             {"type": "image", "src": "assets/images/Living-2.jpg","caption": "Living Room"},
+                             {"type": "video", "src": "assets/videos/living-room.mp4", "caption": "Spacious Living Rooms"}]'>
               <img src="assets/images/panel1.jpg" alt="Panel 1" class="img-fluid w-100">
               <div class="panel-text">
                 <h3>Spacious Living</h3>
@@ -106,8 +107,8 @@
           
             <!-- Panel 2 -->
             <div class="panel flex-grow-1 position-relative mb-3" 
-                 data-media='[{"type": "video", "src": "assets/videos/bedroom1.mp4", "caption": "Restful Bedroom"}, 
-                             {"type": "image", "src": "assets/images/panel2.jpg", "caption": "Bedroom Image"}]'>
+                 data-media='[{"type": "image", "src": "assets/images/panel2.jpg", "caption": "Luxurious Bedrooms"},
+                              {"type": "video", "src": "assets/videos/bedroom1.mp4", "caption": "Restful Bedroom"}]'>
               <img src="assets/images/panel2.jpg" alt="Panel 2" class="img-fluid w-100">
               <div class="panel-text">
                 <h3>Restful Nights</h3>
@@ -245,9 +246,9 @@
           <tr>
             <th>Unit</th>
             <th>Bed/Bath</th>
-            <th>Square Footage</th> 
             <th>Outdoor Space</th>
             <th>Rent</th>
+            <th>Floor Plan</th>
           </tr>
         </thead>
         <tbody id="unit-table">
@@ -262,24 +263,36 @@
   </div>
 </section>
 
-  <!-- Modal -->
-<div class="modal fade" id="unitModal" tabindex="-1" aria-labelledby="unitModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      
-      <div class="modal-header">
-        <h5 class="modal-title" id="unitModalLabel">Unit Details</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body text-center">
-        <img id="unitImage" class="img-fluid" alt="Unit Image"> <!-- Image to display -->
-        
-        <div class="mt-4">
-          <h4>Description</h4>
-          <ul id="unitDescription" class="mt-3"></ul> <!-- Description list -->
+    <!-- Floor Plan Modal -->
+    <div class="modal fade" id="floorPlanModal" tabindex="-1" aria-labelledby="floorPlanModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="floorPlanModalLabel">Floor Plan</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img id="floorPlanImage" src="" alt="Floor Plan" class="img-fluid"> <!-- Full-size image -->
+          </div>
         </div>
-      </div> <!-- END of modal-body -->
+      </div>
+    </div>
+        
+    
+  <!-- Modal -->
+  <div class="modal fade" id="unitModal" tabindex="-1" aria-labelledby="unitModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="unitModalLabel">Unit Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <div class="mt-4">
+            <h4>Description</h4>
+            <ul id="unitDescription" class="mt-3"></ul> <!-- Description list -->
+          </div>
+        </div>
 
       <!-- Form should be inside modal-content but outside modal-body -->
       <div class="modal-footer">
@@ -378,31 +391,6 @@
         </div>
       </div>
 
-      <!-- Resident Lounge Panel -->
-      <div class="col-lg-6">
-        <div class="amenity-panel">
-          <div class="amenity-video-container">
-            <video autoplay muted loop class="amenity-video">
-              <source src="assets/videos/resident_lounge.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="amenity-content">
-            <h3>Relax & Socialize in the Resident Lounge</h3>
-            <p class="amenity-summary">Designed for comfort and style, the Resident Lounge at 151 Carlton Avenue provides a sophisticated space to unwind, connect with neighbors, or host gatherings.</p>
-            <button class="btn btn-primary toggle-details">View Details</button>
-            <div class="amenity-details">
-              <p><strong>Key Features:</strong></p>
-              <ul>
-                <li>Spacious & Elegant: 980 SF of beautifully designed space for socializing and relaxation.</li>
-                <li>Modern Aesthetic: Featuring recessed LED lighting, stylish décor, and premium wood finishes.</li>
-                <li>Sleek Kitchenette: Equipped with modern appliances for convenience.</li>
-                <li>Easy Accessibility: Conveniently located near the retail lobby and parking.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <!-- Coworking Space Panel -->
       <div class="col-lg-6">

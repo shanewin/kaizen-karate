@@ -695,141 +695,148 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   ];
   
-    const tableBody = document.getElementById("unit-table");
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const unitModal = new bootstrap.Modal(document.getElementById("unitModal"));
-  
-    // Populate Table
+  const tableBody = document.getElementById("unit-table");
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const unitModal = new bootstrap.Modal(document.getElementById("unitModal"));
+  const unitInput = document.getElementById("unitInput"); // Ensure this element exists in your HTML
+  const unitImage = document.getElementById("unitImage"); // Ensure this element exists in your HTML
 
-    let currentPage = 1;
-    const rowsPerPage = 10;
+  let currentPage = 1;
+  const rowsPerPage = 10;
+  let currentFilter = "all";
 
-    function populateTable(filter = "all", page = 1) {
-      tableBody.innerHTML = ""; // Clear previous rows
+  // Populate Table with Pagination
+  function populateTable(filter = "all", page = 1) {
+    tableBody.innerHTML = ""; // Clear previous rows
 
-      // Filter units: Exclude HPD units & apply the selected filter
-      const filteredUnits = units
-        .filter((unit) => unit.type !== "HPD") // Remove HPD units
-        .filter((unit) => filter === "all" || unit.type === filter); // Apply filter
+    // Filter units: Exclude HPD units & apply the selected filter
+    const filteredUnits = units
+      .filter((unit) => unit.type !== "HPD") // Remove HPD units
+      .filter((unit) => filter === "all" || unit.type === filter); // Apply filter
 
-      // Pagination Logic
-      const startIndex = (page - 1) * rowsPerPage;
-      const endIndex = startIndex + rowsPerPage;
-      const paginatedUnits = filteredUnits.slice(startIndex, endIndex);
+    // Pagination Logic
+    const startIndex = (page - 1) * rowsPerPage;
+    const endIndex = startIndex + rowsPerPage;
+    const paginatedUnits = filteredUnits.slice(startIndex, endIndex);
 
-      // Populate Table with Paginated Results
-      paginatedUnits.forEach((unit) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-          <td>${unit.unit}</td>
-          <td>${unit.bedBath}</td>
-          <td>${unit.squareFootage}</td>
-          <td>${unit.outdoor}</td> 
-          <td>${unit.rent}</td>
-        `;
-        row.addEventListener("click", () => openModal(unit));
-        tableBody.appendChild(row);
+    // Populate Table with Paginated Results
+    paginatedUnits.forEach((unit) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${unit.unit}</td>
+        <td>${unit.bedBath}</td>
+        <td>${unit.outdoor}</td>
+        <td>${unit.rent}</td>
+        <td><button class="btn btn-sm view-floor-plan" data-images='${JSON.stringify(unit.images)}'>View</button></td>
+      `;
+    
+      // Add click event to the row to open the unit modal
+      row.addEventListener("click", () => openModal(unit));
+    
+      // Prevent the "View" button from triggering the row click
+      const viewButton = row.querySelector(".view-floor-plan");
+      viewButton.addEventListener("click", (e) => {
+        e.stopPropagation(); // Stop the event from bubbling up to the row
+        const images = JSON.parse(viewButton.dataset.images);
+        openFloorPlanModal(images[0]); // Display the first image
       });
-
-      // Update Pagination Buttons
-      updatePaginationControls(filteredUnits.length, page);
-    }
+    
+      tableBody.appendChild(row);
+    });
 
     // Update Pagination Controls
-    function updatePaginationControls(totalUnits, page) {
-      const paginationContainer = document.getElementById("pagination");
-      paginationContainer.innerHTML = ""; // Clear previous buttons
+    updatePaginationControls(filteredUnits.length, page);
+  }
 
-      const totalPages = Math.ceil(totalUnits / rowsPerPage);
+  // Update Pagination Controls
+  function updatePaginationControls(totalUnits, page) {
+    const paginationContainer = document.getElementById("pagination");
+    paginationContainer.innerHTML = ""; // Clear previous buttons
 
-      // Previous Button
-      if (page > 1) {
-        const prevButton = document.createElement("button");
-        prevButton.innerText = "<< Previous";
-        prevButton.classList.add("btn", "btn-outline-primary", "mx-2");
-        prevButton.addEventListener("click", () => {
-          currentPage--;
-          populateTable(currentFilter, currentPage);
-        });
-        paginationContainer.appendChild(prevButton);
-      }
+    const totalPages = Math.ceil(totalUnits / rowsPerPage);
 
-      // Next Button
-      if (page < totalPages) {
-        const nextButton = document.createElement("button");
-        nextButton.innerText = "Next >>";
-        nextButton.classList.add("btn", "btn-outline-primary", "mx-2");
-        nextButton.addEventListener("click", () => {
-          currentPage++;
-          populateTable(currentFilter, currentPage);
-        });
-        paginationContainer.appendChild(nextButton);
-      }
-    }
-
-    // Store Current Filter Globally
-    let currentFilter = "all";
-
-    // Filter Buttons with Pagination
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        filterButtons.forEach((btn) => btn.classList.remove("active"));
-        button.classList.add("active");
-        currentFilter = button.dataset.filter;
-        currentPage = 1; // Reset to first page when changing filters
+    // Previous Button
+    if (page > 1) {
+      const prevButton = document.createElement("button");
+      prevButton.innerText = "<< Previous";
+      prevButton.classList.add("btn", "btn-outline-primary", "mx-2");
+      prevButton.addEventListener("click", () => {
+        currentPage--;
         populateTable(currentFilter, currentPage);
       });
-    });
-
-    // Add Pagination Container in HTML
-    document.addEventListener("DOMContentLoaded", function () {
-      const paginationDiv = document.createElement("div");
-      paginationDiv.id = "pagination";
-      paginationDiv.classList.add("text-center", "mt-4");
-      document.querySelector("#availability .container").appendChild(paginationDiv);
-
-      // Initial Table Population
-      populateTable();
-    });
-
-  
-    // Open Modal with Unit Details
-    function openModal(unit) {
-      const unitImage = document.getElementById("unitImage"); // Get the image element
-      const unitDescription = document.getElementById("unitDescription");
-    
-      // Set Image Source (only the first image)
-      unitImage.src = `assets/images/${unit.images[0]}`;
-      unitImage.alt = unit.unit;
-    
-      // Populate Description
-      unitDescription.innerHTML = unit.description
-        .filter(desc => desc.trim() !== "") // Remove empty descriptions
-        .map(desc => `<li>${desc}</li>`)
-        .join("");
-    
-      // Show Modal
-      unitModal.show();
-
-      // Populate Description
-      unitDescription.innerHTML = unit.description.map((item) => `<li>${item}</li>`).join("");
-
-      // Set Unit Information in Hidden Input
-      unitInput.value = unit.unit;
-
-      // Show Modal
-      unitModal.show();
+      paginationContainer.appendChild(prevButton);
     }
-  
-    // Filter Buttons
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        filterButtons.forEach((btn) => btn.classList.remove("active"));
-        button.classList.add("active");
-        populateTable(button.dataset.filter);
+
+    // Page Numbers
+    for (let i = 1; i <= totalPages; i++) {
+      const pageButton = document.createElement("button");
+      pageButton.innerText = i;
+      pageButton.classList.add("btn", "btn-outline-primary", "mx-1");
+      if (i === page) {
+        pageButton.classList.add("active");
+      }
+      pageButton.addEventListener("click", () => {
+        currentPage = i;
+        populateTable(currentFilter, currentPage);
       });
+      paginationContainer.appendChild(pageButton);
+    }
+
+    // Next Button
+    if (page < totalPages) {
+      const nextButton = document.createElement("button");
+      nextButton.innerText = "Next >>";
+      nextButton.classList.add("btn", "btn-outline-primary", "mx-2");
+      nextButton.addEventListener("click", () => {
+        currentPage++;
+        populateTable(currentFilter, currentPage);
+      });
+      paginationContainer.appendChild(nextButton);
+    }
+  }
+
+  // Filter Buttons with Pagination
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+      currentFilter = button.dataset.filter;
+      currentPage = 1; // Reset to first page when changing filters
+      populateTable(currentFilter, currentPage);
     });
-  
-    // Initial Table Population
-    populateTable();
   });
+
+  // Open Modal with Unit Details
+  function openModal(unit) {
+    const unitDescription = document.getElementById("unitDescription");
+    unitDescription.innerHTML = unit.description
+      .filter(desc => desc.trim() !== "") // Remove empty descriptions
+      .map(desc => `<li>${desc}</li>`)
+      .join("");
+  
+    // Set Unit Information in Hidden Input
+    unitInput.value = unit.unit;
+  
+    // Show Modal
+    unitModal.show();
+  }
+
+  // Add Pagination Container in HTML
+  const paginationDiv = document.createElement("div");
+  paginationDiv.id = "pagination";
+  paginationDiv.classList.add("text-center", "mt-4");
+  document.querySelector("#availability .container").appendChild(paginationDiv);
+
+  // Function to open Floor Plan Modal
+  function openFloorPlanModal(image) {
+    const floorPlanImage = document.getElementById("floorPlanImage");
+    floorPlanImage.src = `assets/images/${image}`; // Set the image source
+
+    // Show the modal
+    const floorPlanModal = new bootstrap.Modal(document.getElementById("floorPlanModal"));
+    floorPlanModal.show();
+  } 
+
+  // Initial Table Population
+  populateTable();
+});
