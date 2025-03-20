@@ -33,7 +33,7 @@ html {
 .navbar-brand {
   font-family: 'QuorthonDarkIV', serif;
   font-weight: 700;
-  font-size: 2.2rem; /* Slightly smaller for better balance */
+  font-size: 3rem; /* Slightly smaller for better balance */
   color: var(--text-color) !important;
   display: flex;
   flex-direction: column;
