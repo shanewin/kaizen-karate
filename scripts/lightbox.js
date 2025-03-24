@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       lightboxImage.style.display = 'block';
       lightboxVideo.style.display = 'none';
     }
-    lightboxCaption.textContent = media.caption;
+    lightboxCaption.innerHTML = media.caption;
     lightbox.style.display = 'flex';
   }
 

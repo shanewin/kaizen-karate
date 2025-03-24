@@ -645,11 +645,10 @@ box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Subtle yellow glow */
 /* Luxury Section */
 #luxury {
   position: relative;
-  height: 100vh; /* Full screen height */
-  overflow: hidden; /* Prevents any scrollbars */
+  height: 100vh;
+  overflow: hidden;
 }
 
-/* Full-Width Video */
 #luxury .video-container {
   position: absolute;
   top: 0;
@@ -661,7 +660,7 @@ box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Subtle yellow glow */
 #luxury .luxury-video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the video covers the entire section */
+  object-fit: cover;
 }
 
 .luxury-overlay {
@@ -673,9 +672,10 @@ box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Subtle yellow glow */
   text-align: center;
   z-index: 1;
   background-color: rgba(220, 216, 204, 0.8);
-  padding: 40px;
+  padding: 30px;
   border-radius: 10px;
-  margin: 0 auto;
+  width: 80%;
+  max-width: 1200px;
 }
 
 .luxury-overlay h2 {
@@ -690,25 +690,112 @@ box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Subtle yellow glow */
   margin-bottom: 2rem;
 }
 
-.luxury-overlay .btn {
-  font-size: 1.2rem;
+/* Thumbnail Grid */
+.thumbnail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+  max-width: 300px; /* Constrain overall grid width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thumbnail-item {
+  position: relative;
+  cursor: pointer;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 1/1;
+  width: 100%; /* Will respect parent grid sizing */
+}
+
+.thumbnail-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.thumbnail-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Smaller label for compact thumbnails */
+.thumbnail-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 6px;
+  font-size: 0.8rem;
   font-weight: 600;
-  padding: 12px 30px;
-  background-color: var(--button-color); /* Use your button color */
-  color: #ffffff; /* Ensure white text */
-  border: none;
-  border-radius: 25px; /* Rounded corners */
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
 }
 
-.luxury-overlay .btn:hover {
-  background-color: #756b6b; /* Slightly darker on hover */
-  transform: scale(1.05); /* Subtle hover effect */
+/* Media Modal */
+#mediaModal .modal-content {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
 }
 
-.luxury-overlay .btn:active {
-  background-color: #625b5b; /* Darker shade on click */
-  transform: scale(0.98); /* Slight click effect */
+#mediaModal .carousel-item {
+  height: 70vh;
+}
+
+#mediaModal .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#mediaModal .carousel-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#mediaCaption {
+  font-size: 1.2rem;
+  padding: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .thumbnail-grid {
+    gap: 10px;
+    max-width: 260px;
+  }
+  
+  .luxury-overlay {
+    padding: 20px;
+  }
+
+  .thumbnail-label {
+    font-size: 0.7rem;
+    padding: 4px;
+  }
+  
+  .luxury-overlay h2 {
+    font-size: 2rem;
+  }
+
+  .thumbnail-item img {
+    height: 100px;
+  }
+  
+  .luxury-overlay p {
+    font-size: 1.1rem;
+  }
+  
+  #mediaModal .carousel-item {
+    height: 50vh;
+  }
 }
 
 

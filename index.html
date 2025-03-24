@@ -94,16 +94,20 @@
         <div class="col-lg-4 d-flex flex-column">
             <!-- Panel 1 -->
             <div class="panel flex-grow-1 position-relative" 
-                 data-media='[{"type": "image", "src": "assets/images/panel1.jpg", "caption": "Sweeping Living Rooms"}, 
-                             {"type": "video", "src": "assets/videos/living-1-panel.mp4", "caption": "Sweeping Living Rooms"},
-                             {"type": "image", "src": "assets/images/live-2.jpg","caption": "Sweeping Living Rooms"},
-                             {"type": "video", "src": "assets/videos/living-room.mp4", "caption": "Sweeping Living Rooms"}]'>
-              <img src="assets/images/panel1.jpg" alt="Panel 1" class="img-fluid w-100">
+                data-media='[
+                    {
+                      "type": "video",
+                      "src": "assets/videos/coworking.mp4",
+                      "caption": "Collaborative workspace"
+                    }
+                ]'>
+              <img src="assets/images/coworking-1.png" alt="Panel 1" class="img-fluid w-100">
               <div class="panel-text">
-                <h3>Spacious Living</h3>
+                <h3>Coworking Space</h3>
                 <p>Click for more <span class="icon">→</span></p>
               </div>
             </div>
+
           
             <!-- Panel 2 -->
             <div class="panel flex-grow-1 position-relative mb-3" 
@@ -112,9 +116,9 @@
                               {"type": "image", "src": "assets/images/bedroom2.jpg", "caption": "Serene Bedrooms"},
                               {"type": "video", "src": "assets/videos/bedroom2.mp4", "caption": "Serene Bedrooms"}
                               ]'>
-              <img src="assets/images/panel2.jpg" alt="Panel 2" class="img-fluid w-100">
+              <img src="assets/images/fitness-center.png" alt="Panel 2" class="img-fluid w-100">
               <div class="panel-text">
-                <h3>Restful Nights</h3>
+                <h3>Fitness Center</h3>
                 <p>Click for more <span class="icon">→</span></p>
               </div>
             </div>
@@ -145,9 +149,6 @@
               </div>
               <!-- Caption -->
               <div class="lightbox-caption" id="lightbox-caption"></div>
-              <!-- Navigation Arrows -->
-              <button class="lightbox-nav prev">&#10094;</button>
-              <button class="lightbox-nav next">&#10095;</button>
               <!-- Close Button -->
               <span class="close-btn">&times;</span>
             </div>
@@ -187,43 +188,85 @@
 
 
 
-  <section id="luxury" class="py-5">
-    <div class="video-container">
-      <video autoplay muted loop class="luxury-video">
-        <source src="assets/videos/rooftop-features.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="luxury-overlay text-center">
-        <h2>Experience Luxury Living</h2>
-        <p>Discover our state-of-the-art amenities and breathtaking views.</p>
-        <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#galleryModal">See More</button>
+<section id="luxury" class="py-5">
+  <div class="video-container">
+    <video autoplay muted loop class="luxury-video">
+      <source src="assets/videos/rooftop-features.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="luxury-overlay text-center">
+      <h2>Experience Luxury Living</h2>
+      <p>Discover our state-of-the-art amenities and breathtaking views.</p>
+      
+      <!-- Thumbnail Grid -->
+      <div class="thumbnail-grid">
+        <!-- Living Room Thumbnail -->
+        <div class="thumbnail-item" 
+             data-media='[{"type": "image", "src": "assets/images/panel1.jpg", "caption": "Sweeping Living Rooms"}, 
+                         {"type": "video", "src": "assets/videos/living-1-panel.mp4", "caption": "Sweeping Living Rooms"},
+                         {"type": "image", "src": "assets/images/live-2.jpg","caption": "Sweeping Living Rooms"},
+                         {"type": "video", "src": "assets/videos/living-room.mp4", "caption": "Sweeping Living Rooms"}]'>
+          <img src="assets/images/panel1.jpg" alt="Living Rooms" class="img-fluid">
+          <div class="thumbnail-label">Living Rooms</div>
+        </div>
+        
+        <!-- Bedrooms Thumbnail -->
+        <div class="thumbnail-item" 
+             data-media='[{"type": "image", "src": "assets/images/bed-1.jpg", "caption": "Luxurious Bedrooms"}, 
+                         {"type": "video", "src": "assets/videos/bedroom-tour.mp4", "caption": "Bedroom Suite"},
+                         {"type": "image", "src": "assets/images/bed-2.jpg","caption": "Master Bedroom"}]'>
+          <img src="assets/images/bed-1.jpg" alt="Bedrooms" class="img-fluid">
+          <div class="thumbnail-label">Bedrooms</div>
+        </div>
+        
+        <!-- Kitchens Thumbnail -->
+        <div class="thumbnail-item" 
+             data-media='[{"type": "image", "src": "assets/images/kitchen-1.jpg", "caption": "Gourmet Kitchens"}, 
+                         {"type": "video", "src": "assets/videos/kitchen-features.mp4", "caption": "Chef's Kitchen"},
+                         {"type": "image", "src": "assets/images/kitchen-2.jpg","caption": "Modern Appliances"}]'>
+          <img src="assets/images/kitchen-1.jpg" alt="Kitchens" class="img-fluid">
+          <div class="thumbnail-label">Kitchens</div>
+        </div>
+        
+        <!-- Bathrooms Thumbnail -->
+        <div class="thumbnail-item" 
+             data-media='[{"type": "image", "src": "assets/images/bath-1.jpg", "caption": "Spa-like Bathrooms"}, 
+                         {"type": "video", "src": "assets/videos/bathroom.mp4", "caption": "Master Bathroom"},
+                         {"type": "image", "src": "assets/images/bath-2.jpg","caption": "Marble Finishes"}]'>
+          <img src="assets/images/bath-1.jpg" alt="Bathrooms" class="img-fluid">
+          <div class="thumbnail-label">Bathrooms</div>
+        </div>
       </div>
     </div>
-  </section>
-  
-  <!-- Photo Gallery Modal -->
-<div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  </div>
+</section>
+
+<!-- Media Gallery Modal -->
+<div class="modal fade" id="mediaModal" tabindex="-1" aria-labelledby="mediaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
+        <h5 class="modal-title" id="mediaModalLabel">Gallery</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <!-- Bootstrap Carousel -->
-        <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner" id="carouselImages">
-            <!-- Images will be inserted dynamically here -->
+        <!-- Media Carousel -->
+        <div id="mediaCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner" id="carouselMedia">
+            <!-- Media items will be inserted dynamically here -->
           </div>
-          <!-- Carousel Controls -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#mediaCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#mediaCarousel" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
         </div>
+      </div>
+      <div class="modal-footer">
+        <p id="mediaCaption" class="text-center w-100"></p>
       </div>
     </div>
   </div>
@@ -411,32 +454,6 @@
         </div>
       </div>
 
-
-      <!-- Coworking Space Panel -->
-      <div class="col-lg-6">
-        <div class="amenity-panel">
-          <div class="amenity-video-container">
-            <video autoplay muted loop class="amenity-video">
-              <source src="assets/videos/coworking-space.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="amenity-content">
-            <h3>Elevate Your Productivity in the Coworking Space</h3>
-            <p class="amenity-summary">For those who work from home or need a productive escape, the Coworking Space at 151 Carlton Avenue offers a sprawling 3,120 SF workspace designed for focus and collaboration.</p>
-            <button class="btn btn-primary toggle-details">View Details</button>
-            <div class="amenity-details">
-              <p><strong>Key Features:</strong></p>
-              <ul>
-                <li>Expansive Work Area: 3,120 SF of thoughtfully designed coworking space.</li>
-                <li>Flexible Workspaces: Includes private booths, communal desks, and lounge seating.</li>
-                <li>Premium Finishes: Modern LED lighting and high-end materials create an inspiring atmosphere.</li>
-                <li>Tech-Ready Setup: Strategically placed outlets and data connections for seamless productivity.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
 
             <!-- Rooftop Panel -->
             <div class="col-lg-6">
@@ -752,6 +769,7 @@
   <script src="scripts/availability.js"></script>
   <script src="scripts/lightbox.js"></script>
   <script src="scripts/amenities.js"></script>
+  <script src="scripts/thumbnails.js"></script>
   <script src="scripts/popup-form.js" defer></script>
   
   <script>
