@@ -11,6 +11,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $message = htmlspecialchars($_POST['message']);
   $unit = htmlspecialchars($_POST['unit']); // Get the unit information
 
+  // ✅ Server-side validation
+  if (empty($firstName) || empty($lastName) || empty($email) || empty($phone)) {
+    echo "<p>Please fill out all required fields.</p>";
+    exit;
+  }
+
   // Send email
   $to = "your-email@example.com"; // Replace with your email address
   $subject = "New Interest Form Submission for Unit: $unit"; // Include unit in subject

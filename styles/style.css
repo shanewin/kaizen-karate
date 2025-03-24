@@ -9,6 +9,7 @@ html {
     --text-color: #000000;
     --background-color: #dcd8cc;
     --button-color: #8a7f7f;
+    --required-color: #d4af37; 
   }
   
   /* Apply colors to the body */
@@ -504,19 +505,26 @@ html {
   color: var(--text-color); /* Use accent color for the lead paragraph */
 }
 
-#about .btn-primary {
-  background-color: var(--button-color); /* Button color */
-  border: none;
-  padding: 10px 30px;
+#about .btn {
+  min-width: 200px;
+  text-align: center;
+  padding: 10px 20px;
   font-size: 1rem;
-  color: var(--base-color); /* Light text for the button */
-  transition: background-color 0.3s ease;
 }
 
-#about .btn-primary:hover {
-  background-color: var(--accent-color); /* Hover effect for the button */
-  color: var(--text-color); /* Black text on hover */
+#about .btn-outline-primary {
+  border: 2px solid var(--button-color);
+  color: var(--button-color);
+  background-color: transparent;
+  transition: all 0.3s ease;
 }
+
+#about .btn-outline-primary:hover {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border-color: var(--accent-color);
+}
+
   
 
   /* Sections (About, Luxury, Contact) */
@@ -544,11 +552,16 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 .contact-section h2 {
 font-family: QuorthonDarkIV;
 font-weight: 700;
-color: var(--base-color);
 font-size: 2.5rem;
 margin-bottom: 30px;
 text-align: center;
+color: var(--text-color); 
 }
+
+.contact-section p {
+  color: var(--text-color);
+}
+
 
 /* Contact Form */
 .contact-form {
@@ -580,22 +593,32 @@ box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Subtle yellow glow */
 }
 
 /* Submit Button */
+
 .contact-form .btn-primary {
-background-color: var(--base-color);
-color: var(--accent-color);
-border: none;
-font-weight: 600;
-padding: 12px 20px;
-border-radius: 25px;
-transition: all 0.3s ease;
-display: block;
-width: 100%; /* Full-width button */
-text-align: center;
+  background-color: var(--button-color); /* use the richer muted color from your palette */
+  color: #fff; /* white text for contrast */
+  border: none;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  display: block;
+  width: 100%; /* Full-width button */
+  text-align: center;
 }
 
+/* Submit Button - Hover State */
 .contact-form .btn-primary:hover {
-background-color: #543c1f; /* Darker brown */
-color: var(--accent-color);
+  background-color: #543c1f; /* Rich brown hover */
+  color: var(--accent-color); /* Accent text on hover */
+}
+
+
+.required {
+  color: var(--required-color);
+  font-weight: bold;
+  margin-left: 3px;
+  font-size: 1.2rem;
 }
 
 /* Responsive Design */
@@ -1232,22 +1255,17 @@ font-weight: 500;
 text-decoration: none;
 }
 
+/* Updated Footer Styles */
 .footer-links a:hover {
-color: #e6b800; /* Darker yellow on hover */
+  color: var(--button-color); /* Replace #e6b800 with your button color */
 }
 
-/* Social Media Icons */
-.social-icon {
-display: inline-block;
-margin: 0 8px;
-font-size: 1.5rem;
-color: var(--accent-color);
-transition: color 0.3s ease;
+.doorway-logo {
+  height: 30px; 
+  width: auto;
+  max-width: 100%;
 }
 
-.social-icon:hover {
-color: #e6b800; /* Darker yellow */
-}
 
 /* Bottom Footer */
 .footer-bottom {
@@ -1280,6 +1298,9 @@ opacity: 0.8;
       font-size: 1.2rem; /* Smaller font size for mobile */
     }
 }
+
+
+
 
 .gallery-container {
   display: flex;
@@ -1329,4 +1350,9 @@ opacity: 0.8;
   background-color: #ccc; /* Disabled button color */
   cursor: not-allowed;
   transform: none;
+}
+
+
+input.is-invalid {
+  border-color: red;
 }
