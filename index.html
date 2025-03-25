@@ -141,15 +141,26 @@
   <div id="popupForm" class="popup-form-container">
     <div class="popup-form-content">
       <span class="close-btn" id="closePopupBtn">&times;</span>
-      <h2>Stay Updated</h2>
-      <p>Be the first to know about leasing updates at 151 Carlton Avenue.</p>
-      <form id="emailSignupForm" action="YOUR_FORM_HANDLER_URL" method="POST">
-        <input type="email" name="email" placeholder="Enter your email" required>
-        <button type="submit" class="btn btn-primary">Subscribe</button>
-      </form>
+      
+      <!-- Form Section (shown by default) -->
+      <div id="formSection">
+        <h2>Stay Updated</h2>
+        <p>Be the first to know about leasing updates at 151 Carlton Avenue.</p>
+        <form id="emailSignupForm" action="email-list.php" method="POST">
+          <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES) ?>">
+          <input type="email" name="email" placeholder="Enter your email" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+      
+      <!-- Thank You Section (hidden by default) -->
+      <div id="thankYouSection" style="display: none;">
+        <h2>Thank You!</h2>
+        <p>Thank you for joining the official email list of The Garrison!</p>
+        <p>We will keep you up-to-date with all the latest news and updates.</p>
+      </div>
     </div>
   </div>
-
 
 
 <!-- About Section -->
@@ -394,21 +405,21 @@
         <div class="amenity-panel">
           <div class="amenity-video-container">
             <video autoplay muted loop class="amenity-video">
-              <source src="assets/videos/fitness-center-loop.mp4" type="video/mp4">
+              <source src="assets/videos/fitness-center-hero1.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
           <div class="amenity-content">
-            <h3>Stay Fit & Energized at 151 Carlton Avenue</h3>
-            <p class="amenity-summary">Our state-of-the-art 1,016 SF fitness center offers a spacious and modern workout environment designed for both comfort and performance.</p>
+            <h3>Stay Fit & Energized at The Garrison</h3>
+            <p class="amenity-summary">Our state-of-the-artfitness center offers a spacious and modern workout environment designed for both comfort and performance.</p>
             <button class="btn btn-primary toggle-details">View Details</button>
             <div class="amenity-details">
               <p><strong>Key Features:</strong></p>
               <ul>
                 <li>Expansive Space: Plenty of room for cardio, strength training, and functional workouts.</li>
-                <li>Open Concept Design: 486 SF of open-to-above space enhances airiness and natural light.</li>
+                <li>Open Concept Design: Enhances airiness and natural light.</li>
                 <li>Premium Flooring & Finishes: High-quality materials ensure durability and comfort.</li>
-                <li>Dedicated Bike Storage: 413 SF bike storage room for secure and easy access.</li>
+                <li>Dedicated Bike Storage: Bike storage room for secure and easy access.</li>
                 <li>Nearby Restrooms: Multiple restrooms located conveniently close to the fitness center.</li>
                 <li>Modern Lighting & Ventilation: Designed for optimal airflow and comfort during workouts.</li>
               </ul>
@@ -428,7 +439,7 @@
                   </video>
                 </div>
                 <div class="amenity-content">
-                  <h3>Experience Breathtaking Views from the Rooftop at 151 Carlton Avenue</h3>
+                  <h3>Experience Breathtaking Views from the Rooftop at The Garrison</h3>
                   <p class="amenity-summary">The rooftop at 151 Carlton Avenue offers a luxurious outdoor retreat with stunning city views, high-end finishes, and thoughtfully designed amenities.</p>
                   <button class="btn btn-primary toggle-details">View Details</button>
                   <div class="amenity-details">
@@ -446,25 +457,55 @@
               </div>
             </div>
 
-      <!-- Add more panels for other amenities as needed -->
+            <!-- Coworking Space Panel -->
+      <div class="col-lg-6">
+        <div class="amenity-panel">
+          <div class="amenity-video-container">
+            <video autoplay muted loop class="amenity-video">
+              <source src="assets/videos/coworking.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="amenity-content">
+            <h3>Elevate Your Productivity in the Coworking Space</h3>
+            <p class="amenity-summary">For those who work from home or need a productive escape, the Coworking Space at The Garrison offers a sprawling workspace designed for focus and collaboration.</p>
+            <button class="btn btn-primary toggle-details">View Details</button>
+            <div class="amenity-details">
+              <p><strong>Key Features:</strong></p>
+              <ul>
+                <li>Expansive Work Area: Thoughtfully designed coworking space.</li>
+                <li>Flexible Workspaces: Includes private booths, communal desks, and lounge seating.</li>
+                <li>Premium Finishes: Modern LED lighting and high-end materials create an inspiring atmosphere.</li>
+                <li>Tech-Ready Setup: Strategically placed outlets and data connections for seamless productivity.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </div>
 </section>
 
 
-<section class="map-section">
-  <div class="container-fluid">
-    <div class="row">
-      <!-- Left Column: Neighborhood & Carousel -->
-      <div class="col-lg-6 neighborhood-content">
-        <h2 class="neighborhood-heading">Discover Fort Greene</h2>
-        <p class="neighborhood-text">
-          Nestled in <strong>Fort Greene</strong>, one of Brooklyn’s most vibrant neighborhoods, The Garrison is steps away from iconic parks, renowned schools, and excellent transit options.
-        </p>
+<section id="neighborhood" class="neighborhood-section py-5">
 
-        <!-- Carousel Section -->
-        <div id="neighborhoodCarousel" class="carousel slide neighborhood-carousel" data-bs-ride="carousel">
-          <div class="carousel-inner">
+  <div class="container">
+    <div class="row align-items-stretch">
+      
+      <!-- Left Column: Intro + Carousel -->
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <header class="mb-4">
+          <h2 class="section-title">Discover Fort Greene</h2>
+          <p class="section-description">
+            Nestled in <strong>Fort Greene</strong>, one of Brooklyn’s most vibrant neighborhoods, The Garrison is steps away from iconic parks, renowned schools, and excellent transit options.
+          </p>
+        </header>
+
+        <!-- Bootstrap Carousel -->
+        <div id="carouselNeighborhood" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner rounded shadow-sm">
             <div class="carousel-item active">
               <img src="assets/images/neighborhood/neighborhood-1.jpg" class="d-block w-100" alt="Fort Greene Park">
             </div>
@@ -475,117 +516,106 @@
               <img src="assets/images/neighborhood/neighborhood-3.jpg" class="d-block w-100" alt="Brooklyn Streets">
             </div>
           </div>
-
-          <!-- Carousel Controls -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#neighborhoodCarousel" data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselNeighborhood" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#neighborhoodCarousel" data-bs-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselNeighborhood" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
           </button>
         </div>
       </div>
 
       <!-- Right Column: Map -->
-      <div class="col-lg-6 map-container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.048853038659!2d-73.9699876845947!3d40.68964497933206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25ba6b3c1b0a5%3A0x8f1a7c1b0e1b0e1b!2s151%20Carlton%20Ave%2C%20Brooklyn%2C%20NY%2011205!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
-          width="600"
-          height="450"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy">
-        </iframe>
+      <div class="col-lg-6">
+        <div class="map-wrapper h-100">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.048853038659!2d-73.9699876845947!3d40.68964497933206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25ba6b3c1b0a5%3A0x8f1a7c1b0e1b0e1b!2s151%20Carlton%20Ave%2C%20Brooklyn%2C%20NY%2011205!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+            class="w-100 h-100 rounded shadow-sm"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+          </iframe>
+        </div>
       </div>
     </div>
 
-    <!-- New Row: Tabs and Tab Content -->
+    <!-- Tabs Section -->
     <div class="row mt-5">
       <div class="col-12">
+        <div class="text-center mb-4">
+          <div class="nav nav-pills justify-content-center" id="infoTabs" role="tablist">
+            <button class="btn btn-outline-tab active" id="transport-tab" data-bs-toggle="pill" data-bs-target="#transport" type="button" role="tab" aria-controls="transport" aria-selected="true">
+              Transport
+            </button>
+            <button class="btn btn-outline-tab" id="schools-tab" data-bs-toggle="pill" data-bs-target="#schools" type="button" role="tab" aria-controls="schools" aria-selected="false">
+              Schools
+            </button>
+            <button class="btn btn-outline-tab" id="colleges-tab" data-bs-toggle="pill" data-bs-target="#colleges" type="button" role="tab" aria-controls="colleges" aria-selected="false">
+              Colleges
+            </button>
+            <button class="btn btn-outline-tab" id="parks-tab" data-bs-toggle="pill" data-bs-target="#parks" type="button" role="tab" aria-controls="parks" aria-selected="false">
+              Parks
+            </button>
+            <button class="btn btn-outline-tab" id="museums-tab" data-bs-toggle="pill" data-bs-target="#museums" type="button" role="tab" aria-controls="museums" aria-selected="false">
+              Museums
+            </button>
+          </div>
+        </div>
         
-        <!-- Tabs for Filtering Info -->
         
-        <!-- Updated Tabs -->
-        <ul class="nav nav-pills mb-3 justify-content-center" id="info-tabs" role="tablist">
-          <li class="nav-item">
-            <button class="nav-link active" id="transport-tab" data-bs-toggle="pill" data-bs-target="#transport" type="button" role="tab">
-              <i class="fas fa-subway me-2"></i>Transport
-            </button>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link" id="schools-tab" data-bs-toggle="pill" data-bs-target="#schools" type="button" role="tab">
-              <i class="fas fa-school me-2"></i>Schools
-            </button>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link" id="colleges-tab" data-bs-toggle="pill" data-bs-target="#colleges" type="button" role="tab">
-              <i class="fas fa-graduation-cap me-2"></i>Colleges
-            </button>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link" id="parks-tab" data-bs-toggle="pill" data-bs-target="#parks" type="button" role="tab">
-              <i class="fas fa-tree me-2"></i>Parks
-            </button>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link" id="museums-tab" data-bs-toggle="pill" data-bs-target="#museums" type="button" role="tab">
-              <i class="fas fa-landmark me-2"></i>Museums
-            </button>
-          </li>
-        </ul>
 
-        <!-- Updated Tab Content with Subway Icons -->
-        <div class="tab-content" id="info-tabs-content">
+        <div class="tab-content" id="infoTabsContent">
           <div class="tab-pane fade show active" id="transport" role="tabpanel">
-            <ul class="info-list">
-              <li><i class="fas fa-subway"></i><span class="subway-icon G">G</span> at Clinton-Washington Avs – 0.43 miles</li>
-              <li><i class="fas fa-subway"></i><span class="subway-icon G">G</span> at Fulton St – 0.45 miles</li>
-              <li><i class="fas fa-subway"></i><span class="subway-icon C">C</span> at Lafayette Av – 0.46 miles</li>
-              <li><i class="fas fa-subway"></i><span class="subway-icon B">B</span> <span class="subway-icon Q">Q</span> <span class="subway-icon R">R</span> at DeKalb Av – 0.5 miles</li>
-              <li><i class="fas fa-subway"></i><span class="subway-icon">2</span> <span class="subway-icon">3</span> <span class="subway-icon">4</span> <span class="subway-icon">5</span> at Nevins St – 0.53 miles</li>
+            <ul class="list-unstyled info-list">
+              <li><span class="subway-icon G">G</span> Clinton-Washington Avs – 0.43 miles</li>
+              <li><span class="subway-icon G">G</span> Fulton St – 0.45 miles</li>
+              <li><span class="subway-icon C">C</span> Lafayette Av – 0.46 miles</li>
+              <li><span class="subway-icon B">B</span> <span class="subway-icon Q">Q</span> <span class="subway-icon R">R</span> DeKalb Av – 0.5 miles</li>
+              <li><span class="subway-icon _2">2</span> <span class="subway-icon _3">3</span> <span class="subway-icon _4">4</span> <span class="subway-icon _5">5</span> Nevins St – 0.53 miles</li>
             </ul>
-            <a href="https://www.google.com/maps/search/subway+stations+near+151+Carlton+Avenue,+Brooklyn,+NY" target="_blank" class="cta-link">
-              <i class="fas fa-map-marked-alt"></i> View subway lines on Google Maps
+            
+            <a href="https://www.google.com/maps/search/subway+stations+near+151+Carlton+Avenue,+Brooklyn,+NY" target="_blank">
+              View subway lines on Google Maps
             </a>
           </div>
 
           <div class="tab-pane fade" id="schools" role="tabpanel">
-            <ul class="info-list">
-              <li><i class="fas fa-school"></i> P.S. 020 Clinton Hill (PK-5)</li>
-            </ul>
-            <p class="disclaimer">*School attendance zone boundaries are subject to change. Check with the district for accuracy.</p>
+              <ul class="list-unstyled info-list">
+                <li><i class="fas fa-school me-2"></i> P.S. 020 Clinton Hill (Grades PK–5)</li>
+              </ul>
+              <small class="text-muted d-block mt-2">*School attendance zone boundaries are subject to change. Please verify with the local district.</small>
           </div>
 
           <div class="tab-pane fade" id="colleges" role="tabpanel">
-            <ul class="info-list">
-              <li><i class="fas fa-graduation-cap"></i> St. Joseph's College – 0.31 miles</li>
-              <li><i class="fas fa-graduation-cap"></i> Long Island University - Brooklyn – 0.46 miles</li>
-              <li><i class="fas fa-graduation-cap"></i> Pratt Institute – 0.51 miles</li>
-              <li><i class="fas fa-graduation-cap"></i> ASA College – 0.72 miles</li>
+            <ul class="list-unstyled info-list">
+              <li><i class="fas fa-graduation-cap me-2"></i> St. Joseph's College – 0.31 miles</li>
+              <li><i class="fas fa-graduation-cap me-2"></i> Long Island University - Brooklyn – 0.46 miles</li>
+              <li><i class="fas fa-graduation-cap me-2"></i> Pratt Institute – 0.51 miles</li>
+              <li><i class="fas fa-graduation-cap me-2"></i> ASA College – 0.72 miles</li>
             </ul>
           </div>
 
           <div class="tab-pane fade" id="parks" role="tabpanel">
-            <ul class="info-list">
-              <li><i class="fas fa-tree"></i> Fort Greene Park – 0.08 miles</li>
-              <li><i class="fas fa-tree"></i> Commodore Barry Park – 0.36 miles</li>
-              <li><i class="fas fa-tree"></i> Underwood Park – 0.44 miles</li>
+            <ul class="list-unstyled info-list">
+              <li><i class="fas fa-tree me-2"></i> Fort Greene Park – 0.08 miles</li>
+              <li><i class="fas fa-tree me-2"></i> Commodore Barry Park – 0.36 miles</li>
+              <li><i class="fas fa-tree me-2"></i> Underwood Park – 0.44 miles</li>
             </ul>
           </div>
 
           <div class="tab-pane fade" id="museums" role="tabpanel">
-            <ul class="info-list">
-              <li><i class="fas fa-landmark"></i> MoCADA – 0.55 miles</li>
-              <li><i class="fas fa-landmark"></i> Brooklyn Historical Society – 1.05 miles</li>
-              <li><i class="fas fa-landmark"></i> Brooklyn Museum – 1.59 miles</li>
-            </ul>
+             <ul class="list-unstyled info-list">
+                <li><i class="fas fa-landmark me-2"></i> MoCADA – 0.55 miles</li>
+                <li><i class="fas fa-landmark me-2"></i> Brooklyn Historical Society – 1.05 miles</li>
+                <li><i class="fas fa-landmark me-2"></i> Brooklyn Museum – 1.59 miles</li>
+              </ul>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 </section>
+
 
 
 
@@ -748,6 +778,7 @@
   <script src="scripts/availability.js"></script>
   <script src="scripts/lightbox.js"></script>
   <script src="scripts/amenities.js"></script>
+  <script src="scripts/email-list.js"></script>
   <script src="scripts/popup-form.js" defer></script>
   
   <script>

@@ -98,7 +98,7 @@ html {
 .nav-link.waitlist-link {
   background-color: var(--accent-color);
   color: var(--text-color) !important;
-  border: 2px solid transparent; /* Add a border for distinction */
+  border: 1px solid transparent; /* Add a border for distinction */
 }
 
 .nav-link.waitlist-link:hover {
@@ -406,6 +406,17 @@ html {
 
 .close-btn:hover {
   color: #8a7f7f;
+}
+
+.popup-form-content input.error {
+  border: 1px solid #ff6b6b;
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
 }
 
 
@@ -1220,336 +1231,190 @@ box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Subtle yellow glow */
 }
 
 
+
 /* Map Section - Enhanced Styling */
-.map-section {
-  background-color: #ffffff; 
-  padding: 80px 0;
-  position: relative;
-  overflow: hidden;
+/* === Neighborhood Section === */
+.neighborhood-section {
+  background-color: #fff;
+  padding: 4rem 0;
 }
 
-.map-section::before {
-  content: none;
-}
-
-/* Neighborhood Content */
-.neighborhood-content {
-  padding: 0 40px;
-  position: relative;
-}
-
-.neighborhood-heading {
-  font-size: 2.5rem;
+/* Headings & Intro */
+.section-title {
+  font-size: 2rem;
   font-weight: 700;
-  color: var(--text-color);
-  margin-bottom: 20px;
-  line-height: 1.2;
-  position: relative;
-  display: inline-block;
+  margin-bottom: 1rem;
+  color: #333;
 }
 
-.neighborhood-heading::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background-color: var(--button-color);
+.section-description {
+  font-size: 1.05rem;
+  color: #555;
 }
 
-.neighborhood-text {
-  font-size: 1.1rem;
-  color: var(--text-color);
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-/* Carousel Section - Enhanced */
-.neighborhood-carousel {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto 30px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  position: relative;
-  transition: transform 0.3s ease;
-}
-
-.neighborhood-carousel:hover {
-  transform: translateY(-5px);
-}
-
-.carousel-inner,
-.carousel-item {
-  height: 350px; /* Increased height */
-}
-
-.carousel-item img {
-  width: 100%;
-  height: 100%;
+/* Carousel */
+.carousel-inner img {
   object-fit: cover;
-  transition: transform 0.5s ease;
+  height: 350px;
+  border-radius: 0.5rem;
 }
 
-.carousel-item:hover img {
-  transform: scale(1.03);
+/* Map */
+.map-wrapper iframe {
+  min-height: 350px;
+  border-radius: 0.5rem;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-  width: 50px;
-  height: 50px;
-  background-color: rgba(138, 127, 127, 0.8);
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.neighborhood-carousel:hover .carousel-control-prev,
-.neighborhood-carousel:hover .carousel-control-next {
-  opacity: 1;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: brightness(0) invert(1);
-}
-
-/* Tabs - Enhanced Styling */
-.nav-pills {
-  margin-bottom: 30px;
-  position: relative;
-}
-
-.nav-pills::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, var(--button-color) 50%, transparent 100%);
-}
-
-.nav-pills .nav-link {
-  font-size: 1rem;
+/* Tabs */
+.btn-outline-tab {
+  border: 2px solid var(--button-color);
+  color: var(--button-color);
+  background-color: transparent;
+  margin: 0 6px 10px;
+  padding: 8px 18px;
   font-weight: 600;
-  color: var(--text-color);
-  padding: 12px 24px;
-  margin: 0 8px;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  background-color: rgba(220, 216, 204, 0.7);
-  border: 1px solid var(--accent-color);
-  position: relative;
-  overflow: hidden;
+  border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
-.nav-pills .nav-link::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: all 0.5s ease;
-}
-
-.nav-pills .nav-link:hover::before {
-  left: 100%;
-}
-
-.nav-pills .nav-link.active {
+.btn-outline-tab:hover {
   background-color: var(--button-color);
-  color: white;
-  border-color: var(--button-color);
-  box-shadow: 0 4px 15px rgba(138, 127, 127, 0.3);
+  color: #fff;
 }
 
-/* Info List - Enhanced */
+.btn-outline-tab.active {
+  background-color: var(--button-color);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Tab Content */
 .tab-content {
-  text-align: center;
-  padding: 20px;
-  background-color: rgba(248, 249, 250, 0.9);
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  margin: 0 auto;
-  max-width: 800px;
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
+/* Info List */
 .info-list {
   list-style: none;
   padding: 0;
-  margin: 0 auto;
-  max-width: 600px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
+  margin: 0;
 }
 
 .info-list li {
-  font-size: 1rem;
-  color: var(--text-color);
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  text-align: left;
-  border-left: 3px solid var(--button-color);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 0.75rem 1rem;
+  border-left: 4px solid #333;
+  background: #fff;
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+  color: #333;
 }
 
-.info-list li:hover {
-  transform: translateX(5px);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.info-list li i {
-  margin-right: 12px;
-  font-size: 1.2rem;
-  min-width: 25px;
-  text-align: center;
-}
-
-/* Subway Icons */
 .subway-icon {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  line-height: 24px;
-  margin-right: 8px;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-}
-
-.subway-icon.G { background-color: #6CBE45; }
-.subway-icon.C { background-color: #0039A6; }
-.subway-icon.B { background-color: #FF6319; }
-.subway-icon.Q { background-color: #FF6319; }
-.subway-icon.R { background-color: #FF6319; }
-.subway-icon["2"] { background-color: #EE352E; }
-.subway-icon["3"] { background-color: #EE352E; }
-.subway-icon["4"] { background-color: #00933C; }
-.subway-icon["5"] { background-color: #00933C; }
-
-/* CTA Link - Enhanced */
-.cta-link {
   display: inline-flex;
   align-items: center;
-  margin-top: 20px;
-  font-weight: 600;
-  color: var(--button-color);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  padding: 10px 20px;
-  border-radius: 30px;
-  background-color: rgba(138, 127, 127, 0.1);
-}
-
-.cta-link i {
-  margin-right: 8px;
-  transition: transform 0.3s ease;
-}
-
-.cta-link:hover {
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 6px;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
   color: white;
-  background-color: var(--button-color);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1;
+}
+
+/* IND (blue, orange, etc.) */
+.subway-icon.A,
+.subway-icon.C,
+.subway-icon.E {
+  background-color: #0039A6;
+}
+
+.subway-icon.B,
+.subway-icon.D,
+.subway-icon.F,
+.subway-icon.M {
+  background-color: #FF6319;
+}
+
+.subway-icon.G {
+  background-color: #6CBE45;
+}
+
+.subway-icon.L {
+  background-color: #A7A9AC;
+  color: #000;
+}
+
+.subway-icon.N,
+.subway-icon.Q,
+.subway-icon.R,
+.subway-icon.W {
+  background-color: #FCCC0A;
+  color: #000;
+}
+
+/* IRT (1-7 lines) */
+.subway-icon._1,
+.subway-icon._2,
+.subway-icon._3 {
+  background-color: #EE352E;
+}
+
+.subway-icon._4,
+.subway-icon._5,
+.subway-icon._6 {
+  background-color: #00933C;
+}
+
+.subway-icon._7 {
+  background-color: #B933AD;
+}
+
+.info-list i {
+  color: var(--button-color);
+  min-width: 20px;
+}
+
+
+.info-list li i.fa-landmark {
+  color: #7c4dff; /* deep violet or anything culturally rich */
+}
+
+
+.info-list li i.fa-tree {
+  color: #4CAF50; /* soft park green */
+}
+
+
+
+/* Optional link style inside tabs */
+.tab-pane a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+.tab-pane a:hover {
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(138, 127, 127, 0.3);
 }
 
-.cta-link:hover i {
-  transform: translateX(3px);
-}
-
-/* Disclaimer */
-.disclaimer {
-  font-size: 0.85rem;
-  color: var(--text-color);
-  margin-top: 15px;
-  opacity: 0.7;
-  font-style: italic;
-}
-
-/* Map Container - Enhanced */
-.map-container {
-  height: 500px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.map-container:hover {
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-}
-
-.map-container iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-  .map-section .row {
-    flex-direction: column;
-  }
-
-  .neighborhood-content {
-    padding: 20px;
-    text-align: center;
-  }
-
-  .neighborhood-heading {
-    font-size: 2rem;
-  }
-
-  .neighborhood-heading::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .neighborhood-text {
-    font-size: 1rem;
-  }
-
-  .map-container {
-    height: 350px;
-    margin-top: 20px;
-  }
-
-  .nav-pills {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .nav-pills .nav-link {
-    margin: 5px;
-    padding: 8px 16px;
-    font-size: 0.9rem;
-    background-color: rgba(248, 249, 250, 0.9); /* Very light gray */
-    border: 1px solid rgba(0, 0, 0, 0.1); /* More subtle border */
-  }
-
-  .info-list {
-    grid-template-columns: 1fr;
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-inner img,
+  .map-wrapper iframe {
+    height: 250px;
   }
 }
+
+
 
 
 /* Footer Styles */
