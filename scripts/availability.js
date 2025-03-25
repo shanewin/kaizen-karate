@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "647 SF",
       outdoor: "",
       view: "Myrtle veiw corner",
-      images: ["units/8E.jpg", "units/8E.jpg"],
+      images: ["units/3D.jpg", "units/3D.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Myrtle veiw corner.", ""],
     },
     {
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "743 SF",
       outdoor: "",
       view: "Myrtle view",
-      images: ["units/3H.jpg", "units/3H.jpg"],
+      images: ["units/3G.jpg", "units/3G.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Myrtle view.", ""],
     },
     {
@@ -526,7 +526,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "537 SF",
       outdoor: "Balcony",
       view: "Carlton view",
-      images: ["units/3B.jpg", "units/3B.jpg"],
+      images: ["units/3C.jpg", "units/3C.jpg"],
       description: ["Spacious 1 bedroom with modern finishes.", "Carlton view.", "Balcony."],
     },
     {
@@ -537,7 +537,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "647 SF",
       outdoor: "2 Balconies",
       view: "Myrtle veiw corner",
-      images: ["units/3C.jpg", "units/3C.jpg"],
+      images: ["units/3D.jpg", "units/3D.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Myrtle veiw corner.", "2 Balconies."],
     },
     {
@@ -570,7 +570,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "743 SF",
       outdoor: "Balcony",
       view: "Myrtle view",
-      images: ["units/8F.jpg", "units/8F.jpg"],
+      images: ["units/3G.jpg", "units/3G.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Myrtle view.", "Balcony."],
     },
     {
@@ -581,7 +581,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "742 SF",
       outdoor: "Balcony",
       view: "Rear veiw",
-      images: ["units/3G.jpg", "units/3G.jpg"],
+      images: ["units/3H.jpg", "units/3H.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Rear veiw.", "Balcony."],
     },
     {
@@ -609,7 +609,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       unit: "Unit 8B",
       type: "Studio-bed",
-      bedBath: "Studio Bed / 1 Bath",
+      bedBath: "Studio / 1 Bath",
       rent: "$3,800.00",
       squareFootage: "306 SF",
       outdoor: "Terrace",
@@ -664,7 +664,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       unit: "Unit 8G",
       type: "Studio-bed",
-      bedBath: "Studio Bed / 1 Bath",
+      bedBath: "Studio / 1 Bath",
       rent: "$3,500.00",
       squareFootage: "310 SF",
       outdoor: "Terrace",
