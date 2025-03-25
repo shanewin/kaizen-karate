@@ -104,55 +104,33 @@
               <img src="assets/images/coworking-1.png" alt="Panel 1" class="img-fluid w-100">
               <div class="panel-text">
                 <h3>Coworking Space</h3>
-                <p>Click for more <span class="icon">→</span></p>
+                <p>Click to see more <span class="icon">→</span></p>
               </div>
             </div>
 
           
             <!-- Panel 2 -->
             <div class="panel flex-grow-1 position-relative mb-3" 
-                 data-media='[{"type": "image", "src": "assets/images/panel2.jpg", "caption": "Serene Bedrooms"},
-                              {"type": "video", "src": "assets/videos/bedroom1.mp4", "caption": "Serene Bedrooms"},
-                              {"type": "image", "src": "assets/images/bedroom2.jpg", "caption": "Serene Bedrooms"},
-                              {"type": "video", "src": "assets/videos/bedroom2.mp4", "caption": "Serene Bedrooms"}
+                 data-media='[{"type": "video", "src": "assets/videos/fitness-center-hero1.mp4", "caption": "Deluxe Fitness Center"}
                               ]'>
               <img src="assets/images/fitness-center.png" alt="Panel 2" class="img-fluid w-100">
               <div class="panel-text">
                 <h3>Fitness Center</h3>
-                <p>Click for more <span class="icon">→</span></p>
+                <p>Click to see more <span class="icon">→</span></p>
               </div>
             </div>
           
             <!-- Panel 3 (Fix apostrophe issue) -->
             <div class="panel flex-grow-1 position-relative" 
-                 data-media='[{"type": "image", "src": "assets/images/panel3.jpg", "caption": "Chef&apos;s Dream Kitchen"}, 
-                             {"type": "video", "src": "assets/videos/kitchen1.mp4", "caption": "Kitchen Video"}]'>
-              <img src="assets/images/panel3.jpg" alt="Panel 3" class="img-fluid w-100">
+                 data-media='[{"type": "video", "src": "assets/videos/rooftop-amenities.mp4", "caption": "Rooftop Terrace"}]'>
+              <img src="assets/images/rooftop.png" alt="Rooftop Terrace" class="img-fluid w-100">
               <div class="panel-text">
-                <h3>Chef's Dream Kitchen</h3>
-                <p>Click for more <span class="icon">→</span></p>
+                <h3>Rooftop Terrace</h3>
+                <p>Click to see more <span class="icon">→</span></p>
               </div>
             </div>
           </div>
-          
-
-        <!-- Lightbox Container -->
-          <div id="lightbox" class="lightbox">
-            <div class="lightbox-content">
-              <!-- Media Container -->
-              <div class="media-container">
-                <video controls autoplay muted loop class="lightbox-media" id="lightbox-video">
-                  <source src="" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-                <img src="" alt="" class="lightbox-media" id="lightbox-image" style="display: none;">
-              </div>
-              <!-- Caption -->
-              <div class="lightbox-caption" id="lightbox-caption"></div>
-              <!-- Close Button -->
-              <span class="close-btn">&times;</span>
-            </div>
-          </div>
+        
 
 
       </div>
@@ -187,14 +165,14 @@
 </section>
 
 
-
+<!-- Luxury Living Section -->
 <section id="luxury" class="py-5">
   <div class="video-container">
     <video autoplay muted loop class="luxury-video">
       <source src="assets/videos/rooftop-features.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <div class="luxury-overlay text-center">
+    <div class="luxury-overlay text-center"> 
       <h2>Experience Luxury Living</h2>
       <p>Discover our state-of-the-art amenities and breathtaking views.</p>
       
@@ -202,30 +180,32 @@
       <div class="thumbnail-grid">
         <!-- Living Room Thumbnail -->
         <div class="thumbnail-item" 
-             data-media='[{"type": "image", "src": "assets/images/panel1.jpg", "caption": "Sweeping Living Rooms"}, 
-                         {"type": "video", "src": "assets/videos/living-1-panel.mp4", "caption": "Sweeping Living Rooms"},
-                         {"type": "image", "src": "assets/images/live-2.jpg","caption": "Sweeping Living Rooms"},
-                         {"type": "video", "src": "assets/videos/living-room.mp4", "caption": "Sweeping Living Rooms"}]'>
+             data-media='[ {"type": "video", "src": "assets/videos/living-1-panel.mp4", "caption": "Spacious Living Rooms"},
+                          {"type": "image", "src": "assets/images/panel1.jpg", "caption": "Spacious Living Rooms"},
+                          {"type": "video", "src": "assets/videos/living-room.mp4", "caption": "Spacious Living Rooms"},
+                         {"type": "image", "src": "assets/images/live-2.jpg","caption": "Spacious Living Rooms"}
+                         ]'>
           <img src="assets/images/panel1.jpg" alt="Living Rooms" class="img-fluid">
-          <div class="thumbnail-label">Living Rooms</div>
+          <div class="thumbnail-label">Living Room</div>
         </div>
         
         <!-- Bedrooms Thumbnail -->
         <div class="thumbnail-item" 
-             data-media='[{"type": "image", "src": "assets/images/bed-1.jpg", "caption": "Luxurious Bedrooms"}, 
-                         {"type": "video", "src": "assets/videos/bedroom-tour.mp4", "caption": "Bedroom Suite"},
-                         {"type": "image", "src": "assets/images/bed-2.jpg","caption": "Master Bedroom"}]'>
-          <img src="assets/images/bed-1.jpg" alt="Bedrooms" class="img-fluid">
-          <div class="thumbnail-label">Bedrooms</div>
+             data-media='[{"type": "video", "src": "assets/videos/bedroom1.mp4", "caption": "Luxurious Bedrooms"},
+                          {"type": "image", "src": "assets/images/panel2.jpg", "caption": "Luxurious Bedrooms"},
+                          {"type": "video", "src": "assets/videos/bedroom2.mp4", "caption": "Luxurious Bedrooms"},
+                         {"type": "image", "src": "assets/images/bedroom2.jpg","caption": "Luxurious Bedrooms"}]'>
+          <img src="assets/images/panel2.jpg" alt="Bedrooms" class="img-fluid">
+          <div class="thumbnail-label">Bedroom</div>
         </div>
         
         <!-- Kitchens Thumbnail -->
         <div class="thumbnail-item" 
-             data-media='[{"type": "image", "src": "assets/images/kitchen-1.jpg", "caption": "Gourmet Kitchens"}, 
-                         {"type": "video", "src": "assets/videos/kitchen-features.mp4", "caption": "Chef's Kitchen"},
-                         {"type": "image", "src": "assets/images/kitchen-2.jpg","caption": "Modern Appliances"}]'>
-          <img src="assets/images/kitchen-1.jpg" alt="Kitchens" class="img-fluid">
-          <div class="thumbnail-label">Kitchens</div>
+             data-media='[{"type": "video", "src": "assets/videos/kitchen1.mp4", "caption": "State-of-the-Art Kitchens"},
+                          {"type": "image", "src": "assets/images/panel3.jpg", "caption": "State-of-the-Art Kitchens"}
+                         ]'>
+          <img src="assets/images/panel3.jpg" alt="Kitchen" class="img-fluid">
+          <div class="thumbnail-label">Kitchen</div>
         </div>
         
         <!-- Bathrooms Thumbnail -->
@@ -233,44 +213,36 @@
              data-media='[{"type": "image", "src": "assets/images/bath-1.jpg", "caption": "Spa-like Bathrooms"}, 
                          {"type": "video", "src": "assets/videos/bathroom.mp4", "caption": "Master Bathroom"},
                          {"type": "image", "src": "assets/images/bath-2.jpg","caption": "Marble Finishes"}]'>
-          <img src="assets/images/bath-1.jpg" alt="Bathrooms" class="img-fluid">
-          <div class="thumbnail-label">Bathrooms</div>
+          <img src="assets/images/bathroom-shower.png" alt="Bathroom" class="img-fluid">
+          <div class="thumbnail-label">Bathroom</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Media Gallery Modal -->
-<div class="modal fade" id="mediaModal" tabindex="-1" aria-labelledby="mediaModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="mediaModalLabel">Gallery</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <!-- Media Carousel -->
-        <div id="mediaCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner" id="carouselMedia">
-            <!-- Media items will be inserted dynamically here -->
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#mediaCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#mediaCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <p id="mediaCaption" class="text-center w-100"></p>
-      </div>
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <div class="lightbox-content">
+    <div class="media-container">
+      <video controls autoplay muted loop class="lightbox-media" id="lightbox-video">
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <img src="" alt="" class="lightbox-media" id="lightbox-image" style="display: none;">
+    </div>
+
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+    <span class="close-btn">&times;</span>
+
+    <!-- 🔽 These are the arrows -->
+    <div class="lightbox-nav-wrapper">
+      <button class="lightbox-nav prev">&#10094;</button>
+      <button class="lightbox-nav next">&#10095;</button>
     </div>
   </div>
 </div>
+
 
 
 
@@ -280,7 +252,6 @@
     <h2 class="text-center mb-4">Availability</h2>
     <p class="text-center mb-5">Imagine your ideal NYC living experience... Then find and capture it at The Garrison. Explore our expansive collection of one-, two-, and three-bedroom residences.</p>
 
-    
     <div class="text-center mb-4">
       <button class="btn btn-outline-primary filter-btn active" data-filter="all">All</button>
       <button class="btn btn-outline-primary filter-btn" data-filter="1-bed">1 Bed</button>
@@ -304,49 +275,45 @@
         </tbody>
       </table>
     </div>
-      <!-- Pagination Controls -->
-      <div id="pagination" class="text-center mt-4">
-        <!-- Next and Previous buttons will be dynamically inserted here -->
-      </div>
+    <!-- Pagination Controls -->
+    <div id="pagination" class="text-center mt-4">
+      <!-- Next and Previous buttons will be dynamically inserted here -->
+    </div>
   </div>
 </section>
 
-    <!-- Floor Plan Modal -->
-    <div class="modal fade" id="floorPlanModal" tabindex="-1" aria-labelledby="floorPlanModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="floorPlanModalLabel">Floor Plan</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body text-center">
-            <img id="floorPlanImage" src="" alt="Floor Plan" class="img-fluid"> <!-- Full-size image -->
-          </div>
-        </div>
+<!-- Floor Plan Modal -->
+<div class="modal fade" id="floorPlanModal" tabindex="-1" aria-labelledby="floorPlanModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="floorPlanModalLabel">Floor Plan</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="floorPlanImage" src="" alt="Floor Plan" class="img-fluid">
       </div>
     </div>
-        
-    
-  <!-- Modal -->
-  <div class="modal fade" id="unitModal" tabindex="-1" aria-labelledby="unitModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="unitModalLabel">Unit Details</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-center">
-          <div class="mt-4">
-            <h4>Description</h4>
-            <ul id="unitDescription" class="mt-3"></ul> <!-- Description list -->
-          </div>
-        </div>
+  </div>
+</div>
 
-      <!-- Form should be inside modal-content but outside modal-body -->
+<!-- Unit Details Modal -->
+<div class="modal fade" id="unitModal" tabindex="-1" aria-labelledby="unitModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="unitModalLabel">Unit Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <div class="mt-4">
+          <h4>Description</h4>
+          <ul id="unitDescription" class="mt-3"></ul>
+        </div>
+      </div>
       <div class="modal-footer">
         <form action="form-handler.php" method="POST" class="w-100 px-3">
           <input type="hidden" id="unitInput" name="unit">
-
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName" class="form-label">First Name</label>
@@ -357,44 +324,26 @@
               <input type="text" class="form-control" id="lastName" name="lastName" required>
             </div>
           </div>
-
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="email" class="form-label">Email</label>
               <input type="email" class="form-control email-input" id="email-modal" name="email" required>
-
             </div>
             <div class="col-md-6 mb-3">
               <label for="phone" class="form-label">Phone Number</label>
-              <input 
-                type="tel" 
-                class="form-control phone-input" 
-                id="phone-modal" 
-                name="phone" 
-                required 
-                placeholder="(123) 456-7890" 
-                maxlength="14">
+              <input type="tel" class="form-control phone-input" id="phone-modal" name="phone" required placeholder="(123) 456-7890" maxlength="14">
             </div>
           </div>
-
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="moveInDate" class="form-label">Move-In Date</label>
               <input type="date" class="form-control" id="moveInDate" name="moveInDate" required>
             </div>
-
             <div class="col-md-6 mb-3">
               <label for="budget" class="form-label">Budget</label>
-              <input 
-                type="text" 
-                class="form-control budget-input" 
-                id="budget-contact" 
-                name="budget" 
-                required 
-                placeholder="$0">
+              <input type="text" class="form-control budget-input" id="budget-contact" name="budget" required placeholder="$0">
             </div>
           </div>
-
           <div class="mb-3">
             <label for="hearAboutUs" class="form-label">How Did You Hear About Us?</label>
             <select class="form-select" id="hearAboutUs" name="hearAboutUs" required>
@@ -405,20 +354,34 @@
               <option value="Advertisement">Advertisement</option>
             </select>
           </div>
-
           <div class="mb-3">
             <label for="message" class="form-label">Message (Optional)</label>
             <textarea class="form-control" id="message" name="message" rows="3"></textarea>
           </div>
-
           <button type="submit" class="btn btn-primary w-100">Submit</button>
         </form>
-      </div> <!-- END of modal-footer -->
-
-    </div> <!-- END of modal-content -->
+      </div>
+    </div>
   </div>
 </div>
 
+<!-- Leased Unit Modal -->
+<div class="modal fade" id="leasedModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Unit <span id="leasedUnitNumber"></span> is Leased</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>This unit is no longer available. Please contact us for information about similar available units.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <!-- Amenities Section -->
@@ -539,70 +502,86 @@
     <!-- New Row: Tabs and Tab Content -->
     <div class="row mt-5">
       <div class="col-12">
+        
         <!-- Tabs for Filtering Info -->
+        
+        <!-- Updated Tabs -->
         <ul class="nav nav-pills mb-3 justify-content-center" id="info-tabs" role="tablist">
           <li class="nav-item">
-            <button class="nav-link active" id="transport-tab" data-bs-toggle="pill" data-bs-target="#transport" type="button" role="tab">🚇 Transport</button>
+            <button class="nav-link active" id="transport-tab" data-bs-toggle="pill" data-bs-target="#transport" type="button" role="tab">
+              <i class="fas fa-subway me-2"></i>Transport
+            </button>
           </li>
           <li class="nav-item">
-            <button class="nav-link" id="schools-tab" data-bs-toggle="pill" data-bs-target="#schools" type="button" role="tab">🏫 Schools</button>
+            <button class="nav-link" id="schools-tab" data-bs-toggle="pill" data-bs-target="#schools" type="button" role="tab">
+              <i class="fas fa-school me-2"></i>Schools
+            </button>
           </li>
           <li class="nav-item">
-            <button class="nav-link" id="colleges-tab" data-bs-toggle="pill" data-bs-target="#colleges" type="button" role="tab">🎓 Colleges</button>
+            <button class="nav-link" id="colleges-tab" data-bs-toggle="pill" data-bs-target="#colleges" type="button" role="tab">
+              <i class="fas fa-graduation-cap me-2"></i>Colleges
+            </button>
           </li>
           <li class="nav-item">
-            <button class="nav-link" id="parks-tab" data-bs-toggle="pill" data-bs-target="#parks" type="button" role="tab">🌳 Parks</button>
+            <button class="nav-link" id="parks-tab" data-bs-toggle="pill" data-bs-target="#parks" type="button" role="tab">
+              <i class="fas fa-tree me-2"></i>Parks
+            </button>
           </li>
           <li class="nav-item">
-            <button class="nav-link" id="museums-tab" data-bs-toggle="pill" data-bs-target="#museums" type="button" role="tab">🏛 Museums</button>
+            <button class="nav-link" id="museums-tab" data-bs-toggle="pill" data-bs-target="#museums" type="button" role="tab">
+              <i class="fas fa-landmark me-2"></i>Museums
+            </button>
           </li>
         </ul>
 
-        <!-- Tab Content -->
+        <!-- Updated Tab Content with Subway Icons -->
         <div class="tab-content" id="info-tabs-content">
           <div class="tab-pane fade show active" id="transport" role="tabpanel">
             <ul class="info-list">
-              <li>🚇 <strong>G</strong> at Clinton-Washington Avs – 0.43 miles</li>
-              <li>🚇 <strong>G</strong> at Fulton St – 0.45 miles</li>
-              <li>🚇 <strong>C</strong> at Lafayette Av – 0.46 miles</li>
-              <li>🚇 <strong>B Q R</strong> at DeKalb Av – 0.5 miles</li>
-              <li>🚇 <strong>2 3 4 5</strong> at Nevins St – 0.53 miles</li>
+              <li><i class="fas fa-subway"></i><span class="subway-icon G">G</span> at Clinton-Washington Avs – 0.43 miles</li>
+              <li><i class="fas fa-subway"></i><span class="subway-icon G">G</span> at Fulton St – 0.45 miles</li>
+              <li><i class="fas fa-subway"></i><span class="subway-icon C">C</span> at Lafayette Av – 0.46 miles</li>
+              <li><i class="fas fa-subway"></i><span class="subway-icon B">B</span> <span class="subway-icon Q">Q</span> <span class="subway-icon R">R</span> at DeKalb Av – 0.5 miles</li>
+              <li><i class="fas fa-subway"></i><span class="subway-icon">2</span> <span class="subway-icon">3</span> <span class="subway-icon">4</span> <span class="subway-icon">5</span> at Nevins St – 0.53 miles</li>
             </ul>
-            <a href="https://www.google.com/maps/search/subway+stations+near+151+Carlton+Avenue,+Brooklyn,+NY" target="_blank" class="cta-link">🔍 View subway lines on Google Maps</a>
+            <a href="https://www.google.com/maps/search/subway+stations+near+151+Carlton+Avenue,+Brooklyn,+NY" target="_blank" class="cta-link">
+              <i class="fas fa-map-marked-alt"></i> View subway lines on Google Maps
+            </a>
           </div>
 
           <div class="tab-pane fade" id="schools" role="tabpanel">
             <ul class="info-list">
-              <li>🏫 P.S. 020 Clinton Hill (PK-5)</li>
+              <li><i class="fas fa-school"></i> P.S. 020 Clinton Hill (PK-5)</li>
             </ul>
             <p class="disclaimer">*School attendance zone boundaries are subject to change. Check with the district for accuracy.</p>
           </div>
 
           <div class="tab-pane fade" id="colleges" role="tabpanel">
             <ul class="info-list">
-              <li>🎓 St. Joseph's College – 0.31 miles</li>
-              <li>🎓 Long Island University - Brooklyn – 0.46 miles</li>
-              <li>🎓 Pratt Institute – 0.51 miles</li>
-              <li>🎓 ASA College – 0.72 miles</li>
+              <li><i class="fas fa-graduation-cap"></i> St. Joseph's College – 0.31 miles</li>
+              <li><i class="fas fa-graduation-cap"></i> Long Island University - Brooklyn – 0.46 miles</li>
+              <li><i class="fas fa-graduation-cap"></i> Pratt Institute – 0.51 miles</li>
+              <li><i class="fas fa-graduation-cap"></i> ASA College – 0.72 miles</li>
             </ul>
           </div>
 
           <div class="tab-pane fade" id="parks" role="tabpanel">
             <ul class="info-list">
-              <li>🌳 Fort Greene Park – 0.08 miles</li>
-              <li>🌳 Commodore Barry Park – 0.36 miles</li>
-              <li>🌳 Underwood Park – 0.44 miles</li>
+              <li><i class="fas fa-tree"></i> Fort Greene Park – 0.08 miles</li>
+              <li><i class="fas fa-tree"></i> Commodore Barry Park – 0.36 miles</li>
+              <li><i class="fas fa-tree"></i> Underwood Park – 0.44 miles</li>
             </ul>
           </div>
 
           <div class="tab-pane fade" id="museums" role="tabpanel">
             <ul class="info-list">
-              <li>🏛 MoCADA – 0.55 miles</li>
-              <li>🏛 Brooklyn Historical Society – 1.05 miles</li>
-              <li>🏛 Brooklyn Museum – 1.59 miles</li>
+              <li><i class="fas fa-landmark"></i> MoCADA – 0.55 miles</li>
+              <li><i class="fas fa-landmark"></i> Brooklyn Historical Society – 1.05 miles</li>
+              <li><i class="fas fa-landmark"></i> Brooklyn Museum – 1.59 miles</li>
             </ul>
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -769,7 +748,6 @@
   <script src="scripts/availability.js"></script>
   <script src="scripts/lightbox.js"></script>
   <script src="scripts/amenities.js"></script>
-  <script src="scripts/thumbnails.js"></script>
   <script src="scripts/popup-form.js" defer></script>
   
   <script>

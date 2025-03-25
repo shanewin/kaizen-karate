@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Get all panels and the lightbox
-  const panels = document.querySelectorAll('.panel');
+  const mediaTriggers = document.querySelectorAll('.panel, .thumbnail-item');
   const lightbox = document.getElementById('lightbox');
   const lightboxContent = document.querySelector('.lightbox-content');
   const lightboxVideo = document.getElementById('lightbox-video');
   const lightboxImage = document.getElementById('lightbox-image');
   const lightboxCaption = document.querySelector('.lightbox-caption');
-  const closeBtn = document.querySelector('.close-btn');
+  const closeBtn = document.querySelector('#lightbox .close-btn');
   const prevBtn = document.querySelector('.lightbox-nav.prev');
   const nextBtn = document.querySelector('.lightbox-nav.next');
 
@@ -14,15 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentIndex = 0; // Index of the currently displayed media item
 
   // Add click event listeners to panels
-  panels.forEach(panel => {
-    panel.addEventListener('click', () => {
-      console.log('Panel clicked'); // Debugging
-      currentPanelMedia = JSON.parse(panel.getAttribute('data-media'));
+  mediaTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      console.log('Media trigger clicked'); // Debugging
+      currentPanelMedia = JSON.parse(trigger.getAttribute('data-media'));
       console.log('Media items:', currentPanelMedia); // Debugging
-      currentIndex = 0; // Start with the first media item
+      currentIndex = 0;
       openLightbox(currentIndex);
     });
   });
+  
 
   // Function to open the lightbox
   function openLightbox(index) {
@@ -40,6 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     lightboxCaption.innerHTML = media.caption;
     lightbox.style.display = 'flex';
+
+    const navButtons = document.querySelectorAll('.lightbox-nav');
+    if (currentPanelMedia.length > 1) {
+      navButtons.forEach(btn => btn.style.display = 'block');
+    } else {
+      navButtons.forEach(btn => btn.style.display = 'none');
+    }
   }
 
   // Function to close the lightbox
@@ -50,12 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to navigate to the previous media item
   function prevMedia() {
+    if (currentPanelMedia.length <= 1) return;
     currentIndex = (currentIndex - 1 + currentPanelMedia.length) % currentPanelMedia.length;
     openLightbox(currentIndex);
   }
-
-  // Function to navigate to the next media item
+  
   function nextMedia() {
+    if (currentPanelMedia.length <= 1) return;
     currentIndex = (currentIndex + 1) % currentPanelMedia.length;
     openLightbox(currentIndex);
   }
@@ -72,13 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Navigate to previous media item
   prevBtn.addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevent event from bubbling up to the lightbox
+    e.stopPropagation();
     prevMedia();
   });
-
-  // Navigate to next media item
+  
   nextBtn.addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevent event from bubbling up to the lightbox
+    e.stopPropagation();
     nextMedia();
   });
+  
 });

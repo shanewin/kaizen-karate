@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "647 SF",
       outdoor: "",
       view: "Myrtle veiw corner",
-      images: ["units/2E.jpg", "units/2E.jpg"],
+      images: ["units/8E.jpg", "units/8E.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Myrtle veiw corner.", ""],
     },
     {
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "HPD SF",
       outdoor: "HPD",
       view: "HPD",
-      images: ["units/2G.jpg", "units/2G.jpg"],
+      images: ["units/3G.jpg", "units/3G.jpg"],
       description: ["HPD unit.", "HPD.", "HPD."],
     },
     {
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "743 SF",
       outdoor: "",
       view: "Myrtle view",
-      images: ["units/2H.jpg", "units/2H.jpg"],
+      images: ["units/3H.jpg", "units/3H.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Myrtle view.", ""],
     },
     {
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "HPD SF",
       outdoor: "HPD",
       view: "HPD",
-      images: ["units/3F.jpg", "units/3F.jpg"],
+      images: ["units/8F.jpg", "units/8F.jpg"],
       description: ["HPD unit.", "HPD.", "HPD."],
     },
     {
@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "HPD SF",
       outdoor: "HPD",
       view: "HPD",
-      images: ["units/3I.jpg", "units/3I.jpg"],
+      images: ["units/2I.jpg", "units/2I.jpg"],
       description: ["HPD unit.", "HPD.", "HPD."],
     },
     {
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "765 SF",
       outdoor: "Balcony",
       view: "Rear veiw",
-      images: ["units/4A.jpg", "units/4A.jpg"],
+      images: ["units/3A.jpg", "units/3A.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Rear veiw.", "Balcony."],
     },
     {
@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "975 SF",
       outdoor: "2 Balconies",
       view: "Carlton view",
-      images: ["units/4B.jpg", "units/4B.jpg"],
+      images: ["units/3B.jpg", "units/3B.jpg"],
       description: ["Spacious 3 bedroom with modern finishes.", "Carlton view.", "2 Balconies."],
     },
     {
@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "537 SF",
       outdoor: "Balcony",
       view: "Carlton view",
-      images: ["units/4C.jpg", "units/4C.jpg"],
+      images: ["units/3C.jpg", "units/3C.jpg"],
       description: ["Spacious 1 bedroom with modern finishes.", "Carlton view.", "Balcony."],
     },
     {
@@ -283,7 +283,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "743 SF",
       outdoor: "Balcony",
       view: "Myrtle view",
-      images: ["units/4G.jpg", "units/4G.jpg"],
+      images: ["units/3G.jpg", "units/3G.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Myrtle view.", "Balcony."],
     },
     {
@@ -294,7 +294,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "742 SF",
       outdoor: "Balcony",
       view: "Rear veiw",
-      images: ["units/4H.jpg", "units/4H.jpg"],
+      images: ["units/3H.jpg", "units/3H.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Rear veiw.", "Balcony."],
     },
     {
@@ -316,8 +316,9 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "765 SF",
       outdoor: "Balcony",
       view: "Rear veiw",
-      images: ["units/5A.jpg", "units/5A.jpg"],
+      images: ["units/3A.jpg", "units/3A.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Rear veiw.", "Balcony."],
+      isLeased: true
     },
     {
       unit: "Unit 5B",
@@ -327,7 +328,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "975 SF",
       outdoor: "Balcony",
       view: "Carlton view",
-      images: ["units/5B.jpg", "units/5B.jpg"],
+      images: ["units/3B.jpg", "units/3B.jpg"],
       description: ["Spacious 3 bedroom with modern finishes.", "Carlton view.", "Balcony."],
     },
     {
@@ -338,7 +339,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "537 SF",
       outdoor: "Balcony",
       view: "Carlton view",
-      images: ["units/5C.jpg", "units/5C.jpg"],
+      images: ["units/3C.jpg", "units/3C.jpg"],
       description: ["Spacious 1 bedroom with modern finishes.", "Carlton view.", "Balcony."],
     },
     {
@@ -349,7 +350,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "647 SF",
       outdoor: "2 Balconies",
       view: "Myrtle veiw corner",
-      images: ["units/5D.jpg", "units/5D.jpg"],
+      images: ["units/3D.jpg", "units/3D.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Myrtle veiw corner.", "2 Balconies."],
     },
     {
@@ -382,7 +383,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "743 SF",
       outdoor: "Balcony",
       view: "Myrtle view",
-      images: ["units/5G.jpg", "units/5G.jpg"],
+      images: ["units/3G.jpg", "units/3G.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Myrtle view.", "Balcony."],
     },
     {
@@ -393,7 +394,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "742 SF",
       outdoor: "Balcony",
       view: "Rear veiw",
-      images: ["units/5H.jpg", "units/5H.jpg"],
+      images: ["units/3H.jpg", "units/3H.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Rear veiw.", "Balcony."],
     },
     {
@@ -415,7 +416,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "765 SF",
       outdoor: "Balcony",
       view: "Rear veiw",
-      images: ["units/6A.jpg", "units/6A.jpg"],
+      images: ["units/3A.jpg", "units/3A.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Rear veiw.", "Balcony."],
     },
     {
@@ -426,7 +427,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "975 SF",
       outdoor: "2 Balconies",
       view: "Carlton view",
-      images: ["units/6B.jpg", "units/6B.jpg"],
+      images: ["units/3B.jpg", "units/3B.jpg"],
       description: ["Spacious 3 bedroom with modern finishes.", "Carlton view.", "2 Balconies."],
     },
     {
@@ -437,7 +438,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "537 SF",
       outdoor: "Balcony",
       view: "Carlton view",
-      images: ["units/6C.jpg", "units/6C.jpg"],
+      images: ["units/3C.jpg", "units/3C.jpg"],
       description: ["Spacious 1 bedroom with modern finishes.", "Carlton view.", "Balcony."],
     },
     {
@@ -448,7 +449,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "647 SF",
       outdoor: "2 Balconies",
       view: "Myrtle veiw corner",
-      images: ["units/6D.jpg", "units/6D.jpg"],
+      images: ["units/4D.jpg", "units/4D.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Myrtle veiw corner.", "2 Balconies."],
     },
     {
@@ -459,7 +460,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "HPD SF",
       outdoor: "HPD",
       view: "HPD",
-      images: ["units/6E.jpg", "units/6E.jpg"],
+      images: ["units/8E.jpg", "units/8E.jpg"],
       description: ["HPD unit.", "HPD.", "HPD."],
     },
     {
@@ -470,7 +471,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "HPD SF",
       outdoor: "HPD",
       view: "HPD",
-      images: ["units/6F.jpg", "units/6F.jpg"],
+      images: ["units/8F.jpg", "units/8F.jpg"],
       description: ["HPD unit.", "HPD.", "HPD."],
     },
     {
@@ -481,7 +482,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "743 SF",
       outdoor: "Balcony",
       view: "Myrtle view",
-      images: ["units/6G.jpg", "units/6G.jpg"],
+      images: ["units/3G.jpg", "units/3G.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Myrtle view.", "Balcony."],
     },
     {
@@ -492,7 +493,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "742 SF",
       outdoor: "Balcony",
       view: "Rear veiw",
-      images: ["units/6H.jpg", "units/6H.jpg"],
+      images: ["units/3H.jpg", "units/3H.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Rear veiw.", "Balcony."],
     },
     {
@@ -503,7 +504,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "HPD SF",
       outdoor: "HPD",
       view: "HPD",
-      images: ["units/6I.jpg", "units/6I.jpg"],
+      images: ["units/2I.jpg", "units/2I.jpg"],
       description: ["HPD unit.", "HPD.", "HPD."],
     },
     {
@@ -525,7 +526,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "537 SF",
       outdoor: "Balcony",
       view: "Carlton view",
-      images: ["units/7B.jpg", "units/7B.jpg"],
+      images: ["units/3B.jpg", "units/3B.jpg"],
       description: ["Spacious 1 bedroom with modern finishes.", "Carlton view.", "Balcony."],
     },
     {
@@ -536,7 +537,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "647 SF",
       outdoor: "2 Balconies",
       view: "Myrtle veiw corner",
-      images: ["units/7C.jpg", "units/7C.jpg"],
+      images: ["units/3C.jpg", "units/3C.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Myrtle veiw corner.", "2 Balconies."],
     },
     {
@@ -547,7 +548,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "HPD SF",
       outdoor: "HPD",
       view: "HPD",
-      images: ["units/7D.jpg", "units/7D.jpg"],
+      images: ["units/3D.jpg", "units/3D.jpg"],
       description: ["HPD unit.", "HPD.", "HPD."],
     },
     {
@@ -569,7 +570,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "743 SF",
       outdoor: "Balcony",
       view: "Myrtle view",
-      images: ["units/7F.jpg", "units/7F.jpg"],
+      images: ["units/8F.jpg", "units/8F.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Myrtle view.", "Balcony."],
     },
     {
@@ -580,7 +581,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "742 SF",
       outdoor: "Balcony",
       view: "Rear veiw",
-      images: ["units/7G.jpg", "units/7G.jpg"],
+      images: ["units/3G.jpg", "units/3G.jpg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Rear veiw.", "Balcony."],
     },
     {
@@ -697,146 +698,253 @@ document.addEventListener("DOMContentLoaded", function () {
   
   const tableBody = document.getElementById("unit-table");
   const filterButtons = document.querySelectorAll(".filter-btn");
-  const unitModal = new bootstrap.Modal(document.getElementById("unitModal"));
-  const unitInput = document.getElementById("unitInput"); // Ensure this element exists in your HTML
-  const unitImage = document.getElementById("unitImage"); // Ensure this element exists in your HTML
+  
+  // Initialize modals
+  const unitModalEl = document.getElementById("unitModal");
+  const unitModal = unitModalEl ? new bootstrap.Modal(unitModalEl) : null;
+  
+  const floorPlanModalEl = document.getElementById("floorPlanModal");
+  const floorPlanModal = floorPlanModalEl ? new bootstrap.Modal(floorPlanModalEl) : null;
+  
+  const leasedModalEl = document.getElementById("leasedModal");
+  const leasedModal = leasedModalEl ? new bootstrap.Modal(leasedModalEl) : null;
 
+  // Other elements
+  const unitInput = document.getElementById("unitInput");
+  const unitDescription = document.getElementById("unitDescription");
+  const floorPlanImage = document.getElementById("floorPlanImage");
+  const leasedUnitNumber = document.getElementById("leasedUnitNumber");
+
+  // Pagination Variables
   let currentPage = 1;
   const rowsPerPage = 10;
   let currentFilter = "all";
 
-  // Populate Table with Pagination
+  // Helper Functions
+  function showLeasedPopup(unitNumber) {
+    if (leasedModal && leasedUnitNumber) {
+      leasedUnitNumber.textContent = unitNumber;
+      leasedModal.show();
+    }
+  }
+
+  function openModal(unit) {
+    if (!unitModal || !unitDescription || !unitInput) return;
+    
+    // Skip if unit is leased (shouldn't happen, but just in case)
+    if (unit.isLeased) {
+      showLeasedPopup(unit.unit);
+      return;
+    }
+
+    // Set unit details
+    unitDescription.innerHTML = unit.description
+      .filter(desc => desc.trim() !== "")
+      .map(desc => `<li>${desc}</li>`)
+      .join("");
+
+    unitInput.value = unit.unit;
+
+    // Show the modal
+    unitModal.show();
+  }
+
+  function openFloorPlanModal(image) {
+    if (!floorPlanModal || !floorPlanImage) return;
+    
+    floorPlanImage.src = `assets/images/${image}`;
+    floorPlanModal.show();
+  }
+
+  // Table Population
   function populateTable(filter = "all", page = 1) {
-    tableBody.innerHTML = ""; // Clear previous rows
+    tableBody.innerHTML = "";
 
-    // Filter units: Exclude HPD units & apply the selected filter
+    // Filter and paginate units
     const filteredUnits = units
-      .filter((unit) => unit.type !== "HPD") // Remove HPD units
-      .filter((unit) => filter === "all" || unit.type === filter); // Apply filter
+      .filter(unit => unit.type !== "HPD")
+      .filter(unit => filter === "all" || unit.type === filter);
 
-    // Pagination Logic
-    const startIndex = (page - 1) * rowsPerPage;
-    const endIndex = startIndex + rowsPerPage;
-    const paginatedUnits = filteredUnits.slice(startIndex, endIndex);
+    const paginatedUnits = filteredUnits.slice(
+      (page - 1) * rowsPerPage,
+      page * rowsPerPage
+    );
 
-    // Populate Table with Paginated Results
-    paginatedUnits.forEach((unit) => {
+    // Create table rows
+    paginatedUnits.forEach(unit => {
       const row = document.createElement("tr");
+      if (unit.isLeased) row.classList.add("leased-row");
+      
       row.innerHTML = `
         <td>${unit.unit}</td>
         <td>${unit.bedBath}</td>
         <td>${unit.outdoor}</td>
-        <td>${unit.rent}</td>
-        <td><button class="btn btn-sm view-floor-plan" data-images='${JSON.stringify(unit.images)}'>View</button></td>
+        <td>${unit.isLeased ? "LEASED" : unit.rent}</td>
+        <td>
+          <button class="btn btn-sm view-floor-plan" 
+                  data-images='${JSON.stringify(unit.images)}' 
+                  ${unit.isLeased ? 'disabled' : ''}>
+            View
+          </button>
+        </td>
       `;
-    
-      // Add click event to the row to open the unit modal
-      row.addEventListener("click", () => openModal(unit));
-    
-      // Prevent the "View" button from triggering the row click
-      const viewButton = row.querySelector(".view-floor-plan");
-      viewButton.addEventListener("click", (e) => {
-        e.stopPropagation(); // Stop the event from bubbling up to the row
-        const images = JSON.parse(viewButton.dataset.images);
-        openFloorPlanModal(images[0]); // Display the first image
+
+      // Row click handler
+      row.addEventListener("click", () => {
+        if (unit.isLeased) {
+          showLeasedPopup(unit.unit);
+        } else {
+          openModal(unit);
+        }
       });
-    
+
+      // Floor plan button handler
+      const viewButton = row.querySelector(".view-floor-plan");
+      if (viewButton && !unit.isLeased) {
+        viewButton.addEventListener("click", e => {
+          e.stopPropagation();
+          const images = JSON.parse(viewButton.dataset.images);
+          openFloorPlanModal(images[0]);
+        });
+      }
+
       tableBody.appendChild(row);
     });
 
-    // Update Pagination Controls
     updatePaginationControls(filteredUnits.length, page);
   }
 
-  // Update Pagination Controls
+  // Pagination Controls
   function updatePaginationControls(totalUnits, page) {
     const paginationContainer = document.getElementById("pagination");
-    paginationContainer.innerHTML = ""; // Clear previous buttons
-
+    paginationContainer.innerHTML = "";
     const totalPages = Math.ceil(totalUnits / rowsPerPage);
 
     // Previous Button
     if (page > 1) {
-      const prevButton = document.createElement("button");
-      prevButton.innerText = "<< Previous";
-      prevButton.classList.add("btn", "btn-outline-primary", "mx-2");
-      prevButton.addEventListener("click", () => {
-        currentPage--;
-        populateTable(currentFilter, currentPage);
-      });
+      const prevButton = createPaginationButton(
+        "<< Previous",
+        () => {
+          currentPage--;
+          populateTable(currentFilter, currentPage);
+        },
+        ["btn", "btn-outline-primary", "mx-2"]
+      );
       paginationContainer.appendChild(prevButton);
     }
 
     // Page Numbers
     for (let i = 1; i <= totalPages; i++) {
-      const pageButton = document.createElement("button");
-      pageButton.innerText = i;
-      pageButton.classList.add("btn", "btn-outline-primary", "mx-1");
-      if (i === page) {
-        pageButton.classList.add("active");
-      }
-      pageButton.addEventListener("click", () => {
-        currentPage = i;
-        populateTable(currentFilter, currentPage);
-      });
+      const classes = ["btn", "btn-outline-primary", "mx-1"];
+      if (i === page) classes.push("active");
+      
+      const pageButton = createPaginationButton(
+        i,
+        () => {
+          currentPage = i;
+          populateTable(currentFilter, currentPage);
+        },
+        classes
+      );
       paginationContainer.appendChild(pageButton);
     }
 
     // Next Button
     if (page < totalPages) {
-      const nextButton = document.createElement("button");
-      nextButton.innerText = "Next >>";
-      nextButton.classList.add("btn", "btn-outline-primary", "mx-2");
-      nextButton.addEventListener("click", () => {
-        currentPage++;
-        populateTable(currentFilter, currentPage);
-      });
+      const nextButton = createPaginationButton(
+        "Next >>",
+        () => {
+          currentPage++;
+          populateTable(currentFilter, currentPage);
+        },
+        ["btn", "btn-outline-primary", "mx-2"]
+      );
       paginationContainer.appendChild(nextButton);
     }
   }
 
-  // Filter Buttons with Pagination
-  filterButtons.forEach((button) => {
+  function createPaginationButton(text, onClick, classes) {
+    const button = document.createElement("button");
+    button.innerText = text;
+    button.classList.add(...classes);
+    button.addEventListener("click", onClick);
+    return button;
+  }
+
+  // Modal Functions
+  function openModal(unit) {
+    try {
+      // First check if modal elements exist
+      if (!unitModal || !unitDescription || !unitInput) {
+        console.error('Required modal elements not found');
+        return;
+      }
+  
+      // Set unit details
+      unitDescription.innerHTML = unit.description
+        .filter(desc => desc.trim() !== "")
+        .map(desc => `<li>${desc}</li>`)
+        .join("");
+  
+      unitInput.value = unit.unit;
+  
+      // Handle form state - NEW SIMPLIFIED VERSION
+      const form = document.querySelector("#unitModal form");
+      if (form) {
+        // Enable all form elements (in case they were previously disabled)
+        form.querySelectorAll("input, select, textarea, button").forEach(el => {
+          el.disabled = false;
+        });
+        
+        // Remove any leased-form class if present
+        form.classList.remove("leased-form");
+      }
+  
+      // Show the modal
+      unitModal.show();
+      
+    } catch (error) {
+      console.error('Error opening unit modal:', error);
+      // Fallback to alert if modal fails
+      alert('Unable to show unit details. Please try again.');
+    }
+  }
+  
+
+  function openFloorPlanModal(image, isLeased = false) {
+    floorPlanImage.src = `assets/images/${image}`;
+    
+    // Clear or create leased overlay
+    const modalBody = document.getElementById("floorPlanModal").querySelector(".modal-body");
+    const existingOverlay = modalBody.querySelector(".leased-overlay");
+    
+    if (existingOverlay) existingOverlay.remove();
+    if (isLeased) {
+      const overlay = document.createElement("div");
+      overlay.className = "leased-overlay";
+      overlay.innerHTML = '<div class="leased-text">LEASED</div>';
+      modalBody.appendChild(overlay);
+    }
+
+    floorPlanModal.show();
+  }
+
+  // Event Listeners
+  filterButtons.forEach(button => {
     button.addEventListener("click", () => {
-      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      filterButtons.forEach(btn => btn.classList.remove("active"));
       button.classList.add("active");
       currentFilter = button.dataset.filter;
-      currentPage = 1; // Reset to first page when changing filters
+      currentPage = 1;
       populateTable(currentFilter, currentPage);
     });
   });
 
-  // Open Modal with Unit Details
-  function openModal(unit) {
-    const unitDescription = document.getElementById("unitDescription");
-    unitDescription.innerHTML = unit.description
-      .filter(desc => desc.trim() !== "") // Remove empty descriptions
-      .map(desc => `<li>${desc}</li>`)
-      .join("");
-  
-    // Set Unit Information in Hidden Input
-    unitInput.value = unit.unit;
-  
-    // Show Modal
-    unitModal.show();
-  }
-
-  // Add Pagination Container in HTML
+  // Initialize
   const paginationDiv = document.createElement("div");
   paginationDiv.id = "pagination";
   paginationDiv.classList.add("text-center", "mt-4");
   document.querySelector("#availability .container").appendChild(paginationDiv);
-
-  // Function to open Floor Plan Modal
-  function openFloorPlanModal(image) {
-    const floorPlanImage = document.getElementById("floorPlanImage");
-    floorPlanImage.src = `assets/images/${image}`; // Set the image source
-
-    // Show the modal
-    const floorPlanModal = new bootstrap.Modal(document.getElementById("floorPlanModal"));
-    floorPlanModal.show();
-  } 
-
-  // Initial Table Population
+  
   populateTable();
 });
