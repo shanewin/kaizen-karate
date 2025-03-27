@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
       squareFootage: "647 SF",
       outdoor: "2 Balconies",
       view: "Myrtle veiw corner",
-      images: ["units/3D.jpg", "units/3D.jpg"],
+      images: ["units/3D.jpeg", "units/3D.jpeg"],
       description: ["Spacious 2 bedroom with modern finishes.", "Myrtle veiw corner.", "2 Balconies."],
     },
     {
