@@ -142,11 +142,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     tableBody.innerHTML = "";
 
-    // Filter and paginate units
-    const filteredUnits = units
-      .filter(unit => unit.type !== "HPD")
-      .filter(unit => filter === "all" || unit.type === filter.replace('-bed', ''));
+    const normalizedFilter = filter === "all" ? "all" : filter.replace('-bed', '');
 
+    // Filter units (exclude HPD + apply type filter)
+    const filteredUnits = units.filter(unit => {
+      const normalizedType = unit.type.trim().toLowerCase();
+      return normalizedType !== "hpd" &&  // Exclude HPD units
+            (normalizedFilter === "all" || normalizedType === normalizedFilter);
+    });
+
+    // Paginate and render...
     const paginatedUnits = filteredUnits.slice(
       (page - 1) * rowsPerPage,
       page * rowsPerPage
