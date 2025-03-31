@@ -99,7 +99,7 @@ if (empty($_SESSION['csrf_token'])) {
         <div class="col-lg-8 h-100 d-flex align-items-center justify-content-center position-relative">
           <div class="video-container">
             <video autoplay muted loop playsinline id="hero-video">
-              <source src="assets/videos/hero-video-5.mp4" type="video/mp4">
+              <source src="assets/videos/hero-video-6.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
