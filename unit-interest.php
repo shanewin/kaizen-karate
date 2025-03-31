@@ -43,11 +43,11 @@ if (!file_exists($rateLimitFile)) {
 
 $rateLimits = json_decode(file_get_contents($rateLimitFile), true) ?: [];
 
-if (isset($rateLimits[$ip]) && ($currentTime - $rateLimits[$ip] < $rateLimitDuration)) {
-  http_response_code(429);
-  echo json_encode(['error' => 'Please wait before submitting again.']);
-  exit;
-}
+// if (isset($rateLimits[$ip]) && ($currentTime - $rateLimits[$ip] < $rateLimitDuration)) {
+//   http_response_code(429);
+//   echo json_encode(['error' => 'Please wait before submitting again.']);
+//   exit;
+// }
 
 // Sanitize Input
 function clean($field) {

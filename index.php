@@ -798,7 +798,7 @@ if (empty($_SESSION['csrf_token'])) {
     </form>
     <div id="waitlistThankYou" class="waitlist-thankyou text-center">
       <h4>Thank you!</h4>
-      <p>You've been added to the wait list. We’ll contact you as soon as leasing opens.</p>
+      <p>You've been added to the wait list. We’ll contact you soon.</p>
     </div>
 
     

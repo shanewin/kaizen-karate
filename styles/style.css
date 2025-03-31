@@ -312,24 +312,39 @@ html {
   }
 
   .col-lg-4 {
-    padding: 0; /* Remove padding on mobile */
+    padding: 0 10px;
   }
 
   .panel {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    height: 250px; /* Fixed height instead of stretching to full height */
+    margin-bottom: 20px;
+  }
+
+  .panel img {
+    height: 100%;
+    object-fit: cover;
   }
 
   .panel-text {
-    padding: 10px; /* Less padding for mobile */
+    padding: 12px;
+    bottom: 0;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.5); /* Darker overlay for contrast on small screens */
   }
-
+  
   .panel-text h3 {
-    font-size: 1.1rem; /* Smaller font size for mobile */
+    font-size: 1.1rem;
+    margin-bottom: 5px;
   }
-
+  
   .panel-text p {
-    font-size: 0.8rem; /* Smaller font size for mobile */
+    font-size: 0.9rem;
+    line-height: 1.4;
+    opacity: 1;
+  }
+  
+  .panel-text .icon {
+    font-size: 1rem;
   }
 }
 
@@ -352,7 +367,7 @@ html {
 .popup-form-content {
   position: relative;
   background-color: white;
-  padding: 25px;
+  padding: 35px 25px 25px 25px;
   border-radius: 8px;
   text-align: center;
   width: 100%;
@@ -423,12 +438,21 @@ html {
 
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
+  top: -12px;
+  right: -12px;
+  font-size: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 28px;
+  text-align: center;
   cursor: pointer;
-  color: black;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: color 0.2s ease;
 }
+
 
 .close-btn:hover {
   color: #8a7f7f;
@@ -602,27 +626,34 @@ box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Subtle yellow glow */
 /* Wait List Thank You Message Styling */
 .waitlist-thankyou {
   display: none;
-  background-color: var(--background-color);
-  padding: 30px;
-  margin-top: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  background-color: var(--base-color);
+  padding: 40px 30px;
+  margin-top: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
   color: var(--text-color);
-  max-width: 800px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
 }
 
 .waitlist-thankyou h4 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
   color: var(--button-color);
-  margin-bottom: 10px;
+  margin-bottom: 16px;
+  font-family: 'QuorthonDarkIV', serif;
 }
 
 .waitlist-thankyou p {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 0;
 }
+
 
 
 /* Responsive Design */
@@ -1667,11 +1698,14 @@ input.is-invalid {
   font-weight: bold;
   color: var(--button-color);
   margin-bottom: 10px;
+  text-align: center;
 }
 
 #unitThankYou p {
   margin: 0;
   color: var(--text-color);
 }
+
+
 
 
