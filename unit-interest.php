@@ -6,7 +6,7 @@ header('X-Content-Type-Options: nosniff');
 header('X-Frame-Options: DENY');
 header('Content-Type: application/json');
 
-// Generate CSRF if missing
+// Initialize CSRF Token if missing
 if (empty($_SESSION['csrf_token'])) {
   $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   exit;
 }
 
-// Validate CSRF
+// Validate CSRF Token
 if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
   http_response_code(403);
   echo json_encode(['error' => 'Invalid CSRF token']);
@@ -27,8 +27,8 @@ if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST
 
 // Rate limiting
 $dataDir = __DIR__ . '/data/';
-$rateLimitFile = $dataDir . 'waitlist_rate_limits.txt';
-$submissionFile = $dataDir . 'waitlist_submissions.txt';
+$rateLimitFile = $dataDir . 'unit_rate_limits.txt';
+$submissionFile = $dataDir . 'unit_submissions.txt';
 $ip = $_SERVER['REMOTE_ADDR'];
 $currentTime = time();
 $rateLimitDuration = 300;
@@ -49,11 +49,12 @@ if (isset($rateLimits[$ip]) && ($currentTime - $rateLimits[$ip] < $rateLimitDura
   exit;
 }
 
-// Sanitize inputs
+// Sanitize Input
 function clean($field) {
   return htmlspecialchars(trim($_POST[$field] ?? ''), ENT_QUOTES);
 }
 
+$unit = clean('unit');
 $firstName = clean('firstName');
 $lastName = clean('lastName');
 $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
@@ -61,8 +62,6 @@ $phone = clean('phone');
 $moveInDate = clean('moveInDate');
 $budget = clean('budget');
 $hearAboutUs = clean('hearAboutUs');
-$unit = clean('unit');
-$unitType = clean('unitType');
 $message = clean('message');
 
 if (!$firstName || !$lastName || !$email || !$phone) {
@@ -71,15 +70,14 @@ if (!$firstName || !$lastName || !$email || !$phone) {
   exit;
 }
 
-// Log to file
+// Save to file
 $rateLimits[$ip] = $currentTime;
 file_put_contents($rateLimitFile, json_encode($rateLimits));
 
-$logEntry = implode('|', [
+$entry = implode('|', [
   date('Y-m-d H:i:s'),
   $ip,
   $unit,
-  $unitType,
   $firstName,
   $lastName,
   $email,
@@ -90,25 +88,25 @@ $logEntry = implode('|', [
   $message
 ]) . PHP_EOL;
 
-file_put_contents($submissionFile, $logEntry, FILE_APPEND);
+file_put_contents($submissionFile, $entry, FILE_APPEND);
 
 // ✅ Send email using native PHP mail()
 $to = 'thegarrison@doorway.nyc';
-$subject = 'New Wait List Submission';
+$subject = "New Inquiry for Unit: $unit";
 $headers = "From: info@thegarrison.nyc\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
 $body = <<<EOD
-New Wait List Inquiry:
+New Unit Interest Submission:
 
+Unit: $unit
 Name: $firstName $lastName
 Email: $email
 Phone: $phone
 Move-In Date: $moveInDate
 Budget: $budget
-Unit Type: $unitType
-How Did You Hear: $hearAboutUs
+How Did You Hear About Us: $hearAboutUs
 
 Message:
 $message

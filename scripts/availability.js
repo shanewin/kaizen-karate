@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const unitDescription = document.getElementById("unitDescription");
   const floorPlanImage = document.getElementById("floorPlanImage");
   const leasedUnitNumber = document.getElementById("leasedUnitNumber");
+  
 
   // Pagination Variables
   let currentPage = 1;
@@ -278,6 +279,9 @@ document.addEventListener("DOMContentLoaded", function () {
         .map(desc => `<li>${desc}</li>`)
         .join("");
       unitInput.value = unit.unit;
+      document.getElementById('unitTitleLabel').textContent = unit.unit || 'Unit';
+      document.getElementById('unitThankYouName').textContent = `Unit ${unit.unit}`;
+
       unitModal.show();
     } catch (error) {
       console.error('Error opening unit modal:', error);

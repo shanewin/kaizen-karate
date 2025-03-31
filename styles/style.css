@@ -350,6 +350,7 @@ html {
 }
 
 .popup-form-content {
+  position: relative;
   background-color: white;
   padding: 25px;
   border-radius: 8px;
@@ -358,6 +359,7 @@ html {
   max-width: 400px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+
 
 .popup-form-content h2 {
   color: black;
@@ -378,22 +380,45 @@ html {
   font-size: 1rem;
 }
 
-.popup-form-content button {
-  margin-top: 15px;
-  width: 100%;
-  padding: 12px;
+.popup-form-content .btn {
   background-color: var(--button-color);
   color: white;
   border: none;
   font-size: 1rem;
   font-weight: bold;
-  cursor: pointer;
   border-radius: 5px;
+  width: 100%;
+  padding: 12px;
   transition: background-color 0.3s ease;
 }
 
-.popup-form-content button:hover {
+.popup-form-content .btn:hover {
   background-color: #756b6b;
+}
+
+
+#thankYouSection {
+  background-color: var(--base-color);
+  padding: 30px 25px;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  color: var(--text-color);
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+#thankYouSection h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--button-color);
+  margin-bottom: 10px;
+  font-family: 'QuorthonDarkIV', serif;
+}
+
+#thankYouSection p {
+  margin-bottom: 8px;
+  color: var(--text-color);
 }
 
 .close-btn {
@@ -418,6 +443,14 @@ html {
   0%, 100% { transform: translateX(0); }
   20%, 60% { transform: translateX(-5px); }
   40%, 80% { transform: translateX(5px); }
+}
+
+@media (max-width: 480px) {
+  .close-btn {
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+  }
 }
 
 
@@ -565,6 +598,32 @@ box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Subtle yellow glow */
   margin-left: 3px;
   font-size: 1.2rem;
 }
+
+/* Wait List Thank You Message Styling */
+.waitlist-thankyou {
+  display: none;
+  background-color: var(--background-color);
+  padding: 30px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  color: var(--text-color);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.waitlist-thankyou h4 {
+  font-size: 1.5rem;
+  color: var(--button-color);
+  margin-bottom: 10px;
+}
+
+.waitlist-thankyou p {
+  font-size: 1.05rem;
+  color: var(--text-color);
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -955,16 +1014,26 @@ box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Subtle yellow glow */
 }
 
 /* Form Styling */
-#interestForm label {
+
+#unitInterestForm {
+  background-color: var(--base-color);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+}
+
+
+#unitInterestForm label {
   font-family: 'Arial', sans-serif;
   color: #000000 !important;
   font-weight: 500;
   font-size: 1rem; /* Consistent font size */
 }
 
-#interestForm input,
-#interestForm select,
-#interestForm textarea {
+#unitInterestForm input,
+#unitInterestForm select,
+#unitInterestForm textarea {
   background-color: #FFFFFF; /* White background */
   border: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
   border-radius: 5px;
@@ -973,9 +1042,9 @@ box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Subtle yellow glow */
   padding: 10px; /* Add padding for better input field size */
 }
 
-#interestForm input:focus,
-#interestForm select:focus,
-#interestForm textarea:focus {
+#unitInterestForm input:focus,
+#unitInterestForm select:focus,
+#unitInterestForm textarea:focus {
   border-color: var(--accent-color); /* Accent color for focus */
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
@@ -989,7 +1058,7 @@ box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Subtle yellow glow */
 }
 
 
-#interestForm .btn-primary {
+#unitInterestForm .btn-primary {
   background-color: #8a7f7f !important; /* Force background */
   color: #FFFFFF !important; /* Force white text */
   border: none !important;
@@ -1000,7 +1069,7 @@ box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Subtle yellow glow */
   font-size: 1rem !important;
 }
 
-#interestForm .btn-primary:hover {
+#unitInterestForm .btn-primary:hover {
   background-color: #756b6b !important; /* Darker hover effect */
 }
 
@@ -1129,6 +1198,9 @@ tr.leased-row[data-leased="true"] td {
   color: #721c24 !important;
   background-color: rgba(220, 53, 69, 0.1) !important;
 }
+
+
+
 
 
 /* Amenities Section */
@@ -1574,3 +1646,32 @@ opacity: 0.8;
 input.is-invalid {
   border-color: red;
 }
+
+
+
+#unitThankYou {
+  background-color: var(--base-color);
+  padding: 40px 20px;
+  margin-top: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  color: var(--text-color);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#unitThankYou h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--button-color);
+  margin-bottom: 10px;
+}
+
+#unitThankYou p {
+  margin: 0;
+  color: var(--text-color);
+}
+
+

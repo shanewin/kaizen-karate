@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (empty($_SESSION['csrf_token'])) {
+  $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +20,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles/style.css">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+  <link rel="manifest" href="favicon/site.webmanifest">
+
   <!--
     /**
     * @license
@@ -336,69 +352,98 @@
 <div class="modal fade" id="unitModal" tabindex="-1" aria-labelledby="unitModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
+
+      <!-- Modal Header -->
       <div class="modal-header">
-        <h5 class="modal-title" id="unitModalLabel">Unit Details</h5>
+        <h5 class="modal-title" id="unitModalLabel"><span id="unitTitleLabel">Unit</span> Details</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body text-center">
-        <div class="mt-4">
-          <h4>Description</h4>
-          <ul id="unitDescription" class="mt-3"></ul>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+
+        <!-- 👇 Content shown before submit -->
+        <div id="unitDetailsContent">
+
+          <!-- Description -->
+          <div class="mt-4">
+            <h4>Description</h4>
+            <ul id="unitDescription" class="mt-3"></ul>
+          </div>
+
+          <!-- Form -->
+          <form id="unitInterestForm" action="unit-interest.php" method="POST" class="w-100 px-3 mt-4">
+            <input type="hidden" id="unitInput" name="unit">
+            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES) ?>">
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName" class="form-label">First Name <span class="required">*</span></label>
+                <input type="text" class="form-control" id="firstName" name="firstName" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName" class="form-label">Last Name <span class="required">*</span></label>
+                <input type="text" class="form-control" id="lastName" name="lastName" required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="email" class="form-label">Email <span class="required">*</span></label>
+                <input type="email" class="form-control email-input" id="email-modal" name="email" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="phone" class="form-label">Phone Number <span class="required">*</span></label>
+                <input type="tel" class="form-control phone-input" id="phone-modal" name="phone" required placeholder="(123) 456-7890" maxlength="14">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="moveInDate" class="form-label">Move-In Date</label>
+                <input type="date" class="form-control" id="moveInDate" name="moveInDate">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="budget" class="form-label">Budget</label>
+                <input type="text" class="form-control budget-input" id="budget-contact" name="budget" placeholder="$0">
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="hearAboutUs" class="form-label">How Did You Hear About Us?</label>
+              <select class="form-select" id="hearAboutUs" name="hearAboutUs">
+                <option value="">Select an option</option>
+                <option value="Google">Google</option>
+                <option value="Friend">Friend</option>
+                <option value="Social Media">Social Media</option>
+                <option value="Advertisement">Advertisement</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </form>
         </div>
-      </div>
-      <div class="modal-footer">
-        <form action="form-handler.php" method="POST" class="w-100 px-3">
-          <input type="hidden" id="unitInput" name="unit">
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="firstName" class="form-label">First Name</label>
-              <input type="text" class="form-control" id="firstName" name="firstName" required>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="lastName" class="form-label">Last Name</label>
-              <input type="text" class="form-control" id="lastName" name="lastName" required>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control email-input" id="email-modal" name="email" required>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="phone" class="form-label">Phone Number</label>
-              <input type="tel" class="form-control phone-input" id="phone-modal" name="phone" required placeholder="(123) 456-7890" maxlength="14">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="moveInDate" class="form-label">Move-In Date</label>
-              <input type="date" class="form-control" id="moveInDate" name="moveInDate" required>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="budget" class="form-label">Budget</label>
-              <input type="text" class="form-control budget-input" id="budget-contact" name="budget" required placeholder="$0">
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="hearAboutUs" class="form-label">How Did You Hear About Us?</label>
-            <select class="form-select" id="hearAboutUs" name="hearAboutUs" required>
-              <option value="">Select an option</option>
-              <option value="Google">Google</option>
-              <option value="Friend">Friend</option>
-              <option value="Social Media">Social Media</option>
-              <option value="Advertisement">Advertisement</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Message (Optional)</label>
-            <textarea class="form-control" id="message" name="message" rows="3"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary w-100">Submit</button>
-        </form>
-      </div>
+
+        <!-- ✅ Thank You Message (Initially Hidden) -->
+        <div id="unitThankYou" style="display: none;" class="py-4 text-center">
+          <h4 id="thankYouHeading">Thank you for your interest!</h4>
+          <p id="thankYouMessage">
+            We’ll be in touch shortly about the availability of <span id="unitThankYouName">this unit</span> at <strong>The Garrison</strong>.
+          </p>
+        </div>
+
+
+      </div> <!-- End modal-body -->
+
     </div>
   </div>
 </div>
+
 
 <!-- Leased Unit Modal -->
 <div class="modal fade" id="leasedModal" tabindex="-1" aria-hidden="true">
@@ -654,6 +699,8 @@
     Secure your place in line for exclusive priority access when leasing opportunities open to the public.
   </p>
     <form action="form-handler.php" method="POST" class="contact-form">
+      <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES) ?>">
+
       <!-- Hidden Input for Unit -->
       <input type="hidden" id="unit" name="unit">
 
@@ -700,7 +747,7 @@
         <!-- Move-In Date -->
         <div class="col-md-6 mb-3">
           <label for="moveInDate" class="form-label">Move-In Date</label>
-          <input type="date" class="form-control" id="moveInDate" name="moveInDate" required>
+          <input type="date" class="form-control" id="moveInDate" name="moveInDate">
         </div>
         
         <!-- Budget -->
@@ -711,7 +758,6 @@
             class="form-control budget-input" 
             id="budget-contact" 
             name="budget" 
-            required 
             placeholder="$0">
         </div>
       </div>
@@ -720,7 +766,7 @@
         <!-- How Did You Hear About Us? -->
         <div class="col-md-6 mb-3">
           <label for="hearAboutUs" class="form-label">How Did You Hear About Us?</label>
-          <select class="form-select" id="hearAboutUs" name="hearAboutUs" required>
+          <select class="form-select" id="hearAboutUs" name="hearAboutUs">
             <option value="">Select an option</option>
             <option value="Google">Google</option>
             <option value="Friend">Friend</option>
@@ -731,24 +777,31 @@
         <!-- Unit Type -->
         <div class="col-md-6 mb-3">
           <label for="unitType" class="form-label">Unit Type</label>
-          <select class="form-select" id="unitType" name="unitType" required>
+          <select class="form-select" id="unitType" name="unitType" >
             <option value="">Select Unit Type</option>
             <option value="Studio">Studio</option>
             <option value="1 Bedroom">1 Bedroom</option>
             <option value="2 Bedroom">2 Bedroom</option>
+            <option value="2 Bedroom">3 Bedroom</option>
           </select>
         </div>
       </div>
 
       <!-- Message -->
       <div class="mb-3">
-        <label for="message" class="form-label">Message (Optional)</label>
+        <label for="message" class="form-label">Message</label>
         <textarea class="form-control" id="message" name="message" rows="3"></textarea>
       </div>
 
       <!-- Submit Button -->
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    <div id="waitlistThankYou" class="waitlist-thankyou text-center">
+      <h4>Thank you!</h4>
+      <p>You've been added to the wait list. We’ll contact you as soon as leasing opens.</p>
+    </div>
+
+    
   </div>
 </section>
 
@@ -803,6 +856,8 @@
   <script src="scripts/lightbox.js"></script>
   <script src="scripts/amenities.js"></script>
   <script src="scripts/email-list.js"></script>
+  <script src="scripts/unit-interest.js"></script>
+  <script src="scripts/wait-list.js"></script>
   <script src="scripts/popup-form.js" defer></script>
   
   <script>

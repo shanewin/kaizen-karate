@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 session_start();
 session_regenerate_id(true);
 header('X-Content-Type-Options: nosniff');
@@ -42,12 +44,13 @@ try {
     }
 
     $rateLimits = json_decode(file_get_contents($rateLimitFile), true) ?: [];
-    
-    if (isset($rateLimits[$ip]) && ($currentTime - $rateLimits[$ip] < $rateLimitDuration)) {
-        http_response_code(429);
-        echo json_encode(['error' => 'Please wait before submitting again']);
-        exit;
-    }
+
+    // Uncomment this block to re-enable rate limiting
+    // if (isset($rateLimits[$ip]) && ($currentTime - $rateLimits[$ip] < $rateLimitDuration)) {
+    //     http_response_code(429);
+    //     echo json_encode(['error' => 'Please wait before submitting again']);
+    //     exit;
+    // }
 
     // Validate input
     if (!isset($_POST['email']) || !isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
@@ -66,7 +69,7 @@ try {
     // Process submission
     $rateLimits[$ip] = $currentTime;
     file_put_contents($rateLimitFile, json_encode($rateLimits));
-    
+
     $data = sprintf(
         "%s|%s|%s%s",
         date('Y-m-d H:i:s'),
@@ -74,12 +77,32 @@ try {
         $email,
         PHP_EOL
     );
-    
+
     file_put_contents($subscriberFile, $data, FILE_APPEND);
     chmod($subscriberFile, 0640);
 
-    http_response_code(200);
-    echo json_encode(['success' => true]);
+    // ✅ Send email using native PHP mail()
+    $to = 'thegarrison@doorway.nyc';
+    $subject = 'New Email List Signup';
+    $headers = "From: info@thegarrison.nyc\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+    $body = <<<EOD
+A new user has subscribed to the email list:
+
+Email: $email
+IP Address: $ip
+Submitted At: ${currentTime}
+EOD;
+
+    if (mail($to, $subject, $body, $headers)) {
+        http_response_code(200);
+        echo json_encode(['success' => true]);
+    } else {
+        http_response_code(500);
+        echo json_encode(['error' => 'Failed to send email.']);
+    }
 
 } catch (Exception $e) {
     error_log('Subscription Error: ' . $e->getMessage());
