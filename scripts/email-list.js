@@ -1,99 +1,96 @@
-document.getElementById('emailSignupForm').addEventListener('submit', function(e) {
+document.getElementById('emailSignupForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   
-  // Get form elements
   const form = e.target;
   const emailInput = form.email;
-  const csrfToken = form.csrf_token.value;
   const email = emailInput.value.trim();
+  const submitBtn = form.querySelector('button[type="submit"]');
   
-  // Clear previous errors
-  emailInput.classList.remove('error');
-  
+  // Clear previous errors and reset UI
+  emailInput.classList.remove('is-invalid', 'error');
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status"></span> Submitting...';
+
   // Enhanced validation
   if (!email) {
-      showError(emailInput, 'Please enter your email');
-      return;
+      showValidationError(emailInput, 'Email is required');
+      return resetSubmitButton(submitBtn);
   }
-  
+
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showError(emailInput, 'Please enter a valid email address');
-      return;
+      showValidationError(emailInput, 'Please enter a valid email address');
+      return resetSubmitButton(submitBtn);
   }
-  
-  // Create form data
-  const formData = new FormData();
-  formData.append('email', email);
-  formData.append('csrf_token', csrfToken);
-  
-  // Submit with feedback
-  showLoading(true);
-  
-  fetch('email-list.php', {
-      method: 'POST',
-      body: formData  // Let browser set Content-Type with boundary
-  })
-  .then(handleResponse)
-  .catch(handleError)
-  .finally(() => showLoading(false));
+
+  try {
+      const response = await fetch('email-list.php', {
+          method: 'POST',
+          body: new FormData(form),
+          credentials: 'include',
+          headers: {
+              'X-Requested-With': 'XMLHttpRequest' // Identify AJAX requests
+          }
+      });
+
+      // Handle specific HTTP errors
+      if (response.status === 403) {
+          window.location.reload(); // Force refresh on CSRF issues
+          return;
+      }
+
+      if (response.status === 429) {
+          throw new Error('Please wait before submitting again');
+      }
+
+      const data = await response.json();
+      
+      if (!response.ok) {
+          throw new Error(data.error || 'Submission failed. Please try again.');
+      }
+
+      // Successful submission
+      showSuccessState(form);
+
+  } catch (error) {
+      console.error('Submission error:', error);
+      showError(error.message || 'An unexpected error occurred');
+  } finally {
+      resetSubmitButton(submitBtn);
+  }
 });
 
-// Response handler
-function handleResponse(response) {
-  if (response.status === 403) {
-      // CSRF token expired
-      alert('Session expired. Please refresh the page and try again.');
-      window.location.reload();
-      return;
-  }
-  
-  if (response.status === 429) {
-      // Rate limited
-      alert('Please wait a few minutes before trying again.');
-      return;
-  }
-  
-  return response.json().then(data => {
-      if (!response.ok) {
-          throw new Error(data.error || 'Submission failed');
-      }
-      
-      // Success
-      document.getElementById('formSection').style.display = 'none';
-      document.getElementById('thankYouSection').style.display = 'block';
-      
-      // Optional: Reset form
-      document.getElementById('emailSignupForm').reset();
-
-      // In handleResponse() after reset():
-      setTimeout(() => {
-        document.getElementById('formSection').style.display = 'none';
-        document.getElementById('thankYouSection').style.display = 'block';
-      }, 300);
-
-  });
-}
-
-// Error handler
-function handleError(error) {
-  console.error('Submission error:', error);
-  alert(error.message || 'There was an error submitting your email. Please try again.');
-}
-
-// UI helpers
-function showError(input, message) {
-  input.classList.add('error');
-  alert(message);
+// Helper functions
+function showValidationError(input, message) {
+  input.classList.add('is-invalid');
+  const feedback = input.nextElementSibling || document.createElement('div');
+  feedback.className = 'invalid-feedback';
+  feedback.textContent = message;
+  input.insertAdjacentElement('afterend', feedback);
   input.focus();
 }
 
-function showLoading(show) {
-  const btn = document.querySelector('#emailSignupForm button[type="submit"]');
-  if (show) {
-      btn.disabled = true;
-      btn.innerHTML = 'Submitting...';
-  } else {
-      btn.disabled = false;
-      btn.innerHTML = 'Subscribe';
-  }
+function showError(message) {
+  const errorAlert = document.getElementById('formError') || createErrorAlert();
+  errorAlert.textContent = message;
+  errorAlert.style.display = 'block';
+}
+
+function createErrorAlert() {
+  const alert = document.createElement('div');
+  alert.id = 'formError';
+  alert.className = 'alert alert-danger mt-3';
+  alert.style.display = 'none';
+  document.querySelector('#formSection').appendChild(alert);
+  return alert;
+}
+
+function showSuccessState(form) {
+  document.getElementById('formSection').style.display = 'none';
+  document.getElementById('thankYouSection').style.display = 'block';
+  form.reset(); // Clear form fields
+}
+
+function resetSubmitButton(button) {
+  button.disabled = false;
+  button.textContent = 'Subscribe';
 }

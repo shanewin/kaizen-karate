@@ -1,7 +1,15 @@
 <?php
-session_start();
+// Start session with proper settings
+session_start([
+    'cookie_lifetime' => 86400, // 24 hours
+    'cookie_secure' => isset($_SERVER['HTTPS']),
+    'cookie_httponly' => true,
+    'cookie_samesite' => 'Lax'
+]);
+
+// Regenerate token only if doesn't exist
 if (empty($_SESSION['csrf_token'])) {
-  $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 ?>
 
@@ -99,7 +107,7 @@ if (empty($_SESSION['csrf_token'])) {
         <div class="col-lg-8 h-100 d-flex align-items-center justify-content-center position-relative">
           <div class="video-container">
             <video autoplay muted loop playsinline id="hero-video">
-              <source src="assets/videos/hero-video-6.mp4" type="video/mp4">
+              <source src="assets/videos/hero-video-2.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
@@ -373,8 +381,9 @@ if (empty($_SESSION['csrf_token'])) {
 
           <!-- Form -->
           <form id="unitInterestForm" action="unit-interest.php" method="POST" class="w-100 px-3 mt-4">
+            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
+            <div id="formError" class="alert alert-danger mt-3" style="display: none;"></div>
             <input type="hidden" id="unitInput" name="unit">
-            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES) ?>">
 
             <div class="row">
               <div class="col-md-6 mb-3">

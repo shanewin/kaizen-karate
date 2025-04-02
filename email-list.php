@@ -1,8 +1,16 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-session_start();
-session_regenerate_id(true);
+session_start([
+    'cookie_secure'   => isset($_SERVER['HTTPS']),
+    'cookie_httponly' => true,
+    'cookie_samesite' => 'Lax'
+]);
+
+// Force no caching
+header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Pragma: no-cache');
+header('Expires: 0');
 header('X-Content-Type-Options: nosniff');
 header('X-Frame-Options: DENY');
 header('Content-Type: application/json');
@@ -12,18 +20,16 @@ if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 
-// Validate CSRF
+// Validate CSRF Token
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
         http_response_code(403);
-        echo json_encode(['error' => 'Invalid CSRF token']);
-        exit;
+        die(json_encode(['error' => 'Invalid CSRF token']));
     }
 }
 
 // File Paths
 $dataDir = __DIR__ . '/data/';
-$rateLimitFile = $dataDir . 'rate_limits.txt';
 $subscriberFile = $dataDir . 'subscribers.txt';
 
 // Create data directory if missing
@@ -31,81 +37,50 @@ if (!is_dir($dataDir)) {
     mkdir($dataDir, 0750, true);
 }
 
-// Rate Limiting (1 submission per 5 minutes per IP)
-$ip = filter_var($_SERVER['REMOTE_ADDR'], FILTER_VALIDATE_IP) ? $_SERVER['REMOTE_ADDR'] : 'invalid_ip';
-$currentTime = time();
-$rateLimitDuration = 300;
-
 try {
-    // Initialize rate limit file
-    if (!file_exists($rateLimitFile)) {
-        file_put_contents($rateLimitFile, '{}');
-        chmod($rateLimitFile, 0640);
-    }
-
-    $rateLimits = json_decode(file_get_contents($rateLimitFile), true) ?: [];
-
-    // Uncomment this block to re-enable rate limiting
-    // if (isset($rateLimits[$ip]) && ($currentTime - $rateLimits[$ip] < $rateLimitDuration)) {
-    //     http_response_code(429);
-    //     echo json_encode(['error' => 'Please wait before submitting again']);
-    //     exit;
-    // }
-
-    // Validate input
-    if (!isset($_POST['email']) || !isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+    // Validate email
+    if (!isset($_POST['email'])) {
         http_response_code(400);
-        echo json_encode(['error' => 'Invalid request']);
-        exit;
+        die(json_encode(['error' => 'Email is required']));
     }
 
     $email = strtolower(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
     if (!$email) {
         http_response_code(400);
-        echo json_encode(['error' => 'Invalid email address']);
-        exit;
+        die(json_encode(['error' => 'Invalid email address']));
     }
 
-    // Process submission
-    $rateLimits[$ip] = $currentTime;
-    file_put_contents($rateLimitFile, json_encode($rateLimits));
-
-    $data = sprintf(
+    // Save submission
+    $entry = sprintf(
         "%s|%s|%s%s",
         date('Y-m-d H:i:s'),
-        $ip,
+        $_SERVER['REMOTE_ADDR'],
         $email,
         PHP_EOL
     );
 
-    file_put_contents($subscriberFile, $data, FILE_APPEND);
-    chmod($subscriberFile, 0640);
+    file_put_contents($subscriberFile, $entry, FILE_APPEND | LOCK_EX);
 
-    // ✅ Send email using native PHP mail()
+    // Send email
     $to = 'thegarrison@doorway.nyc';
     $subject = 'New Email List Signup';
-    $headers = "From: info@thegarrison.nyc\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $headers = [
+        'From: info@thegarrison.nyc',
+        'Reply-To: ' . $email,
+        'Content-Type: text/plain; charset=UTF-8',
+        'X-Mailer: PHP/' . phpversion()
+    ];
 
-    $body = <<<EOD
-A new user has subscribed to the email list:
+    $body = "New email list signup:\n\nEmail: $email\nIP: {$_SERVER['REMOTE_ADDR']}\nTime: " . date('Y-m-d H:i:s');
 
-Email: $email
-IP Address: $ip
-Submitted At: ${currentTime}
-EOD;
-
-    if (mail($to, $subject, $body, $headers)) {
-        http_response_code(200);
+    if (mail($to, $subject, $body, implode("\r\n", $headers))) {
         echo json_encode(['success' => true]);
     } else {
-        http_response_code(500);
-        echo json_encode(['error' => 'Failed to send email.']);
+        throw new Exception('Failed to send email');
     }
 
 } catch (Exception $e) {
-    error_log('Subscription Error: ' . $e->getMessage());
+    error_log('Email List Error: ' . $e->getMessage());
     http_response_code(500);
-    echo json_encode(['error' => 'Service unavailable']);
+    echo json_encode(['error' => 'An error occurred. Please try again.']);
 }

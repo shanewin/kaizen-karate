@@ -453,6 +453,20 @@ html {
   transition: color 0.2s ease;
 }
 
+.invalid-feedback {
+  display: block;
+  color: #dc3545;
+  margin-top: 0.25rem;
+}
+
+.is-invalid {
+  border-color: #dc3545 !important;
+}
+
+.spinner-border {
+  vertical-align: text-top;
+}
+
 
 .close-btn:hover {
   color: #8a7f7f;
@@ -731,7 +745,7 @@ box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Subtle yellow glow */
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   margin-top: 20px;
-  max-width: 750px; /* Adjust based on your needs */
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }

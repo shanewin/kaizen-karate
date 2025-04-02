@@ -1,124 +1,94 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-session_start();
+session_start([
+    'cookie_secure' => isset($_SERVER['HTTPS']),
+    'cookie_httponly' => true,
+    'cookie_samesite' => 'Lax'
+]);
+
+// Security headers
 header('X-Content-Type-Options: nosniff');
 header('X-Frame-Options: DENY');
 header('Content-Type: application/json');
+header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Pragma: no-cache');
 
-// Initialize CSRF Token if missing
+// Initialize CSRF Token
 if (empty($_SESSION['csrf_token'])) {
-  $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-}
-
-// Validate POST
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-  http_response_code(405);
-  echo json_encode(['error' => 'Method Not Allowed']);
-  exit;
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 
 // Validate CSRF Token
-if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
-  http_response_code(403);
-  echo json_encode(['error' => 'Invalid CSRF token']);
-  exit;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+        http_response_code(403);
+        die(json_encode(['error' => 'Invalid CSRF token']));
+    }
 }
 
-// Rate limiting
-$dataDir = __DIR__ . '/data/';
-$rateLimitFile = $dataDir . 'unit_rate_limits.txt';
-$submissionFile = $dataDir . 'unit_submissions.txt';
-$ip = $_SERVER['REMOTE_ADDR'];
-$currentTime = time();
-$rateLimitDuration = 300;
-
-if (!is_dir($dataDir)) {
-  mkdir($dataDir, 0750, true);
-}
-
-if (!file_exists($rateLimitFile)) {
-  file_put_contents($rateLimitFile, '{}');
-}
-
-$rateLimits = json_decode(file_get_contents($rateLimitFile), true) ?: [];
-
-// if (isset($rateLimits[$ip]) && ($currentTime - $rateLimits[$ip] < $rateLimitDuration)) {
-//   http_response_code(429);
-//   echo json_encode(['error' => 'Please wait before submitting again.']);
-//   exit;
-// }
-
-// Sanitize Input
+// Input validation
 function clean($field) {
-  return htmlspecialchars(trim($_POST[$field] ?? ''), ENT_QUOTES);
+    return htmlspecialchars(trim($_POST[$field] ?? ''), ENT_QUOTES, 'UTF-8');
 }
 
-$unit = clean('unit');
-$firstName = clean('firstName');
-$lastName = clean('lastName');
+$required = ['firstName', 'lastName', 'email', 'phone'];
+foreach ($required as $field) {
+    if (empty($_POST[$field])) {
+        http_response_code(400);
+        die(json_encode(['error' => "Missing required field: $field"]));
+    }
+}
+
+// Validate data
 $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
-$phone = clean('phone');
-$moveInDate = clean('moveInDate');
-$budget = clean('budget');
-$hearAboutUs = clean('hearAboutUs');
-$message = clean('message');
-
-if (!$firstName || !$lastName || !$email || !$phone) {
-  http_response_code(400);
-  echo json_encode(['error' => 'Missing required fields.']);
-  exit;
+if (!$email) {
+    http_response_code(400);
+    die(json_encode(['error' => 'Invalid email address']));
 }
 
-// Save to file
-$rateLimits[$ip] = $currentTime;
-file_put_contents($rateLimitFile, json_encode($rateLimits));
+// Prepare data
+$data = [
+    date('Y-m-d H:i:s'),
+    $_SERVER['REMOTE_ADDR'],
+    clean('unit'),
+    clean('firstName'),
+    clean('lastName'),
+    $email,
+    clean('phone'),
+    clean('moveInDate'),
+    clean('budget'),
+    clean('hearAboutUs'),
+    clean('message')
+];
 
-$entry = implode('|', [
-  date('Y-m-d H:i:s'),
-  $ip,
-  $unit,
-  $firstName,
-  $lastName,
-  $email,
-  $phone,
-  $moveInDate,
-  $budget,
-  $hearAboutUs,
-  $message
-]) . PHP_EOL;
+// Store submission (secure file handling)
+$file = 'submissions.txt';
+file_put_contents($file, implode('|', $data) . PHP_EOL, FILE_APPEND | LOCK_EX);
+chmod($file, 0640);
 
-file_put_contents($submissionFile, $entry, FILE_APPEND);
+// Send email
+$headers = [
+    'From: info@thegarrison.nyc',
+    'Reply-To: ' . $email,
+    'Content-Type: text/plain; charset=UTF-8',
+    'X-Mailer: PHP/' . phpversion()
+];
 
-// ✅ Send email using native PHP mail()
-$to = 'thegarrison@doorway.nyc';
-$subject = "New Inquiry for Unit: $unit";
-$headers = "From: info@thegarrison.nyc\r\n";
-$headers .= "Reply-To: $email\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$body = "New Unit Inquiry:\n\n" . implode("\n", [
+    "Unit: " . clean('unit'),
+    "Name: " . clean('firstName') . " " . clean('lastName'),
+    "Email: " . $email,
+    "Phone: " . clean('phone'),
+    "Message: " . clean('message')
+]);
 
-$body = <<<EOD
-New Unit Interest Submission:
-
-Unit: $unit
-Name: $firstName $lastName
-Email: $email
-Phone: $phone
-Move-In Date: $moveInDate
-Budget: $budget
-How Did You Hear About Us: $hearAboutUs
-
-Message:
-$message
-
-IP: $ip
-Submitted At: ${currentTime}
-EOD;
-
-if (mail($to, $subject, $body, $headers)) {
-  http_response_code(200);
-  echo json_encode(['success' => true]);
+if (mail('thegarrison@doorway.nyc', "New Inquiry: " . clean('unit'), $body, implode("\r\n", $headers))) {
+    // Regenerate CSRF token after successful submission
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    echo json_encode(['success' => true]);
 } else {
-  http_response_code(500);
-  echo json_encode(['error' => 'Failed to send email.']);
+    error_log("Failed to send email for unit inquiry");
+    http_response_code(500);
+    echo json_encode(['error' => 'Failed to send email.']);
 }

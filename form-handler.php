@@ -41,7 +41,7 @@ if (!file_exists($rateLimitFile)) {
   file_put_contents($rateLimitFile, '{}');
 }
 
-$rateLimits = json_decode(file_get_contents($rateLimitFile), true) ?: [];
+// $rateLimits = json_decode(file_get_contents($rateLimitFile), true) ?: [];
 
 // if (isset($rateLimits[$ip]) && ($currentTime - $rateLimits[$ip] < $rateLimitDuration)) {
 //   http_response_code(429);
