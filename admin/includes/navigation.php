@@ -37,7 +37,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         <i class="fas fa-calendar-alt me-2"></i>Weekend & Evening Classes
     </a>
     <a class="nav-link <?php echo ($current_page == 'online-store.php') ? 'active' : ''; ?>" href="online-store.php">
-        <i class="fas fa-shopping-cart me-2"></i>Kaizen Karate Online Store
+        <i class="fas fa-shopping-cart me-2"></i>Online Store
     </a>
     <a class="nav-link <?php echo ($current_page == 'belt-exams.php') ? 'active' : ''; ?>" href="belt-exams.php">
         <i class="fas fa-award me-2"></i>Belt Exams

@@ -17,7 +17,7 @@ if ($_POST) {
         
         switch ($section) {
             case 'site_info':
-                $content = load_json_data('site-content');
+                $content = load_json_data('site-content', 'draft');
                 $content['site_info'] = [
                     'title' => sanitize_input($_POST['title']),
                     'description' => sanitize_input($_POST['description']),
@@ -31,7 +31,7 @@ if ($_POST) {
                 break;
                 
             case 'hero_section':
-                $content = load_json_data('site-content');
+                $content = load_json_data('site-content', 'draft');
                 $content['hero_section'] = [
                     'title' => sanitize_input($_POST['hero_title']),
                     'subtitle' => sanitize_input($_POST['hero_subtitle']),
@@ -44,7 +44,7 @@ if ($_POST) {
                 break;
                 
             case 'programs':
-                $content = load_json_data('site-content');
+                $content = load_json_data('site-content', 'draft');
                 $content['programs']['title'] = sanitize_input($_POST['programs_title']);
                 
                 foreach ($content['programs']['cards'] as $index => &$card) {
@@ -59,7 +59,7 @@ if ($_POST) {
                 break;
                 
             case 'summer_camp':
-                $content = load_json_data('site-content');
+                $content = load_json_data('site-content', 'draft');
                 $content['summer_camp']['title'] = sanitize_input($_POST['camp_title']);
                 $content['summer_camp']['subtitle'] = sanitize_input($_POST['camp_subtitle']);
                 $content['summer_camp']['section_title'] = sanitize_input($_POST['camp_section_title']);
@@ -76,7 +76,7 @@ if ($_POST) {
                 break;
                 
             case 'contact':
-                $content = load_json_data('site-content');
+                $content = load_json_data('site-content', 'draft');
                 $content['contact_section']['title'] = sanitize_input($_POST['contact_title']);
                 $content['contact_section']['subtitle'] = sanitize_input($_POST['contact_subtitle']);
                 $content['contact_section']['waitlist_form']['title'] = sanitize_input($_POST['waitlist_title']);
@@ -92,7 +92,7 @@ if ($_POST) {
 }
 
 // Load current content
-$content = load_json_data('site-content');
+$content = load_json_data('site-content', 'draft');
 ?>
 <!DOCTYPE html>
 <html lang="en">

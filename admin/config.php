@@ -70,32 +70,232 @@ function sanitize_input($input) {
 }
 
 /**
- * Load JSON data file
+ * Load JSON data file with draft/live mode support
  */
-function load_json_data($filename) {
+function load_json_data($filename, $mode = 'live') {
     // Add .json extension if not present
     if (!str_ends_with($filename, '.json')) {
         $filename .= '.json';
     }
-    $filepath = CONTENT_ROOT . '/' . $filename;
+    
+    // Add mode suffix for draft files
+    $suffix = ($mode === 'draft') ? '-draft' : '';
+    $base_filename = str_replace('.json', '', $filename);
+    $full_filename = $base_filename . $suffix . '.json';
+    
+    $filepath = CONTENT_ROOT . '/' . $full_filename;
+    
     if (file_exists($filepath)) {
         $content = file_get_contents($filepath);
         return json_decode($content, true);
     }
+    
+    // If draft doesn't exist but live does, copy live to draft
+    if ($mode === 'draft') {
+        $live_data = load_json_data($filename, 'live');
+        if (!empty($live_data)) {
+            save_json_data($filename, $live_data, 'draft');
+            return $live_data;
+        }
+    }
+    
     return array();
 }
 
 /**
- * Save JSON data file
+ * Save JSON data file with draft/live mode support
  */
-function save_json_data($filename, $data) {
+function save_json_data($filename, $data, $mode = 'draft', $change_details = []) {
     // Add .json extension if not present
     if (!str_ends_with($filename, '.json')) {
         $filename .= '.json';
     }
-    $filepath = CONTENT_ROOT . '/' . $filename;
+    
+    // Add mode suffix for draft files
+    $suffix = ($mode === 'live') ? '' : '-draft';
+    $base_filename = str_replace('.json', '', $filename);
+    $full_filename = $base_filename . $suffix . '.json';
+    
+    $filepath = CONTENT_ROOT . '/' . $full_filename;
+    $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+    
+    $result = file_put_contents($filepath, $json) !== false;
+    
+    // Track changes when saving to draft mode
+    if ($result && $mode === 'draft') {
+        track_file_change($base_filename, $change_details);
+    }
+    
+    return $result;
+}
+
+/**
+ * Track file changes for staging system
+ */
+function track_file_change($filename, $details = []) {
+    $change_log = load_change_log();
+    $base_filename = str_replace('.json', '', $filename);
+    
+    // Add to pending files if not already there
+    if (!in_array($base_filename, $change_log['pending_files'])) {
+        $change_log['pending_files'][] = $base_filename;
+    }
+    
+    // Add change entry with optional details
+    $change_entry = [
+        'id' => 'change_' . time() . '_' . rand(100, 999),
+        'file' => $base_filename,
+        'timestamp' => date('c'), // ISO 8601 format
+        'admin' => $_SESSION['admin_user'] ?? 'admin',
+        'status' => 'draft'
+    ];
+    
+    // Add detailed change information if provided
+    if (!empty($details)) {
+        $change_entry['details'] = $details;
+    }
+    
+    $change_log['changes'][] = $change_entry;
+    
+    // Keep only last 100 changes to prevent log bloat
+    if (count($change_log['changes']) > 100) {
+        $change_log['changes'] = array_slice($change_log['changes'], -100);
+    }
+    
+    save_change_log($change_log);
+}
+
+/**
+ * Load change log
+ */
+function load_change_log() {
+    $filepath = CONTENT_ROOT . '/change-log.json';
+    if (file_exists($filepath)) {
+        $content = file_get_contents($filepath);
+        return json_decode($content, true);
+    }
+    
+    // Return default structure
+    return [
+        'pending_files' => [],
+        'changes' => []
+    ];
+}
+
+/**
+ * Save change log
+ */
+function save_change_log($data) {
+    $filepath = CONTENT_ROOT . '/change-log.json';
     $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
     return file_put_contents($filepath, $json) !== false;
+}
+
+/**
+ * Publish all draft changes to live
+ */
+function publish_all_changes() {
+    $change_log = load_change_log();
+    $published_files = [];
+    $errors = [];
+    
+    foreach ($change_log['pending_files'] as $filename) {
+        try {
+            // Create backup of current live version
+            $live_data = load_json_data($filename, 'live');
+            if (!empty($live_data)) {
+                save_json_data($filename . '-backup', $live_data, 'live');
+            }
+            
+            // Publish draft to live
+            $draft_data = load_json_data($filename, 'draft');
+            if (!empty($draft_data)) {
+                save_json_data($filename, $draft_data, 'live');
+                $published_files[] = $filename;
+            }
+        } catch (Exception $e) {
+            $errors[] = "Failed to publish {$filename}: " . $e->getMessage();
+        }
+    }
+    
+    // Update change log
+    if (!empty($published_files)) {
+        // Mark changes as published
+        foreach ($change_log['changes'] as &$change) {
+            if (in_array($change['file'], $published_files) && $change['status'] === 'draft') {
+                $change['status'] = 'published';
+                $change['published_at'] = date('c');
+            }
+        }
+        
+        // Clear pending files
+        $change_log['pending_files'] = array_diff($change_log['pending_files'], $published_files);
+        $change_log['pending_files'] = array_values($change_log['pending_files']); // Re-index
+        
+        save_change_log($change_log);
+    }
+    
+    return [
+        'success' => empty($errors),
+        'published_files' => $published_files,
+        'errors' => $errors
+    ];
+}
+
+/**
+ * Get pending changes summary
+ */
+function get_pending_changes() {
+    $change_log = load_change_log();
+    
+    // Group changes by file to count per-file changes
+    $file_change_counts = [];
+    foreach ($change_log['changes'] as $change) {
+        if ($change['status'] === 'draft') {
+            $file = $change['file'];
+            $file_change_counts[$file] = ($file_change_counts[$file] ?? 0) + 1;
+        }
+    }
+    
+    // Collect detailed changes for display
+    $detailed_changes = [];
+    foreach ($change_log['changes'] as $change) {
+        if ($change['status'] === 'draft' && isset($change['details']['changes'])) {
+            foreach ($change['details']['changes'] as $change_text) {
+                $detailed_changes[] = $change_text;
+            }
+        }
+    }
+    
+    // Build detailed file info
+    $detailed_files = [];
+    foreach ($change_log['pending_files'] as $file) {
+        $detailed_files[] = [
+            'name' => $file,
+            'display_name' => $file . '.json',
+            'change_count' => $file_change_counts[$file] ?? 0
+        ];
+    }
+    
+    return [
+        'file_count' => count($change_log['pending_files']),
+        'pending_files' => $change_log['pending_files'],
+        'detailed_files' => $detailed_files,
+        'detailed_changes' => $detailed_changes,
+        'total_changes' => count(array_filter($change_log['changes'], function($change) {
+            return $change['status'] === 'draft';
+        })),
+        'last_change' => !empty($change_log['changes']) ? end($change_log['changes']) : null
+    ];
+}
+
+/**
+ * Check if draft files exist for a given filename
+ */
+function has_draft_changes($filename) {
+    $base_filename = str_replace('.json', '', $filename);
+    $draft_filepath = CONTENT_ROOT . '/' . $base_filename . '-draft.json';
+    return file_exists($draft_filepath);
 }
 
 /**

@@ -15,7 +15,7 @@ if ($_POST) {
     } else {
         // Update Header content
         if (isset($_POST['header_section'])) {
-            $content = load_json_data('site-content');
+            $content = load_json_data('site-content', 'draft');
             
             // Update hero section in site content
             $content['hero_section'] = [
@@ -69,7 +69,7 @@ if ($_POST) {
             }
             
             // Update hero video in media content
-            $media_content = load_json_data('media');
+            $media_content = load_json_data('media', 'draft');
             
             // Handle hero video upload
             $video_source_path = sanitize_input($_POST['hero_video_source']);
@@ -101,8 +101,8 @@ if ($_POST) {
                 'alt' => sanitize_input($_POST['hero_video_alt'])
             ];
             
-            if (save_json_data('site-content', $content) && save_json_data('media', $media_content)) {
-                $message = success_message('Header updated successfully!');
+            if (save_json_data('site-content', $content, 'draft') && save_json_data('media', $media_content, 'draft')) {
+                $message = success_message('Header saved to draft successfully!');
             } else {
                 $message = error_message('Failed to save changes.');
             }
@@ -110,12 +110,12 @@ if ($_POST) {
     }
 }
 
-// Load current content
-$content = load_json_data('site-content');
+// Load current content from draft
+$content = load_json_data('site-content', 'draft');
 $hero_section = $content['hero_section'] ?? [];
 
-// Load media content for hero video
-$media_content = load_json_data('media');
+// Load media content for hero video from draft
+$media_content = load_json_data('media', 'draft');
 $hero_video = $media_content['hero_video'] ?? [];
 
 $csrf_token = generate_csrf_token();

@@ -14,7 +14,7 @@ if ($_POST) {
     if (!verify_csrf_token($_POST['csrf_token'] ?? '')) {
         $message = error_message('Security token invalid. Please try again.');
     } else {
-        $content = load_json_data('site-content');
+        $content = load_json_data('site-content', 'draft');
         $section = $_POST['section'] ?? '';
         
         switch ($section) {
@@ -139,7 +139,7 @@ if ($_POST) {
 }
 
 // Load current content
-$content = load_json_data('site-content');
+$content = load_json_data('site-content', 'draft');
 ?>
 <!DOCTYPE html>
 <html lang="en">

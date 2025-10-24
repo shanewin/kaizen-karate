@@ -13,7 +13,7 @@ if ($_POST) {
     if (!verify_csrf_token($_POST['csrf_token'] ?? '')) {
         $message = error_message('Security token invalid. Please try again.');
     } else {
-        $content = load_json_data('site-content');
+        $content = load_json_data('site-content', 'draft');
         
         // Update Programs section
         if (isset($_POST['programs_section'])) {
@@ -61,8 +61,8 @@ if ($_POST) {
                 $content['programs']['cards'][] = $card;
             }
             
-            if (save_json_data('site-content', $content)) {
-                $message = success_message('Programs section updated successfully!');
+            if (save_json_data('site-content', $content, 'draft')) {
+                $message = success_message('Programs section saved to draft successfully!');
             } else {
                 $message = error_message('Failed to save changes.');
             }
@@ -70,8 +70,8 @@ if ($_POST) {
     }
 }
 
-// Load current content
-$content = load_json_data('site-content');
+// Load current content from draft
+$content = load_json_data('site-content', 'draft');
 $programs = $content['programs'] ?? [];
 $cards = $programs['cards'] ?? [];
 

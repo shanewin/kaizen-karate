@@ -13,7 +13,7 @@ if ($_POST) {
     if (!verify_csrf_token($_POST['csrf_token'] ?? '')) {
         $message = error_message('Security token invalid. Please try again.');
     } else {
-        $content = load_json_data('site-content');
+        $content = load_json_data('site-content', 'draft');
         
         // Update Summer Camp section
         if (isset($_POST['summer_camp_section'])) {
@@ -85,7 +85,7 @@ if ($_POST) {
     
     // Handle Features Grid Update
     if (isset($_POST['update_features']) && verify_csrf_token($_POST['csrf_token'])) {
-        $content = load_json_data('site-content');
+        $content = load_json_data('site-content', 'draft');
         
         // Process features data
         $features = [];
@@ -112,7 +112,7 @@ if ($_POST) {
     
     // Handle Camp Locations Update
     if (isset($_POST['update_locations']) && verify_csrf_token($_POST['csrf_token'])) {
-        $content = load_json_data('site-content');
+        $content = load_json_data('site-content', 'draft');
         
         // Process locations data
         $locations = [];
@@ -143,7 +143,7 @@ if ($_POST) {
     
     // Handle Registration Information Update
     if (isset($_POST['update_registration_info']) && verify_csrf_token($_POST['csrf_token'])) {
-        $content = load_json_data('site-content');
+        $content = load_json_data('site-content', 'draft');
         
         // Update Registration Information
         $content['summer_camp']['registration_info'] = [
@@ -164,7 +164,7 @@ if ($_POST) {
     
     // Handle Accordion Sections Update
     if (isset($_POST['update_accordion_sections']) && verify_csrf_token($_POST['csrf_token'])) {
-        $content = load_json_data('site-content');
+        $content = load_json_data('site-content', 'draft');
         
         // Process accordion sections data
         $accordion_sections = [];
@@ -190,7 +190,7 @@ if ($_POST) {
 }
 
 // Load current content
-$content = load_json_data('site-content');
+$content = load_json_data('site-content', 'draft');
 $summer_camp = $content['summer_camp'] ?? [];
 
 // Define summer_camp_data with proper defaults for the forms

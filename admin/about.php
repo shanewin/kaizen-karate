@@ -8,9 +8,8 @@ require_login();
 
 $message = '';
 
-// Load current about section data
-$contentFile = '../data/content/site-content.json';
-$content = file_exists($contentFile) ? json_decode(file_get_contents($contentFile), true) : [];
+// Load current about section data from draft
+$content = load_json_data('site-content', 'draft');
 
 // Default data structure
 $defaultAbout = [
@@ -136,8 +135,8 @@ if (isset($_POST['delete_instructor_image']) && isset($_POST['instructor_index']
             
             // Save updated data
             $content['about_section'] = $aboutData;
-            if (file_put_contents($contentFile, json_encode($content, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES))) {
-                $message = success_message('Instructor image deleted successfully!');
+            if (save_json_data('site-content', $content, 'draft')) {
+                $message = success_message('Instructor image deleted to draft successfully!');
             } else {
                 $message = error_message('Failed to save changes after deleting image.');
             }
@@ -255,8 +254,8 @@ if ($_POST && !isset($_POST['delete_instructor_image'])) {
     // Save data
     $content['about_section'] = $aboutData;
     
-    if (file_put_contents($contentFile, json_encode($content, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES))) {
-        $message = success_message('About section updated successfully!');
+    if (save_json_data('site-content', $content, 'draft')) {
+        $message = success_message('About section saved to draft successfully!');
     } else {
         $message = error_message('Failed to save changes. Please check file permissions.');
     }
@@ -462,6 +461,12 @@ if ($_POST && !isset($_POST['delete_instructor_image'])) {
                             <label for="kaizen_para3" class="form-label">Paragraph 3 (Operations)</label>
                             <textarea class="form-control" id="kaizen_para3" name="kaizen_para3" rows="2"><?php echo htmlspecialchars($aboutData['kaizen_section']['paragraph_3'] ?? ''); ?></textarea>
                         </div>
+                        
+                        <div class="d-flex justify-content-end mt-3">
+                            <button type="submit" class="btn btn-kaizen">
+                                <i class="fas fa-save"></i> Save Changes
+                            </button>
+                        </div>
                     </div>
                     
                     <!-- Meet Coach V Section -->
@@ -500,6 +505,12 @@ if ($_POST && !isset($_POST['delete_instructor_image'])) {
                         <div class="mb-3">
                             <label for="coach_v_para4" class="form-label">Paragraph 4 (Personal Interests)</label>
                             <textarea class="form-control" id="coach_v_para4" name="coach_v_para4" rows="3"><?php echo htmlspecialchars($aboutData['coach_v_section']['paragraph_4'] ?? ''); ?></textarea>
+                        </div>
+                        
+                        <div class="d-flex justify-content-end mt-3">
+                            <button type="submit" class="btn btn-kaizen">
+                                <i class="fas fa-save"></i> Save Changes
+                            </button>
                         </div>
                     </div>
                     

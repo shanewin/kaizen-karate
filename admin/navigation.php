@@ -13,7 +13,7 @@ if ($_POST) {
     if (!verify_csrf_token($_POST['csrf_token'] ?? '')) {
         $message = error_message('Security token invalid. Please try again.');
     } else {
-        $content = load_json_data('site-content');
+        $content = load_json_data('site-content', 'draft');
         
         // Update main menu items
         if (isset($_POST['menu_items'])) {
@@ -31,7 +31,7 @@ if ($_POST) {
         
         // Update Logo content
         if (isset($_POST['logo_section'])) {
-            $media_content = load_json_data('media');
+            $media_content = load_json_data('media', 'draft');
             
             // Handle main logo upload
             $main_logo_path = sanitize_input($_POST['logo_main']);
@@ -62,7 +62,7 @@ if ($_POST) {
                 'mobile' => $mobile_logo_path,
                 'alt' => sanitize_input($_POST['logo_alt'])
             ];
-            save_json_data('media', $media_content);
+            save_json_data('media', $media_content, 'draft');
         }
         
         // Update Register dropdown content
@@ -127,22 +127,22 @@ if ($_POST) {
             ];
         }
         
-        if (save_json_data('site-content', $content)) {
-            $message = success_message('Navigation updated successfully!');
+        if (save_json_data('site-content', $content, 'draft')) {
+            $message = success_message('Navigation saved to draft successfully!');
         } else {
             $message = error_message('Failed to save changes.');
         }
     }
 }
 
-// Load current content
-$content = load_json_data('site-content');
+// Load current content from draft
+$content = load_json_data('site-content', 'draft');
 $nav = $content['navigation'] ?? [];
 $menu_items = $nav['menu_items'] ?? [];
 $register_dropdown = $nav['register_dropdown'] ?? [];
 
-// Load media content for logo
-$media_content = load_json_data('media');
+// Load media content for logo from draft
+$media_content = load_json_data('media', 'draft');
 $logo = $media_content['logo'] ?? [];
 ?>
 <!DOCTYPE html>
