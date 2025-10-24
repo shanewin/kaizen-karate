@@ -1,0 +1,385 @@
+{
+    "site_info": {
+        "title": "Kaizen Karate | Traditional Martial Arts Training",
+        "description": "Experience authentic karate training at Kaizen Karate. Traditional martial arts instruction for all ages and skill levels. Build discipline, confidence, and character.",
+        "keywords": "karate, martial arts, traditional, training, discipline, character",
+        "phone": "301-938-2711",
+        "email": "coach.v@kaizenkaratemd.com"
+    },
+    "hero_section": {
+        "title": "KAIZEN KARATE",
+        "quote": "Discipline is not about being told what to do. It is about learning how to choose what matters.",
+        "subtitle": "Kaizen Karate has offered martial arts instruction since 2003. Founded by Coach V, we specialize in karate instruction for children of all ages in the Washington DC, Maryland, Northern Virginia, and New York areas. We also offer karate programs for adults with a focus on fitness and self-defense.",
+        "button_text": "Register Now",
+        "registration_panel": {
+            "after_school": {
+                "header_line1": "AFTER SCHOOL",
+                "header_line2": "WEEKEND & EVENING",
+                "button": "Register Now!",
+                "url": "https://www.gomotionapp.com/team/mdkfu/page/class-registration"
+            },
+            "kaizen_dojo": {
+                "header": "KAIZEN DOJO",
+                "button": "Register Now!",
+                "url": "https://form.jotform.com/251533593606459"
+            },
+            "summer_camp": {
+                "header": "Summer Camps",
+                "display_mode": "information",
+                "text": "Registration for Summer Camp 2026 has not opened yet.",
+                "link_text": "Explore our 2025 Summer Camp program!",
+                "link_url": "#summer-camp",
+                "button": "Register Now!",
+                "url": "#summer-camp"
+            },
+            "belt_exams": {
+                "header": "Belt Exams",
+                "display_mode": "simple",
+                "button": "Register Now!",
+                "url": "",
+                "num_buttons": "1",
+                "exam_buttons": []
+            }
+        }
+    },
+    "navigation": {
+        "register_dropdown": {
+            "title": "Register Now",
+            "after_school": {
+                "header_line1": "AFTER SCHOOL",
+                "header_line2": "WEEKEND & EVENING",
+                "button": "Register Now!",
+                "url": "https://www.gomotionapp.com/team/mdkfu/page/class-registration"
+            },
+            "kaizen_dojo": {
+                "header": "KAIZEN DOJO",
+                "button": "Register Now!",
+                "url": "https://form.jotform.com/251533593606459"
+            },
+            "summer_camp": {
+                "header": "Summer Camp",
+                "display_mode": "information",
+                "text": "Registration for Summer Camp 2026 has not opened yet.",
+                "link_text": "Explore our 2025 Summer Camp program!",
+                "link_url": "#summer-camp",
+                "button": "Register Now!",
+                "url": "#summer-camp"
+            },
+            "belt_exams": {
+                "header": "Belt Exams",
+                "display_mode": "multiple",
+                "button": "Register Now!",
+                "url": "#",
+                "num_buttons": "1",
+                "exam_buttons": [
+                    {
+                        "line1": "REGISTER!",
+                        "line2": "Youth Exam",
+                        "line3": "Saturday, Nov 15th",
+                        "url": ""
+                    }
+                ]
+            }
+        },
+        "menu_items": [
+            {
+                "text": "About",
+                "href": "#about"
+            },
+            {
+                "text": "Summer Camp",
+                "href": "#summer-camp"
+            },
+            {
+                "text": "Kaizen Dojo",
+                "href": "#kaizen-dojo"
+            },
+            {
+                "text": "Weekend & Evening",
+                "href": "#after-school"
+            },
+            {
+                "text": "Online Store",
+                "href": "#online-store"
+            },
+            {
+                "text": "Belt Exam",
+                "href": "#belt-exam"
+            },
+            {
+                "text": "Kaizen Kenpo",
+                "href": "#kaizen-kenpo"
+            },
+            {
+                "text": "Contact",
+                "href": "#contact"
+            }
+        ]
+    },
+    "programs": {
+        "title": "Our Programs",
+        "subtitle": "Choose Your Path",
+        "cards": [
+            {
+                "title": "After School Program",
+                "summary": "Comprehensive martial arts training for students after school hours.",
+                "description": "Safe, structured environment where children learn traditional karate while developing discipline, respect, and confidence. Perfect for working parents.",
+                "image": "assets/images/panels/after-school.jpg",
+                "image_alt": "After school karate program for children at Kaizen Karate",
+                "buttons": [
+                    {
+                        "text": "Register Now \u2192",
+                        "url": "https://www.gomotionapp.com/team/mdkfu/page/class-registration",
+                        "style": "secondary"
+                    }
+                ]
+            },
+            {
+                "title": "Weekend & Evening",
+                "summary": "Flexible scheduling for adults and families with busy weekday commitments.",
+                "description": "Traditional karate training designed to fit your lifestyle. Weekend and evening classes accommodate work and school schedules while maintaining authentic instruction.",
+                "image": "assets/images/panels/weekends.jpg",
+                "image_alt": "Weekend and evening karate classes for busy schedules",
+                "buttons": [
+                    {
+                        "text": "View Schedule \u2192",
+                        "url": "#after-school",
+                        "style": "primary"
+                    },
+                    {
+                        "text": "Register Now \u2192",
+                        "url": "https://www.gomotionapp.com/team/mdkfu/page/class-registration",
+                        "style": "secondary"
+                    }
+                ]
+            },
+            {
+                "title": "Belt Exams",
+                "summary": "Test your skills and advance through traditional karate ranks.",
+                "description": "Belt exams are invitation-only and students must be invited by their instructor to test. Our rigorous testing ensures authentic skill development and progression.",
+                "image": "assets/images/panels/belts.png",
+                "image_alt": "Traditional karate belt exam process at Kaizen Karate",
+                "buttons": [
+                    {
+                        "text": "View Process \u2192",
+                        "url": "#belt-exam",
+                        "style": "primary"
+                    },
+                    {
+                        "text": "Register Now \u2192",
+                        "url": "#",
+                        "style": "secondary"
+                    }
+                ]
+            },
+            {
+                "title": "Online Store",
+                "summary": "Equipment, uniforms, and training materials for students.",
+                "description": "Everything you need for your karate journey - from beginner gear to advanced equipment. Support your training with authentic, high-quality items.",
+                "image": "assets/images/panels/online-store.jpg",
+                "image_alt": "Kaizen Karate online store for equipment and merchandise",
+                "buttons": [
+                    {
+                        "text": "Shop Now \u2192",
+                        "url": "#online-store",
+                        "style": "primary"
+                    }
+                ]
+            }
+        ]
+    },
+    "about_section": {
+        "kaizen_section": {
+            "title": "About Kaizen Karate",
+            "coach_v_image": "assets/images/about/coach-v-about.png",
+            "coach_v_image_alt": "Coach V - Head Instructor at Kaizen Karate",
+            "lead_paragraph": "Kaizen Karate was founded by Coach V in 2003. Kaizen Karate has been offering instruction in non-traditional Tang Soo Do as part of its core curriculum since its founding. Around 2010 Chinese Kenpo was introduced into the Kaizen curriculum.",
+            "paragraph_2": "Kaizen Karate's team of highly trained martial artists offer a number of programs for students starting as young as 3.5 years old up to adult. They focus on discipline and encouragement in a fun-loving environment. Their main goal is to help everyone progress, continually improve, and enjoy the process.",
+            "paragraph_3": "Kaizen Karate now operates 7 days per week throughout Maryland, Washington D.C., Virginia, and New York."
+        },
+        "coach_v_section": {
+            "title": "Meet Coach V",
+            "paragraph_1": "\"Coach V\" has 38 years of experience in the martial arts, having spent the majority of his life committed to the trade. He began his journey with karate at five years old and earned his first black belt in non-traditional Tang Soo Do in 1998 through Hill's Hitters Karate and Master Instructor Dr. Phillip Hill.",
+            "paragraph_2": "Coach V went on to earn his business degree at the Robert H. Smith School of Business at the University of Maryland in College Park. He then continued his training in Kenpo under 8th degree black belt Sifu Greg Payne who also holds a 5th degree black belt in Shotokan as well as many other black belts in other arts including Goju ryu & Judo.",
+            "paragraph_3": "In 2024, Coach V was promoted to 8th degree black belt in IKCA Chinese Kenpo by 10th degree black belt Senior Grandmaster Chuck Sullivan. Additionally, Coach V holds the rank of Nikyu (2nd degree brown belt) in Budoshin JuJitsu and studied Aikido at the ASU headquarters overseen by Saotome Sensei, Shihan.",
+            "paragraph_4": "In his free time he enjoys spending time with his wife and children as well as running local long distance races which most recently included the Cherry Blossom 10 miler, Rock 'n' Roll 1/2 Marathon, & Marine Corp Marathon in Washington, DC."
+        },
+        "team_section": {
+            "title": "Meet Our Instructors",
+            "instructors": [
+                {
+                    "name": "Coach Chris Marr",
+                    "title": "Instructor",
+                    "image": "",
+                    "image_alt": "",
+                    "bio": [
+                        "<strong>Qualifications:</strong> 5th degree black belt with Kaizen Karate, over 20 years of martial arts experience and over 15 years of instructional experience.",
+                        "Coach Chris holds black belts in Kenpo Karate and Tien Shan Pai Kung Fu and has trained for years in several different martial arts including: Muay Thai (reaching the rank of instructor), boxing, Brazilian Jiu Jitsu (blue belt), and Kyokushin Karate. He is very interested in the history of martial arts, especially arts from East Asia and Southeast Asia.",
+                        "Chris' other hobbies include running, lifting weights, and interval training mostly to stay competitive in the martial arts he still practices. He spends most of his free time with his wife and son."
+                    ]
+                },
+                {
+                    "name": "Coach Zach Knox",
+                    "title": "Instructor",
+                    "image": "",
+                    "image_alt": "",
+                    "bio": [
+                        "<strong>Experience:</strong> Training since 1987, Zach Knox holds black belts in Tae Kwon Do and Hap Ki Do.",
+                        "Over the years, he has trained in different arts such as Kung Fu, Shorin Ryu and Goju Ryu Karate, Kickboxing, and Escrima. In his time away from teaching and training, his hobbies include acting, directing, producing, football, hiking, screenplay writing, reading, boxing, and rock climbing."
+                    ]
+                },
+                {
+                    "name": "Coach David Matusow",
+                    "title": "Instructor",
+                    "image": "",
+                    "image_alt": "",
+                    "bio": [
+                        "<strong>Background:</strong> Inspired by 'The Karate Kid', Coach David began his martial arts journey in 1988. He currently holds a 1st degree blackbelt in Tae Kwon Do, a 6th degree blackbelt in non traditional Tang Soo Do, and a 6th degree blackbelt in Chinese Kenpo where he is also an IKCA Certified Instructor.",
+                        "Coach David earned his first blackbelt in Tae Kwon Do in 1993 under 9th degree Master Jae Kim, his second blackbelt in Tang Soo Do from Kaizen Karate under Coach V, and his third blackbelt in IKCA Chinese Kenpo under Coach V and 10th degree blackbelt Senior Grandmaster Chuck Sullivan.",
+                        "A Software Engineer at NASA and accomplished triathlete, Coach David has competed in numerous races and is a 3-time Ironman triathlon finisher. He has 2 children, both blackbelts in Kaizen Karate, and enjoys competing in duplicate bridge and home coffee brewing."
+                    ]
+                },
+                {
+                    "name": "Coach Skylar Parr",
+                    "title": "Instructor",
+                    "image": "",
+                    "image_alt": "",
+                    "bio": [
+                        "<strong>Journey:</strong> Coach Skylar started martial arts at 11 years old. After bouncing around a few schools at first, she eventually landed in a Tae Kwon Do dojang, where she would get the base of her skills and passion for the arts.",
+                        "She began training and teaching with Kaizen Karate in 2011 and earned her black belt in 2017. As an avid martial artist and personal trainer (NASM), she spends most of her time doing things related to fitness and martial arts. However, she also loves studying languages, playing drums, camping, skateboarding, and learning about a wide breadth of subjects."
+                    ]
+                },
+                {
+                    "name": "Coach Nina Hanisco",
+                    "title": "Instructor",
+                    "image": "",
+                    "image_alt": "",
+                    "bio": [
+                        "<strong>Experience:</strong> Coach Nina has trained with Kaizen Karate for over 10 years and has over five years of teaching experience in summer camp and classes. She is a Kaizen Karate Senior Instructor.",
+                        "She received her Kaizen Karate black belt in 2021 and her first degree Kaizen black belt in 2023. Currently, she studies Psychology and Sociology at McDaniel College in Westminster, Maryland."
+                    ]
+                },
+                {
+                    "name": "Coach James Stevens",
+                    "title": "Instructor",
+                    "image": "",
+                    "image_alt": "",
+                    "bio": [
+                        "<strong>Unique Journey:</strong> Coach James' exploration of martial arts began as a Kaizen Karate parent, watching his now-advanced rank son throw punches and kicks as a kindergartner. Starting as a virtual student in spring 2020, he dedicated himself to training with accelerated progress.",
+                        "When he began in-person classes in 2021, his progress continued at an accelerated pace, earning him many tournament victories, additional ranking in Chinese Kenpo, and opportunities to share lessons learned throughout his unique journey.",
+                        "Professionally, he works as a full-time musician, playing live shows and performing studio vocals (his rock band Rome In A Day toured the world for Armed Forces Entertainment). He enjoys reading, writing, designing tabletop games, running, basketball, lifting weights, and helping guide his daughter in her own martial arts journey."
+                    ]
+                }
+            ]
+        }
+    },
+    "summer_camp": {
+        "basic_info": {
+            "title": "Summer Camp 2025",
+            "subtitle": "4 campsites for campers ages 5-12",
+            "is_active": true
+        },
+        "special_offer": {
+            "enabled": true,
+            "badge_text": "SPECIAL OFFER - SAVE $150 PER WEEK",
+            "deadline_label": "Early Registration Deadline",
+            "deadline_date": "March 31st, 2025",
+            "free_badge_text": "100% FREE",
+            "free_care_heading": "FREE BEFORE & AFTER CARE",
+            "free_care_description": "For ALL weeks when you register before March 31st, 2025"
+        },
+        "video": {
+            "thumbnail": "assets/images/summer-camp/video-thumb.png",
+            "thumbnail_alt": "Summer Camp Video Preview",
+            "overlay_title": "Watch Our Summer Camp Experience",
+            "overlay_description": "See what makes Kaizen Summer Camp special",
+            "onclick": "openSummerCampVideo()",
+            "source": ""
+        },
+        "features": [
+            {
+                "icon": "fas fa-fist-raised",
+                "text": "Karate Instruction",
+                "onclick": "scrollToDailyScheduleInfo()"
+            },
+            {
+                "icon": "fas fa-bus",
+                "text": "Field Trips",
+                "onclick": "scrollToFieldTripsInfo()"
+            },
+            {
+                "icon": "fas fa-swimming-pool",
+                "text": "Pool Time",
+                "onclick": "scrollToSwimmingInfo()"
+            },
+            {
+                "icon": "fas fa-medal",
+                "text": "Belt Exams",
+                "onclick": "scrollToFieldTripsInfo()"
+            }
+        ],
+        "camp_locations": [
+            {
+                "title": "Maryland",
+                "venue": "Calvary Lutheran Church",
+                "address": "9545 Georgia Ave.<br>Silver Spring, MD 20910",
+                "duration": "June 11 - August 22",
+                "weeks": "10 weeks",
+                "new_families_url": "https://kaizenkarate.campmanagement.com/p/request_for_info_m.php?action=enroll",
+                "returning_families_url": "https://kaizenkarate.campmanagement.com/p/campers/login_m.php"
+            },
+            {
+                "title": "Northwest DC",
+                "venue": "Washington Hebrew Congregation",
+                "address": "3935 Macomb St NW<br>Washington, DC 20016",
+                "duration": "June 23 - August 15",
+                "weeks": "8 weeks",
+                "new_families_url": "https://kaizenkarate.campmanagement.com/p/request_for_info_m.php?action=enroll",
+                "returning_families_url": "https://kaizenkarate.campmanagement.com/p/campers/login_m.php"
+            },
+            {
+                "title": "Capitol Hill DC",
+                "venue": "Christ Church + Washington Parish",
+                "address": "620 G St. SE<br>Washington, DC 20003",
+                "duration": "July 21 - August 22",
+                "weeks": "5 weeks",
+                "new_families_url": "https://kaizenkarate.campmanagement.com/p/request_for_info_m.php?action=enroll",
+                "returning_families_url": "https://kaizenkarate.campmanagement.com/p/campers/login_m.php"
+            },
+            {
+                "title": "Virginia",
+                "venue": "Arlington Community Church",
+                "address": "6040 Wilson Blvd.<br>Arlington, VA 22205",
+                "duration": "July 7 - August 1",
+                "weeks": "4 weeks",
+                "new_families_url": "https://kaizenkarate.campmanagement.com/p/request_for_info_m.php?action=enroll",
+                "returning_families_url": "https://kaizenkarate.campmanagement.com/p/campers/login_m.php"
+            }
+        ]
+    },
+    "service_areas": {
+        "title": "Service Areas",
+        "states": [
+            {
+                "name": "Washington<br>DC",
+                "image": "assets/images/states/dc.png",
+                "alt": "Washington, DC"
+            },
+            {
+                "name": "Maryland",
+                "image": "assets/images/states/maryland.png",
+                "alt": "Maryland"
+            },
+            {
+                "name": "Virginia",
+                "image": "assets/images/states/virginia.png",
+                "alt": "Virginia"
+            },
+            {
+                "name": "New York",
+                "image": "assets/images/states/newyork.png",
+                "alt": "New York"
+            }
+        ]
+    }
+}

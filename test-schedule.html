@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaizen Karate Class Schedule</title>
+    <link rel="stylesheet" href="styles/test-schedule.css">
+</head>
+<body>
+    <main>
+        <div id="schedule-container">
+            <!-- Integrated filter toolbar -->
+            <div class="schedule-filters-toolbar">
+                <div class="filters">
+                    <div class="filter-group">
+                        <label>Class Type:</label>
+                        <div class="custom-dropdown" data-filter="class-type">
+                            <div class="dropdown-selected">
+                                <span class="selected-text">All Types</span>
+                                <span class="dropdown-arrow">▼</span>
+                            </div>
+                            <div class="dropdown-options">
+                                <div class="dropdown-option active" data-value="all">All Types</div>
+                                <div class="dropdown-option" data-value="youth">Youth</div>
+                                <div class="dropdown-option" data-value="adult">Adult (13 years +)</div>
+                                <div class="dropdown-option" data-value="mixed">Mixed (Youth & Adult)</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Youth Group:</label>
+                        <div class="custom-dropdown" data-filter="age-group">
+                            <div class="dropdown-selected">
+                                <span class="selected-text">All Youth Groups</span>
+                                <span class="dropdown-arrow">▼</span>
+                            </div>
+                            <div class="dropdown-options">
+                                <div class="dropdown-option active" data-value="all">All Youth Groups</div>
+                                <div class="dropdown-option" data-value="little-ninja">Little Ninjas (3.5-4 years)</div>
+                                <div class="dropdown-option" data-value="beginner">Beginner (5 Years +, White / Yellow)</div>
+                                <div class="dropdown-option" data-value="intermediate">Intermediate (5 Years +, Green / Purple / Blue)</div>
+                                <div class="dropdown-option" data-value="advanced">Advanced (5 Years +, Brown / Red)</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Belt Level:</label>
+                        <div class="custom-dropdown" data-filter="belt-level">
+                            <div class="dropdown-selected">
+                                <span class="selected-text">All Belts</span>
+                                <span class="dropdown-arrow">▼</span>
+                            </div>
+                            <div class="dropdown-options">
+                                <div class="dropdown-option active" data-value="all">All Belts</div>
+                                <div class="dropdown-option" data-value="white">White</div>
+                                <div class="dropdown-option" data-value="yellow">Yellow</div>
+                                <div class="dropdown-option" data-value="green">Green</div>
+                                <div class="dropdown-option" data-value="purple">Purple</div>
+                                <div class="dropdown-option" data-value="blue">Blue</div>
+                                <div class="dropdown-option" data-value="brown">Brown</div>
+                                <div class="dropdown-option" data-value="red">Red</div>
+                                <div class="dropdown-option" data-value="master-form">Master Form / Kenpo</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Location:</label>
+                        <div class="custom-dropdown" data-filter="location">
+                            <div class="dropdown-selected">
+                                <span class="selected-text">All Locations</span>
+                                <span class="dropdown-arrow">▼</span>
+                            </div>
+                            <div class="dropdown-options">
+                                <div class="dropdown-option active" data-value="all">All Locations</div>
+                                <div class="dropdown-option" data-value="Silver Spring MD">📍Silver Spring MD</div>
+                                <div class="dropdown-option" data-value="NW DC">📍NW DC</div>
+                                <div class="dropdown-option" data-value="Arlington VA">📍Arlington VA</div>
+                                <div class="dropdown-option" data-value="Rockville MD">📍Rockville MD</div>
+                                <div class="dropdown-option" data-value="Glenn Dale MD">📍Glenn Dale MD</div>
+                                <div class="dropdown-option" data-value="Capitol Hill DC">📍Capitol Hill DC</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Day of Week:</label>
+                        <div class="custom-dropdown" data-filter="day">
+                            <div class="dropdown-selected">
+                                <span class="selected-text">All Days</span>
+                                <span class="dropdown-arrow">▼</span>
+                            </div>
+                            <div class="dropdown-options">
+                                <div class="dropdown-option active" data-value="all">All Days</div>
+                                <div class="dropdown-option" data-value="Monday">Monday</div>
+                                <div class="dropdown-option" data-value="Tuesday">Tuesday</div>
+                                <div class="dropdown-option" data-value="Wednesday">Wednesday</div>
+                                <div class="dropdown-option" data-value="Thursday">Thursday</div>
+                                <div class="dropdown-option" data-value="Friday">Friday</div>
+                                <div class="dropdown-option" data-value="Saturday">Saturday</div>
+                                <div class="dropdown-option" data-value="Sunday">Sunday</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bottom row container for checkbox and reset button -->
+                    <div class="bottom-row-container">
+                        <!-- Dynamic checkbox for excluding mixed classes -->
+                        <div id="exclude-mixed-container" class="exclude-mixed-checkbox" style="display: none;">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="exclude-mixed">
+                                <span class="checkmark"></span>
+                                Exclude Mixed (Youth & Adult) Classes?
+                            </label>
+                        </div>
+                        
+                        <button id="reset-filters">Reset Filters</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Schedule content will be inserted here by JavaScript -->
+            <div id="schedule-content"></div>
+        </div>
+    </main>
+    
+    <script src="scripts/test-schedule.js"></script>
+</body>
+</html> 

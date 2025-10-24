@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('.contact-form');
-    const thankYou = document.getElementById('waitlistThankYou');
+    const thankYou = document.getElementById('contactThankYou');
     const submitBtn = form.querySelector('button[type="submit"]');
   
     form.addEventListener('submit', function (e) {
@@ -35,12 +35,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       })
       .catch(err => {
-        console.error('Wait list form error:', err);
-        alert('There was an error. Please try again.');
+        console.error('Contact form error:', err);
+        alert('There was an error sending your message. Please try again.');
       })
       .finally(() => {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Submit';
+        submitBtn.innerHTML = 'Send Message';
       });
     });
   });

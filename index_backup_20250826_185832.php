@@ -1,0 +1,5658 @@
+<?php
+// Start session with proper settings
+session_start([
+    'cookie_lifetime' => 86400, // 24 hours
+    'cookie_secure' => isset($_SERVER['HTTPS']),
+    'cookie_httponly' => true,
+    'cookie_samesite' => 'Lax'
+]);
+
+// Regenerate token only if doesn't exist
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8JGNGZY633"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8JGNGZY633');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaizen Karate | Traditional Martial Arts Training</title>
+  <meta name="description" content="Experience authentic karate training at Kaizen Karate. Traditional martial arts instruction for all ages and skill levels. Build discipline, confidence, and character.">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles/style.css?v=<?php echo time(); ?>">
+  <link rel="stylesheet" href="styles/test-schedule.css?v=<?php echo time(); ?>">
+  <!-- <link rel="stylesheet" href="styles/chatbot.css?v=<?php echo time(); ?>"> -->
+
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png?v=2">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png?v=2">
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg?v=2">
+  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico?v=2">
+  <link rel="manifest" href="favicon/site.webmanifest?v=2">
+
+  <!--
+    /**
+    * @license
+    * MyFonts Webfont Build ID 892684
+    *
+    * The fonts listed in this notice are subject to the End User License
+    * Agreement(s) entered into by the website owner. All other parties are
+    * explicitly restricted from using the Licensed Webfonts(s).
+    *
+    * You may obtain a valid license from one of MyFonts official sites.
+    * http://www.fonts.com
+    * http://www.myfonts.com
+    * http://www.linotype.com
+    *
+    */
+    -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/MyWebfontsKit/MyWebfontsKit.css">
+</head>
+<body>
+
+<!-- Floating Pills Reverse Navigation -->
+<nav class="floating-pills-nav fixed-top" id="uniqueNavbar">
+  <div class="nav-container">
+    
+    <!-- Karate Logo (Left Side) -->
+    <div class="luxury-brand-container">
+      <a class="luxury-brand" href="#">
+        <img src="assets/images/logo.png" alt="Kaizen Karate" class="brand-logo-prominent">
+      </a>
+    </div>
+    
+    <!-- Navigation Menu (Right Side) -->
+    <div class="mega-nav-container" id="megaNavContainer">
+      <ul class="mega-navbar-nav">
+        <li class="mega-nav-item mega-dropdown register-dropdown">
+          <a class="mega-nav-link register-nav-link mega-dropdown-toggle" href="#register" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Register Now
+            <i class="fas fa-chevron-down ms-1"></i>
+          </a>
+          <div class="mega-dropdown-menu">
+            <div class="mega-menu-container horizontal-layout">
+              <div class="mega-menu-column after-school-column register-section-with-stripes">
+                <h6 class="mega-menu-header">
+                  <span class="header-line-1">AFTER SCHOOL</span>
+                  <span class="header-line-2">WEEKEND & EVENING</span>
+                </h6>
+                <div class="register-button-container">
+                    <a class="mega-menu-item mega-register-btn" href="https://www.gomotionapp.com/team/mdkfu/page/class-registration" target="_blank">Register Now!</a>
+                </div>
+              </div>
+              
+              <div class="mega-menu-vertical-divider"></div>
+              
+              <div class="mega-menu-column register-section-with-stripes">
+                <h6 class="mega-menu-header">KAIZEN DOJO</h6>
+                <div class="register-button-container">
+                  <a class="mega-menu-item mega-register-btn" href="https://form.jotform.com/251533593606459" target="_blank">Register Now!</a>
+                </div>
+              </div>
+              
+              <div class="mega-menu-vertical-divider"></div>
+              
+              <div class="mega-menu-column">
+                <h6 class="mega-menu-header">Summer Camp</h6>
+                <div class="mega-menu-text">
+                  <p class="mega-menu-summer-text">
+                    Registration for Summer Camp 2026 has not opened yet. 
+                    <a href="#summer-camp" class="summer-camp-explore-link">
+                      Explore our 2025 Summer Camp program
+                    </a> 
+                    to see what we have in store for next year!
+                  </p>
+                </div>
+              </div>
+              
+              <div class="mega-menu-vertical-divider"></div>
+              
+              <div class="mega-menu-column register-section-with-stripes">
+                <h6 class="mega-menu-header">Belt Exams</h6>
+                <div class="register-button-container">
+                  <a class="mega-menu-item mega-register-btn" href="#" onclick="scrollToBeltExamRegister(); return false;">Register Now!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="mega-nav-item">
+          <a class="mega-nav-link" href="#about">About</a>
+        </li>
+        <li class="mega-nav-item">
+          <a class="mega-nav-link" href="#summer-camp">Summer Camp</a>
+        </li>
+        <li class="mega-nav-item">
+          <a class="mega-nav-link" href="#kaizen-dojo">Kaizen Dojo</a>
+        </li>
+        <li class="mega-nav-item">
+          <a class="mega-nav-link" href="#after-school">Weekend & Evening</a>
+        </li>
+        <li class="mega-nav-item">
+          <a class="mega-nav-link" href="#online-store">Online Store</a>
+        </li>
+        <li class="mega-nav-item">
+          <a class="mega-nav-link" href="#belt-exam">Belt Exam</a>
+        </li>
+        <li class="mega-nav-item">
+          <a class="mega-nav-link" href="#kaizen-kenpo">Kaizen Kenpo</a>
+        </li>
+        <li class="mega-nav-item">
+          <a class="mega-nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+    
+    <!-- Mobile Brand Text (visible only on mobile) -->
+    <div class="mobile-brand-text">
+      <span class="mobile-brand-name">KAIZEN KARATE</span>
+    </div>
+    
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+      <span class="toggle-line"></span>
+      <span class="toggle-line"></span>
+      <span class="toggle-line"></span>
+    </button>
+    
+  </div>
+  
+  <!-- Mobile Overlay Menu -->
+  <div class="mobile-overlay-menu" id="mobileOverlayMenu">
+    <div class="mobile-menu-content">
+      <div class="mobile-brand">
+        <img src="assets/images/logo.png" alt="Kaizen Karate" class="mobile-brand-logo">
+      </div>
+      <div class="mobile-nav-items">
+        <div class="mobile-dropdown" data-delay="0">
+          <a href="#" class="mobile-nav-item register-mobile-nav mobile-dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Register Now
+            <i class="fas fa-chevron-down ms-1"></i>
+          </a>
+          <div class="mobile-dropdown-menu">
+            <div class="mobile-dropdown-section register-section-with-stripes">
+              <h6>
+                <span class="header-line-1">AFTER SCHOOL</span>
+                <span class="header-line-2">WEEKEND & EVENING</span>
+              </h6>
+              <a href="https://www.gomotionapp.com/team/mdkfu/page/class-registration" target="_blank" class="mobile-dropdown-item">Register Now!</a>
+            </div>
+            
+            <hr class="mobile-menu-divider">
+            
+            <div class="mobile-dropdown-section">
+              <h6>KAIZEN DOJO</h6>
+              <a href="https://form.jotform.com/251533593606459" target="_blank" class="mobile-dropdown-item">Register Now!</a>
+            </div>
+            
+            <hr class="mobile-menu-divider">
+            
+            <div class="mobile-dropdown-section">
+              <h6>Summer Camp</h6>
+              <p class="mobile-dropdown-text">Registration for Summer Camp 2026 has not opened yet.<br>
+              <a href="#summer-camp" class="summer-camp-explore-link">Explore our 2025 Summer Camp program</a> to see what we have in store for next year!</p>
+            </div>
+            
+            <hr class="mobile-menu-divider">
+            
+            <div class="mobile-dropdown-section register-section-with-stripes">
+              <h6>Belt Exams</h6>
+              <a href="#" onclick="scrollToBeltExamRegister(); return false;" class="mobile-dropdown-item">Register Now!</a>
+            </div>
+          </div>
+        </div>
+        <a href="#about" class="mobile-nav-item" data-delay="50">About</a>
+        <a href="#summer-camp" class="mobile-nav-item summer-camp-mobile-nav" data-delay="100">Summer Camp</a>
+<a href="#kaizen-dojo" class="mobile-nav-item" data-delay="125">Kaizen Dojo</a>
+<a href="#after-school" class="mobile-nav-item" data-delay="150">Weekend & Evening</a>
+        <a href="#online-store" class="mobile-nav-item" data-delay="175">Online Store</a>
+        <a href="#belt-exam" class="mobile-nav-item" data-delay="185">Belt Exam</a>
+        <a href="#kaizen-kenpo" class="mobile-nav-item" data-delay="195">Kaizen Kenpo</a>
+        <a href="#contact" class="mobile-nav-item" data-delay="205">Contact</a>
+      </div>
+    </div>
+  </div>
+  
+</nav>
+
+  <!-- Fixed Sidebar Widget -->
+  <div class="fixed-sidebar-widget">
+    <div class="sidebar-button">
+      <a href="https://www.facebook.com/people/Kaizen-Karate/100063714665511/" target="_blank" class="sidebar-btn" title="Follow us on Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </div>
+    <div class="sidebar-button">
+      <a href="https://www.tiktok.com/@kaizenkaratemd" target="_blank" class="sidebar-btn" title="Follow us on TikTok">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div>
+    <div class="sidebar-button">
+      <a href="https://www.instagram.com/kaizen_karate/" target="_blank" class="sidebar-btn" title="Follow us on Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+    <div class="sidebar-button">
+      <a href="https://coachv6z.podbean.com/" target="_blank" class="sidebar-btn" title="Listen to our Podcast">
+        <i class="fas fa-podcast"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container-fluid h-100">
+      <div class="row h-100">
+        <!-- Full-Screen Video Background -->
+        <div class="video-container">
+          <video autoplay muted loop playsinline id="hero-video">
+            <source src="assets/videos/hero/kaizen-hero-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <!-- Hero Overlay - Full Width Transparent Overlay -->
+        <div class="hero-overlay-section">
+          <div class="nav-container">
+            <div class="hero-content" id="heroContent">
+              <div class="hero-title-row">
+                <div class="hero-title-col">
+                  <h1 class="hero-title">KAIZEN<span class="desktop-space"> </span><br class="mobile-break">KARATE</h1>
+                </div>
+                <div class="hero-quote-col" style="margin-top:12px;">
+                  <p class="hero-quote">"Discipline is not about being told what to do. It is about learning how to choose what matters."</p>
+                </div>
+              </div>
+              <div class="hero-row">
+                <div class="hero-col-left">
+                  <p class="hero-description">
+                    Kaizen Karate has offered martial arts instruction since 2003. Founded by Coach V, we specialize in karate instruction for children of all ages in the <span class="hero-locations">Washington DC, Maryland, Northern Virginia, and New York</span> areas. We also offer karate programs for adults with a focus on fitness and self-defense. <a href="#about" class="hero-read-more-inline">Read more</a>
+                  </p>
+                </div>
+                <div class="hero-col-right">
+                  <button type="button" id="heroRegisterBtn" class="btn training-btn-black hero-registration-btn">Register Now</button>
+                </div>
+              </div>
+              <!-- HERO_REGISTER_PANEL_START -->
+              <div class="hero-overlay-row">
+                <div class="hero-overlay-media">
+                  <img src="assets/images/about/hero-over-1.png?v=<?php echo time(); ?>" alt="Kaizen Karate" class="hero-overlay-image" />
+                </div>
+                <div id="heroRegisterPanel" class="hero-register-panel">
+                
+                <div class="hero-slide-col">
+                  <div class="hero-slide-header">AFTER SCHOOL<br>WEEKEND & EVENING</div>
+                  <a class="hero-slide-btn" href="https://www.gomotionapp.com/team/mdkfu/page/class-registration" target="_blank">Register Now!</a>
+                </div>
+                
+                <div class="hero-slide-vertical-divider"></div>
+                
+                <div class="hero-slide-col">
+                  <div class="hero-slide-header">KAIZEN DOJO</div>
+                  <a class="hero-slide-btn" href="https://form.jotform.com/251533593606459" target="_blank">Register Now!</a>
+                  </div>
+                
+                <div class="hero-slide-vertical-divider"></div>
+                
+                <div class="hero-slide-col">
+                  <div class="hero-slide-header">Summer Camp</div>
+                  <div class="hero-slide-text">Registration for Summer Camp 2026 has not opened yet.<br>
+                  <a href="#summer-camp" class="summer-camp-explore-link">Explore our 2025 Summer Camp program</a> to see what we have in store for next year!</div>
+                </div>
+                
+                <div class="hero-slide-vertical-divider"></div>
+                
+                <div class="hero-slide-col">
+                  <div class="hero-slide-header">Belt Exams</div>
+                  <a class="hero-slide-btn" href="#" onclick="scrollToBeltExamRegister(); return false;">Register Now!</a>
+                </div>
+                
+                </div>
+                </div> <!-- /.hero-register-panel -->
+              </div> <!-- /.hero-overlay-row -->
+              <!-- HERO_REGISTER_PANEL_END -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+  <!-- Video Controls -->
+  <div class="video-controls">
+    <button class="video-control-btn" id="pausePlayBtn" title="Pause/Play Video" 
+            onclick="togglePlayPause();">
+      <i class="fas fa-pause" id="pausePlayIcon"></i>
+    </button>
+    <button class="video-control-btn" id="muteUnmuteBtn" title="Mute/Unmute Video"
+            onclick="toggleMute();">
+      <i class="fas fa-volume-mute" id="muteUnmuteIcon"></i>
+    </button>
+    </div>
+
+  <!-- Mobile Hero Content Section - Only visible on 480px and below -->
+  <section class="mobile-hero-content-section">
+    <div class="container">
+             <div class="mobile-hero-content">
+         <div class="mobile-hero-title-row">
+           <p class="mobile-hero-quote">"Discipline is not about being told what to do. It is about learning how to choose what matters."</p>
+         </div>
+                 <div class="mobile-hero-row">
+           <div class="mobile-hero-description-container">
+             <p class="mobile-hero-description">
+               Kaizen Karate has offered martial arts instruction since 2003. Founded by Coach V, we specialize in karate instruction for children of all ages in the <span class="hero-locations">Washington DC, Maryland, Northern Virginia, and New York</span> areas. We also offer karate programs for adults with a focus on fitness and self-defense. <a href="#about" class="hero-read-more-inline">Read more</a>
+             </p>
+           </div>
+         </div>
+         
+                 <!-- Mobile Register Options - Pure Bootstrap Layout -->
+        <div class="container-fluid py-1">
+          <div class="row">
+            <div class="col-12">
+              <h5 class="registration-center-title">REGISTRATION CENTER</h5>
+            </div>
+          </div>
+          <div class="row g-2">
+             <div class="col-12">
+               <div class="card">
+                 <div class="card-body text-center py-3">
+                   <h6 class="card-title text-danger fw-bold text-uppercase mb-3" style="font-size: 0.9rem; letter-spacing: 0.5px;">
+                     <span class="mobile-header-line-1">AFTER SCHOOL</span>
+                     <span class="mobile-header-line-2">WEEKEND & EVENING</span>
+                   </h6>
+                   <a class="btn btn-danger btn-sm px-4" href="https://www.gomotionapp.com/team/mdkfu/page/class-registration" target="_blank">Register Now!</a>
+                 </div>
+               </div>
+             </div>
+             
+             <div class="col-12">
+               <div class="card">
+                 <div class="card-body text-center py-3">
+                   <h6 class="card-title text-danger fw-bold text-uppercase mb-3" style="font-size: 0.9rem; letter-spacing: 0.5px;">
+                     KAIZEN DOJO
+                   </h6>
+                   <a class="btn btn-danger btn-sm px-4" href="https://form.jotform.com/251533593606459" target="_blank">Register Now!</a>
+                 </div>
+               </div>
+             </div>
+             
+             <div class="col-12">
+               <div class="card">
+                 <div class="card-body text-center py-3">
+                   <h6 class="card-title text-danger fw-bold text-uppercase mb-3" style="font-size: 0.9rem; letter-spacing: 0.5px;">
+                     Summer Camp
+                   </h6>
+                   <div class="text-muted" style="font-size: 0.8rem; font-style: italic;">
+                     Registration for Summer Camp 2026 has not opened yet.<br>
+                     <a href="#summer-camp" class="text-decoration-none">Explore our 2025 Summer Camp program</a> to see what we have in store for next year!
+                   </div>
+                 </div>
+               </div>
+             </div>
+             
+             <div class="col-12">
+               <div class="card">
+                 <div class="card-body text-center py-3">
+                   <h6 class="card-title text-danger fw-bold text-uppercase mb-3" style="font-size: 0.9rem; letter-spacing: 0.5px;">
+                     Belt Exams
+                   </h6>
+                   <a class="btn btn-danger btn-sm px-4" href="#" onclick="scrollToBeltExamRegister(); return false;">Register Now!</a>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
+
+   <!-- Mobile Hero Section JavaScript -->
+   <script>
+   document.addEventListener('DOMContentLoaded', function() {
+     const mobileRegisterBtn = document.getElementById('mobileHeroRegisterBtn');
+     const mobileRegisterPanel = document.getElementById('mobileHeroRegisterPanel');
+     
+     if (mobileRegisterBtn && mobileRegisterPanel) {
+       console.log('Mobile register elements found'); // Debug log
+       
+       mobileRegisterBtn.addEventListener('click', function(e) {
+         e.preventDefault();
+         console.log('Mobile register button clicked'); // Debug log
+         
+         // Check current display state
+         const currentDisplay = window.getComputedStyle(mobileRegisterPanel).display;
+         console.log('Current display:', currentDisplay); // Debug log
+         
+         if (currentDisplay === 'none') {
+           mobileRegisterPanel.style.display = 'flex';
+           console.log('Showing panel'); // Debug log
+         } else {
+           mobileRegisterPanel.style.display = 'none';
+           console.log('Hiding panel'); // Debug log
+         }
+       });
+     } else {
+       console.log('Mobile register elements not found'); // Debug log
+     }
+   });
+   </script>
+  
+  <!-- Training Options Section -->
+  <section id="training-options" class="training-options-section">
+    <div class="container">
+      <!-- Training Cards Grid -->
+      <div class="row g-4 training-cards-grid">
+        <!-- After School -->
+        <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+          <div class="training-card h-100">
+            <div class="training-card-header">
+              <h3>After School</h3>
+            </div>
+            <div class="training-card-image">
+              <img src="assets/images/panels/after-school.jpg" alt="After school karate program for children at Kaizen Karate" class="card-image">
+            </div>
+            <div class="training-card-content">
+              <p class="training-summary">Comprehensive after-school karate program designed for young students.</p>
+              <p class="training-description">
+                <span class="training-description-truncated">Safe, structured environment...</span>
+                <span class="training-description-full">Safe, structured environment where children learn traditional karate while developing discipline, respect, and confidence. Perfect for working parents.</span>
+              </p>
+              <a class="read-more-link" onclick="toggleDescription(this)">Read More</a>
+              <div class="training-card-buttons">
+                <a href="https://www.gomotionapp.com/team/mdkfu/page/class-registration" target="_blank" class="btn training-btn-secondary">Register Now →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weekend & Evening -->
+        <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+          <div class="training-card h-100">
+            <div class="training-card-header">
+              <h3 class="weekend-evening-title">Weekend & Evening</h3>
+            </div>
+            <div class="training-card-image">
+              <img src="assets/images/panels/weekends.jpg" alt="Weekend and evening karate classes for busy schedules" class="card-image">
+            </div>
+            <div class="training-card-content">
+              <p class="training-summary">Flexible scheduling for adults and families with busy weekday commitments.</p>
+              <p class="training-description">
+                <span class="training-description-truncated">Traditional karate training...</span>
+                <span class="training-description-full">Traditional karate training designed to fit your lifestyle. Weekend and evening classes accommodate work and school schedules while maintaining authentic instruction.</span>
+              </p>
+              <a class="read-more-link" onclick="toggleDescription(this)">Read More</a>
+              <div class="training-card-buttons">
+                <a href="#after-school" class="btn training-btn-primary">View Schedule →</a>
+                <a href="https://www.gomotionapp.com/team/mdkfu/page/class-registration" target="_blank" class="btn training-btn-secondary">Register Now →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Belt Exam -->
+        <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+          <div class="training-card h-100">
+            <div class="training-card-header">
+              <h3>Belt Exam</h3>
+            </div>
+            <div class="training-card-image">
+              <img src="assets/images/panels/belts.png" alt="Traditional karate belt exam process at Kaizen Karate" class="card-image">
+            </div>
+            <div class="training-card-content">
+              <p class="training-summary">Learn about our traditional belt examination and advancement process.</p>
+              <p class="training-description">
+                <span class="training-description-truncated">Belt exams are invitation-only...</span>
+                <span class="training-description-full">Belt exams are invitation-only and students must be invited by their instructor to test. Our rigorous testing ensures authentic skill development and progression.</span>
+              </p>
+              <a class="read-more-link" onclick="toggleDescription(this)">Read More</a>
+              <div class="training-card-buttons">
+                <a href="#belt-exam" class="btn training-btn-primary">View Process →</a>
+                <a href="#" onclick="scrollToBeltExamRegister(); return false;" class="btn training-btn-secondary">Register Now →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Online Store -->
+        <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+          <div class="training-card h-100">
+            <div class="training-card-header">
+              <h3>Online Store</h3>
+            </div>
+            <div class="training-card-image">
+              <img src="assets/images/panels/online-store.jpg" alt="Kaizen Karate online store for equipment and merchandise" class="card-image">
+            </div>
+            <div class="training-card-content">
+              <p class="training-summary">Quality karate equipment, uniforms, and Kaizen Karate merchandise.</p>
+              <p class="training-description">
+                <span class="training-description-truncated">Everything you need for your karate journey...</span>
+                <span class="training-description-full">Everything you need for your karate journey - from beginner gear to advanced equipment. Support your training with authentic, high-quality items.</span>
+              </p>
+              <a class="read-more-link" onclick="toggleDescription(this)">Read More</a>
+              <div class="training-card-buttons">
+                <a href="#online-store" class="btn training-btn-primary">Shop Now →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<!-- Served States Section -->
+<section class="served-states-section" aria-label="Kaizen Karate Proudly Serves">
+  <div class="container">
+    <div class="served-states-inner served-states-row">
+      <h2 class="served-states-title">Kaizen Karate Proudly Serves:</h2>
+      <div class="served-states-grid served-states-inline">
+        <!-- Icons Row -->
+        <div class="state-icons-row">
+          <img class="state-icon-img" src="assets/images/states/dc.png?v=<?php echo time(); ?>" alt="Washington, DC" width="48" height="48">
+          <img class="state-icon-img" src="assets/images/states/maryland.png?v=<?php echo time(); ?>" alt="Maryland" width="48" height="48">
+          <img class="state-icon-img" src="assets/images/states/virginia.png?v=<?php echo time(); ?>" alt="Virginia" width="48" height="48">
+          <img class="state-icon-img" src="assets/images/states/newyork.png?v=<?php echo time(); ?>" alt="New York" width="48" height="48">
+        </div>
+        <!-- Labels Row -->
+        <div class="state-labels-row">
+          <span class="state-label">Washington<br>DC</span>
+          <span class="state-label">Maryland</span>
+          <span class="state-label">Virginia</span>
+          <span class="state-label">New York</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-dark-section">
+  <div class="container-fluid">
+    <div class="about-content-wrapper">
+      <!-- Coach V Image - Floated Left -->
+      <img src="assets/images/about/coach-v-about.png" alt="Coach V - Head Instructor at Kaizen Karate" class="coach-v-float-image">
+      
+      <h1 class="about-main-title mb-4">About Kaizen Karate</h1>
+      
+      <p class="about-lead">
+        Kaizen Karate was founded by Coach V in 2003. Kaizen Karate has been offering instruction in non-traditional Tang Soo Do as part of its core curriculum since its founding. Around 2010 Chinese Kenpo was introduced into the Kaizen curriculum.
+      </p>
+      
+      <p class="about-text">
+        Kaizen Karate's team of highly trained martial artists offer a number of programs for students starting as young as 3.5 years old up to adult. They focus on discipline and encouragement in a fun-loving environment. Their main goal is to help everyone progress, continually improve, and enjoy the process.
+      </p>
+      
+      <p class="about-text">
+        Kaizen Karate now operates 7 days per week throughout Maryland, Washington D.C., Virginia, and New York.
+      </p>
+
+      <h2 class="about-section-title mt-5 mb-4">Meet Coach V</h2>
+      
+      <p class="about-text">
+        "Coach V" has 38 years of experience in the martial arts, having spent the majority of his life committed to the trade. He began his journey with karate at five years old and earned his first black belt in non-traditional Tang Soo Do in 1998 through Hill's Hitters Karate and Master Instructor Dr. Phillip Hill.
+      </p>
+      
+      <p class="about-text">
+        Coach V went on to earn his business degree at the Robert H. Smith School of Business at the University of Maryland in College Park. He then continued his training in Kenpo under 8th degree black belt Sifu Greg Payne who also holds a 5th degree black belt in Shotokan as well as many other black belts in other arts including Goju ryu & Judo.
+      </p>
+      
+      <p class="about-text">
+        In 2024, Coach V was promoted to 8th degree black belt in IKCA Chinese Kenpo by 10th degree black belt Senior Grandmaster Chuck Sullivan. Additionally, Coach V holds the rank of Nikyu (2nd degree brown belt) in Budoshin JuJitsu and studied Aikido at the ASU headquarters overseen by Saotome Sensei, Shihan.
+      </p>
+      
+      <p class="about-text">
+        In his free time he enjoys spending time with his wife and children as well as running local long distance races which most recently included the Cherry Blossom 10 miler, Rock 'n' Roll 1/2 Marathon, & Marine Corp Marathon in Washington, DC.
+      </p>
+      
+      <!-- Other Instructors Accordion -->
+      <div class="about-instructors-section">
+        <!-- Master Accordion Header -->
+        <div class="master-instructor-accordion">
+          <button class="master-instructor-header">
+            <h2 class="about-section-title mt-5 mb-4">Meet Our Other Instructors</h2>
+            <span class="master-accordion-icon">▼</span>
+          </button>
+          
+          <!-- Master Accordion Content -->
+          <div class="master-instructor-content">
+            <div class="instructors-accordion">
+          <!-- Chris Marr -->
+          <div class="instructor-item">
+            <button class="instructor-header" data-instructor="1">
+              <h3>Coach Chris Marr - Instructor</h3>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="instructor-content" id="instructor-1">
+              <p class="about-text">
+                <strong>Qualifications:</strong> 5th degree black belt with Kaizen Karate, over 20 years of martial arts experience and over 15 years of instructional experience.
+              </p>
+              <p class="about-text">
+                Coach Chris holds black belts in Kenpo Karate and Tien Shan Pai Kung Fu and has trained for years in several different martial arts including: Muay Thai (reaching the rank of instructor), boxing, Brazilian Jiu Jitsu (blue belt), and Kyokushin Karate. He is very interested in the history of martial arts, especially arts from East Asia and Southeast Asia.
+              </p>
+              <p class="about-text">
+                Chris' other hobbies include running, lifting weights, and interval training mostly to stay competitive in the martial arts he still practices. He spends most of his free time with his wife and son.
+        </p>
+      </div>
+      </div>
+      
+          <!-- Zach Knox -->
+          <div class="instructor-item">
+            <button class="instructor-header" data-instructor="2">
+              <h3>Coach Zach Knox - Instructor</h3>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="instructor-content" id="instructor-2">
+              <p class="about-text">
+                <strong>Experience:</strong> Training since 1987, Zach Knox holds black belts in Tae Kwon Do and Hap Ki Do.
+              </p>
+              <p class="about-text">
+                Over the years, he has trained in different arts such as Kung Fu, Shorin Ryu and Goju Ryu Karate, Kickboxing, and Escrima. In his time away from teaching and training, his hobbies include acting, directing, producing, football, hiking, screenplay writing, reading, boxing, and rock climbing.
+              </p>
+      </div>
+          </div>
+          
+          <!-- David Matusow -->
+          <div class="instructor-item">
+            <button class="instructor-header" data-instructor="3">
+              <h3>Coach David Matusow - Instructor</h3>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="instructor-content" id="instructor-3">
+              <p class="about-text">
+                <strong>Background:</strong> Inspired by 'The Karate Kid', Coach David began his martial arts journey in 1988. He currently holds a 1st degree blackbelt in Tae Kwon Do, a 6th degree blackbelt in non traditional Tang Soo Do, and a 6th degree blackbelt in Chinese Kenpo where he is also an IKCA Certified Instructor.
+              </p>
+              <p class="about-text">
+                Coach David earned his first blackbelt in Tae Kwon Do in 1993 under 9th degree Master Jae Kim, his second blackbelt in Tang Soo Do from Kaizen Karate under Coach V, and his third blackbelt in IKCA Chinese Kenpo under Coach V and 10th degree blackbelt Senior Grandmaster Chuck Sullivan.
+              </p>
+              <p class="about-text">
+                A Software Engineer at NASA and accomplished triathlete, Coach David has competed in numerous races and is a 3-time Ironman triathlon finisher. He has 2 children, both blackbelts in Kaizen Karate, and enjoys competing in duplicate bridge and home coffee brewing.
+        </p>
+    </div>
+  </div>
+
+          <!-- Skylar Parr -->
+          <div class="instructor-item">
+            <button class="instructor-header" data-instructor="4">
+              <h3>Coach Skylar Parr - Instructor</h3>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="instructor-content" id="instructor-4">
+              <p class="about-text">
+                <strong>Journey:</strong> Coach Skylar started martial arts at 11 years old. After bouncing around a few schools at first, she eventually landed in a Tae Kwon Do dojang, where she would get the base of her skills and passion for the arts.
+              </p>
+              <p class="about-text">
+                She began training and teaching with Kaizen Karate in 2011 and earned her black belt in 2017. As an avid martial artist and personal trainer (NASM), she spends most of her time doing things related to fitness and martial arts. However, she also loves studying languages, playing drums, camping, skateboarding, and learning about a wide breadth of subjects.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Nina Hanisco -->
+          <div class="instructor-item">
+            <button class="instructor-header" data-instructor="5">
+              <h3>Coach Nina Hanisco - Instructor</h3>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="instructor-content" id="instructor-5">
+              <p class="about-text">
+                <strong>Experience:</strong> Coach Nina has trained with Kaizen Karate for over 10 years and has over five years of teaching experience in summer camp and classes. She is a Kaizen Karate Senior Instructor.
+              </p>
+              <p class="about-text">
+                She received her Kaizen Karate black belt in 2021 and her first degree Kaizen black belt in 2023. Currently, she studies Psychology and Sociology at McDaniel College in Westminster, Maryland.
+        </p>
+      </div>
+          </div>
+          
+          <!-- James Stevens -->
+          <div class="instructor-item">
+            <button class="instructor-header" data-instructor="6">
+              <h3>Coach James Stevens - Instructor</h3>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="instructor-content" id="instructor-6">
+              <p class="about-text">
+                <strong>Unique Journey:</strong> Coach James' exploration of martial arts began as a Kaizen Karate parent, watching his now-advanced rank son throw punches and kicks as a kindergartner. Starting as a virtual student in spring 2020, he dedicated himself to training with accelerated progress.
+              </p>
+              <p class="about-text">
+                When he began in-person classes in 2021, his progress continued at an accelerated pace, earning him many tournament victories, additional ranking in Chinese Kenpo, and opportunities to share lessons learned throughout his unique journey.
+              </p>
+              <p class="about-text">
+                Professionally, he works as a full-time musician, playing live shows and performing studio vocals (his rock band Rome In A Day toured the world for Armed Forces Entertainment). He enjoys reading, writing, designing tabletop games, running, basketball, lifting weights, and helping guide his daughter in her own martial arts journey.
+        </p>
+      </div>
+    </div>
+         </div>
+           </div>
+         </div>
+       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Summer Camp Section -->
+<section id="summer-camp" class="py-5" style="background-color: #f8f9fa;">
+  <div class="container">
+    <h2 class="text-center mb-4 summer-camp-title">Summer Camp 2025</h2>
+    <p class="text-center mb-2 summer-camp-subtitle">4 campsites for campers ages 5-12</p>
+    
+    <!-- Creative Registration Info with Brush Strokes -->
+    <div class="text-center mb-5">
+      <div class="mb-3">
+        <span class="messy-brush-highlight" style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 600;">
+          Early Registration Deadline: March 31st, 2025
+        </span>
+      </div>
+      <div class="mb-3">
+        <span class="messy-brush-highlight" style="font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 600;">
+          FREE Before & After Care for ALL weeks when you register before March 31st, 2025
+        </span>
+      </div>
+      <div class="mb-0">
+        <span class="messy-brush-highlight" style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Save up to $150 per week!
+        </span>
+      </div>
+    </div>
+    
+    <!-- Summer Camp Features & Video -->
+    <div class="row align-items-stretch mb-5">
+      <!-- Left Column: Feature Icons -->
+      <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+        <div class="camp-features-standalone">
+          <div class="feature-item" onclick="scrollToDailyScheduleInfo()" style="cursor: pointer;">
+            <div class="feature-icon-circle">
+              <i class="fas fa-fist-raised"></i>
+          </div>
+            <span class="feature-text">Karate Instruction</span>
+          </div>
+          <div class="feature-item" onclick="scrollToFieldTripsInfo()" style="cursor: pointer;">
+            <div class="feature-icon-circle">
+              <i class="fas fa-bus"></i>
+            </div>
+            <span class="feature-text">Field Trips</span>
+          </div>
+          <div class="feature-item" onclick="scrollToSwimmingInfo()" style="cursor: pointer;">
+            <div class="feature-icon-circle">
+              <i class="fas fa-swimming-pool"></i>
+            </div>
+            <span class="feature-text">Pool Time</span>
+          </div>
+          <div class="feature-item" onclick="scrollToFieldTripsInfo()" style="cursor: pointer;">
+            <div class="feature-icon-circle">
+              <i class="fas fa-medal"></i>
+            </div>
+            <span class="feature-text">Belt Exams</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Column: Video -->
+      <div class="col-lg-7 col-md-6">
+        <div class="summer-camp-video-container" onclick="openSummerCampVideo()">
+          <img src="assets/images/summer-camp/video-thumb.png" alt="Summer Camp Video Preview" class="summer-camp-video-thumbnail">
+          <div class="video-play-overlay">
+            <div class="play-button">
+              <i class="fas fa-play"></i>
+          </div>
+            <div class="video-overlay-text">
+              <h4>Watch Our Summer Camp Experience</h4>
+              <p>See what makes Kaizen Summer Camp special</p>
+            </div>
+            <div class="video-overlay-logo">
+              <img src="assets/images/logo.png" alt="Kaizen Karate" class="overlay-logo">
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+      <!-- Camp Locations -->
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="camp-info-highlight">
+            <div class="text-center mb-4">
+              <h3 class="summer-camp-section-title">Camp Locations</h3>
+              <p class="summer-camp-section-subtitle">Choose from 4 convenient locations across the DC metro area</p>
+            </div>
+            
+            <div class="row justify-content-center">
+              <div class="col-lg-10 col-xl-9">
+                <div class="row justify-content-center">
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 px-2">
+          <div class="campsite-card">
+            <div class="campsite-header">
+              <h3 class="campsite-title">Maryland</h3>
+              <div class="campsite-divider"></div>
+          </div>
+            <div class="campsite-content">
+              <p class="campsite-venue">Calvary Lutheran Church</p>
+              <p class="campsite-address">9545 Georgia Ave.<br>Silver Spring, MD 20910</p>
+              <div class="campsite-dates">
+                <span class="campsite-duration">June 11 - August 22</span>
+                <span class="campsite-weeks">10 weeks</span>
+              </div>
+              <div class="campsite-buttons">
+                <a href="https://kaizenkarate.campmanagement.com/p/request_for_info_m.php?action=enroll" class="campsite-btn campsite-btn-primary" target="_blank">Register - New Families</a>
+                <a href="https://kaizenkarate.campmanagement.com/p/campers/login_m.php" class="campsite-btn campsite-btn-secondary" target="_blank">Register - Returning Families</a>
+              </div>
+            </div>
+        </div>
+      </div>
+
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 px-2">
+          <div class="campsite-card">
+            <div class="campsite-header">
+              <h3 class="campsite-title">Northwest DC</h3>
+              <div class="campsite-divider"></div>
+            </div>
+            <div class="campsite-content">
+              <p class="campsite-venue">Washington Hebrew Congregation</p>
+              <p class="campsite-address">3935 Macomb St NW<br>Washington, DC 20016</p>
+              <div class="campsite-dates">
+                <span class="campsite-duration">June 23 - August 15</span>
+                <span class="campsite-weeks">8 weeks</span>
+              </div>
+              <div class="campsite-buttons">
+                <a href="https://kaizenkarate.campmanagement.com/p/request_for_info_m.php?action=enroll" class="campsite-btn campsite-btn-primary" target="_blank">Register - New Families</a>
+                <a href="https://kaizenkarate.campmanagement.com/p/campers/login_m.php" class="campsite-btn campsite-btn-secondary" target="_blank">Register - Returning Families</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 px-2">
+          <div class="campsite-card">
+            <div class="campsite-header">
+              <h3 class="campsite-title">Capitol Hill DC</h3>
+              <div class="campsite-divider"></div>
+            </div>
+            <div class="campsite-content">
+              <p class="campsite-venue">Christ Church + Washington Parish</p>
+              <p class="campsite-address">620 G St. SE<br>Washington, DC 20003</p>
+              <div class="campsite-dates">
+                <span class="campsite-duration">July 21 - August 22</span>
+                <span class="campsite-weeks">5 weeks</span>
+              </div>
+              <div class="campsite-buttons">
+                <a href="https://kaizenkarate.campmanagement.com/p/request_for_info_m.php?action=enroll" class="campsite-btn campsite-btn-primary" target="_blank">Register - New Families</a>
+                <a href="https://kaizenkarate.campmanagement.com/p/campers/login_m.php" class="campsite-btn campsite-btn-secondary" target="_blank">Register - Returning Families</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 px-2">
+          <div class="campsite-card">
+            <div class="campsite-header">
+              <h3 class="campsite-title">Virginia</h3>
+              <div class="campsite-divider"></div>
+            </div>
+            <div class="campsite-content">
+              <p class="campsite-venue">Arlington Community Church</p>
+              <p class="campsite-address">6040 Wilson Blvd.<br>Arlington, VA 22205</p>
+              <div class="campsite-dates">
+                <span class="campsite-duration">July 7 - August 1</span>
+                <span class="campsite-weeks">4 weeks</span>
+              </div>
+              <div class="campsite-buttons">
+                <a href="https://kaizenkarate.campmanagement.com/p/request_for_info_m.php?action=enroll" class="campsite-btn campsite-btn-primary" target="_blank">Register - New Families</a>
+                <a href="https://kaizenkarate.campmanagement.com/p/campers/login_m.php" class="campsite-btn campsite-btn-secondary" target="_blank">Register - Returning Families</a>
+              </div>
+            </div>
+          </div>
+        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Registration Information -->
+      <div class="row justify-content-center mt-3">
+        <div class="col-lg-8 col-xl-7">
+            <div class="text-center mb-4">
+              <h3 class="registration-clean-title">Registration Information</h3>
+            </div>
+            
+          <div class="registration-consolidated-card">
+            <!-- Essential Camp Details -->
+            <div class="clean-camp-details text-center mb-4">
+                    <div class="clean-detail-item">
+                      <i class="fas fa-child"></i>
+                      <span>Ages 5-12 years old</span>
+                    </div>
+                    <div class="clean-detail-item">
+                      <i class="fas fa-exclamation-triangle"></i>
+                      <span>Space is limited</span>
+                </div>
+              </div>
+              
+            <!-- Registration Actions -->
+            <div class="text-center">
+                  <h4 class="clean-registration-header">Ready to Register?</h4>
+                  <p class="clean-registration-subtext">Choose your registration option below</p>
+                  
+                  <div class="clean-registration-buttons">
+                    <a href="https://kaizenkarate.campmanagement.com/p/request_for_info_m.php?action=enroll" target="_blank" class="clean-register-btn new-families">
+                      <i class="fas fa-user-plus"></i>
+                      <span>Register Here - New Families</span>
+                    </a>
+                    <a href="https://kaizenkarate.campmanagement.com/p/campers/login_m.php" target="_blank" class="clean-register-btn returning-families">
+                      <i class="fas fa-sign-in-alt"></i>
+                      <span>Register Here - Returning Families</span>
+                    </a>
+              </div>
+            </div>
+              </div>
+    </div>
+
+      <!-- Summer Camp Information Accordion -->
+      <div class="row justify-content-center mt-2">
+        <div class="col-lg-10">
+            <!-- Master Accordion Header -->
+            <div class="master-instructor-accordion">
+              <button class="master-instructor-header">
+                <h2 class="about-section-title mt-2 mb-3">More Information about Summer Camp 2025</h2>
+                <span class="master-accordion-icon">▼</span>
+              </button>
+              
+              <!-- Master Accordion Content -->
+              <div class="master-instructor-content">
+                <div class="instructors-accordion">
+                  
+                  <!-- Camp Locations & Options -->
+                  <div class="instructor-item">
+                    <button class="instructor-header" data-instructor="camp1">
+                      <h3>Camp Locations & Options</h3>
+                      <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="instructor-content" id="instructor-camp1">
+                      <div style="color: var(--text-dark);">
+                        <div style="margin-bottom: 20px;">
+                          <h4 style="color: var(--accent); margin-bottom: 8px;">Capitol Hill Camp</h4>
+                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Location:</strong> Christ Church + Washington Parish - 620 G Street, SE, Washington, DC 20003</p>
+                          <p style="margin-bottom: 0; color: var(--text-dark);"><strong>Duration:</strong> 5 weeks - July 21st - August 22nd</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                          <h4 style="color: var(--accent); margin-bottom: 8px;">NW DC Camp</h4>
+                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Location:</strong> Washington Hebrew Congregation - 3935 Macomb Street, NW, Washington DC 20016</p>
+                          <p style="margin-bottom: 0; color: var(--text-dark);"><strong>Duration:</strong> 8 weeks - June 23rd - August 15th</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                          <h4 style="color: var(--accent); margin-bottom: 8px;">Silver Spring Camp</h4>
+                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Location:</strong> Calvary Lutheran Church - 9545 Georgia Ave, Silver Spring, MD 20910</p>
+                          <p style="margin-bottom: 0; color: var(--text-dark);"><strong>Duration:</strong> 10 weeks - June 18th - August 22nd</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 0;">
+                          <h4 style="color: var(--accent); margin-bottom: 8px;">Arlington Camp</h4>
+                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Location:</strong> Arlington Community Church - 6040 Wilson Blvd, Arlington, VA 22205</p>
+                          <p style="margin-bottom: 0; color: var(--text-dark);"><strong>Duration:</strong> 4 weeks - July 7th - August 1st</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Tuition Rates 2025 -->
+                  <div class="instructor-item">
+                    <button class="instructor-header" data-instructor="camp2">
+                      <h3>Tuition Rates 2025</h3>
+                      <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="instructor-content" id="instructor-camp2">
+                      <div style="color: var(--text-dark);">
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 12px;">Camp Tuition Rates</h4>
+                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Capitol Hill Camp:</strong> $455 / week</p>
+                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>NW DC Camp:</strong> $455 / week</p>
+                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Maryland Camp:</strong> $340 / week</p>
+                          <p style="margin-bottom: 0; color: var(--text-dark);"><strong>Arlington Camp:</strong> $455 / week</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px; background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent);">
+                          <h4 style="color: var(--accent); margin-bottom: 8px;">Early Bird Special</h4>
+                          <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;"><strong>FREE before & after care for ALL weeks when you register on or before March 31st, 2025</strong></p>
+                          <p style="margin-bottom: 0; color: var(--text-dark); font-style: italic;">(Savings of up to $150 per week)</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 12px;">Before Care / After Care*</h4>
+                          <p style="margin-bottom: 4px; color: var(--text-dark);">$20 - before care / day</p>
+                          <p style="margin-bottom: 4px; color: var(--text-dark);">$20 - after care / day</p>
+                          <p style="margin-bottom: 12px; color: var(--text-dark);">$30 - before & after care / day</p>
+                          <div style="font-size: 0.9em; color: #666;">
+                            <p style="margin-bottom: 2px;">*must register online for before / after care</p>
+                            <p style="margin-bottom: 2px;">*After March 31st full fee schedule applies for all before & after care</p>
+                            <p style="margin-bottom: 0;">*Before & after care fees listed above apply to all camp sites</p>
+                          </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                          <h4 style="color: var(--accent); margin-bottom: 12px;">Sibling Discount</h4>
+                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>$20 off per child per week</strong></p>
+                          <p style="margin-bottom: 0; color: var(--text-dark);">1st child must pay full tuition rate, discount applies to each additional child</p>
+                        </div>
+                        
+                        <div style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107;">
+                          <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">**We do NOT accept checks. Tuition must be paid online through our website.**</p>
+                          <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 600;">**Please be sure to select the weeks you are registering for, not only the number of weeks, for sibling discount to be applied**</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Daily Schedule -->
+                  <div class="instructor-item">
+                    <button class="instructor-header" data-instructor="camp3">
+                      <h3>Daily Schedule</h3>
+                      <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="instructor-content" id="instructor-camp3">
+                      <div style="color: var(--text-dark);">
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 12px;">CAMP HOURS</h4>
+                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Before care:</strong> 7:30am-9:00am</p>
+                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Camp day:</strong> 9:00am – 3:00pm</p>
+                          <p style="margin-bottom: 0; color: var(--text-dark);"><strong>After care:</strong> 3:00pm-6:00pm</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 12px;">Karate Lesson Schedule (Daily - Non-Pool Days)</h4>
+                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Morning Session:</strong> 9:30am-11:00am</p>
+                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Afternoon Session:</strong> 2:00pm-3:00pm</p>
+                          <p style="margin-bottom: 8px; color: var(--text-dark);"><strong>Aftercare Session:</strong> 4:00pm-5:00pm</p>
+                          <p style="margin-bottom: 0; color: #666; font-style: italic;">*Non-karate activities include structured outdoor playtime as well as indoor playtime.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 12px;">DROP-OFF / PICK-UP POLICIES</h4>
+                          <p style="margin-bottom: 8px; color: var(--text-dark);"><strong>7:30am-9:00am</strong> - Parents must sign in when dropping off their child. Sign in is now touchless and camp staff will checkin students via mobile device.</p>
+                          <p style="margin-bottom: 8px; color: var(--text-dark);"><strong>3:00pm</strong> – Visitors, including parents, are not permitted inside the camp building(s). Kaizen Karate staff will guide campers safely to their authorized pick-up.</p>
+                          <p style="margin-bottom: 8px; color: var(--text-dark);"><strong>3:00pm-6:00pm</strong> – After care begins. Students must be registered for after care online or parents can pay by calling into the main office at 301-938-2711 if after care is needed unexpectedly due to traffic or other unforeseen circumstances. Students who register before March 31st receive free before and after care and <strong>MUST</strong> sign up online for the service.</p>
+                          <p style="margin-bottom: 0; color: var(--text-dark);">If someone other than the parent will be picking-up their child we must be notified in advance by email, otherwise, we will not let the child go until a parent is contacted. Please email our office at coach.v@kaizenkaratemd.com with at least 24hrs notice of any pick-up changes.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px; background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107;">
+                          <h4 style="color: var(--accent); margin-bottom: 8px;">IMPORTANT FEES & POLICIES</h4>
+                          <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">If your child is not picked up by 3:15pm, a flat fee of $20 will be charged for extended care for that day only (this policy will ONLY apply to campers who are not enrolled in childcare). This fee will be automatically billed and you will receive an electronic invoice. No checks are accepted.</p>
+                          <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 600;"><strong>EARLY DROP-OFFS</strong> - Students who arrive prior to 8:50am will be charged the full $20 fee for before care each day this occurs.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                          <h4 style="color: var(--accent); margin-bottom: 12px;">DAILY SCHEDULE</h4>
+                          <p style="margin-bottom: 8px; color: var(--text-dark);">For full day campers doors open at 9:00am – campers should be picked up at 3:00pm</p>
+                          <p style="margin-bottom: 8px; color: var(--text-dark);">Before care starts at 7:30am and ends at 9:00am. After care starts at 3:00pm and ends at 6:00pm.</p>
+                          <p style="margin-bottom: 0; color: var(--text-dark);">Full day campers should arrive at camp around 9:00am so they do not miss karate classes or other activities that start at 9:30am.</p>
+                        </div>
+                        
+                        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent);">
+                          <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 600;">Walkers and bikers must have written permission from their parents before we will let them leave.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- FAQ's -->
+                  <div class="instructor-item">
+                    <button class="instructor-header" data-instructor="camp4">
+                      <h3>FAQ's</h3>
+                      <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="instructor-content" id="instructor-camp4">
+                      <div style="color: var(--text-dark);">
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 12px;">What should I bring to camp each day?</h4>
+                          <ul style="color: var(--text-dark); line-height: 1.6; margin-bottom: 15px;">
+                            <li style="margin-bottom: 8px;"><strong>Water Bottle</strong> - please label your water bottle<br>
+                                <em style="color: #666; font-size: 0.9em;">*make sure to drink plenty of water at home before arriving at camp & make sure to drink plenty of water at home in the evening after camp to stay hydrated*</em></li>
+                            <li style="margin-bottom: 8px;"><strong>Sunscreen</strong> - Kaizen Karate staff does not apply sunscreen to campers</li>
+                            <li style="margin-bottom: 8px;"><strong>Sunglasses</strong></li>
+                            <li style="margin-bottom: 8px;"><strong>Lunch</strong> - no access to refrigeration or microwaves</li>
+                            <li style="margin-bottom: 8px;"><strong>Hat</strong></li>
+                            <li style="margin-bottom: 8px;"><strong>Comfortable walking shoes</strong></li>
+                            <li style="margin-bottom: 8px;"><strong>Karate Gear</strong> – uniform and sparring gear (yellow belt and up). Please make sure your child's name is clearly labeled on all items.</li>
+                            <li style="margin-bottom: 8px;"><strong>Swimsuit, towel, and other pool items</strong> - Please make sure your child's name is clearly labeled on all items. Change of clothes needed for after swimming.<br>
+                                <em style="color: #666; font-size: 0.9em;">More direction on swimming time will be posted as we get closer to the start of camp per local guidelines.</em></li>
+                            <li style="margin-bottom: 0;"><strong>Nutritious Snack(s)</strong> – 1 for before lunch / 1 for after care<br>
+                                <em style="color: #666; font-size: 0.9em;">(Camp does not provide snack due to potential food allergies that are common amongst campers)</em></li>
+              </ul>
+            </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 12px;">What should I wear to camp each day?</h4>
+                          <p style="margin-bottom: 8px; color: var(--text-dark);">Each day campers should come dressed in shorts, t-shirt & sneakers (especially if the weather is very hot). <strong>No flip-flops or open-toed shoes!</strong> Flip-flops or sandals are permitted during pool time.</p>
+                          <p style="margin-bottom: 8px; color: var(--text-dark);">Each day campers will need to bring their uniform pants, t-shirt, belt & any other items needed for their karate classes. Students who are new to karate will have the option of ordering a uniform and sparring gear if desired.</p>
+                          <div style="background: #f8f9fa; padding: 10px; border-radius: 6px; margin-top: 10px;">
+                            <p style="margin-bottom: 0; color: var(--accent); font-weight: 600;">PLEASE LABEL ALL ITEMS WITH STUDENTS FULL NAME.</p>
+          </div>
+        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 12px;">What NOT to bring to camp each day?</h4>
+                          <ul style="color: var(--text-dark); line-height: 1.6;">
+                            <li style="margin-bottom: 6px;"><strong>Weapons</strong> - pocket knives, swords or other martial arts weapons</li>
+                            <li style="margin-bottom: 6px;"><strong>Large amounts of money</strong> - we ask that campers limit the amount of money they carry to a minimum</li>
+                            <li style="margin-bottom: 6px;"><strong>Video games</strong> – or other hand held devices</li>
+                            <li style="margin-bottom: 6px;"><strong>No electronics</strong> – no electronics or other valuable items</li>
+                            <li style="margin-bottom: 0;"><strong>Cell phones</strong> - we ask that all cell phones are put away at all times. Students are permitted to call parents if needed.</li>
+                          </ul>
+      </div>
+
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 12px;">Does my child need to have karate experience to attend camp?</h4>
+                          <p style="margin-bottom: 0; color: var(--text-dark);">No, we welcome campers who do not have karate experience. Campers are separated into groups based on age and skill level.</p>
+          </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 12px;">How are the children transported to the pool?</h4>
+                          <p style="margin-bottom: 6px; color: var(--text-dark);">We transport the kids from the camp to the pool with the professional bus service we provide.</p>
+                          <p style="margin-bottom: 0; color: #666; font-style: italic;">More direction on transportation will be posted as we get closer to the start of camp per local guidelines.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 12px;">Do campers need to know how to swim?</h4>
+                          <p style="margin-bottom: 8px; color: var(--text-dark);">No, there are multiple sections of the pool. A wading pool, the shallow end, the medium area, and the deep end. All kids have to take a swim test before we release them for free swim. Depending on how well they do on the test, they will receive a colored wrist band that represents which areas they're allowed to swim in. If a child is too short for the shallow end they can use the wading pool.</p>
+                          <p style="margin-bottom: 6px; color: var(--text-dark);">Please contact our office if you would like more details about swimming procedures and safety rules.</p>
+                          <p style="margin-bottom: 0; color: #666; font-style: italic;">More direction on swimming time will be posted as we get closer to the start of camp per local guidelines.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 0;">
+                          <h4 style="color: var(--accent); margin-bottom: 12px;">Are swim lessons provided?</h4>
+                          <p style="margin-bottom: 0; color: var(--text-dark);">There are no swimming lessons provided.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Weekly Themes -->
+                  <div class="instructor-item">
+                    <button class="instructor-header" data-instructor="camp5">
+                      <h3>Weekly Themes</h3>
+                      <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="instructor-content" id="instructor-camp5">
+                      <div style="color: var(--text-dark);">
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 15px;">Weekly Themes (All Camp Sites):</h4>
+                          <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid var(--accent);">
+                            <div style="display: grid; gap: 12px;">
+                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
+                                <span style="color: var(--text-dark); font-weight: 600;">Week of 6/18</span>
+                                <span style="color: var(--accent); font-weight: 600;">Sparring Workshop</span>
+                              </div>
+                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
+                                <span style="color: var(--text-dark); font-weight: 600;">Week of 6/23</span>
+                                <span style="color: var(--accent); font-weight: 600;">Black Belt Bootcamp</span>
+                              </div>
+                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
+                                <span style="color: var(--text-dark); font-weight: 600;">Week of 6/30</span>
+                                <span style="color: var(--accent); font-weight: 600;">Red, White & Blue</span>
+                              </div>
+                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
+                                <span style="color: var(--text-dark); font-weight: 600;">Week of 7/7</span>
+                                <span style="color: var(--accent); font-weight: 600;">Master Form Workshop</span>
+                              </div>
+                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
+                                <span style="color: var(--text-dark); font-weight: 600;">Week of 7/14</span>
+                                <span style="color: var(--accent); font-weight: 600;">JuJitsu Workshop</span>
+                              </div>
+                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
+                                <span style="color: var(--text-dark); font-weight: 600;">Week of 7/21</span>
+                                <span style="color: var(--accent); font-weight: 600;">Super Hero Week</span>
+                              </div>
+                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
+                                <span style="color: var(--text-dark); font-weight: 600;">Week of 7/28</span>
+                                <span style="color: var(--accent); font-weight: 600;">Black Belt Bootcamp</span>
+                              </div>
+                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
+                                <span style="color: var(--text-dark); font-weight: 600;">Week of 8/4</span>
+                                <span style="color: var(--accent); font-weight: 600;">Sparring Workshop</span>
+                              </div>
+                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
+                                <span style="color: var(--text-dark); font-weight: 600;">Week of 8/11</span>
+                                <span style="color: var(--accent); font-weight: 600;">Hook Kicks, Moon Kicks, & Spin Kicks</span>
+                              </div>
+                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0;">
+                                <span style="color: var(--text-dark); font-weight: 600;">Week of 8/18</span>
+                                <span style="color: var(--accent); font-weight: 600;">JuJitsu Workshop</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107; margin-bottom: 0;">
+                          <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 600;">*All weeks include sparring. Please note, themed weeks touch on this area more, however, all weeks focus on the general Kaizen Karate curriculum. Students of all belt ranks are welcome to attend any of the above weeks.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Field Trips & Belt Exam -->
+                  <div class="instructor-item">
+                    <button class="instructor-header" data-instructor="camp6">
+                      <h3>Field Trips & Belt Exam</h3>
+                      <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="instructor-content" id="instructor-camp6">
+                      <div style="color: var(--text-dark);">
+                        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent); margin-bottom: 25px;">
+                          <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 600; font-style: italic;">More details will be posted as we get closer to the start of camp.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 15px;">Field Trip Dates:</h4>
+                          
+                          <div style="margin-bottom: 20px;">
+                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Capitol Hill Camp</h5>
+                            <p style="margin-bottom: 4px; color: var(--text-dark);">July 24 - Lego Discovery Center - Washington, DC</p>
+                            <p style="margin-bottom: 0; color: var(--text-dark);">August 21 - National Children's Museum - Washington, DC</p>
+                          </div>
+                          
+                          <div style="margin-bottom: 20px;">
+                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">NW DC Camp</h5>
+                            <p style="margin-bottom: 4px; color: var(--text-dark);">June 25 - Catoctin Wildlife Reserve - Thurmont, MD</p>
+                            <p style="margin-bottom: 0; color: var(--text-dark);">July 24 - Lego Discovery Center - Washington, DC</p>
+                          </div>
+                          
+                          <div style="margin-bottom: 20px;">
+                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Silver Spring Camp</h5>
+                            <p style="margin-bottom: 4px; color: var(--text-dark);">June 25 - Catoctin Wildlife Reserve - Thurmont, MD</p>
+                            <p style="margin-bottom: 4px; color: var(--text-dark);">July 24 - Lego Discovery Center - Washington, DC</p>
+                            <p style="margin-bottom: 0; color: var(--text-dark);">August 21 - National Children's Museum - Washington, DC</p>
+                          </div>
+                          
+                          <div style="margin-bottom: 0;">
+                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Arlington Camp</h5>
+                            <p style="margin-bottom: 0; color: var(--text-dark);">July 24 - Lego Discovery Center - Washington, DC</p>
+                          </div>
+                        </div>
+                        
+                        <div style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107; margin-bottom: 25px;">
+                          <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">*There is a $35 fee per field trip that will be collected during online registration. This fee is in addition to the regular weekly tuition for camp.</p>
+                          <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">*Field trips are mandatory on the week they are scheduled and all campers must attend (remaining at camp is not an option).</p>
+                          <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 600;">*Lunch is *not* included in the field trip fee. Campers should plan to bring their own lunch on field trip days.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 15px;">Belt Exam Dates:</h4>
+                          
+                          <div style="margin-bottom: 20px;">
+                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Capitol Hill Camp</h5>
+                            <p style="margin-bottom: 0; color: var(--text-dark);">August 20</p>
+                          </div>
+                          
+                          <div style="margin-bottom: 20px;">
+                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">NW DC Camp</h5>
+                            <p style="margin-bottom: 4px; color: var(--text-dark);">July 17</p>
+                            <p style="margin-bottom: 0; color: var(--text-dark);">August 14</p>
+                          </div>
+                          
+                          <div style="margin-bottom: 20px;">
+                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Silver Spring Camp</h5>
+                            <p style="margin-bottom: 4px; color: var(--text-dark);">July 10</p>
+                            <p style="margin-bottom: 0; color: var(--text-dark);">August 21</p>
+                          </div>
+                          
+                          <div style="margin-bottom: 0;">
+                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Arlington Camp</h5>
+                            <p style="margin-bottom: 0; color: var(--text-dark);">July 31</p>
+                          </div>
+                        </div>
+                        
+                        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent); margin-bottom: 0;">
+                          <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 600;">Students are eligible to receive stripes on weeks when there is no belt exam scheduled, though it is not guaranteed. If a belt exam is scheduled during the week that a camper is attending camp this is *not* an automatic guarantee that the student will test and receive a new belt. Students must meet testing guidelines as posted on the belt exam page AND must be invited by their instructor to test.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Lunch & Snacks -->
+                  <div class="instructor-item">
+                    <button class="instructor-header" data-instructor="camp7">
+                      <h3>Lunch & Snacks</h3>
+                      <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="instructor-content" id="instructor-camp7">
+                      <div style="color: var(--text-dark);">
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 15px;">Lunches & Snacks</h4>
+                          <p style="margin-bottom: 12px; color: var(--text-dark); font-weight: 600;">Campers will provide their own lunches & beverages.</p>
+                          <p style="margin-bottom: 0; color: var(--text-dark);">All lunches should be in coolers to prevent food from spoiling.</p>
+                        </div>
+                        
+                        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent); margin-bottom: 25px;">
+                          <p style="margin-bottom: 0; color: var(--accent); font-weight: 600; font-size: 1.1em;">PLEASE LABEL LUNCH BOXES</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                          <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 600;">Please Note: We do not order food, heat up food, or provide utensils for campers.</p>
+                        </div>
+                        
+                        <div style="background: #ffe6e6; padding: 15px; border-radius: 8px; border-left: 4px solid #dc3545; margin-bottom: 0;">
+                          <p style="margin-bottom: 0; color: #721c24; font-weight: 600;">Due to severe food allergies, we ask that NO PEANUT BUTTER or NUT PRODUCTS be brought to camp in lunches.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Swimming -->
+                  <div class="instructor-item">
+                    <button class="instructor-header" data-instructor="camp8">
+                      <h3>Swimming</h3>
+                      <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="instructor-content" id="instructor-camp8">
+                      <div style="color: var(--text-dark);">
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 15px;">General Rules</h4>
+                          <div style="background: #ffe6e6; padding: 15px; border-radius: 8px; border-left: 4px solid #dc3545; margin-bottom: 15px;">
+                            <p style="margin-bottom: 8px; color: #721c24; font-weight: 600;">*If your child is unable to swim and is not water-safe, please let us know in writing by emailing our main office.</p>
+                            <p style="margin-bottom: 8px; color: #721c24; font-weight: 600;">*Flotation devices of any kind are not permitted. Students must be able to swim unassisted.</p>
+                            <p style="margin-bottom: 8px; color: #721c24; font-weight: 600;">*Swim tests are administered at the start of every pool visit.</p>
+                            <p style="margin-bottom: 0; color: #721c24; font-weight: 600;">*Swimming pool visits are mandatory on the days they are scheduled and all campers must attend (remaining at camp is not an option).</p>
+                          </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 15px;">Swimming – NW DC Camp & Silver Spring Camp</h4>
+                          <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid var(--accent);">
+                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Pool Information: Parkland Pool</h5>
+                            <p style="margin-bottom: 8px; color: var(--text-dark);">Swimming will take place at Parkland Pool located at 1124 Arcola Ave, Wheaton, MD 20902</p>
+                            <p style="margin-bottom: 15px; color: var(--text-dark);">Pool phone number is (301) 649-5670</p>
+                            
+                            <h6 style="color: var(--accent); font-weight: 600; margin-bottom: 8px;">Schedule & Requirements:</h6>
+                            <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">Please have your child dressed in their bathing suit when they arrive at camp on our pool days: Tuesday & Friday – 12:15pm-1:45pm</p>
+                            <p style="margin-bottom: 8px; color: var(--text-dark);">Put sunscreen on your child before they arrive at camp, as camp staff is not permitted to do so</p>
+                            <p style="margin-bottom: 4px; color: var(--text-dark);">Campers must have a towel</p>
+                            <p style="margin-bottom: 0; color: var(--text-dark);">Extra set of dry clothes to change into after swimming</p>
+                          </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 0;">
+                          <h4 style="color: var(--accent); margin-bottom: 15px;">Swimming – Capitol Hill Camp & Arlington Camp</h4>
+                          <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid var(--accent);">
+                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Pool Information: North Springfield Swim Club</h5>
+                            <p style="margin-bottom: 8px; color: var(--text-dark);">Swimming will take place at North Springfield Swim Club - 5604 Earlehurst St, Springfield, VA 22151</p>
+                            <p style="margin-bottom: 15px; color: var(--text-dark);">Pool phone number is (703) 256-4686</p>
+                            
+                            <h6 style="color: var(--accent); font-weight: 600; margin-bottom: 8px;">Schedule & Requirements:</h6>
+                            <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">Please have your child dressed in their bathing suit when they arrive at camp on our pool days: Monday & Wednesday – 12:00pm-2:00pm</p>
+                            <p style="margin-bottom: 8px; color: var(--text-dark);">Put sunscreen on your child before they arrive at camp, as camp staff is not permitted to do so</p>
+                            <p style="margin-bottom: 4px; color: var(--text-dark);">Campers must have a towel</p>
+                            <p style="margin-bottom: 0; color: var(--text-dark);">Extra set of dry clothes to change into after swimming</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Policies -->
+                  <div class="instructor-item">
+                    <button class="instructor-header" data-instructor="camp9">
+                      <h3>Policies</h3>
+                      <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="instructor-content" id="instructor-camp9">
+                      <div style="color: var(--text-dark);">
+                        <!-- Tuition Payment -->
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 15px;">Tuition Payment</h4>
+                          <div style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107; margin-bottom: 15px;">
+                            <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">Tuition for any week of summer camp must be paid in full prior to attending camp for that given week.</p>
+                            <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">A non-refundable deposit of $299 per camper must be paid to hold your space in the camp for weeks that are paid via payment plan. This deposit will be applied to the total balance due.</p>
+                            <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">All registration must be completed online.</p>
+                            <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">NO CHECKS are accepted. All payments must be made online with credit cards during the registration process.</p>
+                            <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 600;">NO drop-ins are available. Students must pre-register for each week of camp prior to the start of the week.</p>
+                          </div>
+                          <p style="margin-bottom: 0; color: #666; font-style: italic; font-size: 0.9em;">*Updated on January 2nd, 2025</p>
+                        </div>
+                        
+                        <!-- Behavior Policy -->
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 15px;">Behavior Policy</h4>
+                          <div style="background: #ffe6e6; padding: 15px; border-radius: 8px; border-left: 4px solid #dc3545; margin-bottom: 15px;">
+                            <p style="margin-bottom: 0; color: #721c24; font-weight: 600;">Safety is our number one priority. Campers are expected to follow all camp rules at all times. If the camp director determines that a camper's behavior is unsafe and a significant risk to other campers and / or staff, Kaizen Karate reserves the right to remove the camper from camp and cancel their remaining weeks of camp without a refund.</p>
+                          </div>
+                          <p style="margin-bottom: 0; color: #666; font-style: italic; font-size: 0.9em;">*Updated on April 11th, 2023</p>
+                        </div>
+                        
+                        <!-- Illness & Make-ups -->
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 15px;">Illness & Make-ups</h4>
+                          <p style="margin-bottom: 12px; color: var(--text-dark);">If a camper misses camp for more than 2 consecutive days due to illness then credit will be given for the days missed after the first two days when requested in writing and accompanied by a doctor's note. Eg. If Monday & Tuesday are missed, then credit is given for the remainder of the week (3 days).</p>
+                          <p style="margin-bottom: 0; color: var(--text-dark);">If a student misses camp for any reason besides illness they can make-up the day IF there is space in another week of camp. Parents must submit an email request to our camp office to get approval. If there is no space then there will be no make-ups permitted and credit cannot be transferred to school year programs (the credit is lost).</p>
+                        </div>
+                        
+                        <!-- Sick Policy -->
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 15px;">Sick Policy</h4>
+                          <div style="background: #ffe6e6; padding: 15px; border-radius: 8px; border-left: 4px solid #dc3545; margin-bottom: 15px;">
+                            <p style="margin-bottom: 12px; color: #721c24; font-weight: 600;">Safety and health are our #1 concern. Consequently, we reserve the right to send your child home – or refuse admittance – if we have concerns about his/her health or ability to participate in all activities. Please keep your child home if he/she is exhibiting any of the following:</p>
+                            <ul style="color: #721c24; margin-bottom: 12px;">
+                              <li style="margin-bottom: 6px;">red, runny, and/or watery eyes, he/she may have conjunctivitis (pink eye)</li>
+                              <li style="margin-bottom: 6px;">very itchy scalp with pearly white or grayish flakes that stick to hair shafts (rather than flaking off – like dandruff)</li>
+                              <li style="margin-bottom: 6px;">fever of 101 degrees internally or 100 degrees axillary. The camper may return to camp when he/she has been fever-free for a minimum of 24 hours without the aid of medication</li>
+                              <li style="margin-bottom: 6px;">vomits or has three episodes of diarrhea or watery bowel movements</li>
+                              <li style="margin-bottom: 0;">chest is congested and is accompanied by a frequent cough</li>
+              </ul>
+                            <p style="margin-bottom: 0; color: #721c24; font-weight: 600;">If you are ever in doubt about your child's symptoms or illness, please call the camp at 301-938-2711 and email coach.v@kaizenkaratemd.com and ask us if we feel that it would be appropriate for your child to come to school. We may require that you also consult your physician.</p>
+            </div>
+          </div>
+                        
+                        <!-- Cancellation Policies -->
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 15px;">Cancellation Policies</h4>
+                          
+                          <div style="margin-bottom: 20px;">
+                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Canceling a week</h5>
+                            <p style="margin-bottom: 6px; color: var(--text-dark);"><strong>March 15 - April 30:</strong> All fees paid are refunded except the $299 non-refundable deposit and $25 administrative fee.</p>
+                            <p style="margin-bottom: 6px; color: var(--text-dark);"><strong>May 1 - May 31:</strong> All fees paid are refunded except the $299 non-refundable deposit and $25 administrative fee.</p>
+                            <p style="margin-bottom: 0; color: var(--text-dark);"><strong>After June 1:</strong> There will be NO refunds or credits for summer camp weeks after June 1. NO EXCEPTIONS.</p>
+        </div>
+                          
+                          <div style="margin-bottom: 20px;">
+                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Canceling A Day</h5>
+                            <p style="margin-bottom: 0; color: var(--text-dark);">Refunds or credits for single days of summer camp will not be provided at any time. No Exceptions. Summer camp registrations are paid for on a weekly tuition fee schedule not a daily tuition fee schedule.</p>
+      </div>
+
+                          <div style="margin-bottom: 0;">
+                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Canceling entire summer registration (multiple weeks)</h5>
+                            <p style="margin-bottom: 6px; color: var(--text-dark);"><strong>March 15 - April 30:</strong> All fees paid are refunded except the $299 non-refundable deposit and $25 administrative fee.</p>
+                            <p style="margin-bottom: 6px; color: var(--text-dark);"><strong>May 1 - May 31:</strong> Only 50% of tuition fees will be credited for any Kaizen Karate program minus the $299 non-refundable deposit.</p>
+                            <p style="margin-bottom: 0; color: var(--text-dark);"><strong>After June 1:</strong> There will be NO refunds or credits for summer camp weeks after June 1. NO EXCEPTIONS.</p>
+                          </div>
+                        </div>
+                        
+                        <!-- Additional Policies -->
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 15px;">Additional Policies</h4>
+                          
+                          <div style="margin-bottom: 15px;">
+                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 8px;">Switching Weeks</h5>
+                            <p style="margin-bottom: 8px; color: var(--text-dark);">Switching between weeks is allowed, based on availability.</p>
+                            <p style="margin-bottom: 0; color: var(--text-dark);">If a camper needs to switch weeks and there is no availability then they must either keep their assigned weeks OR they can follow the cancellation policy listed above to cancel weeks based on dates (eg. After June 1 there are no refunds or credits for a camper who wants to switch weeks but there is no availability).</p>
+                          </div>
+                          
+                          <div style="margin-bottom: 15px;">
+                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 8px;">Adding Weeks</h5>
+                            <p style="margin-bottom: 8px; color: var(--text-dark);">ALL students who register prior to March 31st, 2025 will receive FREE Before & After Care.</p>
+                            <p style="margin-bottom: 8px; color: var(--text-dark);">Offer valid only for weeks purchased during the promotional period (1/14/25 - 3/31/25).</p>
+                            <p style="margin-bottom: 0; color: var(--text-dark);">Any additional weeks purchased / added to existing reservations after the promotional period (3/31/25) will *not* be eligible for FREE before & after care.</p>
+                          </div>
+                          
+                          <div style="margin-bottom: 15px;">
+                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 8px;">Virtual Camp (applicable on years when Virtual offerings are available)</h5>
+                            <p style="margin-bottom: 6px; color: var(--text-dark);">No transfers allowed from In-person camp to Virtual or vice versa.</p>
+                            <p style="margin-bottom: 6px; color: var(--text-dark);">There is no pro-rating at any time for virtual camp. Full tuition rate is due if you join after the start of a week.</p>
+                            <p style="margin-bottom: 0; color: var(--text-dark);">No refunds or credits will be given after the first class of the week has started.</p>
+                          </div>
+                          
+                          <div style="margin-bottom: 0;">
+                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 8px;">Late pick-up Policy @ Summer Camp</h5>
+                            <p style="margin-bottom: 0; color: var(--text-dark);">Counselors frequently have other commitments shortly after camp ends, we ask that you respect the counselor's time by arriving on time. There will be a 5 minute grace period after the program has ended. After that, parents will be charged an additional fee of $1.00 per minute. The late fee must be paid before the next camp day by contacting our main office and paying through electronic invoice.</p>
+                          </div>
+                        </div>
+                        
+                        <!-- Health & Safety Policies -->
+                        <div style="margin-bottom: 0;">
+                          <h4 style="color: var(--accent); margin-bottom: 15px;">Health & Safety Policies</h4>
+                          
+                          <div style="margin-bottom: 15px;">
+                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 8px;">Measles Policy</h5>
+                            <p style="margin-bottom: 0; color: var(--text-dark);">All campers and persons who enter a Kaizen Karate camp site must be vaccinated for measles & must be in compliance with the CDC recommendations.</p>
+                          </div>
+                          
+                          <div style="margin-bottom: 0;">
+                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 8px;">Modifications Policy - Acts beyond Kaizen Karate's control</h5>
+                            <p style="margin-bottom: 0; color: var(--text-dark);">Parents agree that in the event of any failure, delay, or modification in Kaizen Karate's performance or delivery of Summer Camp programming resulting from causes beyond Kaizen Karate's reasonable control and occurring without its fault or negligence, including without limitation, Acts of God, fire, pandemic, U.S. government restrictions, wars, and insurrections, the tuition obligations under the enrollment contract shall continue and Kaizen Karate shall not be liable for any such failure or delay in its performance. Parents understand that summer camp schedules may be altered due to circumstances outside of our control resulting in on-site camp moving online and thus campers moving to Virtual Camp.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Contact Information -->
+                  <div class="instructor-item">
+                    <button class="instructor-header" data-instructor="camp10">
+                      <h3>Contact Information</h3>
+                      <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="instructor-content" id="instructor-camp10">
+                      <div style="color: var(--text-dark);">
+                        <!-- Camp Director -->
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 15px;">Camp Director</h4>
+                          <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">Coach V</p>
+                          <p style="margin-bottom: 8px; color: var(--text-dark);">On-Site Phone: 301-938-2711</p>
+                          <p style="margin-bottom: 0; color: var(--text-dark);">Email: coach.v@kaizenkaratemd.com</p>
+                        </div>
+                        
+                        <!-- Director of Operations -->
+                        <div style="margin-bottom: 25px;">
+                          <h4 style="color: var(--accent); margin-bottom: 15px;">Director of Operations</h4>
+                          <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">Jamie</p>
+                          <p style="margin-bottom: 8px; color: var(--text-dark);">On-Site Phone: 301-938-2711</p>
+                          <p style="margin-bottom: 0; color: var(--text-dark);">Email: jamie@kaizenkarateusa.com</p>
+                        </div>
+                        
+
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+ 
+    </div>
+  </section>
+
+
+<!-- Kaizen Dojo Section -->
+<section id="kaizen-dojo" class="kaizen-dojo-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-4" style="display:none;">Kaizen Dojo</h2>
+    <div class="row align-items-center dojo-hero mb-4">
+      <div class="col-md-3 text-center text-md-start mb-3 mb-md-0">
+        <img src="assets/images/dojo/Kaizen-Dojo-Logo.webp" alt="Kaizen Dojo" class="dojo-logo" />
+      </div>
+      <div class="col-md-9">
+        <h1 class="kaizen-dojo-title">KAIZEN DOJO</h1>
+        <p class="dojo-intro">
+          <strong>Kaizen Dojo</strong> is an after school program operated by <strong>Kaizen Karate</strong>. We are located at 9545 Georgia Ave, Silver Spring, MD 20910 (near the beltway exits). Students will take part in daily karate lessons, snack time, homework time, and more! We provide service throughout the entire 2025-2026 school year. Please note, we follow the MCPS calendar. Service will be provided on 1/2 days.
+        </p>
+      </div>
+    </div>
+    <div class="dojo-van-wrap">
+      <img src="assets/images/dojo/dojo-van.png" alt="Kaizen Dojo Van" class="dojo-van" />
+    </div>
+
+            <!-- Van Service Panel - Full Width Row -->
+            <div class="row g-4 mb-4">
+              <div class="col-12">
+                <div class="dojo-card">
+                  <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                    <div class="dojo-card-icon" style="margin: 0 15px 0 0;"><i class="fas fa-bus"></i></div>
+                    <h3 class="dojo-card-title" style="font-size: 1.8rem; margin: 0;">Van Service — Locations</h3>
+                  </div>
+                  <div class="row g-3 mt-2">
+                    <div class="col-md-4">
+                      <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.2); border-radius: 12px; padding: 1.5rem; text-align: center;">
+                        <i class="fas fa-map-marker-alt" style="color: #dc3545; font-size: 1.5rem; margin-bottom: 0.8rem; display: block;"></i>
+                        <h5 style="margin: 0; font-weight: 600; color: #333; font-size: 1.1rem;">Woodlin ES</h5>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.2); border-radius: 12px; padding: 1.5rem; text-align: center;">
+                        <i class="fas fa-map-marker-alt" style="color: #dc3545; font-size: 1.5rem; margin-bottom: 0.8rem; display: block;"></i>
+                        <h5 style="margin: 0; font-weight: 600; color: #333; font-size: 1.1rem;">East Silver Spring ES</h5>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.2); border-radius: 12px; padding: 1.5rem; text-align: center;">
+                        <i class="fas fa-map-marker-alt" style="color: #dc3545; font-size: 1.5rem; margin-bottom: 0.8rem; display: block;"></i>
+                        <h5 style="margin: 0; font-weight: 600; color: #333; font-size: 1.1rem;">Sligo Creek ES</h5>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div style="background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; position: relative;">
+                        <i class="fas fa-star" style="position: absolute; top: 10px; right: 10px; color: #ffc107; font-size: 1rem;"></i>
+                        <i class="fas fa-map-marker-alt" style="color: #dc3545; font-size: 1.5rem; margin-bottom: 0.8rem; display: block;"></i>
+                        <h5 style="margin: 0; font-weight: 600; color: #333; font-size: 1.1rem;">Oakland Terrace ES</h5>
+                        <span style="font-size: 0.8rem; color: #ffc107; font-weight: 600;">NEW FALL 2025</span>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div style="background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; position: relative;">
+                        <i class="fas fa-star" style="position: absolute; top: 10px; right: 10px; color: #ffc107; font-size: 1rem;"></i>
+                        <i class="fas fa-map-marker-alt" style="color: #dc3545; font-size: 1.5rem; margin-bottom: 0.8rem; display: block;"></i>
+                        <h5 style="margin: 0; font-weight: 600; color: #333; font-size: 1.1rem;">Piney Branch ES</h5>
+                        <span style="font-size: 0.8rem; color: #ffc107; font-weight: 600;">NEW FALL 2025</span>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div style="background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; position: relative;">
+                        <i class="fas fa-star" style="position: absolute; top: 10px; right: 10px; color: #ffc107; font-size: 1rem;"></i>
+                        <i class="fas fa-map-marker-alt" style="color: #dc3545; font-size: 1.5rem; margin-bottom: 0.8rem; display: block;"></i>
+                        <h5 style="margin: 0; font-weight: 600; color: #333; font-size: 1.1rem;">Takoma Park ES</h5>
+                        <span style="font-size: 0.8rem; color: #ffc107; font-weight: 600;">NEW FALL 2025</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- No Van Service Option Alert -->
+                  <div style="background: rgba(108, 117, 125, 0.08); border: 1px solid rgba(108, 117, 125, 0.2); border-radius: 12px; padding: 1.5rem; margin-top: 20px; position: relative;">
+                    <div style="margin-bottom: 10px;">
+                      <h6 style="color: #6c757d; margin: 0 0 10px 0; font-weight: 600; font-size: 1rem; font-style: italic;">No Van Service Option</h6>
+                      <p style="margin: 0 0 10px 0; color: #555; line-height: 1.5; font-size: 0.85rem;">
+                        If you are not using our van service, students can be dropped off directly at <strong>Calvary Lutheran Church, 9545 Georgia Ave, Silver Spring, MD 20910</strong>, for their classes. Parents are responsible for arranging their child's transportation to and from this location.
+                      </p>
+                      <div style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; padding: 10px 12px; border-radius: 6px;">
+                        <p style="margin: 0; color: #856404; font-weight: 600; font-size: 0.8rem;">
+                          <i class="fas fa-info-circle" style="margin-right: 6px; color: #ffc107; font-size: 0.8rem;"></i>
+                          A prorated tuition rate will apply for families who choose not to use van service. Please <a href="#contact" style="color: #dc3545; text-decoration: none; font-weight: 700;">contact us</a> for exact pricing based on your start date.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Other Services Row -->
+            <div class="row g-4">
+          <div class="col-md-4">
+            <div class="dojo-card">
+              <div class="dojo-card-icon"><i class="fas fa-book-open"></i></div>
+              <h3 class="dojo-card-title">Homework Time</h3>
+              <p class="dojo-card-text">Students will have time to work on their homework assignments from school when they get back to Kaizen Dojo.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="dojo-card">
+              <div class="dojo-card-icon"><i class="fas fa-apple-alt"></i></div>
+              <h3 class="dojo-card-title">Snack Time</h3>
+              <p class="dojo-card-text">Snacks are provided as part of the Kaizen Dojo program. Please be sure to let our office team know about any allergies via email.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="dojo-card">
+              <div class="dojo-card-icon"><i class="fas fa-fist-raised"></i></div>
+              <h3 class="dojo-card-title">Karate Instruction</h3>
+              <p class="dojo-card-text">After homework time ends, students will participate in daily karate lessons! Instruction is geared towards the student’s age and current belt rank.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dojo-register-button-container">
+          <a href="https://form.jotform.com/251533593606459" target="_blank" class="btn dojo-register-btn">
+            Register for Kaizen Dojo
+          </a>
+        </div>
+
+            <div class="dojo-accordion mt-4">
+          <details class="dojo-accordion-item">
+            <summary>Van Service</summary>
+            <div class="dojo-accordion-content">
+              <div style="color: #555; line-height: 1.6;">
+                <p style="margin-bottom: 2rem; font-size: 1.1rem; text-align: center;">Convenient van service available from multiple school locations directly to Kaizen Dojo:</p>
+                
+                <!-- Current Locations -->
+                <div style="background: rgba(220, 53, 69, 0.08); border: 1px solid rgba(220, 53, 69, 0.2); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
+                  <h4 style="color: #dc3545; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">
+                    <i class="fas fa-bus" style="margin-right: 0.5rem;"></i>Current Van Service Locations
+                  </h4>
+                  
+                  <div style="background: rgba(255, 255, 255, 0.6); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <p style="margin-bottom: 1rem; font-size: 0.95rem; color: #333;">Van service is now available from these locations. We pick up students directly at each site and bring them back to the dojo:</p>
+                    <div class="row g-3">
+                      <div class="col-md-4">
+                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; text-align: center;">
+                          <i class="fas fa-school" style="color: #dc3545; margin-bottom: 0.5rem; font-size: 1.2rem;"></i>
+                          <p style="margin: 0; font-weight: 600; color: #333;">Sligo Creek ES</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; text-align: center;">
+                          <i class="fas fa-school" style="color: #dc3545; margin-bottom: 0.5rem; font-size: 1.2rem;"></i>
+                          <p style="margin: 0; font-weight: 600; color: #333;">East Silver Spring ES</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; text-align: center;">
+                          <i class="fas fa-school" style="color: #dc3545; margin-bottom: 0.5rem; font-size: 1.2rem;"></i>
+                          <p style="margin: 0; font-weight: 600; color: #333;">Woodlin ES</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style="background: rgba(40, 167, 69, 0.1); border: 1px solid rgba(40, 167, 69, 0.3); border-radius: 8px; padding: 1rem;">
+                    <p style="margin: 0; font-size: 0.9rem; color: #28a745; font-weight: 600; text-align: center;">
+                      <i class="fas fa-info-circle" style="margin-right: 0.5rem;"></i>Parents must pick up directly from Kaizen Dojo
+                    </p>
+                  </div>
+                </div>
+
+                <!-- New Locations Fall 2025 -->
+                <div style="background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
+                  <h4 style="color: #ffc107; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">
+                    <i class="fas fa-plus-circle" style="margin-right: 0.5rem;"></i>NEW Fall 2025 Locations
+                  </h4>
+                  
+                  <div style="background: rgba(255, 255, 255, 0.7); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <p style="margin-bottom: 1rem; font-size: 0.95rem; color: #333;">Starting in Fall 2025, we are adding 3 new pick-up locations!</p>
+                    <div class="row g-3">
+                      <div class="col-md-4">
+                        <div style="background: white; border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 8px; padding: 1rem; text-align: center;">
+                          <i class="fas fa-star" style="color: #ffc107; margin-bottom: 0.5rem; font-size: 1.2rem;"></i>
+                          <p style="margin: 0; font-weight: 600; color: #333;">Oakland Terrace ES</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div style="background: white; border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 8px; padding: 1rem; text-align: center;">
+                          <i class="fas fa-star" style="color: #ffc107; margin-bottom: 0.5rem; font-size: 1.2rem;"></i>
+                          <p style="margin: 0; font-weight: 600; color: #333;">Piney Branch ES</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div style="background: white; border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 8px; padding: 1rem; text-align: center;">
+                          <i class="fas fa-star" style="color: #ffc107; margin-bottom: 0.5rem; font-size: 1.2rem;"></i>
+                          <p style="margin: 0; font-weight: 600; color: #333;">Takoma Park ES</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 2rem;">
+                  <h4 style="color: #dc3545; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">
+                    <i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem;"></i>Limited Space Available
+                  </h4>
+                  
+                  <div style="background: rgba(255, 255, 255, 0.6); border-radius: 8px; padding: 1.5rem;">
+                    <p style="margin-bottom: 1rem; font-size: 1rem; color: #333; text-align: center; font-weight: 600;">Space is limited! If you are interested in registering for Kaizen Dojo van service for Fall 2025, please contact us ASAP.</p>
+                    
+                    <div style="background: white; border: 2px solid #dc3545; border-radius: 8px; padding: 1rem; text-align: center;">
+                      <p style="margin: 0; font-size: 0.95rem; color: #333;">
+                        <i class="fas fa-envelope" style="color: #dc3545; margin-right: 0.5rem;"></i>
+                        Questions? Email: <strong style="color: #dc3545;">coach.v@kaizenkarateusa.com</strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="dojo-accordion-item">
+            <summary>Tuition and Payment Options</summary>
+            <div class="dojo-accordion-content">
+              <div style="color: #555; line-height: 1.6;">
+                <p style="margin-bottom: 2rem; font-size: 1.1rem; text-align: center;">Flexible payment options designed to fit your family's schedule and budget:</p>
+                
+                <!-- Regular Service Options -->
+                <div style="background: rgba(220, 53, 69, 0.08); border: 1px solid rgba(220, 53, 69, 0.2); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
+                  <h4 style="color: #dc3545; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">
+                    <i class="fas fa-dollar-sign" style="margin-right: 0.5rem;"></i>Monthly Tuition Options
+                  </h4>
+                  
+                  <div class="row g-3">
+                    <!-- Full-time -->
+                    <div class="col-lg-6">
+                      <div style="background: linear-gradient(135deg, rgba(40, 167, 69, 0.1), rgba(40, 167, 69, 0.05)); border: 2px solid rgba(40, 167, 69, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; position: relative;">
+                        <div style="position: absolute; top: -10px; right: 15px; background: #28a745; color: white; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">MOST POPULAR</div>
+                        <i class="fas fa-star" style="color: #28a745; font-size: 2rem; margin-bottom: 1rem;"></i>
+                        <h5 style="color: #28a745; margin-bottom: 0.5rem; font-size: 1.2rem; font-weight: 700;">Full-time Service</h5>
+                        <p style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">5 days per week</p>
+                        <div style="font-size: 2rem; font-weight: 700; color: #28a745; margin-bottom: 0.5rem;">$460</div>
+                        <p style="margin: 0; font-size: 0.85rem; color: #666;">per month</p>
+                      </div>
+                    </div>
+                    
+                    <!-- Part-time 4 days -->
+                    <div class="col-lg-6">
+                      <div style="background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 12px; padding: 1.5rem; text-align: center;">
+                        <i class="fas fa-calendar-alt" style="color: #dc3545; font-size: 2rem; margin-bottom: 1rem;"></i>
+                        <h5 style="color: #dc3545; margin-bottom: 0.5rem; font-size: 1.2rem; font-weight: 700;">Part-time Service</h5>
+                        <p style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">4 days per week</p>
+                        <div style="font-size: 2rem; font-weight: 700; color: #dc3545; margin-bottom: 0.5rem;">$410</div>
+                        <p style="margin: 0; font-size: 0.85rem; color: #666;">per month</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row g-3 mt-2">
+                    <!-- Part-time 3 days -->
+                    <div class="col-lg-4">
+                      <div style="background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 12px; padding: 1.5rem; text-align: center;">
+                        <i class="fas fa-calendar-week" style="color: #6c757d; font-size: 1.5rem; margin-bottom: 1rem;"></i>
+                        <h6 style="color: #6c757d; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600;">3 days per week</h6>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #6c757d; margin-bottom: 0.5rem;">$310</div>
+                        <p style="margin: 0; font-size: 0.8rem; color: #666;">per month</p>
+                      </div>
+                    </div>
+                    
+                    <!-- Part-time 2 days -->
+                    <div class="col-lg-4">
+                      <div style="background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 12px; padding: 1.5rem; text-align: center;">
+                        <i class="fas fa-calendar-day" style="color: #6c757d; font-size: 1.5rem; margin-bottom: 1rem;"></i>
+                        <h6 style="color: #6c757d; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600;">2 days per week</h6>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #6c757d; margin-bottom: 0.5rem;">$210</div>
+                        <p style="margin: 0; font-size: 0.8rem; color: #666;">per month</p>
+                      </div>
+                    </div>
+                    
+                    <!-- Part-time 1 day -->
+                    <div class="col-lg-4">
+                      <div style="background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 12px; padding: 1.5rem; text-align: center;">
+                        <i class="fas fa-calendar" style="color: #6c757d; font-size: 1.5rem; margin-bottom: 1rem;"></i>
+                        <h6 style="color: #6c757d; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600;">1 day per week</h6>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #6c757d; margin-bottom: 0.5rem;">$110</div>
+                        <p style="margin: 0; font-size: 0.8rem; color: #666;">per month</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Drop-in Service -->
+                <div style="background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 12px; padding: 2rem;">
+                  <h4 style="color: #ffc107; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">
+                    <i class="fas fa-clock" style="margin-right: 0.5rem;"></i>Drop-in Service Option
+                  </h4>
+                  
+                  <div style="background: rgba(255, 255, 255, 0.7); border-radius: 8px; padding: 1.5rem;">
+                    <div class="row align-items-center">
+                      <div class="col-md-6 text-center">
+                        <div style="background: white; border: 2px solid #ffc107; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem;">
+                          <i class="fas fa-hand-holding-usd" style="color: #ffc107; font-size: 2rem; margin-bottom: 1rem;"></i>
+                          <div style="font-size: 2.5rem; font-weight: 700; color: #ffc107; margin-bottom: 0.5rem;">$30</div>
+                          <p style="margin: 0; font-size: 1rem; color: #333; font-weight: 600;">per day</p>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 8px; padding: 1rem;">
+                          <h6 style="color: #dc3545; margin-bottom: 0.5rem; font-size: 1rem;">
+                            <i class="fas fa-exclamation-circle" style="margin-right: 0.5rem;"></i>Advance Notice Required
+                          </h6>
+                          <p style="margin: 0; font-size: 0.9rem; color: #333;">We request an email at least 24hrs in advance when possible or call our office directly.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="dojo-accordion-item">
+            <summary>Security, Discipline and Safety</summary>
+            <div class="dojo-accordion-content">
+              <div style="color: #555; line-height: 1.6;">
+                <p style="margin-bottom: 2rem; font-size: 1.1rem; text-align: center;">Creating a safe, protected, and respectful environment for all children and staff:</p>
+                
+                <!-- Program Goal -->
+                <div style="background: rgba(40, 167, 69, 0.1); border: 1px solid rgba(40, 167, 69, 0.3); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
+                  <h4 style="color: #28a745; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">
+                    <i class="fas fa-shield-alt" style="margin-right: 0.5rem;"></i>Our Safety Commitment
+                  </h4>
+                  
+                  <div style="background: rgba(255, 255, 255, 0.7); border-radius: 8px; padding: 1.5rem;">
+                    <p style="margin: 0; font-size: 1rem; color: #333; text-align: center; font-weight: 600; line-height: 1.7;">The goal of our program is to create an environment where children and staff feel <span style="color: #28a745; font-weight: 700;">safe, protected, and respected</span>.</p>
+                  </div>
+                </div>
+
+                <!-- Program Rules -->
+                <div style="background: rgba(220, 53, 69, 0.08); border: 1px solid rgba(220, 53, 69, 0.2); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
+                  <h4 style="color: #dc3545; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">
+                    <i class="fas fa-list-check" style="margin-right: 0.5rem;"></i>Program Rules & Expectations
+                  </h4>
+                  
+                  <div style="background: rgba(255, 255, 255, 0.6); border-radius: 8px; padding: 1.5rem;">
+                    <p style="margin-bottom: 1rem; font-size: 0.95rem; color: #333; font-weight: 600;">The following rules will be followed by all participants:</p>
+                    
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: #28a745; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
+                            <span style="font-size: 0.9rem; color: #333;">Follow all rules set forth by Kaizen Karate</span>
+                          </div>
+                        </div>
+                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: #28a745; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
+                            <span style="font-size: 0.9rem; color: #333;">Follow directions given by staff</span>
+                          </div>
+                        </div>
+                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: #28a745; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
+                            <span style="font-size: 0.9rem; color: #333;">Respect the rights, privacy, and personal space of others</span>
+                          </div>
+                        </div>
+                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: #28a745; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
+                            <span style="font-size: 0.9rem; color: #333;">Stay in assigned areas under staff supervision</span>
+                          </div>
+                        </div>
+                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: #28a745; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
+                            <span style="font-size: 0.9rem; color: #333;">Show respect for all property and equipment</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: #28a745; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
+                            <span style="font-size: 0.9rem; color: #333;">Use appropriate language at all times</span>
+                          </div>
+                        </div>
+                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: #28a745; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
+                            <span style="font-size: 0.9rem; color: #333;">Use the restrooms appropriately</span>
+                          </div>
+                        </div>
+                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: #28a745; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
+                            <span style="font-size: 0.9rem; color: #333;">No sharing or throwing food</span>
+                          </div>
+                        </div>
+                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: #28a745; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
+                            <span style="font-size: 0.9rem; color: #333;">Clean up after eating and throw away trash</span>
+                          </div>
+                        </div>
+                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <i class="fas fa-times-circle" style="color: #dc3545; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
+                            <span style="font-size: 0.9rem; color: #333;">No fighting, bullying, or throwing harmful objects</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Consequences -->
+                <div style="background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 12px; padding: 2rem;">
+                  <h4 style="color: #ffc107; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">
+                    <i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem;"></i>Consequences for Rule Violations
+                  </h4>
+                  
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div style="background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(255, 193, 7, 0.4); border-radius: 8px; padding: 1.5rem;">
+                        <h6 style="color: #e67e22; margin-bottom: 1rem; font-size: 1rem;">
+                          <i class="fas fa-redo" style="margin-right: 0.5rem;"></i>Repeated Violations
+                        </h6>
+                        <p style="margin: 0; font-size: 0.9rem; color: #333;">May result in a child being suspended or no longer allowed to participate in the program.</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 8px; padding: 1.5rem;">
+                        <h6 style="color: #dc3545; margin-bottom: 1rem; font-size: 1rem;">
+                          <i class="fas fa-ban" style="margin-right: 0.5rem;"></i>Safety Endangerment
+                        </h6>
+                        <p style="margin: 0; font-size: 0.9rem; color: #333;">Behavior that endangers health and/or safety may result in immediate suspension and/or termination.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="dojo-accordion-item">
+            <summary>Contact Information</summary>
+            <div class="dojo-accordion-content">
+              <div style="color: #555; line-height: 1.6;">
+                <p style="margin-bottom: 2rem; font-size: 1.1rem; text-align: center;">Get in touch with our Kaizen Dojo team for questions, enrollment, or support:</p>
+                
+                <!-- Primary Contact Methods -->
+                <div style="background: rgba(220, 53, 69, 0.08); border: 1px solid rgba(220, 53, 69, 0.2); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
+                  <h4 style="color: #dc3545; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">
+                    <i class="fas fa-headset" style="margin-right: 0.5rem;"></i>Primary Contact Methods
+                  </h4>
+                  
+                  <div class="row g-4">
+                    <!-- Email Contact -->
+                    <div class="col-md-6">
+                      <div style="background: white; border: 2px solid rgba(220, 53, 69, 0.2); border-radius: 12px; padding: 2rem; text-align: center; height: 100%;">
+                        <i class="fas fa-envelope" style="color: #dc3545; font-size: 3rem; margin-bottom: 1.5rem;"></i>
+                        <h5 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 700;">Email Us</h5>
+                        <div style="background: rgba(220, 53, 69, 0.05); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                          <a href="mailto:coach.v@kaizenkarateusa.com" style="color: #dc3545; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                            coach.v@kaizenkarateusa.com
+                          </a>
+                        </div>
+                        <p style="margin: 0; font-size: 0.9rem; color: #666; font-style: italic;">Preferred method for questions and enrollment</p>
+                      </div>
+                    </div>
+                    
+                    <!-- Phone Contact -->
+                    <div class="col-md-6">
+                      <div style="background: white; border: 2px solid rgba(40, 167, 69, 0.2); border-radius: 12px; padding: 2rem; text-align: center; height: 100%;">
+                        <i class="fas fa-phone" style="color: #28a745; font-size: 3rem; margin-bottom: 1.5rem;"></i>
+                        <h5 style="color: #28a745; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 700;">Call Us</h5>
+                        <div style="background: rgba(40, 167, 69, 0.05); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                          <a href="tel:+13019382711" style="color: #28a745; text-decoration: none; font-weight: 600; font-size: 1.4rem;">
+                            (301) 938-2711
+                          </a>
+                        </div>
+                        <p style="margin: 0; font-size: 0.9rem; color: #666; font-style: italic;">For urgent matters and direct communication</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Location Information -->
+                <div style="background: rgba(0, 123, 255, 0.08); border: 1px solid rgba(0, 123, 255, 0.2); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
+                  <h4 style="color: #007bff; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">
+                    <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>Kaizen Dojo Location
+                  </h4>
+                  
+                  <div style="background: rgba(255, 255, 255, 0.7); border-radius: 8px; padding: 1.5rem;">
+                    <div class="row align-items-center">
+                      <div class="col-md-8">
+                        <div style="background: white; border: 1px solid rgba(0, 123, 255, 0.2); border-radius: 8px; padding: 1.5rem;">
+                          <h6 style="color: #007bff; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 600;">
+                            <i class="fas fa-building" style="margin-right: 0.5rem;"></i>Physical Address
+                          </h6>
+                          <p style="margin-bottom: 0.5rem; font-size: 1.1rem; color: #333; font-weight: 600;">9545 Georgia Ave</p>
+                          <p style="margin-bottom: 1rem; font-size: 1rem; color: #333;">Silver Spring, MD 20910</p>
+                          <p style="margin: 0; font-size: 0.9rem; color: #666; font-style: italic;">(Near the beltway exits)</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4 text-center">
+                        <div style="background: rgba(0, 123, 255, 0.1); border: 1px solid rgba(0, 123, 255, 0.3); border-radius: 8px; padding: 1rem;">
+                          <i class="fas fa-car" style="color: #007bff; font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                          <p style="margin: 0; font-size: 0.9rem; color: #333; font-weight: 600;">Easy Beltway Access</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </details>
+        </div>
+  </div>
+</section>
+
+<!-- After School | Weekend & Evening Section -->
+<section id="after-school" class="py-5" style="background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%); color: white;">
+  <div class="container">
+    <h2 class="text-center mb-5" style="color: white; font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700;"><span style="text-decoration: underline; text-underline-offset: 0.3em; text-decoration-color: #dc3545;">Weekend & Evening</span></h2>
+    
+    <!-- Schedule Integration Section -->
+    <div class="schedule-integration mt-5">
+      <div id="schedule-container">
+        <!-- Integrated filter toolbar -->
+        <div class="schedule-filters-toolbar">
+          <!-- Calendar Info Header -->
+          <div style="text-align: center; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 2px solid rgba(220, 53, 69, 0.2);">
+            <h3 style="color: #dc3545; font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; margin-bottom: 2rem; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+              <i class="fas fa-calendar-alt" style="margin-right: 0.75rem; font-size: 1.8rem; opacity: 0.9;"></i>
+              2025 September / October Class Calendar
+            </h3>
+            
+            <!-- Info Badges -->
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; align-items: center;">
+              <!-- Duration Badge -->
+              <div style="background: rgba(255, 255, 255, 0.95); border: 2px solid #dc3545; border-radius: 25px; padding: 0.75rem 1.5rem; display: flex; align-items: center; box-shadow: 0 4px 15px rgba(220, 53, 69, 0.2); backdrop-filter: blur(10px);">
+                <i class="fas fa-clock" style="color: #dc3545; font-size: 1.1rem; margin-right: 0.6rem;"></i>
+                <span style="color: #333; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.3px;">One-hour classes unless stated otherwise</span>
+              </div>
+              
+              <!-- Location Badge -->
+              <div style="background: rgba(255, 255, 255, 0.95); border: 2px solid #dc3545; border-radius: 25px; padding: 0.75rem 1.5rem; display: flex; align-items: center; box-shadow: 0 4px 15px rgba(220, 53, 69, 0.2); backdrop-filter: blur(10px);">
+                <i class="fas fa-home" style="color: #dc3545; font-size: 1.1rem; margin-right: 0.6rem;"></i>
+                <span style="color: #333; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.3px;">All Classes Held Indoors/In-Person</span>
+              </div>
+            </div>
+          </div>
+          <div class="filters">
+            <div class="filter-group">
+              <label>Class Type:</label>
+              <div class="custom-dropdown" data-filter="class-type">
+                <div class="dropdown-selected">
+                  <span class="selected-text">All Types</span>
+                  <span class="dropdown-arrow">▼</span>
+                </div>
+                <div class="dropdown-options">
+                  <div class="dropdown-option active" data-value="all">All Types</div>
+                  <div class="dropdown-option" data-value="youth">Youth</div>
+                  <div class="dropdown-option" data-value="adult">Adult (13 years +)</div>
+                  <div class="dropdown-option" data-value="mixed">Mixed (Youth & Adult)</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="filter-group">
+              <label>Youth Group:</label>
+              <div class="custom-dropdown" data-filter="age-group">
+                <div class="dropdown-selected">
+                  <span class="selected-text">All Youth Groups</span>
+                  <span class="dropdown-arrow">▼</span>
+                </div>
+                <div class="dropdown-options">
+                  <div class="dropdown-option active" data-value="all">All Youth Groups</div>
+                  <div class="dropdown-option" data-value="little-ninja">Little Ninjas (3.5-4 years)</div>
+                  <div class="dropdown-option" data-value="beginner">Beginner (5 Years +, White / Yellow)</div>
+                  <div class="dropdown-option" data-value="intermediate">Intermediate (5 Years +, Green / Purple / Blue)</div>
+                  <div class="dropdown-option" data-value="advanced">Advanced (5 Years +, Brown / Red)</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="filter-group">
+              <label>Belt Level:</label>
+              <div class="custom-dropdown" data-filter="belt-level">
+                <div class="dropdown-selected">
+                  <span class="selected-text">All Belts</span>
+                  <span class="dropdown-arrow">▼</span>
+                </div>
+                <div class="dropdown-options">
+                  <div class="dropdown-option active" data-value="all">All Belts</div>
+                  <div class="dropdown-option" data-value="white">White</div>
+                  <div class="dropdown-option" data-value="yellow">Yellow</div>
+                  <div class="dropdown-option" data-value="green">Green</div>
+                  <div class="dropdown-option" data-value="purple">Purple</div>
+                  <div class="dropdown-option" data-value="blue">Blue</div>
+                  <div class="dropdown-option" data-value="brown">Brown</div>
+                  <div class="dropdown-option" data-value="red">Red</div>
+                  <div class="dropdown-option" data-value="master-form-kenpo">Master Form / Kenpo</div>
+                  <div class="dropdown-option" data-value="master-form-jujitsu">Master Form / Jujitsu</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="filter-group">
+              <label>Location:</label>
+              <div class="custom-dropdown" data-filter="location">
+                <div class="dropdown-selected">
+                  <span class="selected-text">All Locations</span>
+                  <span class="dropdown-arrow">▼</span>
+                </div>
+                <div class="dropdown-options">
+                  <div class="dropdown-option active" data-value="all">All Locations</div>
+                  <div class="dropdown-option" data-value="Silver Spring MD">📍Silver Spring MD</div>
+                  <div class="dropdown-option" data-value="NW DC">📍NW DC</div>
+                  <div class="dropdown-option" data-value="Arlington VA">📍Arlington VA</div>
+                  <div class="dropdown-option" data-value="Rockville MD">📍Rockville MD</div>
+                  <div class="dropdown-option" data-value="Glenn Dale MD">📍Glenn Dale MD</div>
+                  <div class="dropdown-option" data-value="Capitol Hill DC">📍Capitol Hill DC</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="filter-group">
+              <label>Day of Week:</label>
+              <div class="custom-dropdown" data-filter="day">
+                <div class="dropdown-selected">
+                  <span class="selected-text">All Days</span>
+                  <span class="dropdown-arrow">▼</span>
+                </div>
+                <div class="dropdown-options">
+                  <div class="dropdown-option active" data-value="all">All Days</div>
+                  <div class="dropdown-option" data-value="Monday">Monday</div>
+                  <div class="dropdown-option" data-value="Tuesday">Tuesday</div>
+                  <div class="dropdown-option" data-value="Wednesday">Wednesday</div>
+                  <div class="dropdown-option" data-value="Thursday">Thursday</div>
+                  <div class="dropdown-option" data-value="Friday">Friday</div>
+                  <div class="dropdown-option" data-value="Saturday">Saturday</div>
+                  <div class="dropdown-option" data-value="Sunday">Sunday</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Bottom row container for checkbox and reset button -->
+            <div class="bottom-row-container">
+              <!-- Dynamic checkbox for excluding mixed classes -->
+              <div id="exclude-mixed-container" class="exclude-mixed-checkbox" style="display: none;">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="exclude-mixed">
+                  <span class="checkmark"></span>
+                  Exclude Mixed (Youth & Adult) Classes?
+                </label>
+              </div>
+              
+              <button id="reset-filters">Reset Filters</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Schedule content will be inserted here by JavaScript -->
+        <div id="schedule-content"></div>
+      </div>
+    </div>
+
+    <!-- Sept-Oct Schedule and Registration Containers -->
+    <div class="row justify-content-center g-4 mt-5">
+      <!-- Sept - Oct Schedule -->
+      <div class="col-lg-6">
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; height: 100%;">
+          <h3 style="color: #dc3545; font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 600;">September - October Schedule</h3>
+          
+          <!-- Calendar Preview -->
+          <div style="position: relative; margin-bottom: 1.5rem;">
+            <img src="assets/images/aftersschool/sep-oct-karate.png" 
+                 alt="September - October Karate Schedule" 
+                 style="width: 100%; max-width: 400px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); cursor: pointer;"
+                 onclick="openCalendarPreview()"
+                 onmouseover="this.style.transform='scale(1.02)'; this.style.transition='all 0.3s ease';"
+                 onmouseout="this.style.transform='scale(1)'; this.style.transition='all 0.3s ease';">
+          </div>
+          
+          <!-- Download Button -->
+          <a href="assets/images/aftersschool/2025-Sep-Oct-Karate-Class-Calendar-v2.pdf" 
+            download="Kaizen-Karate-Sept-Oct-2025.pdf"
+             style="background: rgba(220, 53, 69, 0.2); color: white; padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 500; display: inline-block; border: 1px solid rgba(220, 53, 69, 0.4); transition: all 0.3s ease;"
+             onmouseover="this.style.background='rgba(220, 53, 69, 0.3)'; this.style.borderColor='#dc3545';"
+             onmouseout="this.style.background='rgba(220, 53, 69, 0.2)'; this.style.borderColor='rgba(220, 53, 69, 0.4)';">
+            <i class="fas fa-download" style="margin-right: 0.5rem;"></i>
+            Download Schedule
+          </a>
+            </div>
+          </div>
+      
+      <!-- Registration Button -->
+      <div class="col-lg-6">
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; display: flex; flex-direction: column; justify-content: center; height: 100%;">
+          <h3 style="color: white; font-size: 1.8rem; margin-bottom: 2rem; font-weight: 600;">Ready to Enroll?</h3>
+          
+          <a href="https://www.gomotionapp.com/team/mdkfu/page/class-registration" 
+             target="_blank"
+             style="background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); color: white; padding: 1.5rem 2.5rem; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1.3rem; display: inline-block; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4); border: none; margin: 0 auto;"
+             onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.6)';"
+             onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(220, 53, 69, 0.4)';">
+            <i class="fas fa-user-plus" style="margin-right: 0.8rem; font-size: 1.2rem;"></i>
+            Register Now
+          </a>
+          
+          <p style="color: #e9ecef; margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.8;">
+            Secure your spot in our programs
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Disclaimer Text -->
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <p style="color: #e9ecef; font-size: 0.9rem; text-align: center; line-height: 1.5; opacity: 0.8;">
+          Not all classes are listed. If you do not see your program listed then please 
+          <a href="#contact" style="color: #dc3545; text-decoration: underline; transition: color 0.2s ease;"
+             onmouseover="this.style.color='#ff6b7a';"
+             onmouseout="this.style.color='#dc3545';">contact our office</a> 
+          directly for more information.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Calendar Preview Lightboxes -->
+<div id="calendarLightbox" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.95); display: none; align-items: center; justify-content: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease;" onclick="closeCalendarPreview()">
+  <div style="position: relative; max-width: 90vw; max-height: 90vh;">
+    <img src="assets/images/aftersschool/sep-oct-karate.png" 
+         alt="September - October After School Karate Schedule - Full Size" 
+         style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);">
+    
+    <button onclick="closeCalendarPreview()" 
+            style="position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; border-radius: 50%; background: #dc3545; border: none; color: white; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;"
+            onmouseover="this.style.transform='scale(1.1)'; this.style.background='#c82333';"
+            onmouseout="this.style.transform='scale(1)'; this.style.background='#dc3545';">
+      ×
+    </button>
+  </div>
+    </div>
+
+<!-- Belt Exam Requirements Lightboxes -->
+<div id="matrixLightbox" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.95); display: none; align-items: center; justify-content: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease;" onclick="closeMatrixLightbox()">
+  <div style="position: relative; max-width: 90vw; max-height: 90vh;">
+    <img src="assets/images/belt-exam/requirements-test/kaizen-testing-matrix.png" 
+         alt="Kaizen Karate Testing Matrix - Full Size" 
+         style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);">
+    
+    <button onclick="closeMatrixLightbox()" 
+            style="position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; border-radius: 50%; background: #dc3545; border: none; color: white; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;"
+            onmouseover="this.style.transform='scale(1.1)'; this.style.background='#c82333';"
+            onmouseout="this.style.transform='scale(1)'; this.style.background='#dc3545';">
+      ×
+    </button>
+    
+    <a href="assets/images/belt-exam/requirements-test/kaizen-testing-matrix.png" download="kaizen-testing-matrix.png"
+       style="position: absolute; bottom: -15px; right: -15px; background: #28a745; border: none; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;"
+       onmouseover="this.style.background='#218838';"
+       onmouseout="this.style.background='#28a745';">
+      <i class="fas fa-download"></i>Download
+    </a>
+    </div>
+</div>
+
+<div id="requirementsLightbox" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.95); display: none; align-items: center; justify-content: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease;" onclick="closeRequirementsLightbox()">
+  <div style="position: relative; max-width: 90vw; max-height: 90vh;">
+    <img src="assets/images/belt-exam/requirements-test/kaizen-testing-requirement.png" 
+         alt="Kaizen Karate Testing Requirements - Full Size" 
+         style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);">
+    
+    <button onclick="closeRequirementsLightbox()" 
+            style="position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; border-radius: 50%; background: #dc3545; border: none; color: white; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;"
+            onmouseover="this.style.transform='scale(1.1)'; this.style.background='#c82333';"
+            onmouseout="this.style.transform='scale(1)'; this.style.background='#dc3545';">
+      ×
+    </button>
+    
+    <a href="assets/images/belt-exam/requirements-test/kaizen-testing-requirement.png" download="kaizen-testing-requirement.png"
+       style="position: absolute; bottom: -15px; right: -15px; background: #28a745; border: none; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;"
+       onmouseover="this.style.background='#218838';"
+       onmouseout="this.style.background='#28a745';">
+      <i class="fas fa-download"></i>Download
+    </a>
+  </div>
+</div>
+
+<div id="stripeLightbox" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.95); display: none; align-items: center; justify-content: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease;" onclick="closeStripeLightbox()">
+  <div style="position: relative; max-width: 90vw; max-height: 90vh;">
+    <img src="assets/images/belt-exam/requirements-test/kaizen-testing-stripe-system.png" 
+         alt="Kaizen Karate Stripe System - Full Size" 
+         style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);">
+    
+    <button onclick="closeStripeLightbox()" 
+            style="position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; border-radius: 50%; background: #dc3545; border: none; color: white; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;"
+            onmouseover="this.style.transform='scale(1.1)'; this.style.background='#c82333';"
+            onmouseout="this.style.transform='scale(1)'; this.style.background='#dc3545';">
+      ×
+    </button>
+    
+    <a href="assets/images/belt-exam/requirements-test/kaizen-testing-stripe-system.png" download="kaizen-testing-stripe-system.png"
+       style="position: absolute; bottom: -15px; right: -15px; background: #28a745; border: none; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;"
+       onmouseover="this.style.background='#218838';"
+       onmouseout="this.style.background='#28a745';">
+      <i class="fas fa-download"></i>Download
+    </a>
+          </div>
+  </div>
+
+<!-- Testing Scripts Lightboxes -->
+<div id="testingTipsLightbox" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.95); display: none; align-items: center; justify-content: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease;" onclick="closeTestingTipsLightbox()">
+  <div style="position: relative; max-width: 90vw; max-height: 90vh;">
+    <button onclick="closeTestingTipsLightbox()" 
+            style="position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; border-radius: 50%; background: #dc3545; border: none; color: white; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; z-index: 10;"
+            onmouseover="this.style.transform='scale(1.1)'; this.style.background='#c82333';"
+            onmouseout="this.style.transform='scale(1)'; this.style.background='#dc3545';">
+      ×
+    </button>
+    <div style="background: rgba(255, 255, 255, 0.95); border-radius: 12px; padding: 2rem; color: #333; overflow-y: auto; max-height: 90vh;">
+    
+    <h3 style="color: #dc3545; margin-bottom: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+      <i class="fas fa-lightbulb"></i>Testing Tips
+    </h3>
+    
+    <div style="line-height: 1.6;">
+      <h4 style="color: #dc3545; margin-bottom: 1rem;">Filming</h4>
+      <ol style="margin-bottom: 2rem; padding-left: 1.5rem;">
+        <li style="margin-bottom: 0.8rem;">Choose a space that is large and quiet enough for the grader to see the entire body (including feet) and can hear the commands clearly on the video.</li>
+        <li style="margin-bottom: 0.8rem;">Students must be in full uniform (cleaned and pressed) and wear their belt.</li>
+        <li style="margin-bottom: 0.8rem;">Be sure you have adequate space for each section of the exam.</li>
+        <li style="margin-bottom: 0.8rem;">Student should not stop-and-go during filming because katas are timed.</li>
+        <li>Sparring and Ju jitsu must be filmed during regular class time with the permission of your instructor. For the Ju Jitsu section, students must be in full uniform and wear their belts.</li>
+      </ol>
+      
+      <h4 style="color: #dc3545; margin-bottom: 1rem;">Submitting your test</h4>
+      <ol style="margin-bottom: 2rem; padding-left: 1.5rem;">
+        <li style="margin-bottom: 0.8rem;">Please send all video tests only to Coach V at <strong>coach.v@kaizenkaratemd.com</strong>.</li>
+        <li>All videos must be sent as a <strong>YouTube link</strong>. No other formats will be accepted & no large file attachments.</li>
+      </ol>
+      
+      <h4 style="color: #dc3545; margin-bottom: 1rem;">Tips and Information</h4>
+      <ol style="margin: 0; padding-left: 1.5rem;">
+        <li style="margin-bottom: 0.8rem;">The video test should start and end in a good Choon-Bi stance.</li>
+        <li style="margin-bottom: 0.8rem;">The video test should be a clean cut video with <strong>*no*</strong> editing.</li>
+        <li style="margin-bottom: 0.8rem;">Sparring and Ju Jitsu must be done during regular class time under the supervision of your black belt instructor.</li>
+        <li style="margin-bottom: 0.8rem;">Belt tying is for 30 seconds only. Be sure to do a full 360 degree turn at the end to show that your belt was tied correctly. Click here to see how to tie your belt.</li>
+                 <li>If you need any assistance, please email our office directly.</li>
+       </ol>
+     </div>
+    </div>
+  </div>
+</div>
+
+ <div id="videoInstructionsLightbox" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.95); display: none; align-items: center; justify-content: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease;" onclick="closeVideoInstructionsLightbox()">
+   <div style="position: relative; max-width: 90vw; max-height: 90vh;">
+     <button onclick="closeVideoInstructionsLightbox()" 
+             style="position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; border-radius: 50%; background: #dc3545; border: none; color: white; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; z-index: 10;"
+             onmouseover="this.style.transform='scale(1.1)'; this.style.background='#c82333';"
+             onmouseout="this.style.transform='scale(1)'; this.style.background='#dc3545';">
+       ×
+     </button>
+           <div style="background: rgba(255, 255, 255, 0.95); border-radius: 12px; padding: 2rem; color: #333; overflow-y: auto; max-height: 90vh;">
+        <h3 style="color: #dc3545; margin-bottom: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+          <i class="fas fa-video"></i>Video Testing Instructions
+        </h3>
+        
+        <div style="line-height: 1.6;">
+          <!-- Important Updates -->
+          <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+            <h4 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.2rem;">
+              <i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem;"></i>Important Updates (Effective 5/14/21)
+            </h4>
+            <ul style="margin: 0; padding-left: 1.5rem; list-style-type: disc;">
+              <li style="margin-bottom: 0.8rem;"><strong>Sparring is required</strong> on all video tests for green belt rank and above.</li>
+              <li style="margin-bottom: 0.8rem;"><strong>Jujitsu is required</strong> on all video tests for brown belt rank and above.</li>
+              <li style="margin: 0;"><strong>All video tests must be submitted as a YouTube link.</strong> No other formats will be accepted.</li>
+              </ul>
+            </div>
+          
+          <!-- Part 1 -->
+          <h3 style="color: #dc3545; margin-bottom: 1.5rem; font-size: 1.3rem; border-bottom: 2px solid #dc3545; padding-bottom: 0.5rem;">
+            Part 1: How to create and submit your video
+          </h3>
+          
+          <!-- What to record -->
+          <h4 style="color: #dc3545; margin-bottom: 1rem;">What to record</h4>
+          <p style="margin-bottom: 1rem; background: rgba(255, 193, 7, 0.1); padding: 1rem; border-radius: 6px; border-left: 4px solid #ffc107;">
+            <strong>COVID-19 Note:</strong> During the COVID-19 pandemic, partner work was not possible due to distance learning. All students testing for green belt rank and above should carefully read the information below to make sure they meet all requirements for testing.
+          </p>
+          <p style="margin-bottom: 1.5rem; font-style: italic; color: #666;">
+            Make sure to read the testing scripts verbatim when recording your test. It is very helpful if a parent or friend reads the required elements in the script with good pacing so that the student can focus on demonstrating the required elements without having to stop and check what is on the list.
+          </p>
+          
+          <ol style="margin-bottom: 2rem; padding-left: 1.5rem;">
+            <li style="margin-bottom: 0.8rem;"><strong>Tang Soo Do Techniques</strong> (Testing for Green and higher)</li>
+            <li style="margin-bottom: 0.8rem;"><strong>Pad Striking</strong> (Testing for Green and higher)</li>
+            <li style="margin-bottom: 0.8rem;">
+              <strong>Sparring with a partner</strong> (Testing for Green and higher)<br>
+              <span style="font-size: 0.9rem; color: #666; margin-left: 1rem;">
+                • We suggest recording this part of the test during class time at one of our weekend classes<br>
+                • 2 matches, 30 seconds each<br>
+                • Required as of 5/14/21
+              </span>
+            </li>
+            <li style="margin-bottom: 0.8rem;"><strong>Master Form</strong> (Testing for Purple and higher)</li>
+            <li style="margin: 0;">
+              <strong>Jujitsu with a partner</strong> (Testing for Brown and higher)<br>
+              <span style="font-size: 0.9rem; color: #666; margin-left: 1rem;">• Required as of 5/14/21</span>
+            </li>
+          </ol>
+          
+          <!-- Where to record -->
+          <h4 style="color: #dc3545; margin-bottom: 1rem;">Where to record</h4>
+          <p style="margin-bottom: 2rem;">
+            Choose a location that gives you enough room to perform all of your techniques without bumping into nearby objects. Ideally, the location will be quiet & you should have an uncluttered background so that there aren't any distracting sounds or visual elements in your video. Good locations might include a basement room, spare bedroom, garage, school gym or cafeteria. If you don't have access to a good location at the moment, don't worry, just make sure that we can clearly see your entire body from head to toe, and hear the snap of your gi.
+          </p>
+          
+          <!-- How to record -->
+          <h4 style="color: #dc3545; margin-bottom: 1rem;">How to record the video</h4>
+          <p style="margin-bottom: 1rem;">
+            If you appear very far away in the video it will be difficult to evaluate. Similarly, if you are too close to the camera some of your techniques might take place outside of the video frame. Place the video camera at head height, and a distance so that you are centered in the frame with some space between your body and the top and bottom of the video frame. This will give you room to fully extend your kicks, punches and blocks while remaining on the screen.
+          </p>
+          <p style="margin-bottom: 2rem; background: rgba(13, 202, 240, 0.1); padding: 1rem; border-radius: 6px; border-left: 4px solid #0dcaf0;">
+            <strong>Phone Recording Tip:</strong> If you are recording with your cell phone, please remember to turn your phone sideways so that the video is captured in the correct orientation. Also, using a tripod (or placing the camera on a still surface) will reduce motion and shaking, and make the video much easier to review.
+          </p>
+          
+          <!-- How to submit -->
+          <h4 style="color: #dc3545; margin-bottom: 1rem;">How to submit your video</h4>
+          <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+            <p style="margin-bottom: 1rem; font-weight: 600;">
+              ALL videos must be submitted by posting the video file to YouTube as a <strong>private video</strong>, and then sending directly to Coach V at <strong>coach.v@kaizenkaratemd.com</strong>.
+            </p>
+            <p style="margin: 0; color: #dc3545; font-weight: 600;">
+              NO videos will be accepted as large attachments on emails. NO EXCEPTIONS.
+            </p>
+            <p style="margin-top: 1rem; margin-bottom: 0;">
+              Check out the following video on how to upload a video to YouTube: <a href="https://www.youtube.com/watch?v=AoRGSTPB9xs" target="_blank" rel="noopener noreferrer" style="color: #dc3545; text-decoration: underline; font-weight: 600;">A private video on YouTube</a>
+            </p>
+          </div>
+          
+          <!-- What to expect -->
+          <h4 style="color: #dc3545; margin-bottom: 1rem;">What to expect after you send in your video</h4>
+          <p style="margin-bottom: 2rem;">
+            Reviewing and grading submitted videos is a very time consuming task. In general, feedback is returned to students within 1-2 weeks, but in times of high demand it may take longer than this. We thank you for your understanding during these times.
+          </p>
+          
+          <!-- Part 2 -->
+          <h3 style="color: #dc3545; margin-bottom: 1.5rem; font-size: 1.3rem; border-bottom: 2px solid #dc3545; padding-bottom: 0.5rem;">
+            Part 2: Content required for each belt
+          </h3>
+          
+          <!-- Section 1 -->
+          <h4 style="color: #dc3545; margin-bottom: 1rem;">Section 1: Tang Soo Do - Techniques <span style="font-size: 0.9rem; color: #666;">(required if testing for Green Belt or higher)</span></h4>
+          <p style="margin-bottom: 2rem;">
+            All Tang Soo Do techniques should be performed facing the camera 3x and then again for 3x facing your left (if you are right handed) OR your right (if you are left handed). See each script for details. Record all of the techniques that are listed in the relevant testing script.
+          </p>
+          
+          <!-- Section 2 -->
+          <h4 style="color: #dc3545; margin-bottom: 1rem;">Section 2: Pad Striking <span style="font-size: 0.9rem; color: #666;">(required if testing for Green belt or higher)</span></h4>
+          <p style="margin-bottom: 2rem;">
+            Make sure to read the script carefully. All techniques / combinations should performed with power 3x each.
+          </p>
+          
+          <!-- Section 3 -->
+          <h4 style="color: #dc3545; margin-bottom: 1rem;">Section 3: Sparring with a partner <span style="font-size: 0.9rem; color: #666;">(required if testing for Green Belt or higher)</span></h4>
+          <p style="margin-bottom: 2rem;">
+            This section of the test must be filmed during regular class time at one of our weekend or evening class locations under the supervision of a black belt instructor. The student who is testing MUST complete 2 matches that are 30 seconds each with two different sparring partners of equal or higher belt rank. The goal of each match is to score as much as possible without getting hit. We are looking at the students offensive & defensive skills.
+          </p>
+          
+          <!-- Section 4 -->
+          <h4 style="color: #dc3545; margin-bottom: 1rem;">Section 4: Master Form <span style="font-size: 0.9rem; color: #666;">(required if testing for Purple Belt or higher)</span></h4>
+          <p style="margin-bottom: 1rem;">The Master Form will be performed in 2 parts: Continuous moves & Individual moves.</p>
+          
+          <div style="background: rgba(255, 255, 255, 0.5); border-radius: 6px; padding: 1.5rem; margin-bottom: 1rem;">
+            <h5 style="color: #dc3545; margin-bottom: 1rem;">Continuous moves:</h5>
+            <p style="margin-bottom: 1rem;">
+              All required Master Form moves will be performed without stopping 1 time, utilizing the correct transitions from one move to another. The student will make a formal presentation, salute and begin the Master Form facing the camera, but the student will face in other directions during this portion of the test.
+            </p>
+            <p style="margin: 0; font-style: italic; background: rgba(13, 202, 240, 0.1); padding: 1rem; border-radius: 4px;">
+              <strong>Formal presentation:</strong> "Judges, my name is &lt;STUDENT's NAME&gt;, and with your permission I will be performing Master Form. May I please begin?"
+            </p>
+        </div>
+          
+          <div style="background: rgba(255, 255, 255, 0.5); border-radius: 6px; padding: 1.5rem; margin-bottom: 2rem;">
+            <h5 style="color: #dc3545; margin-bottom: 1rem;">Individual moves:</h5>
+            <p style="margin: 0;">
+              Only the newly required Master Form moves should be performed with the student facing the camera. For example, if testing for Red Belt, you would only perform individual moves for moves 31-40. No matter what direction the student ends up in at the end of the previous move, the student should reset their body so that they are facing the camera again before executing another move.
+            </p>
+      </div>
+
+          <!-- Section 5 -->
+          <h4 style="color: #dc3545; margin-bottom: 1rem;">Section 5: Jujitsu with a partner <span style="font-size: 0.9rem; color: #666;">(required if testing for Brown Belt or higher)</span></h4>
+          <p style="margin: 0;">
+            All Jujitsu Escapes should be performed facing sideways to the camera, just like you would when performing during a belt exam. Each hold will be performed 3 times, with a classmate (NOT a family member) acting as the "attacker". The student will demonstrate 2-3 different Jujitsu Escapes for each hold (when applicable).
+          </p>
+          </div>
+      </div>
+   </div>
+ </div>
+ </div>
+
+ <div id="greenBeltLightbox" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.95); display: none; align-items: center; justify-content: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease;" onclick="closeGreenBeltLightbox()">
+   <div style="position: relative; max-width: 90vw; max-height: 90vh;">
+     <button onclick="closeGreenBeltLightbox()" 
+             style="position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; border-radius: 50%; background: #dc3545; border: none; color: white; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; z-index: 10;"
+             onmouseover="this.style.transform='scale(1.1)'; this.style.background='#c82333';"
+             onmouseout="this.style.transform='scale(1)'; this.style.background='#dc3545';">
+       ×
+     </button>
+     <div style="background: rgba(255, 255, 255, 0.95); border-radius: 12px; padding: 2rem; color: #333; overflow-y: auto; max-height: 90vh;">
+       <h3 style="color: #dc3545; margin-bottom: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+         <div style="width: 30px; height: 20px; background: green; border: 2px solid #333; border-radius: 3px; display: flex; align-items: center; justify-content: center;">
+           <i class="fas fa-scroll" style="font-size: 0.8rem; color: white;"></i>
+         </div>
+         Green Belt Script
+       </h3>
+       
+       <div style="line-height: 1.6;">
+         <!-- Important Requirements -->
+         <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+           <h4 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.2rem;">
+             <i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem;"></i>Important Requirements
+           </h4>
+           <p style="margin-bottom: 1rem; font-weight: 600; color: #dc3545;">
+             Students testing for green, purple, blue, brown, or red belt MUST register & pay online PRIOR to submitting your video test
+           </p>
+           <ul style="margin: 0; padding-left: 1.5rem; list-style-type: disc;">
+             <li style="margin-bottom: 0.8rem;"><strong>Sparring is required</strong> on all video tests for green belt rank and above (Effective 5/14/21)</li>
+             <li style="margin-bottom: 0.8rem;"><strong>Jujitsu is required</strong> on all video tests for brown belt rank and above (Effective 5/14/21)</li>
+             <li style="margin: 0;"><strong>All video tests must be submitted as a YouTube link.</strong> No other formats will be accepted (Effective 5/14/21)</li>
+              </ul>
+            </div>
+         
+         <!-- Script Instructions -->
+         <div style="background: rgba(40, 167, 69, 0.1); border: 1px solid rgba(40, 167, 69, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+           <h4 style="color: #28a745; margin-bottom: 1rem; font-size: 1.1rem;">
+             <i class="fas fa-microphone" style="margin-right: 0.5rem;"></i>The Green Belt Script
+           </h4>
+           <p style="margin: 0; font-style: italic; color: #666;">
+             (To be read aloud by a friend or Parent)
+           </p>
+         </div>
+         
+         <!-- Script Content -->
+         <div style="background: rgba(255, 255, 255, 0.8); border-radius: 8px; padding: 2rem; border: 1px solid rgba(0, 0, 0, 0.1);">
+           <ol style="margin: 0; padding-left: 1.5rem; counter-reset: script-counter;">
+             <li style="margin-bottom: 1rem; font-weight: 500;">Stand at attention in Joon Bi.</li>
+             <li style="margin-bottom: 1rem; font-weight: 500;">State your name, age, and belt you are testing for. Also, state the name of the class location where you train & the name of your primary karate instructor.</li>
+             <li style="margin-bottom: 1rem; font-weight: 500;">Bow</li>
+             
+             <!-- White Belt Section -->
+             <li style="margin-bottom: 1.5rem; font-weight: 600; color: #dc3545; background: rgba(220, 53, 69, 0.05); padding: 0.5rem; border-radius: 4px;">We begin with the White Belt with Stripe section</li>
+             <li style="margin-bottom: 0.8rem;">Joon-bi Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+             <li style="margin-bottom: 0.8rem;">Horse Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+             <li style="margin-bottom: 0.8rem;">Fighting Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+             <li style="margin-bottom: 0.8rem;">Cat Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+             <li style="margin-bottom: 0.8rem;">Up Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+             <li style="margin-bottom: 0.8rem;">Jab <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+             <li style="margin-bottom: 0.8rem;">Cross <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+             <li style="margin-bottom: 0.8rem;">Front-leg Snap Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+             <li style="margin-bottom: 1.5rem;">Back-leg Snap Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+             
+             <!-- Orange Belt Section -->
+             <li style="margin-bottom: 1.5rem; font-weight: 600; color: #fd7e14; background: rgba(253, 126, 20, 0.1); padding: 0.5rem; border-radius: 4px;">This is the Orange Belt Section</li>
+             <li style="margin-bottom: 0.8rem;">Front Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+             <li style="margin-bottom: 0.8rem;">Lunge Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+             <li style="margin-bottom: 0.8rem;">Down Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+             <li style="margin-bottom: 1.5rem;">Front-leg Side Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+             
+             <!-- Yellow Belt Section -->
+             <li style="margin-bottom: 1.5rem; font-weight: 600; color: #ffc107; background: rgba(255, 193, 7, 0.2); padding: 0.5rem; border-radius: 4px;">This is the Yellow Belt Section</li>
+             <li style="margin-bottom: 0.8rem;">Ridge Hand <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+             <li style="margin-bottom: 0.8rem;">Rap <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+             <li style="margin-bottom: 0.8rem;">Hammer Fist <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+             <li style="margin-bottom: 1.5rem;">Back-leg Side Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+             
+             <!-- Green Belt Section -->
+             <li style="margin-bottom: 1.5rem; font-weight: 600; color: #28a745; background: rgba(40, 167, 69, 0.1); padding: 0.5rem; border-radius: 4px;">This is the Green Belt Section</li>
+             <li style="margin-bottom: 0.8rem;">Inside-Out Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+             <li style="margin-bottom: 0.8rem;">Lateral Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+             <li style="margin-bottom: 0.8rem;">Elbow Strike <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+             <li style="margin-bottom: 0.8rem;">Forearm Strike <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+             <li style="margin-bottom: 0.8rem;">Front-leg Round Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+             <li style="margin-bottom: 1.5rem;">Back-leg Round Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+             
+             <li style="margin-bottom: 2rem; font-weight: 500;">Bow</li>
+             
+             <!-- Pad Striking Section -->
+             <li style="margin-bottom: 1rem; font-weight: 600; color: #dc3545; background: rgba(220, 53, 69, 0.1); padding: 1rem; border-radius: 6px; line-height: 1.7;">
+               This is the Pad Striking Section - perform all moves on a punching bag, BOB Dummy, Kicking Shield, or approved focus pads. Perform each single and combination 3x on the pads with power. Take 2-3 seconds between each repetition to allow time to reset in your fighting stance. Add a yell to any back hand cross and back leg snap kicks only.
+             </li>
+             
+             <li style="margin-bottom: 0.8rem;">Combination - Jab, Cross</li>
+             <li style="margin-bottom: 0.8rem;">Combination - Up Block, Cross</li>
+             <li style="margin-bottom: 0.8rem;">Single - Front leg snap kick</li>
+             <li style="margin-bottom: 0.8rem;">Single - Back leg snap kick</li>
+             <li style="margin-bottom: 0.8rem;">Single - Front leg side kick</li>
+             <li style="margin-bottom: 0.8rem;">Combination - Lateral block, front hand rap</li>
+             <li style="margin-bottom: 0.8rem;">Combination - Inside out block, back hand ridge hand</li>
+             <li style="margin-bottom: 0.8rem;">Single - Front leg round kick</li>
+             <li style="margin-bottom: 0.8rem;">Single - Back leg round kick</li>
+             <li style="margin-bottom: 0.8rem;">Combination - Front leg round kick, back hand hammer fist</li>
+             
+             <li style="margin: 0; font-weight: 500;">Bow</li>
+           </ol>
+         </div>
+       </div>
+     </div>
+          </div>
+        </div>
+      </div>
+
+<div id="purpleBeltLightbox" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.95); display: none; align-items: center; justify-content: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease;" onclick="closePurpleBeltLightbox()">
+   <div style="position: relative; max-width: 90vw; max-height: 90vh;">
+     <button onclick="closePurpleBeltLightbox()" 
+            style="position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; border-radius: 50%; background: #dc3545; border: none; color: white; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; z-index: 10;"
+            onmouseover="this.style.transform='scale(1.1)'; this.style.background='#c82333';"
+            onmouseout="this.style.transform='scale(1)'; this.style.background='#dc3545';">
+       ×
+     </button>
+     <div style="background: rgba(255, 255, 255, 0.95); border-radius: 12px; padding: 2rem; color: #333; overflow-y: auto; max-height: 90vh;">
+    
+    <h3 style="color: #dc3545; margin-bottom: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+      <div style="width: 30px; height: 20px; background: purple; border: 2px solid #333; border-radius: 3px; display: flex; align-items: center; justify-content: center;">
+        <i class="fas fa-scroll" style="font-size: 0.8rem; color: white;"></i>
+          </div>
+      Purple Belt Script
+    </h3>
+    
+    <div style="line-height: 1.6;">
+      <!-- Important Requirements -->
+      <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+        <h4 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.2rem;">
+          <i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem;"></i>Important Requirements
+        </h4>
+        <p style="margin-bottom: 1rem; font-weight: 600; color: #dc3545;">
+          Students testing for green, purple, blue, brown, or red belt MUST register & pay online PRIOR to submitting your video test
+        </p>
+        <ul style="margin: 0; padding-left: 1.5rem; list-style-type: disc;">
+          <li style="margin-bottom: 0.8rem;"><strong>Sparring is required</strong> on all video tests for green belt rank and above (Effective 5/14/21)</li>
+          <li style="margin-bottom: 0.8rem;"><strong>Jujitsu is required</strong> on all video tests for brown belt rank and above (Effective 5/14/21)</li>
+          <li style="margin: 0;"><strong>All video tests must be submitted as a YouTube link.</strong> No other formats will be accepted (Effective 5/14/21)</li>
+              </ul>
+            </div>
+      
+      <!-- Script Instructions -->
+      <div style="background: rgba(128, 0, 128, 0.1); border: 1px solid rgba(128, 0, 128, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+        <h4 style="color: #800080; margin-bottom: 1rem; font-size: 1.1rem;">
+          <i class="fas fa-microphone" style="margin-right: 0.5rem;"></i>The Purple Belt Script
+        </h4>
+        <p style="margin: 0; font-style: italic; color: #666;">
+          (To be read aloud by a friend or Parent)
+        </p>
+      </div>
+      
+      <!-- Script Content -->
+      <div style="background: rgba(255, 255, 255, 0.8); border-radius: 8px; padding: 2rem; border: 1px solid rgba(0, 0, 0, 0.1);">
+        <ol style="margin: 0; padding-left: 1.5rem; counter-reset: script-counter;">
+          <li style="margin-bottom: 1rem; font-weight: 500;">Stand at attention in Joon Bi.</li>
+          <li style="margin-bottom: 1rem; font-weight: 500;">State your name, age, and belt you are testing for. Also, state the name of the class location where you train & the name of your primary karate instructor.</li>
+          <li style="margin-bottom: 1rem; font-weight: 500;">Bow</li>
+          
+          <!-- White Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #dc3545; background: rgba(220, 53, 69, 0.05); padding: 0.5rem; border-radius: 4px;">We begin with the White Belt with Stripe section</li>
+          <li style="margin-bottom: 0.8rem;">Joon-bi Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Horse Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Fighting Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Cat Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Up Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Jab <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Cross <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Front-leg Snap Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Back-leg Snap Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Orange Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #fd7e14; background: rgba(253, 126, 20, 0.1); padding: 0.5rem; border-radius: 4px;">This is the Orange Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Front Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Lunge Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Down Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Front-leg Side Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Yellow Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #ffc107; background: rgba(255, 193, 7, 0.2); padding: 0.5rem; border-radius: 4px;">This is the Yellow Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Ridge Hand <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Rap <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Hammer Fist <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Back-leg Side Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Green Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #28a745; background: rgba(40, 167, 69, 0.1); padding: 0.5rem; border-radius: 4px;">This is the Green Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Inside-Out Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Lateral Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Elbow Strike <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Forearm Strike <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Front-leg Round Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Back-leg Round Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Purple Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #800080; background: rgba(128, 0, 128, 0.1); padding: 0.5rem; border-radius: 4px;">We finish with the Purple Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Take off and Tie Belt in 30 seconds <span style="color: #666; font-style: italic;">(Parent or friend calls time)</span></li>
+          <li style="margin-bottom: 0.8rem;">Hook <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Upper cut <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Spin Rap <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Hook Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Spin Hook Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 2rem;">Back Kick (turn sideways) <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Pad Striking Section -->
+          <li style="margin-bottom: 1rem; font-weight: 600; color: #dc3545; background: rgba(220, 53, 69, 0.1); padding: 1rem; border-radius: 6px; line-height: 1.7;">
+            This is the Pad Striking Section - perform all moves on a punching bag, BOB Dummy, Kicking Shield, or approved focus pads. Perform each single and combination 3x on the pads with power. Take 2-3 seconds between each repetition to allow time to reset in your fighting stance. Add a yell to any back hand cross and back leg snap kicks only.
+          </li>
+          
+          <li style="margin-bottom: 0.8rem;">Combination - Jab, Cross</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Up Block, Cross</li>
+          <li style="margin-bottom: 0.8rem;">Single - Front leg snap kick</li>
+          <li style="margin-bottom: 0.8rem;">Single - Back leg snap kick</li>
+          <li style="margin-bottom: 0.8rem;">Single - Front leg side kick</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Lateral block, front hand rap</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Inside out block, back hand ridge hand</li>
+          <li style="margin-bottom: 0.8rem;">Single - Front leg round kick</li>
+          <li style="margin-bottom: 0.8rem;">Single - Back leg round kick</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Front leg round kick, back hand hammer fist</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Hook, Upper Cut</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Jab, Rap, Spin-Rap</li>
+          <li style="margin-bottom: 2rem;">Combination - Front snap kick, jab, cross</li>
+          
+          <li style="margin-bottom: 2rem; font-weight: 500;">Bow</li>
+          
+          <!-- Master Form Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #6f42c1; background: rgba(111, 66, 193, 0.1); padding: 0.5rem; border-radius: 4px;">Now we move on to Master Form, moves 1-6</li>
+          <li style="margin-bottom: 0.8rem;">Joon Bi!</li>
+          <li style="margin-bottom: 0.8rem;">Present! <span style="color: #666; font-style: italic;">(Student says, "Judges, my name is...")</span></li>
+          <li style="margin-bottom: 0.8rem;">Yes, you may begin.</li>
+          <li style="margin-bottom: 0.8rem;">Formal Salute</li>
+          <li style="margin-bottom: 0.8rem;">Bow</li>
+          <li style="margin-bottom: 0.8rem; font-style: italic; color: #666;">(Student executes moves 1-6 without stopping)</li>
+          <li style="margin-bottom: 0.8rem;">Formal Salute</li>
+          <li style="margin-bottom: 0.8rem;">Bow</li>
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #6f42c1; background: rgba(111, 66, 193, 0.05); padding: 0.5rem; border-radius: 4px;">Now we will perform each move individually facing the camera</li>
+          <li style="margin-bottom: 0.8rem;">Move 1, Beheading the Dragon, Outside a Left Straight Punch <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 2, Escaping Ram, Rear Bear Hug – Arms Pinned <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 3, Thrusting Release, Front Bear Hug – Arms Pinned <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 4, Returning Serpent, Inside a Right Punch <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 5, Deflecting Thunder, Inside a Right Snap Kick <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 1.5rem;">Move 6, Thunder and Lightning, Inside a Left Punch <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Formal Salute</li>
+          <li style="margin: 0; font-weight: 500;">Bow</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+ </div>
+
+<div id="blueBeltLightbox" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.95); display: none; align-items: center; justify-content: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease;" onclick="closeBlueBeltLightbox()">
+   <div style="position: relative; max-width: 90vw; max-height: 90vh;">
+     <button onclick="closeBlueBeltLightbox()" 
+            style="position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; border-radius: 50%; background: #dc3545; border: none; color: white; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; z-index: 10;"
+            onmouseover="this.style.transform='scale(1.1)'; this.style.background='#c82333';"
+            onmouseout="this.style.transform='scale(1)'; this.style.background='#dc3545';">
+       ×
+     </button>
+     <div style="background: rgba(255, 255, 255, 0.95); border-radius: 12px; padding: 2rem; color: #333; overflow-y: auto; max-height: 90vh;">
+    
+    <h3 style="color: #dc3545; margin-bottom: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+      <div style="width: 30px; height: 20px; background: blue; border: 2px solid #333; border-radius: 3px; display: flex; align-items: center; justify-content: center;">
+        <i class="fas fa-scroll" style="font-size: 0.8rem; color: white;"></i>
+      </div>
+      Blue Belt Script
+    </h3>
+    
+    <div style="line-height: 1.6;">
+      <!-- Important Requirements -->
+      <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+        <h4 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.2rem;">
+          <i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem;"></i>Important Requirements
+        </h4>
+        <p style="margin-bottom: 1rem; font-weight: 600; color: #dc3545;">
+          Students testing for green, purple, blue, brown, or red belt MUST register & pay online PRIOR to submitting your video test
+        </p>
+        <ul style="margin: 0; padding-left: 1.5rem; list-style-type: disc;">
+          <li style="margin-bottom: 0.8rem;"><strong>Sparring is required</strong> on all video tests for green belt rank and above (Effective 5/14/21)</li>
+          <li style="margin-bottom: 0.8rem;"><strong>Jujitsu is required</strong> on all video tests for brown belt rank and above (Effective 5/14/21)</li>
+          <li style="margin: 0;"><strong>All video tests must be submitted as a YouTube link.</strong> No other formats will be accepted (Effective 5/14/21)</li>
+        </ul>
+      </div>
+      
+      <!-- Script Instructions -->
+      <div style="background: rgba(0, 123, 255, 0.1); border: 1px solid rgba(0, 123, 255, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+        <h4 style="color: #007bff; margin-bottom: 1rem; font-size: 1.1rem;">
+          <i class="fas fa-microphone" style="margin-right: 0.5rem;"></i>The Blue Belt Script
+        </h4>
+        <p style="margin: 0; font-style: italic; color: #666;">
+          (To be read aloud by a friend or Parent)
+        </p>
+      </div>
+      
+      <!-- Script Content -->
+      <div style="background: rgba(255, 255, 255, 0.8); border-radius: 8px; padding: 2rem; border: 1px solid rgba(0, 0, 0, 0.1);">
+        <ol style="margin: 0; padding-left: 1.5rem; counter-reset: script-counter;">
+          <li style="margin-bottom: 1rem; font-weight: 500;">Stand at attention in Joon Bi.</li>
+          <li style="margin-bottom: 1rem; font-weight: 500;">State your name, age, and belt you are testing for. Also, state the name of the class location where you train & the name of your primary karate instructor.</li>
+          <li style="margin-bottom: 1rem; font-weight: 500;">Bow</li>
+          
+          <!-- White Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #dc3545; background: rgba(220, 53, 69, 0.05); padding: 0.5rem; border-radius: 4px;">We begin with the White Belt with Stripe section</li>
+          <li style="margin-bottom: 0.8rem;">Joon-bi Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Horse Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Fighting Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Cat Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Up Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Jab <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Cross <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Front-leg Snap Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Back-leg Snap Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Orange Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #fd7e14; background: rgba(253, 126, 20, 0.1); padding: 0.5rem; border-radius: 4px;">This is the Orange Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Front Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Lunge Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Down Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Front-leg Side Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Yellow Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #ffc107; background: rgba(255, 193, 7, 0.2); padding: 0.5rem; border-radius: 4px;">This is the Yellow Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Ridge Hand <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Rap <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Hammer Fist <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Back-leg Side Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Green Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #28a745; background: rgba(40, 167, 69, 0.1); padding: 0.5rem; border-radius: 4px;">This is the Green Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Inside-Out Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Lateral Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Elbow Strike <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Forearm Strike <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Front-leg Round Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Back-leg Round Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Purple Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #800080; background: rgba(128, 0, 128, 0.1); padding: 0.5rem; border-radius: 4px;">This is the Purple Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Take off and Tie Belt in 30 seconds <span style="color: #666; font-style: italic;">(Parent or friend calls time)</span></li>
+          <li style="margin-bottom: 0.8rem;">Hook <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Upper cut <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Spin Rap <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Hook Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Spin Hook Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Back Kick (turn sideways) <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Blue Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #007bff; background: rgba(0, 123, 255, 0.1); padding: 0.5rem; border-radius: 4px;">We finish with the Blue Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Reverse Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Crescent Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Moon Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Axe Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Double Front Round Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">All Purpose Block (Left) <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 2rem;">All Purpose block (Right) <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Pad Striking Section -->
+          <li style="margin-bottom: 1rem; font-weight: 600; color: #dc3545; background: rgba(220, 53, 69, 0.1); padding: 1rem; border-radius: 6px; line-height: 1.7;">
+            This is the Pad Striking Section - perform all moves on a punching bag, BOB Dummy, Kicking Shield, or approved focus pads. Perform each single and combination 3x on the pads with power. Take 2-3 seconds between each repetition to allow time to reset in your fighting stance. Add a yell to any back hand cross and back leg snap kicks only.
+          </li>
+          
+          <li style="margin-bottom: 0.8rem;">Combination - Jab, Cross</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Up Block, Cross</li>
+          <li style="margin-bottom: 0.8rem;">Single - Front leg snap kick</li>
+          <li style="margin-bottom: 0.8rem;">Single - Back leg snap kick</li>
+          <li style="margin-bottom: 0.8rem;">Single - Front leg side kick</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Lateral block, front hand rap</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Inside out block, back hand ridge hand</li>
+          <li style="margin-bottom: 0.8rem;">Single - Front leg round kick</li>
+          <li style="margin-bottom: 0.8rem;">Single - Back leg round kick</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Front leg round kick, back hand hammer fist</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Hook, Upper Cut</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Jab, Rap, Spin-Rap</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Front snap kick, jab, cross</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Double front leg round kick</li>
+          <li style="margin-bottom: 0.8rem;">Combination - All purpose block, back leg reverse moon kick</li>
+          <li style="margin-bottom: 2rem;">Combination - Front round kick, spin kick</li>
+          
+          <li style="margin-bottom: 2rem; font-weight: 500;">Bow</li>
+          
+          <!-- Master Form Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #6f42c1; background: rgba(111, 66, 193, 0.1); padding: 0.5rem; border-radius: 4px;">Now we move on to Master Form, moves 1-13</li>
+          <li style="margin-bottom: 0.8rem;">Joon Bi!</li>
+          <li style="margin-bottom: 0.8rem;">Present! <span style="color: #666; font-style: italic;">(Student says, "Judges, my name is...")</span></li>
+          <li style="margin-bottom: 0.8rem;">Yes, you may begin.</li>
+          <li style="margin-bottom: 0.8rem;">Formal Salute</li>
+          <li style="margin-bottom: 0.8rem;">Bow</li>
+          <li style="margin-bottom: 0.8rem; font-style: italic; color: #666;">(Student executes moves 1-13 without stopping)</li>
+          <li style="margin-bottom: 0.8rem;">Formal Salute</li>
+          <li style="margin-bottom: 0.8rem;">Bow</li>
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #6f42c1; background: rgba(111, 66, 193, 0.05); padding: 0.5rem; border-radius: 4px;">Now we will perform each move individually facing the camera</li>
+          <li style="margin-bottom: 0.8rem;">Move 7, Stopping the Storm, Inside a Right Punch <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 8, Hidden Wing, Right Flank Shoulder Grab <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 9, Circling Serpent, Outside a Right Punch <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 10, Hooking Thunder, Outside a Right Ball Kick <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 11, Captured Wing, Right Flank Hammerlock <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 12, Clapping Tiger, Front Bear Hug - Arms Free <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 1.5rem;">Move 13, Raking Hammers, Inside a Left Punch <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Formal Salute</li>
+          <li style="margin: 0; font-weight: 500;">Bow</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+ </div>
+
+<div id="brownBeltLightbox" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.95); display: none; align-items: center; justify-content: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease;" onclick="closeBrownBeltLightbox()">
+   <div style="position: relative; max-width: 90vw; max-height: 90vh;">
+     <button onclick="closeBrownBeltLightbox()" 
+            style="position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; border-radius: 50%; background: #dc3545; border: none; color: white; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; z-index: 10;"
+            onmouseover="this.style.transform='scale(1.1)'; this.style.background='#c82333';"
+            onmouseout="this.style.transform='scale(1)'; this.style.background='#dc3545';">
+       ×
+     </button>
+     <div style="background: rgba(255, 255, 255, 0.95); border-radius: 12px; padding: 2rem; color: #333; overflow-y: auto; max-height: 90vh;">
+    
+    <h3 style="color: #dc3545; margin-bottom: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+      <div style="width: 30px; height: 20px; background: #8B4513; border: 2px solid #333; border-radius: 3px; display: flex; align-items: center; justify-content: center;">
+        <i class="fas fa-scroll" style="font-size: 0.8rem; color: white;"></i>
+      </div>
+      Brown Belt Script
+    </h3>
+    
+    <div style="line-height: 1.6;">
+      <!-- Important Requirements -->
+      <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+        <h4 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.2rem;">
+          <i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem;"></i>Important Requirements
+        </h4>
+        <p style="margin-bottom: 1rem; font-weight: 600; color: #dc3545;">
+          Students testing for green, purple, blue, brown, or red belt MUST register & pay online PRIOR to submitting your video test
+        </p>
+        <ul style="margin: 0; padding-left: 1.5rem; list-style-type: disc;">
+          <li style="margin-bottom: 0.8rem;"><strong>Sparring is required</strong> on all video tests for green belt rank and above (Effective 5/14/21)</li>
+          <li style="margin-bottom: 0.8rem;"><strong>Jujitsu is required</strong> on all video tests for brown belt rank and above (Effective 5/14/21)</li>
+          <li style="margin: 0;"><strong>All video tests must be submitted as a YouTube link.</strong> No other formats will be accepted (Effective 5/14/21)</li>
+        </ul>
+      </div>
+      
+      <!-- Script Instructions -->
+      <div style="background: rgba(139, 69, 19, 0.1); border: 1px solid rgba(139, 69, 19, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+        <h4 style="color: #8B4513; margin-bottom: 1rem; font-size: 1.1rem;">
+          <i class="fas fa-microphone" style="margin-right: 0.5rem;"></i>The Brown Belt Script
+        </h4>
+        <p style="margin: 0; font-style: italic; color: #666;">
+          (To be read aloud by a friend or Parent)
+        </p>
+      </div>
+      
+      <!-- Script Content -->
+      <div style="background: rgba(255, 255, 255, 0.8); border-radius: 8px; padding: 2rem; border: 1px solid rgba(0, 0, 0, 0.1);">
+        <ol style="margin: 0; padding-left: 1.5rem; counter-reset: script-counter;">
+          <li style="margin-bottom: 1rem; font-weight: 500;">Stand at attention in Joon Bi.</li>
+          <li style="margin-bottom: 1rem; font-weight: 500;">State your name, age, and belt you are testing for. Also, state the name of the class location where you train & the name of your primary karate instructor.</li>
+          <li style="margin-bottom: 1rem; font-weight: 500;">Bow</li>
+          
+          <!-- White Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #dc3545; background: rgba(220, 53, 69, 0.05); padding: 0.5rem; border-radius: 4px;">We begin with the White Belt with Stripe section</li>
+          <li style="margin-bottom: 0.8rem;">Joon-bi Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Horse Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Fighting Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Cat Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Up Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Jab <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Cross <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Front-leg Snap Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Back-leg Snap Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Orange Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #fd7e14; background: rgba(253, 126, 20, 0.1); padding: 0.5rem; border-radius: 4px;">This is the Orange Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Front Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Lunge Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Down Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Front-leg Side Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Yellow Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #ffc107; background: rgba(255, 193, 7, 0.2); padding: 0.5rem; border-radius: 4px;">This is the Yellow Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Ridge Hand <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Rap <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Hammer Fist <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Back-leg Side Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Green Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #28a745; background: rgba(40, 167, 69, 0.1); padding: 0.5rem; border-radius: 4px;">This is the Green Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Inside-Out Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Lateral Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Elbow Strike <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Forearm Strike <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Front-leg Round Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Back-leg Round Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Purple Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #800080; background: rgba(128, 0, 128, 0.1); padding: 0.5rem; border-radius: 4px;">This is the Purple Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Take off and Tie Belt in 30 seconds <span style="color: #666; font-style: italic;">(Parent or friend calls time)</span></li>
+          <li style="margin-bottom: 0.8rem;">Hook <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Upper cut <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Spin Rap <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Hook Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Spin Hook Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Back Kick (turn sideways) <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Blue Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #007bff; background: rgba(0, 123, 255, 0.1); padding: 0.5rem; border-radius: 4px;">We finish with the Blue Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Reverse Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Crescent Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Moon Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Axe Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Double Front Round Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">All Purpose Block (Left) <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 2rem;">All Purpose block (Right) <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Pad Striking Section -->
+          <li style="margin-bottom: 1rem; font-weight: 600; color: #dc3545; background: rgba(220, 53, 69, 0.1); padding: 1rem; border-radius: 6px; line-height: 1.7;">
+            This is the Pad Striking Section - perform all moves on a punching bag, BOB Dummy, Kicking Shield, or approved focus pads. Perform each single and combination 3x on the pads with power. Take 2-3 seconds between each repetition to allow time to reset in your fighting stance. Add a yell to any back hand cross and back leg snap kicks only.
+          </li>
+          
+          <li style="margin-bottom: 0.8rem;">Combination - Jab, Cross</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Jab, cross, front hand hook, back hand uppercut</li>
+          <li style="margin-bottom: 0.8rem;">Single - Back leg snap kick</li>
+          <li style="margin-bottom: 0.8rem;">Single - Back leg side kick</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Lateral block, front hand rap, back leg round kick</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Inside out block, back hand ridge hand, back hand forearm strike</li>
+          <li style="margin-bottom: 0.8rem;">Single - Front leg round kick - left lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Single - Front leg round kick - right lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Single - Back leg round kick - left lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Single - Back leg round kick - right lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Front leg round kick, back hand hammer fist - left lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Front leg round kick, back hand hammer fist - right lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Jab, Rap, Spin-Rap</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Front snap kick, jab, cross, back leg round kick</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Double front leg round kick - left lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Double front leg round kick - right lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Combination - All purpose block, back leg reverse moon kick - left lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Combination - All purpose block, back leg reverse moon kick - right lead leg</li>
+          <li style="margin-bottom: 2rem;">Combination - Double front round kick, spin kick</li>
+          
+          <li style="margin-bottom: 2rem; font-weight: 500;">Bow</li>
+          
+          <!-- Master Form Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #6f42c1; background: rgba(111, 66, 193, 0.1); padding: 0.5rem; border-radius: 4px;">Now we move on to Master Form, moves 1-21</li>
+          <li style="margin-bottom: 0.8rem;">Joon Bi!</li>
+          <li style="margin-bottom: 0.8rem;">Present! <span style="color: #666; font-style: italic;">(Student says, "Judges, my name is...")</span></li>
+          <li style="margin-bottom: 0.8rem;">Yes, you may begin.</li>
+          <li style="margin-bottom: 0.8rem;">Formal Salute</li>
+          <li style="margin-bottom: 0.8rem;">Bow</li>
+          <li style="margin-bottom: 0.8rem; font-style: italic; color: #666;">(Student executes moves 1-21 without stopping)</li>
+          <li style="margin-bottom: 0.8rem;">Formal Salute</li>
+          <li style="margin-bottom: 0.8rem;">Bow</li>
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #6f42c1; background: rgba(111, 66, 193, 0.05); padding: 0.5rem; border-radius: 4px;">Now we will perform each move individually facing the camera</li>
+          <li style="margin-bottom: 0.8rem;">Move 14, Bridging Claw, Inside a Right Punch <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 15, Clashing Hammers, Left Flank Headlock <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 16, Trapped Lightning, Outside a Right Punch <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 17, Universal Block, Inside Right Roundhouse Kick <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 18, Gripping Talon, Right Cross Hand Wrist Grab <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 19, Blinding Dagger, Outside a Right Backfist <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 20, Triple Kick, Inside a Left Punch <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 1.5rem;">Move 21, Attacking Warrior, Sparring - Right Backfist Lead <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Formal Salute</li>
+          <li style="margin-bottom: 2rem;">Bow</li>
+          
+          <!-- Jujitsu Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #8B4513; background: rgba(139, 69, 19, 0.1); padding: 0.5rem; border-radius: 4px;">Now we move on to Jujitsu, with 3 different escapes for each hold (when applicable)</li>
+          <li style="margin-bottom: 0.8rem;">Single Hand Wrist Grabs <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Double Hand Wrist Grabs <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Front Choke <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Shirt Grab hands down <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Joon Bi!</li>
+          <li style="margin: 0; font-weight: 500;">Bow</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+ </div>
+
+<div id="brownStripeLightbox" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.95); display: none; align-items: center; justify-content: center; z-index: 9999; transition: opacity 0.3s ease;" onclick="closeBrownStripeLightbox()">
+  <div style="position: relative; max-width: 90vw; max-height: 90vh;">
+    <button onclick="closeBrownStripeLightbox()" 
+            style="position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; border-radius: 50%; background: #dc3545; border: none; color: white; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; z-index: 10;"
+            onmouseover="this.style.transform='scale(1.1)'; this.style.background='#c82333';"
+            onmouseout="this.style.transform='scale(1)'; this.style.background='#dc3545';">
+      ×
+    </button>
+    <div style="background: rgba(255, 255, 255, 0.95); border-radius: 12px; padding: 2rem; color: #333; overflow-y: auto; max-height: 90vh;" onclick="event.stopPropagation();">
+    
+    <h3 style="color: #dc3545; margin-bottom: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+      <div style="width: 30px; height: 20px; background: #8B4513; border: 2px solid #333; border-radius: 3px; display: flex; align-items: center; justify-content: center; position: relative;">
+        <i class="fas fa-scroll" style="font-size: 0.8rem; color: white;"></i>
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 2px; background: #333;"></div>
+      </div>
+      Brown Belt with Black Stripe Script
+    </h3>
+    
+    <div style="line-height: 1.6;">
+      <!-- Important Requirements -->
+      <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+        <h4 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.2rem;">
+          <i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem;"></i>Important Requirements
+        </h4>
+        <p style="margin-bottom: 1rem; font-weight: 600; color: #dc3545;">
+          Students testing for green, purple, blue, brown, or red belt MUST register & pay online PRIOR to submitting your video test
+        </p>
+        <ul style="margin: 0; padding-left: 1.5rem; list-style-type: disc;">
+          <li style="margin-bottom: 0.8rem;"><strong>Sparring is required</strong> on all video tests for green belt rank and above (Effective 5/14/21)</li>
+          <li style="margin-bottom: 0.8rem;"><strong>Jujitsu is required</strong> on all video tests for brown belt rank and above (Effective 5/14/21)</li>
+          <li style="margin: 0;"><strong>All video tests must be submitted as a YouTube link.</strong> No other formats will be accepted (Effective 5/14/21)</li>
+        </ul>
+      </div>
+      
+      <!-- Script Instructions -->
+      <div style="background: rgba(101, 57, 16, 0.1); border: 1px solid rgba(101, 57, 16, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+        <h4 style="color: #653910; margin-bottom: 1rem; font-size: 1.1rem;">
+          <i class="fas fa-microphone" style="margin-right: 0.5rem;"></i>The Brown Belt with Black Stripe Script
+        </h4>
+        <p style="margin: 0; font-style: italic; color: #666;">
+          (To be read aloud by a friend or Parent)
+        </p>
+      </div>
+      
+      <!-- Script Content -->
+      <div style="background: rgba(255, 255, 255, 0.8); border-radius: 8px; padding: 2rem; border: 1px solid rgba(0, 0, 0, 0.1);">
+        <ol style="margin: 0; padding-left: 1.5rem; counter-reset: script-counter;">
+          <li style="margin-bottom: 1rem; font-weight: 500;">Stand at attention in Joon Bi.</li>
+          <li style="margin-bottom: 1rem; font-weight: 500;">State your name, age, and belt you are testing for. Also, state the name of the class location where you train & the name of your primary karate instructor.</li>
+          <li style="margin-bottom: 1rem; font-weight: 500;">Bow</li>
+          
+          <!-- White Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #dc3545; background: rgba(220, 53, 69, 0.05); padding: 0.5rem; border-radius: 4px;">We begin with the White Belt with Stripe section</li>
+          <li style="margin-bottom: 0.8rem;">Joon-bi Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Horse Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Fighting Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Cat Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Up Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Jab <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Cross <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Front-leg Snap Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Back-leg Snap Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Orange Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #fd7e14; background: rgba(253, 126, 20, 0.1); padding: 0.5rem; border-radius: 4px;">This is the Orange Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Front Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Lunge Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Down Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Front-leg Side Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Yellow Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #ffc107; background: rgba(255, 193, 7, 0.2); padding: 0.5rem; border-radius: 4px;">This is the Yellow Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Ridge Hand <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Rap <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Hammer Fist <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Back-leg Side Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Green Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #28a745; background: rgba(40, 167, 69, 0.1); padding: 0.5rem; border-radius: 4px;">This is the Green Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Inside-Out Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Lateral Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Elbow Strike <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Forearm Strike <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Front-leg Round Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Back-leg Round Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Purple Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #800080; background: rgba(128, 0, 128, 0.1); padding: 0.5rem; border-radius: 4px;">This is the Purple Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Take off and Tie Belt in 30 seconds <span style="color: #666; font-style: italic;">(Parent or friend calls time)</span></li>
+          <li style="margin-bottom: 0.8rem;">Hook <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Upper cut <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Spin Rap <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Hook Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Spin Hook Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Back Kick (turn sideways) <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Blue Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #007bff; background: rgba(0, 123, 255, 0.1); padding: 0.5rem; border-radius: 4px;">We finish with the Blue Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Reverse Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Crescent Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Moon Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Axe Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Double Front Round Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">All Purpose Block (Left) <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 2rem;">All Purpose block (Right) <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Pad Striking Section -->
+          <li style="margin-bottom: 1rem; font-weight: 600; color: #dc3545; background: rgba(220, 53, 69, 0.1); padding: 1rem; border-radius: 6px; line-height: 1.7;">
+            This is the Pad Striking Section - perform all moves on a punching bag, BOB Dummy, Kicking Shield, or approved focus pads. Perform each single and combination 3x on the pads with power. Take 2-3 seconds between each repetition to allow time to reset in your fighting stance. Add a yell to any back hand cross and back leg snap kicks only.
+          </li>
+          
+          <li style="margin-bottom: 0.8rem;">Combination - Jab, Cross</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Jab, cross, front hand hook, back hand uppercut</li>
+          <li style="margin-bottom: 0.8rem;">Single - Back leg snap kick</li>
+          <li style="margin-bottom: 0.8rem;">Single - Back leg side kick</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Lateral block, front hand rap, back leg round kick</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Inside out block, back hand ridge hand, back hand forearm strike</li>
+          <li style="margin-bottom: 0.8rem;">Single - Front leg round kick - left lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Single - Front leg round kick - right lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Single - Back leg round kick - left lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Single - Back leg round kick - right lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Front leg round kick, back hand hammer fist - left lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Front leg round kick, back hand hammer fist - right lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Jab, Rap, Spin-Rap</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Front snap kick, jab, cross, back leg round kick</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Double front leg round kick - left lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Double front leg round kick - right lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Combination - All purpose block, back leg reverse moon kick - left lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Combination - All purpose block, back leg reverse moon kick - right lead leg</li>
+          <li style="margin-bottom: 2rem;">Combination - Double front round kick, spin kick</li>
+          
+          <li style="margin-bottom: 2rem; font-weight: 500;">Bow</li>
+          
+          <!-- Master Form Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #6f42c1; background: rgba(111, 66, 193, 0.1); padding: 0.5rem; border-radius: 4px;">Now we move on to Master Form, moves 1-30</li>
+          <li style="margin-bottom: 0.8rem;">Joon Bi!</li>
+          <li style="margin-bottom: 0.8rem;">Present! <span style="color: #666; font-style: italic;">(Student says, "Judges, my name is...")</span></li>
+          <li style="margin-bottom: 0.8rem;">Yes, you may begin.</li>
+          <li style="margin-bottom: 0.8rem;">Formal Salute</li>
+          <li style="margin-bottom: 0.8rem;">Bow</li>
+          <li style="margin-bottom: 0.8rem; font-style: italic; color: #666;">(Student executes moves 1-30 without stopping)</li>
+          <li style="margin-bottom: 0.8rem;">Formal Salute</li>
+          <li style="margin-bottom: 0.8rem;">Bow</li>
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #6f42c1; background: rgba(111, 66, 193, 0.05); padding: 0.5rem; border-radius: 4px;">Now we will perform each move individually facing the camera</li>
+          <li style="margin-bottom: 0.8rem;">Move 22, Fists of Fury, Inside a Right Punch <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 23, Gathering the Dragon, Outside a Left Punch <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 24, Bolo, Inside a Right Punch <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 25, Up the Circle, Inside a Right Roundhouse Kick <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 26, Rolling Thunder, Sparring - Fake Low Ball Kick Lead <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 27, Twirling Fans, Inside Left/Right Punches <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 28, Stinging Butterfly, Outside a Right Punch <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 29, Escaping Wings, Rear Arms Captured <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 1.5rem;">Move 30, Broken Lightning, Outside-in a Left Punch <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Formal Salute</li>
+          <li style="margin-bottom: 2rem;">Bow</li>
+          
+          <!-- Jujitsu Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #653910; background: rgba(101, 57, 16, 0.1); padding: 0.5rem; border-radius: 4px;">Now we move on to Jujitsu, with 3 different escapes for each hold (when applicable)</li>
+          <li style="margin-bottom: 0.8rem;">Front Hair Grab <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Side Choke (face camera) <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Shirt Grab hands up <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Belt Grab <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Rear Choke <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Joon Bi!</li>
+          <li style="margin: 0; font-weight: 500;">Bow</li>
+        </ol>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div id="redBeltLightbox" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.95); display: none; align-items: center; justify-content: center; z-index: 9999; transition: opacity 0.3s ease;" onclick="closeRedBeltLightbox()">
+   <div style="position: relative; max-width: 90vw; max-height: 90vh;">
+     <button onclick="closeRedBeltLightbox()" 
+            style="position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; border-radius: 50%; background: #dc3545; border: none; color: white; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; z-index: 10;"
+            onmouseover="this.style.transform='scale(1.1)'; this.style.background='#c82333';"
+            onmouseout="this.style.transform='scale(1)'; this.style.background='#dc3545';">
+       ×
+     </button>
+     <div style="background: rgba(255, 255, 255, 0.95); border-radius: 12px; padding: 2rem; color: #333; overflow-y: auto; max-height: 90vh;" onclick="event.stopPropagation();">
+    
+    <h3 style="color: #dc3545; margin-bottom: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+      <div style="width: 30px; height: 20px; background: #dc3545; border: 2px solid #333; border-radius: 3px; display: flex; align-items: center; justify-content: center;">
+        <i class="fas fa-scroll" style="font-size: 0.8rem; color: white;"></i>
+      </div>
+      Red Belt Script
+    </h3>
+    
+    <div style="line-height: 1.6;">
+      <!-- Important Requirements -->
+      <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+        <h4 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.2rem;">
+          <i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem;"></i>Important Requirements
+        </h4>
+        <p style="margin-bottom: 1rem; font-weight: 600; color: #dc3545;">
+          Students testing for green, purple, blue, brown, or red belt MUST register & pay online PRIOR to submitting your video test
+        </p>
+        <ul style="margin: 0; padding-left: 1.5rem; list-style-type: disc;">
+          <li style="margin-bottom: 0.8rem;"><strong>Sparring is required</strong> on all video tests for green belt rank and above (Effective 5/14/21)</li>
+          <li style="margin-bottom: 0.8rem;"><strong>Jujitsu is required</strong> on all video tests for brown belt rank and above (Effective 5/14/21)</li>
+          <li style="margin: 0;"><strong>All video tests must be submitted as a YouTube link.</strong> No other formats will be accepted (Effective 5/14/21)</li>
+        </ul>
+      </div>
+      
+      <!-- Script Instructions -->
+      <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+        <h4 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.1rem;">
+          <i class="fas fa-microphone" style="margin-right: 0.5rem;"></i>The Red Belt Script
+        </h4>
+        <p style="margin: 0; font-style: italic; color: #666;">
+          (To be read aloud by a friend or Parent)
+        </p>
+      </div>
+      
+      <!-- Script Content -->
+      <div style="background: rgba(255, 255, 255, 0.8); border-radius: 8px; padding: 2rem; border: 1px solid rgba(0, 0, 0, 0.1);">
+        <ol style="margin: 0; padding-left: 1.5rem; counter-reset: script-counter;">
+          <li style="margin-bottom: 1rem; font-weight: 500;">Stand at attention in Joon Bi.</li>
+          <li style="margin-bottom: 1rem; font-weight: 500;">State your name, age, and belt you are testing for. Also, state the name of the class location where you train & the name of your primary karate instructor.</li>
+          <li style="margin-bottom: 1rem; font-weight: 500;">Bow</li>
+          
+          <!-- White Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #dc3545; background: rgba(220, 53, 69, 0.05); padding: 0.5rem; border-radius: 4px;">We begin with the White Belt with Stripe section</li>
+          <li style="margin-bottom: 0.8rem;">Joon-bi Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Horse Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Fighting Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Cat Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Up Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Jab <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Cross <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Front-leg Snap Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Back-leg Snap Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Orange Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #fd7e14; background: rgba(253, 126, 20, 0.1); padding: 0.5rem; border-radius: 4px;">This is the Orange Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Front Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Lunge Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Down Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Front-leg Side Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Yellow Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #ffc107; background: rgba(255, 193, 7, 0.2); padding: 0.5rem; border-radius: 4px;">This is the Yellow Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Ridge Hand <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Rap <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Hammer Fist <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Back-leg Side Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Green Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #28a745; background: rgba(40, 167, 69, 0.1); padding: 0.5rem; border-radius: 4px;">This is the Green Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Inside-Out Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Lateral Block <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Elbow Strike <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Forearm Strike <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Front-leg Round Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Back-leg Round Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Purple Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #800080; background: rgba(128, 0, 128, 0.1); padding: 0.5rem; border-radius: 4px;">This is the Purple Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Take off and Tie Belt in 30 seconds <span style="color: #666; font-style: italic;">(Parent or friend calls time)</span></li>
+          <li style="margin-bottom: 0.8rem;">Hook <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Upper cut <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Spin Rap <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Hook Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Spin Hook Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 1.5rem;">Back Kick (turn sideways) <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Blue Belt Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #007bff; background: rgba(0, 123, 255, 0.1); padding: 0.5rem; border-radius: 4px;">We finish with the Blue Belt Section</li>
+          <li style="margin-bottom: 0.8rem;">Reverse Stance <span style="color: #666; font-style: italic;">(hold for 3 seconds)</span></li>
+          <li style="margin-bottom: 0.8rem;">Crescent Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Moon Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Axe Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Double Front Round Kick <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">All Purpose Block (Left) <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 2rem;">All Purpose block (Right) <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          
+          <!-- Pad Striking Section -->
+          <li style="margin-bottom: 1rem; font-weight: 600; color: #dc3545; background: rgba(220, 53, 69, 0.1); padding: 1rem; border-radius: 6px; line-height: 1.7;">
+            This is the Pad Striking Section - perform all moves on a punching bag, BOB Dummy, Kicking Shield, or approved focus pads. Perform each single and combination 3x on the pads with power. Take 2-3 seconds between each repetition to allow time to reset in your fighting stance. Add a yell to any back hand cross and back leg snap kicks only.
+          </li>
+          
+          <li style="margin-bottom: 0.8rem;">Combination - Jab, Cross</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Jab, cross, front hand hook, back hand uppercut</li>
+          <li style="margin-bottom: 0.8rem;">Single - Back leg snap kick</li>
+          <li style="margin-bottom: 0.8rem;">Single - Back leg side kick</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Lateral block, front hand rap, back leg round kick</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Inside out block, back hand ridge hand, back hand forearm strike</li>
+          <li style="margin-bottom: 0.8rem;">Single - Front leg round kick - left lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Single - Front leg round kick - right lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Single - Back leg round kick - left lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Single - Back leg round kick - right lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Front leg round kick, back hand hammer fist - left lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Front leg round kick, back hand hammer fist - right lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Jab, Rap, Spin-Rap</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Front snap kick, jab, cross, back leg round kick</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Double front leg round kick - left lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Combination - Double front leg round kick - right lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Combination - All purpose block, back leg reverse moon kick - left lead leg</li>
+          <li style="margin-bottom: 0.8rem;">Combination - All purpose block, back leg reverse moon kick - right lead leg</li>
+          <li style="margin-bottom: 2rem;">Combination - Double front round kick, spin kick</li>
+          
+          <li style="margin-bottom: 2rem; font-weight: 500;">Bow</li>
+          
+          <!-- Master Form Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #6f42c1; background: rgba(111, 66, 193, 0.1); padding: 0.5rem; border-radius: 4px;">Now we move on to Master Form, moves 1-40</li>
+          <li style="margin-bottom: 0.8rem;">Joon Bi!</li>
+          <li style="margin-bottom: 0.8rem;">Present! <span style="color: #666; font-style: italic;">(Student says, "Judges, my name is...")</span></li>
+          <li style="margin-bottom: 0.8rem;">Yes, you may begin.</li>
+          <li style="margin-bottom: 0.8rem;">Formal Salute</li>
+          <li style="margin-bottom: 0.8rem;">Bow</li>
+          <li style="margin-bottom: 0.8rem; font-style: italic; color: #666;">(Student executes moves 1-40 without stopping)</li>
+          <li style="margin-bottom: 0.8rem;">Formal Salute</li>
+          <li style="margin-bottom: 0.8rem;">Bow</li>
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #6f42c1; background: rgba(111, 66, 193, 0.05); padding: 0.5rem; border-radius: 4px;">Now we will perform each move individually facing the camera</li>
+          <li style="margin-bottom: 0.8rem;">Move 31, Hooked Lightning, Inside a Left Punch <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 32, Splitting Lances, Inside a 2 Hand Chest Push <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 33, Repeating Hammers, Outside a Right Punch <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 34, Beating Disaster, Right Overhead Club from Front <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 35, Wings of Freedom, Full Nelson <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 36, Eye of the Storm, Inside Right/Left Punches <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 37, Opposing Dragons, Front/Rear 2 Man - Simultaneous <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 38, Leaping Thunder, Inside a Right Punch <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Move 39, Bonzi Run, Sparring - Right Punch Lead <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 1.5rem;">Move 40, Crenshaw High Five, Inside a Right Punch <span style="background: #17a2b8; color: white; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Begin. Again.</span></li>
+          <li style="margin-bottom: 0.8rem;">Formal Salute</li>
+          <li style="margin-bottom: 2rem;">Bow</li>
+          
+          <!-- Jujitsu Section -->
+          <li style="margin-bottom: 1.5rem; font-weight: 600; color: #dc3545; background: rgba(220, 53, 69, 0.1); padding: 0.5rem; border-radius: 4px;">Now we move on to Jujitsu, with 3 different escapes for each hold (when applicable)</li>
+          <li style="margin-bottom: 0.8rem;">Rear Hair Grab <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Head Lock <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Full Nelson <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Rear Bear Hug <span style="background: #ffc107; color: #000; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: 600;">Hana! Dul! Set!</span></li>
+          <li style="margin-bottom: 0.8rem;">Joon Bi!</li>
+          <li style="margin: 0; font-weight: 500;">Bow</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+ </div>
+
+<div id="redStripeLightbox" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.95); display: none; align-items: center; justify-content: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease;" onclick="closeRedStripeLightbox()">
+  <div style="position: relative; max-width: 90vw; max-height: 90vh; background: rgba(255, 255, 255, 0.95); border-radius: 12px; padding: 2rem; color: #333; overflow-y: auto;">
+    <button onclick="closeRedStripeLightbox()" 
+            style="position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; border-radius: 50%; background: #dc3545; border: none; color: white; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;"
+            onmouseover="this.style.transform='scale(1.1)'; this.style.background='#c82333';"
+            onmouseout="this.style.transform='scale(1)'; this.style.background='#dc3545';">
+      ×
+    </button>
+    
+    <h3 style="color: #dc3545; margin-bottom: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+      <div style="width: 30px; height: 20px; background: #dc3545; border: 2px solid #333; border-radius: 3px; display: flex; align-items: center; justify-content: center; position: relative;">
+        <i class="fas fa-scroll" style="font-size: 0.8rem; color: white;"></i>
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 2px; background: #333;"></div>
+      </div>
+      Red Belt with Black Stripe Script
+    </h3>
+    
+    <p style="text-align: center; color: #666; font-style: italic;">Content will be provided soon...</p>
+  </div>
+</div>
+ </div>
+ 
+<div id="weekendCalendarLightbox" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.95); display: none; align-items: center; justify-content: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease;" onclick="closeWeekendCalendarPreview()">
+  <div style="position: relative; max-width: 90vw; max-height: 90vh;">
+    <img src="assets/images/weekend-evening/weekend-evening-may-june.png" 
+         alt="Weekend & Evening Karate Schedule - Full Size" 
+         style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);">
+    
+    <button onclick="closeWeekendCalendarPreview()" 
+            style="position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; border-radius: 50%; background: #dc3545; border: none; color: white; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;"
+            onmouseover="this.style.transform='scale(1.1)'; this.style.background='#c82333';"
+            onmouseout="this.style.transform='scale(1)'; this.style.background='#dc3545';">
+      ×
+    </button>
+  </div>
+</div>
+
+
+<!-- Online Store Section -->
+<section id="online-store" class="py-5" style="background: #ffffff; color: #333; position: relative; overflow: hidden;">
+  <!-- Artistic Background Blobs -->
+  <!-- Large Impact Blobs -->
+  <div style="position: absolute; top: -120px; left: -120px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(220, 53, 69, 0.10) 0%, rgba(220, 53, 69, 0.05) 40%, transparent 100%); border-radius: 50%; z-index: 1;"></div>
+  <div style="position: absolute; bottom: -100px; right: -150px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(44, 62, 80, 0.08) 0%, rgba(44, 62, 80, 0.03) 45%, transparent 100%); border-radius: 50%; z-index: 1;"></div>
+  <div style="position: absolute; top: 40%; right: -180px; width: 380px; height: 380px; background: radial-gradient(circle, rgba(220, 53, 69, 0.07) 0%, rgba(220, 53, 69, 0.02) 50%, transparent 100%); border-radius: 50%; z-index: 1;"></div>
+  <div style="position: absolute; bottom: 20%; left: -80px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(44, 62, 80, 0.06) 0%, rgba(44, 62, 80, 0.02) 60%, transparent 100%); border-radius: 50%; z-index: 1;"></div>
+  
+  <!-- Medium Impact Blobs -->
+  <div style="position: absolute; top: 60%; left: 75%; transform: translate(-50%, -50%); width: 280px; height: 280px; background: radial-gradient(circle, rgba(220, 53, 69, 0.06) 0%, rgba(220, 53, 69, 0.02) 60%, transparent 100%); border-radius: 50%; z-index: 1;"></div>
+  <div style="position: absolute; top: 15%; left: 20%; width: 240px; height: 240px; background: radial-gradient(circle, rgba(44, 62, 80, 0.05) 0%, transparent 70%); border-radius: 50%; z-index: 1;"></div>
+  <div style="position: absolute; bottom: 30%; right: 10%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(220, 53, 69, 0.05) 0%, transparent 75%); border-radius: 50%; z-index: 1;"></div>
+  <div style="position: absolute; top: 70%; left: 10%; width: 250px; height: 250px; background: radial-gradient(circle, rgba(44, 62, 80, 0.04) 0%, transparent 65%); border-radius: 50%; z-index: 1;"></div>
+  
+  <!-- Additional Artistic Blobs -->
+  <div style="position: absolute; top: 20%; right: 8%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(220, 53, 69, 0.06) 0%, rgba(220, 53, 69, 0.02) 60%, transparent 100%); border-radius: 50%; z-index: 1;"></div>
+  <div style="position: absolute; top: 80%; left: 50%; width: 180px; height: 180px; background: radial-gradient(circle, rgba(44, 62, 80, 0.04) 0%, transparent 65%); border-radius: 50%; z-index: 1;"></div>
+  <div style="position: absolute; top: -30px; left: 45%; width: 260px; height: 260px; background: radial-gradient(circle, rgba(220, 53, 69, 0.04) 0%, transparent 80%); border-radius: 50%; z-index: 1;"></div>
+  <div style="position: absolute; bottom: 35%; right: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(44, 62, 80, 0.05) 0%, rgba(44, 62, 80, 0.01) 55%, transparent 100%); border-radius: 50%; z-index: 1;"></div>
+  
+  <div class="container" style="position: relative; z-index: 2;">
+    <h2 class="text-center mb-5" style="color: #2c3e50; font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; text-decoration: underline; text-underline-offset: 0.3em; text-decoration-color: #dc3545;">Online Store</h2>
+    
+    <div class="row align-items-center g-4">
+      <!-- Store Image -->
+      <div class="col-lg-7">
+        <img src="assets/images/online-store/online-store.jpg" 
+             alt="Kaizen Karate Online Store - Uniforms, T-shirts & Sparring Gear" 
+             style="width: 100%; height: auto; object-fit: contain;">
+    </div>
+    
+      <!-- Store Information -->
+      <div class="col-lg-5">
+        <div style="padding: 1.5rem;">
+          
+          <div style="background: rgba(220, 53, 69, 0.1); border: 2px solid rgba(220, 53, 69, 0.2); border-radius: 15px; padding: 1.5rem; margin-bottom: 2rem; text-align: center;">
+            <h4 style="color: #dc3545; font-size: 1.8rem; margin-bottom: 1rem; font-weight: 700;">
+              <i class="fas fa-shopping-cart" style="margin-right: 0.5rem;"></i>
+              The online store is now open!
+            </h4>
+            <p style="color: #495057; font-size: 1.1rem; margin: 0; line-height: 1.6;">
+            Get your karate uniform, t-shirt, & sparring gear shipped directly to your home.
+            </p>
+          </div>
+                               
+                     <!-- Shop Now Button -->
+           <div style="text-align: center; margin-top: 1.5rem;">
+            <a href="https://kaizenkarate.store/" 
+               target="_blank"
+               style="background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); color: white; padding: 1.2rem 2.5rem; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1.3rem; display: inline-block; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(220, 53, 69, 0.3); border: none;"
+               onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.5)';"
+               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(220, 53, 69, 0.3)';">
+              <i class="fas fa-shopping-bag" style="margin-right: 0.8rem; font-size: 1.2rem;"></i>
+              Shop Now
+            </a>
+
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Belt Exam Section -->
+<section id="belt-exam" class="py-5" style="background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%); color: white;">
+  <div class="container">
+    <h2 class="text-center mb-5" style="color: white; font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; text-decoration: underline; text-underline-offset: 0.3em; text-decoration-color: #dc3545;">Belt Exam</h2>
+    
+    <!-- Hero Image -->
+    <div class="mb-5">
+      <div style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
+        <img src="assets/images/panels/belt-exams.jpg" 
+             alt="Kaizen Karate Belt Exam - Students testing for their next rank" 
+             style="width: 100%; height: 650px; object-fit: cover; object-position: center;">
+        
+        <!-- Image Overlay -->
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); padding: 2rem 1.5rem 1.5rem 1.5rem;">
+          <h3 style="color: white; font-size: 1.8rem; font-weight: 600; margin-bottom: 0.5rem;">Traditional Belt Testing</h3>
+          <p style="color: #e9ecef; font-size: 1.1rem; margin: 0; opacity: 0.9;">Advancing through the ranks with authentic karate examination</p>
+          </div>
+            </div>
+          </div>
+    
+    <!-- Requirements Section -->
+    <div>
+      <div style="background: rgba(220, 53, 69, 0.1); border: 2px solid rgba(220, 53, 69, 0.3); border-radius: 15px; padding: 2.5rem;">
+          <h3 style="color: #dc3545; font-size: 2rem; margin-bottom: 2rem; font-weight: 700; text-align: center;">
+            <i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem;"></i>
+            Important Requirements
+          </h3>
+          
+          <div style="space-y: 1rem;">
+            <!-- Pre-registration Required -->
+            <div style="background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 1.2rem; margin-bottom: 1rem; border-left: 4px solid #dc3545;">
+              <p style="color: white; font-weight: 600; margin: 0; font-size: 1.2rem;">
+                <i class="fas fa-calendar-check" style="color: #dc3545; margin-right: 0.5rem;"></i>
+                Pre-registration required.
+              </p>
+        </div>
+            
+            <!-- Invitation Only -->
+            <div style="background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 1.2rem; margin-bottom: 1rem; border-left: 4px solid #dc3545;">
+              <p style="color: white; font-weight: 600; margin: 0; font-size: 1.2rem;">
+                <i class="fas fa-user-shield" style="color: #dc3545; margin-right: 0.5rem;"></i>
+                Belt exams are <strong style="color: #ff6b7a;">INVITATION ONLY</strong> events.
+              </p>
+      </div>
+
+            <!-- Registration Deadline -->
+            <div style="background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 1.2rem; margin-bottom: 1rem; border-left: 4px solid #dc3545;">
+              <p style="color: white; font-weight: 600; margin: 0; font-size: 1.2rem;">
+                <i class="fas fa-clock" style="color: #dc3545; margin-right: 0.5rem;"></i>
+                Online registration closes <strong>1 week prior</strong> to the belt exam.
+              </p>
+          </div>
+            
+            <!-- No Verbal Approvals -->
+            <div style="background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 1.2rem; margin-bottom: 1rem; border-left: 4px solid #dc3545;">
+              <p style="color: white; font-weight: 600; margin: 0; font-size: 1.2rem;">
+                <i class="fas fa-times-circle" style="color: #dc3545; margin-right: 0.5rem;"></i>
+                Verbal approvals by instructors during class time are <strong style="color: #ff6b7a;">no longer accepted.</strong>
+              </p>
+            </div>
+            
+            <!-- Written Approval Required -->
+            <div style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 1.5rem; margin-bottom: 1rem; border: 2px solid #dc3545;">
+              <p style="color: white; font-weight: 700; margin-bottom: 0.5rem; font-size: 1.2rem;">
+                <i class="fas fa-envelope" style="color: #dc3545; margin-right: 0.5rem;"></i>
+                ALL students must receive <strong style="color: #ff6b7a;">*written*</strong> approval directly from the Kaizen office team before starting the testing process.
+              </p>
+              <p style="color: #e9ecef; margin: 0; font-size: 1rem; font-style: italic;">
+                Approval to test will be sent to students via email.
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    <!-- Belt Exam Accordion Section -->
+    <div class="mt-5">
+      <div style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 0; border: 1px solid rgba(255, 255, 255, 0.1); overflow: hidden;">
+        
+        <!-- Upcoming Testing Dates -->
+        <div class="accordion-item" style="border: none; background: transparent;">
+          <div class="accordion-header" style="background: rgba(255, 255, 255, 0.08); padding: 1.5rem 2rem; cursor: pointer; border-bottom: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;" onclick="toggleAccordion('dates')" onmouseover="this.style.background='rgba(255, 255, 255, 0.12)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.08)'">
+            <h4 style="color: white; margin: 0; font-size: 1.4rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between;">
+              <span><i class="fas fa-calendar-alt" style="color: #dc3545; margin-right: 0.8rem;"></i>Upcoming Testing Dates</span>
+              <i class="fas fa-chevron-down" id="dates-icon" style="color: #dc3545; transition: transform 0.3s ease;"></i>
+            </h4>
+          </div>
+          <div class="accordion-content" id="dates-content" style="display: none; padding: 2rem; background: rgba(0, 0, 0, 0.2); border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+            <div style="color: #e9ecef; line-height: 1.6;">
+              <p style="margin-bottom: 2rem; font-size: 1.1rem; text-align: center;">Mark your calendars for these important testing dates:</p>
+              
+              <!-- Row 1 -->
+              <div class="row g-4 mb-4">
+                <!-- September 2025 -->
+                <div class="col-lg-4 col-md-6">
+                  <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; height: 100%;">
+                    <h5 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.3rem; text-align: center;">
+                      <i class="fas fa-calendar-day" style="margin-right: 0.5rem;"></i>September 2025
+                    </h5>
+                    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                      <p style="margin: 0; font-size: 0.95rem; line-height: 1.4;">
+                        <strong style="color: white;">East Silver Spring ES - GYM</strong><br>
+                        631 Silver Spring Ave<br>
+                        Silver Spring, MD 20910<br>
+                        <span style="color: #dc3545; font-weight: 600;">TIME & DATE - TBA</span>
+                      </p>
+                    </div>
+                    <div style="font-size: 0.85rem; line-height: 1.3;">
+                      <p style="margin-bottom: 0.5rem;"><em>*Youth testing takes place on Saturdays</em></p>
+                      <p style="margin-bottom: 0.5rem;"><em>*Adult testing takes place on Monday nights</em></p>
+                      <p style="margin-bottom: 0.8rem;"><em>*All make-up tests will take place in November 2025</em></p>
+                      <p style="margin: 0; font-size: 0.8rem; background: rgba(255, 255, 255, 0.1); padding: 0.5rem; border-radius: 4px;">
+                        <strong>Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.</strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- November 2025 -->
+                <div class="col-lg-4 col-md-6">
+                  <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; height: 100%;">
+                    <h5 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.3rem; text-align: center;">
+                      <i class="fas fa-calendar-day" style="margin-right: 0.5rem;"></i>November 2025
+                    </h5>
+                    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                      <p style="margin: 0; font-size: 0.95rem; line-height: 1.4;">
+                        <strong style="color: white;">East Silver Spring ES - GYM</strong><br>
+                        631 Silver Spring Ave<br>
+                        Silver Spring, MD 20910<br>
+                        <span style="color: #dc3545; font-weight: 600;">TIME & DATE - TBA</span>
+                      </p>
+                    </div>
+                    <div style="font-size: 0.85rem; line-height: 1.3;">
+                      <p style="margin-bottom: 0.5rem;"><em>*Youth testing takes place on Saturdays</em></p>
+                      <p style="margin-bottom: 0.5rem;"><em>*Adult testing takes place on Monday nights</em></p>
+                      <p style="margin-bottom: 0.8rem;"><em>*All make-up tests will take place in January 2026</em></p>
+                      <p style="margin: 0; font-size: 0.8rem; background: rgba(255, 255, 255, 0.1); padding: 0.5rem; border-radius: 4px;">
+                        <strong>Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.</strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- January 2026 -->
+                <div class="col-lg-4 col-md-6">
+                  <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; height: 100%;">
+                    <h5 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.3rem; text-align: center;">
+                      <i class="fas fa-calendar-day" style="margin-right: 0.5rem;"></i>January 2026
+                    </h5>
+                    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                      <p style="margin: 0; font-size: 0.95rem; line-height: 1.4;">
+                        <strong style="color: white;">East Silver Spring ES - GYM</strong><br>
+                        631 Silver Spring Ave<br>
+                        Silver Spring, MD 20910<br>
+                        <span style="color: #dc3545; font-weight: 600;">TIME & DATE - TBA</span>
+                      </p>
+                    </div>
+                    <div style="font-size: 0.85rem; line-height: 1.3;">
+                      <p style="margin-bottom: 0.5rem;"><em>*Youth testing takes place on Saturdays</em></p>
+                      <p style="margin-bottom: 0.5rem;"><em>*Adult testing takes place on Monday nights</em></p>
+                      <p style="margin-bottom: 0.8rem;"><em>*All make-up tests will take place in March 2026</em></p>
+                      <p style="margin: 0; font-size: 0.8rem; background: rgba(255, 255, 255, 0.1); padding: 0.5rem; border-radius: 4px;">
+                        <strong>Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.</strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Row 2 -->
+    <div class="row g-4">
+                <!-- March 2026 -->
+                <div class="col-lg-4 col-md-6">
+                  <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; height: 100%;">
+                    <h5 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.3rem; text-align: center;">
+                      <i class="fas fa-calendar-day" style="margin-right: 0.5rem;"></i>March 2026
+                    </h5>
+                    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                      <p style="margin: 0; font-size: 0.95rem; line-height: 1.4;">
+                        <strong style="color: white;">East Silver Spring ES - GYM</strong><br>
+                        631 Silver Spring Ave<br>
+                        Silver Spring, MD 20910<br>
+                        <span style="color: #dc3545; font-weight: 600;">TIME & DATE - TBA</span>
+                      </p>
+          </div>
+                    <div style="font-size: 0.85rem; line-height: 1.3;">
+                      <p style="margin-bottom: 0.5rem;"><em>*Youth testing takes place on Saturdays</em></p>
+                      <p style="margin-bottom: 0.5rem;"><em>*Adult testing takes place on Monday nights</em></p>
+                      <p style="margin-bottom: 0.8rem;"><em>*All make-up tests will take place in May 2026</em></p>
+                      <p style="margin: 0; font-size: 0.8rem; background: rgba(255, 255, 255, 0.1); padding: 0.5rem; border-radius: 4px;">
+                        <strong>Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.</strong>
+                      </p>
+            </div>
+                  </div>
+                </div>
+                
+                <!-- May 2026 -->
+                <div class="col-lg-4 col-md-6">
+                  <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; height: 100%;">
+                    <h5 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.3rem; text-align: center;">
+                      <i class="fas fa-calendar-day" style="margin-right: 0.5rem;"></i>May 2026
+                    </h5>
+                    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                      <p style="margin: 0; font-size: 0.95rem; line-height: 1.4;">
+                        <strong style="color: white;">East Silver Spring ES - GYM</strong><br>
+                        631 Silver Spring Ave<br>
+                        Silver Spring, MD 20910<br>
+                        <span style="color: #dc3545; font-weight: 600;">TIME & DATE - TBA</span>
+                      </p>
+                    </div>
+                    <div style="font-size: 0.85rem; line-height: 1.3;">
+                      <p style="margin-bottom: 0.5rem;"><em>*Youth testing takes place on Saturdays</em></p>
+                      <p style="margin-bottom: 0.5rem;"><em>*Adult testing takes place on Monday nights</em></p>
+                      <p style="margin-bottom: 0.8rem;"><em>*All make-up tests will take place in September 2025</em></p>
+                      <p style="margin: 0; font-size: 0.8rem; background: rgba(255, 255, 255, 0.1); padding: 0.5rem; border-radius: 4px;">
+                        <strong>Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.</strong>
+                      </p>
+          </div>
+        </div>
+      </div>
+
+                <!-- September 2026 -->
+                <div class="col-lg-4 col-md-6">
+                  <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; height: 100%;">
+                    <h5 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.3rem; text-align: center;">
+                      <i class="fas fa-calendar-day" style="margin-right: 0.5rem;"></i>September 2026
+                    </h5>
+                    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                      <p style="margin: 0; font-size: 0.95rem; line-height: 1.4;">
+                        <strong style="color: white;">East Silver Spring ES - GYM</strong><br>
+                        631 Silver Spring Ave<br>
+                        Silver Spring, MD 20910<br>
+                        <span style="color: #dc3545; font-weight: 600;">TIME & DATE - TBA</span>
+                      </p>
+          </div>
+                    <div style="font-size: 0.85rem; line-height: 1.3;">
+                      <p style="margin-bottom: 0.5rem;"><em>*Youth testing takes place on Saturdays</em></p>
+                      <p style="margin-bottom: 0.5rem;"><em>*Adult testing takes place on Monday nights</em></p>
+                      <p style="margin-bottom: 0.8rem;"><em>*All make-up tests will take place in November 2026</em></p>
+                      <p style="margin: 0; font-size: 0.8rem; background: rgba(255, 255, 255, 0.1); padding: 0.5rem; border-radius: 4px;">
+                        <strong>Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.</strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <!-- Testing Process -->
+        <div class="accordion-item" style="border: none; background: transparent;">
+          <div class="accordion-header" style="background: rgba(255, 255, 255, 0.08); padding: 1.5rem 2rem; cursor: pointer; border-bottom: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;" onclick="toggleAccordion('process')" onmouseover="this.style.background='rgba(255, 255, 255, 0.12)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.08)'">
+            <h4 style="color: white; margin: 0; font-size: 1.4rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between;">
+              <span><i class="fas fa-list-check" style="color: #dc3545; margin-right: 0.8rem;"></i>Testing Process</span>
+              <i class="fas fa-chevron-down" id="process-icon" style="color: #dc3545; transition: transform 0.3s ease;"></i>
+            </h4>
+          </div>
+          <div class="accordion-content" id="process-content" style="display: none; padding: 2rem; background: rgba(0, 0, 0, 0.2); border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+            <div style="color: #e9ecef; line-height: 1.6;">
+              <p style="margin-bottom: 2rem; font-size: 1.1rem; text-align: center;">Our belt testing process varies by belt level to ensure every student is properly prepared:</p>
+              
+              <!-- Lower Belt Testing -->
+              <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
+                <h4 style="color: #dc3545; margin-bottom: 1.5rem; font-size: 1.4rem; text-align: center;">
+                  <i class="fas fa-medal" style="margin-right: 0.5rem;"></i>Testing for White w/Black Stripe, Orange, or Yellow Belt
+                </h4>
+                
+                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                  <h6 style="color: white; margin-bottom: 1rem; font-size: 1.1rem;">
+                    <i class="fas fa-user-check" style="margin-right: 0.5rem; color: #dc3545;"></i>Pre-Testing Process
+                  </h6>
+                  <p style="margin-bottom: 1rem; font-size: 0.95rem;">Instructor pre-tests during class time when they feel the student is ready to move up in rank.</p>
+                  <p style="margin: 0; font-size: 0.95rem;">If the student is ready, the instructor will notify the Kaizen office team. Then, the Kaizen office team will email parents written approval for their child to test.</p>
+                </div>
+                
+                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                  <h6 style="color: white; margin-bottom: 1rem; font-size: 1.1rem;">
+                    <i class="fas fa-users" style="margin-right: 0.5rem; color: #dc3545;"></i>Live Testing
+                  </h6>
+                  <p style="margin-bottom: 1rem; font-size: 0.95rem;"><strong>Please note:</strong> This test will be <strong>LIVE and in-person</strong> on the testing date in a group setting.</p>
+                  <p style="margin: 0; font-size: 0.95rem;">If the student does <em>not</em> pass the in-class pre-test, they must wait until the instructor feels they are ready.</p>
+                </div>
+                
+                <div style="background: rgba(220, 53, 69, 0.2); border-radius: 8px; padding: 1.5rem;">
+                  <h6 style="color: white; margin-bottom: 1rem; font-size: 1.1rem;">
+                    <i class="fas fa-clipboard-check" style="margin-right: 0.5rem; color: #dc3545;"></i>Registration & Testing Day
+                  </h6>
+                  <p style="margin-bottom: 1rem; font-size: 0.95rem;">Once you have received written approval to test, then the student must register for the test by clicking the link below.</p>
+                  <p style="margin: 0; font-size: 0.95rem;"><strong>Show up for your belt exam on the scheduled date.</strong></p>
+                </div>
+              </div>
+              
+              <!-- Higher Belt Testing -->
+              <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
+                <h4 style="color: #dc3545; margin-bottom: 1.5rem; font-size: 1.4rem; text-align: center;">
+                  <i class="fas fa-trophy" style="margin-right: 0.5rem;"></i>Testing for Green Belt or Higher
+                </h4>
+                
+                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                  <h6 style="color: white; margin-bottom: 1rem; font-size: 1.1rem;">
+                    <i class="fas fa-user-check" style="margin-right: 0.5rem; color: #dc3545;"></i>Pre-Testing Process
+                  </h6>
+                  <p style="margin-bottom: 1rem; font-size: 0.95rem;">Instructor pre-tests during class time when they feel the student is ready to move up in rank.</p>
+                  <p style="margin: 0; font-size: 0.95rem;">If the student is ready, the instructor sends written notification to the KK office team. Then, the KK office team will email the student directly with approval to test.</p>
+                </div>
+                
+                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                  <h6 style="color: white; margin-bottom: 1rem; font-size: 1.1rem;">
+                    <i class="fas fa-video" style="margin-right: 0.5rem; color: #dc3545;"></i>Video Testing Requirements
+                  </h6>
+                  <p style="margin-bottom: 1rem; font-size: 0.95rem;">Once approved, students must register for the test by clicking the link below (<strong>include video links at the time of registration</strong>).</p>
+                  <p style="margin-bottom: 1rem; font-size: 0.95rem;"><strong style="color: #dc3545;">Important:</strong> Sending your video as an attachment via email will NOT be accepted.</p>
+                  <p style="margin: 0; font-size: 0.95rem;">Video feedback and testing results will only be sent back to the student after they have registered online using the link below.</p>
+                </div>
+                
+                <div style="background: rgba(220, 53, 69, 0.2); border-radius: 8px; padding: 1.5rem;">
+                  <h6 style="color: white; margin-bottom: 1rem; font-size: 1.1rem;">
+                    <i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem; color: #dc3545;"></i>Important Notes
+                  </h6>
+                  <p style="margin-bottom: 1rem; font-size: 0.95rem;"><strong>*Please note:</strong> The video test for green belts and higher is now the <strong>actual test</strong> and is <strong>pass / fail</strong>.</p>
+                  <p style="margin: 0; font-size: 0.95rem;"><strong>*After passing the video test,</strong> there is an <strong>in-person requirement</strong> for students testing for green belt and higher.</p>
+                </div>
+              </div>
+              
+              <!-- Summary -->
+              <div style="background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(220, 53, 69, 0.5); border-radius: 12px; padding: 2rem; text-align: center;">
+                <h5 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.3rem;">
+                  <i class="fas fa-info-circle" style="margin-right: 0.5rem;"></i>In Summary
+                </h5>
+                <p style="margin: 0; font-size: 1rem; font-weight: 500; line-height: 1.5;">
+                  Instructors can give you permission to start the pre-testing process.<br>
+                  However, <strong style="color: #dc3545;">Coach V is the only instructor grading students and awarding belt rank.</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Requirements to Test -->
+        <div class="accordion-item" style="border: none; background: transparent;">
+          <div class="accordion-header" style="background: rgba(255, 255, 255, 0.08); padding: 1.5rem 2rem; cursor: pointer; border-bottom: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;" onclick="toggleAccordion('requirements')" onmouseover="this.style.background='rgba(255, 255, 255, 0.12)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.08)'">
+            <h4 style="color: white; margin: 0; font-size: 1.4rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between;">
+              <span><i class="fas fa-clipboard-list" style="color: #dc3545; margin-right: 0.8rem;"></i>Requirements to Test</span>
+              <i class="fas fa-chevron-down" id="requirements-icon" style="color: #dc3545; transition: transform 0.3s ease;"></i>
+            </h4>
+          </div>
+          <div class="accordion-content" id="requirements-content" style="display: none; padding: 2rem; background: rgba(0, 0, 0, 0.2); border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+            <div style="color: #e9ecef; line-height: 1.6;">
+              <!-- Important Notice -->
+              <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; text-align: center;">
+                <h4 style="color: #dc3545; margin-bottom: 1.5rem; font-size: 1.4rem;">
+                  <i class="fas fa-exclamation-circle" style="margin-right: 0.5rem;"></i>Important Testing Requirements
+                </h4>
+                <div style="font-size: 1rem; line-height: 1.6;">
+                  <p style="margin-bottom: 1rem; font-weight: 600;">The requirements listed below are minimums.</p>
+                  <p style="margin-bottom: 1.5rem;">Please keep in mind that the instructor of the class may require more than what is posted.</p>
+                  
+                  <div style="background: rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 1.5rem; margin-bottom: 1rem;">
+                    <p style="margin-bottom: 0.8rem; font-size: 0.95rem;"><strong style="color: #dc3545;">*Students who train at Summer Camp only</strong> can test up to green belt rank.</p>
+                    <p style="margin: 0; font-size: 0.95rem;"><strong style="color: #dc3545;">*In order to test for purple belt and higher,</strong> student MUST attend weekend and / or evening classes year-round.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Testing Requirements Images -->
+              <div style="margin-bottom: 2rem;">
+                <h5 style="color: #dc3545; margin-bottom: 1.5rem; text-align: center; font-size: 1.3rem;">
+                  <i class="fas fa-images" style="margin-right: 0.5rem;"></i>Detailed Testing Requirements
+                </h5>
+                <p style="text-align: center; margin-bottom: 2rem; font-style: italic; color: #b3b3b3;">Click any image below to view full size</p>
+                
+                <div class="row g-4">
+                  <!-- Testing Matrix -->
+                  <div class="col-lg-4 col-md-6">
+                    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; text-align: center; transition: all 0.3s ease; border: 1px solid rgba(220, 53, 69, 0.2);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                      <h6 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.1rem;">
+                        <i class="fas fa-th" style="margin-right: 0.5rem;"></i>Testing Matrix
+                      </h6>
+                      <img src="assets/images/belt-exam/requirements-test/kaizen-testing-matrix.png" alt="Kaizen Karate Testing Matrix" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; border: 2px solid rgba(220, 53, 69, 0.3); cursor: pointer;" onclick="openMatrixLightbox()">
+                      <p style="font-size: 0.9rem; margin-bottom: 1rem; color: #e9ecef;">Complete testing matrix with belt progression requirements</p>
+                      <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                        <button onclick="openMatrixLightbox()" style="background: rgba(220, 53, 69, 0.8); color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.background='#dc3545'" onmouseout="this.style.background='rgba(220, 53, 69, 0.8)'">
+                          <i class="fas fa-eye" style="margin-right: 0.5rem;"></i>View
+                        </button>
+                        <a href="assets/images/belt-exam/requirements-test/kaizen-testing-matrix.png" download="kaizen-testing-matrix.png" style="background: rgba(40, 167, 69, 0.8); color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s ease; text-decoration: none; display: inline-flex; align-items: center;" onmouseover="this.style.background='#28a745'" onmouseout="this.style.background='rgba(40, 167, 69, 0.8)'">
+                          <i class="fas fa-download" style="margin-right: 0.5rem;"></i>Download
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Testing Requirements -->
+                  <div class="col-lg-4 col-md-6">
+                    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; text-align: center; transition: all 0.3s ease; border: 1px solid rgba(220, 53, 69, 0.2);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                      <h6 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.1rem;">
+                        <i class="fas fa-clipboard-list" style="margin-right: 0.5rem;"></i>Testing Requirements
+                      </h6>
+                      <img src="assets/images/belt-exam/requirements-test/kaizen-testing-requirement.png" alt="Kaizen Karate Testing Requirements" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; border: 2px solid rgba(220, 53, 69, 0.3); cursor: pointer;" onclick="openRequirementsLightbox()">
+                      <p style="font-size: 0.9rem; margin-bottom: 1rem; color: #e9ecef;">Detailed requirements for each belt level</p>
+                      <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                        <button onclick="openRequirementsLightbox()" style="background: rgba(220, 53, 69, 0.8); color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.background='#dc3545'" onmouseout="this.style.background='rgba(220, 53, 69, 0.8)'">
+                          <i class="fas fa-eye" style="margin-right: 0.5rem;"></i>View
+                        </button>
+                        <a href="assets/images/belt-exam/requirements-test/kaizen-testing-requirement.png" download="kaizen-testing-requirement.png" style="background: rgba(40, 167, 69, 0.8); color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s ease; text-decoration: none; display: inline-flex; align-items: center;" onmouseover="this.style.background='#28a745'" onmouseout="this.style.background='rgba(40, 167, 69, 0.8)'">
+                          <i class="fas fa-download" style="margin-right: 0.5rem;"></i>Download
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Stripe System -->
+                  <div class="col-lg-4 col-md-6">
+                    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; text-align: center; transition: all 0.3s ease; border: 1px solid rgba(220, 53, 69, 0.2);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                      <h6 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.1rem;">
+                        <i class="fas fa-star" style="margin-right: 0.5rem;"></i>Stripe System
+                      </h6>
+                      <img src="assets/images/belt-exam/requirements-test/kaizen-testing-stripe-system.png" alt="Kaizen Karate Stripe System" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; border: 2px solid rgba(220, 53, 69, 0.3); cursor: pointer;" onclick="openStripeLightbox()">
+                      <p style="font-size: 0.9rem; margin-bottom: 1rem; color: #e9ecef;">Belt stripe system and progression tracking</p>
+                      <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                        <button onclick="openStripeLightbox()" style="background: rgba(220, 53, 69, 0.8); color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.background='#dc3545'" onmouseout="this.style.background='rgba(220, 53, 69, 0.8)'">
+                          <i class="fas fa-eye" style="margin-right: 0.5rem;"></i>View
+                        </button>
+                        <a href="assets/images/belt-exam/requirements-test/kaizen-testing-stripe-system.png" download="kaizen-testing-stripe-system.png" style="background: rgba(40, 167, 69, 0.8); color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s ease; text-decoration: none; display: inline-flex; align-items: center;" onmouseover="this.style.background='#28a745'" onmouseout="this.style.background='rgba(40, 167, 69, 0.8)'">
+                          <i class="fas fa-download" style="margin-right: 0.5rem;"></i>Download
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Belt Exam Clothing Requirements -->
+        <div class="accordion-item" style="border: none; background: transparent;">
+          <div class="accordion-header" style="background: rgba(255, 255, 255, 0.08); padding: 1.5rem 2rem; cursor: pointer; border-bottom: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;" onclick="toggleAccordion('clothing')" onmouseover="this.style.background='rgba(255, 255, 255, 0.12)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.08)'">
+            <h4 style="color: white; margin: 0; font-size: 1.4rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between;">
+              <span><i class="fas fa-tshirt" style="color: #dc3545; margin-right: 0.8rem;"></i>Belt Exam Clothing Requirements</span>
+              <i class="fas fa-chevron-down" id="clothing-icon" style="color: #dc3545; transition: transform 0.3s ease;"></i>
+            </h4>
+          </div>
+          <div class="accordion-content" id="clothing-content" style="display: none; padding: 2rem; background: rgba(0, 0, 0, 0.2); border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+            <div style="color: #e9ecef; line-height: 1.6;">
+              <p style="margin-bottom: 2rem; font-size: 1.1rem; text-align: center;">Specific clothing requirements for each belt level to ensure you're prepared for testing:</p>
+              
+              <!-- Belt-Specific Requirements -->
+              <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
+                <h4 style="color: #dc3545; margin-bottom: 1.5rem; font-size: 1.4rem; text-align: center;">
+                  <i class="fas fa-tshirt" style="margin-right: 0.5rem;"></i>Belt-Specific Clothing Requirements
+                </h4>
+                
+                <div class="row g-4">
+                  <!-- White Belt with Black Stripe -->
+                  <div class="col-lg-6 col-md-12">
+                    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 1.5rem;">
+                      <h6 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.1rem; display: flex; align-items: center;">
+                        <div style="width: 20px; height: 20px; background: white; border: 2px solid #333; border-radius: 2px; margin-right: 0.75rem; position: relative;">
+                          <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 12px; height: 2px; background: #333;"></div>
+                        </div>
+                        White Belt with Black Stripe
+                      </h6>
+                      <p style="margin: 0; font-size: 0.95rem; line-height: 1.4;">
+                        Need a <strong style="color: white;">black Kaizen Karate t-shirt</strong> <em>prior</em> to testing for this belt
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <!-- Orange Belt -->
+                  <div class="col-lg-6 col-md-12">
+                    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 1.5rem;">
+                      <h6 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.1rem; display: flex; align-items: center;">
+                        <div style="width: 20px; height: 20px; background: orange; border: 2px solid #333; border-radius: 2px; margin-right: 0.75rem;"></div>
+                        Orange Belt
+                      </h6>
+                      <p style="margin: 0; font-size: 0.95rem; line-height: 1.4;">
+                        Need a <strong style="color: white;">black Kaizen Karate t-shirt</strong> <em>prior</em> to testing for this belt
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <!-- Yellow Belt -->
+                  <div class="col-lg-6 col-md-12">
+                    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 1.5rem;">
+                      <h6 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.1rem; display: flex; align-items: center;">
+                        <div style="width: 20px; height: 20px; background: yellow; border: 2px solid #333; border-radius: 2px; margin-right: 0.75rem;"></div>
+                        Yellow Belt
+                      </h6>
+                      <p style="margin: 0; font-size: 0.95rem; line-height: 1.4;">
+                        Must have a <strong style="color: white;">black Kaizen Karate uniform</strong> <em>prior</em> to testing for this belt
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <!-- Green Belt -->
+                  <div class="col-lg-6 col-md-12">
+                    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 1.5rem;">
+                      <h6 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.1rem; display: flex; align-items: center;">
+                        <div style="width: 20px; height: 20px; background: green; border: 2px solid #333; border-radius: 2px; margin-right: 0.75rem;"></div>
+                        Green Belt
+                      </h6>
+                      <p style="margin: 0; font-size: 0.95rem; line-height: 1.4;">
+                        Must have a <strong style="color: white;">full set of sparring gear</strong> 3-4 months <em>prior</em> to testing for this belt
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Shop Now Section -->
+              <div style="text-align: center; background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 2.5rem; border: 1px solid rgba(220, 53, 69, 0.2);">
+                <h5 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.3rem;">
+                  <i class="fas fa-shopping-cart" style="margin-right: 0.5rem;"></i>Need Gear or Uniforms?
+                </h5>
+                <p style="margin-bottom: 2rem; font-size: 1rem; color: #e9ecef; line-height: 1.5;">
+                  Get everything you need for belt testing from our official online store.<br>
+                  T-shirts, uniforms, sparring gear, and more!
+                </p>
+                
+                <a href="https://kaizenkarate.store/" target="_blank" rel="noopener noreferrer" 
+                   style="display: inline-flex; align-items: center; gap: 0.75rem; background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); color: white; padding: 1rem 2rem; border-radius: 8px; font-size: 1.1rem; font-weight: 600; text-decoration: none; border: 2px solid #dc3545; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);"
+                   onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.4)'; this.style.background='linear-gradient(135deg, #c82333 0%, #a71e2a 100%)';"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(220, 53, 69, 0.3)'; this.style.background='linear-gradient(135deg, #dc3545 0%, #c82333 100%)';">
+                  <i class="fas fa-external-link-alt" style="font-size: 1rem;"></i>
+                  Shop Now
+                </a>
+                
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <!-- Testing Scripts -->
+        <div class="accordion-item" style="border: none; background: transparent;">
+          <div class="accordion-header" style="background: rgba(255, 255, 255, 0.08); padding: 1.5rem 2rem; cursor: pointer; border-bottom: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;" onclick="toggleAccordion('scripts')" onmouseover="this.style.background='rgba(255, 255, 255, 0.12)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.08)'">
+            <h4 style="color: white; margin: 0; font-size: 1.4rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between;">
+              <span><i class="fas fa-scroll" style="color: #dc3545; margin-right: 0.8rem;"></i>Testing Scripts</span>
+              <i class="fas fa-chevron-down" id="scripts-icon" style="color: #dc3545; transition: transform 0.3s ease;"></i>
+            </h4>
+          </div>
+          <div class="accordion-content" id="scripts-content" style="display: none; padding: 2rem; background: rgba(0, 0, 0, 0.2); border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+            <div style="color: #e9ecef; line-height: 1.6;">
+              <p style="margin-bottom: 2rem; font-size: 1.1rem; text-align: center;">Access testing scripts, instructions, and helpful tips for belt examinations:</p>
+              
+              <!-- Testing Scripts Grid -->
+              <div class="row g-4 mb-4">
+                <!-- Row 1 -->
+                <div class="col-lg-4 col-md-6">
+                  <div onclick="openTestingTipsLightbox()" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.3)'; this.style.borderColor='#dc3545';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(220, 53, 69, 0.3)';">
+                    <i class="fas fa-lightbulb" style="font-size: 2rem; color: #dc3545; margin-bottom: 1rem;"></i>
+                    <h6 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Testing Tips</h6>
+                    <p style="font-size: 0.9rem; color: #b3b3b3; margin: 0; line-height: 1.4;">Essential filming and submission guidelines</p>
+                  </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                  <div onclick="openVideoInstructionsLightbox()" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.3)'; this.style.borderColor='#dc3545';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(220, 53, 69, 0.3)';">
+                    <i class="fas fa-video" style="font-size: 2rem; color: #dc3545; margin-bottom: 1rem;"></i>
+                    <h6 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Video Testing Instructions</h6>
+                    <p style="font-size: 0.9rem; color: #b3b3b3; margin: 0; line-height: 1.4;">Complete video testing process</p>
+                  </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                  <div onclick="openGreenBeltLightbox()" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.3)'; this.style.borderColor='#dc3545';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(220, 53, 69, 0.3)';">
+                    <div style="width: 30px; height: 20px; background: green; border: 2px solid #333; border-radius: 3px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                      <i class="fas fa-scroll" style="font-size: 0.8rem; color: white;"></i>
+                    </div>
+                    <h6 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Green Belt Script</h6>
+                    <p style="font-size: 0.9rem; color: #b3b3b3; margin: 0; line-height: 1.4;">Green belt testing requirements</p>
+                  </div>
+                </div>
+                
+                <!-- Row 2 -->
+                <div class="col-lg-4 col-md-6">
+                  <div onclick="openPurpleBeltLightbox()" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.3)'; this.style.borderColor='#dc3545';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(220, 53, 69, 0.3)';">
+                    <div style="width: 30px; height: 20px; background: purple; border: 2px solid #333; border-radius: 3px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                      <i class="fas fa-scroll" style="font-size: 0.8rem; color: white;"></i>
+                    </div>
+                    <h6 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Purple Belt Script</h6>
+                    <p style="font-size: 0.9rem; color: #b3b3b3; margin: 0; line-height: 1.4;">Purple belt testing requirements</p>
+                  </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                  <div onclick="openBlueBeltLightbox()" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.3)'; this.style.borderColor='#dc3545';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(220, 53, 69, 0.3)';">
+                    <div style="width: 30px; height: 20px; background: blue; border: 2px solid #333; border-radius: 3px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                      <i class="fas fa-scroll" style="font-size: 0.8rem; color: white;"></i>
+                    </div>
+                    <h6 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Blue Belt Script</h6>
+                    <p style="font-size: 0.9rem; color: #b3b3b3; margin: 0; line-height: 1.4;">Blue belt testing requirements</p>
+                  </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                  <div onclick="openBrownBeltLightbox()" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.3)'; this.style.borderColor='#dc3545';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(220, 53, 69, 0.3)';">
+                    <div style="width: 30px; height: 20px; background: #8B4513; border: 2px solid #333; border-radius: 3px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                      <i class="fas fa-scroll" style="font-size: 0.8rem; color: white;"></i>
+                    </div>
+                    <h6 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Brown Belt Script</h6>
+                    <p style="font-size: 0.9rem; color: #b3b3b3; margin: 0; line-height: 1.4;">Brown belt testing requirements</p>
+                  </div>
+                </div>
+                
+                <!-- Row 3 -->
+                <div class="col-lg-4 col-md-6">
+                  <div onclick="openBrownStripeLightbox()" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.3)'; this.style.borderColor='#dc3545';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(220, 53, 69, 0.3)';">
+                    <div style="width: 30px; height: 20px; background: #8B4513; border: 2px solid #333; border-radius: 3px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; position: relative;">
+                      <i class="fas fa-scroll" style="font-size: 0.8rem; color: white;"></i>
+                      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 2px; background: #333;"></div>
+                    </div>
+                    <h6 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Brown Belt w/ Black Stripe</h6>
+                    <p style="font-size: 0.9rem; color: #b3b3b3; margin: 0; line-height: 1.4;">Brown stripe testing requirements</p>
+                  </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                  <div onclick="openRedBeltLightbox()" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.3)'; this.style.borderColor='#dc3545';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(220, 53, 69, 0.3)';">
+                    <div style="width: 30px; height: 20px; background: #dc3545; border: 2px solid #333; border-radius: 3px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                      <i class="fas fa-scroll" style="font-size: 0.8rem; color: white;"></i>
+                    </div>
+                    <h6 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Red Belt Script</h6>
+                    <p style="font-size: 0.9rem; color: #b3b3b3; margin: 0; line-height: 1.4;">Red belt testing requirements</p>
+                  </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                  <div onclick="openRedStripeLightbox()" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.3)'; this.style.borderColor='#dc3545';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(220, 53, 69, 0.3)';">
+                    <div style="width: 30px; height: 20px; background: #dc3545; border: 2px solid #333; border-radius: 3px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; position: relative;">
+                      <i class="fas fa-scroll" style="font-size: 0.8rem; color: white;"></i>
+                      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 2px; background: #333;"></div>
+                    </div>
+                    <h6 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Red Belt w/ Black Stripe</h6>
+                    <p style="font-size: 0.9rem; color: #b3b3b3; margin: 0; line-height: 1.4;">Red stripe testing requirements</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Important Note -->
+              <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); padding: 1.5rem; border-radius: 12px; text-align: center;">
+                <h5 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.2rem;">
+                  <i class="fas fa-info-circle" style="margin-right: 0.5rem;"></i>Important Note
+                </h5>
+                <p style="margin: 0; font-size: 0.95rem; line-height: 1.5;">
+                  Click any card above to view detailed information. Testing scripts are provided as study guides.<br>
+                  Actual testing may vary based on instructor discretion and individual student needs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Register for the Belt Exam -->
+        <div class="accordion-item" style="border: none; background: transparent;">
+          <div class="accordion-header" style="background: rgba(255, 255, 255, 0.08); padding: 1.5rem 2rem; cursor: pointer; transition: all 0.3s ease;" onclick="toggleAccordion('register')" onmouseover="this.style.background='rgba(255, 255, 255, 0.12)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.08)'">
+            <h4 style="color: white; margin: 0; font-size: 1.4rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between;">
+              <span><i class="fas fa-user-plus" style="color: #dc3545; margin-right: 0.8rem;"></i>Register for the Belt Exam</span>
+              <i class="fas fa-chevron-down" id="register-icon" style="color: #dc3545; transition: transform 0.3s ease;"></i>
+            </h4>
+          </div>
+          <div class="accordion-content" id="register-content" style="display: none; padding: 2rem; background: rgba(0, 0, 0, 0.2);">
+            <div style="color: #e9ecef; line-height: 1.6;">
+              <p style="margin-bottom: 2rem; font-size: 1.1rem; text-align: center;">Ready to register for your belt examination? Follow these steps:</p>
+              
+              <!-- In-Person Testing Information -->
+              <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
+                <h4 style="color: #dc3545; margin-bottom: 1.5rem; font-size: 1.4rem; text-align: center;">
+                  <i class="fas fa-users" style="margin-right: 0.5rem;"></i>In-Person Group Testing
+                </h4>
+                
+                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                  <p style="margin-bottom: 1rem; font-size: 0.95rem;">The belt exam will be held IN-PERSON for all students testing for white with black stripe - red belt ranks. Students will take part in a group test / workshop hosted by Coach V. All material for the student's belt level will be covered in detail during this special event.</p>
+                </div>
+                
+                <!-- Registration Cards Grid -->
+                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                  <div style="text-align: center; margin-bottom: 2rem;">
+                    <h4 style="color: white; margin: 0 0 0.5rem 0; font-size: 2.5rem; font-weight: 700;">Register</h4>
+                    <p style="color: #b3b3b3; margin: 0; font-size: 1rem; font-style: italic;">Click on your preferred testing date below</p>
+                  </div>
+                  
+                  <div class="row g-3 mb-4">
+                    <!-- Youth 11 AM -->
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                      <a href="https://form.jotform.com/251184779401460" target="_blank" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%; display: block; text-decoration: none; color: inherit; position: relative;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.3)'; this.style.borderColor='#dc3545';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(220, 53, 69, 0.3)';">
+                        <h5 style="color: #dc3545; margin: 0 0 1rem 0; font-size: 1.3rem; font-weight: 700;">Saturday, May 17th</h5>
+                        <div style="width: 35px; height: 25px; background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%); border: 2px solid #333; border-radius: 3px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);">
+                          <i class="fas fa-clock" style="font-size: 0.9rem; color: #495057;"></i>
+                        </div>
+                        <h6 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Youth - 11:00 AM</h6>
+                        <p style="font-size: 0.9rem; color: #b3b3b3; margin: 0; line-height: 1.4;">White belt with black stripe</p>
+                        <i class="fas fa-external-link-alt" style="position: absolute; top: 15px; right: 15px; color: #dc3545; font-size: 0.9rem;"></i>
+                      </a>
+                    </div>
+                    
+                    <!-- Youth 12 PM -->
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                      <a href="https://form.jotform.com/251185001234443" target="_blank" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%; display: block; text-decoration: none; color: inherit; position: relative;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.3)'; this.style.borderColor='#dc3545';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(220, 53, 69, 0.3)';">
+                        <h5 style="color: #dc3545; margin: 0 0 1rem 0; font-size: 1.3rem; font-weight: 700;">Saturday, May 17th</h5>
+                        <div style="display: flex; gap: 5px; justify-content: center; margin-bottom: 1rem;">
+                          <div style="width: 30px; height: 20px; background: linear-gradient(145deg, #FF8C00 0%, #FFA500 50%, #FF7F00 100%); border: 2px solid #333; border-radius: 3px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(255, 140, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3);">
+                            <i class="fas fa-clock" style="font-size: 0.7rem; color: white;"></i>
+                          </div>
+                          <div style="width: 30px; height: 20px; background: linear-gradient(145deg, #FFD700 0%, #FFEB3B 50%, #FFC107 100%); border: 2px solid #333; border-radius: 3px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3);">
+                            <i class="fas fa-clock" style="font-size: 0.7rem; color: #8B5000;"></i>
+                          </div>
+                        </div>
+                        <h6 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Youth - 12:00 PM</h6>
+                        <p style="font-size: 0.9rem; color: #b3b3b3; margin: 0; line-height: 1.4;">Orange & Yellow belt</p>
+                        <i class="fas fa-external-link-alt" style="position: absolute; top: 15px; right: 15px; color: #dc3545; font-size: 0.9rem;"></i>
+                      </a>
+                    </div>
+                    
+                    <!-- Youth 1 PM -->
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                      <a href="https://form.jotform.com/251184950128457" target="_blank" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%; display: block; text-decoration: none; color: inherit; position: relative;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.3)'; this.style.borderColor='#dc3545';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(220, 53, 69, 0.3)';">
+                        <h5 style="color: #dc3545; margin: 0 0 1rem 0; font-size: 1.3rem; font-weight: 700;">Saturday, May 17th</h5>
+                        <div style="display: flex; gap: 3px; justify-content: center; margin-bottom: 1rem;">
+                          <div style="width: 25px; height: 18px; background: linear-gradient(145deg, #4CAF50 0%, #66BB6A 50%, #43A047 100%); border: 2px solid #333; border-radius: 3px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(76, 175, 80, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
+                            <i class="fas fa-clock" style="font-size: 0.6rem; color: white;"></i>
+                          </div>
+                          <div style="width: 25px; height: 18px; background: linear-gradient(145deg, #9C27B0 0%, #BA68C8 50%, #7B1FA2 100%); border: 2px solid #333; border-radius: 3px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(156, 39, 176, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
+                            <i class="fas fa-clock" style="font-size: 0.6rem; color: white;"></i>
+                          </div>
+                          <div style="width: 25px; height: 18px; background: linear-gradient(145deg, #2196F3 0%, #42A5F5 50%, #1976D2 100%); border: 2px solid #333; border-radius: 3px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(33, 150, 243, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
+                            <i class="fas fa-clock" style="font-size: 0.6rem; color: white;"></i>
+                          </div>
+                          <div style="width: 25px; height: 18px; background: linear-gradient(145deg, #8D6E63 0%, #A1887F 50%, #6D4C41 100%); border: 2px solid #333; border-radius: 3px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(141, 110, 99, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);">
+                            <i class="fas fa-clock" style="font-size: 0.6rem; color: white;"></i>
+                          </div>
+                          <div style="width: 25px; height: 18px; background: linear-gradient(145deg, #F44336 0%, #EF5350 50%, #D32F2F 100%); border: 2px solid #333; border-radius: 3px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(244, 67, 54, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
+                            <i class="fas fa-clock" style="font-size: 0.6rem; color: white;"></i>
+                          </div>
+                        </div>
+                        <h6 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Youth - 1:00 PM</h6>
+                        <p style="font-size: 0.9rem; color: #b3b3b3; margin: 0; line-height: 1.4;">Green - Purple - Blue - Brown - Red belt</p>
+                        <i class="fas fa-external-link-alt" style="position: absolute; top: 15px; right: 15px; color: #dc3545; font-size: 0.9rem;"></i>
+                      </a>
+                    </div>
+                    
+                    <!-- Adult 7:30 PM -->
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                      <a href="https://www.jotform.com/build/251193476371460" target="_blank" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; cursor: pointer; transition: all 0.3s ease; height: 100%; display: block; text-decoration: none; color: inherit; position: relative;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.3)'; this.style.borderColor='#dc3545';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.borderColor='rgba(220, 53, 69, 0.3)';">
+                        <h5 style="color: #dc3545; margin: 0 0 1rem 0; font-size: 1.3rem; font-weight: 700;">Monday, May 19th</h5>
+                        <div style="width: 35px; height: 25px; background: linear-gradient(145deg, #2c2c2c 0%, #1a1a1a 50%, #000000 100%); border: 2px solid #333; border-radius: 3px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);">
+                          <i class="fas fa-user-clock" style="font-size: 0.9rem; color: white;"></i>
+                        </div>
+                        <h6 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Adult - 7:30 PM</h6>
+                        <p style="font-size: 0.9rem; color: #b3b3b3; margin: 0; line-height: 1.4;">ALL BELTS</p>
+                        <i class="fas fa-external-link-alt" style="position: absolute; top: 15px; right: 15px; color: #dc3545; font-size: 0.9rem;"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                <h5 style="color: #dc3545; margin-bottom: 1rem;"><i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem;"></i>Before You Register</h5>
+                <ul style="margin: 0; padding-left: 1.5rem;">
+                  <li style="margin-bottom: 0.8rem;">You must receive written approval from the Kaizen office team</li>
+                  <li style="margin-bottom: 0.8rem;">Registration closes one week before the testing date</li>
+                  <li>Testing fees must be paid at time of registration</li>
+              </ul>
+            </div>
+              
+
+          </div>
+        </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleAccordion(section) {
+  const content = document.getElementById(section + '-content');
+  const icon = document.getElementById(section + '-icon');
+  
+  if (content.style.display === 'none' || content.style.display === '') {
+    content.style.display = 'block';
+    icon.style.transform = 'rotate(180deg)';
+  } else {
+    content.style.display = 'none';
+    icon.style.transform = 'rotate(0deg)';
+  }
+ }
+ </script>
+
+<!-- Kaizen Kenpo Section -->
+<section id="kaizen-kenpo" style="background: white; color: #333; position: relative; overflow: hidden; padding: 0; margin: 0;">
+  
+  <!-- Red Header Section -->
+  <div style="background: linear-gradient(135deg, #dc3545 0%, #c82333 50%, #a41e2a 100%); width: 100%; padding: 2.5rem 0; margin: 0;">
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="text-center" style="position: relative;">
+          <!-- Main Logo -->
+        <div style="text-align: center;">
+          <img src="assets/images/kenpo/kenpo-logo.png" alt="Kaizen Kenpo Logo" style="height: 300px; width: auto;">
+        </div>
+        <h2 style="color: white; font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; text-decoration: underline; text-underline-offset: 0.3em; text-decoration-color: rgba(255, 255, 255, 0.8); margin: 1rem 0 0 0; position: relative; z-index: 2; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);">Kaizen Kenpo</h2>
+      </div>
+    </div>
+  </div>
+  
+  <!-- White Content Section -->
+  <div class="container" style="position: relative; z-index: 2; padding: 50px 0 50px 0;">
+    
+    <!-- Kenpo Content with Tabs -->
+    <div class="row justify-content-center" style="margin: 0;">
+      <div class="col-12" style="padding: 0;">
+        <div class="kenpo-tabs-container" style="margin: 0; padding: 0; min-height: 600px; width: 100%;">
+          
+          <!-- Tab Navigation -->
+          <ul class="nav nav-tabs" id="kenpoTabs" role="tablist" style="border-bottom: 2px solid rgba(220, 53, 69, 0.2); margin: 0; padding-top: 0;">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about-content" type="button" role="tab" aria-controls="about-content" aria-selected="true" style="color: white !important; background: linear-gradient(135deg, #dc3545 0%, #c82333 100%) !important; border: 2px solid #dc3545 !important; border-radius: 8px 8px 0 0 !important; font-weight: 600; font-size: 1.1rem; padding: 0.8rem 1.5rem; margin-right: 0.5rem; transition: all 0.3s ease !important; box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3) !important;">
+                Kaizen Kenpo
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="ikca-tab" data-bs-toggle="tab" data-bs-target="#ikca-content" type="button" role="tab" aria-controls="ikca-content" aria-selected="false" style="color: #333333 !important; background: white !important; border: 2px solid #ddd !important; border-radius: 8px 8px 0 0 !important; font-weight: 600; font-size: 1.1rem; padding: 0.8rem 1.5rem; margin-right: 0.5rem; transition: all 0.3s ease !important; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;" onmouseover="this.style.borderColor='#dc3545'; this.style.color='#dc3545';" onmouseout="this.style.borderColor='#ddd'; this.style.color='#333333';">
+                What is IKCA Kenpo?
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="gallery-tab" data-bs-toggle="tab" data-bs-target="#gallery-content" type="button" role="tab" aria-controls="gallery-content" aria-selected="false" style="color: #333333 !important; background: white !important; border: 2px solid #ddd !important; border-radius: 8px 8px 0 0 !important; font-weight: 600; font-size: 1.1rem; padding: 0.8rem 1.5rem; margin-right: 0.5rem; transition: all 0.3s ease !important; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;" onmouseover="this.style.borderColor='#dc3545'; this.style.color='#dc3545';" onmouseout="this.style.borderColor='#ddd'; this.style.color='#333333';">
+                Photo Gallery
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-content" type="button" role="tab" aria-controls="contact-content" aria-selected="false" style="color: #333333 !important; background: white !important; border: 2px solid #ddd !important; border-radius: 8px 8px 0 0 !important; font-weight: 600; font-size: 1.1rem; padding: 0.8rem 1.5rem; margin-right: 0.5rem; transition: all 0.3s ease !important; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;" onmouseover="this.style.borderColor='#dc3545'; this.style.color='#dc3545';" onmouseout="this.style.borderColor='#ddd'; this.style.color='#333333';">
+                Contact & Location
+              </button>
+            </li>
+          </ul>
+          
+          <script>
+            // Enhanced tab styling functionality
+            document.addEventListener('DOMContentLoaded', function() {
+              const kenpoTabs = document.querySelectorAll('#kenpoTabs .nav-link');
+              
+              kenpoTabs.forEach(tab => {
+                tab.addEventListener('shown.bs.tab', function(e) {
+                  // Reset all tabs to inactive state
+                  kenpoTabs.forEach(t => {
+                    t.style.color = '#333333';
+                    t.style.background = 'white';
+                    t.style.borderColor = '#ddd';
+                    t.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+                  });
+                  
+                  // Style the active tab
+                  e.target.style.color = 'white';
+                  e.target.style.background = 'linear-gradient(135deg, #dc3545 0%, #c82333 100%)';
+                  e.target.style.borderColor = '#dc3545';
+                  e.target.style.boxShadow = '0 2px 8px rgba(220, 53, 69, 0.3)';
+                });
+              });
+            });
+          </script>
+          
+          <!-- Tab Content -->
+          <div class="tab-content" id="kenpoTabContent" style="min-height: 500px;">
+            
+            <!-- About Tab -->
+            <div class="tab-pane fade show active" id="about-content" role="tabpanel" aria-labelledby="about-tab">
+    <div class="row align-items-center g-4">
+                <!-- Kenpo Training Photo -->
+      <div class="col-lg-6">
+        <div style="text-align: center;">
+                    <img src="assets/images/kenpo/shuffle/IMG_0126.webp" 
+                         alt="Kaizen Kenpo Training Session" 
+                         style="width: 100%; max-width: 700px; height: auto;">
+        </div>
+    </div>
+    
+                <!-- About Information -->
+      <div class="col-lg-6">
+                  <div style="padding: 1rem;">
+    
+                    
+                                          <p style="color: #495057; font-size: 1.2rem; line-height: 1.8; margin-bottom: 1.5rem; text-align: center;">
+                        Learn the art of IKCA Kenpo from IKCA Certified Instructors. We serve the DC Metro area including Maryland, DC, and Northern Virginia. Kaizen Kenpo is a division of Kaizen Karate LLC.
+                      </p>
+                      
+                      <!-- Class Schedule -->
+                      <div style="background: rgba(44, 62, 80, 0.05); border: 1px solid rgba(44, 62, 80, 0.1); padding: 1rem; border-radius: 6px; text-align: center; margin: 1.5rem 0;">
+                        <p style="color: #2c3e50; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">
+                          Class Time
+                        </p>
+                        <p style="color: #495057; font-size: 1rem; font-weight: 500; margin: 0;">
+                          Sundays: 1:00pm - 2:00pm
+                        </p>
+                      </div>
+                      
+                      <!-- Program Information -->
+                      <div style="padding: 1.5rem 0; margin-bottom: 2rem; border-left: 4px solid #dc3545; padding-left: 1.5rem;">
+                        <h5 style="color: #dc3545; margin-bottom: 1rem;">
+                          <i class="fas fa-star" style="margin-right: 0.5rem;"></i>Invitation-Only Program
+                        </h5>
+                        <p style="color: #495057; margin: 0; font-size: 1rem; line-height: 1.6;">
+                          Kaizen Kenpo is a division of Kaizen Karate LLC, offering advanced martial arts training for dedicated practitioners.
+                        </p>
+                      </div>
+                    
+                    <!-- Action Buttons -->
+                    <div style="text-align: center; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                      <a href="https://www.gomotionapp.com/team/mdkfu/page/class-registration" 
+                         target="_blank"
+                         style="background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); color: white; padding: 1.2rem 2rem; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 1.1rem; display: inline-block; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);"
+                         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(220, 53, 69, 0.4)';"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(220, 53, 69, 0.3)';">
+                        <i class="fas fa-user-plus" style="margin-right: 0.6rem;"></i>
+                        Register Now
+                      </a>
+                      
+            <a href="https://www.kaizenkenpo.net/" 
+               target="_blank"
+                         style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: white; padding: 1.2rem 2rem; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 1.1rem; display: inline-block; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);"
+                         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(44, 62, 80, 0.4)';"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(44, 62, 80, 0.3)';">
+                        <i class="fas fa-external-link-alt" style="margin-right: 0.6rem;"></i>
+                        Visit Website
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- IKCA Kenpo Tab Content -->
+            <div class="tab-pane fade" id="ikca-content" role="tabpanel" aria-labelledby="ikca-tab">
+              <div class="row align-items-center g-4">
+                <!-- IKCA Logo -->
+                <div class="col-lg-6">
+                  <div style="text-align: center;">
+                    <img src="assets/images/kenpo/karate-connection.webp" 
+                         alt="IKCA Karate Connection Logo" 
+                         style="width: 100%; max-width: 400px; height: auto;">
+                    <p style="color: #666; font-size: 0.9rem; font-style: italic; margin-top: 1rem; text-align: center;">
+                      The IKCA Crest is a US Registered Trademark of IKCA, Inc. Used with permission.
+        </p>
+    </div>
+    </div>
+                
+                <!-- IKCA Information -->
+                <div class="col-lg-6">
+                  <div style="padding: 1rem;">
+                    
+                    <p style="color: #495057; font-size: 1.3rem; line-height: 1.8; margin-bottom: 1.5rem; font-weight: 600;">
+                      We're glad you asked!
+                    </p>
+                    
+                    <p style="color: #495057; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                      The International Karate Connection Association (IKCA) is the governing body for the Karate Connection system of Chinese Kenpo. The IKCA was founded by Chuck Sullivan and Vic LeRoux, who were students of Ed Parker, the founder of Kenpo Karate.
+                    </p>
+                    
+                    <p style="color: #495057; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                      The IKCA's philosophy is to: Reduce the number of techniques, Focus on basics, Emphasize Kenpo concepts and principles, and Retain the full essence of Kenpo.
+                    </p>
+                    
+                    <p style="color: #495057; font-size: 1.1rem; line-height: 1.8; margin-bottom: 0;">
+                      Kaizen Kenpo is a division of Kaizen Karate LLC. We teach the IKCA curriculum in our program.
+                    </p>
+                    
+                  </div>
+                </div>
+    </div>
+            </div>
+            
+            <!-- Photo Gallery Tab -->
+            <div class="tab-pane fade" id="gallery-content" role="tabpanel" aria-labelledby="gallery-tab">
+              <div style="display: flex; align-items: flex-start; gap: 2rem;">
+                <!-- Gallery Images -->
+                <div style="flex: 1;">
+                  <div style="text-align: center;">
+                    <div class="kenpo-image-shuffle">
+                      <div class="shuffle-container">
+                        
+                        <!-- Image 1: Training Photo 1 -->
+                        <div class="shuffle-slide active" data-caption="Josh Wesnidge, Darren Bell Jr, & Viran Ranasinghe">
+                          <img src="assets/images/kenpo/shuffle/IMG_5336.webp" 
+                               alt="Kaizen Kenpo Training"
+                               style="width: 100%; max-width: 500px; height: auto;">
+                        </div>
+                        
+                        <!-- Image 2: Training Photo 2 -->
+                        <div class="shuffle-slide" data-caption="Viran Ranasinghe and Steve Zalazowski, Sr.">
+                          <img src="assets/images/kenpo/shuffle/IMG_0090.webp" 
+                               alt="Kaizen Kenpo Training Session"
+                               style="width: 100%; max-width: 500px; height: auto;">
+                                            </div>
+                    
+                  </div>
+                  
+                  <!-- Photo Caption -->
+                  <div style="margin-top: 1rem; text-align: center;">
+                    <p id="current-caption" style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #495057; margin: 0; line-height: 1.4; font-weight: 400;">
+                      Josh Wesnidge, Darren Bell Jr, & Viran Ranasinghe
+                    </p>
+                  </div>
+                  
+                  <!-- Thumbnail Navigation with Arrows -->
+                      <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-top: 20px;">
+                        <!-- Left Arrow -->
+                        <button class="shuffle-prev" onclick="changeSlide(-1)" style="background: rgba(0, 0, 0, 0.5); color: white; border: none; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                          <i class="fas fa-chevron-left"></i>
+                        </button>
+                        
+                        <!-- Thumbnails -->
+                        <div class="shuffle-thumbnails" style="display: flex; gap: 12px;">
+                          <img src="assets/images/kenpo/shuffle/IMG_5336.webp" 
+                               onclick="currentSlide(1)" 
+                               class="thumbnail-nav active"
+                               style="width: 50px; height: 40px; object-fit: cover; border-radius: 4px; cursor: pointer; border: 2px solid rgba(220, 53, 69, 0.8); transition: all 0.3s ease; opacity: 1;"
+                               alt="Thumbnail 1">
+                          <img src="assets/images/kenpo/shuffle/IMG_0090.webp" 
+                               onclick="currentSlide(2)" 
+                               class="thumbnail-nav"
+                               style="width: 50px; height: 40px; object-fit: cover; border-radius: 4px; cursor: pointer; border: 2px solid rgba(255, 255, 255, 0.5); transition: all 0.3s ease; opacity: 0.7;"
+                               alt="Thumbnail 2">
+                        </div>
+                        
+                        <!-- Right Arrow -->
+                        <button class="shuffle-next" onclick="changeSlide(1)" style="background: rgba(0, 0, 0, 0.5); color: white; border: none; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                          <i class="fas fa-chevron-right"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Contact & Location Tab Content -->
+            <div class="tab-pane fade" id="contact-content" role="tabpanel" aria-labelledby="contact-tab">
+              <div class="row align-items-start g-4">
+                <!-- Google Maps -->
+                <div class="col-lg-6">
+                  <div style="padding: 1rem;">
+                    <h4 style="color: #dc3545; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.4rem;">
+                      <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>Find Us
+                    </h4>
+                    
+                    <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                      <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3100.9765625!2d-77.0199!3d39.0027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c95b7c5e99a9%3A0x1234567890abcdef!2s631%20Silver%20Spring%20Ave%2C%20Silver%20Spring%2C%20MD%2020910%2C%20USA!5e0!3m2!1sen!2sus!4v1640995200000!5m2!1sen!2sus"
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                      </iframe>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Contact & Location Information -->
+                <div class="col-lg-6">
+                  <div style="padding: 1rem;">
+                    <h4 style="color: #dc3545; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.4rem;">
+                      <i class="fas fa-map-pin" style="margin-right: 0.5rem;"></i>Location
+                    </h4>
+                    
+                    <div style="background: rgba(248, 248, 248, 0.8); border: 1px solid rgba(220, 53, 69, 0.2); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                      <p style="color: #495057; font-size: 1rem; line-height: 1.6; margin: 0;">
+                        <strong>East Silver Spring Elementary School - Gym</strong><br>
+                        631 Silver Spring Avenue<br>
+                        Silver Spring, MD 20910
+                      </p>
+                    </div>
+                    
+                    <h4 style="color: #dc3545; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.4rem;">
+                      <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>Contact Us
+                    </h4>
+                    
+                    <div style="background: rgba(248, 248, 248, 0.8); border: 1px solid rgba(220, 53, 69, 0.2); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                      <p style="color: #495057; font-size: 1rem; line-height: 1.6; margin: 0;">
+                        <strong>Phone:</strong> (301) 938-2711<br>
+                        <strong>Email:</strong> coach.v@kaizenkaratemd.com
+                      </p>
+                    </div>
+                    
+                    <h4 style="color: #dc3545; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.4rem;">
+                      <i class="fas fa-clock" style="margin-right: 0.5rem;"></i>Class Time
+                    </h4>
+                    
+                    <div style="background: rgba(220, 53, 69, 0.1); border: 2px solid rgba(220, 53, 69, 0.3); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                      <p style="color: #dc3545; font-size: 1.2rem; font-weight: 600; margin: 0;">
+                        Sundays: 1:00pm - 2:00pm
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <div class="lightbox-content">
+    <div class="media-container">
+      <video controls autoplay muted loop class="lightbox-media" id="lightbox-video">
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <img src="" alt="" class="lightbox-media" id="lightbox-image" style="display: none;">
+    </div>
+
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+    <span class="close-btn">&times;</span>
+
+    <!-- Navigation arrows -->
+    <div class="lightbox-nav-wrapper">
+      <button class="lightbox-nav prev">&#10094;</button>
+      <button class="lightbox-nav next">&#10095;</button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section" style="background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%); color: white;">
+  <div class="container">
+    <h2 class="text-center mb-5" style="color: white; font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; text-decoration: underline; text-underline-offset: 0.3em; text-decoration-color: #dc3545;">Contact Kaizen Karate</h2>
+    <p class="text-center mb-5" style="color: #e9ecef; font-size: 1.2rem; line-height: 1.6; font-weight: 400;">
+      Ready to begin your martial arts journey? Have Questions? Contact us to learn more about our programs.
+    </p>
+    <form id="contactForm" action="form-handler.php" method="POST" class="contact-form" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);">
+      <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
+      <div id="formError" class="alert alert-danger mt-3" style="display: none;"></div>
+
+      <div class="row">
+        <!-- First Name -->
+        <div class="col-md-6 mb-3">
+          <label for="firstName" class="form-label" style="color: white; font-weight: 500;">First Name <span class="required" style="color: #dc3545;">*</span></label>
+          <input type="text" class="form-control" id="firstName" name="firstName" required>
+        </div>
+        
+        <!-- Last Name -->
+        <div class="col-md-6 mb-3">
+          <label for="lastName" class="form-label" style="color: white; font-weight: 500;">Last Name <span class="required" style="color: #dc3545;">*</span></label>
+          <input type="text" class="form-control" id="lastName" name="lastName" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Email -->
+        <div class="col-md-6 mb-3">
+          <label for="email" class="form-label" style="color: white; font-weight: 500;">Email <span class="required" style="color: #dc3545;">*</span></label>
+          <input type="email" class="form-control email-input" id="email" name="email" required>
+        </div>
+        
+        <!-- Phone Number -->
+        <div class="col-md-6 mb-3">
+          <label for="phone" class="form-label" style="color: white; font-weight: 500;">Phone Number <span class="required" style="color: #dc3545;">*</span></label>
+          <input 
+            type="tel" 
+            class="form-control phone-input" 
+            id="phone" 
+            name="phone" 
+            required 
+            placeholder="(123) 456-7890" 
+            maxlength="14">
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Age -->
+        <div class="col-md-6 mb-3">
+          <label for="age" class="form-label" style="color: white; font-weight: 500;">Age</label>
+          <input type="number" class="form-control" id="age" name="age" min="4" max="100">
+        </div>
+        
+        <!-- Experience Level -->
+        <div class="col-md-6 mb-3">
+          <label for="experience" class="form-label" style="color: white; font-weight: 500;">Experience Level</label>
+          <select class="form-select" id="experience" name="experience">
+            <option value="">Select Experience Level</option>
+            <option value="Beginner">Complete Beginner</option>
+            <option value="Some Experience">Some Experience</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- How Did You Hear About Us? -->
+        <div class="col-md-6 mb-3">
+          <label for="hearAboutUs" class="form-label" style="color: white; font-weight: 500;">How Did You Hear About Us?</label>
+          <select class="form-select" id="hearAboutUs" name="hearAboutUs">
+            <option value="">Select an option</option>
+            <option value="Google">Google</option>
+            <option value="Friend">Friend</option>
+            <option value="Social Media">Social Media</option>
+            <option value="Advertisement">Advertisement</option>
+            <option value="Walk-by">Walked by the dojo</option>
+          </select>
+        </div>
+        <!-- Program Interest -->
+        <div class="col-md-6 mb-3">
+          <label for="program" class="form-label" style="color: white; font-weight: 500;">Program Interest</label>
+          <select class="form-select" id="program" name="program">
+            <option value="">Select Program</option>
+            <option value="Kids Karate">Kids Karate (Ages 4-12)</option>
+            <option value="Teen Karate">Teen Karate (Ages 13-17)</option>
+            <option value="Adult Karate">Adult Karate (18+)</option>
+            <option value="Family Classes">Family Classes</option>
+            <option value="Private Lessons">Private Lessons</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div class="mb-3">
+        <label for="message" class="form-label" style="color: white; font-weight: 500;">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="3" placeholder="Tell us about your goals and any questions you have..."></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+    <div id="contactThankYou" class="contact-thankyou text-center" style="display: none; background: rgba(255, 255, 255, 0.95); border: 2px solid #dc3545; border-radius: 15px; padding: 30px; margin-top: 20px; backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(164, 51, 43, 0.3);">
+      <div style="margin-bottom: 15px;">
+        <i class="fas fa-check-circle" style="color: #28a745; font-size: 3rem; margin-bottom: 15px;"></i>
+      </div>
+      <h4 style="color: #dc3545; font-family: 'Barlow', sans-serif; font-weight: 700; margin-bottom: 15px; letter-spacing: 1px;">THANK YOU!</h4>
+      <p style="color: #333; font-size: 1.1rem; margin-bottom: 10px; line-height: 1.6;">We've received your message and will contact you soon to discuss your training options.</p>
+      <p style="color: #dc3545; font-weight: 600; font-size: 0.95rem; margin: 0;">
+        <i class="fas fa-envelope" style="margin-right: 8px;"></i>Check your email for a confirmation from coach.v@kaizenkarateusa.com
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <!-- Main Footer Content -->
+    <div class="footer-main">
+      <div class="row g-4">
+        <!-- Column 1: Logo & Description -->
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="footer-brand">
+            <img src="assets/images/logo.png" alt="Kaizen Karate" class="footer-logo">
+            <h5 class="footer-title">Kaizen Karate</h5>
+            <p class="footer-description">
+              Traditional martial arts training in Washington DC, Maryland, Northern Virginia, and New York. 
+              Building character, discipline, and strength through the art of karate.
+            </p>
+          </div>
+      </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <h6 class="footer-heading">Quick Links</h6>
+        <ul class="footer-links">
+            <li><a href="#training-options">Training Options</a></li>
+            <li><a href="#summer-camp">Summer Camp</a></li>
+            <li><a href="#after-school">After School</a></li>
+            <li><a href="#after-school">Weekend Classes</a></li>
+            <li><a href="#belt-exam">Belt Exams</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+        <!-- Column 3: Contact & Social -->
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <h6 class="footer-heading">Get In Touch</h6>
+        <div class="footer-contact">
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>301-938-2711</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:coach.v@kaizenkarateusa.com" style="color: inherit; text-decoration: none;">coach.v@kaizenkarateusa.com</a>
+      </div>
+    </div>
+
+          <!-- Social Media Icons -->
+          <div class="footer-social">
+            <h6 class="social-heading">Follow Us</h6>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/people/Kaizen-Karate/100063714665511/" target="_blank" class="social-icon" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.tiktok.com/@kaizenkaratemd" target="_blank" class="social-icon" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+              </a>
+              <a href="https://www.instagram.com/kaizen_karate/" target="_blank" class="social-icon" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://coachv6z.podbean.com/" target="_blank" class="social-icon" aria-label="Podcast">
+                <i class="fas fa-podcast"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="footer-bottom">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+      <p>&copy; 2025 Kaizen Karate. All Rights Reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <span class="separator">|</span>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Summer Camp Video Lightbox -->
+<div id="summerCampVideoLightbox" class="summer-camp-lightbox">
+  <div class="summer-camp-lightbox-content">
+    <button class="summer-camp-close-btn" onclick="closeSummerCampVideo()">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="summer-camp-video-wrapper">
+      <video id="summerCampVideo" class="summer-camp-lightbox-video" controls preload="metadata" volume="0.8">
+        <source src="assets/videos/summer-camp/kaizen-summer-camp.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts/floating-nav.js"></script>
+  <script src="scripts/video-controls.js"></script>
+  
+  <!-- Video Controls JavaScript -->
+  <script>
+    // Video control functions
+    window.togglePlayPause = function() {
+        const video = document.getElementById('hero-video');
+        const pausePlayIcon = document.getElementById('pausePlayIcon');
+        
+        if (!video) return;
+        
+        if (video.paused) {
+            video.play().then(() => {
+                if (pausePlayIcon) {
+                    pausePlayIcon.className = 'fas fa-pause';
+                }
+            }).catch(e => {
+                console.error('Error playing video:', e);
+            });
+        } else {
+            video.pause();
+            if (pausePlayIcon) {
+                pausePlayIcon.className = 'fas fa-play';
+            }
+        }
+    };
+    
+    window.toggleMute = function() {
+        const video = document.getElementById('hero-video');
+        const muteUnmuteIcon = document.getElementById('muteUnmuteIcon');
+        
+        if (!video) return;
+        
+        if (video.muted) {
+            video.muted = false;
+            if (muteUnmuteIcon) {
+                muteUnmuteIcon.className = 'fas fa-volume-up';
+            }
+        } else {
+            video.muted = true;
+            if (muteUnmuteIcon) {
+                muteUnmuteIcon.className = 'fas fa-volume-mute';
+            }
+        }
+    };
+  </script>
+  
+  <!-- Floating Pills Navigation JavaScript -->
+  <script>
+    // Floating pills navigation functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const navbar = document.getElementById('uniqueNavbar');
+      const mobileToggle = document.getElementById('mobileMenuToggle');
+      const mobileOverlay = document.getElementById('mobileOverlayMenu');
+      const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+      
+      function handleScroll() {
+        const currentScrollY = window.scrollY;
+        
+        // Navbar scroll effect
+        if (currentScrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+        
+        // Hero overlay now stays visible - no scrolling effects
+      }
+      
+      // Throttled scroll listener
+      let ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(function() {
+            handleScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+      
+      // Mobile menu toggle
+      mobileToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mobileOverlay.classList.toggle('active');
+      });
+      
+      // Close mobile menu when clicking nav items (except dropdown toggles)
+      mobileNavItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+          // Don't close menu if this is a dropdown toggle
+          if (!item.classList.contains('mobile-dropdown-toggle')) {
+          mobileToggle.classList.remove('active');
+          mobileOverlay.classList.remove('active');
+          }
+        });
+      });
+      
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (mobileOverlay.classList.contains('active') && 
+            !mobileOverlay.contains(e.target) && 
+            !mobileToggle.contains(e.target)) {
+          mobileToggle.classList.remove('active');
+          mobileOverlay.classList.remove('active');
+        }
+      });
+      
+      // Mobile dropdown functionality
+      const mobileDropdownToggle = document.querySelector('.mobile-dropdown-toggle');
+      const mobileDropdown = document.querySelector('.mobile-dropdown');
+      
+      if (mobileDropdownToggle && mobileDropdown) {
+        mobileDropdownToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          mobileDropdown.classList.toggle('show');
+        });
+        
+        // Close mobile dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+          if (mobileDropdown.classList.contains('show') && 
+              !mobileDropdown.contains(e.target)) {
+            mobileDropdown.classList.remove('show');
+          }
+        });
+      }
+
+    });
+  </script>
+
+  <script src="scripts/lightbox.js"></script>
+  <script src="scripts/amenities.js"></script>
+
+  <script src="scripts/wait-list.js"></script>
+  <script src="scripts/accordion.js"></script>
+  <script src="scripts/test-schedule.js"></script>
+<script src="scripts/kenpo-shuffle.js"></script>
+  <!-- <script src="scripts/chatbot.js"></script> -->
+
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const phoneInputs = document.querySelectorAll(".phone-input");
+
+        phoneInputs.forEach((input) => {
+          input.addEventListener("input", function () {
+            let x = input.value.replace(/\D/g, '').substring(0, 10); // Only digits
+            let formatted = '';
+
+            if (x.length > 0) formatted += '(' + x.substring(0, 3);
+            if (x.length >= 4) formatted += ') ' + x.substring(3, 6);
+            if (x.length >= 7) formatted += '-' + x.substring(6, 10);
+
+            input.value = formatted;
+          });
+        });
+        
+        const emailInputs = document.querySelectorAll(".email-input");
+
+          emailInputs.forEach((input) => {
+            input.addEventListener("input", function () {
+              // Remove spaces and convert to lowercase
+              input.value = input.value.replace(/\s/g, "").toLowerCase();
+
+              // Optionally: Add simple visual feedback
+              if (!input.value.includes("@") || !input.value.includes(".")) {
+                input.classList.add("is-invalid");
+              } else {
+                input.classList.remove("is-invalid");
+              }
+            });
+          });
+    });
+  </script>
+
+  <!-- Summer Camp Video Lightbox JavaScript -->
+  <script>
+    // Summer camp video lightbox functions
+    window.openSummerCampVideo = function() {
+      const lightbox = document.getElementById('summerCampVideoLightbox');
+      const video = document.getElementById('summerCampVideo');
+      
+      if (lightbox && video) {
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        // Small delay to ensure smooth animation
+        setTimeout(() => {
+          lightbox.classList.add('active');
+        }, 10);
+        
+        // Reset video and ensure volume settings
+        video.currentTime = 0;
+        video.volume = 0.8;
+        video.muted = false;
+        
+        // Simple approach: just play the video and let browser controls handle volume
+        video.play().catch(e => {
+          // If autoplay fails, that's ok - user can click play button
+          console.log('Autoplay blocked, user needs to click play:', e);
+        });
+        
+        // Ensure volume is set correctly when video loads
+        video.addEventListener('loadeddata', function() {
+          video.volume = 0.8;
+          video.muted = false;
+        });
+        
+        // Ensure volume when user starts playback
+        video.addEventListener('play', function() {
+          video.volume = 0.8;
+          video.muted = false;
+          // Alert instead of console.log to bypass CSP
+          // alert('Video playing - Volume: ' + video.volume + ', Muted: ' + video.muted);
+        });
+        
+        // Check if video has audio after 2 seconds of playing
+        video.addEventListener('timeupdate', function() {
+          if (video.currentTime > 2) {
+            // Remove this listener after first check
+            video.removeEventListener('timeupdate', arguments.callee);
+            // Simple audio check - if webkitAudioDecodedByteCount exists and is 0, no audio
+            if (typeof video.webkitAudioDecodedByteCount !== 'undefined') {
+              if (video.webkitAudioDecodedByteCount === 0) {
+                alert('WARNING: Video file appears to have no audio track!');
+              }
+            }
+          }
+        });
+      }
+    };
+    
+    window.closeSummerCampVideo = function() {
+      const lightbox = document.getElementById('summerCampVideoLightbox');
+      const video = document.getElementById('summerCampVideo');
+      
+      if (lightbox && video) {
+        lightbox.classList.remove('active');
+        video.pause();
+        document.body.style.overflow = '';
+        
+        // Hide lightbox after animation completes
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+        }, 300);
+      }
+    };
+    
+    // Close lightbox when clicking outside video
+    document.addEventListener('DOMContentLoaded', function() {
+      const lightbox = document.getElementById('summerCampVideoLightbox');
+      
+      if (lightbox) {
+        lightbox.addEventListener('click', function(e) {
+          if (e.target === this) {
+            closeSummerCampVideo();
+          }
+        });
+      }
+      
+      // Close with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeSummerCampVideo();
+        }
+      });
+    });
+  </script>
+
+  <!-- Calendar Preview JavaScript -->
+  <script>
+    // Calendar preview lightbox functions
+    window.openCalendarPreview = function() {
+      const lightbox = document.getElementById('calendarLightbox');
+      
+      if (lightbox) {
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        // Small delay to ensure smooth animation
+        setTimeout(() => {
+          lightbox.style.opacity = '1';
+        }, 10);
+      }
+    };
+    
+    window.closeCalendarPreview = function() {
+      const lightbox = document.getElementById('calendarLightbox');
+      
+      if (lightbox) {
+        lightbox.style.opacity = '0';
+        document.body.style.overflow = '';
+        
+        // Hide lightbox after animation completes
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+        }, 300);
+      }
+    };
+    
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeCalendarPreview();
+        closeWeekendCalendarPreview();
+        closeMatrixLightbox();
+        closeRequirementsLightbox();
+        closeStripeLightbox();
+        closeTestingTipsLightbox();
+        closeVideoInstructionsLightbox();
+        closeGreenBeltLightbox();
+        closePurpleBeltLightbox();
+        closeBlueBeltLightbox();
+        closeBrownBeltLightbox();
+        closeBrownStripeLightbox();
+        closeRedBeltLightbox();
+        closeRedStripeLightbox();
+      }
+    });
+    
+    // Weekend calendar preview lightbox functions
+    window.openWeekendCalendarPreview = function() {
+      const lightbox = document.getElementById('weekendCalendarLightbox');
+      
+      if (lightbox) {
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        // Small delay to ensure smooth animation
+        setTimeout(() => {
+          lightbox.style.opacity = '1';
+        }, 10);
+      }
+    };
+    
+    window.closeWeekendCalendarPreview = function() {
+      const lightbox = document.getElementById('weekendCalendarLightbox');
+      
+      if (lightbox) {
+        lightbox.style.opacity = '0';
+        document.body.style.overflow = '';
+        
+        // Hide lightbox after animation completes
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+        }, 300);
+      }
+    };
+    
+    // Belt Exam Requirements Lightbox Functions
+    window.openMatrixLightbox = function() {
+      const lightbox = document.getElementById('matrixLightbox');
+      
+      if (lightbox) {
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        // Small delay to ensure smooth animation
+        setTimeout(() => {
+          lightbox.style.opacity = '1';
+        }, 10);
+      }
+    };
+    
+    window.closeMatrixLightbox = function() {
+      const lightbox = document.getElementById('matrixLightbox');
+      
+      if (lightbox) {
+        lightbox.style.opacity = '0';
+        document.body.style.overflow = '';
+        
+        // Hide lightbox after animation completes
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+        }, 300);
+      }
+    };
+    
+    window.openRequirementsLightbox = function() {
+      const lightbox = document.getElementById('requirementsLightbox');
+      
+      if (lightbox) {
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        // Small delay to ensure smooth animation
+        setTimeout(() => {
+          lightbox.style.opacity = '1';
+        }, 10);
+      }
+    };
+    
+    window.closeRequirementsLightbox = function() {
+      const lightbox = document.getElementById('requirementsLightbox');
+      
+      if (lightbox) {
+        lightbox.style.opacity = '0';
+        document.body.style.overflow = '';
+        
+        // Hide lightbox after animation completes
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+        }, 300);
+      }
+    };
+    
+    window.openStripeLightbox = function() {
+      const lightbox = document.getElementById('stripeLightbox');
+      
+      if (lightbox) {
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        // Small delay to ensure smooth animation
+        setTimeout(() => {
+          lightbox.style.opacity = '1';
+        }, 10);
+      }
+    };
+    
+    window.closeStripeLightbox = function() {
+      const lightbox = document.getElementById('stripeLightbox');
+      
+      if (lightbox) {
+        lightbox.style.opacity = '0';
+        document.body.style.overflow = '';
+        
+        // Hide lightbox after animation completes
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+        }, 300);
+      }
+    };
+    
+    // Testing Scripts Lightbox Functions
+    window.openTestingTipsLightbox = function() {
+      const lightbox = document.getElementById('testingTipsLightbox');
+      
+      if (lightbox) {
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        setTimeout(() => {
+          lightbox.style.opacity = '1';
+        }, 10);
+      }
+    };
+    
+    window.closeTestingTipsLightbox = function() {
+      const lightbox = document.getElementById('testingTipsLightbox');
+      
+      if (lightbox) {
+        lightbox.style.opacity = '0';
+        document.body.style.overflow = '';
+        
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+        }, 300);
+      }
+    };
+    
+    window.openVideoInstructionsLightbox = function() {
+      const lightbox = document.getElementById('videoInstructionsLightbox');
+      
+      if (lightbox) {
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        setTimeout(() => {
+          lightbox.style.opacity = '1';
+        }, 10);
+      }
+    };
+    
+    window.closeVideoInstructionsLightbox = function() {
+      const lightbox = document.getElementById('videoInstructionsLightbox');
+      
+      if (lightbox) {
+        lightbox.style.opacity = '0';
+        document.body.style.overflow = '';
+        
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+        }, 300);
+      }
+    };
+    
+    window.openGreenBeltLightbox = function() {
+      const lightbox = document.getElementById('greenBeltLightbox');
+      
+      if (lightbox) {
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        setTimeout(() => {
+          lightbox.style.opacity = '1';
+        }, 10);
+      }
+    };
+    
+    window.closeGreenBeltLightbox = function() {
+      const lightbox = document.getElementById('greenBeltLightbox');
+      
+      if (lightbox) {
+        lightbox.style.opacity = '0';
+        document.body.style.overflow = '';
+        
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+        }, 300);
+      }
+    };
+    
+    window.openPurpleBeltLightbox = function() {
+      const lightbox = document.getElementById('purpleBeltLightbox');
+      
+      if (lightbox) {
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        setTimeout(() => {
+          lightbox.style.opacity = '1';
+        }, 10);
+      }
+    };
+    
+    window.closePurpleBeltLightbox = function() {
+      const lightbox = document.getElementById('purpleBeltLightbox');
+      
+      if (lightbox) {
+        lightbox.style.opacity = '0';
+        document.body.style.overflow = '';
+        
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+        }, 300);
+      }
+    };
+    
+    window.openBlueBeltLightbox = function() {
+      const lightbox = document.getElementById('blueBeltLightbox');
+      
+      if (lightbox) {
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        setTimeout(() => {
+          lightbox.style.opacity = '1';
+        }, 10);
+      }
+    };
+    
+    window.closeBlueBeltLightbox = function() {
+      const lightbox = document.getElementById('blueBeltLightbox');
+      
+      if (lightbox) {
+        lightbox.style.opacity = '0';
+        document.body.style.overflow = '';
+        
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+        }, 300);
+      }
+    };
+    
+    window.openBrownBeltLightbox = function() {
+      const lightbox = document.getElementById('brownBeltLightbox');
+      
+      if (lightbox) {
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        setTimeout(() => {
+          lightbox.style.opacity = '1';
+        }, 10);
+      }
+    };
+    
+    window.closeBrownBeltLightbox = function() {
+      const lightbox = document.getElementById('brownBeltLightbox');
+      
+      if (lightbox) {
+        lightbox.style.opacity = '0';
+        document.body.style.overflow = '';
+        
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+        }, 300);
+      }
+    };
+    
+    window.openBrownStripeLightbox = function() {
+      const lightbox = document.getElementById('brownStripeLightbox');
+      if (lightbox) {
+        lightbox.style.opacity = '0';
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        setTimeout(() => {
+          lightbox.style.opacity = '1';
+        }, 10);
+      }
+    };
+    
+    window.closeBrownStripeLightbox = function() {
+      const lightbox = document.getElementById('brownStripeLightbox');
+      
+      if (lightbox) {
+        lightbox.style.opacity = '0';
+        document.body.style.overflow = '';
+        
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+        }, 300);
+      }
+    };
+    
+    window.openRedBeltLightbox = function() {
+      const lightbox = document.getElementById('redBeltLightbox');
+      if (lightbox) {
+        lightbox.style.opacity = '0';
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        setTimeout(() => {
+          lightbox.style.opacity = '1';
+        }, 10);
+      }
+    };
+    
+    window.closeRedBeltLightbox = function() {
+      const lightbox = document.getElementById('redBeltLightbox');
+      
+      if (lightbox) {
+        lightbox.style.opacity = '0';
+        document.body.style.overflow = '';
+        
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+        }, 300);
+      }
+    };
+    
+    window.openRedStripeLightbox = function() {
+      const lightbox = document.getElementById('redStripeLightbox');
+      
+      if (lightbox) {
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        setTimeout(() => {
+          lightbox.style.opacity = '1';
+        }, 10);
+      }
+    };
+    
+    window.closeRedStripeLightbox = function() {
+      const lightbox = document.getElementById('redStripeLightbox');
+      
+      if (lightbox) {
+        lightbox.style.opacity = '0';
+        document.body.style.overflow = '';
+        
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+        }, 300);
+      }
+    };
+  </script>
+
+  <!-- Training Card Read More Functionality -->
+  <script>
+    function toggleDescription(link) {
+      const description = link.previousElementSibling;
+      const isExpanded = description.classList.contains('expanded');
+      
+      if (isExpanded) {
+        description.classList.remove('expanded');
+        link.textContent = 'Read More';
+      } else {
+        description.classList.add('expanded');
+        link.textContent = 'Read Less';
+      }
+    }
+  </script>
+
+  <!-- Include Chatbot Widget -->
+  <?php // include 'includes/chatbot.html'; ?>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script>console.log('Test script loaded');</script>
+  <script src="scripts/scripts.js?v=<?php echo time(); ?>"></script>
+
+</body>
+</html>

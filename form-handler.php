@@ -27,8 +27,8 @@ if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST
 
 // Rate limiting
 $dataDir = __DIR__ . '/data/';
-$rateLimitFile = $dataDir . 'waitlist_rate_limits.txt';
-$submissionFile = $dataDir . 'waitlist_submissions.txt';
+$rateLimitFile = $dataDir . 'contact_rate_limits.txt';
+$submissionFile = $dataDir . 'contact_submissions.txt';
 $ip = $_SERVER['REMOTE_ADDR'];
 $currentTime = time();
 $rateLimitDuration = 300;
@@ -58,14 +58,11 @@ $firstName = clean('firstName');
 $lastName = clean('lastName');
 $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 $phone = clean('phone');
-$moveInDate = clean('moveInDate');
-$budget = clean('budget');
 $hearAboutUs = clean('hearAboutUs');
-$unit = clean('unit');
-$unitType = clean('unitType');
+$program = clean('program');
 $message = clean('message');
 
-if (!$firstName || !$lastName || !$email || !$phone) {
+if (!$firstName || !$lastName || !$email) {
   http_response_code(400);
   echo json_encode(['error' => 'Missing required fields.']);
   exit;
@@ -78,14 +75,11 @@ file_put_contents($rateLimitFile, json_encode($rateLimits));
 $logEntry = implode('|', [
   date('Y-m-d H:i:s'),
   $ip,
-  $unit,
-  $unitType,
   $firstName,
   $lastName,
   $email,
   $phone,
-  $moveInDate,
-  $budget,
+  $program,
   $hearAboutUs,
   $message
 ]) . PHP_EOL;
@@ -93,22 +87,20 @@ $logEntry = implode('|', [
 file_put_contents($submissionFile, $logEntry, FILE_APPEND);
 
 // ✅ Send email using native PHP mail()
-$to = 'thegarrison@doorway.nyc';
-$subject = 'New Wait List Submission';
-$headers = "From: info@thegarrison.nyc\r\n";
+$to = 'coach.v@kaizenkarateusa.com';
+$subject = 'New Contact Form Submission - Kaizen Karate';
+$headers = "From: coach.v@kaizenkarateusa.com\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
 $body = <<<EOD
-New Wait List Inquiry:
+New Contact Form Submission from Kaizen Karate Website:
 
 Name: $firstName $lastName
 Email: $email
 Phone: $phone
-Move-In Date: $moveInDate
-Budget: $budget
-Unit Type: $unitType
-How Did You Hear: $hearAboutUs
+Program Interest: $program
+How Did You Hear About Us: $hearAboutUs
 
 Message:
 $message

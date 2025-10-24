@@ -1,0 +1,1020 @@
+/* Kaizen Karate Test Schedule Page Styling */
+:root {
+    --primary: #ffffff;
+    --secondary: #f8f8f8;
+    --accent: #a4332b;
+    --accent-light: #d4524a;
+    --text-dark: #333433;
+    --text-medium: #535453;
+    --text-light: #737171;
+    --border-light: rgba(164, 51, 43, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-color: var(--primary);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+}
+
+/* Custom dropdown styling */
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.dropdown-selected {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    background: #ffffff;
+    border: 2px solid rgba(164, 51, 43, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.dropdown-selected:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(164, 51, 43, 0.15);
+    transform: translateY(-1px);
+}
+
+.dropdown-selected.active {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(164, 51, 43, 0.1);
+}
+
+.dropdown-arrow {
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-selected.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Dropdown options */
+.dropdown-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border: 2px solid var(--accent);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 8px 25px rgba(164, 51, 43, 0.2);
+    z-index: 1000;
+    max-height: 250px;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.dropdown-options.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-option {
+    padding: 0.75rem 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid rgba(164, 51, 43, 0.1);
+}
+
+.dropdown-option:last-child {
+    border-bottom: none;
+}
+
+.dropdown-option:hover {
+    background: rgba(164, 51, 43, 0.05);
+    color: var(--accent);
+    padding-left: 1.25rem;
+}
+
+.dropdown-option.active {
+    background: rgba(164, 51, 43, 0.1);
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.dropdown-separator {
+    padding: 0.5rem 1rem;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    background: #f8f9fa;
+    cursor: default;
+    border-bottom: 1px solid rgba(164, 51, 43, 0.1);
+}
+
+/* Custom dropdown disabled state */
+.custom-dropdown.disabled .dropdown-selected {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e9ecef 100%);
+    color: #999;
+    cursor: not-allowed;
+    border-color: rgba(164, 51, 43, 0.1);
+}
+
+.custom-dropdown.disabled .dropdown-selected:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filter-group label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.3px;
+    display: block;
+}
+
+/* Legacy select styling removed - using custom dropdowns now */
+
+/* Exclude mixed checkbox styling - matches Reset Filters button */
+.exclude-mixed-checkbox {
+    background: var(--accent);
+    color: white;
+    border: 2px solid var(--accent);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0;
+    width: fit-content;
+    box-shadow: 0 2px 8px rgba(164, 51, 43, 0.3);
+    transition: all 0.3s ease;
+}
+
+.exclude-mixed-checkbox:hover {
+    background: rgba(164, 51, 43, 0.9);
+    box-shadow: 0 4px 12px rgba(164, 51, 43, 0.4);
+    transform: translateY(-1px);
+}
+
+/* Removed slideDown animation */
+
+.checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-start;
+    width: 100%;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.checkbox-label input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    height: 18px;
+    width: 18px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    margin-right: 0.75rem;
+    position: relative;
+}
+
+.checkbox-label:hover .checkmark {
+    background-color: rgba(255, 255, 255, 1);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.checkbox-label input:checked ~ .checkmark {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-label input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-label .checkmark:after {
+    left: 5px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Bottom row container for checkbox and reset button */
+.bottom-row-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    gap: 1rem;
+}
+
+/* Removed checkbox appear animation */
+
+#reset-filters {
+    background: var(--accent);
+    color: white;
+    border: 2px solid var(--accent);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0;
+    box-shadow: 0 2px 8px rgba(164, 51, 43, 0.3);
+    transition: all 0.3s ease;
+}
+
+#reset-filters:hover {
+    background: rgba(164, 51, 43, 0.9);
+    box-shadow: 0 4px 12px rgba(164, 51, 43, 0.4);
+    transform: translateY(-1px);
+}
+
+main {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#schedule-container {
+    background: var(--secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Simple white filter toolbar */
+.schedule-filters-toolbar {
+    background: #ffffff;
+    border-bottom: 2px solid var(--accent);
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Schedule content area */
+#schedule-content {
+    padding: 2rem;
+    min-height: 400px;
+}
+
+/* Schedule toggle button styling */
+.schedule-toggle-btn {
+    background: linear-gradient(135deg, var(--accent) 0%, rgba(164, 51, 43, 0.8) 100%);
+    color: white;
+    border: 2px solid var(--accent);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 2rem auto 0;
+    display: block;
+    box-shadow: 0 4px 16px rgba(164, 51, 43, 0.3);
+    transition: all 0.3s ease;
+    min-width: 200px;
+    text-align: center;
+    letter-spacing: 0.3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.schedule-toggle-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+    transition: left 0.5s ease;
+}
+
+.schedule-toggle-btn:hover::before {
+    left: 100%;
+}
+
+.schedule-toggle-btn:hover {
+    background: linear-gradient(135deg, rgba(164, 51, 43, 1.1) 0%, var(--accent) 100%);
+    box-shadow: 0 6px 20px rgba(164, 51, 43, 0.4);
+    transform: translateY(-2px);
+}
+
+/* When schedule content has no content */
+#schedule-content:empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed var(--border-light);
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* When schedule content has content */
+#schedule-content:not(:empty) {
+    border: none;
+}
+
+#schedule-container:empty::before {
+    content: "Schedule data will appear here when JavaScript is loaded...";
+    color: var(--text-light);
+    font-style: italic;
+    text-align: center;
+}
+
+/* No results message */
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--text-medium);
+    font-style: italic;
+    padding: 3rem 2rem;
+    background: rgba(164, 51, 43, 0.05);
+    border-radius: 12px;
+    border: 2px dashed var(--border-light);
+    margin: 2rem 0;
+}
+
+/* Weekly calendar layout */
+.weekly-calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Single day view - stacked layout optimized for desktop */
+.weekly-calendar.single-day-view {
+    grid-template-columns: 1fr;
+    max-width: 1200px;
+    margin: 1rem auto 0;
+    width: 90%;
+}
+
+.weekly-calendar.single-day-view .day-column {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.weekly-calendar.single-day-view .day-header {
+    background: var(--accent);
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+/* Grid layout for class cards in single-day view on desktop */
+.weekly-calendar.single-day-view .classes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.weekly-calendar.single-day-view .class-card {
+    margin: 0;
+    height: fit-content;
+}
+
+/* Medium to Large screens - tablet and desktop */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    .weekly-calendar.single-day-view .classes-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.25rem;
+        padding: 1.25rem;
+    }
+}
+
+/* Day column styling */
+.day-column {
+    background: white;
+    border-radius: 12px;
+    border: 2px solid var(--border-light);
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Removed day column hover animations */
+
+/* Day header styling */
+.day-header {
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    color: white;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--accent);
+}
+
+/* More classes indicator */
+.more-classes-indicator {
+    text-align: center;
+    padding: 0.75rem;
+    background: rgba(164, 51, 43, 0.05);
+    border-top: 1px solid rgba(164, 51, 43, 0.1);
+    margin-top: auto;
+}
+
+.more-classes-indicator span {
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+
+
+/* No classes placeholder */
+.no-classes {
+    color: var(--text-light);
+    font-style: italic;
+    text-align: center;
+    padding: 2rem 1rem;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Class card styling - Clean & Simple */
+.class-card {
+    background: #ffffff;
+    border: 1px solid rgba(164, 51, 43, 0.2);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Removed class card hover animations */
+
+/* Class time styling - Simple with underline and icon */
+.class-time {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: block;
+    position: relative;
+    padding-bottom: 0.3rem;
+}
+
+.class-time::before {
+    content: "🕐 ";
+    margin-right: 0.3rem;
+    font-size: 0.8rem;
+}
+
+.class-time::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent) 0%, rgba(164, 51, 43, 0.3) 50%, transparent 100%);
+}
+
+.class-end-time {
+    font-size: 0.7rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--text-medium);
+    margin-top: 0.25rem;
+    opacity: 0.8;
+}
+
+/* Class title styling - Clean */
+.class-title {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+/* Class badges container - Flexible Layout */
+.class-badges {
+    margin-bottom: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+/* Class location styling - Simple & Clean */
+.class-location {
+    color: var(--accent);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    position: relative;
+    padding-top: 0.75rem;
+}
+
+.class-location::before {
+    content: "📍 ";
+    margin-right: 0.4rem;
+    font-size: 0.75rem;
+}
+
+.class-location::after {
+    content: '';
+    position: absolute;
+    top: 0.25rem;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent) 0%, rgba(164, 51, 43, 0.3) 50%, transparent 100%);
+}
+
+/* Badge styling - Responsive Design */
+.class-type, .age-group, .belt-level {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 16px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0; /* Removed individual margins - using flexbox gap instead */
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Removed all badge hover animations */
+
+/* Class type badges - Custom Color Schemes */
+.class-type.youth {
+    background: linear-gradient(145deg, var(--accent) 0%, rgba(164, 51, 43, 0.9) 50%, var(--accent) 100%);
+    color: white;
+    box-shadow: 
+        0 2px 8px rgba(164, 51, 43, 0.3),
+        0 1px 3px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.class-type.adult {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    box-shadow: 
+        0 2px 8px rgba(164, 51, 43, 0.2),
+        0 1px 3px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.class-type.mixed {
+    background: linear-gradient(145deg, #2c2c2c 0%, #1a1a1a 50%, #000000 100%);
+    color: white;
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.4),
+        0 1px 3px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    white-space: normal;
+    text-align: center;
+    line-height: 1.2;
+    min-height: auto;
+}
+
+/* Age group badges - Rusty Gold */
+.age-group {
+    background: linear-gradient(145deg, #B8860B 0%, #DAA520 50%, #8B6914 100%);
+    color: white;
+    box-shadow: 
+        0 2px 8px rgba(184, 134, 11, 0.4),
+        0 1px 3px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal;
+    min-height: auto;
+}
+
+/* Belt level badges - Kaizen Red Premium */
+.belt-level {
+    background: linear-gradient(145deg, var(--accent) 0%, var(--accent-light) 50%, var(--accent) 100%);
+    color: white;
+    box-shadow: 
+        0 2px 8px rgba(164, 51, 43, 0.3),
+        0 1px 3px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Individual belt color badges - Premium Series */
+.belt-level.white {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);
+    color: #495057;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.08),
+        0 1px 3px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.belt-level.yellow {
+    background: linear-gradient(145deg, #FFD700 0%, #FFEB3B 50%, #FFC107 100%);
+    color: #8B5000;
+    font-weight: 700;
+    box-shadow: 
+        0 2px 8px rgba(255, 215, 0, 0.4),
+        0 1px 3px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.belt-level.green {
+    background: linear-gradient(145deg, #4CAF50 0%, #66BB6A 50%, #43A047 100%);
+    color: white;
+    box-shadow: 
+        0 2px 8px rgba(76, 175, 80, 0.4),
+        0 1px 3px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.belt-level.purple {
+    background: linear-gradient(145deg, #9C27B0 0%, #BA68C8 50%, #7B1FA2 100%);
+    color: white;
+    box-shadow: 
+        0 2px 8px rgba(156, 39, 176, 0.4),
+        0 1px 3px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.belt-level.blue {
+    background: linear-gradient(145deg, #2196F3 0%, #42A5F5 50%, #1976D2 100%);
+    color: white;
+    box-shadow: 
+        0 2px 8px rgba(33, 150, 243, 0.4),
+        0 1px 3px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.belt-level.brown {
+    background: linear-gradient(145deg, #8D6E63 0%, #A1887F 50%, #6D4C41 100%);
+    color: white;
+    box-shadow: 
+        0 2px 8px rgba(141, 110, 99, 0.4),
+        0 1px 3px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.belt-level.red {
+    background: linear-gradient(145deg, #F44336 0%, #EF5350 50%, #D32F2F 100%);
+    color: white;
+    box-shadow: 
+        0 2px 8px rgba(244, 67, 54, 0.4),
+        0 1px 3px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.belt-level.all-belts {
+    background: linear-gradient(145deg, #757575 0%, #9E9E9E 50%, #616161 100%);
+    color: white;
+    font-weight: 700;
+    box-shadow: 
+        0 2px 8px rgba(117, 117, 117, 0.4),
+        0 1px 3px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.belt-level.master-form {
+    background: linear-gradient(145deg, #FF6F00 0%, #FF8F00 50%, #E65100 100%);
+    color: white;
+    font-weight: 700;
+    box-shadow: 
+        0 3px 12px rgba(255, 111, 0, 0.5),
+        0 1px 3px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal;
+    min-height: auto;
+}
+
+/* Removed Master Form hover animation */
+
+/* Removed shimmer animation */
+
+/* Removed all hover animations and effects */
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    /* Tablet: smaller columns and toolbar */
+    .schedule-filters-toolbar {
+        padding: 1.25rem 1.5rem;
+    }
+    
+    .dropdown-selected {
+        padding: 0.7rem 0.95rem;
+        font-size: 0.85rem;
+    }
+    
+    .dropdown-arrow {
+        font-size: 0.75rem;
+    }
+    
+    .dropdown-option {
+        padding: 0.7rem 0.95rem;
+        font-size: 0.85rem;
+    }
+    
+    .weekly-calendar {
+        gap: 0.5rem;
+    }
+    
+    .day-header {
+        padding: 0.75rem 0.25rem;
+        font-size: 0.9rem;
+    }
+    
+    .class-card {
+        margin: 0.25rem;
+        padding: 0.75rem;
+    }
+    
+    .class-time {
+        font-size: 0.8rem;
+    }
+    
+    .class-title {
+        font-size: 0.8rem;
+    }
+    
+    .class-type, .age-group, .belt-level {
+        font-size: 0.6rem;
+        padding: 0.25rem 0.5rem;
+        margin-right: 0.25rem;
+        margin-bottom: 0.3rem;
+        letter-spacing: 0.6px;
+        border-radius: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .filters {
+        grid-template-columns: 1fr;
+    }
+    
+    .dropdown-selected {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.85rem;
+    }
+    
+    .dropdown-arrow {
+        font-size: 0.75rem;
+    }
+    
+    .dropdown-option {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.85rem;
+    }
+    
+    main {
+        padding: 1rem;
+    }
+    
+    /* Mobile bottom row styling */
+    .bottom-row-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+    
+    .exclude-mixed-checkbox {
+        padding: 0.75rem;
+        text-align: center;
+    }
+    
+    .checkbox-label {
+        font-size: 0.85rem;
+        justify-content: center;
+    }
+    
+    .checkmark {
+        height: 16px;
+        width: 16px;
+        margin-right: 0.5rem;
+    }
+    
+    .checkbox-label .checkmark:after {
+        left: 4px;
+        top: 1px;
+        width: 3px;
+        height: 7px;
+    }
+    
+    /* Mobile: update container structure */
+    #schedule-container {
+        overflow-x: visible;
+    }
+    
+    .schedule-filters-toolbar {
+        padding: 1rem;
+    }
+    
+    #schedule-content {
+        padding: 1rem;
+    }
+    
+    .weekly-calendar {
+        grid-template-columns: 1fr;
+        min-width: unset;
+        gap: 1rem;
+    }
+    
+    .weekly-calendar.single-day-view {
+        max-width: 100%;
+        margin: 1rem 0 0;
+    }
+    
+    .weekly-calendar.single-day-view .day-header {
+        font-size: 1.1rem;
+        padding: 0.875rem;
+    }
+    
+    .weekly-calendar.single-day-view .classes-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .schedule-toggle-btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+        margin: 1.5rem auto 0;
+        min-width: 180px;
+        letter-spacing: 0.2px;
+    }
+    
+    .day-column {
+        min-width: unset;
+        min-height: auto;
+    }
+    
+    .day-header {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+    
+    .more-classes-indicator {
+        padding: 0.5rem;
+    }
+    
+    .more-classes-indicator span {
+        font-size: 0.8rem;
+    }
+    
+    .class-end-time {
+        font-size: 0.65rem;
+        margin-top: 0.2rem;
+    }
+    
+    /* Mobile class card styling - Simple */
+    .class-card {
+        margin: 0.4rem;
+        padding: 0.9rem;
+        border-radius: 6px;
+    }
+    
+    .class-time {
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
+        padding-bottom: 0.25rem;
+    }
+    
+    .class-time::before {
+        font-size: 0.75rem;
+        margin-right: 0.25rem;
+    }
+    
+    .class-title {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .class-badges {
+        margin-bottom: 0.6rem;
+        gap: 0.25rem;
+    }
+    
+    .class-location {
+        font-size: 0.75rem;
+        margin-top: 0.8rem;
+        padding-top: 0.6rem;
+    }
+    
+    .class-location::after {
+        top: 0.2rem;
+    }
+    
+    .class-location::before {
+        font-size: 0.7rem;
+        margin-right: 0.3rem;
+    }
+    
+    .class-type, .age-group, .belt-level {
+        font-size: 0.6rem;
+        padding: 0.25rem 0.5rem;
+        margin: 0; /* Using flexbox gap instead */
+        letter-spacing: 0.2px;
+        border-radius: 14px;
+    }
+    
+    /* Badge gap handled above in main class-badges rule */
+}
+
+ 

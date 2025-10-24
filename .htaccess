@@ -1,0 +1,37 @@
+# Kaizen Karate - Catch-All Redirect to Homepage
+# This will redirect any URL that doesn't match an existing file or directory to the homepage
+
+RewriteEngine On
+
+# Clean URL for policies page
+RewriteRule ^policies/?$ policies.php [L]
+
+# Handle kaizenfitnessusa.com domain redirects
+RewriteCond %{HTTP_HOST} ^(www\.)?kaizenfitnessusa\.com [NC]
+RewriteRule ^summer-camp-2025/?$ https://kaizenkarateusa.com/#summer-camp [R=301,L]
+RewriteCond %{HTTP_HOST} ^(www\.)?kaizenfitnessusa\.com [NC]
+RewriteRule ^about/?$ https://kaizenkarateusa.com/#about [R=301,L]
+RewriteCond %{HTTP_HOST} ^(www\.)?kaizenfitnessusa\.com [NC]
+RewriteRule ^classes/?$ https://kaizenkarateusa.com/#after-school [R=301,L]
+RewriteCond %{HTTP_HOST} ^(www\.)?kaizenfitnessusa\.com [NC]
+RewriteRule ^contact/?$ https://kaizenkarateusa.com/#contact [R=301,L]
+RewriteCond %{HTTP_HOST} ^(www\.)?kaizenfitnessusa\.com [NC]
+RewriteRule ^(.*)$ https://kaizenkarateusa.com/ [R=301,L]
+
+# Allow access to existing files and directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Exclude common file extensions and assets from redirect
+RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg|jpeg|gif|ico|pdf|svg|woff|woff2|ttf|eot)$ [NC]
+
+# Redirect everything else to homepage
+RewriteRule ^(.*)$ index.php [L,R=301]
+
+# Optional: Force HTTPS (uncomment if you have SSL)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Optional: Force www (uncomment if you want to force www)
+# RewriteCond %{HTTP_HOST} !^www\.
+# RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301] 

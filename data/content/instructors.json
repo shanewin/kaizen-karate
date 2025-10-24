@@ -1,0 +1,43 @@
+{
+    "main_instructor": {
+        "name": "Coach V",
+        "title": "Head Instructor & Founder",
+        "image": "assets/images/about/coach-v-about.png",
+        "bio": [
+            "Coach V started practicing martial arts in 1987 as a student at the Karate Institute in Potomac, MD under 9th degree black belt Master Mark Greenspan. Coach V then studied martial arts at several different schools throughout the 1990's. After a brief hiatus from formal training in the early 2000's, Coach V returned to martial arts when he had the opportunity to train at the Budoshin Jujitsu Academy in Falls Church, VA under Sensei Gary Gilmore. While there, Coach V had the privilege of training with and learning from the founder of the system, Professor Jack Seki.",
+            "Coach V went on to earn his business degree at the Robert H. Smith School of Business at the University of Maryland in College Park. He then continued his training in Kenpo under 8th degree black belt Sifu Greg Payne who also holds a 5th degree black belt in Shotokan as well as many other black belts in other arts including Goju ryu & Judo.",
+            "In 2024, Coach V was promoted to 8th degree black belt in IKCA Chinese Kenpo by 10th degree black belt Senior Grandmaster Chuck Sullivan. Additionally, Coach V holds the rank of Nikyu (2nd degree brown belt) in Budoshin JuJitsu and studied Aikido at the ASU headquarters overseen by Saotome Sensei, Shihan.",
+            "In his free time he enjoys spending time with his wife and children as well as running local long distance races which most recently included the Cherry Blossom 10 miler, Rock 'n' Roll 1/2 Marathon, & Marine Corp Marathon in Washington, DC."
+        ]
+    },
+    "other_instructors": [
+        {
+            "id": 1,
+            "name": "Coach Chris Marr",
+            "title": "Instructor",
+            "qualifications": "5th degree black belt with Kaizen Karate, over 20 years of martial arts experience and over 15 years of instructional experience.",
+            "bio": [
+                "Coach Chris holds black belts in Kenpo Karate and Tien Shan Pai Kung Fu and has trained for years in several different martial arts including: Muay Thai (reaching the rank of instructor), boxing, Brazilian Jiu Jitsu (blue belt), and Kyokushin Karate. He is very interested in the history of martial arts, especially arts from East Asia and Southeast Asia.",
+                "Chris' other hobbies include running, lifting weights, and interval training mostly to stay competitive in the martial arts he still practices. He spends most of his free time with his wife and son."
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Coach Zach Knox",
+            "title": "Instructor",
+            "qualifications": "Training since 1987, Zach Knox holds black belts in Tae Kwon Do and Hap Ki Do.",
+            "bio": [
+                "Over the years, he has trained in different arts such as Kung Fu, Shorin Ryu and Goju Ryu Karate, Kickboxing, and Escrima. In his time away from teaching and training, his hobbies include acting, directing, producing, football, hiking, screenplay writing, reading, boxing, and rock climbing."
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Coach David Matusow",
+            "title": "Instructor",
+            "qualifications": "Inspired by 'The Karate Kid', Coach David began his martial arts journey in 1988. He currently holds a 1st degree blackbelt in Tae Kwon Do, a 6th degree blackbelt in non traditional Tang Soo Do, and a 6th degree blackbelt in Chinese Kenpo where he is also an IKCA Certified Instructor.",
+            "bio": [
+                "Coach David earned his first blackbelt in Tae Kwon Do in 1993 under 9th degree Master Jae Kim, his second blackbelt in Tang Soo Do from Kaizen Karate under Coach V, and his third blackbelt in IKCA Chinese Kenpo under Coach V and 10th degree blackbelt Senior Grandmaster Chuck Sullivan."
+            ]
+        }
+    ]
+}

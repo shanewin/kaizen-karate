@@ -1,0 +1,106 @@
+{
+    "hero_video": {
+        "source": "assets\/videos\/hero\/kaizen-hero-video.mp4",
+        "poster": "",
+        "alt": "Kaizen Karate Hero Video"
+    },
+    "logo": {
+        "main": "assets\/images\/logo.png",
+        "mobile": "assets\/images\/logo.png",
+        "alt": "Kaizen Karate Logo"
+    },
+    "instructors": {
+        "coach_v": {
+            "image": "assets\/images\/about\/coach-v-about.png",
+            "alt": "Coach V - Head Instructor"
+        },
+        "hero_overlay": {
+            "image": "assets\/images\/about\/hero-over-1.png",
+            "alt": "About Section Overlay"
+        }
+    },
+    "program_cards": {
+        "after_school": {
+            "image": "assets\/images\/panels\/after-school.jpg",
+            "alt": "After School Program"
+        },
+        "weekends": {
+            "image": "assets\/images\/panels\/weekends.jpg",
+            "alt": "Weekend Classes"
+        },
+        "belt_exams": {
+            "image": "assets\/images\/panels\/belt-exams.jpg",
+            "alt": "Belt Exams"
+        },
+        "online_store": {
+            "image": "assets\/images\/panels\/online-store.jpg",
+            "alt": "Online Store"
+        },
+        "belts": {
+            "image": "assets\/images\/panels\/belts.png",
+            "alt": "Karate Belts"
+        }
+    },
+    "summer_camp": {
+        "video": {
+            "source": "assets\/videos\/summer-camp\/kaizen-summer-camp.mp4",
+            "poster": "assets\/images\/summer-camp\/video-thumb.png",
+            "alt": "Summer Camp Video"
+        },
+        "schedule_image": "assets\/images\/aftersschool\/sep-oct-karate.png"
+    },
+    "dojo": {
+        "van_image": "assets\/images\/dojo\/dojo-van.png",
+        "logo": "assets\/images\/dojo\/Kaizen-Dojo-Logo.webp",
+        "alt": "Kaizen Dojo Mobile Training Van"
+    },
+    "weekend_evening": {
+        "schedule": "assets\/images\/weekend-evening\/weekend-evening-may-june.png",
+        "alt": "Weekend Evening Class Schedule"
+    },
+    "online_store_section": {
+        "image": "assets\/images\/online-store\/online-store.jpg",
+        "alt": "Kaizen Karate Online Store"
+    },
+    "belt_requirements": {
+        "matrix": "assets\/images\/belt-exam\/requirements-test\/kaizen-testing-matrix.png",
+        "requirements": "assets\/images\/belt-exam\/requirements-test\/kaizen-testing-requirement.png",
+        "stripe_system": "assets\/images\/belt-exam\/requirements-test\/kaizen-testing-stripe-system.png"
+    },
+    "kenpo": {
+        "logo": "assets\/images\/kenpo\/kenpo-logo.png",
+        "connection": "assets\/images\/kenpo\/karate-connection.webp",
+        "shuffle_images": [
+            "assets\/images\/kenpo\/shuffle\/IMG_0126.webp",
+            "assets\/images\/kenpo\/shuffle\/IMG_0090.webp",
+            "assets\/images\/kenpo\/shuffle\/IMG_5336.webp"
+        ]
+    },
+    "states": {
+        "maryland": {
+            "image": "assets\/images\/states\/maryland.png",
+            "svg": "assets\/images\/states\/md.svg"
+        },
+        "virginia": {
+            "image": "assets\/images\/states\/virginia.png",
+            "svg": "assets\/images\/states\/va.svg"
+        },
+        "dc": {
+            "image": "assets\/images\/states\/dc.png",
+            "svg": "assets\/images\/states\/dc.svg"
+        },
+        "newyork": {
+            "image": "assets\/images\/states\/newyork.png",
+            "svg": "assets\/images\/states\/ny.svg"
+        }
+    },
+    "favicon": {
+        "ico": "favicon\/favicon.ico",
+        "png_96": "favicon\/favicon-96x96.png",
+        "svg": "favicon\/favicon.svg",
+        "apple_touch": "favicon\/apple-touch-icon.png",
+        "manifest": "favicon\/site.webmanifest",
+        "manifest_192": "favicon\/web-app-manifest-192x192.png",
+        "manifest_512": "favicon\/web-app-manifest-512x512.png"
+    }
+}
