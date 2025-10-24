@@ -140,6 +140,53 @@ if ($_POST) {
             $message = error_message('Failed to save camp locations.');
         }
     }
+    
+    // Handle Registration Information Update
+    if (isset($_POST['update_registration_info']) && verify_csrf_token($_POST['csrf_token'])) {
+        $content = load_json_data('site-content');
+        
+        // Update Registration Information
+        $content['summer_camp']['registration_info'] = [
+            'age_range' => sanitize_input($_POST['reg_age_range']),
+            'space_notice' => sanitize_input($_POST['reg_space_notice']),
+            'header_text' => sanitize_input($_POST['reg_header_text']),
+            'subtext' => sanitize_input($_POST['reg_subtext']),
+            'new_families_url' => sanitize_input($_POST['reg_new_families_url']),
+            'returning_families_url' => sanitize_input($_POST['reg_returning_families_url'])
+        ];
+        
+        if (save_json_data('site-content', $content)) {
+            $message = success_message('Registration information updated successfully!');
+        } else {
+            $message = error_message('Failed to save registration information.');
+        }
+    }
+    
+    // Handle Accordion Sections Update
+    if (isset($_POST['update_accordion_sections']) && verify_csrf_token($_POST['csrf_token'])) {
+        $content = load_json_data('site-content');
+        
+        // Process accordion sections data
+        $accordion_sections = [];
+        if (isset($_POST['accordion_title']) && is_array($_POST['accordion_title'])) {
+            for ($i = 0; $i < count($_POST['accordion_title']); $i++) {
+                if (!empty($_POST['accordion_title'][$i])) {
+                    $accordion_sections[] = [
+                        'title' => sanitize_input($_POST['accordion_title'][$i]),
+                        'content' => $_POST['accordion_content'][$i] ?? '' // Don't sanitize rich content
+                    ];
+                }
+            }
+        }
+        
+        $content['summer_camp']['accordion_sections'] = $accordion_sections;
+        
+        if (save_json_data('site-content', $content)) {
+            $message = success_message('Accordion sections updated successfully!');
+        } else {
+            $message = error_message('Failed to save accordion sections.');
+        }
+    }
 }
 
 // Load current content
@@ -216,7 +263,7 @@ $default_camp_locations = [
 $summer_camp_data['features'] = $summer_camp_data['features'] ?? $default_features;
 $summer_camp_data['camp_locations'] = $summer_camp_data['camp_locations'] ?? $default_camp_locations;
 
-// Default values for Step 1 sections
+// Default values for basic sections
 $default_data = [
     'basic_info' => [
         'title' => 'Summer Camp 2025',
@@ -274,7 +321,12 @@ $summer_camp = array_merge($default_data, $summer_camp);
         .form-control:focus { border-color: var(--kaizen-primary); box-shadow: 0 0 0 0.2rem rgba(164, 51, 43, 0.25); }
         .alert-kaizen { background: linear-gradient(45deg, rgba(164, 51, 43, 0.1), rgba(164, 51, 43, 0.05)); border: 1px solid rgba(164, 51, 43, 0.2); color: var(--kaizen-primary); }
         .video-preview { min-height: 200px; display: flex; align-items: center; justify-content: center; }
+        .transition-icon { transition: transform 0.3s ease; }
+        .section-title h3 { margin: 0; }
     </style>
+    
+    <!-- TinyMCE -->
+    <script src="https://cdn.tiny.cloud/1/fq0i7hnb9d2b3crowpl5mnry1dqw0zfcdycrxo7s3qohwuj6/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -294,10 +346,10 @@ $summer_camp = array_merge($default_data, $summer_camp);
 
 <!-- Summer Camp Management -->
 <div class="content-section">
-    <h3 class="section-title"><i class="fas fa-sun me-2"></i>Summer Camp Management - Step 1</h3>
+    <h3 class="section-title"><i class="fas fa-sun me-2"></i>Summer Camp Management</h3>
     <div class="alert alert-kaizen border-0 mb-4">
         <i class="fas fa-info-circle me-2"></i>
-        <strong>Summer Camp:</strong> Manage the summer camp section content. This is Step 1 of 3 - covering basic information, special offers, and video settings.
+        <strong>Summer Camp:</strong> Manage the summer camp section content including basic information, special offers, and video settings.
     </div>
     
     <form method="POST" enctype="multipart/form-data">
@@ -512,18 +564,28 @@ $summer_camp = array_merge($default_data, $summer_camp);
         </div>
         
         <button type="submit" class="btn btn-kaizen">
-            <i class="fas fa-save me-2"></i>Save Summer Camp Settings (Step 1)
+            <i class="fas fa-save me-2"></i>Save Summer Camp Settings
         </button>
     </form>
 </div>
 
 <!-- Features Grid Management -->
 <div class="content-section">
-    <h3 class="section-title"><i class="fas fa-th-large me-2"></i>Features Grid Management</h3>
-    <div class="alert alert-kaizen border-0 mb-4">
-        <i class="fas fa-info-circle me-2"></i>
-        <strong>Features Grid:</strong> Manage the clickable feature icons shown next to the video. These features help users understand what your Summer Camp offers.
-    </div>
+    <button class="btn btn-link text-decoration-none p-0 w-100 text-start" type="button" 
+            data-bs-toggle="collapse" data-bs-target="#featuresGridCollapse" 
+            aria-expanded="false" aria-controls="featuresGridCollapse"
+            style="border: none; background: none;">
+        <h3 class="section-title d-flex align-items-center justify-content-between">
+            <span><i class="fas fa-th-large me-2"></i>Features Grid Management</span>
+            <i class="fas fa-chevron-down transition-icon" id="featuresGridIcon"></i>
+        </h3>
+    </button>
+    
+    <div class="collapse" id="featuresGridCollapse">
+        <div class="alert alert-kaizen border-0 mb-4">
+            <i class="fas fa-info-circle me-2"></i>
+            <strong>Features Grid:</strong> Manage the clickable feature icons shown next to the video. These features help users understand what your Summer Camp offers.
+        </div>
     
     <form method="POST" enctype="multipart/form-data">
         <input type="hidden" name="csrf_token" value="<?php echo generate_csrf_token(); ?>">
@@ -576,6 +638,7 @@ $summer_camp = array_merge($default_data, $summer_camp);
             <i class="fas fa-save me-2"></i>Update Features Grid
         </button>
     </form>
+    </div>
 </div>
 
 <!-- Camp Locations Management -->
@@ -680,14 +743,147 @@ $summer_camp = array_merge($default_data, $summer_camp);
     </form>
 </div>
 
-<!-- Next Steps Information -->
+<!-- Registration Information Management -->
+<div class="content-section">
+    <h3 class="section-title"><i class="fas fa-user-plus me-2"></i>Registration Information</h3>
+    <div class="alert alert-kaizen border-0 mb-4">
+        <i class="fas fa-info-circle me-2"></i>
+        <strong>Registration Information:</strong> Manage the registration section content including age range, notices, and registration URLs.
+    </div>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="csrf_token" value="<?php echo generate_csrf_token(); ?>">
+        <input type="hidden" name="update_registration_info" value="1">
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-label"><strong>Age Range</strong></label>
+                    <input type="text" class="form-control" name="reg_age_range" 
+                           value="<?php echo htmlspecialchars($summer_camp_data['registration_info']['age_range'] ?? 'Ages 5-12 years old'); ?>"
+                           placeholder="e.g., Ages 5-12 years old">
+                    <div class="form-text">Age range displayed in registration section</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-label"><strong>Space Notice</strong></label>
+                    <input type="text" class="form-control" name="reg_space_notice" 
+                           value="<?php echo htmlspecialchars($summer_camp_data['registration_info']['space_notice'] ?? 'Space is limited'); ?>"
+                           placeholder="e.g., Space is limited">
+                    <div class="form-text">Notice about space availability</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-label"><strong>Header Text</strong></label>
+                    <input type="text" class="form-control" name="reg_header_text" 
+                           value="<?php echo htmlspecialchars($summer_camp_data['registration_info']['header_text'] ?? 'Ready to Register?'); ?>"
+                           placeholder="e.g., Ready to Register?">
+                    <div class="form-text">Main header for registration section</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-label"><strong>Subtext</strong></label>
+                    <input type="text" class="form-control" name="reg_subtext" 
+                           value="<?php echo htmlspecialchars($summer_camp_data['registration_info']['subtext'] ?? 'Choose your registration option below'); ?>"
+                           placeholder="e.g., Choose your registration option below">
+                    <div class="form-text">Subtitle text under header</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-label"><strong>New Families Registration URL</strong></label>
+                    <input type="url" class="form-control" name="reg_new_families_url" 
+                           value="<?php echo htmlspecialchars($summer_camp_data['registration_info']['new_families_url'] ?? 'https://kaizenkarate.campmanagement.com/p/request_for_info_m.php?action=enroll'); ?>"
+                           placeholder="https://...">
+                    <div class="form-text">URL for new family registration</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-label"><strong>Returning Families Registration URL</strong></label>
+                    <input type="url" class="form-control" name="reg_returning_families_url" 
+                           value="<?php echo htmlspecialchars($summer_camp_data['registration_info']['returning_families_url'] ?? 'https://kaizenkarate.campmanagement.com/p/campers/login_m.php'); ?>"
+                           placeholder="https://...">
+                    <div class="form-text">URL for returning family registration</div>
+                </div>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-kaizen">
+            <i class="fas fa-save me-2"></i>Update Registration Information
+        </button>
+    </form>
+</div>
+
+<!-- Accordion Content Management -->
+<div class="content-section">
+    <h3 class="section-title"><i class="fas fa-list me-2"></i>Accordion Content Management</h3>
+    <div class="alert alert-kaizen border-0 mb-4">
+        <i class="fas fa-info-circle me-2"></i>
+        <strong>Accordion Sections:</strong> Manage the "More Information about Summer Camp" accordion sections. Each section has a title and rich content editor.
+    </div>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="csrf_token" value="<?php echo generate_csrf_token(); ?>">
+        <input type="hidden" name="update_accordion_sections" value="1">
+        
+        <div id="accordion-container">
+            <?php foreach ($summer_camp_data['accordion_sections'] ?? [] as $index => $section): ?>
+            <div class="accordion-item border rounded p-4 mb-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="mb-0"><i class="fas fa-chevron-down me-2 text-primary"></i>Section <?php echo $index + 1; ?></h5>
+                    <button type="button" class="btn btn-outline-danger btn-sm" onclick="removeAccordionSection(this)">
+                        <i class="fas fa-trash me-1"></i>Remove Section
+                    </button>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label"><strong>Section Title</strong></label>
+                    <input type="text" class="form-control" name="accordion_title[]" 
+                           value="<?php echo htmlspecialchars($section['title'] ?? ''); ?>"
+                           placeholder="e.g., Camp Locations & Options">
+                    <div class="form-text">Title displayed in the accordion header</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label"><strong>Section Content</strong></label>
+                    <textarea class="form-control tinymce-editor" name="accordion_content[]" rows="10"
+                              placeholder="Enter rich content here..."><?php echo htmlspecialchars($section['content'] ?? ''); ?></textarea>
+                    <div class="form-text">Rich content with formatting, lists, tables, etc.</div>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+        
+        <div class="mt-3 mb-4">
+            <button type="button" class="btn btn-outline-primary" onclick="addAccordionSection()">
+                <i class="fas fa-plus me-2"></i>Add Accordion Section
+            </button>
+        </div>
+        
+        <button type="submit" class="btn btn-kaizen">
+            <i class="fas fa-save me-2"></i>Update Accordion Sections
+        </button>
+    </form>
+</div>
+
+<!-- Admin Sections Overview -->
 <div class="content-section">
     <h3 class="section-title"><i class="fas fa-info-circle me-2"></i>Implementation Progress</h3>
     <div class="row">
         <div class="col-md-4">
             <div class="card border-success">
                 <div class="card-header bg-success text-white">
-                    <h6 class="mb-0"><i class="fas fa-check-circle me-2"></i>Step 1: Basic Settings</h6>
+                    <h6 class="mb-0"><i class="fas fa-check-circle me-2"></i>Basic Settings</h6>
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled mb-0">
@@ -701,7 +897,7 @@ $summer_camp = array_merge($default_data, $summer_camp);
         <div class="col-md-4">
             <div class="card border-warning">
                 <div class="card-header bg-warning text-dark">
-                    <h6 class="mb-0"><i class="fas fa-clock me-2"></i>Step 2: Dynamic Elements</h6>
+                    <h6 class="mb-0"><i class="fas fa-clock me-2"></i>Dynamic Elements</h6>
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled mb-0">
@@ -714,7 +910,7 @@ $summer_camp = array_merge($default_data, $summer_camp);
         <div class="col-md-4">
             <div class="card border-secondary">
                 <div class="card-header bg-secondary text-white">
-                    <h6 class="mb-0"><i class="fas fa-hourglass-start me-2"></i>Step 3: Complex Content</h6>
+                    <h6 class="mb-0"><i class="fas fa-hourglass-start me-2"></i>Advanced Content</h6>
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled mb-0">
@@ -743,6 +939,22 @@ document.addEventListener('DOMContentLoaded', function() {
     
     offerEnabled.addEventListener('change', toggleOfferFields);
     toggleOfferFields(); // Initialize on page load
+    
+    // Handle Features Grid collapse icon rotation
+    const featuresGridCollapse = document.getElementById('featuresGridCollapse');
+    const featuresGridIcon = document.getElementById('featuresGridIcon');
+    
+    if (featuresGridCollapse && featuresGridIcon) {
+        featuresGridCollapse.addEventListener('show.bs.collapse', function () {
+            featuresGridIcon.classList.remove('fa-chevron-down');
+            featuresGridIcon.classList.add('fa-chevron-up');
+        });
+        
+        featuresGridCollapse.addEventListener('hide.bs.collapse', function () {
+            featuresGridIcon.classList.remove('fa-chevron-up');
+            featuresGridIcon.classList.add('fa-chevron-down');
+        });
+    }
 });
 
 function previewImage(input, previewId) {
@@ -935,6 +1147,84 @@ function removeLocation(button) {
         header.innerHTML = `<i class="fas fa-map-pin me-2 text-primary"></i>Location ${index + 1}`;
     });
 }
+
+// Accordion Sections Management Functions
+function addAccordionSection() {
+    const container = document.getElementById('accordion-container');
+    const sectionCount = container.children.length + 1;
+    const newItem = document.createElement('div');
+    newItem.className = 'accordion-item border rounded p-4 mb-4';
+    newItem.innerHTML = `
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="mb-0"><i class="fas fa-chevron-down me-2 text-primary"></i>Section ${sectionCount}</h5>
+            <button type="button" class="btn btn-outline-danger btn-sm" onclick="removeAccordionSection(this)">
+                <i class="fas fa-trash me-1"></i>Remove Section
+            </button>
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label"><strong>Section Title</strong></label>
+            <input type="text" class="form-control" name="accordion_title[]" 
+                   placeholder="e.g., Camp Locations & Options">
+            <div class="form-text">Title displayed in the accordion header</div>
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label"><strong>Section Content</strong></label>
+            <textarea class="form-control tinymce-editor" name="accordion_content[]" rows="10"
+                      placeholder="Enter rich content here..."></textarea>
+            <div class="form-text">Rich content with formatting, lists, tables, etc.</div>
+        </div>
+    `;
+    container.appendChild(newItem);
+    
+    // Initialize TinyMCE for the new editor
+    initTinyMCE();
+}
+
+function removeAccordionSection(button) {
+    button.closest('.accordion-item').remove();
+    // Update section numbers
+    const container = document.getElementById('accordion-container');
+    const accordionItems = container.querySelectorAll('.accordion-item');
+    accordionItems.forEach((item, index) => {
+        const header = item.querySelector('h5');
+        header.innerHTML = `<i class="fas fa-chevron-down me-2 text-primary"></i>Section ${index + 1}`;
+    });
+}
+
+// TinyMCE Initialization
+function initTinyMCE() {
+    tinymce.init({
+        selector: '.tinymce-editor:not(.mce-initialized)',
+        apiKey: 'fq0i7hnb9d2b3crowpl5mnry1dqw0zfcdycrxo7s3qohwuj6',
+        plugins: [
+            'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+            'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+            'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
+        ],
+        toolbar: 'undo redo | blocks | bold italic underline strikethrough | ' +
+                'alignleft aligncenter alignright alignjustify | ' +
+                'bullist numlist outdent indent | ' +
+                'removeformat | help | ' +
+                'forecolor backcolor | ' +
+                'table | link | code',
+        content_style: 'body { font-family: -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif; font-size: 14px; }',
+        height: 400,
+        menubar: false,
+        branding: false,
+        setup: function(editor) {
+            editor.on('init', function() {
+                editor.getElement().classList.add('mce-initialized');
+            });
+        }
+    });
+}
+
+// Initialize TinyMCE on page load
+document.addEventListener('DOMContentLoaded', function() {
+    initTinyMCE();
+});
 </script>
 
             </div>

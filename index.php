@@ -1374,17 +1374,27 @@ require_once 'includes/content-loader.php';
 </section>
 
 <!-- Summer Camp Section -->
+<?php 
+$summer_camp = get_content('summer_camp');
+$features = $summer_camp['features'] ?? [];
+$camp_locations = $summer_camp['camp_locations'] ?? [];
+$video = $summer_camp['video'] ?? [];
+$special_offer = $summer_camp['special_offer'] ?? [];
+$registration_info = $summer_camp['registration_info'] ?? [];
+$accordion_sections = $summer_camp['accordion_sections'] ?? [];
+?>
 <section id="summer-camp" class="py-5" style="background-color: #f8f9fa;">
   <div class="container">
-    <h2 class="text-center mb-4 summer-camp-title">Summer Camp 2025</h2>
-    <p class="text-center mb-2 summer-camp-subtitle">4 campsites for campers ages 5-12</p>
+    <h2 class="text-center mb-4 summer-camp-title"><?php echo display_text('summer_camp', 'basic_info.title', 'Summer Camp 2025'); ?></h2>
+    <p class="text-center mb-2 summer-camp-subtitle"><?php echo display_text('summer_camp', 'basic_info.subtitle', '4 campsites for campers ages 5-12'); ?></p>
     
     <!-- Early Registration Special Offer -->
+    <?php if ($special_offer['enabled'] ?? false): ?>
     <div class="text-center mb-5">
       <div style="background: linear-gradient(135deg, rgba(220, 53, 69, 0.12), rgba(220, 53, 69, 0.06)); border: 3px solid rgba(220, 53, 69, 0.4); border-radius: 16px; padding: 2rem; text-align: center; position: relative; box-shadow: 0 8px 25px rgba(220, 53, 69, 0.15);">
         <!-- Special Offer Badge -->
         <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #dc3545, #c82333); color: white; padding: 8px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);">
-          <i class="fas fa-star" style="margin-right: 6px;"></i>SPECIAL OFFER - SAVE $150 PER WEEK
+          <i class="fas fa-star" style="margin-right: 6px;"></i><?php echo display_text('summer_camp', 'special_offer.badge_text', 'SPECIAL OFFER - SAVE $150 PER WEEK'); ?>
       </div>
         
         <!-- Main Content -->
@@ -1392,71 +1402,56 @@ require_once 'includes/content-loader.php';
           <!-- Deadline -->
           <div style="margin-bottom: 20px;">
             <i class="fas fa-calendar-alt" style="color: #dc3545; font-size: 1.5rem; margin-bottom: 8px;"></i>
-            <h4 style="color: #dc3545; font-weight: 700; margin-bottom: 8px; font-size: 1.3rem;">Early Registration Deadline</h4>
-            <p style="color: #dc3545; font-weight: 600; font-size: 1.1rem; margin: 0;">March 31st, 2025</p>
+            <h4 style="color: #dc3545; font-weight: 700; margin-bottom: 8px; font-size: 1.3rem;"><?php echo display_text('summer_camp', 'special_offer.deadline_label', 'Early Registration Deadline'); ?></h4>
+            <p style="color: #dc3545; font-weight: 600; font-size: 1.1rem; margin: 0;"><?php echo display_text('summer_camp', 'special_offer.deadline_date', 'March 31st, 2025'); ?></p>
       </div>
           
           <!-- Free Care Benefit -->
           <div style="margin-bottom: 20px; padding: 20px; background: linear-gradient(135deg, rgba(40, 167, 69, 0.2), rgba(40, 167, 69, 0.1)); border: 3px solid #28a745; border-radius: 16px; position: relative; box-shadow: 0 6px 20px rgba(40, 167, 69, 0.25);">
             <!-- FREE Badge -->
             <div style="position: absolute; top: -15px; right: 20px; background: linear-gradient(135deg, #28a745, #20c997); color: white; padding: 6px 16px; border-radius: 15px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 3px 10px rgba(40, 167, 69, 0.4);">
-              <i class="fas fa-check-circle" style="margin-right: 4px;"></i>100% FREE
+              <i class="fas fa-check-circle" style="margin-right: 4px;"></i><?php echo display_text('summer_camp', 'special_offer.free_badge_text', '100% FREE'); ?>
             </div>
             
             <div style="text-align: center;">
               <i class="fas fa-clock" style="color: #28a745; font-size: 2.5rem; margin-bottom: 15px; text-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);"></i>
-              <h3 style="color: #28a745; font-weight: 800; margin-bottom: 12px; font-size: 1.6rem; text-shadow: 0 1px 2px rgba(40, 167, 69, 0.2); text-transform: uppercase;">FREE <span style="font-weight: 900; text-shadow: 0 2px 4px rgba(40, 167, 69, 0.4);">BEFORE & AFTER CARE</span></h3>
-              <p style="color: #28a745; font-weight: 700; font-size: 1.2rem; margin: 0; text-shadow: 0 1px 2px rgba(40, 167, 69, 0.2);">For ALL weeks when you register before March 31st, 2025</p>
+              <h3 style="color: #28a745; font-weight: 800; margin-bottom: 12px; font-size: 1.6rem; text-shadow: 0 1px 2px rgba(40, 167, 69, 0.2); text-transform: uppercase;"><?php echo display_text('summer_camp', 'special_offer.free_care_heading', 'FREE BEFORE & AFTER CARE'); ?></h3>
+              <p style="color: #28a745; font-weight: 700; font-size: 1.2rem; margin: 0; text-shadow: 0 1px 2px rgba(40, 167, 69, 0.2);"><?php echo display_text('summer_camp', 'special_offer.free_care_description', 'For ALL weeks when you register before March 31st, 2025'); ?></p>
             </div>
           </div>
           
         </div>
       </div>
     </div>
+    <?php endif; ?>
     
     <!-- Summer Camp Features & Video -->
     <div class="row align-items-stretch mb-5">
       <!-- Left Column: Feature Icons -->
       <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
         <div class="camp-features-standalone">
-          <div class="feature-item" onclick="scrollToDailyScheduleInfo()" style="cursor: pointer;">
+          <?php foreach ($features as $feature): ?>
+          <div class="feature-item" onclick="<?php echo htmlspecialchars($feature['onclick'] ?? ''); ?>" style="cursor: pointer;">
             <div class="feature-icon-circle">
-              <i class="fas fa-fist-raised"></i>
-          </div>
-            <span class="feature-text">Karate Instruction</span>
-          </div>
-          <div class="feature-item" onclick="scrollToFieldTripsInfo()" style="cursor: pointer;">
-            <div class="feature-icon-circle">
-              <i class="fas fa-bus"></i>
+              <i class="<?php echo htmlspecialchars($feature['icon'] ?? 'fas fa-star'); ?>"></i>
             </div>
-            <span class="feature-text">Field Trips</span>
+            <span class="feature-text"><?php echo htmlspecialchars($feature['text'] ?? ''); ?></span>
           </div>
-          <div class="feature-item" onclick="scrollToSwimmingInfo()" style="cursor: pointer;">
-            <div class="feature-icon-circle">
-              <i class="fas fa-swimming-pool"></i>
-            </div>
-            <span class="feature-text">Pool Time</span>
-          </div>
-          <div class="feature-item" onclick="scrollToFieldTripsInfo()" style="cursor: pointer;">
-            <div class="feature-icon-circle">
-              <i class="fas fa-medal"></i>
-            </div>
-            <span class="feature-text">Belt Exams</span>
-          </div>
+          <?php endforeach; ?>
         </div>
       </div>
       
       <!-- Right Column: Video -->
       <div class="col-lg-7 col-md-6">
-        <div class="summer-camp-video-container" onclick="openSummerCampVideo()">
-          <img src="assets/images/summer-camp/video-thumb.png" alt="Summer Camp Video Preview" class="summer-camp-video-thumbnail">
+        <div class="summer-camp-video-container" onclick="<?php echo htmlspecialchars($video['onclick'] ?? 'openSummerCampVideo()'); ?>">
+          <img src="<?php echo htmlspecialchars($video['thumbnail'] ?? 'assets/images/summer-camp/video-thumb.png'); ?>" alt="<?php echo htmlspecialchars($video['thumbnail_alt'] ?? 'Summer Camp Video Preview'); ?>" class="summer-camp-video-thumbnail">
           <div class="video-play-overlay">
             <div class="play-button">
               <i class="fas fa-play"></i>
           </div>
             <div class="video-overlay-text">
-              <h4>Watch Our Summer Camp Experience</h4>
-              <p>See what makes Kaizen Summer Camp special</p>
+              <h4><?php echo htmlspecialchars($video['overlay_title'] ?? 'Watch Our Summer Camp Experience'); ?></h4>
+              <p><?php echo htmlspecialchars($video['overlay_description'] ?? 'See what makes Kaizen Summer Camp special'); ?></p>
             </div>
             <div class="video-overlay-logo">
               <img src="assets/images/logo.png" alt="Kaizen Karate" class="overlay-logo">
@@ -1479,90 +1474,29 @@ require_once 'includes/content-loader.php';
             <div class="row justify-content-center">
               <div class="col-lg-10 col-xl-9">
                 <div class="row justify-content-center">
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 px-2">
-          <div class="campsite-card">
-            <div class="campsite-header">
-              <h3 class="campsite-title">Maryland</h3>
-              <div class="campsite-divider"></div>
-          </div>
-            <div class="campsite-content">
-              <p class="campsite-venue">Calvary Lutheran Church</p>
-              <p class="campsite-address">9545 Georgia Ave.<br>Silver Spring, MD 20910</p>
-              <div class="campsite-dates">
-                <span class="campsite-duration">June 11 - August 22</span>
-                <span class="campsite-weeks">10 weeks</span>
-              </div>
-              <div class="campsite-buttons">
-                <a href="https://kaizenkarate.campmanagement.com/p/request_for_info_m.php?action=enroll" class="campsite-btn campsite-btn-primary" target="_blank">Register - New Families</a>
-                <a href="https://kaizenkarate.campmanagement.com/p/campers/login_m.php" class="campsite-btn campsite-btn-secondary" target="_blank">Register - Returning Families</a>
-              </div>
-            </div>
-        </div>
-      </div>
-
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 px-2">
-          <div class="campsite-card">
-            <div class="campsite-header">
-              <h3 class="campsite-title">Northwest DC</h3>
-              <div class="campsite-divider"></div>
-            </div>
-            <div class="campsite-content">
-              <p class="campsite-venue">Washington Hebrew Congregation</p>
-              <p class="campsite-address">3935 Macomb St NW<br>Washington, DC 20016</p>
-              <div class="campsite-dates">
-                <span class="campsite-duration">June 23 - August 15</span>
-                <span class="campsite-weeks">8 weeks</span>
-              </div>
-              <div class="campsite-buttons">
-                <a href="https://kaizenkarate.campmanagement.com/p/request_for_info_m.php?action=enroll" class="campsite-btn campsite-btn-primary" target="_blank">Register - New Families</a>
-                <a href="https://kaizenkarate.campmanagement.com/p/campers/login_m.php" class="campsite-btn campsite-btn-secondary" target="_blank">Register - Returning Families</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 px-2">
-          <div class="campsite-card">
-            <div class="campsite-header">
-              <h3 class="campsite-title">Capitol Hill DC</h3>
-              <div class="campsite-divider"></div>
-            </div>
-            <div class="campsite-content">
-              <p class="campsite-venue">Christ Church + Washington Parish</p>
-              <p class="campsite-address">620 G St. SE<br>Washington, DC 20003</p>
-              <div class="campsite-dates">
-                <span class="campsite-duration">July 21 - August 22</span>
-                <span class="campsite-weeks">5 weeks</span>
-              </div>
-              <div class="campsite-buttons">
-                <a href="https://kaizenkarate.campmanagement.com/p/request_for_info_m.php?action=enroll" class="campsite-btn campsite-btn-primary" target="_blank">Register - New Families</a>
-                <a href="https://kaizenkarate.campmanagement.com/p/campers/login_m.php" class="campsite-btn campsite-btn-secondary" target="_blank">Register - Returning Families</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 px-2">
-          <div class="campsite-card">
-            <div class="campsite-header">
-              <h3 class="campsite-title">Virginia</h3>
-              <div class="campsite-divider"></div>
-            </div>
-            <div class="campsite-content">
-              <p class="campsite-venue">Arlington Community Church</p>
-              <p class="campsite-address">6040 Wilson Blvd.<br>Arlington, VA 22205</p>
-              <div class="campsite-dates">
-                <span class="campsite-duration">July 7 - August 1</span>
-                <span class="campsite-weeks">4 weeks</span>
-              </div>
-              <div class="campsite-buttons">
-                <a href="https://kaizenkarate.campmanagement.com/p/request_for_info_m.php?action=enroll" class="campsite-btn campsite-btn-primary" target="_blank">Register - New Families</a>
-                <a href="https://kaizenkarate.campmanagement.com/p/campers/login_m.php" class="campsite-btn campsite-btn-secondary" target="_blank">Register - Returning Families</a>
-              </div>
-            </div>
-          </div>
-        </div>
-              </div>
+                  <?php foreach ($camp_locations as $location): ?>
+                  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 px-2">
+                    <div class="campsite-card">
+                      <div class="campsite-header">
+                        <h3 class="campsite-title"><?php echo htmlspecialchars($location['title'] ?? ''); ?></h3>
+                        <div class="campsite-divider"></div>
+                      </div>
+                      <div class="campsite-content">
+                        <p class="campsite-venue"><?php echo htmlspecialchars($location['venue'] ?? ''); ?></p>
+                        <p class="campsite-address"><?php echo $location['address'] ?? ''; ?></p>
+                        <div class="campsite-dates">
+                          <span class="campsite-duration"><?php echo htmlspecialchars($location['duration'] ?? ''); ?></span>
+                          <span class="campsite-weeks"><?php echo htmlspecialchars($location['weeks'] ?? ''); ?></span>
+                        </div>
+                        <div class="campsite-buttons">
+                          <a href="<?php echo htmlspecialchars($location['new_families_url'] ?? '#'); ?>" class="campsite-btn campsite-btn-primary" target="_blank">Register - New Families</a>
+                          <a href="<?php echo htmlspecialchars($location['returning_families_url'] ?? '#'); ?>" class="campsite-btn campsite-btn-secondary" target="_blank">Register - Returning Families</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <?php endforeach; ?>
+                </div>
             </div>
           </div>
         </div>
@@ -1580,25 +1514,25 @@ require_once 'includes/content-loader.php';
             <div class="clean-camp-details text-center mb-4">
                     <div class="clean-detail-item">
                       <i class="fas fa-child"></i>
-                      <span>Ages 5-12 years old</span>
+                      <span><?php echo htmlspecialchars($registration_info['age_range'] ?? 'Ages 5-12 years old'); ?></span>
                     </div>
                     <div class="clean-detail-item">
                       <i class="fas fa-exclamation-triangle"></i>
-                      <span>Space is limited</span>
+                      <span><?php echo htmlspecialchars($registration_info['space_notice'] ?? 'Space is limited'); ?></span>
                 </div>
               </div>
               
             <!-- Registration Actions -->
             <div class="text-center">
-                  <h4 class="clean-registration-header">Ready to Register?</h4>
-                  <p class="clean-registration-subtext">Choose your registration option below</p>
+                  <h4 class="clean-registration-header"><?php echo htmlspecialchars($registration_info['header_text'] ?? 'Ready to Register?'); ?></h4>
+                  <p class="clean-registration-subtext"><?php echo htmlspecialchars($registration_info['subtext'] ?? 'Choose your registration option below'); ?></p>
                   
                   <div class="clean-registration-buttons">
-                    <a href="https://kaizenkarate.campmanagement.com/p/request_for_info_m.php?action=enroll" target="_blank" class="clean-register-btn new-families">
+                    <a href="<?php echo htmlspecialchars($registration_info['new_families_url'] ?? 'https://kaizenkarate.campmanagement.com/p/request_for_info_m.php?action=enroll'); ?>" target="_blank" class="clean-register-btn new-families">
                       <i class="fas fa-user-plus"></i>
                       <span>Register Here - New Families</span>
                     </a>
-                    <a href="https://kaizenkarate.campmanagement.com/p/campers/login_m.php" target="_blank" class="clean-register-btn returning-families">
+                    <a href="<?php echo htmlspecialchars($registration_info['returning_families_url'] ?? 'https://kaizenkarate.campmanagement.com/p/campers/login_m.php'); ?>" target="_blank" class="clean-register-btn returning-families">
                       <i class="fas fa-sign-in-alt"></i>
                       <span>Register Here - Returning Families</span>
                     </a>
@@ -1620,595 +1554,21 @@ require_once 'includes/content-loader.php';
               <!-- Master Accordion Content -->
               <div class="master-instructor-content">
                 <div class="instructors-accordion">
-                  
-                  <!-- Camp Locations & Options -->
-                  <div class="instructor-item">
-                    <button class="instructor-header" data-instructor="camp1">
-                      <h3>Camp Locations & Options</h3>
-                      <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="instructor-content" id="instructor-camp1">
-                      <div style="color: var(--text-dark);">
-                        <div style="margin-bottom: 20px;">
-                          <h4 style="color: var(--accent); margin-bottom: 8px;">Capitol Hill Camp</h4>
-                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Location:</strong> Christ Church + Washington Parish - 620 G Street, SE, Washington, DC 20003</p>
-                          <p style="margin-bottom: 0; color: var(--text-dark);"><strong>Duration:</strong> 5 weeks - July 21st - August 22nd</p>
-                        </div>
-                        
-                        <div style="margin-bottom: 20px;">
-                          <h4 style="color: var(--accent); margin-bottom: 8px;">NW DC Camp</h4>
-                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Location:</strong> Washington Hebrew Congregation - 3935 Macomb Street, NW, Washington DC 20016</p>
-                          <p style="margin-bottom: 0; color: var(--text-dark);"><strong>Duration:</strong> 8 weeks - June 23rd - August 15th</p>
-                        </div>
-                        
-                        <div style="margin-bottom: 20px;">
-                          <h4 style="color: var(--accent); margin-bottom: 8px;">Silver Spring Camp</h4>
-                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Location:</strong> Calvary Lutheran Church - 9545 Georgia Ave, Silver Spring, MD 20910</p>
-                          <p style="margin-bottom: 0; color: var(--text-dark);"><strong>Duration:</strong> 10 weeks - June 18th - August 22nd</p>
-                        </div>
-                        
-                        <div style="margin-bottom: 0;">
-                          <h4 style="color: var(--accent); margin-bottom: 8px;">Arlington Camp</h4>
-                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Location:</strong> Arlington Community Church - 6040 Wilson Blvd, Arlington, VA 22205</p>
-                          <p style="margin-bottom: 0; color: var(--text-dark);"><strong>Duration:</strong> 4 weeks - July 7th - August 1st</p>
+                  <?php if (!empty($accordion_sections)): ?>
+                    <?php foreach ($accordion_sections as $index => $section): ?>
+                    <div class="instructor-item">
+                      <button class="instructor-header" data-instructor="camp<?php echo $index + 1; ?>">
+                        <h3><?php echo htmlspecialchars($section['title'] ?? ''); ?></h3>
+                        <span class="accordion-icon">+</span>
+                      </button>
+                      <div class="instructor-content" id="instructor-camp<?php echo $index + 1; ?>">
+                        <div style="color: var(--text-dark);">
+                          <?php echo $section['content'] ?? ''; ?>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  
-                  <!-- Tuition Rates 2025 -->
-                  <div class="instructor-item">
-                    <button class="instructor-header" data-instructor="camp2">
-                      <h3>Tuition Rates 2025</h3>
-                      <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="instructor-content" id="instructor-camp2">
-                      <div style="color: var(--text-dark);">
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 12px;">Camp Tuition Rates</h4>
-                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Capitol Hill Camp:</strong> $455 / week</p>
-                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>NW DC Camp:</strong> $455 / week</p>
-                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Maryland Camp:</strong> $340 / week</p>
-                          <p style="margin-bottom: 0; color: var(--text-dark);"><strong>Arlington Camp:</strong> $455 / week</p>
-                        </div>
-                        
-                        <div style="margin-bottom: 25px; background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent);">
-                          <h4 style="color: var(--accent); margin-bottom: 8px;">Early Bird Special</h4>
-                          <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;"><strong>FREE before & after care for ALL weeks when you register on or before March 31st, 2025</strong></p>
-                          <p style="margin-bottom: 0; color: var(--text-dark); font-style: italic;">(Savings of up to $150 per week)</p>
-                        </div>
-                        
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 12px;">Before Care / After Care*</h4>
-                          <p style="margin-bottom: 4px; color: var(--text-dark);">$20 - before care / day</p>
-                          <p style="margin-bottom: 4px; color: var(--text-dark);">$20 - after care / day</p>
-                          <p style="margin-bottom: 12px; color: var(--text-dark);">$30 - before & after care / day</p>
-                          <div style="font-size: 0.9em; color: #666;">
-                            <p style="margin-bottom: 2px;">*must register online for before / after care</p>
-                            <p style="margin-bottom: 2px;">*After March 31st full fee schedule applies for all before & after care</p>
-                            <p style="margin-bottom: 0;">*Before & after care fees listed above apply to all camp sites</p>
-                          </div>
-                        </div>
-                        
-                        <div style="margin-bottom: 20px;">
-                          <h4 style="color: var(--accent); margin-bottom: 12px;">Sibling Discount</h4>
-                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>$20 off per child per week</strong></p>
-                          <p style="margin-bottom: 0; color: var(--text-dark);">1st child must pay full tuition rate, discount applies to each additional child</p>
-                        </div>
-                        
-                        <div style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107;">
-                          <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">**We do NOT accept checks. Tuition must be paid online through our website.**</p>
-                          <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 600;">**Please be sure to select the weeks you are registering for, not only the number of weeks, for sibling discount to be applied**</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <!-- Daily Schedule -->
-                  <div class="instructor-item">
-                    <button class="instructor-header" data-instructor="camp3">
-                      <h3>Daily Schedule</h3>
-                      <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="instructor-content" id="instructor-camp3">
-                      <div style="color: var(--text-dark);">
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 12px;">CAMP HOURS</h4>
-                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Before care:</strong> 7:30am-9:00am</p>
-                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Camp day:</strong> 9:00am – 3:00pm</p>
-                          <p style="margin-bottom: 0; color: var(--text-dark);"><strong>After care:</strong> 3:00pm-6:00pm</p>
-                        </div>
-                        
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 12px;">Karate Lesson Schedule (Daily - Non-Pool Days)</h4>
-                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Morning Session:</strong> 9:30am-11:00am</p>
-                          <p style="margin-bottom: 4px; color: var(--text-dark);"><strong>Afternoon Session:</strong> 2:00pm-3:00pm</p>
-                          <p style="margin-bottom: 8px; color: var(--text-dark);"><strong>Aftercare Session:</strong> 4:00pm-5:00pm</p>
-                          <p style="margin-bottom: 0; color: #666; font-style: italic;">*Non-karate activities include structured outdoor playtime as well as indoor playtime.</p>
-                        </div>
-                        
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 12px;">DROP-OFF / PICK-UP POLICIES</h4>
-                          <p style="margin-bottom: 8px; color: var(--text-dark);"><strong>7:30am-9:00am</strong> - Parents must sign in when dropping off their child. Sign in is now touchless and camp staff will checkin students via mobile device.</p>
-                          <p style="margin-bottom: 8px; color: var(--text-dark);"><strong>3:00pm</strong> – Visitors, including parents, are not permitted inside the camp building(s). Kaizen Karate staff will guide campers safely to their authorized pick-up.</p>
-                          <p style="margin-bottom: 8px; color: var(--text-dark);"><strong>3:00pm-6:00pm</strong> – After care begins. Students must be registered for after care online or parents can pay by calling into the main office at 301-938-2711 if after care is needed unexpectedly due to traffic or other unforeseen circumstances. Students who register before March 31st receive free before and after care and <strong>MUST</strong> sign up online for the service.</p>
-                          <p style="margin-bottom: 0; color: var(--text-dark);">If someone other than the parent will be picking-up their child we must be notified in advance by email, otherwise, we will not let the child go until a parent is contacted. Please email our office at coach.v@kaizenkaratemd.com with at least 24hrs notice of any pick-up changes.</p>
-                        </div>
-                        
-                        <div style="margin-bottom: 25px; background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107;">
-                          <h4 style="color: var(--accent); margin-bottom: 8px;">IMPORTANT FEES & POLICIES</h4>
-                          <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">If your child is not picked up by 3:15pm, a flat fee of $20 will be charged for extended care for that day only (this policy will ONLY apply to campers who are not enrolled in childcare). This fee will be automatically billed and you will receive an electronic invoice. No checks are accepted.</p>
-                          <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 600;"><strong>EARLY DROP-OFFS</strong> - Students who arrive prior to 8:50am will be charged the full $20 fee for before care each day this occurs.</p>
-                        </div>
-                        
-                        <div style="margin-bottom: 20px;">
-                          <h4 style="color: var(--accent); margin-bottom: 12px;">DAILY SCHEDULE</h4>
-                          <p style="margin-bottom: 8px; color: var(--text-dark);">For full day campers doors open at 9:00am – campers should be picked up at 3:00pm</p>
-                          <p style="margin-bottom: 8px; color: var(--text-dark);">Before care starts at 7:30am and ends at 9:00am. After care starts at 3:00pm and ends at 6:00pm.</p>
-                          <p style="margin-bottom: 0; color: var(--text-dark);">Full day campers should arrive at camp around 9:00am so they do not miss karate classes or other activities that start at 9:30am.</p>
-                        </div>
-                        
-                        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent);">
-                          <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 600;">Walkers and bikers must have written permission from their parents before we will let them leave.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <!-- FAQ's -->
-                  <div class="instructor-item">
-                    <button class="instructor-header" data-instructor="camp4">
-                      <h3>FAQ's</h3>
-                      <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="instructor-content" id="instructor-camp4">
-                      <div style="color: var(--text-dark);">
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 12px;">What should I bring to camp each day?</h4>
-                          <ul style="color: var(--text-dark); line-height: 1.6; margin-bottom: 15px;">
-                            <li style="margin-bottom: 8px;"><strong>Water Bottle</strong> - please label your water bottle<br>
-                                <em style="color: #666; font-size: 0.9em;">*make sure to drink plenty of water at home before arriving at camp & make sure to drink plenty of water at home in the evening after camp to stay hydrated*</em></li>
-                            <li style="margin-bottom: 8px;"><strong>Sunscreen</strong> - Kaizen Karate staff does not apply sunscreen to campers</li>
-                            <li style="margin-bottom: 8px;"><strong>Sunglasses</strong></li>
-                            <li style="margin-bottom: 8px;"><strong>Lunch</strong> - no access to refrigeration or microwaves</li>
-                            <li style="margin-bottom: 8px;"><strong>Hat</strong></li>
-                            <li style="margin-bottom: 8px;"><strong>Comfortable walking shoes</strong></li>
-                            <li style="margin-bottom: 8px;"><strong>Karate Gear</strong> – uniform and sparring gear (yellow belt and up). Please make sure your child's name is clearly labeled on all items.</li>
-                            <li style="margin-bottom: 8px;"><strong>Swimsuit, towel, and other pool items</strong> - Please make sure your child's name is clearly labeled on all items. Change of clothes needed for after swimming.<br>
-                                <em style="color: #666; font-size: 0.9em;">More direction on swimming time will be posted as we get closer to the start of camp per local guidelines.</em></li>
-                            <li style="margin-bottom: 0;"><strong>Nutritious Snack(s)</strong> – 1 for before lunch / 1 for after care<br>
-                                <em style="color: #666; font-size: 0.9em;">(Camp does not provide snack due to potential food allergies that are common amongst campers)</em></li>
-              </ul>
-            </div>
-                        
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 12px;">What should I wear to camp each day?</h4>
-                          <p style="margin-bottom: 8px; color: var(--text-dark);">Each day campers should come dressed in shorts, t-shirt & sneakers (especially if the weather is very hot). <strong>No flip-flops or open-toed shoes!</strong> Flip-flops or sandals are permitted during pool time.</p>
-                          <p style="margin-bottom: 8px; color: var(--text-dark);">Each day campers will need to bring their uniform pants, t-shirt, belt & any other items needed for their karate classes. Students who are new to karate will have the option of ordering a uniform and sparring gear if desired.</p>
-                          <div style="background: #f8f9fa; padding: 10px; border-radius: 6px; margin-top: 10px;">
-                            <p style="margin-bottom: 0; color: var(--accent); font-weight: 600;">PLEASE LABEL ALL ITEMS WITH STUDENTS FULL NAME.</p>
-          </div>
-        </div>
-                        
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 12px;">What NOT to bring to camp each day?</h4>
-                          <ul style="color: var(--text-dark); line-height: 1.6;">
-                            <li style="margin-bottom: 6px;"><strong>Weapons</strong> - pocket knives, swords or other martial arts weapons</li>
-                            <li style="margin-bottom: 6px;"><strong>Large amounts of money</strong> - we ask that campers limit the amount of money they carry to a minimum</li>
-                            <li style="margin-bottom: 6px;"><strong>Video games</strong> – or other hand held devices</li>
-                            <li style="margin-bottom: 6px;"><strong>No electronics</strong> – no electronics or other valuable items</li>
-                            <li style="margin-bottom: 0;"><strong>Cell phones</strong> - we ask that all cell phones are put away at all times. Students are permitted to call parents if needed.</li>
-                          </ul>
-      </div>
-
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 12px;">Does my child need to have karate experience to attend camp?</h4>
-                          <p style="margin-bottom: 0; color: var(--text-dark);">No, we welcome campers who do not have karate experience. Campers are separated into groups based on age and skill level.</p>
-          </div>
-                        
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 12px;">How are the children transported to the pool?</h4>
-                          <p style="margin-bottom: 6px; color: var(--text-dark);">We transport the kids from the camp to the pool with the professional bus service we provide.</p>
-                          <p style="margin-bottom: 0; color: #666; font-style: italic;">More direction on transportation will be posted as we get closer to the start of camp per local guidelines.</p>
-                        </div>
-                        
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 12px;">Do campers need to know how to swim?</h4>
-                          <p style="margin-bottom: 8px; color: var(--text-dark);">No, there are multiple sections of the pool. A wading pool, the shallow end, the medium area, and the deep end. All kids have to take a swim test before we release them for free swim. Depending on how well they do on the test, they will receive a colored wrist band that represents which areas they're allowed to swim in. If a child is too short for the shallow end they can use the wading pool.</p>
-                          <p style="margin-bottom: 6px; color: var(--text-dark);">Please contact our office if you would like more details about swimming procedures and safety rules.</p>
-                          <p style="margin-bottom: 0; color: #666; font-style: italic;">More direction on swimming time will be posted as we get closer to the start of camp per local guidelines.</p>
-                        </div>
-                        
-                        <div style="margin-bottom: 0;">
-                          <h4 style="color: var(--accent); margin-bottom: 12px;">Are swim lessons provided?</h4>
-                          <p style="margin-bottom: 0; color: var(--text-dark);">There are no swimming lessons provided.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <!-- Weekly Themes -->
-                  <div class="instructor-item">
-                    <button class="instructor-header" data-instructor="camp5">
-                      <h3>Weekly Themes</h3>
-                      <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="instructor-content" id="instructor-camp5">
-                      <div style="color: var(--text-dark);">
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 15px;">Weekly Themes (All Camp Sites):</h4>
-                          <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid var(--accent);">
-                            <div style="display: grid; gap: 12px;">
-                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
-                                <span style="color: var(--text-dark); font-weight: 600;">Week of 6/18</span>
-                                <span style="color: var(--accent); font-weight: 600;">Sparring Workshop</span>
-                              </div>
-                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
-                                <span style="color: var(--text-dark); font-weight: 600;">Week of 6/23</span>
-                                <span style="color: var(--accent); font-weight: 600;">Black Belt Bootcamp</span>
-                              </div>
-                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
-                                <span style="color: var(--text-dark); font-weight: 600;">Week of 6/30</span>
-                                <span style="color: var(--accent); font-weight: 600;">Red, White & Blue</span>
-                              </div>
-                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
-                                <span style="color: var(--text-dark); font-weight: 600;">Week of 7/7</span>
-                                <span style="color: var(--accent); font-weight: 600;">Master Form Workshop</span>
-                              </div>
-                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
-                                <span style="color: var(--text-dark); font-weight: 600;">Week of 7/14</span>
-                                <span style="color: var(--accent); font-weight: 600;">JuJitsu Workshop</span>
-                              </div>
-                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
-                                <span style="color: var(--text-dark); font-weight: 600;">Week of 7/21</span>
-                                <span style="color: var(--accent); font-weight: 600;">Super Hero Week</span>
-                              </div>
-                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
-                                <span style="color: var(--text-dark); font-weight: 600;">Week of 7/28</span>
-                                <span style="color: var(--accent); font-weight: 600;">Black Belt Bootcamp</span>
-                              </div>
-                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
-                                <span style="color: var(--text-dark); font-weight: 600;">Week of 8/4</span>
-                                <span style="color: var(--accent); font-weight: 600;">Sparring Workshop</span>
-                              </div>
-                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
-                                <span style="color: var(--text-dark); font-weight: 600;">Week of 8/11</span>
-                                <span style="color: var(--accent); font-weight: 600;">Hook Kicks, Moon Kicks, & Spin Kicks</span>
-                              </div>
-                              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0;">
-                                <span style="color: var(--text-dark); font-weight: 600;">Week of 8/18</span>
-                                <span style="color: var(--accent); font-weight: 600;">JuJitsu Workshop</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        <div style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107; margin-bottom: 0;">
-                          <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 600;">*All weeks include sparring. Please note, themed weeks touch on this area more, however, all weeks focus on the general Kaizen Karate curriculum. Students of all belt ranks are welcome to attend any of the above weeks.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <!-- Field Trips & Belt Exam -->
-                  <div class="instructor-item">
-                    <button class="instructor-header" data-instructor="camp6">
-                      <h3>Field Trips & Belt Exam</h3>
-                      <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="instructor-content" id="instructor-camp6">
-                      <div style="color: var(--text-dark);">
-                        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent); margin-bottom: 25px;">
-                          <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 600; font-style: italic;">More details will be posted as we get closer to the start of camp.</p>
-                        </div>
-                        
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 15px;">Field Trip Dates:</h4>
-                          
-                          <div style="margin-bottom: 20px;">
-                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Capitol Hill Camp</h5>
-                            <p style="margin-bottom: 4px; color: var(--text-dark);">July 24 - Lego Discovery Center - Washington, DC</p>
-                            <p style="margin-bottom: 0; color: var(--text-dark);">August 21 - National Children's Museum - Washington, DC</p>
-                          </div>
-                          
-                          <div style="margin-bottom: 20px;">
-                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">NW DC Camp</h5>
-                            <p style="margin-bottom: 4px; color: var(--text-dark);">June 25 - Catoctin Wildlife Reserve - Thurmont, MD</p>
-                            <p style="margin-bottom: 0; color: var(--text-dark);">July 24 - Lego Discovery Center - Washington, DC</p>
-                          </div>
-                          
-                          <div style="margin-bottom: 20px;">
-                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Silver Spring Camp</h5>
-                            <p style="margin-bottom: 4px; color: var(--text-dark);">June 25 - Catoctin Wildlife Reserve - Thurmont, MD</p>
-                            <p style="margin-bottom: 4px; color: var(--text-dark);">July 24 - Lego Discovery Center - Washington, DC</p>
-                            <p style="margin-bottom: 0; color: var(--text-dark);">August 21 - National Children's Museum - Washington, DC</p>
-                          </div>
-                          
-                          <div style="margin-bottom: 0;">
-                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Arlington Camp</h5>
-                            <p style="margin-bottom: 0; color: var(--text-dark);">July 24 - Lego Discovery Center - Washington, DC</p>
-                          </div>
-                        </div>
-                        
-                        <div style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107; margin-bottom: 25px;">
-                          <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">*There is a $35 fee per field trip that will be collected during online registration. This fee is in addition to the regular weekly tuition for camp.</p>
-                          <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">*Field trips are mandatory on the week they are scheduled and all campers must attend (remaining at camp is not an option).</p>
-                          <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 600;">*Lunch is *not* included in the field trip fee. Campers should plan to bring their own lunch on field trip days.</p>
-                        </div>
-                        
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 15px;">Belt Exam Dates:</h4>
-                          
-                          <div style="margin-bottom: 20px;">
-                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Capitol Hill Camp</h5>
-                            <p style="margin-bottom: 0; color: var(--text-dark);">August 20</p>
-                          </div>
-                          
-                          <div style="margin-bottom: 20px;">
-                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">NW DC Camp</h5>
-                            <p style="margin-bottom: 4px; color: var(--text-dark);">July 17</p>
-                            <p style="margin-bottom: 0; color: var(--text-dark);">August 14</p>
-                          </div>
-                          
-                          <div style="margin-bottom: 20px;">
-                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Silver Spring Camp</h5>
-                            <p style="margin-bottom: 4px; color: var(--text-dark);">July 10</p>
-                            <p style="margin-bottom: 0; color: var(--text-dark);">August 21</p>
-                          </div>
-                          
-                          <div style="margin-bottom: 0;">
-                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Arlington Camp</h5>
-                            <p style="margin-bottom: 0; color: var(--text-dark);">July 31</p>
-                          </div>
-                        </div>
-                        
-                        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent); margin-bottom: 0;">
-                          <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 600;">Students are eligible to receive stripes on weeks when there is no belt exam scheduled, though it is not guaranteed. If a belt exam is scheduled during the week that a camper is attending camp this is *not* an automatic guarantee that the student will test and receive a new belt. Students must meet testing guidelines as posted on the belt exam page AND must be invited by their instructor to test.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <!-- Lunch & Snacks -->
-                  <div class="instructor-item">
-                    <button class="instructor-header" data-instructor="camp7">
-                      <h3>Lunch & Snacks</h3>
-                      <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="instructor-content" id="instructor-camp7">
-                      <div style="color: var(--text-dark);">
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 15px;">Lunches & Snacks</h4>
-                          <p style="margin-bottom: 12px; color: var(--text-dark); font-weight: 600;">Campers will provide their own lunches & beverages.</p>
-                          <p style="margin-bottom: 0; color: var(--text-dark);">All lunches should be in coolers to prevent food from spoiling.</p>
-                        </div>
-                        
-                        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent); margin-bottom: 25px;">
-                          <p style="margin-bottom: 0; color: var(--accent); font-weight: 600; font-size: 1.1em;">PLEASE LABEL LUNCH BOXES</p>
-                        </div>
-                        
-                        <div style="margin-bottom: 25px;">
-                          <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 600;">Please Note: We do not order food, heat up food, or provide utensils for campers.</p>
-                        </div>
-                        
-                        <div style="background: #ffe6e6; padding: 15px; border-radius: 8px; border-left: 4px solid #dc3545; margin-bottom: 0;">
-                          <p style="margin-bottom: 0; color: #721c24; font-weight: 600;">Due to severe food allergies, we ask that NO PEANUT BUTTER or NUT PRODUCTS be brought to camp in lunches.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <!-- Swimming -->
-                  <div class="instructor-item">
-                    <button class="instructor-header" data-instructor="camp8">
-                      <h3>Swimming</h3>
-                      <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="instructor-content" id="instructor-camp8">
-                      <div style="color: var(--text-dark);">
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 15px;">General Rules</h4>
-                          <div style="background: #ffe6e6; padding: 15px; border-radius: 8px; border-left: 4px solid #dc3545; margin-bottom: 15px;">
-                            <p style="margin-bottom: 8px; color: #721c24; font-weight: 600;">*If your child is unable to swim and is not water-safe, please let us know in writing by emailing our main office.</p>
-                            <p style="margin-bottom: 8px; color: #721c24; font-weight: 600;">*Flotation devices of any kind are not permitted. Students must be able to swim unassisted.</p>
-                            <p style="margin-bottom: 8px; color: #721c24; font-weight: 600;">*Swim tests are administered at the start of every pool visit.</p>
-                            <p style="margin-bottom: 0; color: #721c24; font-weight: 600;">*Swimming pool visits are mandatory on the days they are scheduled and all campers must attend (remaining at camp is not an option).</p>
-                          </div>
-                        </div>
-                        
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 15px;">Swimming – NW DC Camp & Silver Spring Camp</h4>
-                          <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid var(--accent);">
-                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Pool Information: Parkland Pool</h5>
-                            <p style="margin-bottom: 8px; color: var(--text-dark);">Swimming will take place at Parkland Pool located at 1124 Arcola Ave, Wheaton, MD 20902</p>
-                            <p style="margin-bottom: 15px; color: var(--text-dark);">Pool phone number is (301) 649-5670</p>
-                            
-                            <h6 style="color: var(--accent); font-weight: 600; margin-bottom: 8px;">Schedule & Requirements:</h6>
-                            <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">Please have your child dressed in their bathing suit when they arrive at camp on our pool days: Tuesday & Friday – 12:15pm-1:45pm</p>
-                            <p style="margin-bottom: 8px; color: var(--text-dark);">Put sunscreen on your child before they arrive at camp, as camp staff is not permitted to do so</p>
-                            <p style="margin-bottom: 4px; color: var(--text-dark);">Campers must have a towel</p>
-                            <p style="margin-bottom: 0; color: var(--text-dark);">Extra set of dry clothes to change into after swimming</p>
-                          </div>
-                        </div>
-                        
-                        <div style="margin-bottom: 0;">
-                          <h4 style="color: var(--accent); margin-bottom: 15px;">Swimming – Capitol Hill Camp & Arlington Camp</h4>
-                          <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid var(--accent);">
-                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Pool Information: North Springfield Swim Club</h5>
-                            <p style="margin-bottom: 8px; color: var(--text-dark);">Swimming will take place at North Springfield Swim Club - 5604 Earlehurst St, Springfield, VA 22151</p>
-                            <p style="margin-bottom: 15px; color: var(--text-dark);">Pool phone number is (703) 256-4686</p>
-                            
-                            <h6 style="color: var(--accent); font-weight: 600; margin-bottom: 8px;">Schedule & Requirements:</h6>
-                            <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">Please have your child dressed in their bathing suit when they arrive at camp on our pool days: Monday & Wednesday – 12:00pm-2:00pm</p>
-                            <p style="margin-bottom: 8px; color: var(--text-dark);">Put sunscreen on your child before they arrive at camp, as camp staff is not permitted to do so</p>
-                            <p style="margin-bottom: 4px; color: var(--text-dark);">Campers must have a towel</p>
-                            <p style="margin-bottom: 0; color: var(--text-dark);">Extra set of dry clothes to change into after swimming</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <!-- Policies -->
-                  <div class="instructor-item">
-                    <button class="instructor-header" data-instructor="camp9">
-                      <h3>Policies</h3>
-                      <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="instructor-content" id="instructor-camp9">
-                      <div style="color: var(--text-dark);">
-                        <!-- Tuition Payment -->
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 15px;">Tuition Payment</h4>
-                          <div style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107; margin-bottom: 15px;">
-                            <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">Tuition for any week of summer camp must be paid in full prior to attending camp for that given week.</p>
-                            <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">A non-refundable deposit of $299 per camper must be paid to hold your space in the camp for weeks that are paid via payment plan. This deposit will be applied to the total balance due.</p>
-                            <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">All registration must be completed online.</p>
-                            <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">NO CHECKS are accepted. All payments must be made online with credit cards during the registration process.</p>
-                            <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 600;">NO drop-ins are available. Students must pre-register for each week of camp prior to the start of the week.</p>
-                          </div>
-                          <p style="margin-bottom: 0; color: #666; font-style: italic; font-size: 0.9em;">*Updated on January 2nd, 2025</p>
-                        </div>
-                        
-                        <!-- Behavior Policy -->
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 15px;">Behavior Policy</h4>
-                          <div style="background: #ffe6e6; padding: 15px; border-radius: 8px; border-left: 4px solid #dc3545; margin-bottom: 15px;">
-                            <p style="margin-bottom: 0; color: #721c24; font-weight: 600;">Safety is our number one priority. Campers are expected to follow all camp rules at all times. If the camp director determines that a camper's behavior is unsafe and a significant risk to other campers and / or staff, Kaizen Karate reserves the right to remove the camper from camp and cancel their remaining weeks of camp without a refund.</p>
-                          </div>
-                          <p style="margin-bottom: 0; color: #666; font-style: italic; font-size: 0.9em;">*Updated on April 11th, 2023</p>
-                        </div>
-                        
-                        <!-- Illness & Make-ups -->
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 15px;">Illness & Make-ups</h4>
-                          <p style="margin-bottom: 12px; color: var(--text-dark);">If a camper misses camp for more than 2 consecutive days due to illness then credit will be given for the days missed after the first two days when requested in writing and accompanied by a doctor's note. Eg. If Monday & Tuesday are missed, then credit is given for the remainder of the week (3 days).</p>
-                          <p style="margin-bottom: 0; color: var(--text-dark);">If a student misses camp for any reason besides illness they can make-up the day IF there is space in another week of camp. Parents must submit an email request to our camp office to get approval. If there is no space then there will be no make-ups permitted and credit cannot be transferred to school year programs (the credit is lost).</p>
-                        </div>
-                        
-                        <!-- Sick Policy -->
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 15px;">Sick Policy</h4>
-                          <div style="background: #ffe6e6; padding: 15px; border-radius: 8px; border-left: 4px solid #dc3545; margin-bottom: 15px;">
-                            <p style="margin-bottom: 12px; color: #721c24; font-weight: 600;">Safety and health are our #1 concern. Consequently, we reserve the right to send your child home – or refuse admittance – if we have concerns about his/her health or ability to participate in all activities. Please keep your child home if he/she is exhibiting any of the following:</p>
-                            <ul style="color: #721c24; margin-bottom: 12px;">
-                              <li style="margin-bottom: 6px;">red, runny, and/or watery eyes, he/she may have conjunctivitis (pink eye)</li>
-                              <li style="margin-bottom: 6px;">very itchy scalp with pearly white or grayish flakes that stick to hair shafts (rather than flaking off – like dandruff)</li>
-                              <li style="margin-bottom: 6px;">fever of 101 degrees internally or 100 degrees axillary. The camper may return to camp when he/she has been fever-free for a minimum of 24 hours without the aid of medication</li>
-                              <li style="margin-bottom: 6px;">vomits or has three episodes of diarrhea or watery bowel movements</li>
-                              <li style="margin-bottom: 0;">chest is congested and is accompanied by a frequent cough</li>
-              </ul>
-                            <p style="margin-bottom: 0; color: #721c24; font-weight: 600;">If you are ever in doubt about your child's symptoms or illness, please call the camp at 301-938-2711 and email coach.v@kaizenkaratemd.com and ask us if we feel that it would be appropriate for your child to come to school. We may require that you also consult your physician.</p>
-            </div>
-          </div>
-                        
-                        <!-- Cancellation Policies -->
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 15px;">Cancellation Policies</h4>
-                          
-                          <div style="margin-bottom: 20px;">
-                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Canceling a week</h5>
-                            <p style="margin-bottom: 6px; color: var(--text-dark);"><strong>March 15 - April 30:</strong> All fees paid are refunded except the $299 non-refundable deposit and $25 administrative fee.</p>
-                            <p style="margin-bottom: 6px; color: var(--text-dark);"><strong>May 1 - May 31:</strong> All fees paid are refunded except the $299 non-refundable deposit and $25 administrative fee.</p>
-                            <p style="margin-bottom: 0; color: var(--text-dark);"><strong>After June 1:</strong> There will be NO refunds or credits for summer camp weeks after June 1. NO EXCEPTIONS.</p>
-        </div>
-                          
-                          <div style="margin-bottom: 20px;">
-                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Canceling A Day</h5>
-                            <p style="margin-bottom: 0; color: var(--text-dark);">Refunds or credits for single days of summer camp will not be provided at any time. No Exceptions. Summer camp registrations are paid for on a weekly tuition fee schedule not a daily tuition fee schedule.</p>
-      </div>
-
-                          <div style="margin-bottom: 0;">
-                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 10px;">Canceling entire summer registration (multiple weeks)</h5>
-                            <p style="margin-bottom: 6px; color: var(--text-dark);"><strong>March 15 - April 30:</strong> All fees paid are refunded except the $299 non-refundable deposit and $25 administrative fee.</p>
-                            <p style="margin-bottom: 6px; color: var(--text-dark);"><strong>May 1 - May 31:</strong> Only 50% of tuition fees will be credited for any Kaizen Karate program minus the $299 non-refundable deposit.</p>
-                            <p style="margin-bottom: 0; color: var(--text-dark);"><strong>After June 1:</strong> There will be NO refunds or credits for summer camp weeks after June 1. NO EXCEPTIONS.</p>
-                          </div>
-                        </div>
-                        
-                        <!-- Additional Policies -->
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 15px;">Additional Policies</h4>
-                          
-                          <div style="margin-bottom: 15px;">
-                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 8px;">Switching Weeks</h5>
-                            <p style="margin-bottom: 8px; color: var(--text-dark);">Switching between weeks is allowed, based on availability.</p>
-                            <p style="margin-bottom: 0; color: var(--text-dark);">If a camper needs to switch weeks and there is no availability then they must either keep their assigned weeks OR they can follow the cancellation policy listed above to cancel weeks based on dates (eg. After June 1 there are no refunds or credits for a camper who wants to switch weeks but there is no availability).</p>
-                          </div>
-                          
-                          <div style="margin-bottom: 15px;">
-                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 8px;">Adding Weeks</h5>
-                            <div style="background: linear-gradient(135deg, rgba(40, 167, 69, 0.12), rgba(40, 167, 69, 0.06)); border: 1px solid rgba(40, 167, 69, 0.3); border-radius: 8px; padding: 12px; margin-bottom: 12px;">
-                              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-                                <i class="fas fa-gift" style="color: #28a745; font-size: 1.1rem;"></i>
-                                <span style="color: #28a745; font-weight: 700; font-size: 1rem;">SPECIAL OFFER</span>
-                              </div>
-                              <p style="margin-bottom: 8px; color: #28a745; font-weight: 600; font-size: 1rem;">ALL students who register prior to March 31st, 2025 will receive FREE Before & After Care.</p>
-                            </div>
-                            <p style="margin-bottom: 8px; color: var(--text-dark);">Offer valid only for weeks purchased during the promotional period (1/14/25 - 3/31/25).</p>
-                            <p style="margin-bottom: 0; color: var(--text-dark);">Any additional weeks purchased / added to existing reservations after the promotional period (3/31/25) will *not* be eligible for FREE before & after care.</p>
-                          </div>
-                          
-                          <div style="margin-bottom: 15px;">
-                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 8px;">Virtual Camp (applicable on years when Virtual offerings are available)</h5>
-                            <p style="margin-bottom: 6px; color: var(--text-dark);">No transfers allowed from In-person camp to Virtual or vice versa.</p>
-                            <p style="margin-bottom: 6px; color: var(--text-dark);">There is no pro-rating at any time for virtual camp. Full tuition rate is due if you join after the start of a week.</p>
-                            <p style="margin-bottom: 0; color: var(--text-dark);">No refunds or credits will be given after the first class of the week has started.</p>
-                          </div>
-                          
-                          <div style="margin-bottom: 0;">
-                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 8px;">Late pick-up Policy @ Summer Camp</h5>
-                            <p style="margin-bottom: 0; color: var(--text-dark);">Counselors frequently have other commitments shortly after camp ends, we ask that you respect the counselor's time by arriving on time. There will be a 5 minute grace period after the program has ended. After that, parents will be charged an additional fee of $1.00 per minute. The late fee must be paid before the next camp day by contacting our main office and paying through electronic invoice.</p>
-                          </div>
-                        </div>
-                        
-                        <!-- Health & Safety Policies -->
-                        <div style="margin-bottom: 0;">
-                          <h4 style="color: var(--accent); margin-bottom: 15px;">Health & Safety Policies</h4>
-                          
-                          <div style="margin-bottom: 15px;">
-                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 8px;">Measles Policy</h5>
-                            <p style="margin-bottom: 0; color: var(--text-dark);">All campers and persons who enter a Kaizen Karate camp site must be vaccinated for measles & must be in compliance with the CDC recommendations.</p>
-                          </div>
-                          
-                          <div style="margin-bottom: 0;">
-                            <h5 style="color: var(--text-dark); font-weight: 600; margin-bottom: 8px;">Modifications Policy - Acts beyond Kaizen Karate's control</h5>
-                            <p style="margin-bottom: 0; color: var(--text-dark);">Parents agree that in the event of any failure, delay, or modification in Kaizen Karate's performance or delivery of Summer Camp programming resulting from causes beyond Kaizen Karate's reasonable control and occurring without its fault or negligence, including without limitation, Acts of God, fire, pandemic, U.S. government restrictions, wars, and insurrections, the tuition obligations under the enrollment contract shall continue and Kaizen Karate shall not be liable for any such failure or delay in its performance. Parents understand that summer camp schedules may be altered due to circumstances outside of our control resulting in on-site camp moving online and thus campers moving to Virtual Camp.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <!-- Contact Information -->
-                  <div class="instructor-item">
-                    <button class="instructor-header" data-instructor="camp10">
-                      <h3>Contact Information</h3>
-                      <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="instructor-content" id="instructor-camp10">
-                      <div style="color: var(--text-dark);">
-                        <!-- Camp Director -->
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 15px;">Camp Director</h4>
-                          <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">Coach V</p>
-                          <p style="margin-bottom: 8px; color: var(--text-dark);">On-Site Phone: 301-938-2711</p>
-                          <p style="margin-bottom: 0; color: var(--text-dark);">Email: coach.v@kaizenkaratemd.com</p>
-                        </div>
-                        
-                        <!-- Director of Operations -->
-                        <div style="margin-bottom: 25px;">
-                          <h4 style="color: var(--accent); margin-bottom: 15px;">Director of Operations</h4>
-                          <p style="margin-bottom: 8px; color: var(--text-dark); font-weight: 600;">Jamie</p>
-                          <p style="margin-bottom: 8px; color: var(--text-dark);">On-Site Phone: 301-938-2711</p>
-                          <p style="margin-bottom: 0; color: var(--text-dark);">Email: jamie@kaizenkarateusa.com</p>
-                        </div>
-                        
-
-                      </div>
-                    </div>
-                  </div>
-                  
+                    <?php endforeach; ?>
+                  <?php endif; ?>
                 </div>
               </div>
             </div>
