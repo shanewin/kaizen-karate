@@ -876,46 +876,47 @@ $summer_camp = array_merge($default_data, $summer_camp);
     </form>
 </div>
 
-<!-- Admin Sections Overview -->
+<!-- Helpful Tips & Instructions -->
 <div class="content-section">
-    <h3 class="section-title"><i class="fas fa-info-circle me-2"></i>Implementation Progress</h3>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card border-success">
-                <div class="card-header bg-success text-white">
-                    <h6 class="mb-0"><i class="fas fa-check-circle me-2"></i>Basic Settings</h6>
-                </div>
-                <div class="card-body">
-                    <ul class="list-unstyled mb-0">
-                        <li><i class="fas fa-check text-success me-2"></i>Basic Information</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Special Offer Configuration</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Video Settings</li>
+    <div class="card">
+        <div class="card-header bg-info text-white">
+            <h5 class="mb-0"><i class="fas fa-info-circle me-2"></i>Helpful Tips & Instructions</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <h6>Summer Camp Content Management</h6>
+                    <p>This page manages all content for the Summer Camp section of your website.</p>
+                    
+                    <h6 class="mt-4">Key Features</h6>
+                    <ul>
+                        <li><strong>Basic Settings:</strong> Control the main title, subtitle, and section visibility</li>
+                        <li><strong>Special Offer:</strong> Toggle and customize the early registration special offer banner</li>
+                        <li><strong>Video Settings:</strong> Manage the hero video overlay content</li>
+                        <li><strong>Features Grid:</strong> Add/remove clickable feature icons (Karate, Field Trips, Swimming, etc.)</li>
+                        <li><strong>Camp Locations:</strong> Manage all camp location cards with venues, dates, and registration links</li>
+                        <li><strong>Registration Info:</strong> Control the registration call-to-action section</li>
+                        <li><strong>Accordion Content:</strong> Manage all 10 expandable information sections with rich text editing</li>
                     </ul>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card border-warning">
-                <div class="card-header bg-warning text-dark">
-                    <h6 class="mb-0"><i class="fas fa-clock me-2"></i>Dynamic Elements</h6>
-                </div>
-                <div class="card-body">
-                    <ul class="list-unstyled mb-0">
-                        <li><i class="fas fa-hourglass-half text-warning me-2"></i>Features Grid Management</li>
-                        <li><i class="fas fa-hourglass-half text-warning me-2"></i>Camp Locations</li>
+                
+                <div class="col-md-6">
+                    <h6>Content Tips</h6>
+                    <ul>
+                        <li>Use the Special Offer toggle to show/hide promotional content seasonally</li>
+                        <li>Features Grid icons use FontAwesome classes (e.g., "fas fa-swimmer")</li>
+                        <li>Camp Locations support multiple registration URLs (new families vs returning families)</li>
+                        <li>Accordion sections use TinyMCE rich text editor - format text visually without HTML knowledge</li>
+                        <li>Always save after making changes to update the website</li>
                     </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card border-secondary">
-                <div class="card-header bg-secondary text-white">
-                    <h6 class="mb-0"><i class="fas fa-hourglass-start me-2"></i>Advanced Content</h6>
-                </div>
-                <div class="card-body">
-                    <ul class="list-unstyled mb-0">
-                        <li><i class="fas fa-hourglass-start text-secondary me-2"></i>Registration Information</li>
-                        <li><i class="fas fa-hourglass-start text-secondary me-2"></i>Accordion Content Management</li>
+                    
+                    <h6 class="mt-4">Best Practices</h6>
+                    <ul>
+                        <li>Update camp dates and pricing at the start of each season</li>
+                        <li>Keep location information current with accurate addresses and contact details</li>
+                        <li>Use the accordion sections to answer common parent questions</li>
+                        <li>Test special offer visibility before marketing campaigns</li>
+                        <li>Preview changes on the website after saving</li>
                     </ul>
                 </div>
             </div>
