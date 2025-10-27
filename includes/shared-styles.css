@@ -1,0 +1,103 @@
+/* 
+ * Shared styles between index.php and testing.php
+ * Any hardcoded styling changes should be made here to keep both files in sync
+ */
+
+/* Kaizen Kenpo Tab Navigation - Desktop Tabs Only (above 768px) */
+@media (min-width: 769px) {
+  .kenpo-tabs-mobile {
+    display: none !important;
+  }
+  
+  .kenpo-tabs-desktop {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    align-items: flex-end !important;
+  }
+  
+  .kenpo-tabs-desktop .nav-item {
+    flex: 0 0 auto !important;
+  }
+  
+  .kenpo-tabs-desktop .nav-link {
+    white-space: nowrap !important;
+    font-size: 1.1rem !important;
+    padding: 0.8rem 1.5rem !important;
+  }
+}
+
+/* Kaizen Kenpo Tab Navigation - Mobile Dropdown (768px and below) */
+@media (max-width: 768px) {
+  .kenpo-tabs-mobile {
+    display: block !important;
+  }
+  
+  .kenpo-tabs-desktop {
+    display: none !important;
+  }
+  
+  .kenpo-dropdown-container {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .kenpo-dropdown-header {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%) !important;
+    color: white !important;
+    border: 2px solid #dc3545 !important;
+    border-radius: 8px !important;
+    padding: 0.8rem 1rem !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    text-align: center !important;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3) !important;
+    cursor: pointer !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  .kenpo-dropdown-menu {
+    background: white !important;
+    border: 2px solid #ddd !important;
+    border-top: none !important;
+    border-radius: 0 0 8px 8px !important;
+    margin-top: -2px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .kenpo-dropdown-button {
+    width: 100% !important;
+    background: white !important;
+    border: none !important;
+    border-bottom: 1px solid #eee !important;
+    padding: 0.8rem 1rem !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    color: #333 !important;
+    text-align: left !important;
+    margin-bottom: 0 !important;
+    cursor: pointer !important;
+  }
+  
+  .kenpo-dropdown-button:last-child {
+    border-bottom: none !important;
+    border-radius: 0 0 6px 6px !important;
+  }
+  
+  .kenpo-dropdown-button:hover {
+    background: #f8f9fa !important;
+    color: #dc3545 !important;
+  }
+  
+  .kenpo-dropdown-button.active {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%) !important;
+    color: white !important;
+  }
+}
+
+/* 
+ * Add other shared styles here as needed
+ * This ensures both index.php and testing.php stay in sync
+ */

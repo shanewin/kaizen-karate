@@ -243,6 +243,54 @@ function publish_all_changes() {
 }
 
 /**
+ * Discard all draft changes
+ */
+function discard_all_changes() {
+    $change_log = load_change_log();
+    $discarded_files = [];
+    $errors = [];
+    
+    foreach ($change_log['pending_files'] as $filename) {
+        try {
+            // Delete draft file
+            $draft_filepath = CONTENT_ROOT . '/' . $filename . '-draft.json';
+            if (file_exists($draft_filepath)) {
+                if (unlink($draft_filepath)) {
+                    $discarded_files[] = $filename;
+                } else {
+                    $errors[] = "Failed to delete draft file: {$filename}";
+                }
+            }
+        } catch (Exception $e) {
+            $errors[] = "Failed to discard {$filename}: " . $e->getMessage();
+        }
+    }
+    
+    // Update change log
+    if (!empty($discarded_files)) {
+        // Mark changes as discarded
+        foreach ($change_log['changes'] as &$change) {
+            if (in_array($change['file'], $discarded_files) && $change['status'] === 'draft') {
+                $change['status'] = 'discarded';
+                $change['discarded_at'] = date('c');
+            }
+        }
+        
+        // Clear pending files
+        $change_log['pending_files'] = array_diff($change_log['pending_files'], $discarded_files);
+        $change_log['pending_files'] = array_values($change_log['pending_files']); // Re-index
+        
+        save_change_log($change_log);
+    }
+    
+    return [
+        'success' => empty($errors),
+        'discarded_files' => $discarded_files,
+        'errors' => $errors
+    ];
+}
+
+/**
  * Get pending changes summary
  */
 function get_pending_changes() {

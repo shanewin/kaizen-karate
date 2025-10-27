@@ -346,80 +346,92 @@ $defaultBeltExams = [
             'date_cards' => [
                 [
                     'id' => 'date_1',
-                    'title' => 'January Belt Exam',
-                    'date' => '2025-01-15',
-                    'time' => '10:00',
-                    'location' => 'Kaizen Karate Main Dojo',
-                    'description' => 'Belt examinations for all levels - invitation only',
-                    'status' => 'open',
+                    'month_year' => 'November 2025',
                     'icon' => 'fas fa-calendar-day',
-                    'register_link' => 'https://example.com/register/january',
-                    'notes' => 'Pre-registration required by January 8th',
+                    'location_name' => 'East Silver Spring ES - GYM',
+                    'street_address' => '631 Silver Spring Ave',
+                    'city_state_zip' => 'Silver Spring, MD 20910',
+                    'datetime_string' => 'Saturday, November 15th - 11:00 AM Start Time',
+                    'link_text' => 'For more details and registration, click here',
+                    'makeup_month' => 'January 2026',
+                    'youth_note' => '*Youth testing takes place on Saturdays',
+                    'adult_note' => '*Adult testing takes place on Monday nights',
+                    'video_note' => 'Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.',
                     'order' => 1
                 ],
                 [
                     'id' => 'date_2',
-                    'title' => 'March Belt Exam',
-                    'date' => '2025-03-15',
-                    'time' => '10:00',
-                    'location' => 'Kaizen Karate Main Dojo',
-                    'description' => 'Spring belt testing session',
-                    'status' => 'open',
+                    'month_year' => 'January 2026',
                     'icon' => 'fas fa-calendar-day',
-                    'register_link' => 'https://example.com/register/march',
-                    'notes' => 'Written approval required',
+                    'location_name' => 'East Silver Spring ES - GYM',
+                    'street_address' => '631 Silver Spring Ave',
+                    'city_state_zip' => 'Silver Spring, MD 20910',
+                    'datetime_string' => 'TIME & DATE - TBA',
+                    'link_text' => 'For more details and registration, click here',
+                    'makeup_month' => 'March 2026',
+                    'youth_note' => '*Youth testing takes place on Saturdays',
+                    'adult_note' => '*Adult testing takes place on Monday nights',
+                    'video_note' => 'Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.',
                     'order' => 2
                 ],
                 [
                     'id' => 'date_3',
-                    'title' => 'May Belt Exam',
-                    'date' => '2025-05-15',
-                    'time' => '10:00',
-                    'location' => 'Kaizen Karate Main Dojo',
-                    'description' => 'Mid-year belt examination',
-                    'status' => 'open',
+                    'month_year' => 'March 2026',
                     'icon' => 'fas fa-calendar-day',
-                    'register_link' => 'https://example.com/register/may',
-                    'notes' => 'Video submissions due one week prior',
+                    'location_name' => 'East Silver Spring ES - GYM',
+                    'street_address' => '631 Silver Spring Ave',
+                    'city_state_zip' => 'Silver Spring, MD 20910',
+                    'datetime_string' => 'TIME & DATE - TBA',
+                    'link_text' => 'For more details and registration, click here',
+                    'makeup_month' => 'May 2026',
+                    'youth_note' => '*Youth testing takes place on Saturdays',
+                    'adult_note' => '*Adult testing takes place on Monday nights',
+                    'video_note' => 'Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.',
                     'order' => 3
                 ],
                 [
                     'id' => 'date_4',
-                    'title' => 'July Belt Exam',
-                    'date' => '2025-07-15',
-                    'time' => '10:00',
-                    'location' => 'Kaizen Karate Main Dojo',
-                    'description' => 'Summer belt testing session',
-                    'status' => 'open',
+                    'month_year' => 'March 2026',
                     'icon' => 'fas fa-calendar-day',
-                    'register_link' => 'https://example.com/register/july',
-                    'notes' => 'Summer camp participants welcome',
+                    'location_name' => 'East Silver Spring ES - GYM',
+                    'street_address' => '631 Silver Spring Ave',
+                    'city_state_zip' => 'Silver Spring, MD 20910',
+                    'datetime_string' => 'TIME & DATE - TBA',
+                    'link_text' => 'For more details and registration, click here',
+                    'makeup_month' => 'May 2026',
+                    'youth_note' => '*Youth testing takes place on Saturdays',
+                    'adult_note' => '*Adult testing takes place on Monday nights',
+                    'video_note' => 'Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.',
                     'order' => 4
                 ],
                 [
                     'id' => 'date_5',
-                    'title' => 'September Belt Exam',
-                    'date' => '2025-09-15',
-                    'time' => '10:00',
-                    'location' => 'Kaizen Karate Main Dojo',
-                    'description' => 'Fall semester belt examination',
-                    'status' => 'open',
+                    'month_year' => 'May 2026',
                     'icon' => 'fas fa-calendar-day',
-                    'register_link' => 'https://example.com/register/september',
-                    'notes' => 'Back-to-school testing session',
+                    'location_name' => 'East Silver Spring ES - GYM',
+                    'street_address' => '631 Silver Spring Ave',
+                    'city_state_zip' => 'Silver Spring, MD 20910',
+                    'datetime_string' => 'TIME & DATE - TBA',
+                    'link_text' => 'For more details and registration, click here',
+                    'makeup_month' => 'September 2025',
+                    'youth_note' => '*Youth testing takes place on Saturdays',
+                    'adult_note' => '*Adult testing takes place on Monday nights',
+                    'video_note' => 'Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.',
                     'order' => 5
                 ],
                 [
                     'id' => 'date_6',
-                    'title' => 'November Belt Exam',
-                    'date' => '2025-11-15',
-                    'time' => '10:00',
-                    'location' => 'Kaizen Karate Main Dojo',
-                    'description' => 'Year-end belt examination',
-                    'status' => 'open',
+                    'month_year' => 'September 2026',
                     'icon' => 'fas fa-calendar-day',
-                    'register_link' => 'https://example.com/register/november',
-                    'notes' => 'Final testing opportunity of the year',
+                    'location_name' => 'East Silver Spring ES - GYM',
+                    'street_address' => '631 Silver Spring Ave',
+                    'city_state_zip' => 'Silver Spring, MD 20910',
+                    'datetime_string' => 'TIME & DATE - TBA',
+                    'link_text' => 'For more details and registration, click here',
+                    'makeup_month' => 'November 2026',
+                    'youth_note' => '*Youth testing takes place on Saturdays',
+                    'adult_note' => '*Adult testing takes place on Monday nights',
+                    'video_note' => 'Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.',
                     'order' => 6
                 ]
             ]
@@ -1060,20 +1072,22 @@ if ($_POST && verify_csrf_token($_POST['csrf_token'] ?? '')) {
             'date_cards' => []
         ];
         
-        // Process date cards
+        // Process date cards with new frontend-matching structure
         if (isset($_POST['date_card_id']) && is_array($_POST['date_card_id'])) {
             foreach ($_POST['date_card_id'] as $index => $cardId) {
                 $dateCard = [
                     'id' => $cardId,
-                    'title' => $_POST['date_card_title'][$index] ?? '',
-                    'date' => $_POST['date_card_date'][$index] ?? '',
-                    'time' => $_POST['date_card_time'][$index] ?? '',
-                    'location' => $_POST['date_card_location'][$index] ?? '',
-                    'description' => $_POST['date_card_description'][$index] ?? '',
-                    'status' => $_POST['date_card_status'][$index] ?? 'open',
+                    'month_year' => $_POST['date_card_month_year'][$index] ?? '',
                     'icon' => $_POST['date_card_icon'][$index] ?? 'fas fa-calendar-day',
-                    'register_link' => $_POST['date_card_register_link'][$index] ?? '',
-                    'notes' => $_POST['date_card_notes'][$index] ?? '',
+                    'location_name' => $_POST['date_card_location_name'][$index] ?? '',
+                    'street_address' => $_POST['date_card_street_address'][$index] ?? '',
+                    'city_state_zip' => $_POST['date_card_city_state_zip'][$index] ?? '',
+                    'datetime_string' => $_POST['date_card_datetime_string'][$index] ?? '',
+                    'link_text' => $_POST['date_card_link_text'][$index] ?? 'For more details and registration, click here',
+                    'makeup_month' => $_POST['date_card_makeup_month'][$index] ?? '',
+                    'youth_note' => $_POST['date_card_youth_note'][$index] ?? '*Youth testing takes place on Saturdays',
+                    'adult_note' => $_POST['date_card_adult_note'][$index] ?? '*Adult testing takes place on Monday nights',
+                    'video_note' => $_POST['date_card_video_note'][$index] ?? 'Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.',
                     'order' => (int)($_POST['date_card_order'][$index] ?? ($index + 1))
                 ];
                 
@@ -2256,7 +2270,19 @@ if ($_POST && verify_csrf_token($_POST['csrf_token'] ?? '')) {
                             }
                         }
                     }
+                    
+                    // If no dates accordion exists, get default from the default structure
+                    if ($datesAccordion === null) {
+                        foreach ($defaultBeltExams['accordions'] as $accordion) {
+                            if ($accordion['id'] === 'dates') {
+                                $datesAccordion = $accordion;
+                                break;
+                            }
+                        }
+                    }
                     ?>
+                    
+                    <!-- Data Structure Now Matches Frontend -->
                     
                     <form method="POST">
                         <input type="hidden" name="csrf_token" value="<?php echo generate_csrf_token(); ?>">
@@ -2288,8 +2314,8 @@ if ($_POST && verify_csrf_token($_POST['csrf_token'] ?? '')) {
                             </div>
                         </div>
                         
-                        <!-- Date Cards -->
-                        <h5 class="mb-3">Testing Date Cards</h5>
+                        <!-- Testing Date Cards -->
+                        <h5 class="mb-3">Testing Date Cards (Match Frontend Structure)</h5>
                         <div id="date-cards-container">
                             <?php
                             $dateCards = $datesAccordion['date_cards'] ?? [];
@@ -2297,7 +2323,7 @@ if ($_POST && verify_csrf_token($_POST['csrf_token'] ?? '')) {
                             ?>
                             <div class="card mb-3 date-card" data-index="<?php echo $index; ?>">
                                 <div class="card-header d-flex justify-content-between align-items-center">
-                                    <h6 class="mb-0">Date Card: <?php echo htmlspecialchars($card['title']); ?></h6>
+                                    <h6 class="mb-0">Date Card: <?php echo htmlspecialchars($card['month_year']); ?></h6>
                                     <button type="button" class="btn btn-sm btn-danger remove-date-card">
                                         <i class="fas fa-trash"></i> Remove
                                     </button>
@@ -2305,75 +2331,100 @@ if ($_POST && verify_csrf_token($_POST['csrf_token'] ?? '')) {
                                 <div class="card-body">
                                     <input type="hidden" name="date_card_id[]" value="<?php echo htmlspecialchars($card['id']); ?>">
                                     
+                                    <!-- Basic Info Row -->
                                     <div class="row mb-3">
-                                        <div class="col-md-3">
-                                            <label class="form-label">Title</label>
-                                            <input type="text" class="form-control date-title-input" name="date_card_title[]"
-                                                   value="<?php echo htmlspecialchars($card['title']); ?>" required>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Month/Year Title</label>
+                                            <input type="text" class="form-control date-title-input" name="date_card_month_year[]"
+                                                   value="<?php echo htmlspecialchars($card['month_year']); ?>" 
+                                                   placeholder="e.g., November 2025" required>
                                         </div>
-                                        <div class="col-md-3">
-                                            <label class="form-label">Date</label>
-                                            <input type="date" class="form-control" name="date_card_date[]"
-                                                   value="<?php echo htmlspecialchars($card['date']); ?>" required>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Icon</label>
+                                            <select class="form-control icon-select" name="date_card_icon[]" required>
+                                                <option value="fas fa-calendar-day" <?php echo ($card['icon'] ?? 'fas fa-calendar-day') === 'fas fa-calendar-day' ? 'selected' : ''; ?>>📅 Calendar Day</option>
+                                                <option value="fas fa-clock" <?php echo ($card['icon'] ?? '') === 'fas fa-clock' ? 'selected' : ''; ?>>🕐 Clock</option>
+                                                <option value="fas fa-calendar-alt" <?php echo ($card['icon'] ?? '') === 'fas fa-calendar-alt' ? 'selected' : ''; ?>>📅 Calendar</option>
+                                            </select>
                                         </div>
-                                        <div class="col-md-3">
-                                            <label class="form-label">Time</label>
-                                            <input type="time" class="form-control" name="date_card_time[]"
-                                                   value="<?php echo htmlspecialchars($card['time']); ?>" required>
-                                        </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <label class="form-label">Order</label>
                                             <input type="number" class="form-control" name="date_card_order[]" 
                                                    value="<?php echo $card['order']; ?>" min="1" max="6" required>
                                         </div>
                                     </div>
                                     
+                                    <!-- Location Info Row -->
                                     <div class="row mb-3">
                                         <div class="col-md-6">
-                                            <label class="form-label">Location</label>
-                                            <input type="text" class="form-control" name="date_card_location[]"
-                                                   value="<?php echo htmlspecialchars($card['location']); ?>" required>
+                                            <label class="form-label">Location Name</label>
+                                            <input type="text" class="form-control" name="date_card_location_name[]"
+                                                   value="<?php echo htmlspecialchars($card['location_name'] ?? ''); ?>" 
+                                                   placeholder="e.g., East Silver Spring ES - GYM" required>
                                         </div>
-                                        <div class="col-md-3">
-                                            <label class="form-label">Registration Status</label>
-                                            <select class="form-control" name="date_card_status[]" required>
-                                                <option value="open" <?php echo $card['status'] === 'open' ? 'selected' : ''; ?>>Open</option>
-                                                <option value="closing_soon" <?php echo $card['status'] === 'closing_soon' ? 'selected' : ''; ?>>Closing Soon</option>
-                                                <option value="closed" <?php echo $card['status'] === 'closed' ? 'selected' : ''; ?>>Closed</option>
-                                                <option value="full" <?php echo $card['status'] === 'full' ? 'selected' : ''; ?>>Full</option>
-                                            </select>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Street Address</label>
+                                            <input type="text" class="form-control" name="date_card_street_address[]"
+                                                   value="<?php echo htmlspecialchars($card['street_address'] ?? ''); ?>"
+                                                   placeholder="e.g., 631 Silver Spring Ave" required>
                                         </div>
-                                        <div class="col-md-3">
-                                            <label class="form-label">Icon</label>
-                                            <select class="form-control icon-select" name="date_card_icon[]" required>
-                                                <option value="fas fa-calendar-day" <?php echo $card['icon'] === 'fas fa-calendar-day' ? 'selected' : ''; ?>>📅 Calendar Day</option>
-                                                <option value="fas fa-clock" <?php echo $card['icon'] === 'fas fa-clock' ? 'selected' : ''; ?>>🕐 Clock</option>
-                                                <option value="fas fa-map-marker-alt" <?php echo $card['icon'] === 'fas fa-map-marker-alt' ? 'selected' : ''; ?>>📍 Location</option>
-                                                <option value="fas fa-user-plus" <?php echo $card['icon'] === 'fas fa-user-plus' ? 'selected' : ''; ?>>👤 Register</option>
-                                                <option value="fas fa-star" <?php echo $card['icon'] === 'fas fa-star' ? 'selected' : ''; ?>>⭐ Star</option>
-                                            </select>
+                                    </div>
+                                    
+                                    <!-- Address & DateTime Row -->
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">City, State ZIP</label>
+                                            <input type="text" class="form-control" name="date_card_city_state_zip[]"
+                                                   value="<?php echo htmlspecialchars($card['city_state_zip'] ?? ''); ?>"
+                                                   placeholder="e.g., Silver Spring, MD 20910" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Date & Time String</label>
+                                            <input type="text" class="form-control" name="date_card_datetime_string[]"
+                                                   value="<?php echo htmlspecialchars($card['datetime_string'] ?? ''); ?>"
+                                                   placeholder="e.g., Saturday, November 15th - 11:00 AM Start Time" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Registration Info Row -->
+                                    <div class="row mb-3">
+                                        <div class="col-md-8">
+                                            <label class="form-label">Registration Link Text</label>
+                                            <input type="text" class="form-control" name="date_card_link_text[]"
+                                                   value="<?php echo htmlspecialchars($card['link_text'] ?? 'For more details and registration, click here'); ?>"
+                                                   placeholder="For more details and registration, click here">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Make-up Month</label>
+                                            <input type="text" class="form-control" name="date_card_makeup_month[]"
+                                                   value="<?php echo htmlspecialchars($card['makeup_month'] ?? ''); ?>"
+                                                   placeholder="e.g., January 2026">
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Standard Notes Section -->
+                                    <h6 class="mb-3">Standard Notes (4 notes per card)</h6>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">Youth Testing Note</label>
+                                            <input type="text" class="form-control" name="date_card_youth_note[]"
+                                                   value="<?php echo htmlspecialchars($card['youth_note'] ?? '*Youth testing takes place on Saturdays'); ?>"
+                                                   placeholder="*Youth testing takes place on Saturdays">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Adult Testing Note</label>
+                                            <input type="text" class="form-control" name="date_card_adult_note[]"
+                                                   value="<?php echo htmlspecialchars($card['adult_note'] ?? '*Adult testing takes place on Monday nights'); ?>"
+                                                   placeholder="*Adult testing takes place on Monday nights">
                                         </div>
                                     </div>
                                     
                                     <div class="row mb-3">
-                                        <div class="col-md-6">
-                                            <label class="form-label">Registration Link</label>
-                                            <input type="url" class="form-control" name="date_card_register_link[]"
-                                                   value="<?php echo htmlspecialchars($card['register_link']); ?>"
-                                                   placeholder="https://example.com/register">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">Notes</label>
-                                            <input type="text" class="form-control" name="date_card_notes[]"
-                                                   value="<?php echo htmlspecialchars($card['notes']); ?>"
-                                                   placeholder="e.g., Pre-registration required">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="row">
                                         <div class="col-md-12">
-                                            <label class="form-label">Description</label>
-                                            <textarea class="form-control" name="date_card_description[]" rows="2" required><?php echo htmlspecialchars($card['description']); ?></textarea>
+                                            <label class="form-label">Video Testing Note</label>
+                                            <input type="text" class="form-control" name="date_card_video_note[]"
+                                                   value="<?php echo htmlspecialchars($card['video_note'] ?? 'Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.'); ?>"
+                                                   placeholder="Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.">
                                         </div>
                                     </div>
                                 </div>
@@ -3366,69 +3417,94 @@ if ($_POST && verify_csrf_token($_POST['csrf_token'] ?? '')) {
                     <div class="card-body">
                         <input type="hidden" name="date_card_id[]" value="${newId}">
                         
+                        <!-- Basic Info Row -->
                         <div class="row mb-3">
-                            <div class="col-md-3">
-                                <label class="form-label">Title</label>
-                                <input type="text" class="form-control date-title-input" name="date_card_title[]" required>
+                            <div class="col-md-4">
+                                <label class="form-label">Month/Year Title</label>
+                                <input type="text" class="form-control date-title-input" name="date_card_month_year[]"
+                                       placeholder="e.g., November 2025" required>
                             </div>
-                            <div class="col-md-3">
-                                <label class="form-label">Date</label>
-                                <input type="date" class="form-control" name="date_card_date[]" required>
+                            <div class="col-md-4">
+                                <label class="form-label">Icon</label>
+                                <select class="form-control icon-select" name="date_card_icon[]" required>
+                                    <option value="fas fa-calendar-day">📅 Calendar Day</option>
+                                    <option value="fas fa-clock">🕐 Clock</option>
+                                    <option value="fas fa-calendar-alt">📅 Calendar</option>
+                                </select>
                             </div>
-                            <div class="col-md-3">
-                                <label class="form-label">Time</label>
-                                <input type="time" class="form-control" name="date_card_time[]" required>
-                            </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <label class="form-label">Order</label>
                                 <input type="number" class="form-control" name="date_card_order[]" 
                                        value="${newIndex + 1}" min="1" max="6" required>
                             </div>
                         </div>
                         
+                        <!-- Location Info Row -->
                         <div class="row mb-3">
                             <div class="col-md-6">
-                                <label class="form-label">Location</label>
-                                <input type="text" class="form-control" name="date_card_location[]" required>
+                                <label class="form-label">Location Name</label>
+                                <input type="text" class="form-control" name="date_card_location_name[]"
+                                       placeholder="e.g., East Silver Spring ES - GYM" required>
                             </div>
-                            <div class="col-md-3">
-                                <label class="form-label">Registration Status</label>
-                                <select class="form-control" name="date_card_status[]" required>
-                                    <option value="open">Open</option>
-                                    <option value="closing_soon">Closing Soon</option>
-                                    <option value="closed">Closed</option>
-                                    <option value="full">Full</option>
-                                </select>
+                            <div class="col-md-6">
+                                <label class="form-label">Street Address</label>
+                                <input type="text" class="form-control" name="date_card_street_address[]"
+                                       placeholder="e.g., 631 Silver Spring Ave" required>
                             </div>
-                            <div class="col-md-3">
-                                <label class="form-label">Icon</label>
-                                <select class="form-control icon-select" name="date_card_icon[]" required>
-                                    <option value="fas fa-calendar-day">📅 Calendar Day</option>
-                                    <option value="fas fa-clock">🕐 Clock</option>
-                                    <option value="fas fa-map-marker-alt">📍 Location</option>
-                                    <option value="fas fa-user-plus">👤 Register</option>
-                                    <option value="fas fa-star">⭐ Star</option>
-                                </select>
+                        </div>
+                        
+                        <!-- Address & DateTime Row -->
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">City, State ZIP</label>
+                                <input type="text" class="form-control" name="date_card_city_state_zip[]"
+                                       placeholder="e.g., Silver Spring, MD 20910" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Date & Time String</label>
+                                <input type="text" class="form-control" name="date_card_datetime_string[]"
+                                       placeholder="e.g., Saturday, November 15th - 11:00 AM Start Time" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Registration Info Row -->
+                        <div class="row mb-3">
+                            <div class="col-md-8">
+                                <label class="form-label">Registration Link Text</label>
+                                <input type="text" class="form-control" name="date_card_link_text[]"
+                                       value="For more details and registration, click here"
+                                       placeholder="For more details and registration, click here">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Make-up Month</label>
+                                <input type="text" class="form-control" name="date_card_makeup_month[]"
+                                       placeholder="e.g., January 2026">
+                            </div>
+                        </div>
+                        
+                        <!-- Standard Notes Section -->
+                        <h6 class="mb-3">Standard Notes (4 notes per card)</h6>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Youth Testing Note</label>
+                                <input type="text" class="form-control" name="date_card_youth_note[]"
+                                       value="*Youth testing takes place on Saturdays"
+                                       placeholder="*Youth testing takes place on Saturdays">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Adult Testing Note</label>
+                                <input type="text" class="form-control" name="date_card_adult_note[]"
+                                       value="*Adult testing takes place on Monday nights"
+                                       placeholder="*Adult testing takes place on Monday nights">
                             </div>
                         </div>
                         
                         <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label class="form-label">Registration Link</label>
-                                <input type="url" class="form-control" name="date_card_register_link[]"
-                                       placeholder="https://example.com/register">
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Notes</label>
-                                <input type="text" class="form-control" name="date_card_notes[]"
-                                       placeholder="e.g., Pre-registration required">
-                            </div>
-                        </div>
-                        
-                        <div class="row">
                             <div class="col-md-12">
-                                <label class="form-label">Description</label>
-                                <textarea class="form-control" name="date_card_description[]" rows="2" required></textarea>
+                                <label class="form-label">Video Testing Note</label>
+                                <input type="text" class="form-control" name="date_card_video_note[]"
+                                       value="Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS."
+                                       placeholder="Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.">
                             </div>
                         </div>
                     </div>

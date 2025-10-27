@@ -244,6 +244,79 @@ require_once 'includes/content-loader.php';
       }
     }
     
+    /* 🖥️ Desktop Service Areas - 769px and above */
+    @media (min-width: 769px) {
+      .served-states-inner {
+        display: flex !important;
+        align-items: center !important;
+        gap: 1rem !important;
+      }
+      
+      .served-states-title {
+        font-size: 2.2rem !important;
+        font-weight: 900 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 3px !important;
+        margin-bottom: 0 !important;
+        flex-shrink: 0 !important;
+      }
+      
+      .served-states-grid {
+        flex: 1 !important;
+      }
+    }
+    
+    /* 📱 Mobile Accordion Titles - 480px and below */
+    @media (max-width: 480px) {
+      .about-section-title {
+        font-size: 1.7rem !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+      }
+    }
+    
+    /* 📱 Ultra Small Mobile Accordion Titles - 390px and below */
+    @media (max-width: 390px) {
+      .about-section-title {
+        font-size: 1.5rem !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+      }
+    }
+    
+    /* 👨‍🏫 Instructor Profile Images - All breakpoints */
+    .instructor-profile-image {
+      margin-top: 1rem !important;
+      margin-bottom: 1rem !important;
+      float: left !important;
+      margin-right: 1.5rem !important;
+      border-radius: 8px !important;
+      max-width: 220px !important;
+      height: auto !important;
+    }
+    
+    /* 📱 Mobile Instructor Images - 480px and below */
+    @media (max-width: 480px) {
+      .instructor-profile-image {
+        float: none !important;           /* Remove float */
+        display: block !important;        /* Block display */
+        margin: 1rem auto 1.5rem auto !important;  /* Center with spacing */
+        max-width: 280px !important;      /* Even bigger on mobile */
+        width: 100% !important;           /* Responsive width */
+        max-height: 320px !important;     /* Larger height limit */
+        object-fit: cover !important;     /* Maintain aspect ratio */
+      }
+    }
+    
+    /* 📱 Ultra Small Mobile Instructor Images - 390px and below */
+    @media (max-width: 390px) {
+      .instructor-profile-image {
+        max-width: 240px !important;      /* Much bigger on tiny screens */
+        max-height: 280px !important;     /* Larger height for small screens */
+        margin: 0.8rem auto 1.2rem auto !important;
+      }
+    }
+    
     /* 📱 Ultra Small Mobile Service Areas - 390px and below */
     @media (max-width: 390px) {
       /* Service Areas Section Title */
@@ -257,8 +330,7 @@ require_once 'includes/content-loader.php';
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
       }
       
-      /* Main Section Headers - Make Bigger */
-      .about-section-title,
+      /* Main Section Headers - Make Bigger (except accordion titles) */
       .summer-camp-title,
       .kaizen-dojo-title,
       h2.text-center.mb-4,
@@ -585,14 +657,97 @@ require_once 'includes/content-loader.php';
       }
     }
     
-    /* Kaizen Kenpo Tab Navigation - Desktop (above 390px) */
-    @media (min-width: 391px) {
+    /* Kaizen Kenpo Tab Navigation - Desktop Tabs Only (above 768px) */
+    @media (min-width: 769px) {
       .kenpo-tabs-mobile {
         display: none !important;
       }
       
       .kenpo-tabs-desktop {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
+        align-items: flex-end !important;
+      }
+      
+      .kenpo-tabs-desktop .nav-item {
+        flex: 0 0 auto !important;
+      }
+      
+      .kenpo-tabs-desktop .nav-link {
+        white-space: nowrap !important;
+        font-size: 1.1rem !important;
+        padding: 0.8rem 1.5rem !important;
+      }
+    }
+    
+    /* Kaizen Kenpo Tab Navigation - Mobile Dropdown (768px and below) */
+    @media (max-width: 768px) {
+      .kenpo-tabs-mobile {
         display: block !important;
+      }
+      
+      .kenpo-tabs-desktop {
+        display: none !important;
+      }
+      
+      .kenpo-dropdown-container {
+        margin-bottom: 1.5rem !important;
+      }
+      
+      .kenpo-dropdown-header {
+        background: linear-gradient(135deg, #dc3545 0%, #c82333 100%) !important;
+        color: white !important;
+        border: 2px solid #dc3545 !important;
+        border-radius: 8px !important;
+        padding: 0.8rem 1rem !important;
+        font-weight: 600 !important;
+        font-size: 1rem !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3) !important;
+        cursor: pointer !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+      
+      .kenpo-dropdown-menu {
+        background: white !important;
+        border: 2px solid #ddd !important;
+        border-top: none !important;
+        border-radius: 0 0 8px 8px !important;
+        margin-top: -2px !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+      }
+      
+      .kenpo-dropdown-button {
+        width: 100% !important;
+        background: white !important;
+        border: none !important;
+        border-bottom: 1px solid #eee !important;
+        padding: 0.8rem 1rem !important;
+        font-weight: 600 !important;
+        font-size: 0.9rem !important;
+        color: #333 !important;
+        text-align: left !important;
+        margin-bottom: 0 !important;
+        cursor: pointer !important;
+      }
+      
+      .kenpo-dropdown-button:last-child {
+        border-bottom: none !important;
+        border-radius: 0 0 6px 6px !important;
+      }
+      
+      .kenpo-dropdown-button:hover {
+        background: #f8f9fa !important;
+        color: #dc3545 !important;
+      }
+      
+      .kenpo-dropdown-button.active {
+        background: linear-gradient(135deg, #dc3545 0%, #c82333 100%) !important;
+        color: white !important;
       }
     }
     
@@ -1584,13 +1739,16 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
   <div class="container">
     <h2 class="text-center mb-4" style="display:none;">Kaizen Dojo</h2>
     <div class="row align-items-center dojo-hero mb-4">
+      <?php
+      $hero_data = get_content('kaizen_dojo', 'hero');
+      ?>
       <div class="col-md-3 text-center text-md-start mb-3 mb-md-0">
-        <img src="assets/images/dojo/Kaizen-Dojo-Logo.webp" alt="Kaizen Dojo" class="dojo-logo" />
+        <img src="<?php echo $hero_data['logo'] ?? 'assets/images/dojo/Kaizen-Dojo-Logo.webp'; ?>" alt="Kaizen Dojo" class="dojo-logo" />
       </div>
       <div class="col-md-9">
-        <h1 class="kaizen-dojo-title"><?php echo display_text('kaizen_dojo', 'title', 'KAIZEN DOJO'); ?></h1>
+        <h1 class="kaizen-dojo-title"><?php echo $hero_data['title'] ?? 'KAIZEN DOJO'; ?></h1>
         <p class="dojo-intro">
-          <strong>Kaizen Dojo</strong> is an after school program operated by <strong>Kaizen Karate</strong>. We are located at 9545 Georgia Ave, Silver Spring, MD 20910 (near the beltway exits). Students will take part in daily karate lessons, snack time, homework time, and more! We provide service throughout the entire 2025-2026 school year. Please note, we follow the MCPS calendar. Service will be provided on 1/2 days.
+          <?php echo $hero_data['description'] ?? '<strong>Kaizen Dojo</strong> is an after school program operated by <strong>Kaizen Karate</strong>. We are located at 9545 Georgia Ave, Silver Spring, MD 20910 (near the beltway exits). Students will take part in daily karate lessons, snack time, homework time, and more! We provide service throughout the entire 2025-2026 school year. Please note, we follow the MCPS calendar. Service will be provided on 1/2 days.'; ?>
         </p>
       </div>
     </div>
@@ -1602,53 +1760,49 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
             <div class="row g-4 mb-4">
               <div class="col-12">
                 <div class="dojo-card">
-                  <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                  <?php
+                  $van_service_data = get_content('kaizen_dojo', 'van_service');
+                  $locations = $van_service_data['locations'] ?? [];
+                  ?>
+                  <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
                     <div class="dojo-card-icon" style="margin: 0 15px 0 0;"><i class="fas fa-bus"></i></div>
-                    <h3 class="dojo-card-title" style="font-size: 1.8rem; margin: 0;">Van Service — Locations</h3>
+                    <h3 class="dojo-card-title" style="font-size: 1.8rem; margin: 0;"><?php echo $van_service_data['title'] ?? 'Van Service — Locations'; ?></h3>
                   </div>
+                  <?php if (!empty($van_service_data['description'])): ?>
+                  <p style="text-align: center; margin-bottom: 25px; color: #555; font-style: italic;">
+                    <?php echo htmlspecialchars($van_service_data['description']); ?>
+                  </p>
+                  <?php endif; ?>
                   <div class="row g-3 mt-2">
-                    <div class="col-md-4">
-                      <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.2); border-radius: 12px; padding: 1.5rem; text-align: center;">
-                        <i class="fas fa-map-marker-alt" style="color: #dc3545; font-size: 1.5rem; margin-bottom: 0.8rem; display: block;"></i>
-                        <h5 style="margin: 0; font-weight: 600; color: #333; font-size: 1.1rem;">Woodlin ES</h5>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.2); border-radius: 12px; padding: 1.5rem; text-align: center;">
-                        <i class="fas fa-map-marker-alt" style="color: #dc3545; font-size: 1.5rem; margin-bottom: 0.8rem; display: block;"></i>
-                        <h5 style="margin: 0; font-weight: 600; color: #333; font-size: 1.1rem;">East Silver Spring ES</h5>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.2); border-radius: 12px; padding: 1.5rem; text-align: center;">
-                        <i class="fas fa-map-marker-alt" style="color: #dc3545; font-size: 1.5rem; margin-bottom: 0.8rem; display: block;"></i>
-                        <h5 style="margin: 0; font-weight: 600; color: #333; font-size: 1.1rem;">Sligo Creek ES</h5>
-                      </div>
-                    </div>
+                    <?php
+                    foreach ($locations as $location):
+                      $is_new = $location['is_new'] ?? false;
+                      $badge_text = $location['badge_text'] ?? '';
+                      $school_name = $location['school_name'] ?? '';
+                      
+                      if ($is_new):
+                        // Use provided badge text or default to "NEW"
+                        $display_badge = !empty($badge_text) ? $badge_text : 'NEW';
+                    ?>
                     <div class="col-md-4">
                       <div style="background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; position: relative;">
                         <i class="fas fa-star" style="position: absolute; top: 10px; right: 10px; color: #ffc107; font-size: 1rem;"></i>
                         <i class="fas fa-map-marker-alt" style="color: #dc3545; font-size: 1.5rem; margin-bottom: 0.8rem; display: block;"></i>
-                        <h5 style="margin: 0; font-weight: 600; color: #333; font-size: 1.1rem;">Oakland Terrace ES</h5>
-                        <span style="font-size: 0.8rem; color: #ffc107; font-weight: 600;">NEW FALL 2025</span>
+                        <h5 style="margin: 0; font-weight: 600; color: #333; font-size: 1.1rem;"><?php echo htmlspecialchars($school_name); ?></h5>
+                        <span style="font-size: 0.8rem; color: #ffc107; font-weight: 600;"><?php echo htmlspecialchars($display_badge); ?></span>
                       </div>
                     </div>
+                    <?php else: ?>
                     <div class="col-md-4">
-                      <div style="background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; position: relative;">
-                        <i class="fas fa-star" style="position: absolute; top: 10px; right: 10px; color: #ffc107; font-size: 1rem;"></i>
+                      <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.2); border-radius: 12px; padding: 1.5rem; text-align: center;">
                         <i class="fas fa-map-marker-alt" style="color: #dc3545; font-size: 1.5rem; margin-bottom: 0.8rem; display: block;"></i>
-                        <h5 style="margin: 0; font-weight: 600; color: #333; font-size: 1.1rem;">Piney Branch ES</h5>
-                        <span style="font-size: 0.8rem; color: #ffc107; font-weight: 600;">NEW FALL 2025</span>
+                        <h5 style="margin: 0; font-weight: 600; color: #333; font-size: 1.1rem;"><?php echo htmlspecialchars($school_name); ?></h5>
                       </div>
                     </div>
-                    <div class="col-md-4">
-                      <div style="background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center; position: relative;">
-                        <i class="fas fa-star" style="position: absolute; top: 10px; right: 10px; color: #ffc107; font-size: 1rem;"></i>
-                        <i class="fas fa-map-marker-alt" style="color: #dc3545; font-size: 1.5rem; margin-bottom: 0.8rem; display: block;"></i>
-                        <h5 style="margin: 0; font-weight: 600; color: #333; font-size: 1.1rem;">Takoma Park ES</h5>
-                        <span style="font-size: 0.8rem; color: #ffc107; font-weight: 600;">NEW FALL 2025</span>
-                      </div>
-                    </div>
+                    <?php 
+                      endif;
+                    endforeach; 
+                    ?>
                   </div>
                   
                   <!-- No Van Service Option Alert -->
@@ -1672,38 +1826,36 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
 
             <!-- Other Services Row -->
             <div class="row g-4">
+          <?php
+          $service_cards = get_content('kaizen_dojo', 'service_cards', []);
+          foreach ($service_cards as $card):
+            $icon = $card['icon'] ?? 'fas fa-star';
+            $title = $card['title'] ?? '';
+            $description = $card['description'] ?? '';
+          ?>
           <div class="col-md-4">
             <div class="dojo-card">
-              <div class="dojo-card-icon"><i class="fas fa-book-open"></i></div>
-              <h3 class="dojo-card-title">Homework Time</h3>
-              <p class="dojo-card-text">Students will have time to work on their homework assignments from school when they get back to Kaizen Dojo.</p>
+              <div class="dojo-card-icon"><i class="<?php echo htmlspecialchars($icon); ?>"></i></div>
+              <h3 class="dojo-card-title"><?php echo htmlspecialchars($title); ?></h3>
+              <p class="dojo-card-text"><?php echo htmlspecialchars($description); ?></p>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="dojo-card">
-              <div class="dojo-card-icon"><i class="fas fa-apple-alt"></i></div>
-              <h3 class="dojo-card-title">Snack Time</h3>
-              <p class="dojo-card-text">Snacks are provided as part of the Kaizen Dojo program. Please be sure to let our office team know about any allergies via email.</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="dojo-card">
-              <div class="dojo-card-icon"><i class="fas fa-fist-raised"></i></div>
-              <h3 class="dojo-card-title">Karate Instruction</h3>
-              <p class="dojo-card-text">After homework time ends, students will participate in daily karate lessons! Instruction is geared towards the student’s age and current belt rank.</p>
-            </div>
-          </div>
+          <?php endforeach; ?>
         </div>
 
         <div class="dojo-register-button-container">
           <a href="https://form.jotform.com/251533593606459" target="_blank" class="btn dojo-register-btn">
-            Register for Kaizen Dojo
+            <?php echo $hero_data['registration_button_text'] ?? 'Register for Kaizen Dojo'; ?>
           </a>
         </div>
 
             <div class="dojo-accordion mt-4">
           <details class="dojo-accordion-item">
-            <summary>Van Service</summary>
+            <?php
+            $accordion_data = get_content('kaizen_dojo', 'accordion');
+            $van_service_accordion = $accordion_data['van_service'] ?? [];
+            ?>
+            <summary><?php echo $van_service_accordion['title'] ?? 'Van Service'; ?></summary>
             <div class="dojo-accordion-content">
               <div style="color: #555; line-height: 1.6;">
                 <p style="margin-bottom: 2rem; font-size: 1.1rem; text-align: center;">Convenient van service available from multiple school locations directly to Kaizen Dojo:</p>
@@ -1776,37 +1928,74 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
                   </div>
                 </div>
 
-                <!-- Contact Information -->
+                <!-- Notice Section -->
+                <?php 
+                $notice_data = $van_service_accordion['notice'] ?? [];
+                $notice_enabled = $notice_data['enabled'] ?? true;
+                if ($notice_enabled): 
+                  $notice_title = $notice_data['title'] ?? 'Limited Space Available';
+                  $notice_message = $notice_data['message'] ?? 'Space is limited! If you are interested in registering for Kaizen Dojo van service for Fall 2025, please contact us ASAP.';
+                  $notice_email = $notice_data['contact_email'] ?? 'coach.v@kaizenkarateusa.com';
+                ?>
                 <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 2rem;">
                   <h4 style="color: #dc3545; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">
-                    <i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem;"></i>Limited Space Available
+                    <i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem;"></i><?php echo htmlspecialchars($notice_title); ?>
                   </h4>
                   
                   <div style="background: rgba(255, 255, 255, 0.6); border-radius: 8px; padding: 1.5rem;">
-                    <p style="margin-bottom: 1rem; font-size: 1rem; color: #333; text-align: center; font-weight: 600;">Space is limited! If you are interested in registering for Kaizen Dojo van service for Fall 2025, please contact us ASAP.</p>
+                    <p style="margin-bottom: 1rem; font-size: 1rem; color: #333; text-align: center; font-weight: 600;"><?php echo htmlspecialchars($notice_message); ?></p>
                     
                     <div style="background: white; border: 2px solid #dc3545; border-radius: 8px; padding: 1rem; text-align: center;">
                       <p style="margin: 0; font-size: 0.95rem; color: #333;">
                         <i class="fas fa-envelope" style="color: #dc3545; margin-right: 0.5rem;"></i>
-                        Questions? Email: <strong style="color: #dc3545;">coach.v@kaizenkarateusa.com</strong>
+                        Questions? Email: <strong style="color: #dc3545;"><?php echo htmlspecialchars($notice_email); ?></strong>
                       </p>
                     </div>
                   </div>
                 </div>
+                <?php endif; ?>
               </div>
             </div>
           </details>
           <details class="dojo-accordion-item">
-            <summary>Tuition and Payment Options</summary>
+            <?php $tuition_data = $accordion_data['tuition_payment'] ?? []; ?>
+            <summary><?php echo $tuition_data['title'] ?? 'Tuition and Payment Options'; ?></summary>
             <div class="dojo-accordion-content">
               <div style="color: #555; line-height: 1.6;">
-                <p style="margin-bottom: 2rem; font-size: 1.1rem; text-align: center;">Flexible payment options designed to fit your family's schedule and budget:</p>
+                <p style="margin-bottom: 2rem; font-size: 1.1rem; text-align: center;"><?php echo $tuition_data['additional_notes'] ?? 'Flexible payment options designed to fit your family\'s schedule and budget:'; ?></p>
                 
                 <!-- Regular Service Options -->
                 <div style="background: rgba(220, 53, 69, 0.08); border: 1px solid rgba(220, 53, 69, 0.2); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
                   <h4 style="color: #dc3545; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">
                     <i class="fas fa-dollar-sign" style="margin-right: 0.5rem;"></i>Monthly Tuition Options
                   </h4>
+                  
+                  <?php
+                  // Use structured pricing fields directly from admin (NO TEXT PARSING)
+                  $pricing = $tuition_data['pricing'] ?? [];
+                  $pricing_data = [
+                    'full_time' => [
+                      'price' => $pricing['full_time'] ?? '$460', 
+                      'days' => '5 days per week'
+                    ],
+                    'part_time_4' => [
+                      'price' => $pricing['part_time_4'] ?? '$410', 
+                      'days' => '4 days per week'
+                    ],
+                    'part_time_3' => [
+                      'price' => $pricing['part_time_3'] ?? '$310', 
+                      'days' => '3 days per week'
+                    ],
+                    'part_time_2' => [
+                      'price' => $pricing['part_time_2'] ?? '$210', 
+                      'days' => '2 days per week'
+                    ],
+                    'part_time_1' => [
+                      'price' => $pricing['part_time_1'] ?? '$110', 
+                      'days' => '1 day per week'
+                    ]
+                  ];
+                  ?>
                   
                   <div class="row g-3">
                     <!-- Full-time -->
@@ -1815,8 +2004,8 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
                         <div style="position: absolute; top: -10px; right: 15px; background: #28a745; color: white; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">MOST POPULAR</div>
                         <i class="fas fa-star" style="color: #28a745; font-size: 2rem; margin-bottom: 1rem;"></i>
                         <h5 style="color: #28a745; margin-bottom: 0.5rem; font-size: 1.2rem; font-weight: 700;">Full-time Service</h5>
-                        <p style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">5 days per week</p>
-                        <div style="font-size: 2rem; font-weight: 700; color: #28a745; margin-bottom: 0.5rem;">$460</div>
+                        <p style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;"><?php echo $pricing_data['full_time']['days']; ?></p>
+                        <div style="font-size: 2rem; font-weight: 700; color: #28a745; margin-bottom: 0.5rem;"><?php echo $pricing_data['full_time']['price']; ?></div>
                         <p style="margin: 0; font-size: 0.85rem; color: #666;">per month</p>
                       </div>
                     </div>
@@ -1826,8 +2015,8 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
                       <div style="background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 12px; padding: 1.5rem; text-align: center;">
                         <i class="fas fa-calendar-alt" style="color: #dc3545; font-size: 2rem; margin-bottom: 1rem;"></i>
                         <h5 style="color: #dc3545; margin-bottom: 0.5rem; font-size: 1.2rem; font-weight: 700;">Part-time Service</h5>
-                        <p style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">4 days per week</p>
-                        <div style="font-size: 2rem; font-weight: 700; color: #dc3545; margin-bottom: 0.5rem;">$410</div>
+                        <p style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;"><?php echo $pricing_data['part_time_4']['days']; ?></p>
+                        <div style="font-size: 2rem; font-weight: 700; color: #dc3545; margin-bottom: 0.5rem;"><?php echo $pricing_data['part_time_4']['price']; ?></div>
                         <p style="margin: 0; font-size: 0.85rem; color: #666;">per month</p>
                       </div>
                     </div>
@@ -1839,7 +2028,7 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
                       <div style="background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 12px; padding: 1.5rem; text-align: center;">
                         <i class="fas fa-calendar-week" style="color: #6c757d; font-size: 1.5rem; margin-bottom: 1rem;"></i>
                         <h6 style="color: #6c757d; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600;">3 days per week</h6>
-                        <div style="font-size: 1.5rem; font-weight: 700; color: #6c757d; margin-bottom: 0.5rem;">$310</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #6c757d; margin-bottom: 0.5rem;"><?php echo $pricing_data['part_time_3']['price']; ?></div>
                         <p style="margin: 0; font-size: 0.8rem; color: #666;">per month</p>
                       </div>
                     </div>
@@ -1849,7 +2038,7 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
                       <div style="background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 12px; padding: 1.5rem; text-align: center;">
                         <i class="fas fa-calendar-day" style="color: #6c757d; font-size: 1.5rem; margin-bottom: 1rem;"></i>
                         <h6 style="color: #6c757d; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600;">2 days per week</h6>
-                        <div style="font-size: 1.5rem; font-weight: 700; color: #6c757d; margin-bottom: 0.5rem;">$210</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #6c757d; margin-bottom: 0.5rem;"><?php echo $pricing_data['part_time_2']['price']; ?></div>
                         <p style="margin: 0; font-size: 0.8rem; color: #666;">per month</p>
                       </div>
                     </div>
@@ -1859,7 +2048,7 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
                       <div style="background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 12px; padding: 1.5rem; text-align: center;">
                         <i class="fas fa-calendar" style="color: #6c757d; font-size: 1.5rem; margin-bottom: 1rem;"></i>
                         <h6 style="color: #6c757d; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600;">1 day per week</h6>
-                        <div style="font-size: 1.5rem; font-weight: 700; color: #6c757d; margin-bottom: 0.5rem;">$110</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #6c757d; margin-bottom: 0.5rem;"><?php echo $pricing_data['part_time_1']['price']; ?></div>
                         <p style="margin: 0; font-size: 0.8rem; color: #666;">per month</p>
                       </div>
                     </div>
@@ -1873,11 +2062,16 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
                   </h4>
                   
                   <div style="background: rgba(255, 255, 255, 0.7); border-radius: 8px; padding: 1.5rem;">
+                    <?php
+                    // Use structured drop-in pricing field directly (NO TEXT PARSING)
+                    $drop_in_price = $pricing['drop_in'] ?? '$30';
+                    $drop_in_notice = 'We request an email at least 24hrs in advance when possible or call our office directly.';
+                    ?>
                     <div class="row align-items-center">
                       <div class="col-md-6 text-center">
                         <div style="background: white; border: 2px solid #ffc107; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem;">
                           <i class="fas fa-hand-holding-usd" style="color: #ffc107; font-size: 2rem; margin-bottom: 1rem;"></i>
-                          <div style="font-size: 2.5rem; font-weight: 700; color: #ffc107; margin-bottom: 0.5rem;">$30</div>
+                          <div style="font-size: 2.5rem; font-weight: 700; color: #ffc107; margin-bottom: 0.5rem;"><?php echo $drop_in_price; ?></div>
                           <p style="margin: 0; font-size: 1rem; color: #333; font-weight: 600;">per day</p>
                         </div>
                       </div>
@@ -1886,140 +2080,26 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
                           <h6 style="color: #dc3545; margin-bottom: 0.5rem; font-size: 1rem;">
                             <i class="fas fa-exclamation-circle" style="margin-right: 0.5rem;"></i>Advance Notice Required
                           </h6>
-                          <p style="margin: 0; font-size: 0.9rem; color: #333;">We request an email at least 24hrs in advance when possible or call our office directly.</p>
+                          <p style="margin: 0; font-size: 0.9rem; color: #333;"><?php echo htmlspecialchars($drop_in_notice); ?></p>
                         </div>
                       </div>
                     </div>
+                  </div>
                   </div>
                 </div>
               </div>
             </div>
           </details>
           <details class="dojo-accordion-item">
-            <summary>Security, Discipline and Safety</summary>
+            <?php $security_data = $accordion_data['security_safety'] ?? []; ?>
+            <summary><?php echo $security_data['title'] ?? 'Security, Discipline and Safety'; ?></summary>
             <div class="dojo-accordion-content">
-              <div style="color: #555; line-height: 1.6;">
-                <p style="margin-bottom: 2rem; font-size: 1.1rem; text-align: center;">Creating a safe, protected, and respectful environment for all children and staff:</p>
-                
-                <!-- Program Goal -->
-                <div style="background: rgba(40, 167, 69, 0.1); border: 1px solid rgba(40, 167, 69, 0.3); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
-                  <h4 style="color: #28a745; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">
-                    <i class="fas fa-shield-alt" style="margin-right: 0.5rem;"></i>Our Safety Commitment
-                  </h4>
-                  
-                  <div style="background: rgba(255, 255, 255, 0.7); border-radius: 8px; padding: 1.5rem;">
-                    <p style="margin: 0; font-size: 1rem; color: #333; text-align: center; font-weight: 600; line-height: 1.7;">The goal of our program is to create an environment where children and staff feel <span style="color: #28a745; font-weight: 700;">safe, protected, and respected</span>.</p>
-                  </div>
-                </div>
-
-                <!-- Program Rules -->
-                <div style="background: rgba(220, 53, 69, 0.08); border: 1px solid rgba(220, 53, 69, 0.2); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
-                  <h4 style="color: #dc3545; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">
-                    <i class="fas fa-list-check" style="margin-right: 0.5rem;"></i>Program Rules & Expectations
-                  </h4>
-                  
-                  <div style="background: rgba(255, 255, 255, 0.6); border-radius: 8px; padding: 1.5rem;">
-                    <p style="margin-bottom: 1rem; font-size: 0.95rem; color: #333; font-weight: 600;">The following rules will be followed by all participants:</p>
-                    
-                    <div class="row g-3">
-                      <div class="col-md-6">
-                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
-                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
-                            <i class="fas fa-check-circle" style="color: #28a745; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
-                            <span style="font-size: 0.9rem; color: #333;">Follow all rules set forth by Kaizen Karate</span>
-                          </div>
-                        </div>
-                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
-                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
-                            <i class="fas fa-check-circle" style="color: #28a745; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
-                            <span style="font-size: 0.9rem; color: #333;">Follow directions given by staff</span>
-                          </div>
-                        </div>
-                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
-                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
-                            <i class="fas fa-check-circle" style="color: #28a745; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
-                            <span style="font-size: 0.9rem; color: #333;">Respect the rights, privacy, and personal space of others</span>
-                          </div>
-                        </div>
-                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
-                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
-                            <i class="fas fa-check-circle" style="color: #28a745; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
-                            <span style="font-size: 0.9rem; color: #333;">Stay in assigned areas under staff supervision</span>
-                          </div>
-                        </div>
-                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
-                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
-                            <i class="fas fa-check-circle" style="color: #28a745; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
-                            <span style="font-size: 0.9rem; color: #333;">Show respect for all property and equipment</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
-                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
-                            <i class="fas fa-check-circle" style="color: #28a745; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
-                            <span style="font-size: 0.9rem; color: #333;">Use appropriate language at all times</span>
-                          </div>
-                        </div>
-                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
-                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
-                            <i class="fas fa-check-circle" style="color: #28a745; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
-                            <span style="font-size: 0.9rem; color: #333;">Use the restrooms appropriately</span>
-                          </div>
-                        </div>
-                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
-                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
-                            <i class="fas fa-check-circle" style="color: #28a745; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
-                            <span style="font-size: 0.9rem; color: #333;">No sharing or throwing food</span>
-                          </div>
-                        </div>
-                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
-                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
-                            <i class="fas fa-check-circle" style="color: #28a745; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
-                            <span style="font-size: 0.9rem; color: #333;">Clean up after eating and throw away trash</span>
-                          </div>
-                        </div>
-                        <div style="background: white; border: 1px solid rgba(220, 53, 69, 0.15); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
-                          <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
-                            <i class="fas fa-times-circle" style="color: #dc3545; margin-right: 0.5rem; margin-top: 0.2rem; font-size: 0.9rem;"></i>
-                            <span style="font-size: 0.9rem; color: #333;">No fighting, bullying, or throwing harmful objects</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Consequences -->
-                <div style="background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 12px; padding: 2rem;">
-                  <h4 style="color: #ffc107; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">
-                    <i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem;"></i>Consequences for Rule Violations
-                  </h4>
-                  
-                  <div class="row g-3">
-                    <div class="col-md-6">
-                      <div style="background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(255, 193, 7, 0.4); border-radius: 8px; padding: 1.5rem;">
-                        <h6 style="color: #e67e22; margin-bottom: 1rem; font-size: 1rem;">
-                          <i class="fas fa-redo" style="margin-right: 0.5rem;"></i>Repeated Violations
-                        </h6>
-                        <p style="margin: 0; font-size: 0.9rem; color: #333;">May result in a child being suspended or no longer allowed to participate in the program.</p>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 8px; padding: 1.5rem;">
-                        <h6 style="color: #dc3545; margin-bottom: 1rem; font-size: 1rem;">
-                          <i class="fas fa-ban" style="margin-right: 0.5rem;"></i>Safety Endangerment
-                        </h6>
-                        <p style="margin: 0; font-size: 0.9rem; color: #333;">Behavior that endangers health and/or safety may result in immediate suspension and/or termination.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <?php echo $security_data['content'] ?? '<div style="color: #555; line-height: 1.6;"><p>Security and safety information will be managed through the admin panel.</p></div>'; ?>
             </div>
           </details>
           <details class="dojo-accordion-item">
-            <summary>Contact Information</summary>
+            <?php $contact_data = $accordion_data['contact_info'] ?? []; ?>
+            <summary><?php echo $contact_data['title'] ?? 'Contact Information'; ?></summary>
             <div class="dojo-accordion-content">
               <div style="color: #555; line-height: 1.6;">
                 <p style="margin-bottom: 2rem; font-size: 1.1rem; text-align: center;">Get in touch with our Kaizen Dojo team for questions, enrollment, or support:</p>
@@ -2027,7 +2107,7 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
                 <!-- Primary Contact Methods -->
                 <div style="background: rgba(220, 53, 69, 0.08); border: 1px solid rgba(220, 53, 69, 0.2); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
                   <h4 style="color: #dc3545; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">
-                    <i class="fas fa-headset" style="margin-right: 0.5rem;"></i>Primary Contact Methods
+                    <i class="fas fa-headset" style="margin-right: 0.5rem;"></i><?php echo $contact_data['primary_contact_name'] ?? 'Coach V'; ?>
                   </h4>
                   
                   <div class="row g-4">
@@ -2037,8 +2117,8 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
                         <i class="fas fa-envelope" style="color: #dc3545; font-size: 3rem; margin-bottom: 1.5rem;"></i>
                         <h5 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 700;">Email Us</h5>
                         <div style="background: rgba(220, 53, 69, 0.05); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
-                          <a href="mailto:coach.v@kaizenkarateusa.com" style="color: #dc3545; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
-                            coach.v@kaizenkarateusa.com
+                          <a href="mailto:<?php echo $contact_data['primary_contact_email'] ?? 'coach.v@kaizenkarateusa.com'; ?>" style="color: #dc3545; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                            <?php echo $contact_data['primary_contact_email'] ?? 'coach.v@kaizenkarateusa.com'; ?>
                           </a>
                         </div>
                         <p style="margin: 0; font-size: 0.9rem; color: #666; font-style: italic;">Preferred method for questions and enrollment</p>
@@ -2051,8 +2131,8 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
                         <i class="fas fa-phone" style="color: #28a745; font-size: 3rem; margin-bottom: 1.5rem;"></i>
                         <h5 style="color: #28a745; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 700;">Call Us</h5>
                         <div style="background: rgba(40, 167, 69, 0.05); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
-                          <a href="tel:+13019382711" style="color: #28a745; text-decoration: none; font-weight: 600; font-size: 1.4rem;">
-                            (301) 938-2711
+                          <a href="tel:<?php echo str_replace(['(', ')', ' ', '-'], '', $contact_data['primary_contact_phone'] ?? '(301) 938-2711'); ?>" style="color: #28a745; text-decoration: none; font-weight: 600; font-size: 1.4rem;">
+                            <?php echo $contact_data['primary_contact_phone'] ?? '(301) 938-2711'; ?>
                           </a>
                         </div>
                         <p style="margin: 0; font-size: 0.9rem; color: #666; font-style: italic;">For urgent matters and direct communication</p>
@@ -2072,11 +2152,11 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
                       <div class="col-md-8">
                         <div style="background: white; border: 1px solid rgba(0, 123, 255, 0.2); border-radius: 8px; padding: 1.5rem;">
                           <h6 style="color: #007bff; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 600;">
-                            <i class="fas fa-building" style="margin-right: 0.5rem;"></i>Physical Address
+                            <i class="fas fa-building" style="margin-right: 0.5rem;"></i>Address & Hours
                           </h6>
-                          <p style="margin-bottom: 0.5rem; font-size: 1.1rem; color: #333; font-weight: 600;">9545 Georgia Ave</p>
-                          <p style="margin-bottom: 1rem; font-size: 1rem; color: #333;">Silver Spring, MD 20910</p>
-                          <p style="margin: 0; font-size: 0.9rem; color: #666; font-style: italic;">(Near the beltway exits)</p>
+                          <div style="white-space: pre-line; font-size: 1rem; color: #333; line-height: 1.6;">
+                            <?php echo $contact_data['office_hours'] ?? "Physical Address:\n9545 Georgia Ave\nSilver Spring, MD 20910\n(Near the beltway exits)"; ?>
+                          </div>
                         </div>
                       </div>
                       <div class="col-md-4 text-center">
@@ -2089,6 +2169,33 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
                   </div>
                 </div>
 
+                <!-- Secondary Contact (if exists) -->
+                <?php if (!empty($contact_data['secondary_contact_name']) || !empty($contact_data['secondary_contact_email'])): ?>
+                <div style="background: rgba(108, 117, 125, 0.08); border: 1px solid rgba(108, 117, 125, 0.2); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
+                  <h4 style="color: #6c757d; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">
+                    <i class="fas fa-user-friends" style="margin-right: 0.5rem;"></i>Additional Contact
+                  </h4>
+                  
+                  <div style="background: rgba(255, 255, 255, 0.7); border-radius: 8px; padding: 1.5rem;">
+                    <?php if (!empty($contact_data['secondary_contact_name'])): ?>
+                    <h5 style="color: #6c757d; margin-bottom: 1rem; text-align: center; font-weight: 600;">
+                      <?php echo htmlspecialchars($contact_data['secondary_contact_name']); ?>
+                    </h5>
+                    <?php endif; ?>
+                    
+                    <?php if (!empty($contact_data['secondary_contact_email'])): ?>
+                    <div style="text-align: center;">
+                      <div style="background: rgba(108, 117, 125, 0.1); border-radius: 8px; padding: 1rem; display: inline-block;">
+                        <i class="fas fa-envelope" style="color: #6c757d; margin-right: 0.5rem;"></i>
+                        <a href="mailto:<?php echo htmlspecialchars($contact_data['secondary_contact_email']); ?>" style="color: #6c757d; text-decoration: none; font-weight: 600;">
+                          <?php echo htmlspecialchars($contact_data['secondary_contact_email']); ?>
+                        </a>
+                      </div>
+                    </div>
+                    <?php endif; ?>
+                  </div>
+                </div>
+                <?php endif; ?>
 
               </div>
             </div>
@@ -2111,7 +2218,7 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
           <div style="text-align: center; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 2px solid rgba(220, 53, 69, 0.2);">
             <h3 style="color: #dc3545; font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; margin-bottom: 2rem; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
               <i class="fas fa-calendar-alt" style="margin-right: 0.75rem; font-size: 1.8rem; opacity: 0.9;"></i>
-              2025 September / October Class Calendar
+<?php echo display_text('after_school', 'calendar_section.header', '2025 September / October Class Calendar'); ?>
             </h3>
             
             <!-- Info Badges -->
@@ -2119,13 +2226,13 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
               <!-- Duration Badge -->
               <div style="background: rgba(255, 255, 255, 0.95); border: 2px solid #dc3545; border-radius: 25px; padding: 0.75rem 1.5rem; display: flex; align-items: center; box-shadow: 0 4px 15px rgba(220, 53, 69, 0.2); backdrop-filter: blur(10px);">
                 <i class="fas fa-clock" style="color: #dc3545; font-size: 1.1rem; margin-right: 0.6rem;"></i>
-                <span style="color: #333; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.3px;">One-hour classes unless stated otherwise</span>
+                <span style="color: #333; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.3px;"><?php echo display_text('after_school', 'calendar_section.info_badges.duration', 'One-hour classes unless stated otherwise'); ?></span>
               </div>
               
               <!-- Location Badge -->
               <div style="background: rgba(255, 255, 255, 0.95); border: 2px solid #dc3545; border-radius: 25px; padding: 0.75rem 1.5rem; display: flex; align-items: center; box-shadow: 0 4px 15px rgba(220, 53, 69, 0.2); backdrop-filter: blur(10px);">
                 <i class="fas fa-home" style="color: #dc3545; font-size: 1.1rem; margin-right: 0.6rem;"></i>
-                <span style="color: #333; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.3px;">All Classes Held Indoors/In-Person</span>
+                <span style="color: #333; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.3px;"><?php echo display_text('after_school', 'calendar_section.info_badges.location_type', 'All Classes Held Indoors/In-Person'); ?></span>
               </div>
             </div>
           </div>
@@ -2250,11 +2357,11 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
       <!-- Sept - Oct Schedule -->
       <div class="col-lg-6">
         <div style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; height: 100%;">
-          <h3 style="color: #dc3545; font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 600;">September - October Schedule</h3>
+          <h3 style="color: #dc3545; font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 600;"><?php echo display_text('after_school', 'schedule.title', 'September - October Schedule'); ?></h3>
           
           <!-- Calendar Preview -->
           <div style="position: relative; margin-bottom: 1.5rem;">
-            <img src="assets/images/aftersschool/sep-oct-karate.png" 
+            <img src="<?php echo display_text('after_school', 'schedule.preview_image', 'assets/images/aftersschool/sep-oct-karate.png'); ?>" 
                  alt="September - October Karate Schedule" 
                  style="width: 100%; max-width: 400px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); cursor: pointer;"
                  onclick="openCalendarPreview()"
@@ -2263,13 +2370,13 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
           </div>
           
           <!-- Download Button -->
-          <a href="assets/images/aftersschool/2025-Sep-Oct-Karate-Class-Calendar-v2.pdf" 
+          <a href="<?php echo display_text('after_school', 'schedule.pdf_file', 'assets/images/aftersschool/2025-Sep-Oct-Karate-Class-Calendar-v2.pdf'); ?>" 
             download="Kaizen-Karate-Sept-Oct-2025.pdf"
              style="background: rgba(220, 53, 69, 0.2); color: white; padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 500; display: inline-block; border: 1px solid rgba(220, 53, 69, 0.4); transition: all 0.3s ease;"
              onmouseover="this.style.background='rgba(220, 53, 69, 0.3)'; this.style.borderColor='#dc3545';"
              onmouseout="this.style.background='rgba(220, 53, 69, 0.2)'; this.style.borderColor='rgba(220, 53, 69, 0.4)';">
             <i class="fas fa-download" style="margin-right: 0.5rem;"></i>
-            Download Schedule
+<?php echo display_text('after_school', 'schedule.download_text', 'Download Schedule'); ?>
           </a>
             </div>
           </div>
@@ -2277,19 +2384,19 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
       <!-- Registration Button -->
       <div class="col-lg-6">
         <div style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; display: flex; flex-direction: column; justify-content: center; height: 100%;">
-          <h3 style="color: white; font-size: 1.8rem; margin-bottom: 2rem; font-weight: 600;">Ready to Enroll?</h3>
+          <h3 style="color: white; font-size: 1.8rem; margin-bottom: 2rem; font-weight: 600;"><?php echo display_text('after_school', 'registration.title', 'Ready to Enroll?'); ?></h3>
           
-          <a href="https://www.gomotionapp.com/team/mdkfu/page/class-registration" 
+          <a href="<?php echo display_text('after_school', 'registration.button_url', 'https://www.gomotionapp.com/team/mdkfu/page/class-registration'); ?>" 
              target="_blank"
              style="background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); color: white; padding: 1.5rem 2.5rem; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1.3rem; display: inline-block; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4); border: none; margin: 0 auto;"
              onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.6)';"
              onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(220, 53, 69, 0.4)';">
             <i class="fas fa-user-plus" style="margin-right: 0.8rem; font-size: 1.2rem;"></i>
-            Register Now
+            <?php echo display_text('after_school', 'registration.button_text', 'Register Now'); ?>
           </a>
           
           <p style="color: #e9ecef; margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.8;">
-            Secure your spot in our programs
+<?php echo display_text('after_school', 'registration.subtext', 'Secure your spot in our programs'); ?>
           </p>
         </div>
       </div>
@@ -2299,15 +2406,31 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
     <div class="row justify-content-center">
       <div class="col-lg-8">
         <p style="color: #e9ecef; font-size: 0.9rem; text-align: center; line-height: 1.5; opacity: 0.8;">
-          Not all classes are listed. If you do not see your program listed then please 
-          <a href="#contact" style="color: #dc3545; text-decoration: underline; transition: color 0.2s ease;"
+<?php echo display_text('after_school', 'disclaimer.text', 'Not all classes are listed. If you do not see your program listed then please'); ?> 
+          <a href="<?php echo display_text('after_school', 'disclaimer.link_url', '#contact'); ?>" style="color: #dc3545; text-decoration: underline; transition: color 0.2s ease;"
              onmouseover="this.style.color='#ff6b7a';"
-             onmouseout="this.style.color='#dc3545';">contact our office</a> 
-          directly for more information.
+             onmouseout="this.style.color='#dc3545';"><?php echo display_text('after_school', 'disclaimer.link_text', 'contact our office'); ?></a> 
+          <?php echo display_text('after_school', 'disclaimer.end_text', 'directly for more information.'); ?>
         </p>
       </div>
     </div>
   </div>
+  
+  <!-- Inject Class Schedule Data for JavaScript -->
+  <script>
+    // Load class schedule data from JSON and make it globally available
+    <?php
+    $class_schedule_data = load_content('class-schedule.json');
+    if ($class_schedule_data && isset($class_schedule_data['classes'])) {
+        echo 'window.classData = ' . json_encode($class_schedule_data['classes']) . ';';
+        echo 'window.classScheduleMetadata = ' . json_encode($class_schedule_data['metadata']) . ';';
+    } else {
+        echo 'window.classData = [];';
+        echo 'window.classScheduleMetadata = null;';
+        echo 'console.error("Failed to load class schedule data");';
+    }
+    ?>
+  </script>
 </section>
 
 <!-- Calendar Preview Lightboxes -->
@@ -3571,7 +3694,7 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
     <div class="row align-items-center g-4">
       <!-- Store Image -->
       <div class="col-lg-7">
-        <img src="assets/images/online-store/online-store.jpg" 
+        <img src="<?php echo display_text('online_store', 'store_image', 'assets/images/online-store/online-store.jpg'); ?>" 
              alt="Kaizen Karate Online Store - Uniforms, T-shirts & Sparring Gear" 
              style="width: 100%; height: auto; object-fit: contain;">
     </div>
@@ -3583,22 +3706,22 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
           <div style="background: rgba(220, 53, 69, 0.1); border: 2px solid rgba(220, 53, 69, 0.2); border-radius: 15px; padding: 1.5rem; margin-bottom: 2rem; text-align: center;">
             <h4 style="color: #dc3545; font-size: 1.8rem; margin-bottom: 1rem; font-weight: 700;">
               <i class="fas fa-shopping-cart" style="margin-right: 0.5rem;"></i>
-              The online store is now open!
+              <?php echo display_text('online_store', 'announcement_heading', 'The online store is now open!'); ?>
             </h4>
             <p style="color: #495057; font-size: 1.1rem; margin: 0; line-height: 1.6;">
-            Get your karate uniform, t-shirt, & sparring gear shipped directly to your home.
+            <?php echo display_text('online_store', 'announcement_description', 'Get your karate uniform, t-shirt, & sparring gear shipped directly to your home.'); ?>
             </p>
           </div>
                                
                      <!-- Shop Now Button -->
            <div style="text-align: center; margin-top: 1.5rem;">
-            <a href="https://kaizenkarate.store/" 
+            <a href="<?php echo display_text('online_store', 'button_url', 'https://kaizenkarate.store/'); ?>" 
                target="_blank"
                style="background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); color: white; padding: 1.2rem 2.5rem; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1.3rem; display: inline-block; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(220, 53, 69, 0.3); border: none;"
                onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(220, 53, 69, 0.5)';"
                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(220, 53, 69, 0.3)';">
               <i class="fas fa-shopping-bag" style="margin-right: 0.8rem; font-size: 1.2rem;"></i>
-              Shop Now
+              <?php echo display_text('online_store', 'button_text', 'Shop Now'); ?>
             </a>
 
           </div>
@@ -3701,6 +3824,7 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
             <div style="color: #e9ecef; line-height: 1.6;">
               <p style="margin-bottom: 2rem; font-size: 1.1rem; text-align: center;">Mark your calendars for these important testing dates:</p>
               
+              <!-- TEMPORARILY STATIC CONTENT - Frontend cannot use admin functions -->
               <!-- Row 1 -->
               <div class="row g-4 mb-4">
                 
@@ -3784,8 +3908,8 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
               </div>
               
               <!-- Row 2 -->
-    <div class="row g-4">
-                <!-- March 2026 -->
+              <div class="row g-4">
+                <!-- March 2026 (2nd) -->
                 <div class="col-lg-4 col-md-6">
                   <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; height: 100%;">
                     <h5 style="color: #dc3545; margin-bottom: 1rem; font-size: 1.3rem; text-align: center;">
@@ -3798,7 +3922,7 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
                         Silver Spring, MD 20910<br>
                         <span style="color: #dc3545; font-weight: 600;">TIME & DATE - TBA</span>
                       </p>
-          </div>
+                    </div>
                     <div style="font-size: 0.85rem; line-height: 1.3;">
                       <p style="margin-bottom: 0.5rem;"><em>*Youth testing takes place on Saturdays</em></p>
                       <p style="margin-bottom: 0.5rem;"><em>*Adult testing takes place on Monday nights</em></p>
@@ -3806,7 +3930,7 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
                       <p style="margin: 0; font-size: 0.8rem; background: rgba(255, 255, 255, 0.1); padding: 0.5rem; border-radius: 4px;">
                         <strong>Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.</strong>
                       </p>
-            </div>
+                    </div>
                   </div>
                 </div>
                 
@@ -3831,10 +3955,10 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
                       <p style="margin: 0; font-size: 0.8rem; background: rgba(255, 255, 255, 0.1); padding: 0.5rem; border-radius: 4px;">
                         <strong>Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.</strong>
                       </p>
-          </div>
-        </div>
-      </div>
-
+                    </div>
+                  </div>
+                </div>
+                
                 <!-- September 2026 -->
                 <div class="col-lg-4 col-md-6">
                   <div style="background: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3); border-radius: 12px; padding: 1.5rem; height: 100%;">
@@ -3848,7 +3972,7 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
                         Silver Spring, MD 20910<br>
                         <span style="color: #dc3545; font-weight: 600;">TIME & DATE - TBA</span>
                       </p>
-          </div>
+                    </div>
                     <div style="font-size: 0.85rem; line-height: 1.3;">
                       <p style="margin-bottom: 0.5rem;"><em>*Youth testing takes place on Saturdays</em></p>
                       <p style="margin-bottom: 0.5rem;"><em>*Adult testing takes place on Monday nights</em></p>
@@ -3860,11 +3984,13 @@ $accordion_sections = $summer_camp['accordion_sections'] ?? [];
                   </div>
                 </div>
               </div>
+              <div class="alert alert-info text-center">
+                <p style="margin: 0; color: #666;">Testing dates will be announced soon.</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
+        
         <!-- Testing Process -->
         <div class="accordion-item" style="border: none; background: transparent;">
           <div class="accordion-header" style="background: rgba(255, 255, 255, 0.08); padding: 1.5rem 2rem; cursor: pointer; border-bottom: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;" onclick="toggleAccordion('process')" onmouseover="this.style.background='rgba(255, 255, 255, 0.12)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.08)'">
