@@ -4,8 +4,14 @@
  */
 
 // OpenAI Configuration
-// TODO: Add your OpenAI API key here before deploying
-define('OPENAI_API_KEY', 'your-openai-api-key-here');
+// Load from environment file if it exists
+if (file_exists(__DIR__ . '/.env')) {
+    $env = parse_ini_file(__DIR__ . '/.env');
+    define('OPENAI_API_KEY', $env['OPENAI_API_KEY'] ?? 'your-openai-api-key-here');
+} else {
+    // Fallback - add your key here for server deployment
+    define('OPENAI_API_KEY', 'your-openai-api-key-here');
+}
 define('OPENAI_API_URL', 'https://api.openai.com/v1/chat/completions');
 
 // Data Configuration
