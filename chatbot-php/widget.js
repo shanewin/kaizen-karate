@@ -321,39 +321,20 @@ class KaizenChatWidget {
         let formatted = content;
         
         try {
-            // Clean up all malformed HTML link patterns - most comprehensive approach
-            // This handles: url" target="_blank" rel="noopener noreferrer">linktext
-            formatted = formatted.replace(/([^:\s]+)" target="_blank" rel="noopener noreferrer">([^<\n]+)/g, (match, urlPart, linkText) => {
-                // If urlPart looks like a partial URL, reconstruct the full URL
-                if (urlPart.includes('class-registration')) {
-                    return `${linkText}: https://www.gomotionapp.com/team/mdkfu/page/class-registration`;
-                } else if (urlPart.startsWith('http')) {
-                    return `${linkText}: ${urlPart}`;
-                } else {
-                    return `${linkText}: ${urlPart}`;
-                }
-            });
+            // Handle markdown links FIRST: [text](url)
+            const markdownLinkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+            formatted = formatted.replace(markdownLinkRegex, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
             
-            // Clean up any remaining HTML fragments
+            // THEN clean up any malformed HTML patterns
+            formatted = formatted.replace(/\" target=\"_blank\" rel=\"noopener noreferrer\">/g, '');
+            formatted = formatted.replace(/target=\"_blank\" rel=\"noopener noreferrer\">/g, '');
             formatted = formatted.replace(/" target="_blank" rel="noopener noreferrer">/g, '');
             formatted = formatted.replace(/target="_blank" rel="noopener noreferrer">/g, '');
             formatted = formatted.replace(/rel="noopener noreferrer">/g, '');
             formatted = formatted.replace(/target="_blank">/g, '');
             
-            // Clean up specific common patterns
-            formatted = formatted.replace(/this link" target="_blank" rel="noopener noreferrer">/g, 'this link: ');
-            formatted = formatted.replace(/here" target="_blank" rel="noopener noreferrer">/g, 'here: ');
-            formatted = formatted.replace(/Register Now" target="_blank" rel="noopener noreferrer">/g, 'Register Now: ');
-            formatted = formatted.replace(/Register Now for After School Program" target="_blank" rel="noopener noreferrer">/g, 'Register Now for After School Program: ');
-            
-            // Handle the specific pattern from your example
-            formatted = formatted.replace(/class-registration" target="_blank" rel="noopener noreferrer">Register Now/g, 'class-registration - Register Now');
-            
-            // More comprehensive cleanup for any remaining fragments
-            formatted = formatted.replace(/([a-zA-Z0-9\-/]+)" target="_blank" rel="noopener noreferrer">([^<\n]+)/g, '$2: https://www.gomotionapp.com/team/mdkfu/page/$1');
-            
-            // Make URLs clickable BEFORE converting line breaks
-            const urlRegex = /(https?:\/\/[^\s<>)"]+)/g;
+            // Make remaining URLs clickable BEFORE converting line breaks
+            const urlRegex = /(https?:\/\/[^\s<>")\]]+)/g;
             formatted = formatted.replace(urlRegex, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
             
             // Format bold text **text** -> <strong>text</strong>
@@ -368,10 +349,6 @@ class KaizenChatWidget {
             
             // Convert line breaks
             formatted = formatted.replace(/\n/g, '<br>');
-            
-            // Make markdown-style links clickable [text](url)
-            const markdownLinkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
-            formatted = formatted.replace(markdownLinkRegex, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
             
         } catch (error) {
             console.error('Error formatting message:', error);
