@@ -202,6 +202,91 @@ require_login();
                     </div>
                 </div>
                 
+                <!-- Staging Site Box -->
+                <div class="alert alert-info border-0 shadow-sm mb-4" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <div class="d-flex align-items-center">
+                        <div class="me-3">
+                            <i class="fas fa-eye fa-2x"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h5 class="mb-1">
+                                <i class="fas fa-flask me-2"></i>Preview Your Changes
+                            </h5>
+                            <p class="mb-2">View your draft changes on the staging site before they go live:</p>
+                            <a href="../testing.php" target="_blank" class="btn btn-light btn-sm fw-bold">
+                                <i class="fas fa-external-link-alt me-1"></i>
+                                Open Staging Site
+                            </a>
+                            <small class="ms-3 opacity-75">(/testing.php)</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <?php
+                // Get pending changes for dashboard display
+                $pending_changes = get_pending_changes();
+                ?>
+                
+                <!-- Pending Changes Panel -->
+                <?php if ($pending_changes['file_count'] > 0): ?>
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="card border-warning shadow-sm">
+                            <div class="card-header bg-warning text-dark">
+                                <h5 class="mb-0">
+                                    <i class="fas fa-exclamation-triangle me-2"></i>
+                                    ⚠️ Pending Changes (<?php echo $pending_changes['file_count']; ?> files)
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <h6 class="mb-3">Changes waiting to be published:</h6>
+                                        <ul class="list-unstyled mb-0">
+                                            <?php foreach ($pending_changes['detailed_files'] as $file): ?>
+                                            <li class="mb-2">
+                                                <i class="fas fa-file-edit text-warning me-2"></i>
+                                                • <strong><?php echo ucfirst(str_replace('-', ' ', $file['name'])); ?></strong>: 
+                                                <?php echo $file['change_count']; ?> change<?php echo $file['change_count'] != 1 ? 's' : ''; ?>
+                                            </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                        
+                                        <?php if (!empty($pending_changes['detailed_changes'])): ?>
+                                        <div class="mt-3">
+                                            <small class="text-muted">Recent changes:</small>
+                                            <ul class="list-unstyled mt-2" style="max-height: 120px; overflow-y: auto;">
+                                                <?php foreach (array_slice($pending_changes['detailed_changes'], -5) as $change): ?>
+                                                <li class="small text-muted mb-1">
+                                                    <i class="fas fa-dot-circle me-1" style="font-size: 0.5rem;"></i>
+                                                    <?php echo htmlspecialchars($change); ?>
+                                                </li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        </div>
+                                        <?php endif; ?>
+                                    </div>
+                                    
+                                    <div class="col-md-4 d-flex flex-column justify-content-center">
+                                        <div class="text-center">
+                                            <a href="../testing.php" target="_blank" class="btn btn-info mb-2 w-100">
+                                                <i class="fas fa-eye me-2"></i>Preview Changes
+                                            </a>
+                                            <button type="button" class="btn btn-success mb-2 w-100" onclick="publishChanges()">
+                                                <i class="fas fa-upload me-2"></i>Publish All
+                                            </button>
+                                            <button type="button" class="btn btn-outline-danger w-100" onclick="discardChanges()">
+                                                <i class="fas fa-trash me-2"></i>Discard All
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
                 <!-- Welcome Section -->
                 <div class="row mb-5">
                     <div class="col-12">
@@ -295,5 +380,55 @@ require_login();
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        function publishChanges() {
+            if (confirm('Are you sure you want to publish all pending changes to the live website?')) {
+                fetch('publish-changes.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({action: 'publish'})
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        location.reload();
+                    } else {
+                        alert('Error publishing changes: ' + (data.error || 'Unknown error'));
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error publishing changes');
+                });
+            }
+        }
+        
+        function discardChanges() {
+            if (confirm('Are you sure you want to discard all pending changes? This action cannot be undone.')) {
+                fetch('discard-changes.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({action: 'discard'})
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        location.reload();
+                    } else {
+                        alert('Error discarding changes: ' + (data.error || 'Unknown error'));
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error discarding changes');
+                });
+            }
+        }
+    </script>
 </body>
 </html>

@@ -2834,9 +2834,19 @@ img.dojo-logo,
     0 10px 40px rgba(0, 0, 0, 0.1),
     0 4px 20px rgba(0, 0, 0, 0.05),
     0 2px 10px rgba(164, 51, 43, 0.08);
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+/* Camp Locations Row Spacing */
+.camp-info-highlight .row.justify-content-center {
+  row-gap: 30px;
+}
+
+/* Ensure consistent spacing for camp location cards */
+.camp-info-highlight .campsite-card {
+  margin-bottom: 40px;
 }
 
 .campsite-header {
@@ -3534,56 +3544,6 @@ img.dojo-logo,
   }
 }
 
-/* Scroll to Top Button */
-.scroll-to-top {
-  position: fixed !important;
-  bottom: 30px !important;
-  right: 30px !important;
-  width: 50px !important;
-  height: 50px !important;
-  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%) !important;
-  color: white !important;
-  border: none !important;
-  border-radius: 50% !important;
-  font-size: 1.2rem !important;
-  cursor: pointer !important;
-  z-index: 9999 !important;
-  opacity: 0 !important;
-  transform: translateY(100px) !important;
-  transition: all 0.3s ease !important;
-  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  visibility: hidden !important;
-}
-
-.scroll-to-top.show {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-  visibility: visible !important;
-}
-
-.scroll-to-top:hover {
-  background: linear-gradient(135deg, #c82333 0%, #a41e2a 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
-}
-
-.scroll-to-top:active {
-  transform: translateY(-1px);
-}
-
-/* Mobile scroll to top button */
-@media (max-width: 768px) {
-  .scroll-to-top {
-    width: 45px;
-    height: 45px;
-    bottom: 20px;
-    right: 20px;
-    font-size: 1.1rem;
-  }
-}
 
 /* Make header logo clickable for scroll to top */
 .navbar-brand,
@@ -7526,7 +7486,7 @@ input.is-invalid {
   
   /* Ensure cards have proper spacing */
   .camp-info-highlight .campsite-card {
-    margin-bottom: 20px !important;
+    margin-bottom: 30px !important;
   }
   
   /* Additional specificity for 2x2 layout spacing */
@@ -7592,11 +7552,11 @@ input.is-invalid {
 @media (max-width: 575.98px) {
   /* Even more spacing on very small screens */
   .camp-info-highlight .campsite-card {
-    margin-bottom: 35px !important;
+    margin-bottom: 40px !important;
   }
   
   .camp-info-highlight .row > [class*="col-"] {
-    margin-bottom: 35px;
+    margin-bottom: 40px;
   }
   
   /* Mobile responsive registration info styling */

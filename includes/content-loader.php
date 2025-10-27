@@ -21,10 +21,12 @@ function load_content($filename) {
     return [];
 }
 
-// Load all content files
-$site_content = load_content('site-content.json');
-$instructors_data = load_content('instructors.json');
-$media_data = load_content('media.json');
+// Load all content files (skip if in testing mode, let testing.php handle it)
+if (!defined('KAIZEN_TESTING')) {
+    $site_content = load_content('site-content.json');
+    $instructors_data = load_content('instructors.json');
+    $media_data = load_content('media.json');
+}
 
 /**
  * Get site information
