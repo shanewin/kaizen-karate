@@ -1,0 +1,820 @@
+{
+    "site_info": {
+        "title": "Kaizen Karate | Traditional Martial Arts Training",
+        "description": "Experience authentic karate training at Kaizen Karate. Traditional martial arts instruction for all ages and skill levels. Build discipline, confidence, and character.",
+        "keywords": "karate, martial arts, traditional, training, discipline, character",
+        "phone": "301-938-2711",
+        "email": "coach.v@kaizenkaratemd.com"
+    },
+    "hero_section": {
+        "title": "KAIZEN KARATE",
+        "quote": "Discipline is not about being told what to do. It is about learning how to choose what matters.",
+        "subtitle": "Kaizen Karate has offered martial arts instruction since 2003. Founded by Coach V, we specialize in karate instruction for children of all ages in the Washington DC, Maryland, Northern Virginia, and New York areas. We also offer karate programs for adults with a focus on fitness and self-defense.",
+        "button_text": "Register Now",
+        "registration_panel": {
+            "after_school": {
+                "header_line1": "AFTER SCHOOL",
+                "header_line2": "WEEKEND & EVENING",
+                "button": "Register Now!",
+                "url": "https:\/\/www.gomotionapp.com\/team\/mdkfu\/page\/class-registration"
+            },
+            "kaizen_dojo": {
+                "header": "KAIZEN DOJO",
+                "button": "Register Now!",
+                "url": "https:\/\/form.jotform.com\/251533593606459"
+            },
+            "summer_camp": {
+                "header": "Summer Camps",
+                "display_mode": "information",
+                "text": "Registration for Summer Camp 2026 has not opened yet.",
+                "link_text": "Explore our 2025 Summer Camp program!",
+                "link_url": "#summer-camp",
+                "button": "Register Now!",
+                "url": "#summer-camp"
+            },
+            "belt_exams": {
+                "header": "Belt Exams",
+                "display_mode": "simple",
+                "button": "Register Now!",
+                "url": "",
+                "num_buttons": "1",
+                "exam_buttons": []
+            }
+        }
+    },
+    "navigation": {
+        "register_dropdown": {
+            "title": "Register Now",
+            "after_school": {
+                "header_line1": "AFTER SCHOOL",
+                "header_line2": "WEEKEND & EVENING",
+                "button": "Register Now!",
+                "url": "https:\/\/www.gomotionapp.com\/team\/mdkfu\/page\/class-registration"
+            },
+            "kaizen_dojo": {
+                "header": "KAIZEN DOJO",
+                "button": "Register Now!",
+                "url": "https:\/\/form.jotform.com\/251533593606459"
+            },
+            "summer_camp": {
+                "header": "Summer Camp",
+                "display_mode": "information",
+                "text": "Registration for Summer Camp 2026 has not opened yet.",
+                "link_text": "Explore our 2025 Summer Camp program!",
+                "link_url": "#summer-camp",
+                "button": "Register Now!",
+                "url": "#summer-camp"
+            },
+            "belt_exams": {
+                "header": "Belt Exams",
+                "display_mode": "multiple",
+                "button": "Register Now!",
+                "url": "#",
+                "num_buttons": "1",
+                "exam_buttons": [
+                    {
+                        "line1": "REGISTER!",
+                        "line2": "Youth Exam",
+                        "line3": "Saturday, Nov 15th",
+                        "url": ""
+                    }
+                ],
+                "view_process_text": "View Process >>",
+                "view_process_url": "#belt-exam"
+            }
+        },
+        "menu_items": [
+            {
+                "text": "About",
+                "href": "#about"
+            },
+            {
+                "text": "Summer Camp",
+                "href": "#summer-camp"
+            },
+            {
+                "text": "Kaizen Dojo",
+                "href": "#kaizen-dojo"
+            },
+            {
+                "text": "Weekend & Evening",
+                "href": "#after-school"
+            },
+            {
+                "text": "Online Store",
+                "href": "#online-store"
+            },
+            {
+                "text": "Belt Exam",
+                "href": "#belt-exam"
+            },
+            {
+                "text": "Kaizen Kenpo",
+                "href": "#kaizen-kenpo"
+            },
+            {
+                "text": "Contact",
+                "href": "#contact"
+            }
+        ]
+    },
+    "programs": {
+        "title": "Our Programs",
+        "subtitle": "Choose Your Path",
+        "cards": [
+            {
+                "title": "After School Program",
+                "summary": "Comprehensive martial arts training for students after school hours.",
+                "description": "Safe, structured environment where children learn traditional karate while developing discipline, respect, and confidence. Perfect for working parents.",
+                "image": "assets\/images\/panels\/after-school.jpg",
+                "image_alt": "After school karate program for children at Kaizen Karate",
+                "buttons": [
+                    {
+                        "text": "Register Now",
+                        "url": "https:\/\/www.gomotionapp.com\/team\/mdkfu\/page\/class-registration",
+                        "style": "secondary"
+                    }
+                ]
+            },
+            {
+                "title": "Weekend & Evening",
+                "summary": "Flexible scheduling for adults and families with busy weekday commitments.",
+                "description": "Traditional karate training designed to fit your lifestyle. Weekend and evening classes accommodate work and school schedules while maintaining authentic instruction.",
+                "image": "assets\/images\/panels\/weekends.jpg",
+                "image_alt": "Weekend and evening karate classes for busy schedules",
+                "buttons": [
+                    {
+                        "text": "View Schedule",
+                        "url": "#after-school",
+                        "style": "primary"
+                    },
+                    {
+                        "text": "Register Now",
+                        "url": "https:\/\/www.gomotionapp.com\/team\/mdkfu\/page\/class-registration",
+                        "style": "secondary"
+                    }
+                ]
+            },
+            {
+                "title": "Belt Exams",
+                "summary": "Test your skills and advance through traditional karate ranks.",
+                "description": "Belt exams are invitation-only and students must be invited by their instructor to test. Our rigorous testing ensures authentic skill development and progression.",
+                "image": "assets\/images\/panels\/belts.png",
+                "image_alt": "Traditional karate belt exam process at Kaizen Karate",
+                "buttons": [
+                    {
+                        "text": "View Process",
+                        "url": "#belt-exam",
+                        "style": "primary"
+                    },
+                    {
+                        "text": "Register Now",
+                        "url": "#",
+                        "style": "secondary"
+                    }
+                ]
+            },
+            {
+                "title": "Online Store",
+                "summary": "Equipment, uniforms, and training materials for students.",
+                "description": "Everything you need for your karate journey - from beginner gear to advanced equipment. Support your training with authentic, high-quality items.",
+                "image": "assets\/images\/panels\/online-store.jpg",
+                "image_alt": "Kaizen Karate online store for equipment and merchandise",
+                "buttons": [
+                    {
+                        "text": "Shop Now",
+                        "url": "#online-store",
+                        "style": "primary"
+                    }
+                ]
+            }
+        ]
+    },
+    "about_section": {
+        "kaizen_section": {
+            "title": "About Kaizen Karate",
+            "coach_v_image": "assets\/images\/about\/coach-v-about.png",
+            "coach_v_image_alt": "Coach V - Head Instructor at Kaizen Karate",
+            "lead_paragraph": "Kaizen Karate was founded by Coach V in 2003. Kaizen Karate has been offering instruction in non-traditional Tang Soo Do as part of its core curriculum since its founding. Around 2010 Chinese Kenpo was introduced into the Kaizen curriculum.",
+            "paragraph_2": "Kaizen Karate's team of highly trained martial artists offer a number of programs for students starting as young as 3.5 years old up to adult. They focus on discipline and encouragement in a fun-loving environment. Their main goal is to help everyone progress, continually improve, and enjoy the process.",
+            "paragraph_3": "Kaizen Karate now operates 7 days per week throughout Maryland, Washington D.C., Virginia, and New York."
+        },
+        "coach_v_section": {
+            "title": "Meet Coach V",
+            "paragraph_1": "\"Coach V\" has 38 years of experience in the martial arts, having spent the majority of his life committed to the trade. He began his journey with karate at five years old and earned his first black belt in non-traditional Tang Soo Do in 1998 through Hill's Hitters Karate and Master Instructor Dr. Phillip Hill.",
+            "paragraph_2": "Coach V went on to earn his business degree at the Robert H. Smith School of Business at the University of Maryland in College Park. He then continued his training in Kenpo under 8th degree black belt Sifu Greg Payne who also holds a 5th degree black belt in Shotokan as well as many other black belts in other arts including Goju ryu & Judo.",
+            "paragraph_3": "In 2024, Coach V was promoted to 8th degree black belt in IKCA Chinese Kenpo by 10th degree black belt Senior Grandmaster Chuck Sullivan. Additionally, Coach V holds the rank of Nikyu (2nd degree brown belt) in Budoshin JuJitsu and studied Aikido at the ASU headquarters overseen by Saotome Sensei, Shihan.",
+            "paragraph_4": "In his free time he enjoys spending time with his wife and children as well as running local long distance races which most recently included the Cherry Blossom 10 miler, Rock 'n' Roll 1\/2 Marathon, & Marine Corp Marathon in Washington, DC."
+        },
+        "team_section": {
+            "title": "Meet Our Instructors",
+            "instructors": [
+                {
+                    "name": "Coach Chris Marr",
+                    "title": "Instructor",
+                    "image": "",
+                    "image_alt": "",
+                    "bio": [
+                        "<strong>Qualifications:<\/strong> 5th degree black belt with Kaizen Karate, over 20 years of martial arts experience and over 15 years of instructional experience.",
+                        "Coach Chris holds black belts in Kenpo Karate and Tien Shan Pai Kung Fu and has trained for years in several different martial arts including: Muay Thai (reaching the rank of instructor), boxing, Brazilian Jiu Jitsu (blue belt), and Kyokushin Karate. He is very interested in the history of martial arts, especially arts from East Asia and Southeast Asia.",
+                        "Chris' other hobbies include running, lifting weights, and interval training mostly to stay competitive in the martial arts he still practices. He spends most of his free time with his wife and son."
+                    ]
+                },
+                {
+                    "name": "Coach Zach Knox",
+                    "title": "Instructor",
+                    "image": "",
+                    "image_alt": "",
+                    "bio": [
+                        "<strong>Experience:<\/strong> Training since 1987, Zach Knox holds black belts in Tae Kwon Do and Hap Ki Do.",
+                        "Over the years, he has trained in different arts such as Kung Fu, Shorin Ryu and Goju Ryu Karate, Kickboxing, and Escrima. In his time away from teaching and training, his hobbies include acting, directing, producing, football, hiking, screenplay writing, reading, boxing, and rock climbing."
+                    ]
+                },
+                {
+                    "name": "Coach David Matusow",
+                    "title": "Instructor",
+                    "image": "",
+                    "image_alt": "",
+                    "bio": [
+                        "<strong>Background:<\/strong> Inspired by 'The Karate Kid', Coach David began his martial arts journey in 1988. He currently holds a 1st degree blackbelt in Tae Kwon Do, a 6th degree blackbelt in non traditional Tang Soo Do, and a 6th degree blackbelt in Chinese Kenpo where he is also an IKCA Certified Instructor.",
+                        "Coach David earned his first blackbelt in Tae Kwon Do in 1993 under 9th degree Master Jae Kim, his second blackbelt in Tang Soo Do from Kaizen Karate under Coach V, and his third blackbelt in IKCA Chinese Kenpo under Coach V and 10th degree blackbelt Senior Grandmaster Chuck Sullivan.",
+                        "A Software Engineer at NASA and accomplished triathlete, Coach David has competed in numerous races and is a 3-time Ironman triathlon finisher. He has 2 children, both blackbelts in Kaizen Karate, and enjoys competing in duplicate bridge and home coffee brewing."
+                    ]
+                },
+                {
+                    "name": "Coach Skylar Parr",
+                    "title": "Instructor",
+                    "image": "",
+                    "image_alt": "",
+                    "bio": [
+                        "<strong>Journey:<\/strong> Coach Skylar started martial arts at 11 years old. After bouncing around a few schools at first, she eventually landed in a Tae Kwon Do dojang, where she would get the base of her skills and passion for the arts.",
+                        "She began training and teaching with Kaizen Karate in 2011 and earned her black belt in 2017. As an avid martial artist and personal trainer (NASM), she spends most of her time doing things related to fitness and martial arts. However, she also loves studying languages, playing drums, camping, skateboarding, and learning about a wide breadth of subjects."
+                    ]
+                },
+                {
+                    "name": "Coach Nina Hanisco",
+                    "title": "Instructor",
+                    "image": "",
+                    "image_alt": "",
+                    "bio": [
+                        "<strong>Experience:<\/strong> Coach Nina has trained with Kaizen Karate for over 10 years and has over five years of teaching experience in summer camp and classes. She is a Kaizen Karate Senior Instructor.",
+                        "She received her Kaizen Karate black belt in 2021 and her first degree Kaizen black belt in 2023. Currently, she studies Psychology and Sociology at McDaniel College in Westminster, Maryland."
+                    ]
+                },
+                {
+                    "name": "Coach James Stevens",
+                    "title": "Instructor",
+                    "image": "",
+                    "image_alt": "",
+                    "bio": [
+                        "<strong>Unique Journey:<\/strong> Coach James' exploration of martial arts began as a Kaizen Karate parent, watching his now-advanced rank son throw punches and kicks as a kindergartner. Starting as a virtual student in spring 2020, he dedicated himself to training with accelerated progress.",
+                        "When he began in-person classes in 2021, his progress continued at an accelerated pace, earning him many tournament victories, additional ranking in Chinese Kenpo, and opportunities to share lessons learned throughout his unique journey.",
+                        "Professionally, he works as a full-time musician, playing live shows and performing studio vocals (his rock band Rome In A Day toured the world for Armed Forces Entertainment). He enjoys reading, writing, designing tabletop games, running, basketball, lifting weights, and helping guide his daughter in her own martial arts journey."
+                    ]
+                }
+            ]
+        }
+    },
+    "summer_camp": {
+        "basic_info": {
+            "title": "Summer Camp 2025",
+            "subtitle": "4 campsites for campers ages 5-12",
+            "is_active": true
+        },
+        "special_offer": {
+            "enabled": true,
+            "badge_text": "SPECIAL OFFER - SAVE $150 PER WEEK",
+            "deadline_label": "Early Registration Deadline",
+            "deadline_date": "March 31st, 2025",
+            "free_badge_text": "100% FREE",
+            "free_care_heading": "FREE BEFORE & AFTER CARE",
+            "free_care_description": "For ALL weeks when you register before March 31st, 2025"
+        },
+        "video": {
+            "source": "",
+            "thumbnail": "assets\/images\/summer-camp\/video-thumb.png",
+            "thumbnail_alt": "Summer Camp Video Preview",
+            "overlay_title": "Watch Our Summer Camp Experience",
+            "overlay_description": "See what makes Kaizen Summer Camp special",
+            "onclick": "openSummerCampVideo()"
+        },
+        "features": [
+            {
+                "icon": "fas fa-fist-raised",
+                "text": "Karate Instruction",
+                "onclick": "scrollToDailyScheduleInfo()"
+            },
+            {
+                "icon": "fas fa-bus",
+                "text": "Field Trips",
+                "onclick": "scrollToFieldTripsInfo()"
+            },
+            {
+                "icon": "fas fa-swimming-pool",
+                "text": "Pool Time",
+                "onclick": "scrollToSwimmingInfo()"
+            },
+            {
+                "icon": "fas fa-medal",
+                "text": "Belt Exams",
+                "onclick": "scrollToFieldTripsInfo()"
+            }
+        ],
+        "camp_locations": [
+            {
+                "title": "Maryland",
+                "venue": "Calvary Lutheran Church",
+                "address": "9545 Georgia Ave.<br>Silver Spring, MD 20910",
+                "duration": "June 11 - August 22",
+                "weeks": "10 weeks",
+                "new_families_url": "https:\/\/kaizenkarate.campmanagement.com\/p\/request_for_info_m.php?action=enroll",
+                "returning_families_url": "https:\/\/kaizenkarate.campmanagement.com\/p\/campers\/login_m.php"
+            },
+            {
+                "title": "Northwest DC",
+                "venue": "Washington Hebrew Congregation",
+                "address": "3935 Macomb St NW<br>Washington, DC 20016",
+                "duration": "June 23 - August 15",
+                "weeks": "8 weeks",
+                "new_families_url": "https:\/\/kaizenkarate.campmanagement.com\/p\/request_for_info_m.php?action=enroll",
+                "returning_families_url": "https:\/\/kaizenkarate.campmanagement.com\/p\/campers\/login_m.php"
+            },
+            {
+                "title": "Capitol Hill DC",
+                "venue": "Christ Church + Washington Parish",
+                "address": "620 G St. SE<br>Washington, DC 20003",
+                "duration": "July 21 - August 22",
+                "weeks": "5 weeks",
+                "new_families_url": "https:\/\/kaizenkarate.campmanagement.com\/p\/request_for_info_m.php?action=enroll",
+                "returning_families_url": "https:\/\/kaizenkarate.campmanagement.com\/p\/campers\/login_m.php"
+            },
+            {
+                "title": "Virginia",
+                "venue": "Arlington Community Church",
+                "address": "6040 Wilson Blvd.<br>Arlington, VA 22205",
+                "duration": "July 7 - August 1",
+                "weeks": "4 weeks",
+                "new_families_url": "https:\/\/kaizenkarate.campmanagement.com\/p\/request_for_info_m.php?action=enroll",
+                "returning_families_url": "https:\/\/kaizenkarate.campmanagement.com\/p\/campers\/login_m.php"
+            }
+        ],
+        "registration_info": {
+            "age_range": "Ages 5-12 years old",
+            "space_notice": "Space is limited",
+            "header_text": "Ready to Register?",
+            "subtext": "Choose your registration option below",
+            "new_families_url": "https:\/\/kaizenkarate.campmanagement.com\/p\/request_for_info_m.php?action=enroll",
+            "returning_families_url": "https:\/\/kaizenkarate.campmanagement.com\/p\/campers\/login_m.php"
+        },
+        "accordion_sections": [
+            {
+                "title": "Camp Locations & Options",
+                "content": "<div style=\"margin-bottom: 20px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 8px;\">Capitol Hill Camp<\/h4>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\"><strong>Location:<\/strong> Christ Church + Washington Parish - 620 G Street, SE, Washington, DC 20003<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\"><strong>Duration:<\/strong> 5 weeks - July 21st - August 22nd<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 20px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 8px;\">NW DC Camp<\/h4>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\"><strong>Location:<\/strong> Washington Hebrew Congregation - 3935 Macomb Street, NW, Washington DC 20016<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\"><strong>Duration:<\/strong> 8 weeks - June 23rd - August 15th<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 20px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 8px;\">Silver Spring Camp<\/h4>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\"><strong>Location:<\/strong> Calvary Lutheran Church - 9545 Georgia Ave, Silver Spring, MD 20910<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\"><strong>Duration:<\/strong> 10 weeks - June 18th - August 22nd<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 0;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 8px;\">Arlington Camp<\/h4>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\"><strong>Location:<\/strong> Arlington Community Church - 6040 Wilson Blvd, Arlington, VA 22205<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\"><strong>Duration:<\/strong> 4 weeks - July 7th - August 1st<\/p>\r\n<\/div>"
+            },
+            {
+                "title": "Tuition Rates 2025",
+                "content": "<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 12px;\">Camp Tuition Rates<\/h4>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\"><strong>Capitol Hill Camp:<\/strong> $455 \/ week<\/p>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\"><strong>NW DC Camp:<\/strong> $455 \/ week<\/p>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\"><strong>Maryland Camp:<\/strong> $340 \/ week<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\"><strong>Arlington Camp:<\/strong> $455 \/ week<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px; background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent);\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 8px;\">Early Bird Special<\/h4>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark); font-weight: 600;\"><strong>FREE before &amp; after care for ALL weeks when you register on or before March 31st, 2025<\/strong><\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark); font-style: italic;\">(Savings of up to $150 per week)<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 12px;\">Before Care \/ After Care*<\/h4>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\">$20 - before care \/ day<\/p>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\">$20 - after care \/ day<\/p>\r\n<p style=\"margin-bottom: 12px; color: var(--text-dark);\">$30 - before &amp; after care \/ day<\/p>\r\n<div style=\"font-size: 0.9em; color: #666;\">\r\n<p style=\"margin-bottom: 2px;\">*must register online for before \/ after care<\/p>\r\n<p style=\"margin-bottom: 2px;\">*After March 31st full fee schedule applies for all before &amp; after care<\/p>\r\n<p style=\"margin-bottom: 0;\">*Before &amp; after care fees listed above apply to all camp sites<\/p>\r\n<\/div>\r\n<\/div>\r\n<div style=\"margin-bottom: 20px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 12px;\">Sibling Discount<\/h4>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\"><strong>$20 off per child per week<\/strong><\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">1st child must pay full tuition rate, discount applies to each additional child<\/p>\r\n<\/div>\r\n<div style=\"background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107;\">\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark); font-weight: 600;\">**We do NOT accept checks. Tuition must be paid online through our website.**<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark); font-weight: 600;\">**Please be sure to select the weeks you are registering for, not only the number of weeks, for sibling discount to be applied**<\/p>\r\n<\/div>"
+            },
+            {
+                "title": "Daily Schedule",
+                "content": "<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 12px;\">CAMP HOURS<\/h4>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\"><strong>Before care:<\/strong> 7:30am-9:00am<\/p>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\"><strong>Camp day:<\/strong> 9:00am &ndash; 3:00pm<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\"><strong>After care:<\/strong> 3:00pm-6:00pm<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 12px;\">Karate Lesson Schedule (Daily - Non-Pool Days)<\/h4>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\"><strong>Morning Session:<\/strong> 9:30am-11:00am<\/p>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\"><strong>Afternoon Session:<\/strong> 2:00pm-3:00pm<\/p>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark);\"><strong>Aftercare Session:<\/strong> 4:00pm-5:00pm<\/p>\r\n<p style=\"margin-bottom: 0; color: #666; font-style: italic;\">*Non-karate activities include structured outdoor playtime as well as indoor playtime.<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 12px;\">DROP-OFF \/ PICK-UP POLICIES<\/h4>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark);\"><strong>7:30am-9:00am<\/strong> - Parents must sign in when dropping off their child. Sign in is now touchless and camp staff will checkin students via mobile device.<\/p>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark);\"><strong>3:00pm<\/strong> &ndash; Visitors, including parents, are not permitted inside the camp building(s). Kaizen Karate staff will guide campers safely to their authorized pick-up.<\/p>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark);\"><strong>3:00pm-6:00pm<\/strong> &ndash; After care begins. Students must be registered for after care online or parents can pay by calling into the main office at 301-938-2711 if after care is needed unexpectedly due to traffic or other unforeseen circumstances. Students who register before March 31st receive free before and after care and <strong>MUST<\/strong> sign up online for the service.<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">If someone other than the parent will be picking-up their child we must be notified in advance by email, otherwise, we will not let the child go until a parent is contacted. Please email our office at coach.v@kaizenkaratemd.com with at least 24hrs notice of any pick-up changes.<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px; background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 8px;\">IMPORTANT FEES &amp; POLICIES<\/h4>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark); font-weight: 600;\">If your child is not picked up by 3:15pm, a flat fee of $20 will be charged for extended care for that day only (this policy will ONLY apply to campers who are not enrolled in childcare). This fee will be automatically billed and you will receive an electronic invoice. No checks are accepted.<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark); font-weight: 600;\"><strong>EARLY DROP-OFFS<\/strong> - Students who arrive prior to 8:50am will be charged the full $20 fee for before care each day this occurs.<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 20px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 12px;\">DAILY SCHEDULE<\/h4>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark);\">For full day campers doors open at 9:00am &ndash; campers should be picked up at 3:00pm<\/p>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark);\">Before care starts at 7:30am and ends at 9:00am. After care starts at 3:00pm and ends at 6:00pm.<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">Full day campers should arrive at camp around 9:00am so they do not miss karate classes or other activities that start at 9:30am.<\/p>\r\n<\/div>\r\n<div style=\"background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent);\">\r\n<p style=\"margin-bottom: 0; color: var(--text-dark); font-weight: 600;\">Walkers and bikers must have written permission from their parents before we will let them leave.<\/p>\r\n<\/div>"
+            },
+            {
+                "title": "FAQ's",
+                "content": "<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 12px;\">What should I bring to camp each day?<\/h4>\r\n<ul style=\"color: var(--text-dark); line-height: 1.6; margin-bottom: 15px;\">\r\n<li style=\"margin-bottom: 8px;\"><strong>Water Bottle<\/strong> - please label your water bottle<br><em style=\"color: #666; font-size: 0.9em;\">*make sure to drink plenty of water at home before arriving at camp &amp; make sure to drink plenty of water at home in the evening after camp to stay hydrated*<\/em><\/li>\r\n<li style=\"margin-bottom: 8px;\"><strong>Sunscreen<\/strong> - Kaizen Karate staff does not apply sunscreen to campers<\/li>\r\n<li style=\"margin-bottom: 8px;\"><strong>Sunglasses<\/strong><\/li>\r\n<li style=\"margin-bottom: 8px;\"><strong>Lunch<\/strong> - no access to refrigeration or microwaves<\/li>\r\n<li style=\"margin-bottom: 8px;\"><strong>Hat<\/strong><\/li>\r\n<li style=\"margin-bottom: 8px;\"><strong>Comfortable walking shoes<\/strong><\/li>\r\n<li style=\"margin-bottom: 8px;\"><strong>Karate Gear<\/strong> &ndash; uniform and sparring gear (yellow belt and up). Please make sure your child's name is clearly labeled on all items.<\/li>\r\n<li style=\"margin-bottom: 8px;\"><strong>Swimsuit, towel, and other pool items<\/strong> - Please make sure your child's name is clearly labeled on all items. Change of clothes needed for after swimming.<br><em style=\"color: #666; font-size: 0.9em;\">More direction on swimming time will be posted as we get closer to the start of camp per local guidelines.<\/em><\/li>\r\n<li style=\"margin-bottom: 0;\"><strong>Nutritious Snack(s)<\/strong> &ndash; 1 for before lunch \/ 1 for after care<br><em style=\"color: #666; font-size: 0.9em;\">(Camp does not provide snack due to potential food allergies that are common amongst campers)<\/em><\/li>\r\n<\/ul>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 12px;\">What should I wear to camp each day?<\/h4>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark);\">Each day campers should come dressed in shorts, t-shirt &amp; sneakers (especially if the weather is very hot). <strong>No flip-flops or open-toed shoes!<\/strong> Flip-flops or sandals are permitted during pool time.<\/p>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark);\">Each day campers will need to bring their uniform pants, t-shirt, belt &amp; any other items needed for their karate classes. Students who are new to karate will have the option of ordering a uniform and sparring gear if desired.<\/p>\r\n<div style=\"background: #f8f9fa; padding: 10px; border-radius: 6px; margin-top: 10px;\">\r\n<p style=\"margin-bottom: 0; color: var(--accent); font-weight: 600;\">PLEASE LABEL ALL ITEMS WITH STUDENTS FULL NAME.<\/p>\r\n<\/div>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 12px;\">What NOT to bring to camp each day?<\/h4>\r\n<ul style=\"color: var(--text-dark); line-height: 1.6;\">\r\n<li style=\"margin-bottom: 6px;\"><strong>Weapons<\/strong> - pocket knives, swords or other martial arts weapons<\/li>\r\n<li style=\"margin-bottom: 6px;\"><strong>Large amounts of money<\/strong> - we ask that campers limit the amount of money they carry to a minimum<\/li>\r\n<li style=\"margin-bottom: 6px;\"><strong>Video games<\/strong> &ndash; or other hand held devices<\/li>\r\n<li style=\"margin-bottom: 6px;\"><strong>No electronics<\/strong> &ndash; no electronics or other valuable items<\/li>\r\n<li style=\"margin-bottom: 0;\"><strong>Cell phones<\/strong> - we ask that all cell phones are put away at all times. Students are permitted to call parents if needed.<\/li>\r\n<\/ul>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 12px;\">Does my child need to have karate experience to attend camp?<\/h4>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">No, we welcome campers who do not have karate experience. Campers are separated into groups based on age and skill level.<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 12px;\">How are the children transported to the pool?<\/h4>\r\n<p style=\"margin-bottom: 6px; color: var(--text-dark);\">We transport the kids from the camp to the pool with the professional bus service we provide.<\/p>\r\n<p style=\"margin-bottom: 0; color: #666; font-style: italic;\">More direction on transportation will be posted as we get closer to the start of camp per local guidelines.<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 12px;\">Do campers need to know how to swim?<\/h4>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark);\">No, there are multiple sections of the pool. A wading pool, the shallow end, the medium area, and the deep end. All kids have to take a swim test before we release them for free swim. Depending on how well they do on the test, they will receive a colored wrist band that represents which areas they're allowed to swim in. If a child is too short for the shallow end they can use the wading pool.<\/p>\r\n<p style=\"margin-bottom: 6px; color: var(--text-dark);\">Please contact our office if you would like more details about swimming procedures and safety rules.<\/p>\r\n<p style=\"margin-bottom: 0; color: #666; font-style: italic;\">More direction on swimming time will be posted as we get closer to the start of camp per local guidelines.<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 0;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 12px;\">Are swim lessons provided?<\/h4>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">There are no swimming lessons provided.<\/p>\r\n<\/div>"
+            },
+            {
+                "title": "Weekly Themes",
+                "content": "<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 15px;\">Weekly Themes (All Camp Sites):<\/h4>\r\n<div style=\"background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid var(--accent);\">\r\n<div style=\"display: grid; gap: 12px;\">\r\n<div style=\"display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;\"><span style=\"color: var(--text-dark); font-weight: 600;\">Week of 6\/18<\/span><span style=\"color: var(--accent); font-weight: 600;\">Sparring Workshop<\/span><\/div>\r\n<div style=\"display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;\"><span style=\"color: var(--text-dark); font-weight: 600;\">Week of 6\/23<\/span><span style=\"color: var(--accent); font-weight: 600;\">Black Belt Bootcamp<\/span><\/div>\r\n<div style=\"display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;\"><span style=\"color: var(--text-dark); font-weight: 600;\">Week of 6\/30<\/span><span style=\"color: var(--accent); font-weight: 600;\">Red, White &amp; Blue<\/span><\/div>\r\n<div style=\"display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;\"><span style=\"color: var(--text-dark); font-weight: 600;\">Week of 7\/7<\/span><span style=\"color: var(--accent); font-weight: 600;\">Master Form Workshop<\/span><\/div>\r\n<div style=\"display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;\"><span style=\"color: var(--text-dark); font-weight: 600;\">Week of 7\/14<\/span><span style=\"color: var(--accent); font-weight: 600;\">JuJitsu Workshop<\/span><\/div>\r\n<div style=\"display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;\"><span style=\"color: var(--text-dark); font-weight: 600;\">Week of 7\/21<\/span><span style=\"color: var(--accent); font-weight: 600;\">Super Hero Week<\/span><\/div>\r\n<div style=\"display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;\"><span style=\"color: var(--text-dark); font-weight: 600;\">Week of 7\/28<\/span><span style=\"color: var(--accent); font-weight: 600;\">Black Belt Bootcamp<\/span><\/div>\r\n<div style=\"display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;\"><span style=\"color: var(--text-dark); font-weight: 600;\">Week of 8\/4<\/span><span style=\"color: var(--accent); font-weight: 600;\">Sparring Workshop<\/span><\/div>\r\n<div style=\"display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e0e0e0;\"><span style=\"color: var(--text-dark); font-weight: 600;\">Week of 8\/11<\/span><span style=\"color: var(--accent); font-weight: 600;\">Hook Kicks, Moon Kicks, &amp; Spin Kicks<\/span><\/div>\r\n<div style=\"display: flex; justify-content: space-between; align-items: center; padding: 8px 0;\"><span style=\"color: var(--text-dark); font-weight: 600;\">Week of 8\/18<\/span><span style=\"color: var(--accent); font-weight: 600;\">JuJitsu Workshop<\/span><\/div>\r\n<\/div>\r\n<\/div>\r\n<\/div>\r\n<div style=\"background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107; margin-bottom: 0;\">\r\n<p style=\"margin-bottom: 0; color: var(--text-dark); font-weight: 600;\">*All weeks include sparring. Please note, themed weeks touch on this area more, however, all weeks focus on the general Kaizen Karate curriculum. Students of all belt ranks are welcome to attend any of the above weeks.<\/p>\r\n<\/div>"
+            },
+            {
+                "title": "Field Trips & Belt Exam",
+                "content": "<div style=\"background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent); margin-bottom: 25px;\">\r\n<p style=\"margin-bottom: 0; color: var(--text-dark); font-weight: 600; font-style: italic;\">More details will be posted as we get closer to the start of camp.<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 15px;\">Field Trip Dates:<\/h4>\r\n<div style=\"margin-bottom: 20px;\">\r\n<h5 style=\"color: var(--text-dark); font-weight: 600; margin-bottom: 10px;\">Capitol Hill Camp<\/h5>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\">July 24 - Lego Discovery Center - Washington, DC<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">August 21 - National Children's Museum - Washington, DC<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 20px;\">\r\n<h5 style=\"color: var(--text-dark); font-weight: 600; margin-bottom: 10px;\">NW DC Camp<\/h5>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\">June 25 - Catoctin Wildlife Reserve - Thurmont, MD<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">July 24 - Lego Discovery Center - Washington, DC<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 20px;\">\r\n<h5 style=\"color: var(--text-dark); font-weight: 600; margin-bottom: 10px;\">Silver Spring Camp<\/h5>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\">June 25 - Catoctin Wildlife Reserve - Thurmont, MD<\/p>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\">July 24 - Lego Discovery Center - Washington, DC<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">August 21 - National Children's Museum - Washington, DC<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 0;\">\r\n<h5 style=\"color: var(--text-dark); font-weight: 600; margin-bottom: 10px;\">Arlington Camp<\/h5>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">July 24 - Lego Discovery Center - Washington, DC<\/p>\r\n<\/div>\r\n<\/div>\r\n<div style=\"background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107; margin-bottom: 25px;\">\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark); font-weight: 600;\">*There is a $35 fee per field trip that will be collected during online registration. This fee is in addition to the regular weekly tuition for camp.<\/p>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark); font-weight: 600;\">*Field trips are mandatory on the week they are scheduled and all campers must attend (remaining at camp is not an option).<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark); font-weight: 600;\">*Lunch is *not* included in the field trip fee. Campers should plan to bring their own lunch on field trip days.<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 15px;\">Belt Exam Dates:<\/h4>\r\n<div style=\"margin-bottom: 20px;\">\r\n<h5 style=\"color: var(--text-dark); font-weight: 600; margin-bottom: 10px;\">Capitol Hill Camp<\/h5>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">August 20<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 20px;\">\r\n<h5 style=\"color: var(--text-dark); font-weight: 600; margin-bottom: 10px;\">NW DC Camp<\/h5>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\">July 17<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">August 14<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 20px;\">\r\n<h5 style=\"color: var(--text-dark); font-weight: 600; margin-bottom: 10px;\">Silver Spring Camp<\/h5>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\">July 10<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">August 21<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 0;\">\r\n<h5 style=\"color: var(--text-dark); font-weight: 600; margin-bottom: 10px;\">Arlington Camp<\/h5>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">July 31<\/p>\r\n<\/div>\r\n<\/div>\r\n<div style=\"background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent); margin-bottom: 0;\">\r\n<p style=\"margin-bottom: 0; color: var(--text-dark); font-weight: 600;\">Students are eligible to receive stripes on weeks when there is no belt exam scheduled, though it is not guaranteed. If a belt exam is scheduled during the week that a camper is attending camp this is *not* an automatic guarantee that the student will test and receive a new belt. Students must meet testing guidelines as posted on the belt exam page AND must be invited by their instructor to test.<\/p>\r\n<\/div>"
+            },
+            {
+                "title": "Lunch & Snacks",
+                "content": "<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 15px;\">Lunches &amp; Snacks<\/h4>\r\n<p style=\"margin-bottom: 12px; color: var(--text-dark); font-weight: 600;\">Campers will provide their own lunches &amp; beverages.<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">All lunches should be in coolers to prevent food from spoiling.<\/p>\r\n<\/div>\r\n<div style=\"background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent); margin-bottom: 25px;\">\r\n<p style=\"margin-bottom: 0; color: var(--accent); font-weight: 600; font-size: 1.1em;\">PLEASE LABEL LUNCH BOXES<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px;\">\r\n<p style=\"margin-bottom: 0; color: var(--text-dark); font-weight: 600;\">Please Note: We do not order food, heat up food, or provide utensils for campers.<\/p>\r\n<\/div>\r\n<div style=\"background: #ffe6e6; padding: 15px; border-radius: 8px; border-left: 4px solid #dc3545; margin-bottom: 0;\">\r\n<p style=\"margin-bottom: 0; color: #721c24; font-weight: 600;\">Due to severe food allergies, we ask that NO PEANUT BUTTER or NUT PRODUCTS be brought to camp in lunches.<\/p>\r\n<\/div>"
+            },
+            {
+                "title": "Swimming",
+                "content": "<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 15px;\">General Rules<\/h4>\r\n<div style=\"background: #ffe6e6; padding: 15px; border-radius: 8px; border-left: 4px solid #dc3545; margin-bottom: 15px;\">\r\n<p style=\"margin-bottom: 8px; color: #721c24; font-weight: 600;\">*If your child is unable to swim and is not water-safe, please let us know in writing by emailing our main office.<\/p>\r\n<p style=\"margin-bottom: 8px; color: #721c24; font-weight: 600;\">*Flotation devices of any kind are not permitted. Students must be able to swim unassisted.<\/p>\r\n<p style=\"margin-bottom: 8px; color: #721c24; font-weight: 600;\">*Swim tests are administered at the start of every pool visit.<\/p>\r\n<p style=\"margin-bottom: 0; color: #721c24; font-weight: 600;\">*Swimming pool visits are mandatory on the days they are scheduled and all campers must attend (remaining at camp is not an option).<\/p>\r\n<\/div>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 15px;\">Swimming &ndash; NW DC Camp &amp; Silver Spring Camp<\/h4>\r\n<div style=\"background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid var(--accent);\">\r\n<h5 style=\"color: var(--text-dark); font-weight: 600; margin-bottom: 10px;\">Pool Information: Parkland Pool<\/h5>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark);\">Swimming will take place at Parkland Pool located at 1124 Arcola Ave, Wheaton, MD 20902<\/p>\r\n<p style=\"margin-bottom: 15px; color: var(--text-dark);\">Pool phone number is (301) 649-5670<\/p>\r\n<h6 style=\"color: var(--accent); font-weight: 600; margin-bottom: 8px;\">Schedule &amp; Requirements:<\/h6>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark); font-weight: 600;\">Please have your child dressed in their bathing suit when they arrive at camp on our pool days: Tuesday &amp; Friday &ndash; 12:15pm-1:45pm<\/p>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark);\">Put sunscreen on your child before they arrive at camp, as camp staff is not permitted to do so<\/p>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\">Campers must have a towel<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">Extra set of dry clothes to change into after swimming<\/p>\r\n<\/div>\r\n<\/div>\r\n<div style=\"margin-bottom: 0;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 15px;\">Swimming &ndash; Capitol Hill Camp &amp; Arlington Camp<\/h4>\r\n<div style=\"background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid var(--accent);\">\r\n<h5 style=\"color: var(--text-dark); font-weight: 600; margin-bottom: 10px;\">Pool Information: North Springfield Swim Club<\/h5>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark);\">Swimming will take place at North Springfield Swim Club - 5604 Earlehurst St, Springfield, VA 22151<\/p>\r\n<p style=\"margin-bottom: 15px; color: var(--text-dark);\">Pool phone number is (703) 256-4686<\/p>\r\n<h6 style=\"color: var(--accent); font-weight: 600; margin-bottom: 8px;\">Schedule &amp; Requirements:<\/h6>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark); font-weight: 600;\">Please have your child dressed in their bathing suit when they arrive at camp on our pool days: Monday &amp; Wednesday &ndash; 12:00pm-2:00pm<\/p>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark);\">Put sunscreen on your child before they arrive at camp, as camp staff is not permitted to do so<\/p>\r\n<p style=\"margin-bottom: 4px; color: var(--text-dark);\">Campers must have a towel<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">Extra set of dry clothes to change into after swimming<\/p>\r\n<\/div>\r\n<\/div>"
+            },
+            {
+                "title": "Policies",
+                "content": "<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 15px;\">Tuition Payment<\/h4>\r\n<div style=\"background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107; margin-bottom: 15px;\">\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark); font-weight: 600;\">Tuition for any week of summer camp must be paid in full prior to attending camp for that given week.<\/p>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark); font-weight: 600;\">A non-refundable deposit of $299 per camper must be paid to hold your space in the camp for weeks that are paid via payment plan. This deposit will be applied to the total balance due.<\/p>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark); font-weight: 600;\">All registration must be completed online.<\/p>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark); font-weight: 600;\">NO CHECKS are accepted. All payments must be made online with credit cards during the registration process.<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark); font-weight: 600;\">NO drop-ins are available. Students must pre-register for each week of camp prior to the start of the week.<\/p>\r\n<\/div>\r\n<p style=\"margin-bottom: 0; color: #666; font-style: italic; font-size: 0.9em;\">*Updated on January 2nd, 2025<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 15px;\">Behavior Policy<\/h4>\r\n<div style=\"background: #ffe6e6; padding: 15px; border-radius: 8px; border-left: 4px solid #dc3545; margin-bottom: 15px;\">\r\n<p style=\"margin-bottom: 0; color: #721c24; font-weight: 600;\">Safety is our number one priority. Campers are expected to follow all camp rules at all times. If the camp director determines that a camper's behavior is unsafe and a significant risk to other campers and \/ or staff, Kaizen Karate reserves the right to remove the camper from camp and cancel their remaining weeks of camp without a refund.<\/p>\r\n<\/div>\r\n<p style=\"margin-bottom: 0; color: #666; font-style: italic; font-size: 0.9em;\">*Updated on April 11th, 2023<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 15px;\">Illness &amp; Make-ups<\/h4>\r\n<p style=\"margin-bottom: 12px; color: var(--text-dark);\">If a camper misses camp for more than 2 consecutive days due to illness then credit will be given for the days missed after the first two days when requested in writing and accompanied by a doctor's note. Eg. If Monday &amp; Tuesday are missed, then credit is given for the remainder of the week (3 days).<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">If a student misses camp for any reason besides illness they can make-up the day IF there is space in another week of camp. Parents must submit an email request to our camp office to get approval. If there is no space then there will be no make-ups permitted and credit cannot be transferred to school year programs (the credit is lost).<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 15px;\">Sick Policy<\/h4>\r\n<div style=\"background: #ffe6e6; padding: 15px; border-radius: 8px; border-left: 4px solid #dc3545; margin-bottom: 15px;\">\r\n<p style=\"margin-bottom: 12px; color: #721c24; font-weight: 600;\">Safety and health are our #1 concern. Consequently, we reserve the right to send your child home &ndash; or refuse admittance &ndash; if we have concerns about his\/her health or ability to participate in all activities. Please keep your child home if he\/she is exhibiting any of the following:<\/p>\r\n<ul style=\"color: #721c24; margin-bottom: 12px;\">\r\n<li style=\"margin-bottom: 6px;\">red, runny, and\/or watery eyes, he\/she may have conjunctivitis (pink eye)<\/li>\r\n<li style=\"margin-bottom: 6px;\">very itchy scalp with pearly white or grayish flakes that stick to hair shafts (rather than flaking off &ndash; like dandruff)<\/li>\r\n<li style=\"margin-bottom: 6px;\">fever of 101 degrees internally or 100 degrees axillary. The camper may return to camp when he\/she has been fever-free for a minimum of 24 hours without the aid of medication<\/li>\r\n<li style=\"margin-bottom: 6px;\">vomits or has three episodes of diarrhea or watery bowel movements<\/li>\r\n<li style=\"margin-bottom: 0;\">chest is congested and is accompanied by a frequent cough<\/li>\r\n<\/ul>\r\n<p style=\"margin-bottom: 0; color: #721c24; font-weight: 600;\">If you are ever in doubt about your child's symptoms or illness, please call the camp at 301-938-2711 and email coach.v@kaizenkaratemd.com and ask us if we feel that it would be appropriate for your child to come to school. We may require that you also consult your physician.<\/p>\r\n<\/div>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 15px;\">Cancellation Policies<\/h4>\r\n<div style=\"margin-bottom: 20px;\">\r\n<h5 style=\"color: var(--text-dark); font-weight: 600; margin-bottom: 10px;\">Canceling a week<\/h5>\r\n<p style=\"margin-bottom: 6px; color: var(--text-dark);\"><strong>March 15 - April 30:<\/strong> All fees paid are refunded except the $299 non-refundable deposit and $25 administrative fee.<\/p>\r\n<p style=\"margin-bottom: 6px; color: var(--text-dark);\"><strong>May 1 - May 31:<\/strong> All fees paid are refunded except the $299 non-refundable deposit and $25 administrative fee.<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\"><strong>After June 1:<\/strong> There will be NO refunds or credits for summer camp weeks after June 1. NO EXCEPTIONS.<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 20px;\">\r\n<h5 style=\"color: var(--text-dark); font-weight: 600; margin-bottom: 10px;\">Canceling A Day<\/h5>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">Refunds or credits for single days of summer camp will not be provided at any time. No Exceptions. Summer camp registrations are paid for on a weekly tuition fee schedule not a daily tuition fee schedule.<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 0;\">\r\n<h5 style=\"color: var(--text-dark); font-weight: 600; margin-bottom: 10px;\">Canceling entire summer registration (multiple weeks)<\/h5>\r\n<p style=\"margin-bottom: 6px; color: var(--text-dark);\"><strong>March 15 - April 30:<\/strong> All fees paid are refunded except the $299 non-refundable deposit and $25 administrative fee.<\/p>\r\n<p style=\"margin-bottom: 6px; color: var(--text-dark);\"><strong>May 1 - May 31:<\/strong> Only 50% of tuition fees will be credited for any Kaizen Karate program minus the $299 non-refundable deposit.<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\"><strong>After June 1:<\/strong> There will be NO refunds or credits for summer camp weeks after June 1. NO EXCEPTIONS.<\/p>\r\n<\/div>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 15px;\">Additional Policies<\/h4>\r\n<div style=\"margin-bottom: 15px;\">\r\n<h5 style=\"color: var(--text-dark); font-weight: 600; margin-bottom: 8px;\">Switching Weeks<\/h5>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark);\">Switching between weeks is allowed, based on availability.<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">If a camper needs to switch weeks and there is no availability then they must either keep their assigned weeks OR they can follow the cancellation policy listed above to cancel weeks based on dates (eg. After June 1 there are no refunds or credits for a camper who wants to switch weeks but there is no availability).<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 15px;\">\r\n<h5 style=\"color: var(--text-dark); font-weight: 600; margin-bottom: 8px;\">Adding Weeks<\/h5>\r\n<div style=\"background: linear-gradient(135deg, rgba(40, 167, 69, 0.12), rgba(40, 167, 69, 0.06)); border: 1px solid rgba(40, 167, 69, 0.3); border-radius: 8px; padding: 12px; margin-bottom: 12px;\">\r\n<div style=\"display: flex; align-items: center; gap: 8px; margin-bottom: 8px;\"><span style=\"color: #28a745; font-weight: bold; font-size: 1rem;\">SPECIAL OFFER<\/span><\/div>\r\n<p style=\"margin-bottom: 8px; color: #28a745; font-weight: 600; font-size: 1rem;\">ALL students who register prior to March 31st, 2025 will receive FREE Before &amp; After Care.<\/p>\r\n<\/div>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark);\">Offer valid only for weeks purchased during the promotional period (1\/14\/25 - 3\/31\/25).<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">Any additional weeks purchased \/ added to existing reservations after the promotional period (3\/31\/25) will *not* be eligible for FREE before &amp; after care.<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 15px;\">\r\n<h5 style=\"color: var(--text-dark); font-weight: 600; margin-bottom: 8px;\">Virtual Camp (applicable on years when Virtual offerings are available)<\/h5>\r\n<p style=\"margin-bottom: 6px; color: var(--text-dark);\">No transfers allowed from In-person camp to Virtual or vice versa.<\/p>\r\n<p style=\"margin-bottom: 6px; color: var(--text-dark);\">There is no pro-rating at any time for virtual camp. Full tuition rate is due if you join after the start of a week.<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">No refunds or credits will be given after the first class of the week has started.<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 0;\">\r\n<h5 style=\"color: var(--text-dark); font-weight: 600; margin-bottom: 8px;\">Late pick-up Policy @ Summer Camp<\/h5>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">Counselors frequently have other commitments shortly after camp ends, we ask that you respect the counselor's time by arriving on time. There will be a 5 minute grace period after the program has ended. After that, parents will be charged an additional fee of $1.00 per minute. The late fee must be paid before the next camp day by contacting our main office and paying through electronic invoice.<\/p>\r\n<\/div>\r\n<\/div>\r\n<div style=\"margin-bottom: 0;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 15px;\">Health &amp; Safety Policies<\/h4>\r\n<div style=\"margin-bottom: 15px;\">\r\n<h5 style=\"color: var(--text-dark); font-weight: 600; margin-bottom: 8px;\">Measles Policy<\/h5>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">All campers and persons who enter a Kaizen Karate camp site must be vaccinated for measles &amp; must be in compliance with the CDC recommendations.<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 0;\">\r\n<h5 style=\"color: var(--text-dark); font-weight: 600; margin-bottom: 8px;\">Modifications Policy - Acts beyond Kaizen Karate's control<\/h5>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">Parents agree that in the event of any failure, delay, or modification in Kaizen Karate's performance or delivery of Summer Camp programming resulting from causes beyond Kaizen Karate's reasonable control and occurring without its fault or negligence, including without limitation, Acts of God, fire, pandemic, U.S. government restrictions, wars, and insurrections, the tuition obligations under the enrollment contract shall continue and Kaizen Karate shall not be liable for any such failure or delay in its performance. Parents understand that summer camp schedules may be altered due to circumstances outside of our control resulting in on-site camp moving online and thus campers moving to Virtual Camp.<\/p>\r\n<\/div>\r\n<\/div>"
+            },
+            {
+                "title": "Contact Information",
+                "content": "<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 15px;\">Camp Director<\/h4>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark); font-weight: 600;\">Coach V<\/p>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark);\">On-Site Phone: 301-938-2711<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">Email: coach.v@kaizenkaratemd.com<\/p>\r\n<\/div>\r\n<div style=\"margin-bottom: 25px;\">\r\n<h4 style=\"color: var(--accent); margin-bottom: 15px;\">Director of Operations<\/h4>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark); font-weight: 600;\">Jamie<\/p>\r\n<p style=\"margin-bottom: 8px; color: var(--text-dark);\">On-Site Phone: 301-938-2711<\/p>\r\n<p style=\"margin-bottom: 0; color: var(--text-dark);\">Email: jamie@kaizenkarateusa.com<\/p>\r\n<\/div>"
+            }
+        ]
+    },
+    "service_areas": {
+        "title": "Service Areas",
+        "states": [
+            {
+                "name": "Washington<br>DC",
+                "image": "assets\/images\/states\/dc.png",
+                "alt": "Washington, DC"
+            },
+            {
+                "name": "Maryland",
+                "image": "assets\/images\/states\/maryland.png",
+                "alt": "Maryland"
+            },
+            {
+                "name": "Virginia",
+                "image": "assets\/images\/states\/virginia.png",
+                "alt": "Virginia"
+            },
+            {
+                "name": "New York",
+                "image": "assets\/images\/states\/newyork.png",
+                "alt": "New York"
+            }
+        ]
+    },
+    "after_school": {
+        "title": "Weekend & Evening",
+        "calendar_section": {
+            "header": "2025 September \/ October Class Calendar",
+            "info_badges": {
+                "duration": "One-hour classes unless stated otherwise",
+                "location_type": "All Classes Held Indoors\/In-Person"
+            }
+        },
+        "schedule": {
+            "title": "September - October Schedule",
+            "pdf_file": "assets\/images\/aftersschool\/2025-Sep-Oct-Karate-Class-Calendar-v2.pdf",
+            "preview_image": "assets\/images\/aftersschool\/sep-oct-karate.png",
+            "download_text": "Download Schedule"
+        },
+        "registration": {
+            "title": "Ready to Enroll?",
+            "button_text": "Register Now",
+            "button_url": "https:\/\/www.gomotionapp.com\/team\/mdkfu\/page\/class-registration",
+            "subtext": "Secure your spot in our programs"
+        },
+        "disclaimer": {
+            "text": "Not all classes are listed. If you do not see your program listed then pleases",
+            "link_text": "contact our office",
+            "link_url": "#contact",
+            "end_text": "directly for more information."
+        }
+    },
+    "kaizen_dojo": {
+        "hero": {
+            "logo": "assets\/images\/dojo\/Kaizen-Dojo-Logo.webp",
+            "title": "KAIZEN DOJO",
+            "intro": "After School Martial Arts Program4t42g42",
+            "description": "Kaizen Dojo is an after school program operated by Kaizen Karate. We are located at 9545 Georgia Ave, Silver Spring, MD 20910 (near the beltway exits). Students will take part in daily karate lessons, snack time, homework time, and more! We provide service throughout the entire 2025-2026 school year. Please note, we follow the MCPS calendar. Service will be provided on 1\/2 days.",
+            "registration_button_text": "Register for Kaizen Dojo"
+        },
+        "van_service": {
+            "title": "Van Service — Locations",
+            "description": "Convenient van service available from multiple school locations directly to Kaizen Dojo",
+            "locations": [
+                {
+                    "school_name": "Woodlin ESferfe",
+                    "address": "",
+                    "is_new": false,
+                    "badge_text": "NEW FALL 2025"
+                },
+                {
+                    "school_name": "East Silver Spring ES",
+                    "address": "",
+                    "is_new": false,
+                    "badge_text": ""
+                },
+                {
+                    "school_name": "Sligo Creek ES",
+                    "address": "",
+                    "is_new": false,
+                    "badge_text": ""
+                },
+                {
+                    "school_name": "Oakland Terrace ES",
+                    "address": "",
+                    "is_new": true,
+                    "badge_text": "NEW FALL 2025"
+                },
+                {
+                    "school_name": "Piney Branch ES",
+                    "address": "",
+                    "is_new": true,
+                    "badge_text": "NEW FALL 2025"
+                },
+                {
+                    "school_name": "Takoma Park ES",
+                    "address": "",
+                    "is_new": true,
+                    "badge_text": "NEW FALL 2025"
+                }
+            ]
+        },
+        "service_cards": [
+            {
+                "icon": "fas fa-book-open",
+                "title": "Homework Time",
+                "description": "Students will have time to work on their homework assignments from school when they get back to Kaizen Dojo."
+            },
+            {
+                "icon": "fas fa-apple-alt",
+                "title": "Snack Time",
+                "description": "Snacks are provided as part of the Kaizen Dojo program. Please be sure to let our office team know about any allergies via email."
+            },
+            {
+                "icon": "fas fa-fist-raised",
+                "title": "Karate Instruction",
+                "description": "After homework time ends, students will participate in daily karate lessons! Instruction is geared towards the student's age and current belt rank."
+            }
+        ],
+        "accordion": {
+            "van_service": {
+                "title": "Van Service",
+                "notice": {
+                    "enabled": true,
+                    "title": "Limited Space Available",
+                    "message": "Space is limited! If you are interested in registering for Kaizen Dojo van service for Fall 2025, please contact us ASAP.",
+                    "contact_email": "coach.v@kaizenkarateusa.com"
+                }
+            },
+            "tuition_payment": {
+                "title": "Tuition and Payment Options",
+                "pricing": {
+                    "full_time": "$460",
+                    "part_time_4": "$410",
+                    "part_time_3": "$310",
+                    "part_time_2": "$210",
+                    "part_time_1": "$110",
+                    "drop_in": "$30"
+                },
+                "monthly_tuition": "",
+                "payment_schedule": "",
+                "payment_methods": ""
+            },
+            "security_safety": {
+                "title": "Security, Discipline and Safety",
+                "content": "<div style=\"color: #555; line-height: 1.6;\">\r\n<p style=\"margin-bottom: 2rem; font-size: 1.1rem; text-align: center;\">Creating a safe, protected, and respectful environment for all children and staff.<\/p>\r\n<div style=\"background: rgba(40, 167, 69, 0.1); border: 1px solid rgba(40, 167, 69, 0.3); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;\">\r\n<h4 style=\"color: #28a745; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;\">Our Safety Commitment<\/h4>\r\n<div style=\"background: rgba(255, 255, 255, 0.7); border-radius: 8px; padding: 1.5rem;\">\r\n<p style=\"margin: 0; font-size: 1rem; color: #333; text-align: center; font-weight: 600; line-height: 1.7;\">The goal of our program is to create an environment where children and staff feel <span style=\"color: #28a745; font-weight: bold;\">safe, protected, and respected<\/span>.<\/p>\r\n<\/div>\r\n<\/div>\r\n<div style=\"background: rgba(220, 53, 69, 0.08); border: 1px solid rgba(220, 53, 69, 0.2); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;\">\r\n<h4 style=\"color: #dc3545; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;\">Program Rules &amp; Expectations<\/h4>\r\n<div style=\"background: rgba(255, 255, 255, 0.6); border-radius: 8px; padding: 1.5rem;\">\r\n<p style=\"margin-bottom: 1rem; font-size: 0.95rem; color: #333; font-weight: 600;\">The following rules will be followed by all participants:<\/p>\r\n<ul style=\"list-style: none; padding: 0;\">\r\n<li>&bull; Follow all rules set forth by Kaizen Karate<\/li>\r\n<li>&bull; Follow directions given by staff<\/li>\r\n<li>&bull; Respect the rights, privacy, and personal space of others<\/li>\r\n<li>&bull; Stay in assigned areas under staff supervision<\/li>\r\n<li>&bull; Show respect for all property and equipment<\/li>\r\n<li>&bull; Use appropriate language at all times<\/li>\r\n<li>&bull; Use the restrooms appropriately<\/li>\r\n<li>&bull; No sharing or throwing food<\/li>\r\n<li>&bull; Clean up after eating and throw away trash<\/li>\r\n<li>&bull; No fighting, bullying, or throwing harmful objects<\/li>\r\n<\/ul>\r\n<\/div>\r\n<\/div>\r\n<div style=\"background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 12px; padding: 2rem;\">\r\n<h4 style=\"color: #ffc107; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;\">Consequences for Rule Violations<\/h4>\r\n<p style=\"margin-bottom: 1rem; font-size: 0.9rem; color: #333;\"><strong>Repeated Violations:<\/strong> May result in a child being suspended or no longer allowed to participate in the program.<\/p>\r\n<p style=\"margin: 0; font-size: 0.9rem; color: #333;\"><strong>Safety Endangerment:<\/strong> Behavior that endangers health and\/or safety may result in immediate suspension and\/or termination.<\/p>\r\n<\/div>\r\n<\/div>"
+            },
+            "contact_info": {
+                "title": "Contact Information",
+                "primary_contact_name": "Coach V",
+                "primary_contact_email": "coach.v@kaizenkarateusa.com",
+                "primary_contact_phone": "(301) 938-2711",
+                "secondary_contact_name": "",
+                "secondary_contact_email": "",
+                "office_hours": "Physical Address:\r\n9545 Georgia Ave\r\nSilver Spring, MD 20910\r\n(Near the beltway exits)"
+            }
+        }
+    },
+    "online_store": {
+        "title": "Online Store",
+        "store_image": "assets\/images\/online-store\/online-store.jpg",
+        "announcement_heading": "The online store is now open!",
+        "announcement_description": "Get your karate uniform, t-shirt, & sparring gear shipped directly to your home.",
+        "button_text": "Shop Now",
+        "button_url": "https:\/\/kaizenkarate.store\/"
+    },
+    "belt_exams": {
+        "hero": {
+            "title": "Belt Exam",
+            "subtitle": "Traditional Belt Testing",
+            "description": "Advancing through the ranks with authentic karate examination",
+            "background_image": "assets\/images\/panels\/belt-exams.jpg",
+            "background_alt": "Kaizen Karate Belt Exam - Students testing for their next rank"
+        },
+        "requirements": [
+            {
+                "id": 1,
+                "icon": "fas fa-calendar-check",
+                "title": "Pre-registration required.",
+                "highlight": "",
+                "order": 1
+            },
+            {
+                "id": 2,
+                "icon": "fas fa-user-shield",
+                "title": "Belt exams are INVITATION ONLY events.",
+                "highlight": "INVITATION ONLY",
+                "order": 2
+            },
+            {
+                "id": 3,
+                "icon": "fas fa-clock",
+                "title": "Online registration closes 1 week prior to the belt exam.",
+                "highlight": "1 week prior",
+                "order": 3
+            },
+            {
+                "id": 4,
+                "icon": "fas fa-times-circle",
+                "title": "Verbal approvals by instructors during class time are no longer accepted.",
+                "highlight": "no longer accepted",
+                "order": 4
+            },
+            {
+                "id": 5,
+                "icon": "fas fa-envelope",
+                "title": "ALL students must receive *written* approval directly from the Kaizen office team before starting the testing process.",
+                "highlight": "*written*",
+                "order": 5
+            }
+        ],
+        "accordions": [
+            {
+                "id": "process",
+                "title": "Testing Process",
+                "icon": "fas fa-list-check",
+                "order": 1,
+                "description": "Our belt testing process varies by belt level to ensure every student is properly prepared:",
+                "content_type": "process",
+                "process_sections": [
+                    {
+                        "id": "lower_belts",
+                        "title": "Testing for White w\/Black Stripe, Orange, or Yellow Belt",
+                        "icon": "fas fa-medal",
+                        "order": 1,
+                        "steps": [
+                            {
+                                "title": "Pre-Testing Process",
+                                "icon": "fas fa-user-check",
+                                "description": "Instructor pre-tests during class time when they feel the student is ready to move up in rank. If the student is ready, the instructor will notify the Kaizen office team. Then, the Kaizen office team will email parents written approval for their child to test."
+                            },
+                            {
+                                "title": "Live Testing",
+                                "icon": "fas fa-users",
+                                "description": "Please note: This test will be LIVE and in-person on the testing date in a group setting. If the student does not pass the in-class pre-test, they must wait until the instructor feels they are ready."
+                            },
+                            {
+                                "title": "Registration & Testing Day",
+                                "icon": "fas fa-clipboard-check",
+                                "description": "Once you have received written approval to test, then the student must register for the test by clicking the link below. Show up for your belt exam on the scheduled date."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "higher_belts",
+                        "title": "Testing for Green Belt or Higher",
+                        "icon": "fas fa-trophy",
+                        "order": 2,
+                        "steps": [
+                            {
+                                "title": "Pre-Testing Process",
+                                "icon": "fas fa-user-check",
+                                "description": "Instructor pre-tests during class time when they feel the student is ready to move up in rank. If the student is ready, the instructor sends written notification to the KK office team. Then, the KK office team will email the student directly with approval to test."
+                            },
+                            {
+                                "title": "Video Testing Requirements",
+                                "icon": "fas fa-video",
+                                "description": "Once approved, students must register for the test by clicking the link below (include video links at the time of registration). Important: Sending your video as an attachment via email will NOT be accepted. Video feedback and testing results will only be sent back to the student after they have registered online using the link below."
+                            },
+                            {
+                                "title": "Important Notes",
+                                "icon": "fas fa-exclamation-triangle",
+                                "description": "*Please note: The video test for green belts and higher is now the actual test and is pass \/ fail. *After passing the video test, there is an in-person requirement for students testing for green belt and higher."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "requirements",
+                "title": "Requirements to Test",
+                "icon": "fas fa-clipboard-list",
+                "order": 2,
+                "description": "View detailed testing requirements and matrices for each belt level:",
+                "content_type": "requirements",
+                "important_notice": {
+                    "title": "Important Testing Requirements",
+                    "description": "The requirements listed below are minimums. Please keep in mind that the instructor of the class may require more than what is posted.",
+                    "additional_notes": [
+                        "*Students who train at Summer Camp only can test up to green belt rank.",
+                        "*In order to test for purple belt and higher, student MUST attend weekend and \/ or evening classes year-round."
+                    ]
+                },
+                "requirement_images": [
+                    {
+                        "id": "testing_matrix",
+                        "title": "Testing Matrix",
+                        "icon": "fas fa-th",
+                        "description": "Complete testing matrix with belt progression requirements",
+                        "image": "assets\/images\/belt-exam\/requirements-test\/kaizen-testing-matrix.png",
+                        "download_url": "assets\/images\/belt-exam\/requirements-test\/kaizen-testing-matrix.png",
+                        "download_filename": "kaizen-testing-matrix.png",
+                        "lightbox_function": "openMatrixLightbox",
+                        "order": 1
+                    },
+                    {
+                        "id": "testing_requirements",
+                        "title": "Testing Requirements",
+                        "icon": "fas fa-clipboard-list",
+                        "description": "Detailed requirements for each belt level",
+                        "image": "assets\/images\/belt-exam\/requirements-test\/kaizen-testing-requirement.png",
+                        "download_url": "assets\/images\/belt-exam\/requirements-test\/kaizen-testing-requirement.png",
+                        "download_filename": "kaizen-testing-requirement.png",
+                        "lightbox_function": "openRequirementsLightbox",
+                        "order": 2
+                    },
+                    {
+                        "id": "stripe_system",
+                        "title": "Stripe System",
+                        "icon": "fas fa-star",
+                        "description": "Belt stripe system and progression tracking",
+                        "image": "assets\/images\/belt-exam\/requirements-test\/kaizen-testing-stripe-system.png",
+                        "download_url": "assets\/images\/belt-exam\/requirements-test\/kaizen-testing-stripe-system.png",
+                        "download_filename": "kaizen-testing-stripe-system.png",
+                        "lightbox_function": "openStripeLightbox",
+                        "order": 3
+                    }
+                ]
+            },
+            {
+                "id": "clothing",
+                "title": "Belt Exam Clothing Requirements",
+                "icon": "fas fa-tshirt",
+                "order": 3,
+                "description": "Proper uniform requirements for belt examinations by belt level:",
+                "content_type": "clothing",
+                "clothing_cards": [
+                    {
+                        "id": "white_belt",
+                        "title": "White Belt with Black Stripe",
+                        "belt_color": "white",
+                        "stripe_color": "black",
+                        "requirements": [
+                            "White karate gi (uniform)",
+                            "Proper belt with black stripe",
+                            "Clean and pressed uniform",
+                            "Appropriate undergarments"
+                        ],
+                        "additional_notes": "Uniform must be clean and in good condition for testing.",
+                        "order": 1
+                    },
+                    {
+                        "id": "orange_belt",
+                        "title": "Orange Belt",
+                        "belt_color": "orange",
+                        "stripe_color": "",
+                        "requirements": [
+                            "White karate gi (uniform)",
+                            "Orange belt",
+                            "Clean and pressed uniform",
+                            "Appropriate undergarments"
+                        ],
+                        "additional_notes": "Orange belt should be properly tied and positioned.",
+                        "order": 2
+                    },
+                    {
+                        "id": "yellow_belt",
+                        "title": "Yellow Belt",
+                        "belt_color": "yellow",
+                        "stripe_color": "",
+                        "requirements": [
+                            "White karate gi (uniform)",
+                            "Yellow belt",
+                            "Clean and pressed uniform",
+                            "Appropriate undergarments"
+                        ],
+                        "additional_notes": "Ensure belt is the correct shade of yellow.",
+                        "order": 3
+                    },
+                    {
+                        "id": "green_belt",
+                        "title": "Green Belt",
+                        "belt_color": "green",
+                        "stripe_color": "",
+                        "requirements": [
+                            "White karate gi (uniform)",
+                            "Green belt",
+                            "Clean and pressed uniform",
+                            "Appropriate undergarments"
+                        ],
+                        "additional_notes": "Green belt represents intermediate level - maintain professional appearance.",
+                        "order": 4
+                    }
+                ],
+                "shop_section": {
+                    "title": "Shop for Karate Uniforms",
+                    "description": "Need to purchase a karate uniform or belt? Visit our recommended suppliers:",
+                    "shop_url": "https:\/\/www.karatesupply.com",
+                    "shop_button_text": "Shop Now"
+                }
+            }
+        ],
+        "lightboxes": [
+            {
+                "id": "testing_tips",
+                "title": "Testing Tips",
+                "trigger_function": "openTestingTipsLightbox",
+                "content_type": "info",
+                "content": {
+                    "title": "Essential Testing Tips",
+                    "description": "Important filming and submission guidelines for your belt examination.",
+                    "image": "",
+                    "text_content": "Content will be provided soon..."
+                }
+            }
+        ]
+    }
+}

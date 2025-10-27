@@ -1307,6 +1307,19 @@ if ($_POST && verify_csrf_token($_POST['csrf_token'] ?? '')) {
                 
                 <?php echo $message; ?>
                 
+                <!-- Admin Interface Accordion Structure -->
+                <div class="accordion" id="beltExamsAdminAccordion">
+                
+                    <!-- Group 1: Site Structure & Content -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="structureHeading">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#structureCollapse" aria-expanded="true" aria-controls="structureCollapse">
+                                <i class="fas fa-building me-2"></i>Site Structure & Hero Content
+                            </button>
+                        </h2>
+                        <div id="structureCollapse" class="accordion-collapse collapse show" aria-labelledby="structureHeading" data-bs-parent="#beltExamsAdminAccordion">
+                            <div class="accordion-body">
+                
                 <!-- Hero Section -->
                 <div class="content-section">
                     <h3 class="section-title"><i class="fas fa-image me-2"></i>Hero Section</h3>
@@ -1456,6 +1469,20 @@ if ($_POST && verify_csrf_token($_POST['csrf_token'] ?? '')) {
                         </div>
                     </form>
                 </div>
+                
+                            </div> <!-- End accordion-body -->
+                        </div> <!-- End structureCollapse -->
+                    </div> <!-- End Group 1 accordion-item -->
+                    
+                    <!-- Group 2: Content Accordions -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="contentAccordionsHeading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#contentAccordionsCollapse" aria-expanded="false" aria-controls="contentAccordionsCollapse">
+                                <i class="fas fa-layer-group me-2"></i>Content Accordions Management
+                            </button>
+                        </h2>
+                        <div id="contentAccordionsCollapse" class="accordion-collapse collapse" aria-labelledby="contentAccordionsHeading" data-bs-parent="#beltExamsAdminAccordion">
+                            <div class="accordion-body">
                 
                 <!-- Pilot Accordion: Testing Process -->
                 <div class="content-section">
@@ -2252,7 +2279,7 @@ if ($_POST && verify_csrf_token($_POST['csrf_token'] ?? '')) {
                 <div class="content-section">
                     <h3 class="section-title"><i class="fas fa-calendar-alt me-2"></i>Upcoming Testing Dates Accordion</h3>
                     <div class="alert alert-info">
-                        <p class="mb-3"><strong>Upcoming Testing Dates:</strong> Manage 6 date cards with testing dates and registration information.</p>
+                        <p class="mb-3"><strong>Upcoming Testing Dates:</strong> Manage unlimited date cards with testing dates and registration information.</p>
                         <ul class="mb-0">
                             <li>Each date card has: Date/Time, Location, Notes, Registration status</li>
                             <li>Cards can be added, edited, and removed dynamically</li>
@@ -2323,7 +2350,7 @@ if ($_POST && verify_csrf_token($_POST['csrf_token'] ?? '')) {
                             ?>
                             <div class="card mb-3 date-card" data-index="<?php echo $index; ?>">
                                 <div class="card-header d-flex justify-content-between align-items-center">
-                                    <h6 class="mb-0">Date Card: <?php echo htmlspecialchars($card['month_year']); ?></h6>
+                                    <h6 class="mb-0">Date Card <?php echo $index + 1; ?>: <?php echo htmlspecialchars($card['month_year']); ?></h6>
                                     <button type="button" class="btn btn-sm btn-danger remove-date-card">
                                         <i class="fas fa-trash"></i> Remove
                                     </button>
@@ -2350,7 +2377,7 @@ if ($_POST && verify_csrf_token($_POST['csrf_token'] ?? '')) {
                                         <div class="col-md-4">
                                             <label class="form-label">Order</label>
                                             <input type="number" class="form-control" name="date_card_order[]" 
-                                                   value="<?php echo $card['order']; ?>" min="1" max="6" required>
+                                                   value="<?php echo $card['order']; ?>" min="1" required>
                                         </div>
                                     </div>
                                     
@@ -2610,6 +2637,20 @@ if ($_POST && verify_csrf_token($_POST['csrf_token'] ?? '')) {
                     </form>
                 </div>
                 
+                            </div> <!-- End accordion-body -->
+                        </div> <!-- End contentAccordionsCollapse -->
+                    </div> <!-- End Group 2 accordion-item -->
+                    
+                    <!-- Group 3: Status & Overview -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="statusHeading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#statusCollapse" aria-expanded="false" aria-controls="statusCollapse">
+                                <i class="fas fa-chart-line me-2"></i>Project Status & Overview
+                            </button>
+                        </h2>
+                        <div id="statusCollapse" class="accordion-collapse collapse" aria-labelledby="statusHeading" data-bs-parent="#beltExamsAdminAccordion">
+                            <div class="accordion-body">
+                
                 <!-- Phase 1 MVP Complete -->
                 <div class="content-section">
                     <h3 class="section-title"><i class="fas fa-check-circle me-2 text-success"></i>Phase 1 MVP - Complete!</h3>
@@ -2630,7 +2671,7 @@ if ($_POST && verify_csrf_token($_POST['csrf_token'] ?? '')) {
                             <li>✅ <strong>Requirements to Test Accordion</strong> - Complete with image upload and lightbox management</li>
                             <li>✅ <strong>Belt Exam Clothing Requirements</strong> - Complete with belt-specific cards and shop section</li>
                             <li>✅ <strong>Testing Scripts</strong> - Complete with 9 script cards and lightbox functionality</li>
-                            <li>✅ <strong>Upcoming Testing Dates</strong> - Complete with 6 date cards and registration links</li>
+                            <li>✅ <strong>Upcoming Testing Dates</strong> - Complete with unlimited date cards and registration links</li>
                             <li>✅ <strong>Register for Belt Exam</strong> - Complete with 3 registration time slot cards</li>
                         </ul>
                         <div class="alert alert-success mt-3">
@@ -2639,6 +2680,13 @@ if ($_POST && verify_csrf_token($_POST['csrf_token'] ?? '')) {
                         </div>
                     </div>
                 </div>
+                
+                            </div> <!-- End accordion-body -->
+                        </div> <!-- End statusCollapse -->
+                    </div> <!-- End Group 3 accordion-item -->
+                    
+                </div> <!-- End beltExamsAdminAccordion -->
+                
             </div>
         </div>
     </div>
@@ -3403,13 +3451,23 @@ if ($_POST && verify_csrf_token($_POST['csrf_token'] ?? '')) {
                 const newIndex = cards.length;
                 const newId = 'date_card_' + Date.now();
                 
+                // Calculate next order number dynamically
+                let maxOrder = 0;
+                cards.forEach(card => {
+                    const orderInput = card.querySelector('input[name="date_card_order[]"]');
+                    if (orderInput) {
+                        maxOrder = Math.max(maxOrder, parseInt(orderInput.value) || 0);
+                    }
+                });
+                const nextOrder = maxOrder + 1;
+                
                 const newCard = document.createElement('div');
                 newCard.className = 'card mb-3 date-card';
                 newCard.dataset.index = newIndex;
                 
                 newCard.innerHTML = `
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h6 class="mb-0">Date Card: New Date Card</h6>
+                        <h6 class="mb-0">Date Card ${nextOrder}: New Date Card</h6>
                         <button type="button" class="btn btn-sm btn-danger remove-date-card">
                             <i class="fas fa-trash"></i> Remove
                         </button>
@@ -3435,7 +3493,7 @@ if ($_POST && verify_csrf_token($_POST['csrf_token'] ?? '')) {
                             <div class="col-md-4">
                                 <label class="form-label">Order</label>
                                 <input type="number" class="form-control" name="date_card_order[]" 
-                                       value="${newIndex + 1}" min="1" max="6" required>
+                                       value="${nextOrder}" min="1" required>
                             </div>
                         </div>
                         
@@ -3519,6 +3577,13 @@ if ($_POST && verify_csrf_token($_POST['csrf_token'] ?? '')) {
         document.addEventListener('click', function(e) {
             if (e.target.closest('.remove-date-card')) {
                 const card = e.target.closest('.date-card');
+                const totalCards = dateCardsContainer.querySelectorAll('.date-card').length;
+                
+                if (totalCards <= 1) {
+                    alert('You must have at least one testing date card. Cannot delete the last card.');
+                    return;
+                }
+                
                 if (confirm('Are you sure you want to remove this date card? This action cannot be undone.')) {
                     card.remove();
                     updateDateCardHeaders();
@@ -3526,15 +3591,29 @@ if ($_POST && verify_csrf_token($_POST['csrf_token'] ?? '')) {
             }
         });
         
-        // Update date card headers
+        // Update date card headers and reorder
         function updateDateCardHeaders() {
             const cards = dateCardsContainer.querySelectorAll('.date-card');
             cards.forEach((card, index) => {
                 card.dataset.index = index;
                 const titleInput = card.querySelector('.date-title-input');
+                const orderInput = card.querySelector('input[name="date_card_order[]"]');
                 const header = card.querySelector('.card-header h6');
-                header.textContent = `Date Card: ${titleInput.value || 'New Date Card'}`;
+                
+                // Update header text
+                header.textContent = `Date Card ${index + 1}: ${titleInput.value || 'New Date Card'}`;
+                
+                // Auto-reorder: set order to index + 1 for sequential ordering
+                if (orderInput) {
+                    orderInput.value = index + 1;
+                }
             });
+            
+            // Update add button text with count
+            if (addDateCardBtn) {
+                const cardCount = cards.length;
+                addDateCardBtn.innerHTML = `<i class="fas fa-plus"></i> Add Date Card (${cardCount} cards)`;
+            }
         }
         
         // Update date card header when title changes
@@ -3543,6 +3622,11 @@ if ($_POST && verify_csrf_token($_POST['csrf_token'] ?? '')) {
                 updateDateCardHeaders();
             }
         });
+        
+        // Initialize date card headers on page load
+        if (dateCardsContainer) {
+            updateDateCardHeaders();
+        }
         
         // Registration Accordion Management
         const registrationCardsContainer = document.getElementById('registration-cards-container');

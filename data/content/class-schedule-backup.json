@@ -1,0 +1,369 @@
+{
+    "metadata": {
+        "title": "Weekend & Evening Class Schedule",
+        "description": "Class schedule data for filtering and display",
+        "last_updated": "2025-10-24",
+        "version": "1.0",
+        "total_classes": 30,
+        "locations": [
+            "Arlington VA",
+            "Capitol Hill DC",
+            "Glenn Dale MD",
+            "NW DC",
+            "Rockville MD",
+            "Silver Spring MD"
+        ],
+        "types": [
+            "adult",
+            "mixed",
+            "youth"
+        ],
+        "age_groups": [
+            "adult",
+            "advanced",
+            "all",
+            "beginner",
+            "intermediate",
+            "little-ninja"
+        ],
+        "belt_levels": [
+            "all",
+            "brown-red",
+            "green-blue",
+            "green-plus",
+            "white-yellow"
+        ],
+        "days": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+        ]
+    },
+    "classes": [
+        {
+            "time": "6:00 pm",
+            "day": "Monday",
+            "title": "All Belts",
+            "type": "youth",
+            "ageGroup": "all",
+            "beltLevel": "all",
+            "location": "Silver Spring MD",
+            "fullTitle": "Y-Calvary All Belts"
+        },
+        {
+            "time": "7:00 pm",
+            "day": "Monday",
+            "title": "All Belts",
+            "type": "youth",
+            "ageGroup": "all",
+            "beltLevel": "all",
+            "location": "Silver Spring MD",
+            "fullTitle": "Y-Calvary All Belts"
+        },
+        {
+            "time": "7:30 pm",
+            "day": "Monday",
+            "title": "",
+            "type": "adult",
+            "ageGroup": "all",
+            "beltLevel": "all",
+            "location": "Silver Spring MD",
+            "fullTitle": "A-East Silver Spring ES"
+        },
+        {
+            "time": "6:30 pm",
+            "day": "Tuesday",
+            "title": "All Belts",
+            "type": "youth",
+            "ageGroup": "all",
+            "beltLevel": "all",
+            "location": "NW DC",
+            "fullTitle": "Y-Cleveland Park Club All Belts"
+        },
+        {
+            "time": "7:30 pm",
+            "day": "Tuesday",
+            "title": "Fundamentals",
+            "type": "adult",
+            "ageGroup": "adult",
+            "beltLevel": "all",
+            "location": "Silver Spring MD",
+            "fullTitle": "A-Kemp Mill ES Fundamentals"
+        },
+        {
+            "time": "6:30 pm",
+            "day": "Wednesday",
+            "title": "Master Form \/ Jujitsu",
+            "type": "youth",
+            "ageGroup": "intermediate",
+            "beltLevel": "green-plus",
+            "location": "NW DC",
+            "fullTitle": "Y-Cleveland Park Club Master Form \/ Jujitsu"
+        },
+        {
+            "time": "6:30 pm",
+            "day": "Wednesday",
+            "title": "White-Green Belts",
+            "type": "youth",
+            "ageGroup": "all",
+            "beltLevel": "green-blue",
+            "location": "Arlington VA",
+            "fullTitle": "Y-ACC White-Green Belts"
+        },
+        {
+            "time": "6:30 pm",
+            "day": "Wednesday",
+            "title": "All Belts",
+            "type": "youth",
+            "ageGroup": "all",
+            "beltLevel": "all",
+            "location": "Rockville MD",
+            "fullTitle": "Y-Bayard Rustin ES All Belts"
+        },
+        {
+            "time": "7:30 pm",
+            "day": "Wednesday",
+            "title": "",
+            "type": "adult",
+            "ageGroup": "adult",
+            "beltLevel": "all",
+            "location": "Arlington VA",
+            "fullTitle": "A-ACC"
+        },
+        {
+            "time": "6:00 pm",
+            "day": "Thursday",
+            "title": "All Belts",
+            "type": "youth",
+            "ageGroup": "all",
+            "beltLevel": "all",
+            "location": "Silver Spring MD",
+            "fullTitle": "Y-Calvary All Belts"
+        },
+        {
+            "time": "6:30 pm",
+            "day": "Thursday",
+            "title": "White-Green Belts",
+            "type": "youth",
+            "ageGroup": "all",
+            "beltLevel": "green-blue",
+            "location": "Arlington VA",
+            "fullTitle": "Y-ACC White-Green Belts"
+        },
+        {
+            "time": "7:00 pm",
+            "day": "Thursday",
+            "title": "Sparring",
+            "type": "mixed",
+            "ageGroup": "all",
+            "beltLevel": "all",
+            "location": "Silver Spring MD",
+            "fullTitle": "Y\/A-Calvary Sparring"
+        },
+        {
+            "time": "6:30 pm",
+            "day": "Friday",
+            "title": "Open Mat",
+            "type": "adult",
+            "ageGroup": "adult",
+            "beltLevel": "all",
+            "location": "Silver Spring MD",
+            "fullTitle": "A-Calvary Open Mat"
+        },
+        {
+            "time": "9:00 am",
+            "day": "Saturday",
+            "title": "Beginner #1",
+            "type": "youth",
+            "ageGroup": "beginner",
+            "beltLevel": "white-yellow",
+            "location": "Glenn Dale MD",
+            "fullTitle": "Y-Reid Temple AME Church Beginner #1"
+        },
+        {
+            "time": "10:00 am",
+            "day": "Saturday",
+            "title": "Beginner #1",
+            "type": "youth",
+            "ageGroup": "beginner",
+            "beltLevel": "white-yellow",
+            "location": "NW DC",
+            "fullTitle": "Y-St. Paul's Lutheran Beginner #1"
+        },
+        {
+            "time": "10:00 am",
+            "day": "Saturday",
+            "title": "Beginner #2 \/ Interm.",
+            "type": "youth",
+            "ageGroup": "beginner",
+            "ageGroups": [
+                "beginner",
+                "intermediate"
+            ],
+            "beltLevel": "white-yellow",
+            "location": "Glenn Dale MD",
+            "fullTitle": "Y-St. Paul's Lutheran Beginner #2 \/ Interm."
+        },
+        {
+            "time": "11:00 am",
+            "day": "Saturday",
+            "title": "Beginner #2",
+            "type": "youth",
+            "ageGroup": "beginner",
+            "beltLevel": "white-yellow",
+            "location": "NW DC",
+            "fullTitle": "Y-St. Paul's Lutheran Beginner #2"
+        },
+        {
+            "time": "11:00 am",
+            "day": "Saturday",
+            "title": "Little Ninja \/ Beg.",
+            "type": "youth",
+            "ageGroup": "little-ninja",
+            "ageGroups": [
+                "little-ninja",
+                "beginner"
+            ],
+            "beltLevel": "white-yellow",
+            "location": "Silver Spring MD",
+            "fullTitle": "Y-Pine Crest ES Little Ninja \/ Beg."
+        },
+        {
+            "time": "12:00 pm",
+            "day": "Saturday",
+            "title": "Interm. \/ Adv.",
+            "type": "youth",
+            "ageGroup": "intermediate",
+            "ageGroups": [
+                "intermediate",
+                "advanced"
+            ],
+            "beltLevel": "green-blue",
+            "location": "NW DC",
+            "fullTitle": "Y-St. Paul's Lutheran Interm. \/ Adv."
+        },
+        {
+            "time": "12:00 pm",
+            "day": "Saturday",
+            "title": "Interm. \/ Adv.",
+            "type": "youth",
+            "ageGroup": "intermediate",
+            "ageGroups": [
+                "intermediate",
+                "advanced"
+            ],
+            "beltLevel": "green-blue",
+            "location": "Silver Spring MD",
+            "fullTitle": "Y-Pine Crest ES Interm. \/ Adv."
+        },
+        {
+            "time": "12:00 pm",
+            "day": "Saturday",
+            "title": "Beginner",
+            "type": "youth",
+            "ageGroup": "beginner",
+            "beltLevel": "white-yellow",
+            "location": "Capitol Hill DC",
+            "fullTitle": "Y-Christ Church + Washington Parish Beginner"
+        },
+        {
+            "time": "1:00 pm",
+            "day": "Saturday",
+            "title": "Beginner",
+            "type": "youth",
+            "ageGroup": "beginner",
+            "beltLevel": "white-yellow",
+            "location": "Capitol Hill DC",
+            "fullTitle": "Y-Christ Church + Washington Parish Beginner"
+        },
+        {
+            "time": "1:00 pm",
+            "day": "Saturday",
+            "title": "",
+            "type": "adult",
+            "ageGroup": "adult",
+            "beltLevel": "all",
+            "location": "Silver Spring MD",
+            "fullTitle": "A-Pine Crest ES"
+        },
+        {
+            "time": "2:00 pm",
+            "day": "Saturday",
+            "title": "Interm. \/ Adv.",
+            "type": "youth",
+            "ageGroup": "advanced",
+            "ageGroups": [
+                "intermediate",
+                "advanced"
+            ],
+            "beltLevel": "brown-red",
+            "location": "Capitol Hill DC",
+            "fullTitle": "Y-Christ Church + Washington Parish Interm. \/ Adv."
+        },
+        {
+            "time": "10:00 am",
+            "day": "Sunday",
+            "title": "Little Ninja",
+            "type": "youth",
+            "ageGroup": "little-ninja",
+            "beltLevel": "all",
+            "location": "Silver Spring MD",
+            "fullTitle": "Y-East Silver Spring ES Little Ninja",
+            "shortClass": true
+        },
+        {
+            "time": "10:00 am",
+            "day": "Sunday",
+            "title": "Beginner",
+            "type": "youth",
+            "ageGroup": "beginner",
+            "beltLevel": "white-yellow",
+            "location": "Silver Spring MD",
+            "fullTitle": "Y-East Silver Spring ES Beginner"
+        },
+        {
+            "time": "11:00 am",
+            "day": "Sunday",
+            "title": "Intermediate",
+            "type": "youth",
+            "ageGroup": "intermediate",
+            "beltLevel": "green-blue",
+            "location": "Silver Spring MD",
+            "fullTitle": "Y-East Silver Spring ES Intermediate"
+        },
+        {
+            "time": "12:00 pm",
+            "day": "Sunday",
+            "title": "Open Mat \/ Test Prep.",
+            "type": "mixed",
+            "ageGroup": "all",
+            "beltLevel": "all",
+            "location": "Silver Spring MD",
+            "fullTitle": "Y\/A-East Silver Spring ES Open Mat \/ Test Prep."
+        },
+        {
+            "time": "1:00 pm",
+            "day": "Sunday",
+            "title": "Master Form \/ Kenpo",
+            "type": "mixed",
+            "ageGroup": "intermediate",
+            "beltLevel": "green-plus",
+            "location": "Silver Spring MD",
+            "fullTitle": "Y\/A-East Silver Spring ES Master Form \/ Kenpo"
+        },
+        {
+            "time": "2:00 pm",
+            "day": "Sunday",
+            "title": "Brown & Red Belts",
+            "type": "mixed",
+            "ageGroup": "advanced",
+            "beltLevel": "brown-red",
+            "location": "Silver Spring MD",
+            "fullTitle": "Y\/A-East Silver Spring ES Brown & Red Belts"
+        }
+    ]
+}
