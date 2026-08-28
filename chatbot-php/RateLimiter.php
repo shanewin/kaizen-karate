@@ -3,9 +3,9 @@
  * Sliding-window rate limiter backed by a single JSON file.
  *
  * Guards the chat endpoint, where every accepted request costs money. The
- * window is a rolling count rather than the fixed cooldown used by
- * form-handler.php: callers get RATE_LIMIT_REQUESTS requests per
- * RATE_LIMIT_WINDOW seconds, not one request per cooldown period.
+ * window is a rolling count rather than a fixed cooldown: callers get
+ * RATE_LIMIT_REQUESTS requests per RATE_LIMIT_WINDOW seconds, not one request
+ * per cooldown period.
  *
  * Reads and writes are wrapped in an exclusive lock. The naive
  * read-then-write used elsewhere in this codebase loses increments when two

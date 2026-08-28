@@ -269,7 +269,6 @@ render_footer('live');
 
   <script src="scripts/lightbox.js"></script>
 
-  <script src="scripts/wait-list.js"></script>
   <script src="scripts/accordion.js"></script>
   <script src="scripts/test-schedule.js"></script>
 <script src="scripts/kenpo-shuffle.js"></script>

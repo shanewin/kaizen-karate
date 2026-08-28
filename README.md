@@ -120,11 +120,15 @@ fails open rather than taking the assistant offline.
 Because the knowledge base and the captured leads are both plain files on the
 same host, reporting reads them directly. No warehouse, no extract step.
 
-`admin/submissions.php` aggregates enquiries captured by `form-handler.php`
-together with the acquisition channel the forms record, so staff can see enquiry
-volume and where it came from next to the content they are editing. It is a
-modest reporting surface by design. The point is that it needed no
+`admin/submissions.php` reads the captured enquiries directly, alongside the
+program of interest and acquisition channel each form records, so staff see
+enquiry volume and where it came from next to the content they are editing. It
+is a modest reporting surface by design. The point is that it needed no
 infrastructure beyond what already existed.
+
+The homepage contact form has since moved to an embedded third party widget, so
+the live capture path is the second location module in `modules/nyc/`. The
+earlier submissions remain readable in the same view.
 
 ## Page structure
 
