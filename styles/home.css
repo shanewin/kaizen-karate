@@ -1,0 +1,697 @@
+/* 📱 Mobile Logo Enhancement - 480px and below */
+@media (max-width: 480px) {
+  .brand-logo-prominent {
+    width: 150% !important;
+    height: auto !important;
+    max-width: 220px !important;
+    transform: scale(1.3) !important;
+  }
+
+  .luxury-brand-container {
+    padding: 0.5rem !important;
+  }
+}
+
+/* 📱 Ultra Small Mobile Logo - 390px and below */
+@media (max-width: 390px) {
+  .brand-logo-prominent {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100px !important;
+    transform: none !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    display: block !important;
+  }
+
+  .luxury-brand-container {
+    padding: 0.2rem !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+    width: auto !important;
+  }
+}
+
+/* 📱 Mobile Brand Text Enhancement - 480px and below */
+@media (max-width: 480px) {
+  body nav.floating-pills-nav .nav-container .mobile-brand-text .mobile-brand-name,
+  body .mobile-brand-text .mobile-brand-name,
+  body .nav-container .mobile-brand-text .mobile-brand-name,
+  body .floating-pills-nav .nav-container .mobile-brand-text .mobile-brand-name,
+  body span.mobile-brand-name,
+  .mobile-brand-text .mobile-brand-name,
+  .nav-container .mobile-brand-text .mobile-brand-name,
+  .floating-pills-nav .nav-container .mobile-brand-text .mobile-brand-name,
+  span.mobile-brand-name {
+    font-size: 1.6rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 2px !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+  }
+}
+
+/* 📱 Ultra Small Mobile Brand Text - 390px and below */
+@media (max-width: 390px) {
+  body nav.floating-pills-nav .nav-container .mobile-brand-text .mobile-brand-name,
+  body .mobile-brand-text .mobile-brand-name,
+  body .nav-container .mobile-brand-text .mobile-brand-name,
+  body .floating-pills-nav .nav-container .mobile-brand-text .mobile-brand-name,
+  body span.mobile-brand-name,
+  .mobile-brand-text .mobile-brand-name,
+  .nav-container .mobile-brand-text .mobile-brand-name,
+  .floating-pills-nav .nav-container .mobile-brand-text .mobile-brand-name,
+  span.mobile-brand-name {
+    font-size: 1.5rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 1.5px !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  .mobile-brand-text {
+    flex: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* Ensure equal spacing on both sides */
+  .luxury-brand-container {
+    flex-shrink: 0 !important;
+    width: 100px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .mobile-menu-toggle {
+    flex-shrink: 0 !important;
+    width: 40px !important;
+  }
+
+  /* Ensure proper header layout with equal spacing */
+  .nav-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 1rem !important;
+  }
+}
+
+/* 📱 Ultra Small Mobile Hamburger Menu - 390px and below */
+@media (max-width: 390px) {
+  .mobile-menu-toggle {
+    width: 40px !important;
+    height: 40px !important;
+    padding: 6px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .mobile-menu-toggle .hamburger {
+    width: 22px !important;
+    height: 3px !important;
+    background-color: white !important;
+    position: relative !important;
+  }
+
+  .mobile-menu-toggle .hamburger::before,
+  .mobile-menu-toggle .hamburger::after {
+    width: 22px !important;
+    height: 3px !important;
+    background-color: white !important;
+    position: absolute !important;
+    left: 0 !important;
+  }
+
+  .mobile-menu-toggle .hamburger::before {
+    top: -7px !important;
+  }
+
+  .mobile-menu-toggle .hamburger::after {
+    top: 7px !important;
+  }
+}
+
+/* 📱 Ultra Small Mobile Header Spacing - 390px and below */
+@media (max-width: 390px) {
+  /* Add padding to the navigation container for overall spacing */
+  .nav-container {
+    padding-left: 0.8rem !important;
+    padding-right: 0.8rem !important;
+  }
+
+  /* Add space between logo and text */
+  .luxury-brand-container {
+    margin-right: 0.5rem !important;
+  }
+
+  /* Add space around the text */
+  .mobile-brand-text {
+    margin: 0 0.5rem !important;
+  }
+
+  /* Ensure hamburger stays on right with proper spacing */
+  .mobile-menu-toggle {
+    margin-left: auto !important;
+  }
+}
+
+/* 🖥️ Desktop Service Areas - 769px and above */
+@media (min-width: 769px) {
+  .served-states-inner {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+
+  .served-states-title {
+    font-size: 2.2rem !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 3px !important;
+    margin-bottom: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .served-states-grid {
+    flex: 1 !important;
+  }
+}
+
+/* 📱 Mobile Accordion Titles - 480px and below */
+@media (max-width: 480px) {
+  .about-section-title {
+    font-size: 1.7rem !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+  }
+}
+
+/* 📱 Ultra Small Mobile Accordion Titles - 390px and below */
+@media (max-width: 390px) {
+  .about-section-title {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* 👨‍🏫 Instructor Profile Images - All breakpoints */
+.instructor-profile-image {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  float: left !important;
+  margin-right: 1.5rem !important;
+  border-radius: 8px !important;
+  max-width: 220px !important;
+  height: auto !important;
+}
+
+/* 📱 Mobile Instructor Images - 480px and below */
+@media (max-width: 480px) {
+  .instructor-profile-image {
+    float: none !important;           /* Remove float */
+    display: block !important;        /* Block display */
+    margin: 1rem auto 1.5rem auto !important;  /* Center with spacing */
+    max-width: 280px !important;      /* Even bigger on mobile */
+    width: 100% !important;           /* Responsive width */
+    max-height: 320px !important;     /* Larger height limit */
+    object-fit: cover !important;     /* Maintain aspect ratio */
+  }
+}
+
+/* 📱 Ultra Small Mobile Instructor Images - 390px and below */
+@media (max-width: 390px) {
+  .instructor-profile-image {
+    max-width: 240px !important;      /* Much bigger on tiny screens */
+    max-height: 280px !important;     /* Larger height for small screens */
+    margin: 0.8rem auto 1.2rem auto !important;
+  }
+}
+
+/* 📱 Ultra Small Mobile Service Areas - 390px and below */
+@media (max-width: 390px) {
+  /* Service Areas Section Title */
+  .served-states-section h2,
+  .served-states-section .section-title,
+  .service-areas-title {
+    font-size: 2.2rem !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  /* Main Section Headers - Make Bigger (except accordion titles) */
+  .summer-camp-title,
+  .kaizen-dojo-title,
+  h2.text-center.mb-4,
+  h2.text-center.mb-5 {
+    font-size: 2.5rem !important;
+    font-weight: 900 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Training Card Headers */
+  .training-card-header h3,
+  .weekend-evening-title {
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+  }
+
+  /* Card Title Headers (h6 elements) - Make Bigger */
+  .card-title,
+  h6.card-title,
+  h6.card-title.text-danger.fw-bold.text-uppercase.mb-3,
+  h6[style*="font-size: 0.9rem"] {
+    font-size: 1.3rem !important;
+    font-weight: 900 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  /* Summer Camp Section Headers */
+  .summer-camp-section-title {
+    font-size: 1.6rem !important;
+    font-weight: 800 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .served-states-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 1fr 1fr !important;
+    gap: 1.8rem !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+  }
+
+  .state-icons-row {
+    display: contents !important;
+  }
+
+  .state-labels-row {
+    display: contents !important;
+  }
+
+  .state-icon-img {
+    width: 65px !important;
+    height: 65px !important;
+    display: block !important;
+    margin: 0 auto 0.5rem auto !important;
+  }
+
+  .state-label {
+    display: block !important;
+    text-align: center !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Position each state in 2x2 grid */
+  .state-icon-img:nth-child(1) { grid-column: 1; grid-row: 1; }
+  .state-label:nth-child(1) { grid-column: 1; grid-row: 1; margin-top: 7rem; }
+
+  .state-icon-img:nth-child(2) { grid-column: 2; grid-row: 1; }
+  .state-label:nth-child(2) { grid-column: 2; grid-row: 1; margin-top: 7rem; }
+
+  .state-icon-img:nth-child(3) { grid-column: 1; grid-row: 2; }
+  .state-label:nth-child(3) { grid-column: 1; grid-row: 2; margin-top: 7rem; }
+
+  .state-icon-img:nth-child(4) { grid-column: 2; grid-row: 2; }
+  .state-label:nth-child(4) { grid-column: 2; grid-row: 2; margin-top: 7rem; }
+}
+
+/* 📱 Mobile Hero Gap Fix - 480px and below */
+@media (max-width: 480px) {
+  /* Move hero video up to eliminate gap */
+  .hero-section {
+    margin-top: -15px !important;
+    padding-top: 0 !important;
+  }
+
+  .hero-overlay-section {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .hero-content {
+    padding-top: 1rem !important;
+  }
+
+  /* Ensure video container starts immediately after header */
+  .video-container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+/* 📱 Ultra Small Mobile Hero Gap Fix - 390px and below */
+@media (max-width: 390px) {
+  /* Move hero video up to eliminate gap */
+  .hero-section {
+    margin-top: -20px !important;
+  }
+
+  .hero-overlay-section {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .hero-content {
+    padding-top: 1rem !important;
+  }
+
+  /* Ensure video container starts immediately after header */
+  .video-container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Summer Camp Special Offer Section - Mobile Fix */
+  .summer-camp-section div[style*="background: linear-gradient(135deg, rgba(220, 53, 69, 0.12)"] {
+    padding: 1rem !important;
+    margin: 0 0.3rem !important;
+    border-radius: 12px !important;
+  }
+
+  /* Move Summer Camp section up higher */
+  .summer-camp-section {
+    padding-top: 1rem !important;
+    margin-top: -1rem !important;
+  }
+
+  .summer-camp-section .container {
+    padding-top: 0.5rem !important;
+  }
+
+  /* Fix absolute positioned badges */
+  .summer-camp-section div[style*="position: absolute"] {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    display: block !important;
+    margin: 0 auto 1rem auto !important;
+    width: fit-content !important;
+    text-align: center !important;
+  }
+
+  /* Special offer badge - more specific targeting */
+  div[style*="position: absolute; top: -12px; left: 50%"],
+  div[style*="SPECIAL OFFER - SAVE $150 PER WEEK"],
+  .summer-camp-section div[style*="SPECIAL OFFER"] {
+    position: absolute !important;
+    top: -12px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    font-size: 0.75rem !important;
+    padding: 4px 25px !important;
+    margin: 0 !important;
+    border-radius: 15px !important;
+    width: 90% !important;
+    max-width: 280px !important;
+    display: block !important;
+    text-align: center !important;
+    z-index: 10 !important;
+  }
+
+  /* Free badge */
+  .summer-camp-section div[style*="100% FREE"] {
+    font-size: 0.6rem !important;
+    padding: 3px 8px !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Main content spacing */
+  .summer-camp-section div[style*="margin-top: 15px"] {
+    margin-top: 0.5rem !important;
+  }
+
+  /* Deadline section */
+  .summer-camp-section div[style*="margin-bottom: 20px"] {
+    margin-bottom: 1rem !important;
+    padding: 0.8rem !important;
+  }
+
+  /* Green benefit box */
+  .summer-camp-section div[style*="background: linear-gradient(135deg, rgba(40, 167, 69, 0.2)"] {
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* All headings smaller */
+  .summer-camp-section h3 {
+    font-size: 1.1rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .summer-camp-section h4 {
+    font-size: 1rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  /* All text smaller */
+  .summer-camp-section p {
+    font-size: 0.9rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Icons smaller */
+  .summer-camp-section i {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Kaizen Kenpo Tab Navigation - Mobile Dropdown */
+  .kenpo-tabs-mobile {
+    display: block !important;
+  }
+
+  .kenpo-tabs-desktop {
+    display: none !important;
+  }
+
+  .kenpo-dropdown-container {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .kenpo-dropdown-header {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%) !important;
+    color: white !important;
+    border: 2px solid #dc3545 !important;
+    border-radius: 8px !important;
+    padding: 0.8rem 1rem !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    text-align: center !important;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3) !important;
+    cursor: pointer !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .kenpo-dropdown-menu {
+    background: white !important;
+    border: 2px solid #ddd !important;
+    border-top: none !important;
+    border-radius: 0 0 8px 8px !important;
+    margin-top: -2px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .kenpo-dropdown-button {
+    width: 100% !important;
+    background: white !important;
+    border: none !important;
+    border-bottom: 1px solid #eee !important;
+    padding: 0.8rem 1rem !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    color: #333 !important;
+    text-align: left !important;
+    margin-bottom: 0 !important;
+    cursor: pointer !important;
+  }
+
+  .kenpo-dropdown-button:last-child {
+    border-bottom: none !important;
+    border-radius: 0 0 6px 6px !important;
+  }
+
+  .kenpo-dropdown-button:hover {
+    background: #f8f9fa !important;
+    color: #dc3545 !important;
+  }
+
+  .kenpo-dropdown-button.active {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%) !important;
+    color: white !important;
+  }
+
+  /* Kaizen Dojo Cards - Mobile Fix */
+  .dojo-card {
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  .dojo-card-title {
+    font-size: 1.1rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.8rem !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .dojo-card-text {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    text-align: left !important;
+  }
+
+  .dojo-card-icon {
+    margin-bottom: 0.8rem !important;
+  }
+
+  .dojo-card-icon i {
+    font-size: 1.8rem !important;
+  }
+}
+
+/* Kaizen Kenpo Tab Navigation - Desktop Tabs Only (above 768px) */
+@media (min-width: 769px) {
+  .kenpo-tabs-mobile {
+    display: none !important;
+  }
+
+  .kenpo-tabs-desktop {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    align-items: flex-end !important;
+  }
+
+  .kenpo-tabs-desktop .nav-item {
+    flex: 0 0 auto !important;
+  }
+
+  .kenpo-tabs-desktop .nav-link {
+    white-space: nowrap !important;
+    font-size: 1.1rem !important;
+    padding: 0.8rem 1.5rem !important;
+  }
+}
+
+/* Kaizen Kenpo Tab Navigation - Mobile Dropdown (768px and below) */
+@media (max-width: 768px) {
+  .kenpo-tabs-mobile {
+    display: block !important;
+  }
+
+  .kenpo-tabs-desktop {
+    display: none !important;
+  }
+
+  .kenpo-dropdown-container {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .kenpo-dropdown-header {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%) !important;
+    color: white !important;
+    border: 2px solid #dc3545 !important;
+    border-radius: 8px !important;
+    padding: 0.8rem 1rem !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    text-align: center !important;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3) !important;
+    cursor: pointer !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .kenpo-dropdown-menu {
+    background: white !important;
+    border: 2px solid #ddd !important;
+    border-top: none !important;
+    border-radius: 0 0 8px 8px !important;
+    margin-top: -2px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .kenpo-dropdown-button {
+    width: 100% !important;
+    background: white !important;
+    border: none !important;
+    border-bottom: 1px solid #eee !important;
+    padding: 0.8rem 1rem !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    color: #333 !important;
+    text-align: left !important;
+    margin-bottom: 0 !important;
+    cursor: pointer !important;
+  }
+
+  .kenpo-dropdown-button:last-child {
+    border-bottom: none !important;
+    border-radius: 0 0 6px 6px !important;
+  }
+
+  .kenpo-dropdown-button:hover {
+    background: #f8f9fa !important;
+    color: #dc3545 !important;
+  }
+
+  .kenpo-dropdown-button.active {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%) !important;
+    color: white !important;
+  }
+}
+
+/* Training Card Expandable Content */
+.expandable-content {
+  display: none !important;
+}
+
+.expandable-content.show {
+  display: block !important;
+}
+
+/* Override existing CSS that hides description text */
+.training-description-full {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Ensure description text is visible when expanded */
+.expandable-content.show .training-description-full {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}

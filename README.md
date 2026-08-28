@@ -122,7 +122,9 @@ no infrastructure beyond what already existed.
 | `scripts/generate-topics.php` | CLI projector; `--check` mode for CI |
 | `pages/` | Page templates, served at clean URLs via `.htaccess` |
 | `belts/` | Belt curriculum pages sharing one parameterised template |
-| `sections/`, `modules/nyc/` | Page sections; second-location module |
+| `sections/`, `sections/home/` | Page sections; homepage sections extracted from `index.php` |
+| `styles/home.css`, `scripts/home/` | Homepage styling and behaviour, extracted from `index.php` |
+| `modules/nyc/` | Second-location module |
 | `chatbot-business/` | Standalone document-context chatbot tool |
 | `tests/` | Unit tests for the projection invariant |
 
@@ -161,11 +163,12 @@ php -S localhost:8000
 
 Honest notes on what a reviewer will find:
 
-- **`index.php` is a ~270 KB monolith.** Page templates now live in `pages/`
-  and share `includes/` and `sections/`, but the homepage itself was never
-  decomposed the same way. It predates the section extraction in
-  `sections/` and still carries inline CSS and JS. Decomposing it is the largest
-  outstanding piece of work.
+- **`index.php` is still the largest file at ~67 KB (987 lines).** It was 270 KB
+  and 4,672 lines; the homepage sections now live in `sections/home/`, its CSS in
+  `styles/home.css`, and its behaviour in `scripts/home/`. What remains is the
+  page shell, the hero markup, and a handful of small inline scripts. Further
+  reduction means extracting the hero and consolidating the remaining inline
+  handlers.
 - **A staging mirror, `testing.php`, is hand-synced with `index.php`** and is
   excluded from this repo as a deployment artifact. It is the duplication the
   projector pattern exists to eliminate, and it should be replaced by the same
