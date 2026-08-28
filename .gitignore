@@ -95,3 +95,6 @@ policies_content.html
 # One-off migration scripts, already applied; kept on disk
 update_lightboxes_to_dynamic.php
 update_testing_lightboxes.php
+
+# Hosting provider placeholder page, not part of this project
+default.php

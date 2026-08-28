@@ -1,6 +1,11 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// Errors are logged, never printed. Displaying them on a public endpoint
+// leaks absolute paths and internals to whoever triggers them. Set
+// KAIZEN_DEBUG=1 in the environment to surface them while developing.
+$kaizenDebug = filter_var(getenv('KAIZEN_DEBUG'), FILTER_VALIDATE_BOOLEAN);
+error_reporting($kaizenDebug ? E_ALL : 0);
+ini_set('display_errors', $kaizenDebug ? '1' : '0');
+ini_set('log_errors', '1');
 session_start();
 header('X-Content-Type-Options: nosniff');
 header('X-Frame-Options: DENY');

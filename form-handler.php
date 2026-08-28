@@ -1,7 +1,15 @@
 <?php
-file_put_contents(__DIR__ . '/form_debug.log', date('Y-m-d H:i:s') . " - Form handler started\n", FILE_APPEND);
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// Errors are logged, never printed. Displaying them on a public endpoint
+// leaks absolute paths and internals to whoever triggers them. Set
+// KAIZEN_DEBUG=1 in the environment to surface them while developing.
+$kaizenDebug = filter_var(getenv('KAIZEN_DEBUG'), FILTER_VALIDATE_BOOLEAN);
+error_reporting($kaizenDebug ? E_ALL : 0);
+ini_set('display_errors', $kaizenDebug ? '1' : '0');
+ini_set('log_errors', '1');
+
+if ($kaizenDebug) {
+    file_put_contents(__DIR__ . '/form_debug.log', date('Y-m-d H:i:s') . " - Form handler started\n", FILE_APPEND);
+}
 session_start();
 header('X-Content-Type-Options: nosniff');
 header('X-Frame-Options: DENY');
@@ -65,13 +73,21 @@ if (!is_dir($dataDir)) {
     }
 }
 
-// Initialize rate limits
+// Initialize rate limits.
+// Held open under an exclusive lock for the read-modify-write below, so two
+// overlapping submissions cannot lose each other's entry.
 $rateLimits = [];
-if (file_exists($rateLimitFile)) {
-    $content = file_get_contents($rateLimitFile);
-    if ($content !== false) {
+$rateLimitHandle = @fopen($rateLimitFile, 'c+');
+if ($rateLimitHandle !== false && flock($rateLimitHandle, LOCK_EX)) {
+    $content = stream_get_contents($rateLimitHandle);
+    if ($content !== false && $content !== '') {
         $rateLimits = json_decode($content, true) ?: [];
     }
+} else {
+    if ($rateLimitHandle !== false) {
+        fclose($rateLimitHandle);
+    }
+    $rateLimitHandle = false;
 }
 
 // Check rate limit
@@ -130,9 +146,19 @@ if (!$email) {
     exit;
 }
 
-// Update rate limit
+// Update rate limit, still inside the lock taken above.
 $rateLimits[$ip] = $currentTime;
-file_put_contents($rateLimitFile, json_encode($rateLimits));
+if ($rateLimitHandle !== false) {
+    ftruncate($rateLimitHandle, 0);
+    rewind($rateLimitHandle);
+    fwrite($rateLimitHandle, json_encode($rateLimits));
+    fflush($rateLimitHandle);
+    flock($rateLimitHandle, LOCK_UN);
+    fclose($rateLimitHandle);
+    $rateLimitHandle = false;
+} else {
+    file_put_contents($rateLimitFile, json_encode($rateLimits), LOCK_EX);
+}
 
 // Log to file
 $logEntry = implode('|', [
@@ -156,15 +182,15 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require __DIR__ . '/vendor/autoload.php';
-file_put_contents(__DIR__ . '/form_debug.log', date('Y-m-d H:i:s') . " - Autoload loaded\n", FILE_APPEND);
+if ($kaizenDebug) { file_put_contents(__DIR__ . '/form_debug.log', date('Y-m-d H:i:s') . " - Autoload loaded\n", FILE_APPEND); }
 
 // Load email config from secure location
 $emailConfig = require __DIR__ . '/../email_config.php';
-file_put_contents(__DIR__ . '/form_debug.log', date('Y-m-d H:i:s') . " - Config loaded successfully\n", FILE_APPEND);
+if ($kaizenDebug) { file_put_contents(__DIR__ . '/form_debug.log', date('Y-m-d H:i:s') . " - Config loaded successfully\n", FILE_APPEND); }
 
 $mail = new PHPMailer(true);
 
-file_put_contents(__DIR__ . '/form_debug.log', date('Y-m-d H:i:s') . " - About to try sending email\n", FILE_APPEND);
+if ($kaizenDebug) { file_put_contents(__DIR__ . '/form_debug.log', date('Y-m-d H:i:s') . " - About to try sending email\n", FILE_APPEND); }
 try {
     // Server settings
     $mail->isSMTP();

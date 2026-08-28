@@ -264,7 +264,6 @@ render_footer('live');
   <script src="scripts/home/nav-menu.js"></script>
 
   <script src="scripts/lightbox.js"></script>
-  <script src="scripts/amenities.js"></script>
 
   <script src="scripts/wait-list.js"></script>
   <script src="scripts/accordion.js"></script>
@@ -301,7 +300,6 @@ render_footer('live');
   </script>
 
   <!-- Include Chatbot Widget -->
-  <?php // include 'includes/chatbot.html'; ?>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
   <!-- Scroll to Top Button (temporarily disabled)

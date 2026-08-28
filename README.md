@@ -203,10 +203,9 @@ An honest account of what a reviewer will find.
   be replaced the same way: one source, rendered twice.
 - **Flat file storage** for leads and rate limiting. Appropriate at this volume,
   roughly 4,500 records, and it is what makes the zero ETL reporting possible.
-  The chat rate limiter and the submissions log both take exclusive locks, but
-  the contact form's own rate limit file is still an unlocked read then write,
-  so overlapping submissions can lose an entry. Anything busier than this wants
-  a real datastore.
+  Every read modify write now runs under an exclusive lock, so entries are not
+  lost when submissions overlap, but the model is still a file on one host.
+  Anything busier than this wants a real datastore.
 - **Retrieval is keyword routed**, so a question phrased entirely outside a
   topic's vocabulary falls back to general content. Fine for a bounded FAQ
   domain. It would not survive an open corpus.
