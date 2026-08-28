@@ -85,8 +85,8 @@ assistant was answering from stale content.
 
 Three things prevent that now:
 
-1. `admin/publish.php` regenerates every topic file as part of publishing, so
-   the corpus cannot lag the site.
+1. Publishing regenerates every topic file as part of the same action, so the
+   corpus cannot lag the site.
 2. `scripts/generate-topics.php --check` projects into a scratch directory and
    exits non-zero if the committed output differs. Drift becomes a build
    failure rather than a support ticket.

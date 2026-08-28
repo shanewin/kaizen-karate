@@ -2,11 +2,12 @@
 /**
  * Shared publish behaviour.
  *
- * There are two publish entry points: publish.php (form post) and
- * publish-changes.php (the dashboard's fetch call). The topic projection was
- * originally wired into publish.php only, which is the one the UI does not
- * use, so publishing from the dashboard pushed content live and left the
- * chatbot answering from the previous corpus. Both now call this.
+ * Publishing and re-deriving the chatbot corpus belong together: content that
+ * is live while the assistant still answers from the previous corpus is the
+ * drift the projection exists to prevent. Keeping the pair in one function
+ * means a future publish entry point cannot pick up one without the other,
+ * which is how they came apart before: the projection was wired into a second,
+ * orphaned publish script that the dashboard never called.
  */
 
 require_once __DIR__ . '/../includes/TopicProjector.php';
