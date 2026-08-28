@@ -1,0 +1,52 @@
+# Kaizen Karate - Catch-All Redirect to Homepage
+# This will redirect any URL that doesn't match an existing file or directory to the homepage
+
+RewriteEngine On
+# Clean URL for policies page
+RewriteRule ^policies/?$ policies.php [L]
+RewriteRule ^faq/?$ faq.php [L]
+RewriteRule ^student-handbook/?$ student-handbook.php [L]
+RewriteRule ^kaizen-dojo/?$ kaizen-dojo.php [L]
+RewriteRule ^about/?$ about.php [L]
+RewriteRule ^summer-camp/?$ summer-camp.php [L]
+RewriteRule ^after-school/?$ after-school.php [L]
+RewriteRule ^weekend-evening/?$ weekend-evening.php [L]
+RewriteRule ^online-store/?$ online-store.php [L]
+RewriteRule ^belt-exam/?$ belt-exam.php [L]
+RewriteRule ^kaizen-kenpo/?$ kaizen-kenpo.php [L]
+RewriteRule ^testing-tips/?$ testing-tips.php [L]
+RewriteRule ^video-instructions/?$ video-instructions.php [L]
+RewriteRule ^green-belt/?$ green-belt.php [L]
+RewriteRule ^purple-belt/?$ purple-belt.php [L]
+RewriteRule ^blue-belt/?$ blue-belt.php [L]
+RewriteRule ^brown-belt/?$ brown-belt.php [L]
+RewriteRule ^brown-stripe/?$ brown-stripe.php [L]
+RewriteRule ^red-belt/?$ red-belt.php [L]
+RewriteRule ^red-stripe/?$ red-stripe.php [L]
+RewriteRule ^nyc/?$ nyc.php [L]
+
+# Handle kaizenfitnessusa.com domain redirects
+RewriteCond %{HTTP_HOST} ^(www\.)?kaizenfitnessusa\.com [NC]
+RewriteRule ^summer-camp-2025/?$ https://kaizenkarateusa.com/#summer-camp [R=301,L]
+RewriteCond %{HTTP_HOST} ^(www\.)?kaizenfitnessusa\.com [NC]
+RewriteRule ^about/?$ https://kaizenkarateusa.com/#about [R=301,L]
+RewriteCond %{HTTP_HOST} ^(www\.)?kaizenfitnessusa\.com [NC]
+RewriteRule ^classes/?$ https://kaizenkarateusa.com/#weekend-evening [R=301,L]
+RewriteCond %{HTTP_HOST} ^(www\.)?kaizenfitnessusa\.com [NC]
+RewriteRule ^contact/?$ https://kaizenkarateusa.com/#contact [R=301,L]
+RewriteCond %{HTTP_HOST} ^(www\.)?kaizenfitnessusa\.com [NC]
+RewriteRule ^(.*)$ https://kaizenkarateusa.com/ [R=301,L]
+
+# Redirect everything else to homepage (internal rewrite, no visible redirect)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg|jpeg|gif|ico|pdf|svg|woff|woff2|ttf|eot|php)$ [NC]
+RewriteRule ^(.*)$ index.php [L]
+
+# Optional: Force HTTPS (uncomment if you have SSL)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Optional: Force www (uncomment if you want to force www)
+# RewriteCond %{HTTP_HOST} !^www\.
+# RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301] 

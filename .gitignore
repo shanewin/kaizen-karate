@@ -1,0 +1,88 @@
+# ---- Secrets & credentials -------------------------------------------------
+.env
+.env.*
+!.env.example
+admin/config.php
+chatbot-php/config.php
+config.local.php
+
+# ---- Customer PII / captured form data -------------------------------------
+# The site writes lead submissions to flat files. Never publish these.
+data/*.txt
+data/logs/
+form_debug.log
+*.log
+uploads/
+
+# ---- Server diagnostics (must not be publicly reachable) -------------------
+phpinfo.php
+server-check.php
+client-access-training-portal-*.php
+
+# ---- Generated / derived ---------------------------------------------------
+cache/
+chatbot-php/cache/
+vendor/
+
+# ---- Backups & scratch -----------------------------------------------------
+*.backup*
+*-backup.*
+*.bak*
+*.bk
+*_backup_*
+*_temp.*
+temp_*.txt
+index.php.backup*
+testing.php.backup*
+data/content/*-backup*.json
+data/content/*-draft*.json
+
+# ---- Ad-hoc test & one-off migration scripts -------------------------------
+test-*.php
+test-*.html
+test_*.php
+verify*.php
+simple-test.php
+mail-config-test.php
+text-email.php
+clear-rates.php
+*.py
+
+# ---- Working notes (superseded by docs/) -----------------------------------
+*-COMPARISON.md
+*-SUMMARY.md
+*-REPORT.md
+*-STATE.md
+*-RESULTS.md
+*-VERIFICATION.md
+*-IDENTIFIERS.md
+*-INSTRUCTIONS.md
+
+# Nested duplicate directories left by an rsync deploy
+styles/styles/
+modules/nyc/nyc/
+
+# ---- OS -------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# ---- Large binary media ----------------------------------------------------
+# Source video (2.1GB) and the bulk photo gallery (476MB) are deployment
+# assets, not source. Excluded to keep the repo cloneable; see README.
+assets/videos/
+assets/images/gallery/
+*.mov
+*.mp4
+
+# ---- Staging mirror --------------------------------------------------------
+# testing.php is a hand-synced duplicate of index.php (see README
+# "Known limitations"). Excluded as a deployment artifact, not distinct source.
+testing.php
+
+# ---- Leftovers from the unrelated project that previously used this repo ----
+unit-interest.php
+scripts/unit-interest.js
+scripts/availability.js
