@@ -2,9 +2,10 @@
 
 [![CI](https://github.com/shanewin/kaizen-karate/actions/workflows/ci.yml/badge.svg)](https://github.com/shanewin/kaizen-karate/actions/workflows/ci.yml)
 
-Production website, admin CMS, and AI assistant for a martial arts school
-operating across Washington DC, Maryland, Northern Virginia, and New York.
-Live at [kaizenkarateusa.com](https://kaizenkarateusa.com).
+Production website, admin CMS, and AI assistant for a martial arts organisation
+running around 60 after school programs across Washington DC, Maryland,
+Northern Virginia, and New York, alongside summer camps, a dojo and belt
+examinations. Live at [kaizenkarateusa.com](https://kaizenkarateusa.com).
 
 ![The Kaizen Karate homepage](docs/images/homepage.jpg)
 
@@ -218,11 +219,12 @@ build if a credential or a captured PII file is ever committed.
 
 An honest account of what a reviewer will find.
 
-- **Flat file storage** for leads and rate limiting. Appropriate at this volume,
-  roughly 4,500 records, and it is what makes the zero ETL reporting possible.
+- **Flat file storage** for captured enquiries and rate limiting. Enquiries
+  arrive at a rate flat files handle comfortably, roughly 4,500 records to date,
+  and storing them this way is what makes the reporting need no extract step.
   Every read modify write now runs under an exclusive lock, so entries are not
-  lost when submissions overlap, but the model is still a file on one host.
-  Anything busier than this wants a real datastore.
+  lost when submissions overlap, but the model is still a file on one host and
+  would not survive being written to from more than one.
 - **Retrieval is keyword routed**, so a question phrased entirely outside a
   topic's vocabulary falls back to general content. Fine for a bounded FAQ
   domain. It would not survive an open corpus.
