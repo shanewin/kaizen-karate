@@ -94,3 +94,8 @@ update_testing_lightboxes.php
 
 # Hosting provider placeholder page, not part of this project
 default.php
+
+# Owner-facing operational notes: kept beside the code, not published
+DEPLOYMENT.local.md
+ADMIN_SETUP.local.md
+KENPO_SHUFFLE.local.md

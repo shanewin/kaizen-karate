@@ -177,7 +177,6 @@ but the routing rules have to travel with the files.
 | `sections/`, `sections/home/` | Page sections, including the homepage's own |
 | `modules/nyc/` | Second location module |
 | `tests/` | Unit tests for the projection invariant and the rate limiter |
-| `docs/DEPLOYMENT.md` | Operational checklist for the live host |
 
 ## Running locally
 
