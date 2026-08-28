@@ -123,6 +123,23 @@ volume and where it came from next to the content they are editing. It is a
 modest reporting surface by design. The point is that it needed no
 infrastructure beyond what already existed.
 
+## Page structure
+
+`index.php` was a 4,672 line, 270 KB monolith carrying every homepage section
+plus 700 lines of inline CSS and roughly 700 lines of inline JavaScript. It is
+now a 332 line page shell: the `<head>`, the nav include, fourteen section
+includes, and the script tags.
+
+The sections live in `sections/home/`, the styling in `styles/home.css`, and the
+behaviour in `scripts/home/`, following the pattern the other pages already
+used. Each extraction was verified by rendering the homepage and diffing against
+a byte exact baseline, with `time()` based cache busters normalised so renders
+compare deterministically. Every one was byte identical.
+
+A few small blocks stay inline on purpose: the analytics snippet, the chat
+widget config that must run before the widget loads, and two short handlers
+whose extraction would only add indirection.
+
 ## Repository layout
 
 | Path | Role |
@@ -178,22 +195,24 @@ build if a credential or a captured PII file is ever committed.
 
 An honest account of what a reviewer will find.
 
-- **`index.php` is a 332 line page shell**, down from 4,672 lines and 270 KB.
-  What remains is the `<head>`, the nav include, twelve section includes, and
-  the script tags. A few small inline blocks stay inline on purpose: the
-  analytics snippet, the chat widget config that must run before the widget
-  loads, and two short handlers.
-- **A staging mirror, `testing.php`, is hand synced with `index.php`** and is
-  excluded from this repository as a deployment artifact. It is the duplication
-  the projector pattern exists to eliminate, and it should be replaced the same
-  way: one source, rendered twice.
+- **A staging mirror, `testing.php`, has fully diverged.** The CMS previews
+  edits against it, and `admin/publish.php` redirects there after publishing,
+  but it is still the original 4,904 line monolith while `index.php` is now 332
+  lines. It is excluded from this repository as a deployment artifact. It is
+  also the duplication the projector pattern exists to eliminate, and it should
+  be replaced the same way: one source, rendered twice.
 - **Flat file storage** for leads and rate limiting. Appropriate at this volume,
-  roughly 4,500 records, and it is what makes the zero ETL reporting possible,
-  but it has no story for concurrent writes beyond file locking and would need a
-  real datastore to scale.
+  roughly 4,500 records, and it is what makes the zero ETL reporting possible.
+  The chat rate limiter and the submissions log both take exclusive locks, but
+  the contact form's own rate limit file is still an unlocked read then write,
+  so overlapping submissions can lose an entry. Anything busier than this wants
+  a real datastore.
 - **Retrieval is keyword routed**, so a question phrased entirely outside a
   topic's vocabulary falls back to general content. Fine for a bounded FAQ
   domain. It would not survive an open corpus.
+- **The origin allowlist cannot stop a non browser client.** A script posting
+  directly sends no `Origin` header at all, which is why the rate limit, rather
+  than the allowlist, is what actually caps spend.
 
 ## License
 
