@@ -9,30 +9,110 @@ require_login();
 
 // File paths
 $contact_file = DATA_ROOT . '/contact_submissions.txt';
+$nyc_file = DATA_ROOT . '/nyc_contact_submissions.txt';
 $subscribers_file = DATA_ROOT . '/subscribers.txt';
 
-// Handle delete action
-if (isset($_GET['delete_contact']) && is_numeric($_GET['delete_contact'])) {
-    $delete_index = (int)$_GET['delete_contact'];
-    
-    if (file_exists($contact_file)) {
-        $lines = file($contact_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-        
-        // Reverse the array to match the display order (newest first)
-        $lines = array_reverse($lines);
-        
-        // Remove the specified line
-        if (isset($lines[$delete_index])) {
-            unset($lines[$delete_index]);
-            
-            // Reverse back to original order and save
-            $lines = array_reverse($lines);
-            file_put_contents($contact_file, implode(PHP_EOL, $lines) . PHP_EOL);
-            
-            // Redirect to avoid resubmission on refresh
-            header('Location: ' . str_replace('&delete_contact=' . $delete_index, '', $_SERVER['REQUEST_URI']));
-            exit;
+/**
+ * Read submissions from one pipe delimited file.
+ *
+ * A record starts with a timestamp. Message bodies can contain newlines, so any
+ * following line without a timestamp belongs to the record before it. Counting
+ * raw lines instead treated those continuations as separate rows, and the older
+ * nine field format was skipped entirely, which hid all but a handful of the
+ * history.
+ *
+ * @return array{records: array, raw: array} parsed records and their raw text
+ */
+function read_submission_file($path, $source) {
+    if (!file_exists($path)) {
+        return ['records' => [], 'raw' => []];
+    }
+
+    $records = [];
+    $raw     = [];
+
+    foreach (file($path, FILE_IGNORE_NEW_LINES) as $line) {
+        if (preg_match('/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\|/', $line)) {
+            $raw[] = $line;
+        } elseif ($raw) {
+            // continuation of the previous record's message
+            $raw[count($raw) - 1] .= "\n" . $line;
         }
+    }
+
+    foreach ($raw as $i => $entry) {
+        $d = explode('|', $entry);
+        $base = [
+            'source'     => $source,
+            'index'      => $i,
+            'timestamp'  => $d[0] ?? '',
+            'ip'         => $d[1] ?? '',
+            'first_name' => $d[2] ?? '',
+            'last_name'  => $d[3] ?? '',
+            'email'      => $d[4] ?? '',
+            'phone'      => $d[5] ?? '',
+            'age'        => '',
+        ];
+
+        if ($source === 'nyc') {
+            // timestamp|ip|first|last|email|phone|role|borough|school|message
+            $records[] = $base + [
+                'details' => array_filter([
+                    'Role'    => $d[6] ?? '',
+                    'Borough' => $d[7] ?? '',
+                    'School'  => $d[8] ?? '',
+                ]),
+                'message' => $d[9] ?? '',
+            ];
+        } elseif (count($d) >= 11) {
+            // timestamp|ip|first|last|email|phone|age|experience|program|heard|message
+            $records[] = array_merge($base, [
+                'age'     => $d[6] ?? '',
+                'details' => array_filter([
+                    'Program'    => $d[8] ?? '',
+                    'Experience' => $d[7] ?? '',
+                    'Heard via'  => $d[9] ?? '',
+                ]),
+                'message' => implode('|', array_slice($d, 10)),
+            ]);
+        } else {
+            // older format, no age or experience:
+            // timestamp|ip|first|last|email|phone|program|heard|message
+            $records[] = $base + [
+                'details' => array_filter([
+                    'Program'   => $d[6] ?? '',
+                    'Heard via' => $d[7] ?? '',
+                ]),
+                'message' => implode('|', array_slice($d, 8)),
+            ];
+        }
+    }
+
+    return ['records' => $records, 'raw' => $raw];
+}
+
+// Handle delete action. Deleting used to remove a raw line, which for a
+// multi-line message removed one fragment and corrupted the rest, so it now
+// removes a whole record. Destructive and reachable by URL, so it carries a
+// token like every other admin action.
+if (isset($_GET['delete_contact']) && is_numeric($_GET['delete_contact'])) {
+    if (!verify_csrf_token($_GET['token'] ?? '')) {
+        http_response_code(403);
+        die('Invalid security token');
+    }
+
+    $delete_source = ($_GET['source'] ?? 'main') === 'nyc' ? 'nyc' : 'main';
+    $target_file   = $delete_source === 'nyc' ? $nyc_file : $contact_file;
+    $parsed        = read_submission_file($target_file, $delete_source);
+    $delete_index  = (int) $_GET['delete_contact'];
+
+    if (isset($parsed['raw'][$delete_index])) {
+        unset($parsed['raw'][$delete_index]);
+        file_put_contents($target_file, implode(PHP_EOL, $parsed['raw']) . PHP_EOL, LOCK_EX);
+
+        $back = strtok($_SERVER['REQUEST_URI'], '?');
+        header('Location: ' . $back);
+        exit;
     }
 }
 
@@ -65,30 +145,31 @@ if (isset($_GET['delete_subscriber']) && is_numeric($_GET['delete_subscriber']))
 $contact_submissions = [];
 $email_subscribers = [];
 
-// Load contact form submissions
-if (file_exists($contact_file)) {
-    $lines = file($contact_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    foreach ($lines as $line) {
-        $data = explode('|', $line);
-        if (count($data) >= 11) {
-            $contact_submissions[] = [
-                'timestamp' => $data[0],
-                'ip' => $data[1] ?? 'N/A',
-                'first_name' => $data[2] ?? '',
-                'last_name' => $data[3] ?? '',
-                'email' => $data[4] ?? '',
-                'phone' => $data[5] ?? '',
-                'age' => $data[6] ?? '',
-                'experience' => $data[7] ?? '',
-                'program' => $data[8] ?? '',
-                'hear_about' => $data[9] ?? '',
-                'message' => $data[10] ?? ''
-            ];
-        }
-    }
-    // Show newest first
-    $contact_submissions = array_reverse($contact_submissions);
-}
+// Load submissions from both sources: the retired main site form, whose history
+// is still worth keeping, and the second location module, which is the live one.
+$main_parsed = read_submission_file($contact_file, 'main');
+$nyc_parsed  = read_submission_file($nyc_file, 'nyc');
+
+$contact_submissions = array_merge($main_parsed['records'], $nyc_parsed['records']);
+
+// Newest first, across both sources.
+usort($contact_submissions, function ($a, $b) {
+    return strcmp($b['timestamp'], $a['timestamp']);
+});
+
+// Rendering every record produced an 8MB page once the older history became
+// visible, so the table shows the most recent slice by default. The totals and
+// the CSV export still cover the full set.
+$display_limit    = isset($_GET['show']) && $_GET['show'] === 'all' ? null : 200;
+$total_submissions = count($contact_submissions);
+$visible_submissions = $display_limit === null
+    ? $contact_submissions
+    : array_slice($contact_submissions, 0, $display_limit);
+
+$submission_counts = [
+    'main' => count($main_parsed['records']),
+    'nyc'  => count($nyc_parsed['records']),
+];
 
 // Load email subscribers
 if (file_exists($subscribers_file)) {
@@ -115,20 +196,23 @@ if (isset($_GET['export'])) {
         header('Content-Disposition: attachment; filename="contact_submissions_' . date('Y-m-d') . '.csv"');
         
         $output = fopen('php://output', 'w');
-        fputcsv($output, ['Date', 'IP Address', 'First Name', 'Last Name', 'Email', 'Phone', 'Age', 'Experience', 'Program', 'How Heard', 'Message']);
+        fputcsv($output, ['Date', 'Source', 'IP Address', 'First Name', 'Last Name', 'Email', 'Phone', 'Age', 'Details', 'Message']);
         
         foreach ($contact_submissions as $submission) {
             fputcsv($output, [
                 $submission['timestamp'],
+                $submission['source'] === 'nyc' ? 'NYC' : 'Main site',
                 $submission['ip'],
                 $submission['first_name'],
                 $submission['last_name'],
                 $submission['email'],
                 $submission['phone'],
                 $submission['age'],
-                $submission['experience'],
-                $submission['program'],
-                $submission['hear_about'],
+                implode('; ', array_map(
+                    function ($k, $v) { return "$k: $v"; },
+                    array_keys($submission['details']),
+                    $submission['details']
+                )),
                 $submission['message']
             ]);
         }
@@ -294,6 +378,13 @@ if (isset($_GET['export'])) {
                     <div class="card-body p-0">
                         <?php if (!empty($contact_submissions)): ?>
                             <div class="table-responsive">
+                                <?php if ($display_limit !== null && $total_submissions > $display_limit): ?>
+                                    <div class="alert alert-light border small">
+                                        Showing the most recent <?php echo number_format($display_limit); ?>
+                                        of <?php echo number_format($total_submissions); ?> submissions.
+                                        <a href="?show=all">Show all</a> or use Export for the full set.
+                                    </div>
+                                <?php endif; ?>
                                 <table class="table table-hover mb-0">
                                     <thead class="table-light">
                                         <tr>
@@ -306,7 +397,7 @@ if (isset($_GET['export'])) {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($contact_submissions as $index => $submission): ?>
+                                        <?php foreach ($visible_submissions as $index => $submission): ?>
                                             <tr class="submission-row">
                                                 <td nowrap>
                                                     <small><?php echo htmlspecialchars($submission['timestamp']); ?></small>
@@ -316,7 +407,12 @@ if (isset($_GET['export'])) {
                                                 </td>
                                                 <td>
                                                     <strong><?php echo htmlspecialchars($submission['first_name'] . ' ' . $submission['last_name']); ?></strong><br>
-                                                    <small class="text-muted">Age: <?php echo htmlspecialchars($submission['age']); ?></small>
+                                                    <?php if ($submission['age'] !== ''): ?>
+                                                        <small class="text-muted">Age: <?php echo htmlspecialchars($submission['age']); ?></small><br>
+                                                    <?php endif; ?>
+                                                    <span class="badge bg-<?php echo $submission['source'] === 'nyc' ? 'info' : 'secondary'; ?>">
+                                                        <?php echo $submission['source'] === 'nyc' ? 'NYC' : 'Main site'; ?>
+                                                    </span>
                                                 </td>
                                                 <td>
                                                     <a href="mailto:<?php echo htmlspecialchars($submission['email']); ?>">
@@ -327,9 +423,12 @@ if (isset($_GET['export'])) {
                                                     </a>
                                                 </td>
                                                 <td>
-                                                    <strong>Program:</strong> <?php echo htmlspecialchars($submission['program']); ?><br>
-                                                    <strong>Experience:</strong> <?php echo htmlspecialchars($submission['experience']); ?><br>
-                                                    <strong>Heard via:</strong> <?php echo htmlspecialchars($submission['hear_about']); ?>
+                                                    <?php if (empty($submission['details'])): ?>
+                                                        <span class="text-muted">&mdash;</span>
+                                                    <?php else: foreach ($submission['details'] as $label => $value): ?>
+                                                        <strong><?php echo htmlspecialchars($label); ?>:</strong>
+                                                        <?php echo htmlspecialchars($value); ?><br>
+                                                    <?php endforeach; endif; ?>
                                                 </td>
                                                 <td>
                                                     <div class="message-preview" title="Click to view full message">
@@ -338,7 +437,7 @@ if (isset($_GET['export'])) {
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <button class="btn btn-delete" onclick="confirmDelete('contact', <?php echo $index; ?>)">
+                                                    <button class="btn btn-delete" onclick="confirmDelete('contact', <?php echo (int) $submission['index']; ?>, '<?php echo $submission['source']; ?>')">
                                                         <i class="fas fa-trash me-1"></i>Delete
                                                     </button>
                                                 </td>
@@ -471,10 +570,14 @@ if (isset($_GET['export'])) {
         }
         
         // Function to confirm and execute delete
-        function confirmDelete(type, index) {
+        const CSRF_TOKEN = <?php echo json_encode(generate_csrf_token()); ?>;
+
+        function confirmDelete(type, index, source) {
             if (confirm('Are you sure you want to delete this ' + type + '? This action cannot be undone.')) {
                 if (type === 'contact') {
-                    window.location.href = '?delete_contact=' + index;
+                    window.location.href = '?delete_contact=' + index
+                        + '&source=' + encodeURIComponent(source || 'main')
+                        + '&token=' + encodeURIComponent(CSRF_TOKEN);
                 } else if (type === 'subscriber') {
                     window.location.href = '?delete_subscriber=' + index;
                 }
