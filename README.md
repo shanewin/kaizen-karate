@@ -122,7 +122,7 @@ no infrastructure beyond what already existed.
 | `scripts/generate-topics.php` | CLI projector; `--check` mode for CI |
 | `pages/` | Page templates, served at clean URLs via `.htaccess` |
 | `belts/` | Belt curriculum pages sharing one parameterised template |
-| `sections/`, `sections/home/` | Page sections; homepage sections extracted from `index.php` |
+| `sections/`, `sections/home/` | Page sections; the homepage's own sections, extracted from `index.php` |
 | `styles/home.css`, `scripts/home/` | Homepage styling and behaviour, extracted from `index.php` |
 | `modules/nyc/` | Second-location module |
 | `chatbot-business/` | Standalone document-context chatbot tool |
@@ -163,12 +163,12 @@ php -S localhost:8000
 
 Honest notes on what a reviewer will find:
 
-- **`index.php` is still the largest file at ~67 KB (987 lines).** It was 270 KB
-  and 4,672 lines; the homepage sections now live in `sections/home/`, its CSS in
-  `styles/home.css`, and its behaviour in `scripts/home/`. What remains is the
-  page shell, the hero markup, and a handful of small inline scripts. Further
-  reduction means extracting the hero and consolidating the remaining inline
-  handlers.
+- **`index.php` is now a 332-line page shell** (from 4,672 lines and 270 KB): the
+  `<head>`, the nav include, twelve section includes, and the script tags. The
+  homepage sections live in `sections/home/`, its CSS in `styles/home.css`, and
+  its behaviour in `scripts/home/`. A few small inline blocks remain where
+  extracting them would not help - the analytics snippet, the chat widget config
+  that must precede the widget, and two short handlers.
 - **A staging mirror, `testing.php`, is hand-synced with `index.php`** and is
   excluded from this repo as a deployment artifact. It is the duplication the
   projector pattern exists to eliminate, and it should be replaced by the same
