@@ -157,14 +157,28 @@ file_put_contents($submissionFile, $logEntry, FILE_APPEND | LOCK_EX);
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require __DIR__ . '/../../vendor/autoload.php';
-
-// Load email config from secure location
-$emailConfig = require __DIR__ . '/../../../email_config.php';
-
-$mail = new PHPMailer(true);
+// Loading the dependencies and the mail config used to sit outside the try
+// block, so a missing or broken email_config.php produced an uncaught fatal:
+// the enquiry was saved, the visitor got a 500 with no message, and nothing was
+// logged. Both are inside the guard now, so any failure here is reported the
+// same way an SMTP failure is.
+$mail = null;
 
 try {
+    $autoload = __DIR__ . '/../../vendor/autoload.php';
+    if (!is_file($autoload)) {
+        throw new Exception('Composer dependencies are missing (vendor/autoload.php)');
+    }
+    require_once $autoload;
+
+    $configPath = __DIR__ . '/../../../email_config.php';
+    if (!is_file($configPath)) {
+        throw new Exception('Email configuration not found above the web root');
+    }
+    $emailConfig = require $configPath;
+
+    $mail = new PHPMailer(true);
+
     // Server settings
     $mail->isSMTP();
     $mail->Host = $emailConfig['smtp_host'];
@@ -203,9 +217,19 @@ try {
     $mail->send();
     $mailSent = true;
     
-} catch (Exception $e) {
-    error_log("NYC Contact form email failed: {$mail->ErrorInfo} from IP: {$ip}");
+} catch (Throwable $e) {
+    $reason = ($mail !== null && $mail->ErrorInfo !== '') ? $mail->ErrorInfo : $e->getMessage();
+    error_log("NYC Contact form email failed: {$reason} from IP: {$ip}");
     $mailSent = false;
+
+    // The enquiry is already saved above, but a failed notification is
+    // otherwise invisible: the visitor is thanked either way and nobody reads
+    // the PHP error log. Record it where the admin can surface it.
+    @file_put_contents(
+        $dataDir . 'mail_failures.log',
+        date('Y-m-d H:i:s') . '|nyc|' . $email . '|' . str_replace(["\n", '|'], ' ', $reason) . PHP_EOL,
+        FILE_APPEND | LOCK_EX
+    );
 }
 
 // Response based on request type
@@ -214,10 +238,12 @@ if ($isAjax) {
     if ($mailSent) {
         echo json_encode(['success' => true, 'message' => 'Thank you! Your inquiry has been sent to our NYC team.']);
     } else {
-        error_log('NYC Contact form email failed to send from IP: ' . $ip);
+        // The enquiry is stored, so this is not a failure from the visitor's
+        // side, but do not tell them it reached the team when it did not.
         echo json_encode([
-            'success' => true, 
-            'message' => 'Thank you! Your inquiry has been received.'
+            'success' => true,
+            'message' => 'Thank you! Your inquiry has been received. If you do not hear '
+                       . 'back within two business days, please email info@kaizenkaratenyc.com.'
         ]);
     }
 } else {

@@ -62,7 +62,7 @@ function read_submission_file($path, $source) {
                     'Borough' => $d[7] ?? '',
                     'School'  => $d[8] ?? '',
                 ]),
-                'message' => $d[9] ?? '',
+                'message' => implode('|', array_slice($d, 9)),
             ];
         } elseif (count($d) >= 11) {
             // timestamp|ip|first|last|email|phone|age|experience|program|heard|message
@@ -165,6 +165,23 @@ $total_submissions = count($contact_submissions);
 $visible_submissions = $display_limit === null
     ? $contact_submissions
     : array_slice($contact_submissions, 0, $display_limit);
+
+// Notification failures. An enquiry is stored before the email is attempted, so
+// a failed send loses nothing, but it is otherwise invisible: the visitor is
+// thanked either way and nobody reads the PHP error log.
+$mail_failures = [];
+$mail_failure_file = DATA_ROOT . '/mail_failures.log';
+if (file_exists($mail_failure_file)) {
+    foreach (array_reverse(file($mail_failure_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES)) as $line) {
+        $f = explode('|', $line);
+        $mail_failures[] = [
+            'timestamp' => $f[0] ?? '',
+            'form'      => $f[1] ?? '',
+            'email'     => $f[2] ?? '',
+            'error'     => $f[3] ?? '',
+        ];
+    }
+}
 
 $submission_counts = [
     'main' => count($main_parsed['records']),
@@ -378,6 +395,22 @@ if (isset($_GET['export'])) {
                     <div class="card-body p-0">
                         <?php if (!empty($contact_submissions)): ?>
                             <div class="table-responsive">
+                                <?php if ($mail_failures): ?>
+                                    <div class="alert alert-danger">
+                                        <strong><?php echo count($mail_failures); ?> enquiry notification(s) failed to send.</strong>
+                                        The enquiries themselves were saved and appear below, but no email reached the team.
+                                        <ul class="mb-0 mt-2 small">
+                                        <?php foreach (array_slice($mail_failures, 0, 5) as $f): ?>
+                                            <li>
+                                                <?php echo htmlspecialchars($f['timestamp']); ?>
+                                                (<?php echo htmlspecialchars($f['form']); ?>)
+                                                <?php echo htmlspecialchars($f['email']); ?>
+                                                &mdash; <?php echo htmlspecialchars($f['error']); ?>
+                                            </li>
+                                        <?php endforeach; ?>
+                                        </ul>
+                                    </div>
+                                <?php endif; ?>
                                 <?php if ($display_limit !== null && $total_submissions > $display_limit): ?>
                                     <div class="alert alert-light border small">
                                         Showing the most recent <?php echo number_format($display_limit); ?>
