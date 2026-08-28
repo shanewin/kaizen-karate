@@ -1,0 +1,1565 @@
+/* NYC Section Scoped Styles */
+
+.nyc-hero-flex-container {
+    gap: 2rem; /* Reduced from 5vh to standard unit to prevent excessive height on desktop */
+}
+
+/* Tablet / iPad Landscape Adjustment */
+@media (max-width: 1199px) {
+    .nyc-title {
+        font-size: 2.5rem !important; /* Optimized for iPad (was 4rem) */
+        line-height: 1.2;
+    }
+    .nyc-subtitle {
+        font-size: 1.1rem !important; /* Optimized to match title scale */
+    }
+    .nyc-hero-flex-container {
+        gap: 2rem;
+    }
+}
+
+
+/* --- Variables (inheriting from main style.css conceptually) --- */
+:root {
+    --nyc-red: #a4332b;
+    --nyc-red-light: #d4524a;
+    --nyc-dark: #1a1a1a;
+    --nyc-white: #ffffff;
+    --nyc-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    --nyc-overlay-gradient: none; /* Removed gradient */
+    --nyc-overlay-gradient-mobile: none;
+}
+
+/* Robust Layering Fix */
+#nyc-hero {
+    position: relative;
+    z-index: 1; /* Establish stacking context */
+}
+
+/* Hero Bottom Fade */
+.nyc-hero-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh; /* Smooth transition area */
+    background: linear-gradient(to bottom, transparent, #1a1a1a);
+    z-index: 2; 
+    pointer-events: none;
+}
+
+/* Back Button Styling */
+.nyc-back-home-btn {
+    position: fixed; /* Fixed to viewport */
+    top: 20px; /* High up at the top */
+    left: 50px; /* Spaced from the left */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Reduced gap */
+    color: white;
+    text-decoration: none;
+    /* Red Glossy Gradient */
+    background: linear-gradient(135deg, rgba(164, 51, 43, 0.85), rgba(212, 82, 74, 0.85));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 8px 18px; /* Reduced padding for smaller size */
+    border-radius: 50px;
+    font-family: 'Playfair Display', serif; /* Matching Title Font */
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8rem; /* Smaller font size */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 9999; /* Max visibility */
+    letter-spacing: 1px; /* Increased for Caps */
+}
+
+.nyc-back-home-btn:hover {
+    background: linear-gradient(135deg, rgba(212, 82, 74, 0.95), rgba(164, 51, 43, 0.95));
+    transform: translateY(-2px); /* Subtle lift */
+    box-shadow: 0 6px 20px rgba(164, 51, 43, 0.5);
+    border-color: white;
+    color: white;
+}
+
+.nyc-back-home-btn i {
+    font-size: 0.9rem; /* Smaller icons */
+    transition: transform 0.3s ease;
+}
+
+.nyc-back-home-btn:hover i.fa-arrow-left {
+    transform: translateX(-3px);
+}
+
+/* Creative Intro Text */
+#nyc-landing-content .dojo-intro {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem); /* Slightly larger per request */
+    line-height: 1.8;
+    color: #ffffff;
+    max-width: 900px; /* Slightly wider to accommodate larger text */
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+/* --- Container States --- */
+
+/* State 1: Large Modal Popup */
+#NYC.nyc-fullscreen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%; /* Reduced from 90% */
+    max-width: 1200px; /* Reduced from 1400px */
+    height: 90vh; /* Reduced height */
+    height: 90dvh; /* Dynamic Viewport Height */
+    z-index: 9999;
+    display: flex;
+    flex-direction: column; /* Ensure close button stays on top inside if needed, or overlay context */
+    justify-content: center;
+    align-items: center; /* Center horizontally */
+    /* CHANGE: Allow overflow scrolling if content is too tall */
+    overflow-y: hidden; /* Prevent scrolling per request */
+    overflow-x: hidden;
+    color: var(--nyc-dark); /* Dark text for white background */
+    border-radius: 25px; /* Rounded corners */
+    border: 4px solid var(--nyc-red); /* Red border enhancement */
+    /* Deep shadow for depth + Huge shadow for Backdrop/Overlay effect (90% opacity black) */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 100vmax rgba(0, 0, 0, 0.9);
+}
+
+/* State 2: Inline Section */
+#NYC.nyc-inline {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    height: 800px; /* Increased from 600px for breathing room */
+    z-index: 10;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    overflow: hidden;
+    color: var(--nyc-dark);
+    margin-bottom: -1px; /* Negative margin to KILL the white line */
+    padding-top: 6rem; /* Add generous top padding */
+    padding-bottom: 6rem; /* Balance bottom padding */
+    /* REMOVED 'all' to prevent box-shadow (backdrop) from animating/shrinking */
+    transition: top 0.8s cubic-bezier(0.77, 0, 0.175, 1), 
+                left 0.8s cubic-bezier(0.77, 0, 0.175, 1), 
+                transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), 
+                width 0.8s cubic-bezier(0.77, 0, 0.175, 1), 
+                height 0.8s cubic-bezier(0.77, 0, 0.175, 1),
+                border-radius 0.8s cubic-bezier(0.77, 0, 0.175, 1),
+                border 0.8s cubic-bezier(0.77, 0, 0.175, 1),
+                box-shadow 0.8s ease-out; /* Add dissolve transition */
+    border-radius: 0; /* flatten out when inline */
+    /* KEY FIX: Instead of 'none', keep the spread but make it transparent.
+       This prevents the 'shrinking black bar' calculation and forces a color fade (dissolve) */
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0); 
+}
+
+/* Pseudo-element reset for inline state */
+#NYC.nyc-inline::before {
+    display: none;
+}
+
+/* Mobile Inline Height */
+@media (max-width: 767.98px) {
+    #NYC.nyc-inline {
+        height: auto;
+        padding: 6rem 1rem; /* Increased padding */
+    }
+}
+
+
+/* --- Video Background --- */
+.nyc-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.nyc-bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.nyc-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--nyc-overlay-gradient);
+    z-index: -1;
+}
+
+/* --- Close Button --- */
+.nyc-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid var(--nyc-red);
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    color: var(--nyc-red);
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Hide close button when inline */
+#NYC.nyc-inline .nyc-close-btn {
+    display: none;
+}
+
+.nyc-close-btn:hover {
+    background: var(--nyc-red);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(164, 51, 43, 0.3);
+}
+
+.nyc-close-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.nyc-close-text {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* --- Content --- */
+.nyc-content-container {
+    text-align: center; /* Center text */
+    max-width: 680px; /* Slightly widened from 600px to fit 3 cols better */
+    width: 90%; 
+    position: relative;
+    max-height: 85vh; /* Limit height relative to viewport */
+    overflow: visible; /* ALLOW BADGE TO STICK OUT */
+    display: flex; /* IMPORTANT */
+    flex-direction: column;
+    z-index: 10;
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.75); /* More transparent cream/white, no blur */
+    border-radius: 25px; /* Fully rounded */
+    margin: 0; /* Center in flex container */
+    transform: none;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15); /* Soft shadow */
+}
+
+    /* NEW Scroll Wrapper to contain content without clipping badge */
+.nyc-scroll-wrapper {
+    overflow-y: hidden; /* Removed scroll */
+    width: 100%;
+    /* height: 100%; REMOVED rigid height */
+    flex: 1; /* Allow to fill remaining space properly */
+    min-height: 0; /* Critical for flex child scrolling/containment */
+    padding: 1.5rem 2.5rem; /* Reduced top/bottom padding from 2.5rem */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Ensure border radius is respected for scrollbar aesthetics */
+    border-radius: 25px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.nyc-badge {
+    position: relative; /* Fixed: In flow on desktop too */
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 1rem auto; /* Reduced margin from 2rem */
+    background: var(--nyc-red);
+    color: white;
+    padding: 1rem 2.5rem; /* Matched inline desktop */
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem; /* Matched inline desktop */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4); /* Matched inline */
+    border: 2px solid white; /* Optional: adds a nice cut-out effect against the border */
+    white-space: nowrap;
+    z-index: 20;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.nyc-badge-icon {
+    font-size: 2em; /* Equivalent to fa-2x roughly */
+}
+
+/* CTA */
+.nyc-btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--nyc-red), #c0392b);
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(164, 51, 43, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Movement only */
+    border: 2px solid transparent; 
+}
+
+.nyc-btn-primary:hover {
+    transform: translateY(-4px); /* Clean lift */
+    box-shadow: 0 12px 25px rgba(164, 51, 43, 0.5); /* Deep shadow */
+    color: white;
+}
+
+.nyc-btn-primary:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(164, 51, 43, 0.3);
+}
+
+.nyc-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3.5vw, 3rem); /* Reduced max size */
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px; /* Matched inline */
+    text-transform: uppercase; /* Force ALL CAPS */
+    color: #a4332b; /* Fallback */
+    text-shadow: 0 4px 15px rgba(0,0,0,0.8), 0 0 30px rgba(164, 51, 43, 0.3); /* Matched inline */
+    background: linear-gradient(135deg, var(--nyc-red), var(--nyc-red-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    line-height: 1.2; /* Increased from 1.1 */
+    white-space: nowrap; /* Force single line */
+    margin-bottom: 1rem; /* Increased from 0.5rem to unsquish */
+    padding-top: 0.5rem; /* Added breathing room at top */
+}
+
+.nyc-red {
+    color: var(--nyc-red);
+}
+
+.nyc-subtitle {
+    font-family: 'Montserrat', sans-serif; /* Standard font */
+    font-size: 1.5rem; /* Matched roughly h2 */
+    font-weight: 500; /* Matching .about-lead weight */
+    color: #333; /* Dark Grey for readability on white box */
+    line-height: 1.5; 
+    margin-bottom: 2rem; 
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8); /* Matched inline */
+    margin-bottom: 0.5rem; /* Reduced from 2.5rem */
+    text-shadow: none;
+}
+
+/* Feature Grid */
+.nyc-features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem 2rem; /* Row gap, Increased Col gap for separation */
+    margin: 0 auto 1rem auto; /* Reduced bottom margin from 2rem */
+    width: fit-content; /* Shrink to fit content */
+    max-width: 100%;
+    text-align: left;
+}
+
+.nyc-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: 'Montserrat', sans-serif; /* Identical match to subtitle */
+    font-size: 0.85rem;
+    line-height: 1.3;
+    color: #000000; /* Matching subtitle black */
+    font-weight: 500; /* Matching subtitle weight */
+}
+
+.nyc-feature-icon {
+    color: var(--nyc-red);
+    font-size: 2.2rem; /* Significantly larger */
+    width: 40px; /* Accommodate larger icon */
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Info Grid Container (White Box) - GLOBAL (Desktop First) */
+.nyc-info-item {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* STRICT Equal columns */
+    gap: 1.5rem; /* Space between columns */
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.05);  
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+    transition: transform 0.3s ease;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 0; /* REMOVED extra margin to bring button back in */
+}
+
+/* Individual Info Columns */
+.nyc-info-row {
+    display: flex;
+    flex-direction: column; /* Stack Icon top, text bottom */
+    align-items: center; /* Center align items */
+    text-align: center; /* Center text */
+    gap: 0.5rem;
+    width: 100%;
+    position: relative; /* For pseudo-element separator */
+    padding-bottom: 0;
+    border-bottom: none; 
+}
+
+/* Vertical Separator for Desktop (First 2 items) */
+.nyc-info-row:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -0.75rem; /* Position in middle of 1.5rem gap */
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background: var(--nyc-red); /* Red separator */
+}
+
+.nyc-info-row:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* Mobile specific for grid */
+@media (max-width: 991px) {
+    /* Responsive Grid for Info Item - FORCE 3 COLS to save vertical height */
+    .nyc-info-item {
+        grid-template-columns: 1fr 1fr 1fr !important; /* Force single row */
+        gap: 0.5rem; /* Tight gap */
+        padding: 1rem;
+    }
+    
+    .nyc-info-text {
+        font-size: 0.8rem !important; /* Smaller text to fit */
+    }
+    
+    .nyc-icon {
+        font-size: 1rem !important;
+    }
+    
+    /* Remove vertical separators on non-desktop layouts */
+    .nyc-info-row:not(:last-child)::after {
+        display: none;
+    }
+    
+    .nyc-info-item .nyc-info-row:last-child {
+        grid-column: auto; /* Reset spanning */
+        justify-self: center; 
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* Merged into bottom block */
+
+/* Info Grid */
+.nyc-info-grid {
+    display: flex;
+    flex-direction: column; 
+    gap: 0.8rem; /* Reduced gap from 1rem */
+    margin-bottom: 1rem; /* Reduced bottom margin from 2rem */
+    align-items: center; /* Center items */
+}
+
+
+/* Remove last-child special styling since it's a grid now */
+/* Cleaned up redundant rules */
+
+.nyc-info-item:hover {
+    transform: translateY(-5px); /* Up instead of right */
+    background: white;
+    box-shadow: 0 6px 25px rgba(164, 51, 43, 0.1);
+    border-color: rgba(164, 51, 43, 0.1);
+}
+
+.nyc-icon {
+    font-size: 1.2rem;
+    color: var(--nyc-red);
+    width: auto; /* Allow natural width */
+    margin-bottom: 0.2rem; /* Space below icon */
+    text-align: left;
+}
+
+.nyc-info-text {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.nyc-info-text strong {
+    display: block;
+    color: var(--nyc-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.75rem;
+    margin-bottom: 2px;
+}
+
+.nyc-placeholder {
+    opacity: 1;
+}
+
+.nyc-address-text {
+    font-size: 0.85rem; /* Smaller than standard 0.95rem */
+    line-height: 1.3;
+    display: block; /* Ensure it respects block sizing/spacing */
+}
+
+/* CTA */
+.nyc-btn-primary {
+    display: inline-block;
+    background: var(--nyc-red);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.75rem 2.5rem; /* Reduced from 1rem 3rem to make it smaller */
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 20px rgba(164, 51, 43, 0.4);
+}
+
+.nyc-btn-primary:hover {
+    background: transparent;
+    border-color: var(--nyc-red);
+    box-shadow: 0 0 30px rgba(164, 51, 43, 0.6);
+    color: white;
+}
+
+
+/* --- Responsive Mobile Styles --- */
+/* --- Responsive Mobile Styles --- */
+@media (max-width: 991px) {
+    #nyc-section.nyc-fullscreen {
+        width: 100%;
+        height: 100vh; /* Fallback */
+        height: 100dvh;
+        border-radius: 0;
+    }
+    
+    .nyc-content-container {
+        width: 100%; /* maximize width */
+        max-width: 600px;
+        padding: 1.5rem; /* Aggressively reduced from 2rem to ensure fit on short screens */
+        height: auto;
+        min-height: auto;
+        border-radius: 25px; 
+        gap: 0.5rem; /* Force tighter vertical stacking */
+    }
+    
+    .nyc-title {
+        font-size: 2.2rem; /* Slightly smaller to be safe */
+        margin-bottom: 0.5rem;
+    }
+
+    .nyc-subtitle {
+        margin-bottom: 1rem; /* Reduced margin */
+    }
+    
+    /* Ensure flex behavior on tablet/mobile containers too */
+    .nyc-content-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .nyc-overlay {
+        background: var(--nyc-overlay-gradient-mobile); 
+    }
+
+    #nyc-section.nyc-fullscreen {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100vh; /* Fallback */
+        height: 100dvh;
+        border-radius: 0;
+    }
+    
+    #nyc-section.nyc-inline .nyc-overlay {
+        background: var(--nyc-overlay-gradient-mobile);
+    }
+    
+    /* Tighter container for tablet */
+    .nyc-content-container {
+        width: 90%; 
+        max-width: 100%;
+        padding: 0.5rem 1rem; /* AGGRESSIVE REDUCTION (was 1.5rem 1rem) */
+        background: rgba(255, 255, 255, 0.85); 
+    }
+    
+    /* LARGER TEXT but ensure single line */
+    .nyc-title {
+        font-size: clamp(1.2rem, 5vw, 2rem) !important; /* Reduced for tablet too */
+        white-space: nowrap !important; /* FORCE single line */
+        line-height: 1.1;
+    }
+    
+    .nyc-subtitle {
+        font-size: 1.4rem; /* Increased */
+        margin-bottom: 2rem;
+        line-height: 1.4;
+    }
+    
+    .nyc-feature-item {
+        font-size: 1rem; /* Increased text size */
+    }
+
+    .nyc-feature-icon {
+        font-size: 1.5rem !important; /* Smaller icon on tablet too */
+    }
+    
+    .nyc-badge {
+        font-size: 0.85rem; /* Larger badge text */
+        padding: 0.5rem 1.2rem;
+    }
+    
+    /* Remove extra padding from scroll wrapper on tablet/mobile to fix double padding */
+    .nyc-scroll-wrapper {
+        padding: 0.5rem; /* Minimal padding */
+        padding-top: 1rem; /* REDUCED from 1.5rem */
+    }
+
+    .nyc-info-grid {
+        gap: 0.8rem;
+    }
+    
+    .nyc-info-item {
+        max-width: 100%;
+        background: #f8f8f8;
+        box-shadow: none;
+        border: 1px solid #eee;
+        padding: 1.2rem; 
+    }
+    
+    .nyc-close-btn {
+        top: 1rem;
+        right: 1rem;
+        border-color: var(--nyc-red);
+        background: white;
+        color: var(--nyc-red);
+        padding: 0.5rem 1.2rem;
+    }
+    
+    .nyc-close-text {
+        font-size: 0.8rem; 
+    }
+}
+
+/* Small Material/iPhone styles (576px range - encompasses larger phones now) */
+@media (max-width: 575.98px) {
+    #nyc-section.nyc-fullscreen {
+         justify-content: center;
+         padding-top: 3rem; /* Leave room for the Close button at top */
+         padding-bottom: env(safe-area-inset-bottom); /* iOS Safe Area */
+    }
+
+    .nyc-content-container {
+        width: 95%;
+        padding: 0.5rem 0.5rem; /* Minimized padding */
+        padding-bottom: calc(1rem + env(safe-area-inset-bottom, 20px)); 
+        border-radius: 20px;
+    }
+
+    .nyc-features-grid {
+        grid-template-columns: 1fr 1fr !important; /* Force 2 columns to save height */
+        gap: 0.3rem !important; 
+        margin-bottom: 1rem !important; /* RELAXED */
+        margin-top: 0.5rem !important;
+    }
+
+    .nyc-feature-item {
+        font-size: 0.85rem; /* Smaller font */
+        gap: 0.5rem; 
+        background: rgba(0,0,0,0.03); 
+        padding: 0.4rem; /* Reduced padding */
+        border-radius: 8px;
+    }
+    
+    .nyc-feature-icon {
+        font-size: 1.2rem;
+    }
+
+    .nyc-info-item {
+        grid-template-columns: 1fr; 
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nyc-info-item .nyc-info-row:last-child {
+        grid-column: span 1;
+        justify-self: start;
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    /* FORCE 1 LINE TITLE - Adjusted scaling */
+    /* FORCE 1 LINE TITLE - Final Polish */
+    /* FORCE 1 LINE TITLE - Final Polish */
+    .nyc-title {
+        font-size: clamp(1.8rem, 8vw, 2.5rem) !important; /* MAXIMIZED per user request */
+        white-space: nowrap !important; 
+        margin-bottom: 0 !important; 
+        padding-top: 0 !important; 
+        letter-spacing: 0px !important; 
+        line-height: 1.1 !important;
+    }
+    
+    .nyc-subtitle {
+        font-size: 1rem !important; /* INCREASED from 0.8rem */
+        font-weight: 600; /* Make it bolder too */
+        margin-bottom: 1rem !important; 
+        line-height: 1.3;
+        margin-top: 0.5rem;
+        padding: 0 0.5rem;
+    }
+    
+    .nyc-badge {
+        font-size: 0.7rem; /* Smaller badge */
+        padding: 0.5rem 1rem; /* RELAXED */
+        margin-top: 0.5rem;
+        margin-bottom: 1rem; /* RELAXED */
+        max-width: 90%;
+        white-space: normal !important; /* Allow wrapping if needed */
+    }
+    
+    /* NUCLEAR FIX: Consolidating wrapper styles to avoid conflict */
+    .nyc-hero-flex-container.nyc-scroll-wrapper {
+        gap: 1.5vh !important; /* RELAXED: Use space */
+        justify-content: flex-start !important; /* Top align */
+        padding: 0 0.5rem !important; /* Horizontal padding only */
+        padding-top: 2.5rem !important; /* RELAXED: Breathe at top */
+        min-height: 0 !important;
+        flex: 1 1 auto !important; /* Allow growing/shrinking */
+    }
+
+    /* Hide the Scroll Indicator on mobile to save space */
+    .nyc-hero-flex-container a[href="#nyc-landing-content"] {
+        display: none !important;
+    }
+
+    /* Hero Grid Fixes */
+    .nyc-hero-flex-container .row {
+        gap: 0.5rem !important; /* Tighten row gap */
+    }
+
+    .nyc-hero-flex-container .col-6 {
+        padding: 0 5px; /* Reduce horizontal padding */
+    }
+
+    /* Icon Override */
+    .nyc-hero-flex-container .fa-3x,
+    .nyc-feature-icon {
+        font-size: 1.4rem !important; /* Smaller icons */
+        margin-bottom: 0.2rem !important;
+    }
+
+    /* Hero Feature Text Override */
+    .nyc-hero-flex-container .small {
+        font-size: 0.65rem !important; /* Tiny text for labels */
+        line-height: 1.1;
+    }
+
+    /* Contact Box Fixes */
+     .nyc-content-container {
+        padding: 0.5rem 0.5rem !important; /* Minimal padding */
+        width: 95% !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .nyc-content-container .h4, 
+    .nyc-content-container h4 {
+        font-size: 1rem; /* Smaller headers in box */
+    }
+
+    .nyc-content-container p {
+        font-size: 0.8rem; /* Smaller body text */
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Address specific */
+    .nyc-content-container .fa-map-marker-alt,
+    .nyc-content-container .fa-phone,
+    .nyc-content-container .fa-envelope {
+        font-size: 1rem; /* Smaller icons in box */
+    }
+
+    .nyc-badge-icon {
+        font-size: 1.2em; /* Smaller icon on mobile */
+    }
+
+    .nyc-btn-primary {
+        padding: 0.6rem 2rem !important; /* Smaller button */
+        font-size: 0.9rem !important;
+    }
+    
+    .nyc-info-grid {
+        margin-bottom: 0.5rem !important; /* Pull button up */
+        gap: 0.5rem !important;
+    }
+
+    /* Merged Styles from previous block */
+    .nyc-features-grid {
+        grid-template-columns: 1fr 1fr !important; /* Force 2 columns */
+    }
+
+    .nyc-info-item {
+        grid-template-columns: 1fr !important; /* 1 Column on Mobile */
+        gap: 0.8rem !important;
+    }
+
+    .nyc-info-item .nyc-info-row:last-child {
+        grid-column: span 1 !important;
+        justify-self: center !important; /* Center align last item too */
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    /* AGGRESSIVE SPACE SAVING FOR INFO BOX */
+    .nyc-info-item {
+        padding: 1rem !important; /* RELAXED from 0.5rem */
+        gap: 0.5rem !important;
+    }
+    
+    .nyc-info-text {
+        font-size: 0.8rem !important;
+        line-height: 1.1 !important;
+    }
+    
+    .nyc-icon {
+        font-size: 1rem !important;
+    }
+    
+    .nyc-scroll-wrapper {
+        /* Duplicate rules removed - see above consolidation */
+        /* padding: 0.2rem !important; REMOVED */
+    }
+    
+    .nyc-content-container {
+        padding: 0 !important;
+        /* INCREASED HEIGHT per user request */
+        width: 100% !important; /* Full width */
+        max-height: 92dvh !important; /* Taller container */
+        min-height: 80vh !important; /* Force substantial height */
+        padding-bottom: 2.5rem !important; /* Extra space at bottom for button breathing room */
+        overflow: hidden !important; /* Ensure no scroll bars */
+    }
+
+    /* Move Badge to top and ensure it doesn't take much space */
+    .nyc-badge {
+        margin: 0.2rem auto !important;
+    }
+    
+    .nyc-btn-primary {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%; 
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+    
+    /* Ensure Close Button is clear */
+    .nyc-close-btn {
+        top: 0.5rem; /* Stick to very top */
+        right: 0.5rem; 
+        padding: 0.4rem 1rem; /* Smaller button */
+        transform: none;
+        background: white;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        z-index: 10001; /* Above everything */
+    }
+
+    /* Mobile Back Button Positioning */
+    .nyc-back-home-btn {
+        top: 10px;
+        left: 10px;
+        padding: 6px 14px;
+        font-size: 0.7rem;
+    }
+}
+
+/* --- NYC Video Stories --- */
+.nyc-video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.nyc-video-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 9/16; /* Vertical video ratio */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #000;
+}
+
+.nyc-video-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(164, 51, 43, 0.2);
+}
+
+.nyc-story-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Mobile Responsive Videos */
+@media (max-width: 767.98px) {
+    .nyc-video-grid {
+        grid-template-columns: repeat(1, 1fr); /* Stack on mobile or maybe 1 column scroll? Let's stack for safety */
+        gap: 2rem;
+        padding: 0 2rem; /* Add some side padding */
+        max-width: 400px;
+    }
+}
+
+/* --- NYC Form Styles --- */
+
+/* Glassy Form Card */
+.nyc-form-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 3rem;
+    position: relative;
+    overflow: visible; /* Allowing dropdowns to spill out if needed, though they are usually absolute */
+    box-shadow: 
+        0 15px 50px rgba(0,0,0,0.15),
+        0 0 0 1px rgba(255,255,255, 1) inset;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.nyc-form-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px; /* Thicker accent */
+    background: linear-gradient(90deg, var(--nyc-red), #d4524a);
+}
+
+/* Custom Role Selection Cards */
+.btn-outline-custom {
+    border: 2px solid #e0e0e0; /* Darker border default */
+    background: #fff;
+    color: #444; /* Darker text */
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600; /* Bolder text */
+}
+
+.btn-check:checked + .btn-outline-custom {
+    background: var(--nyc-red); /* Solid Fill active state per 'Bolder' request option, or keep light? Let's go Solid for impact */
+    background: linear-gradient(135deg, var(--nyc-red), #c0392b);
+    border-color: var(--nyc-red);
+    color: white; /* White text on bold fill */
+    box-shadow: 0 8px 20px rgba(164, 51, 43, 0.3);
+    transform: translateY(-3px);
+}
+
+.btn-check:checked + .btn-outline-custom i {
+    color: white !important; /* Force icon white */
+}
+
+.btn-outline-custom:hover {
+    border-color: #ccc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Modern Input Styling - BOLDER */
+.form-floating {
+    margin-bottom: 1rem;
+}
+
+.form-floating > .custom-input {
+    border: 2px solid #e0e0e0; /* Full border again but refined? Or keep bottom? User said "Bolder". Let's try a clean full border with structure. */
+    border: none;
+    border-bottom: 2px solid #ccc; /* Darker default border */
+    border-radius: 4px 4px 0 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background: #f8f8f8; /* Darker fill */
+    box-shadow: none;
+    height: 3.8rem; /* Taller */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600; /* Bolder input text */
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.form-floating > .custom-input:focus {
+    border-color: var(--nyc-red);
+    background: #fff;
+    box-shadow: 0 4px 0 -1px rgba(164, 51, 43, 0.1); /* Subtle bottom shadow underline */
+}
+
+.form-floating > label {
+    padding-left: 1rem;
+    color: #666; /* Darker label */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-floating > .custom-input:focus ~ label,
+.form-floating > .custom-input:not(:placeholder-shown) ~ label {
+    color: var(--nyc-red);
+    font-weight: 700; /* Bold label when active */
+    transform: scale(0.85) translateY(-0.6rem) translateX(0.15rem);
+    opacity: 1;
+}
+
+
+/* --- Dynamic Fields Animation --- */
+.switchable-field {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    transform: translateY(10px);
+}
+
+.switchable-field.visible {
+    opacity: 1;
+    max-height: 200px; /* Arbitrary large enough height */
+    overflow: visible;
+    transform: translateY(0);
+}
+
+
+/* --- Truly Custom Dropdown --- */
+.nyc-custom-select {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nyc-select-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 3.8rem;
+    padding: 1.625rem 1rem 0.625rem; /* Matches form-floating padding structure */
+    background: #f8f8f8;
+    border-bottom: 2px solid #ccc;
+    border-radius: 4px 4px 0 0;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: transparent; /* Hide placeholder text to prevent overlap with floating label */
+}
+
+.nyc-select-trigger.has-value,
+.nyc-custom-select.open .nyc-select-trigger {
+    color: #333; /* Show text only when value selected or open */
+}
+
+/* Dark Mode text color fix for trigger */
+#nyc-landing-content .nyc-select-trigger.has-value,
+#nyc-landing-content .nyc-custom-select.open .nyc-select-trigger {
+    color: white;
+}
+
+.nyc-select-trigger::after {
+    content: '\f078';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 0.9rem;
+    color: #888;
+    transition: transform 0.3s ease;
+}
+
+.nyc-custom-select.open .nyc-select-trigger {
+    background: white;
+    border-color: var(--nyc-red);
+}
+
+.nyc-custom-select.open .nyc-select-trigger::after {
+    transform: rotate(180deg);
+    color: var(--nyc-red);
+}
+
+/* The Label Simulation */
+.nyc-select-label {
+    position: absolute;
+    top: 1.25rem;
+    left: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transform-origin: 0 0;
+}
+
+/* Float label when value selected or open */
+.nyc-custom-select.open .nyc-select-label,
+.nyc-select-trigger.has-value + .nyc-select-label, /* sibling selector approach needed or just JS class on wrapper */
+.nyc-custom-select:focus-within .nyc-select-label {
+    color: var(--nyc-red);
+    font-weight: 700;
+    transform: scale(0.85) translateY(-0.8rem);
+}
+
+/* Options Menu */
+.nyc-select-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.nyc-custom-select.open .nyc-select-options {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nyc-option {
+    padding: 1rem 1.5rem;
+    color: #444;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nyc-option:hover {
+    background: rgba(164, 51, 43, 0.05); /* Red tint */
+    color: var(--nyc-red);
+    padding-left: 1.8rem; /* Slide effect */
+}
+
+.nyc-option.selected {
+    background: var(--nyc-red);
+    color: white;
+}
+
+
+/* Custom Submit Button - BOLDER */
+.btn-nyc-submit {
+    background: linear-gradient(135deg, var(--nyc-red), #b93b32);
+    color: white;
+    border-radius: 50px;
+    padding: 1.2rem 5rem; /* Wider */
+    font-weight: 800; /* Extra Bold */
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.1rem; /* Larger */
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(164, 51, 43, 0.4); /* Stronger shadow */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin-top: 1rem;
+}
+
+.btn-nyc-submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.btn-nyc-submit:hover::before {
+    width: 100%;
+}
+
+.btn-nyc-submit:hover {
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(164, 51, 43, 0.6);
+}
+
+.btn-nyc-submit:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(164, 51, 43, 0.4);
+}
+
+/* Feature Grid Icon Override */
+#nyc-landing .dojo-card-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--nyc-red);
+    transition: transform 0.3s ease;
+}
+
+#nyc-landing .dojo-card:hover .dojo-card-icon {
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    .nyc-form-card {
+        padding: 1.5rem;
+        border-radius: 15px;
+    }
+    
+    .btn-nyc-submit {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+/* Animation Utilities */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+
+/* --- NYC Dark Mode Content --- */
+#nyc-landing-content {
+    background-color: #1a1a1a;
+    color: white;
+    position: relative;
+    z-index: 20; /* 20 > 1 (Hero) -> Content sits ON TOP of Hero */
+}
+
+/* Background Logo Repositioning */
+.kaizen-dojo-section::before {
+    top: -5% !important; /* Slight negative to nudge it up just a bit without breaking out too much */
+    transform: rotate(12deg) !important; /* REMOVED translateY(-50%) */
+    opacity: 0.1 !important;
+    z-index: 99 !important;
+}
+
+/* Invert Text Colors */
+#nyc-landing-content p,
+#nyc-landing-content li,
+#nyc-landing-content .h2,
+#nyc-landing-content .h3 {
+    color: white;
+}
+
+#nyc-landing-content .text-muted {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Feature Cards Overrides */
+#nyc-landing-content .dojo-card {
+    background: rgba(255, 255, 255, 0.03); /* Subtle glass on dark */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: none; /* Flat look or subtle glow? */
+}
+
+#nyc-landing-content .dojo-card-title {
+    color: white;
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 700;
+}
+
+#nyc-landing-content .dojo-card-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+#nyc-landing-content .dojo-card-icon {
+    /* Background removed per request */
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+#nyc-landing-content .dojo-card:hover .dojo-card-icon {
+    transform: scale(1.1); /* Simple scale, no rotation */
+}
+
+#nyc-landing-content .dojo-card-icon i {
+    color: var(--nyc-red);
+    font-size: 3.5rem;
+    margin-bottom: 0;
+}
+
+/* CTA Cards (Admin/Parent) */
+.nyc-cta-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2.5rem;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.nyc-cta-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--nyc-red);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nyc-cta-icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.1); /* Dark mode circle */
+    color: var(--nyc-red); /* Red icon */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nyc-cta-title {
+    color: white !important;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.nyc-cta-text {
+    color: rgba(255, 255, 255, 0.7) !important;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.nyc-cta-btn {
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--nyc-red);
+    background: transparent;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.nyc-cta-btn:hover {
+    background: var(--nyc-red);
+    color: white;
+    box-shadow: 0 0 20px rgba(164, 51, 43, 0.5);
+}
+
+/* Form Section Overrides for Dark Mode */
+/* Giving the form a "sheet of glass" look on the dark bg */
+#nyc-landing-content .nyc-form-card {
+    background: rgba(30, 30, 30, 0.6); /* Semi-transparent dark slate */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+#nyc-landing-content .nyc-form-card h2 {
+    color: white !important; /* Force title white */
+}
+
+#nyc-landing-content .nyc-form-card .text-muted {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+#nyc-landing-content .form-label {
+    color: var(--nyc-red) !important;
+}
+
+/* Dark Mode Inputs */
+#nyc-landing-content .custom-input {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+#nyc-landing-content .custom-input:focus {
+    background: rgba(0, 0, 0, 0.5);
+    border-color: var(--nyc-red);
+}
+
+#nyc-landing-content .form-floating > label {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#nyc-landing-content .form-floating > .custom-input:focus ~ label,
+#nyc-landing-content .form-floating > .custom-input:not(:placeholder-shown) ~ label {
+    color: var(--nyc-red);
+}
+
+/* Role Selection Dark Mode */
+#nyc-landing-content .btn-outline-custom {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+#nyc-landing-content .btn-outline-custom:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+#nyc-landing-content .btn-check:checked + .btn-outline-custom {
+    background: var(--nyc-red); /* Keep active state red */
+    border-color: var(--nyc-red);
+    color: white;
+}
+
+/* Custom Card HR */
+.nyc-card-separator {
+    width: 50%;
+    margin: 1.2rem auto;
+    border: none;
+    height: 1px;
+    background-color: var(--nyc-red);
+    opacity: 0.5;
+}
+
+
+
+#nyc-landing-content .nyc-select-trigger {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    color: transparent; /* Keep transparent for placeholder fix */
+}
+
+#nyc-landing-content .nyc-select-trigger.has-value,
+#nyc-landing-content .nyc-custom-select.open .nyc-select-trigger {
+    color: white;
+}
+
+#nyc-landing-content .nyc-select-trigger::after {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#nyc-landing-content .nyc-select-options {
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#nyc-landing-content .nyc-option {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#nyc-landing-content .nyc-option:hover {
+    background: rgba(164, 51, 43, 0.2);
+    color: white;
+}
+
+/* --- Form Feedback Alerts --- */
+#formResponse .alert {
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    animation: slideUpFade 0.5s ease forwards;
+}
+
+/* Success Alert */
+#formResponse .alert-success {
+    background: rgba(40, 167, 69, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3);
+}
+
+/* Error Alert */
+#formResponse .alert-danger {
+    background: rgba(164, 51, 43, 0.9); /* Using NYC Red for error */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    box-shadow: 0 6px 20px rgba(164, 51, 43, 0.3);
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* NYC Section Specific Overrides (sections/nyc-section.php) */
+#nyc-hero .nyc-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 1.5rem; /* Increased spacing */
+}
+
+#nyc-hero .nyc-subtitle {
+    font-size: 2rem;
+    color: #ffffff;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Ensure readability on video */
+}
