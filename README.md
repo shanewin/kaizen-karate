@@ -147,6 +147,18 @@ authenticates, points the content layer at the draft files, and includes
 `index.php`. One homepage template, rendered twice against different content,
 which is the same idea the chatbot corpus uses.
 
+## URLs and routing
+
+`.htaccess` owns routing and is load bearing. Page templates live in `pages/`
+and `belts/`, but nothing in the URL reflects that: clean URLs such as `/about`
+map to `pages/about.php`, and every relocated file also keeps its original
+`.php` address, so an older link like `/faq.php` still resolves. That is 28
+relocation rules alongside the clean URL rules, generated from the directories
+themselves rather than maintained by hand.
+
+The consequence for deployment is that moving the page files without shipping
+`.htaccess` breaks a large part of the site.
+
 ## Repository layout
 
 | Path | Role |
@@ -156,6 +168,7 @@ which is the same idea the chatbot corpus uses.
 | `includes/TopicProjector.php` | Projection: source to topic slices, with pruning and coverage checks |
 | `includes/content-loader.php` | Renders site sections from the knowledge base |
 | `admin/` | CMS: draft, publish, backup, with a change log |
+| `admin/error-handling.php` | Logs PHP errors instead of printing them into admin pages |
 | `chatbot-php/` | Retrieval, Claude API integration, embeddable widget |
 | `chatbot-php/RateLimiter.php` | Sliding window spend guard on the chat endpoint |
 | `scripts/generate-topics.php` | CLI projector, with a `--check` mode for CI |
@@ -198,6 +211,33 @@ build if a credential or a captured PII file is ever committed.
   permanently.
 - **`admin/config.php` and `chatbot-php/.env`**, which hold credentials.
   `.example` templates are tracked in their place.
+
+## Deploying
+
+The repository is not a complete deployment on its own. Four things have to be
+true on the server.
+
+1. **`.htaccess` must be uploaded.** It carries the clean URL and relocation
+   rules for every page that lives in `pages/` or `belts/`. Without it those
+   pages return 404.
+2. **The credential files must already exist**, since they are deliberately not
+   in version control: `admin/config.php`, `chatbot-php/config.php`,
+   `chatbot-php/.env` with the Anthropic API key, and `email_config.php` one
+   level above the web root. `.example` templates in the repository show the
+   shape of each.
+3. **Run `composer install`** so `vendor/` exists. PHP 8.0 or newer is required.
+4. **`data/` and `chatbot-php/cache/` must be writable** by the web server, for
+   captured enquiries, rate limit counters and the chatbot cache.
+
+Two notes for an existing install. The chat endpoint was renamed from
+`test_chatbot_simple.php` to `chat-api.php`, so the old file can be deleted once
+the new one is in place. And the page templates that used to sit in the web root
+now live in `pages/` and `belts/`; the stale copies at the root are shadowed by
+the relocation rules and can be removed.
+
+Errors are logged rather than displayed everywhere, on the public forms and in
+the admin. Set `KAIZEN_DEBUG=1` in the environment to see them while working on
+a change.
 
 ## Known limitations
 
