@@ -282,12 +282,15 @@ class KaizenChatWidget {
                 this.addMessage(data.response, 'bot');
                 this.trackEvent('bot_response_success');
             } else {
+                // The endpoint returns user-facing copy for conditions the
+                // visitor can act on -- notably the rate limit -- so show that
+                // rather than replacing it with a generic failure.
                 this.addMessage(
-                    "I'm sorry, I'm having trouble processing your request right now. Please try again or contact us directly at 301-938-2711.",
+                    data.error || "I'm sorry, I'm having trouble processing your request right now. Please try again or contact us directly at 301-938-2711.",
                     'bot',
                     true
                 );
-                this.trackEvent('bot_response_error', { error: data.error });
+                this.trackEvent('bot_response_error', { error: data.error, status: response.status });
             }
         } catch (error) {
             this.hideDynamicLoading();

@@ -96,6 +96,23 @@ Three things now prevent that:
 
 ---
 
+### Protecting a paid endpoint
+
+Every chat request costs money, so `chat-api.php` refuses work before it reaches
+the model rather than after. Two independent checks:
+
+- **Origin allowlist** — stops other sites embedding the widget and billing this
+  account. A rejected origin is refused server-side, so it costs nothing.
+- **Sliding-window rate limit** — the check that actually caps spend, since a
+  script posting directly sends no `Origin` header at all. 50 requests per hour
+  per caller, with `X-RateLimit-*` headers and a `Retry-After` on 429.
+
+Reads and writes to the limiter's store are wrapped in an exclusive lock.
+Without it, two overlapping requests lose an increment, so the limit could be
+exceeded under exactly the concurrent load it exists to contain — a test drives
+eight concurrent writers and asserts all 80 increments survive. Identifiers are
+hashed, so the store holds no raw IP addresses.
+
 ## Operational reporting
 
 Because the knowledge base and the captured leads are both plain files on the
@@ -119,6 +136,7 @@ no infrastructure beyond what already existed.
 | `includes/content-loader.php` | Renders site sections from the knowledge base |
 | `admin/` | CMS: draft → publish → backup, with a change log |
 | `chatbot-php/` | Retrieval + Claude API integration, embeddable widget |
+| `chatbot-php/RateLimiter.php` | Sliding-window spend guard on the chat endpoint |
 | `scripts/generate-topics.php` | CLI projector; `--check` mode for CI |
 | `pages/` | Page templates, served at clean URLs via `.htaccess` |
 | `belts/` | Belt curriculum pages sharing one parameterised template |

@@ -31,7 +31,9 @@ jobs:
           done
 
       - name: Unit tests
-        run: php tests/TopicProjectorTest.php
+        run: |
+          php tests/TopicProjectorTest.php
+          php tests/RateLimiterTest.php
 
       # The chatbot corpus is derived from site-content.json. If a topic file
       # has been hand-edited or the source changed without regeneration, the

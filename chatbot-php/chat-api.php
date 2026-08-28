@@ -58,6 +58,39 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+/**
+ * Per-caller rate limit. The origin check above stops other sites embedding the
+ * widget, but it cannot stop a script posting here directly -- such a request
+ * carries no Origin header at all. This is the limit that actually caps spend.
+ *
+ * RATE_LIMIT_REQUESTS and RATE_LIMIT_WINDOW have been defined in config.php all
+ * along without anything reading them.
+ */
+require_once __DIR__ . '/RateLimiter.php';
+
+$limiter = new RateLimiter(
+    __DIR__ . '/../data/chat_rate_limits.txt',
+    RATE_LIMIT_REQUESTS,
+    RATE_LIMIT_WINDOW
+);
+
+$caller = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 'unknown';
+$quota  = $limiter->hit($caller);
+
+header('X-RateLimit-Limit: ' . RATE_LIMIT_REQUESTS);
+header('X-RateLimit-Remaining: ' . $quota['remaining']);
+
+if (!$quota['allowed']) {
+    http_response_code(429);
+    header('Retry-After: ' . $quota['retryAfter']);
+    echo json_encode([
+        'success' => false,
+        'error'   => "You've reached the message limit for now. Please try again shortly, "
+                   . 'or call us on 301-938-2711.',
+    ]);
+    exit;
+}
+
 try {
     require_once __DIR__ . '/SimpleChatbotEngine.php';
     
