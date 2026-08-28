@@ -41,10 +41,10 @@ keep in sync and no ETL step between the CMS and the AI layer.
 
 ## Why this design
 
-A school this size cannot staff a content team, a data team, and an AI team.
-One constraint shaped every decision: a front desk employee updates the summer
-camp price once, and the website, the assistant, and the reports are all correct
-immediately, with no engineer involved.
+The same facts have to appear in two places: on the page a visitor reads, and in
+the context the assistant answers from. Content here is edited by staff rather
+than engineers, so any design that depends on someone remembering to update the
+second place will drift.
 
 That rules out the conventional approach of a CMS database plus a separate
 vector store filled by a nightly sync. Two stores means two states, and the gap
