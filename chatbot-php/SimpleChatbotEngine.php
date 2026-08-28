@@ -4,8 +4,8 @@
  * Updated for Claude 3.5 / Haiku
  */
 
-require_once 'config.php';
-require_once 'SmartDataLoader.php';
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/SmartDataLoader.php';
 
 class SimpleChatbotEngine {
     private $dataLoader;

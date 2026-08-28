@@ -33,11 +33,11 @@ define('RATE_LIMIT_WINDOW', 3600); // 1 hour
 
 // CORS Configuration (adjust for your domain)
 $allowed_origins = [
-    'https://kaizenkarateusa.com/',
-    'https://www.kaizenkarateusa.com/',
-    'https://kaizenfitnessusa.com/',
-    'https://www.kaizenfitnessusa.com/',
-    'http://localhost' // For testing
+    // No trailing slashes: an Origin header never has one.
+    'https://kaizenkarateusa.com',
+    'https://www.kaizenkarateusa.com',
+    'https://kaizenfitnessusa.com',
+    'https://www.kaizenfitnessusa.com',
 ];
 
 // Error Reporting (set to false in production)
