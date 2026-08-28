@@ -3,7 +3,7 @@
 [![CI](https://github.com/shanewin/kaizen-karate/actions/workflows/ci.yml/badge.svg)](https://github.com/shanewin/kaizen-karate/actions/workflows/ci.yml)
 
 Production website, admin CMS, and AI assistant for a martial arts organisation
-running around 60 after school programs across Washington DC, Maryland,
+running 60+ after school programs across Washington DC, Maryland,
 Northern Virginia, and New York, alongside summer camps, a dojo and belt
 examinations. Live at [kaizenkarateusa.com](https://kaizenkarateusa.com).
 
