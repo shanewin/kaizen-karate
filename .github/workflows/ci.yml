@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Lint all PHP sources
+        run: |
+          find . -name '*.php' -not -path './vendor/*' -print0 \
+            | xargs -0 -n1 -P4 php -l > /dev/null
+
+      - name: Validate content JSON
+        run: |
+          for f in data/content/*.json data/content/topics/*.json; do
+            php -r 'json_decode(file_get_contents($argv[1]));
+                    if (json_last_error() !== JSON_ERROR_NONE) {
+                      fwrite(STDERR, $argv[1].": ".json_last_error_msg()."\n");
+                      exit(1);
+                    }' "$f"
+          done
+
+      - name: Unit tests
+        run: php tests/TopicProjectorTest.php
+
+      # The chatbot corpus is derived from site-content.json. If a topic file
+      # has been hand-edited or the source changed without regeneration, the
+      # assistant would answer from stale content -- fail the build instead.
+      - name: Verify chatbot corpus is in sync with site content
+        run: php scripts/generate-topics.php --check
+
+      - name: Fail if credentials or captured PII were committed
+        run: |
+          if git ls-files | grep -qE '(^|/)(\.env$|config\.php$)|submissions.*\.txt$'; then
+            echo "Blocked: a secret or PII file is tracked."
+            git ls-files | grep -E '(^|/)(\.env$|config\.php$)|submissions.*\.txt$'
+            exit 1
+          fi
+          if git grep -nIE 'sk-ant-api[0-9]|sk-proj-|\$2y\$[0-9]{2}\$' -- . ':!*.example.*' ':!.github/*'; then
+            echo "Blocked: possible live credential in tracked source."
+            exit 1
+          fi
+          echo "No credentials or PII in tracked files."
