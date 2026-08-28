@@ -7,6 +7,7 @@
 
 define('KAIZEN_ADMIN', true);
 session_start();
+require_once __DIR__ . '/error-handling.php';
 require_once 'config.php';
 require_once SITE_ROOT . '/includes/TopicProjector.php';
 

@@ -1,6 +1,7 @@
 <?php
 define('KAIZEN_ADMIN', true);
 session_start();
+require_once __DIR__ . '/error-handling.php';
 require_once 'config.php';
 
 // Require login
@@ -107,12 +108,33 @@ if ($_POST) {
                 $message = error_message('Failed to save changes.');
             }
         }
+
+        // Site information: the page title, meta description and keywords used
+        // for search results, plus the contact details shown around the site.
+        // This lived on a since-removed screen that was not in the menu.
+        if (isset($_POST['site_info_section'])) {
+            $content = load_json_data('site-content', 'draft');
+            $content['site_info'] = [
+                'title'       => sanitize_input($_POST['site_title']),
+                'description' => sanitize_input($_POST['site_description']),
+                'keywords'    => sanitize_input($_POST['site_keywords']),
+                'phone'       => sanitize_input($_POST['site_phone']),
+                'email'       => sanitize_input($_POST['site_email']),
+            ];
+
+            if (save_json_data('site-content', $content, 'draft')) {
+                $message = success_message('Site information saved to draft successfully!');
+            } else {
+                $message = error_message('Failed to save site information.');
+            }
+        }
     }
 }
 
 // Load current content from draft
 $content = load_json_data('site-content', 'draft');
 $hero_section = $content['hero_section'] ?? [];
+$site_info = $content['site_info'] ?? [];
 
 // Load media content for hero video from draft
 $media_content = load_json_data('media', 'draft');
@@ -185,6 +207,53 @@ $csrf_token = generate_csrf_token();
                 
                 <?php echo $message; ?>
                 
+                <!-- Site Information -->
+                <div class="content-section">
+                    <h3 class="section-title"><i class="fas fa-globe me-2"></i>Site Information</h3>
+                    <p class="text-muted">The page title and description search engines show, plus the contact details used around the site.</p>
+                    <form method="POST">
+                        <input type="hidden" name="site_info_section" value="1">
+                        <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
+
+                        <div class="mb-3">
+                            <label for="site_title" class="form-label"><strong>Page Title</strong></label>
+                            <input type="text" class="form-control" id="site_title" name="site_title"
+                                   value="<?php echo htmlspecialchars($site_info['title'] ?? ''); ?>">
+                            <div class="form-text">Shown in the browser tab and as the headline in search results.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="site_description" class="form-label"><strong>Meta Description</strong></label>
+                            <textarea class="form-control" id="site_description" name="site_description" rows="3"><?php echo htmlspecialchars($site_info['description'] ?? ''); ?></textarea>
+                            <div class="form-text">The summary under your link in search results. Around 150 to 160 characters works best.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="site_keywords" class="form-label"><strong>Keywords</strong></label>
+                            <input type="text" class="form-control" id="site_keywords" name="site_keywords"
+                                   value="<?php echo htmlspecialchars($site_info['keywords'] ?? ''); ?>">
+                            <div class="form-text">Comma separated.</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="site_phone" class="form-label"><strong>Phone</strong></label>
+                                <input type="text" class="form-control" id="site_phone" name="site_phone"
+                                       value="<?php echo htmlspecialchars($site_info['phone'] ?? ''); ?>">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="site_email" class="form-label"><strong>Email</strong></label>
+                                <input type="email" class="form-control" id="site_email" name="site_email"
+                                       value="<?php echo htmlspecialchars($site_info['email'] ?? ''); ?>">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save me-2"></i>Save Site Information
+                        </button>
+                    </form>
+                </div>
+
                 <!-- Header Section -->
                 <div class="content-section">
                     <h3 class="section-title"><i class="fas fa-video me-2"></i>Header & Hero Section</h3>

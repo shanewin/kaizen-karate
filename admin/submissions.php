@@ -1,6 +1,7 @@
 <?php
 define('KAIZEN_ADMIN', true);
 session_start();
+require_once __DIR__ . '/error-handling.php';
 require_once 'config.php';
 
 // Require login
@@ -265,11 +266,11 @@ if (isset($_GET['export'])) {
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="card bg-success text-white">
+                        <div class="card bg-secondary text-white">
                             <div class="card-body text-center">
-                                <i class="fas fa-users mb-2" style="font-size: 2rem;"></i>
-                                <h3 class="total-submissions"><?php echo number_format(count($email_subscribers)); ?></h3>
-                                <p class="card-text">Email Subscribers</p>
+                                <i class="fas fa-envelope-open-text mb-2" style="font-size: 2rem;"></i>
+                                <h3 class="h5 mb-1">Email Signups</h3>
+                                <p class="card-text mb-0">Handled by the Elfsight form. View them in your Elfsight dashboard.</p>
                             </div>
                         </div>
                     </div>
@@ -364,7 +365,8 @@ if (isset($_GET['export'])) {
                     </div>
                 </div>
                 
-                <!-- Email Subscribers -->
+                <!-- Email subscribers captured before signups moved to the Elfsight
+                     form. Shown only while legacy rows remain in subscribers.txt. -->
                 <?php if (!empty($email_subscribers)): ?>
                 <div class="submissions-card mt-4">
                     <div class="card-header-custom d-flex justify-content-between align-items-center">
@@ -427,17 +429,13 @@ if (isset($_GET['export'])) {
                                     <i class="fas fa-download me-2"></i>Export Contact Data
                                 </a>
                             </div>
-                            <div class="col-md-4 mb-3">
-                                <?php if (!empty($email_subscribers)): ?>
+                            <?php if (!empty($email_subscribers)): ?>
+                                <div class="col-md-4 mb-3">
                                     <a href="?export=subscribers" class="btn btn-outline-info w-100">
-                                        <i class="fas fa-download me-2"></i>Export Subscribers
+                                        <i class="fas fa-download me-2"></i>Export Legacy Subscribers
                                     </a>
-                                <?php else: ?>
-                                    <button class="btn btn-outline-secondary w-100" disabled>
-                                        <i class="fas fa-download me-2"></i>No Subscribers
-                                    </button>
-                                <?php endif; ?>
-                            </div>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

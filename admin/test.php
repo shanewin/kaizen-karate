@@ -15,6 +15,7 @@ echo "Session started<br>";
 // Test config file
 if (file_exists('config.php')) {
     echo "config.php exists<br>";
+    require_once __DIR__ . '/error-handling.php';
     require_once 'config.php';
     echo "config.php loaded successfully<br>";
     

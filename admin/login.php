@@ -1,6 +1,7 @@
 <?php
 define('KAIZEN_ADMIN', true);
 session_start();
+require_once __DIR__ . '/error-handling.php';
 require_once 'config.php';
 
 $error = '';
