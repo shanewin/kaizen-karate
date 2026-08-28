@@ -120,7 +120,10 @@ no infrastructure beyond what already existed.
 | `admin/` | CMS: draft → publish → backup, with a change log |
 | `chatbot-php/` | Retrieval + Claude API integration, embeddable widget |
 | `scripts/generate-topics.php` | CLI projector; `--check` mode for CI |
+| `pages/` | Page templates, served at clean URLs via `.htaccess` |
+| `belts/` | Belt curriculum pages sharing one parameterised template |
 | `sections/`, `modules/nyc/` | Page sections; second-location module |
+| `chatbot-business/` | Standalone document-context chatbot tool |
 | `tests/` | Unit tests for the projection invariant |
 
 ---
@@ -158,7 +161,9 @@ php -S localhost:8000
 
 Honest notes on what a reviewer will find:
 
-- **`index.php` is a ~270 KB monolith.** It predates the section extraction in
+- **`index.php` is a ~270 KB monolith.** Page templates now live in `pages/`
+  and share `includes/` and `sections/`, but the homepage itself was never
+  decomposed the same way. It predates the section extraction in
   `sections/` and still carries inline CSS and JS. Decomposing it is the largest
   outstanding piece of work.
 - **A staging mirror, `testing.php`, is hand-synced with `index.php`** and is

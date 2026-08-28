@@ -86,3 +86,8 @@ testing.php
 unit-interest.php
 scripts/unit-interest.js
 scripts/availability.js
+
+# Superseded by data/content/site-content.json; kept on disk, not in the repo
+faq_content.html
+handbook_content.html
+policies_content.html

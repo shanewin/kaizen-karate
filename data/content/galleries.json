@@ -1,0 +1,4380 @@
+{
+    "galleries": [
+        {
+            "id": "dojo-training",
+            "title": "Home",
+            "description": "",
+            "order": 1,
+            "images": [
+                {
+                    "full": "assets/images/gallery/dojo-training/C0144T01.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/C0144T01.jpg",
+                    "width": 2000,
+                    "height": 1125,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00062.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00062.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00065.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00065.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00067.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00067.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00068.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00068.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00069.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00069.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00082.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00082.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00095.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00095.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00100.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00100.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00108.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00108.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00110.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00110.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00118.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00118.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00120.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00120.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00142.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00142.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00147.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00147.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00151.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00151.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00156.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00156.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00157.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00157.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00172.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00172.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00174.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00174.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00179.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00179.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00200.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00200.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00213.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00213.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00228.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00228.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/DSC00231.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/DSC00231.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0022.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0022.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0023.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0023.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0026.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0026.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0027.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0027.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0030.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0030.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0031.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0031.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0032.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0032.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0034.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0034.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0036.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0036.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0041.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0041.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0042.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0042.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0043.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0043.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0044.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0044.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0046.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0046.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0047.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0047.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0048.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0048.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0049.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0049.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0051.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0051.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0052.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0052.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0054.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0054.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0057.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0057.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0059.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0059.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0060.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0060.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0061.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0061.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0062.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0062.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0063.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0063.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0065.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0065.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0068.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0068.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0069.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0069.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0082.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0082.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0083.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0083.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0085.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0085.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0096.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0096.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0100.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0100.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0101.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0101.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0108.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0108.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0112.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0112.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0114.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0114.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0119.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0119.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0120.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0120.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0123.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0123.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0127.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0127.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0131.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0131.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0144.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0144.jpg",
+                    "width": 1125,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0145.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0145.jpg",
+                    "width": 1125,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0154.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0154.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0158.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0158.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0161.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0161.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0164.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0164.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0167.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0167.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0178.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0178.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0181.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0181.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0185.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0185.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0190.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0190.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0194.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0194.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0206.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0206.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0207.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0207.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0208.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0208.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0224.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0224.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0231.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0231.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0232.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0232.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0239.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0239.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0248.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0248.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0250.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0250.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0252.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0252.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0257.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0257.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0260.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0260.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0270.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0270.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0275.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0275.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0291.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0291.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0299.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0299.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0303.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0303.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0304.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0304.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0312.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0312.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0321.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0321.jpg",
+                    "width": 2000,
+                    "height": 1500,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_0326.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_0326.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/IMG_9881.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/IMG_9881.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/X-IMG_0024.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/X-IMG_0024.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/X-IMG_0055.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/X-IMG_0055.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/X-IMG_0056.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/X-IMG_0056.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/X-IMG_0090.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/X-IMG_0090.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/X-IMG_0282.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/X-IMG_0282.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/XDSC00198.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/XDSC00198.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/XIMG_0025.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/XIMG_0025.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/XIMG_0037.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/XIMG_0037.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/XIMG_0038.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/XIMG_0038.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/XIMG_0045.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/XIMG_0045.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/XIMG_0050.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/XIMG_0050.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/XIMG_0064.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/XIMG_0064.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/XIMG_0075.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/XIMG_0075.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/XIMG_0098.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/XIMG_0098.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/XIMG_0225.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/XIMG_0225.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/XIMG_0264.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/XIMG_0264.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/XIMG_0310.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/XIMG_0310.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/XIMG_9882.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/XIMG_9882.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/dojo-training/xIMG_0033.jpg",
+                    "thumb": "assets/images/gallery/dojo-training/thumbs/xIMG_0033.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                }
+            ]
+        },
+        {
+            "id": "arlington-community-church",
+            "title": "Arlington Community Church",
+            "description": "",
+            "order": 2,
+            "images": [
+                {
+                    "full": "assets/images/gallery/arlington-community-church/DSC00245.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/DSC00245.jpg",
+                    "width": 2000,
+                    "height": 1333,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/DSC00247.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/DSC00247.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/DSC00250.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/DSC00250.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/DSC00255.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/DSC00255.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/DSC00257.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/DSC00257.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/DSC00262.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/DSC00262.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/DSC00269.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/DSC00269.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/DSC00271.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/DSC00271.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/DSC00280.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/DSC00280.jpg",
+                    "width": 1333,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0725.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0725.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0726.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0726.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0730.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0730.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0731.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0731.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0740.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0740.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0741.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0741.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0748.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0748.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0750.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0750.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0751.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0751.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0752.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0752.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0753.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0753.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0754.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0754.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0755.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0755.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0756.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0756.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0757.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0757.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0758.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0758.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0759.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0759.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0760.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0760.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0761.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0761.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0762.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0762.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0763.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0763.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0764.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0764.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0765.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0765.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0766.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0766.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0767.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0767.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0768.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0768.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0769.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0769.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0772.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0772.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0773.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0773.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0775.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0775.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0776.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0776.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0777.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0777.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0778.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0778.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0779.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0779.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0780.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0780.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0781.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0781.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0782.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0782.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0783.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0783.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0788.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0788.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0789.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0789.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0790.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0790.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0791.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0791.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0792.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0792.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0793.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0793.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0794.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0794.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0795.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0795.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0796.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0796.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/IMG_0797.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/IMG_0797.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/X-IMG_0724.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/X-IMG_0724.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/X-IMG_0745.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/X-IMG_0745.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/XIMG_0722.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/XIMG_0722.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/XIMG_0723.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/XIMG_0723.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/XIMG_0727.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/XIMG_0727.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/XIMG_0728.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/XIMG_0728.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/XIMG_0729.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/XIMG_0729.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/XIMG_0743.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/XIMG_0743.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/XIMG_0744.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/XIMG_0744.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/XIMG_0749.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/XIMG_0749.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/XIMG_0770.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/XIMG_0770.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/XIMG_0771.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/XIMG_0771.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/arlington-community-church/XIMG_0774.jpg",
+                    "thumb": "assets/images/gallery/arlington-community-church/thumbs/XIMG_0774.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                }
+            ]
+        },
+        {
+            "id": "belt-exam-04-25",
+            "title": "Belt Exam — April 25, 2026",
+            "description": "",
+            "order": 3,
+            "images": [
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7673.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7673.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7679.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7679.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7680.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7680.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7689.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7689.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7691.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7691.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7693.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7693.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7696.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7696.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7698.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7698.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7699.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7699.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7700.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7700.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7704.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7704.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7705.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7705.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7707.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7707.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7708.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7708.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7710.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7710.jpg",
+                    "width": 2000,
+                    "height": 1500,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7714.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7714.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7715.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7715.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7717.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7717.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7719.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7719.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7720.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7720.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7722.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7722.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7725.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7725.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7727.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7727.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7729.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7729.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7735.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7735.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7737.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7737.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7738.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7738.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7739.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7739.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7744.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7744.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7753.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7753.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7755.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7755.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7756.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7756.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7757.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7757.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7758.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7758.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7764.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7764.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7767.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7767.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7769.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7769.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7773.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7773.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7777.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7777.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7778.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7778.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7784.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7784.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7787.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7787.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7792.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7792.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7794.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7794.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7799.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7799.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7803.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7803.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7806.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7806.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7807.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7807.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7809.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7809.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7810.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7810.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7812.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7812.jpg",
+                    "width": 2000,
+                    "height": 1500,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7816.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7816.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7821.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7821.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7823.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7823.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7825.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7825.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-04-25/IMG_7829.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-04-25/thumbs/IMG_7829.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                }
+            ]
+        },
+        {
+            "id": "belt-exam-april",
+            "title": "Belt Exam — February 21, 2026",
+            "description": "",
+            "order": 4,
+            "images": [
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3734.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3734.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3736.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3736.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3745.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3745.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3749.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3749.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3754.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3754.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3767.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3767.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3771.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3771.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3775.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3775.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3787.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3787.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3792.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3792.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3796.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3796.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3805.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3805.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3806.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3806.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3811.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3811.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3816.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3816.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3823.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3823.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3824.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3824.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3827.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3827.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3829.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3829.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3831.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3831.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3832.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3832.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3841.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3841.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3843.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3843.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3853.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3853.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3854.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3854.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3857.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3857.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3859.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3859.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3863.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3863.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3871.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3871.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3892.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3892.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3897.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3897.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3907.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3907.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3910.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3910.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3912.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3912.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3914.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3914.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3921.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3921.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3926.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3926.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3930.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3930.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3936.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3936.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3942.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3942.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3944.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3944.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3960.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3960.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3967.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3967.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_3969.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_3969.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/IMG_5632.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/IMG_5632.jpg",
+                    "width": 2000,
+                    "height": 1500,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/XIMG_3733.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/XIMG_3733.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/XIMG_3735.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/XIMG_3735.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/XIMG_3761.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/XIMG_3761.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/XIMG_3765.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/XIMG_3765.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/XIMG_3810.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/XIMG_3810.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/XIMG_3867.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/XIMG_3867.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/XIMG_3877.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/XIMG_3877.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/XIMG_3879.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/XIMG_3879.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/XIMG_3888.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/XIMG_3888.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/XIMG_3890.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/XIMG_3890.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/XIMG_3900.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/XIMG_3900.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/XIMG_3906.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/XIMG_3906.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/XIMG_3913.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/XIMG_3913.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/XIMG_3954.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/XIMG_3954.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/XIMG_3964.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/XIMG_3964.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/XIMG_3968.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/XIMG_3968.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/XIMG_5623.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/XIMG_5623.jpg",
+                    "width": 2000,
+                    "height": 1500,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/belt-exam-april/xIMG_5635.jpg",
+                    "thumb": "assets/images/gallery/belt-exam-april/thumbs/xIMG_5635.jpg",
+                    "width": 2000,
+                    "height": 1500,
+                    "caption": "",
+                    "alt": ""
+                }
+            ]
+        },
+        {
+            "id": "calvary-lutheran-church",
+            "title": "Calvary Lutheran Church",
+            "description": "",
+            "order": 5,
+            "images": [
+                {
+                    "full": "assets/images/gallery/calvary-lutheran-church/IMG_3113.jpg",
+                    "thumb": "assets/images/gallery/calvary-lutheran-church/thumbs/IMG_3113.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/calvary-lutheran-church/IMG_3122.jpg",
+                    "thumb": "assets/images/gallery/calvary-lutheran-church/thumbs/IMG_3122.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/calvary-lutheran-church/IMG_3124.jpg",
+                    "thumb": "assets/images/gallery/calvary-lutheran-church/thumbs/IMG_3124.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/calvary-lutheran-church/IMG_3128.jpg",
+                    "thumb": "assets/images/gallery/calvary-lutheran-church/thumbs/IMG_3128.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/calvary-lutheran-church/IMG_3133.jpg",
+                    "thumb": "assets/images/gallery/calvary-lutheran-church/thumbs/IMG_3133.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/calvary-lutheran-church/XIMG_3088.jpg",
+                    "thumb": "assets/images/gallery/calvary-lutheran-church/thumbs/XIMG_3088.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/calvary-lutheran-church/XIMG_3092.jpg",
+                    "thumb": "assets/images/gallery/calvary-lutheran-church/thumbs/XIMG_3092.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/calvary-lutheran-church/XIMG_3106.jpg",
+                    "thumb": "assets/images/gallery/calvary-lutheran-church/thumbs/XIMG_3106.jpg",
+                    "width": 1408,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/calvary-lutheran-church/xIMG_3100.jpg",
+                    "thumb": "assets/images/gallery/calvary-lutheran-church/thumbs/xIMG_3100.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                }
+            ]
+        },
+        {
+            "id": "founder-s-cup-02-22",
+            "title": "Founder's Cup — February 22, 2026",
+            "description": "",
+            "order": 6,
+            "images": [
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4006.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4006.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4016.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4016.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4026.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4026.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4030.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4030.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4032.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4032.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4034.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4034.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4041.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4041.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4045.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4045.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4048.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4048.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4063.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4063.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4065.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4065.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4076.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4076.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4080.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4080.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4082.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4082.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4084.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4084.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4105.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4105.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4124.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4124.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4127.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4127.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4132.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4132.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4139.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4139.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4142.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4142.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4143.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4143.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4146.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4146.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4150.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4150.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4155.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4155.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4166.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4166.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4173.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4173.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4180.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4180.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4181.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4181.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/IMG_4182.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/IMG_4182.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/XIMG_4011.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/XIMG_4011.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/XIMG_4025.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/XIMG_4025.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/XIMG_4053.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/XIMG_4053.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/XIMG_4058.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/XIMG_4058.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/XIMG_4087.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/XIMG_4087.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/XIMG_4091.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/XIMG_4091.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/XIMG_4095.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/XIMG_4095.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/XIMG_4098.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/XIMG_4098.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/XIMG_4134.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/XIMG_4134.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/XIMG_4183.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/XIMG_4183.jpg",
+                    "width": 2000,
+                    "height": 1500,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/founder-s-cup-02-22/xIMG_4055.jpg",
+                    "thumb": "assets/images/gallery/founder-s-cup-02-22/thumbs/xIMG_4055.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                }
+            ]
+        },
+        {
+            "id": "stoddert-es",
+            "title": "Stoddert ES",
+            "description": "",
+            "order": 7,
+            "images": [
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0853.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0853.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0856.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0856.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0858.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0858.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0859.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0859.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0862.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0862.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0863.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0863.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0864.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0864.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0866.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0866.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0867.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0867.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0869.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0869.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0870.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0870.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0871.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0871.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0872.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0872.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0873.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0873.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0874.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0874.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0875.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0875.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0876.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0876.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0877.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0877.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0878.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0878.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0880.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0880.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0881.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0881.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0884.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0884.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0885.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0885.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0886.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0886.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0887.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0887.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0888.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0888.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0889.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0889.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0890.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0890.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0891.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0891.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0893.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0893.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0894.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0894.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0895.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0895.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0896.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0896.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0897.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0897.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0901.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0901.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0902.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0902.jpg",
+                    "width": 2000,
+                    "height": 1500,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0903.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0903.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0909.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0909.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0910.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0910.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0911.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0911.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0912.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0912.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0913.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0913.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0914.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0914.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0915.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0915.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0916.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0916.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0917.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0917.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0918.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0918.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0920.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0920.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0921.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0921.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0922.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0922.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0923.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0923.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0924.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0924.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0925.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0925.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0926.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0926.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0927.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0927.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0928.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0928.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0929.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0929.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0931.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0931.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0932.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0932.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0933.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0933.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0934.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0934.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0935.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0935.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0936.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0936.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0937.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0937.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0938.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0938.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0939.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0939.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0940.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0940.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0941.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0941.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0942.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0942.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0945.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0945.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0946.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0946.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0948.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0948.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0949.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0949.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0950.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0950.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0952.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0952.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0953.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0953.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0954.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0954.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/IMG_0955.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/IMG_0955.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/X-IMG_0900.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/X-IMG_0900.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/XIMG_0851.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/XIMG_0851.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/XIMG_0852.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/XIMG_0852.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/XIMG_0879.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/XIMG_0879.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/XIMG_0919.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/XIMG_0919.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/XIMG_0930.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/XIMG_0930.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/stoddert-es/XIMG_0951.jpg",
+                    "thumb": "assets/images/gallery/stoddert-es/thumbs/XIMG_0951.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                }
+            ]
+        },
+        {
+            "id": "workshop-04-19",
+            "title": "Workshop — April 19, 2026",
+            "description": "",
+            "order": 8,
+            "images": [
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6802.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6802.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6804.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6804.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6805.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6805.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6806.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6806.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6808.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6808.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6813.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6813.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6814.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6814.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6815.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6815.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6817.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6817.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6819.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6819.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6823.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6823.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6824.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6824.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6825.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6825.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6826.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6826.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6828.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6828.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6829.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6829.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6831.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6831.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6832.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6832.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6833.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6833.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6834.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6834.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6837.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6837.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6840.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6840.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6844.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6844.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6848.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6848.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6849.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6849.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6852.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6852.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6853.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6853.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6854.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6854.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6855.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6855.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6857.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6857.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6862.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6862.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6864.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6864.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6869.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6869.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6870.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6870.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6871.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6871.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6872.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6872.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6874.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6874.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6879.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6879.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6883.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6883.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6885.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6885.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6894.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6894.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6909.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6909.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6919.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6919.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6926.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6926.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6931.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6931.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6933.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6933.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6940.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6940.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6941.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6941.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6942.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6942.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6943.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6943.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6944.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6944.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6952.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6952.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6957.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6957.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6960.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6960.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6964.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6964.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6982.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6982.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6988.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6988.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6989.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6989.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6992.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6992.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6993.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6993.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6997.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6997.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_6999.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_6999.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7003.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7003.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7006.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7006.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7024.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7024.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7025.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7025.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7028.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7028.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7034.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7034.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7038.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7038.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7039.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7039.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7040.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7040.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7041.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7041.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7046.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7046.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7051.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7051.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7057.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7057.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7069.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7069.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7080.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7080.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7090.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7090.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7105.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7105.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7118.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7118.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7124.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7124.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7126.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7126.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7131.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7131.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7136.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7136.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7139.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7139.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7144.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7144.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7145.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7145.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7147.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7147.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/IMG_7152.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/IMG_7152.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/XIMG_7009.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/XIMG_7009.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/xIMG_6822.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/xIMG_6822.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/xIMG_7017.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/xIMG_7017.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/xIMG_7064.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/xIMG_7064.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                },
+                {
+                    "full": "assets/images/gallery/workshop-04-19/xIMG_7102.jpg",
+                    "thumb": "assets/images/gallery/workshop-04-19/thumbs/xIMG_7102.jpg",
+                    "width": 1500,
+                    "height": 2000,
+                    "caption": "",
+                    "alt": ""
+                }
+            ]
+        }
+    ]
+}
