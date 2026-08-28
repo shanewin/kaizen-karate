@@ -3,19 +3,21 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('1. JavaScript loaded');
     
     const form = document.querySelector('.contact-form');
+
+    // Not every page that loads this script has the contact form. Bail out
+    // before dereferencing `form`, which previously threw a TypeError here.
+    if (!form) {
+        return;
+    }
+
     const thankYou = document.getElementById('contactThankYou');
     const submitBtn = form.querySelector('button[type="submit"]');
     const errorDiv = document.getElementById('formError');
-    
+
     console.log('2. Form element found:', !!form);
     console.log('3. Thank you element found:', !!thankYou);
     console.log('4. Submit button found:', !!submitBtn);
     console.log('5. Error div found:', !!errorDiv);
-    
-    if (!form) {
-        console.error('ERROR: No form found with class .contact-form');
-        return;
-    }
     
     if (!thankYou) {
         console.error('ERROR: No element with id="contactThankYou"');

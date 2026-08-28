@@ -202,10 +202,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const scrollToTopBtn = document.getElementById('scrollToTopBtn');
   const headerLogos = document.querySelectorAll('.brand-logo-prominent, .navbar-brand img');
   
-  console.log('Scroll to top button found:', scrollToTopBtn);
-  
+  // The button is optional and currently commented out in index.php, so its
+  // absence is expected rather than an error condition.
   if (!scrollToTopBtn) {
-    console.error('Scroll to top button not found!');
     return;
   }
   

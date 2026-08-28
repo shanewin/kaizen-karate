@@ -209,12 +209,10 @@ require_once 'includes/content-loader.php';
 
   <!-- Video Controls -->
   <div class="video-controls">
-    <button class="video-control-btn" id="pausePlayBtn" title="Pause/Play Video" 
-            onclick="togglePlayPause();">
+    <button class="video-control-btn" id="pausePlayBtn" title="Pause/Play Video">
       <i class="fas fa-pause" id="pausePlayIcon"></i>
     </button>
-    <button class="video-control-btn" id="muteUnmuteBtn" title="Mute/Unmute Video"
-            onclick="toggleMute();">
+    <button class="video-control-btn" id="muteUnmuteBtn" title="Mute/Unmute Video">
       <i class="fas fa-volume-mute" id="muteUnmuteIcon"></i>
     </button>
     </div>
@@ -909,14 +907,13 @@ render_footer('live');
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="scripts/floating-nav.js"></script>
+  <script src="scripts/smooth-scroll.js"></script>
   <script src="scripts/video-controls.js"></script>
   
   <!-- Video Controls JavaScript -->
-  <script src="scripts/home/hero-video.js"></script>
   
   <!-- Floating Pills Navigation JavaScript -->
-  <script src="scripts/home/floating-nav.js"></script>
+  <script src="scripts/home/nav-menu.js"></script>
 
   <script src="scripts/lightbox.js"></script>
   <script src="scripts/amenities.js"></script>
@@ -974,7 +971,7 @@ render_footer('live');
           primaryDark: '#a01729',
           greeting: "Hi! I'm the Kaizen Karate Assistant. Ask me anything about our programs, classes, pricing, or instructors! 🥋",
           businessHours: "Mon-Fri 9am-6pm, Sat 9am-3pm",
-          apiEndpoint: './chatbot-php/test_chatbot_simple.php'
+          apiEndpoint: './chatbot-php/chat-api.php'
       };
   </script>
   <script src="chatbot-php/widget.js"></script>

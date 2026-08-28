@@ -9,7 +9,7 @@ class KaizenChatWidget {
             position: config.position || 'bottom-right', // bottom-right, bottom-left
             primaryColor: config.primaryColor || '#c41e3a',
             primaryDark: config.primaryDark || '#a01729',
-            apiEndpoint: config.apiEndpoint || './test_chatbot_simple.php',
+            apiEndpoint: config.apiEndpoint || './chat-api.php',
             greeting: config.greeting || "Hi! I'm the Kaizen Karate Assistant. Ask me anything about our programs, classes, pricing, or instructors! 🥋",
             businessHours: config.businessHours || null, // "Mon-Fri 9am-6pm" or null
             ...config

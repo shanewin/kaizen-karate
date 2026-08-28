@@ -25,7 +25,7 @@ define('CACHE_DURATION', 3600); // 1 hour in seconds
 // Chatbot Configuration
 define('MAX_TOKENS', 1000);
 define('TEMPERATURE', 0.7);
-define('MODEL', 'claude-3-haiku-20240307');
+define('MODEL', 'claude-haiku-4-5');
 
 // Rate Limiting (simple implementation)
 define('RATE_LIMIT_REQUESTS', 50); // Max requests per hour per IP

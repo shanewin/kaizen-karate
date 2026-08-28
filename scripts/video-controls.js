@@ -1,7 +1,7 @@
 // Video Controls Functionality
 
 // Global functions for inline onclick handlers
-function togglePlayPause() {
+window.togglePlayPause = function togglePlayPause() {
     const video = document.getElementById('hero-video');
     const pausePlayIcon = document.getElementById('pausePlayIcon');
     
@@ -19,9 +19,9 @@ function togglePlayPause() {
             pausePlayIcon.className = 'fas fa-play';
         }
     }
-}
+};
 
-function toggleMute() {
+window.toggleMute = function toggleMute() {
     const video = document.getElementById('hero-video');
     const muteUnmuteIcon = document.getElementById('muteUnmuteIcon');
     
@@ -38,9 +38,17 @@ function toggleMute() {
             muteUnmuteIcon.className = 'fas fa-volume-mute';
         }
     }
-}
+};
+
+let videoControlsInitialised = false;
 
 function initVideoControls() {
+    // Called from both DOMContentLoaded and a setTimeout fallback, so guard
+    // against binding every listener twice.
+    if (videoControlsInitialised) {
+        return true;
+    }
+
     const video = document.getElementById('hero-video');
     const pausePlayBtn = document.getElementById('pausePlayBtn');
     const pausePlayIcon = document.getElementById('pausePlayIcon');
@@ -114,7 +122,8 @@ function initVideoControls() {
     if (window.innerWidth > 768 && videoControls) {
         videoControls.style.opacity = '1';
     }
-    
+
+    videoControlsInitialised = true;
     return true;
 }
 

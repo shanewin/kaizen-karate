@@ -174,11 +174,11 @@ Remember: You're helping people discover an amazing martial arts community! 🥋
         
         // CHANGE 6: Update Payload Structure
         $data = [
-            'model' => MODEL, // Defined in config.php (e.g., 'claude-3-haiku-20240307')
-            'system' => $fullSystemPrompt, // Top-level system prompt
+            'model' => MODEL,
+            'system' => $fullSystemPrompt,
             'messages' => $messages,
-            'max_tokens' => 1000,
-            'temperature' => 0.7
+            'max_tokens' => MAX_TOKENS,
+            'temperature' => TEMPERATURE,
         ];
         
         $ch = curl_init($url);
