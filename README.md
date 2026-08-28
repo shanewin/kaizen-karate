@@ -1,5 +1,7 @@
 # Kaizen Karate Content Platform
 
+[![CI](https://github.com/shanewin/kaizen-karate/actions/workflows/ci.yml/badge.svg)](https://github.com/shanewin/kaizen-karate/actions/workflows/ci.yml)
+
 Production website, admin CMS, and AI assistant for a martial arts school
 operating across Washington DC, Maryland, Northern Virginia, and New York.
 Live at [kaizenkarateusa.com](https://kaizenkarateusa.com).
