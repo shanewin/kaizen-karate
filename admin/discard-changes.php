@@ -24,6 +24,15 @@ try {
     if (!isset($input['action']) || $input['action'] !== 'discard') {
         throw new Exception('Invalid action');
     }
+
+    // These endpoints change live content, so they verify the CSRF token like
+    // every other admin form does. The token travels in the JSON body since the
+    // dashboard posts JSON.
+    if (!verify_csrf_token($input['csrf_token'] ?? '')) {
+        http_response_code(403);
+        echo json_encode(['success' => false, 'error' => 'Invalid security token']);
+        exit;
+    }
     
     // Discard all pending changes
     $result = discard_all_changes();

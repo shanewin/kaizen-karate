@@ -9,7 +9,7 @@ define('KAIZEN_ADMIN', true);
 session_start();
 require_once __DIR__ . '/error-handling.php';
 require_once 'config.php';
-require_once SITE_ROOT . '/includes/TopicProjector.php';
+require_once __DIR__ . '/publish-actions.php';
 
 // Require login
 require_login();
@@ -20,25 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die('Invalid CSRF token');
     }
     
-    // Publish all changes
-    $result = publish_all_changes();
-    
-    // Re-derive the chatbot retrieval corpus from the freshly published
-    // content. Topic files are projections of site-content.json, so this keeps
-    // the assistant and the website answering from the same source. Failure
-    // here is reported but does not fail the publish: the site is already live.
-    $projection = ['written' => [], 'errors' => []];
-    if ($result['success']) {
-        $projector  = new TopicProjector(CONTENT_ROOT);
-        $projection = $projector->project();
-
-        if (!empty($projection['errors'])) {
-            error_log('Topic projection failed: ' . implode('; ', $projection['errors']));
-        }
-        if ($uncovered = $projector->verifyCoverage()) {
-            error_log('Content not exposed to chatbot: ' . implode(', ', $uncovered));
-        }
-    }
+    // Publish all changes and re-derive the chatbot corpus.
+    $result     = publish_all_changes_and_project();
+    $projection = $result['projection'];
 
     // Set session message
     if ($result['success']) {

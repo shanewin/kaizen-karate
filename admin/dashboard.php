@@ -324,6 +324,7 @@ require_login();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
+        const CSRF_TOKEN = <?php echo json_encode(generate_csrf_token()); ?>;
         function publishChanges() {
             if (confirm('Are you sure you want to publish all pending changes to the live website?')) {
                 fetch('publish-changes.php', {
@@ -331,7 +332,7 @@ require_login();
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({action: 'publish'})
+                    body: JSON.stringify({action: 'publish', csrf_token: CSRF_TOKEN})
                 })
                 .then(response => response.json())
                 .then(data => {
@@ -355,7 +356,7 @@ require_login();
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({action: 'discard'})
+                    body: JSON.stringify({action: 'discard', csrf_token: CSRF_TOKEN})
                 })
                 .then(response => response.json())
                 .then(data => {
