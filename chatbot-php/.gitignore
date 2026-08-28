@@ -1,0 +1,7 @@
+# Ignore environment files containing secrets
+.env
+.env.local
+.env.production
+
+# Ignore any config files with real keys
+config.local.php
