@@ -140,6 +140,13 @@ A few small blocks stay inline on purpose: the analytics snippet, the chat
 widget config that must run before the widget loads, and two short handlers
 whose extraction would only add indirection.
 
+`testing.php` is the staff preview of unpublished edits. It used to be a 4,904
+line copy of `index.php`, kept in step by hand, and it had drifted far enough
+that the preview no longer resembled the live site. It is now 45 lines: it
+authenticates, points the content layer at the draft files, and includes
+`index.php`. One homepage template, rendered twice against different content,
+which is the same idea the chatbot corpus uses.
+
 ## Repository layout
 
 | Path | Role |
@@ -152,6 +159,7 @@ whose extraction would only add indirection.
 | `chatbot-php/` | Retrieval, Claude API integration, embeddable widget |
 | `chatbot-php/RateLimiter.php` | Sliding window spend guard on the chat endpoint |
 | `scripts/generate-topics.php` | CLI projector, with a `--check` mode for CI |
+| `testing.php` | Staff preview: renders `index.php` against draft content |
 | `pages/`, `belts/` | Page templates, served at clean URLs via `.htaccess` |
 | `sections/`, `sections/home/` | Page sections, including the homepage's own |
 | `modules/nyc/` | Second location module |
@@ -195,12 +203,6 @@ build if a credential or a captured PII file is ever committed.
 
 An honest account of what a reviewer will find.
 
-- **A staging mirror, `testing.php`, has fully diverged.** The CMS previews
-  edits against it, and `admin/publish.php` redirects there after publishing,
-  but it is still the original 4,904 line monolith while `index.php` is now 332
-  lines. It is excluded from this repository as a deployment artifact. It is
-  also the duplication the projector pattern exists to eliminate, and it should
-  be replaced the same way: one source, rendered twice.
 - **Flat file storage** for leads and rate limiting. Appropriate at this volume,
   roughly 4,500 records, and it is what makes the zero ETL reporting possible.
   Every read modify write now runs under an exclusive lock, so entries are not

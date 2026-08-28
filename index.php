@@ -1,11 +1,15 @@
 <?php
-// Start session with proper settings
-session_start([
-    'cookie_lifetime' => 86400, // 24 hours
-    'cookie_secure' => isset($_SERVER['HTTPS']),
-    'cookie_httponly' => true,
-    'cookie_samesite' => 'Lax'
-]);
+// Start session with proper settings. The preview wrapper (testing.php) starts
+// the session before including this file, so only start one when this is the
+// entry point.
+if (session_status() === PHP_SESSION_NONE) {
+    session_start([
+        'cookie_lifetime' => 86400, // 24 hours
+        'cookie_secure' => isset($_SERVER['HTTPS']),
+        'cookie_httponly' => true,
+        'cookie_samesite' => 'Lax'
+    ]);
+}
 
 // Regenerate token only if doesn't exist
 if (empty($_SESSION['csrf_token'])) {
@@ -13,7 +17,7 @@ if (empty($_SESSION['csrf_token'])) {
 }
 
 // Load CMS content
-require_once 'includes/content-loader.php';
+require_once __DIR__ . '/includes/content-loader.php';
 ?>
 
 <!DOCTYPE html>
@@ -82,7 +86,7 @@ require_once 'includes/content-loader.php';
 <body>
 
 <!-- Floating Pills Reverse Navigation -->
-<?php include 'includes/nav.php'; ?>
+<?php include __DIR__ . '/includes/nav.php'; ?>
 
   <!-- Fixed Sidebar Widget -->
   <div class="fixed-sidebar-widget">
@@ -164,7 +168,7 @@ require_once 'includes/content-loader.php';
 
 
   <!-- NYC "Wow" Section Module -->
-  <?php include 'modules/nyc/nyc-section.php'; ?>
+  <?php include __DIR__ . '/modules/nyc/nyc-section.php'; ?>
 
 <!-- About Section -->
 <?php include __DIR__ . '/sections/home/about.php'; ?>
@@ -247,7 +251,7 @@ foreach ($_gs_gals['galleries'] ?? [] as $_g) {
 <?php include __DIR__ . '/sections/home/contact.php'; ?>
 
 <?php
-require_once 'includes/footer-dynamic.php';
+require_once __DIR__ . '/includes/footer-dynamic.php';
 render_footer('live');
 ?>
 
@@ -324,7 +328,7 @@ render_footer('live');
   <script src="modules/nyc/nyc-script.js?v=<?php echo time(); ?>"></script>
 
   <!-- Homepage Popup -->
-  <?php include 'includes/homepage-popup.php'; ?>
+  <?php include __DIR__ . '/includes/homepage-popup.php'; ?>
 
 </body>
 </html>

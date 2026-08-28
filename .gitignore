@@ -77,10 +77,6 @@ assets/images/gallery/
 *.mov
 *.mp4
 
-# ---- Staging mirror --------------------------------------------------------
-# testing.php is a hand-synced duplicate of index.php (see README
-# "Known limitations"). Excluded as a deployment artifact, not distinct source.
-testing.php
 
 # ---- Leftovers from the unrelated project that previously used this repo ----
 unit-interest.php
