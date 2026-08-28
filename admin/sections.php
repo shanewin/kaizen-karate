@@ -31,9 +31,25 @@ if ($_POST) {
                 $content['summer_camp']['description'] = sanitize_input($_POST['camp_description']);
                 $content['summer_camp']['note'] = sanitize_input($_POST['camp_note']);
                 
-                // Handle features
-                $features = explode("\n", $_POST['camp_features']);
-                $content['summer_camp']['features'] = array_map('trim', array_filter($features));
+                // Handle features. Each entry is {icon, text, onclick} and the form
+                // edits only the text, so merge the submitted lines back onto the
+                // existing entries instead of replacing them with bare strings,
+                // which would drop every icon and click handler.
+                $existing_features = $content['summer_camp']['features'] ?? [];
+                $submitted_lines = array_values(array_filter(array_map(
+                    'trim',
+                    explode("\n", $_POST['camp_features'] ?? '')
+                ), static function ($line) { return $line !== ''; }));
+
+                $merged_features = [];
+                foreach ($submitted_lines as $i => $text) {
+                    $feature = (isset($existing_features[$i]) && is_array($existing_features[$i]))
+                        ? $existing_features[$i]
+                        : [];
+                    $feature['text'] = sanitize_input($text);
+                    $merged_features[] = $feature;
+                }
+                $content['summer_camp']['features'] = $merged_features;
                 
                 // Handle camp weeks
                 if (isset($_POST['week_dates'])) {
@@ -298,7 +314,18 @@ $content = load_json_data('site-content', 'draft');
                         
                         <div class="mb-3">
                             <label for="camp_features" class="form-label">Features (one per line)</label>
-                            <textarea class="form-control" id="camp_features" name="camp_features" rows="5"><?php echo htmlspecialchars(implode("\n", $content['summer_camp']['features'] ?? [])); ?></textarea>
+                            <textarea class="form-control" id="camp_features" name="camp_features" rows="5"><?php
+                                // Each feature is {icon, text, onclick}. Only the text is
+                                // editable here, so render that rather than imploding the
+                                // structures, which printed "Array" into the field.
+                                $camp_feature_lines = array_map(
+                                    static function ($feature) {
+                                        return is_array($feature) ? ($feature['text'] ?? '') : (string) $feature;
+                                    },
+                                    $content['summer_camp']['features'] ?? []
+                                );
+                                echo htmlspecialchars(implode("\n", $camp_feature_lines));
+                            ?></textarea>
                         </div>
                         
                         <div class="mb-3">

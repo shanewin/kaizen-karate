@@ -1,22 +1,8 @@
 {
-    "pending_files": [],
+    "pending_files": [
+        "site-content"
+    ],
     "changes": [
-        {
-            "id": "change_1771811311_192",
-            "file": "site-content",
-            "timestamp": "2026-02-23T01:48:31+00:00",
-            "admin": "admin",
-            "status": "published",
-            "published_at": "2026-02-26T19:09:15+00:00"
-        },
-        {
-            "id": "change_1771811315_585",
-            "file": "site-content",
-            "timestamp": "2026-02-23T01:48:35+00:00",
-            "admin": "admin",
-            "status": "published",
-            "published_at": "2026-02-26T19:09:15+00:00"
-        },
         {
             "id": "change_1771811341_454",
             "file": "site-content",
@@ -814,6 +800,20 @@
             "admin": "coach.v@kaizenkarateusa.com",
             "status": "published",
             "published_at": "2026-08-12T13:19:13+00:00"
+        },
+        {
+            "id": "change_1787934058_470",
+            "file": "site-content",
+            "timestamp": "2026-08-28T16:20:58+00:00",
+            "admin": "admin",
+            "status": "draft"
+        },
+        {
+            "id": "change_1787934077_538",
+            "file": "site-content",
+            "timestamp": "2026-08-28T16:21:17+00:00",
+            "admin": "admin",
+            "status": "draft"
         }
     ]
 }
