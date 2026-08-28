@@ -1,0 +1,42 @@
+{
+    "nyc_section": {
+        "video": {
+            "source": "assets/videos/nyc/manhattan_two_bridges.mp4"
+        },
+        "badge": {
+            "icon": "fas fa-check-circle",
+            "text": "NYC PUBLIC SCHOOLS VENDOR"
+        },
+        "header": {
+            "title": "Kaizen Karate <span class=\"nyc-red\">NYC</span>",
+            "subtitle": "Bringing our tradition to the 5 Boroughs - VERIFIED"
+        },
+        "features": [
+            {
+                "icon": "fas fa-user-ninja",
+                "text": "Comprehensive Martial Arts Training"
+            },
+            {
+                "icon": "fas fa-school",
+                "text": "After School Programs"
+            },
+            {
+                "icon": "fas fa-shield-alt",
+                "text": "Safe, Structured Environment"
+            },
+            {
+                "icon": "fas fa-clock",
+                "text": "Perfect for Working Parents"
+            }
+        ],
+        "contact": {
+            "address": "745 5th Avenue, Suite 500<br>New York, NY 10151",
+            "phone": "(646) 475-7328",
+            "email": "coach.v@kaizenkarateusa.com"
+        },
+        "cta": {
+            "text": "Learn More",
+            "url": "nyc.php"
+        }
+    }
+}

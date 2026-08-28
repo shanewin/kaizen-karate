@@ -1,0 +1,530 @@
+{
+    "belt_exams": {
+        "hero": {
+            "title": "Belt Exam",
+            "subtitle": "Traditional Belt Testing",
+            "description": "Advancing through the ranks with authentic karate examination",
+            "background_image": "assets/images/panels/belt-exams.jpg",
+            "background_alt": "Kaizen Karate Belt Exam - Students testing for their next rank"
+        },
+        "requirements": [
+            {
+                "id": 1,
+                "icon": "fas fa-calendar-check",
+                "title": "Pre-registration required.",
+                "highlight": "",
+                "order": 1
+            },
+            {
+                "id": 2,
+                "icon": "fas fa-user-shield",
+                "title": "Belt exams are INVITATION ONLY events.",
+                "highlight": "INVITATION ONLY",
+                "order": 2
+            },
+            {
+                "id": 3,
+                "icon": "fas fa-clock",
+                "title": "Online registration closes 1 week prior to the belt exam.",
+                "highlight": "1 week prior",
+                "order": 3
+            },
+            {
+                "id": 4,
+                "icon": "fas fa-times-circle",
+                "title": "Verbal approvals by instructors during class time are no longer accepted.",
+                "highlight": "no longer accepted",
+                "order": 4
+            },
+            {
+                "id": 5,
+                "icon": "fas fa-envelope",
+                "title": "ALL students must receive *written* approval directly from the Kaizen office team before starting the testing process.",
+                "highlight": "*written*",
+                "order": 5
+            }
+        ],
+        "accordions": [
+            {
+                "id": "dates",
+                "title": "Upcoming Testing Dates",
+                "icon": "fas fa-calendar-alt",
+                "order": 1,
+                "description": "Schedule and register for upcoming belt examinations:",
+                "content_type": "dates",
+                "date_cards": [
+                    {
+                        "id": "january_2026",
+                        "month_year": "June 2026 (YOUTH ONLY)",
+                        "icon": "fas fa-calendar-day",
+                        "location_name": "Arlington Community Church (ACC)",
+                        "street_address": "6040 Wilson Blvd",
+                        "city_state_zip": "Arlington, VA 22205",
+                        "datetime_string": "Wednesday, June 10th at 6:30pm",
+                        "link_text": "For more details and registration, click here",
+                        "show_link": false,
+                        "invitation_only": false,
+                        "makeup_month": "*All make-up tests will take place in August 2026",
+                        "youth_note": "",
+                        "adult_note": "",
+                        "video_note": "Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.",
+                        "order": 1
+                    },
+                    {
+                        "id": "date_card_1774298715991",
+                        "month_year": "June 2026 (YOUTH ONLY)",
+                        "icon": "fas fa-calendar-day",
+                        "location_name": "East Silver Spring ES - GYM",
+                        "street_address": "631 Silver Spring Ave",
+                        "city_state_zip": "Silver Spring, MD 20910",
+                        "datetime_string": "Sunday, June 14th at 10:00am",
+                        "link_text": "For more details and registration, click here",
+                        "show_link": false,
+                        "invitation_only": false,
+                        "makeup_month": "*All make-up tests will take place in August 2026",
+                        "youth_note": "",
+                        "adult_note": "",
+                        "video_note": "Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.",
+                        "order": 2
+                    },
+                    {
+                        "id": "march_2026",
+                        "month_year": "June 2026 (ADULT ONLY)",
+                        "icon": "fas fa-calendar-day",
+                        "location_name": "East Silver Spring ES - GYM",
+                        "street_address": "631 Silver Spring Ave",
+                        "city_state_zip": "Silver Spring, MD 20910",
+                        "datetime_string": "Monday, June 15th at 7:30pm",
+                        "link_text": "For more details and registration, click here",
+                        "show_link": false,
+                        "invitation_only": false,
+                        "makeup_month": "*All make-up tests will take place in August 2026",
+                        "youth_note": "",
+                        "adult_note": "",
+                        "video_note": "Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.",
+                        "order": 3
+                    },
+                    {
+                        "id": "may_2026",
+                        "month_year": "August 2026",
+                        "icon": "fas fa-calendar-day",
+                        "location_name": "East Silver Spring ES - GYM",
+                        "street_address": "631 Silver Spring Ave",
+                        "city_state_zip": "Silver Spring, MD 20910",
+                        "datetime_string": "TIME & DATE - TBA",
+                        "link_text": "For more details and registration, click here",
+                        "show_link": false,
+                        "invitation_only": false,
+                        "makeup_month": "*All make-up tests will take place in October 2026",
+                        "youth_note": "*Youth testing takes place on Saturdays",
+                        "adult_note": "*Adult testing takes place on Monday nights",
+                        "video_note": "Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.",
+                        "order": 4
+                    },
+                    {
+                        "id": "july_2026",
+                        "month_year": "October 2026",
+                        "icon": "fas fa-calendar-day",
+                        "location_name": "East Silver Spring ES - GYM",
+                        "street_address": "631 Silver Spring Ave",
+                        "city_state_zip": "Silver Spring, MD 20910",
+                        "datetime_string": "TIME & DATE - TBA",
+                        "link_text": "For more details and registration, click here",
+                        "show_link": false,
+                        "invitation_only": false,
+                        "makeup_month": "*All make-up tests will take place in December 2026",
+                        "youth_note": "*Youth testing takes place on Saturdays",
+                        "adult_note": "*Adult testing takes place on Monday nights",
+                        "video_note": "Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.",
+                        "order": 5
+                    },
+                    {
+                        "id": "september_2026",
+                        "month_year": "December 2026",
+                        "icon": "fas fa-calendar-day",
+                        "location_name": "East Silver Spring ES - GYM",
+                        "street_address": "631 Silver Spring Ave",
+                        "city_state_zip": "Silver Spring, MD 20910",
+                        "datetime_string": "TIME & DATE - TBA",
+                        "link_text": "For more details and registration, click here",
+                        "show_link": false,
+                        "invitation_only": false,
+                        "makeup_month": "*All make-up tests will take place in February 2027",
+                        "youth_note": "*Youth testing takes place on Saturdays",
+                        "adult_note": "*Adult testing takes place on Monday nights",
+                        "video_note": "Video tests due 1 month prior to testing date (green belt and above). NO EXCEPTIONS.",
+                        "order": 6
+                    }
+                ]
+            },
+            {
+                "id": "process",
+                "title": "Testing Process",
+                "icon": "fas fa-list-check",
+                "order": 2,
+                "description": "TEST UPDATE: Our comprehensive belt testing process is tailored to each student's level, ensuring proper preparation and fair evaluation.",
+                "content_type": "process",
+                "process_sections": [
+                    {
+                        "id": "lower_belts",
+                        "title": "Testing for White w/Black Stripe, Orange, or Yellow Belt",
+                        "icon": "fas fa-medal",
+                        "order": 1,
+                        "steps": [
+                            {
+                                "title": "Pre-Testing Evaluation",
+                                "icon": "fas fa-user-check",
+                                "description": "Instructor pre-tests during class time when they feel the student is ready to move up in rank. If the student is ready, the instructor will notify the Kaizen office team. Then, the Kaizen office team will email parents written approval for their child to test."
+                            },
+                            {
+                                "title": "Live Testing",
+                                "icon": "fas fa-users",
+                                "description": "Please note: This test will be LIVE and in-person on the testing date in a group setting. If the student does not pass the in-class pre-test, they must wait until the instructor feels they are ready."
+                            },
+                            {
+                                "title": "Registration & Testing Day",
+                                "icon": "fas fa-clipboard-check",
+                                "description": "Once you have received written approval to test, then the student must register for the test by clicking the link below. Show up for your belt exam on the scheduled date."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "higher_belts",
+                        "title": "Testing for Green Belt or Higher",
+                        "icon": "fas fa-trophy",
+                        "order": 2,
+                        "steps": [
+                            {
+                                "title": "Pre-Testing Process",
+                                "icon": "fas fa-user-check",
+                                "description": "Instructor pre-tests during class time when they feel the student is ready to move up in rank. If the student is ready, the instructor sends written notification to the KK office team. Then, the KK office team will email the student directly with approval to test."
+                            },
+                            {
+                                "title": "Video Testing Requirements",
+                                "icon": "fas fa-video",
+                                "description": "Once approved, students must register for the test by clicking the link below (include video links at the time of registration). Important: Sending your video as an attachment via email will NOT be accepted. Video feedback and testing results will only be sent back to the student after they have registered online using the link below."
+                            },
+                            {
+                                "title": "Important Notes",
+                                "icon": "fas fa-exclamation-triangle",
+                                "description": "*Please note: The video test for green belts and higher is now the actual test and is pass / fail. *After passing the video test, there is an in-person requirement for students testing for green belt and higher."
+                            }
+                        ]
+                    }
+                ],
+                "summary": {
+                    "title": "Important Summary",
+                    "icon": "fas fa-info-circle",
+                    "text": "TEST SUMMARY: Instructors can initiate the pre-testing process.\r\nHowever, Coach V has the final authority for grading and awarding belt ranks."
+                }
+            },
+            {
+                "id": "requirements",
+                "title": "Requirements to Test",
+                "icon": "fas fa-clipboard-list",
+                "order": 3,
+                "description": "View detailed testing requirements and matrices for each belt level:",
+                "content_type": "requirements",
+                "important_notice": {
+                    "title": "Important Testing Requirements",
+                    "icon": "fas fa-exclamation-circle",
+                    "main_text": "The requirements listed below are minimums.\r\nPlease keep in mind that the instructor of the class may require more than what is posted.",
+                    "special_notes": "*Students who train at Summer Camp only can test up to green belt rank.\r\n*In order to test for purple belt and higher, student MUST attend weekend and / or evening classes year-round."
+                },
+                "requirement_images": [
+                    {
+                        "id": "testing_matrix",
+                        "title": "Testing Matrix",
+                        "icon": "fas fa-th",
+                        "description": "Complete testing matrix with belt progression requirements",
+                        "image": "assets/images/belt-exam/requirements-test/kaizen-testing-matrix.png",
+                        "download_url": "assets/images/belt-exam/requirements-test/kaizen-testing-matrix.png",
+                        "download_filename": "kaizen-testing-matrix.png",
+                        "lightbox_function": "openMatrixLightbox",
+                        "order": 1
+                    },
+                    {
+                        "id": "testing_requirements",
+                        "title": "Testing Requirements",
+                        "icon": "fas fa-clipboard-list",
+                        "description": "Detailed requirements for each belt level",
+                        "image": "assets/images/belt-exam/requirements-test/kaizen-testing-requirement.png",
+                        "download_url": "assets/images/belt-exam/requirements-test/kaizen-testing-requirement.png",
+                        "download_filename": "kaizen-testing-requirement.png",
+                        "lightbox_function": "openRequirementsLightbox",
+                        "order": 2
+                    },
+                    {
+                        "id": "stripe_system",
+                        "title": "Stripe System",
+                        "icon": "fas fa-star",
+                        "description": "Belt stripe system and progression tracking",
+                        "image": "assets/images/belt-exam/requirements-test/kaizen-testing-stripe-system.png",
+                        "download_url": "assets/images/belt-exam/requirements-test/kaizen-testing-stripe-system.png",
+                        "download_filename": "kaizen-testing-stripe-system.png",
+                        "lightbox_function": "openStripeLightbox",
+                        "order": 3
+                    }
+                ]
+            },
+            {
+                "id": "clothing",
+                "title": "Belt Exam Clothing Requirement",
+                "icon": "fas fa-tshirt",
+                "order": 4,
+                "description": "Specific clothing requirements for each belt level to ensure you're prepared for testing:",
+                "content_type": "clothing",
+                "section_title": "Belt-Specific Clothing Requirements",
+                "clothing_cards": [
+                    {
+                        "id": "white_belt",
+                        "title": "White Belt with Black Stripe",
+                        "belt_color": "white",
+                        "stripe_color": "black",
+                        "requirement_text": "Need a black Kaizen Karate t-shirt prior to testing for this beltqwewqw",
+                        "order": 1
+                    },
+                    {
+                        "id": "orange_belt",
+                        "title": "Orange Belt",
+                        "belt_color": "orange",
+                        "stripe_color": "",
+                        "requirement_text": "Need a black Kaizen Karate t-shirt prior to testing for this belt",
+                        "order": 2
+                    },
+                    {
+                        "id": "yellow_belt",
+                        "title": "Yellow Belt",
+                        "belt_color": "yellow",
+                        "stripe_color": "",
+                        "requirement_text": "Must have a black Kaizen Karate uniform prior to testing for this belt",
+                        "order": 3
+                    },
+                    {
+                        "id": "green_belt",
+                        "title": "Green Belt",
+                        "belt_color": "green",
+                        "stripe_color": "",
+                        "requirement_text": "Must have a full set of sparring gear 3-4 months prior to testing for this belt",
+                        "order": 4
+                    }
+                ],
+                "shop_section": {
+                    "title": "Need Gear or Uniforms?",
+                    "description": "Get everything you need for belt testing from our official online store.\r\nT-shirts, uniforms, sparring gear, and more!",
+                    "shop_url": "https://kaizenkarate.store/",
+                    "shop_button_text": "Shop Now"
+                }
+            },
+            {
+                "id": "scripts",
+                "title": "Testing Scripts",
+                "icon": "fas fa-scroll",
+                "order": 5,
+                "description": "Access testing scripts, instructions, and helpful tips for belt examinations:",
+                "content_type": "scripts",
+                "script_cards": [
+                    {
+                        "id": "testing_tips",
+                        "title": "Testing Tips",
+                        "icon": "fas fa-lightbulb",
+                        "description": "Essential filming and submission guidelines",
+                        "lightbox_function": "openTestingTipsLightbox",
+                        "order": 1
+                    },
+                    {
+                        "id": "video_instructions",
+                        "title": "Video Testing Instructions",
+                        "icon": "fas fa-video",
+                        "description": "Complete video testing process",
+                        "lightbox_function": "openVideoInstructionsLightbox",
+                        "order": 2
+                    },
+                    {
+                        "id": "green_belt",
+                        "title": "Green Belt",
+                        "icon": "fas fa-scroll",
+                        "description": "Green Belt testing script",
+                        "lightbox_function": "openGreenBeltLightbox",
+                        "order": 3,
+                        "belt_color": "#28a745"
+                    },
+                    {
+                        "id": "purple_belt",
+                        "title": "Purple Belt",
+                        "icon": "fas fa-scroll",
+                        "description": "Purple Belt testing script",
+                        "lightbox_function": "openPurpleBeltLightbox",
+                        "order": 4,
+                        "belt_color": "#6f42c1"
+                    },
+                    {
+                        "id": "blue_belt",
+                        "title": "Blue Belt",
+                        "icon": "fas fa-scroll",
+                        "description": "Blue Belt testing script",
+                        "lightbox_function": "openBlueBeltLightbox",
+                        "order": 5,
+                        "belt_color": "#007bff"
+                    },
+                    {
+                        "id": "brown_belt",
+                        "title": "Brown Belt",
+                        "icon": "fas fa-scroll",
+                        "description": "Brown Belt testing script",
+                        "lightbox_function": "openBrownBeltLightbox",
+                        "order": 6,
+                        "belt_color": "#8b4513"
+                    },
+                    {
+                        "id": "brown_stripe_belt",
+                        "title": "Brown + Stripe Belt",
+                        "icon": "fas fa-scroll",
+                        "description": "Brown + Stripe Belt testing script",
+                        "lightbox_function": "openBrownStripeLightbox",
+                        "order": 7,
+                        "belt_color": "#8b4513",
+                        "has_stripe": true
+                    },
+                    {
+                        "id": "red_belt",
+                        "title": "Red Belt",
+                        "icon": "fas fa-scroll",
+                        "description": "Red Belt testing script",
+                        "lightbox_function": "openRedBeltLightbox",
+                        "order": 8,
+                        "belt_color": "#dc3545"
+                    },
+                    {
+                        "id": "red_stripe_belt",
+                        "title": "Red + Stripe Belt",
+                        "icon": "fas fa-scroll",
+                        "description": "Red + Stripe Belt testing script",
+                        "lightbox_function": "openRedStripeLightbox",
+                        "order": 9,
+                        "belt_color": "#dc3545",
+                        "has_stripe": true
+                    }
+                ],
+                "important_note": {
+                    "title": "Important Note",
+                    "icon": "fas fa-info-circle",
+                    "content": "Click any card above to view detailed information. Testing scripts are provided as study guides.<br>Actual testing may vary based on instructor discretion and individual student needs."
+                }
+            },
+            {
+                "id": "register",
+                "title": "Register for the Belt Exam",
+                "icon": "fas fa-user-plus",
+                "order": 6,
+                "description": "Ready to register for your belt examination? Follow these steps:",
+                "content_type": "registration",
+                "group_testing_section": {
+                    "title": "In-Person Group Testing",
+                    "icon": "fas fa-users",
+                    "description": "The belt exam will be held IN-PERSON for all students testing for white with black stripe - red belt ranks. Students will take part in a group test / workshop hosted by Coach V. All material for the student's belt level will be covered in detail during this special event."
+                },
+                "register_section": {
+                    "heading": "Register",
+                    "subtitle": "Click on your preferred testing date below"
+                },
+                "location_section": {
+                    "heading": "Testing Location",
+                    "icon": "fas fa-map-marker-alt"
+                },
+                "shared_location": {
+                    "name": "Arlington Community Church (ACC)",
+                    "address": "6040 Wilson Blvd, Arlington, VA 22205"
+                },
+                "registration_cards": [
+                    {
+                        "title": "Wednesday, June 10th - 6:30 PM",
+                        "registration_link": "https://form.jotform.com/261515564811456",
+                        "belt_colors": [
+                            "white_black",
+                            "orange",
+                            "yellow",
+                            "green",
+                            "purple",
+                            "blue",
+                            "brown",
+                            "red"
+                        ],
+                        "exam_type": "Youth Belt Exam",
+                        "belt_levels": "All belts ",
+                        "button_text": "Register Now",
+                        "invitation_only": true,
+                        "order": 1
+                    },
+                    {
+                        "title": "Sunday, June 14th - 10:00 AM",
+                        "registration_link": "https://form.jotform.com/261524979190466",
+                        "belt_colors": [
+                            "white_orange",
+                            "white_black",
+                            "orange",
+                            "yellow",
+                            "green",
+                            "purple",
+                            "blue",
+                            "brown",
+                            "red"
+                        ],
+                        "exam_type": "Youth Belt Exam",
+                        "belt_levels": "All belts ",
+                        "button_text": "Register Now",
+                        "invitation_only": true,
+                        "order": 2
+                    },
+                    {
+                        "title": "Monday, June 15th - 7:30 PM",
+                        "registration_link": "https://form.jotform.com/261525175384460",
+                        "belt_colors": [
+                            "white_black",
+                            "orange",
+                            "yellow",
+                            "green",
+                            "purple",
+                            "blue",
+                            "brown",
+                            "red"
+                        ],
+                        "exam_type": "Adult Belt Exam",
+                        "belt_levels": "Orange belt or Yellow belt",
+                        "button_text": "Register Now",
+                        "invitation_only": true,
+                        "order": 3
+                    },
+                    {
+                        "title": "August",
+                        "registration_link": "https://kaizenkarateusa.com/",
+                        "belt_colors": [
+                            "white_black",
+                            "orange",
+                            "yellow",
+                            "green",
+                            "purple",
+                            "blue",
+                            "brown",
+                            "red"
+                        ],
+                        "exam_type": "Youth Belt Exam",
+                        "belt_levels": "All Belts",
+                        "button_text": "Register Now",
+                        "invitation_only": true,
+                        "order": 4
+                    }
+                ],
+                "pre_registration_requirements": {
+                    "title": "Before You Register",
+                    "icon": "fas fa-exclamation-triangle",
+                    "requirements": [
+                        "You must receive written approval from the Kaizen office team",
+                        "Registration closes one week before the testing date",
+                        "Testing fees must be paid at time of registration"
+                    ]
+                }
+            }
+        ]
+    }
+}

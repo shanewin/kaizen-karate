@@ -1,0 +1,190 @@
+{
+    "programs": {
+        "title": "Our Programs",
+        "subtitle": "Choose Your Path",
+        "cards": [
+            {
+                "title": "After School Program",
+                "summary": "Comprehensive martial arts training for students after school hours.",
+                "description": "Safe, structured environment where children learn traditional karate while developing discipline, respect, and confidence. Perfect for working parents.",
+                "image": "assets/images/panels/after-school.jpg",
+                "image_alt": "After school karate program for children at Kaizen Karate",
+                "buttons": [
+                    {
+                        "text": "Register Now",
+                        "url": "https://www.gomotionapp.com/team/mdkfu/page/class-registration",
+                        "style": "secondary"
+                    }
+                ]
+            },
+            {
+                "title": "Weekend & Evening",
+                "summary": "Flexible scheduling for adults and families with busy weekday commitments.",
+                "description": "Traditional karate training designed to fit your lifestyle. Weekend and evening classes accommodate work and school schedules while maintaining authentic instruction.",
+                "image": "assets/images/panels/weekends.jpg",
+                "image_alt": "Weekend and evening karate classes for busy schedules",
+                "buttons": [
+                    {
+                        "text": "View Schedule",
+                        "url": "#weekend-evening",
+                        "style": "primary"
+                    },
+                    {
+                        "text": "Register Now",
+                        "url": "https://www.gomotionapp.com/team/mdkfu/page/class-registration",
+                        "style": "secondary"
+                    }
+                ]
+            },
+            {
+                "title": "Belt Exams",
+                "summary": "Test your skills and advance through traditional karate ranks.",
+                "description": "Belt exams are invitation-only and students must be invited by their instructor to test. Our rigorous testing ensures authentic skill development and progression.",
+                "image": "assets/images/panels/belts.png",
+                "image_alt": "Traditional karate belt exam process at Kaizen Karate",
+                "buttons": [
+                    {
+                        "text": "View Process",
+                        "url": "#belt-exam",
+                        "style": "primary"
+                    },
+                    {
+                        "text": "Register Now",
+                        "url": "#",
+                        "style": "secondary"
+                    }
+                ]
+            },
+            {
+                "title": "Online Store",
+                "summary": "Equipment, uniforms, and training materials for students.",
+                "description": "Everything you need for your karate journey - from beginner gear to advanced equipment. Support your training with authentic, high-quality items.",
+                "image": "assets/images/panels/online-store.jpg",
+                "image_alt": "Kaizen Karate online store for equipment and merchandise",
+                "buttons": [
+                    {
+                        "text": "Shop Now",
+                        "url": "https://kaizenkarate.store/",
+                        "style": "primary"
+                    }
+                ]
+            }
+        ]
+    },
+    "after_school": {
+        "title": "Weekend & Evening",
+        "calendar_section": {
+            "header": "2026 Sep - Oct Class Calendar",
+            "info_badges": {
+                "duration": "One-hour classes unless stated otherwise",
+                "location_type": "All Classes Held Indoors/In-Person"
+            }
+        },
+        "schedule": {
+            "title": "2026 Sep - Oct Schedule",
+            "pdf_file": "assets/images/aftersschool/2026-Sep-Oct-Karate-Class-Calendar-v1--1-.pdf",
+            "preview_image": "assets/images/aftersschool/2026-Sep-Oct-Karate-Class-Calendar-1000px-v1.png",
+            "download_text": "Download Schedule"
+        },
+        "registration": {
+            "title": "Ready to Enroll?",
+            "button_text": "Register Now",
+            "button_url": "https://www.gomotionapp.com/team/mdkfu/page/class-registration",
+            "subtext": "Secure your spot in our programs"
+        },
+        "disclaimer": {
+            "text": "Not all classes are listed. If you do not see your program listed then pleases",
+            "link_text": "contact our office",
+            "link_url": "#contact",
+            "end_text": "directly for more information."
+        }
+    },
+    "kaizen_dojo": {
+        "hero": {
+            "logo": "assets/images/dojo/Kaizen-Dojo-Logo.webp",
+            "title": "KAIZEN DOJO",
+            "intro": "After School Martial Arts Program4t42g42",
+            "description": "Kaizen Dojo is an after school program operated by Kaizen Karate. We are located at 9545 Georgia Ave, Silver Spring, MD 20910 (near the beltway exits). Students will take part in daily karate lessons, snack time, homework time, and more! We provide service throughout the entire 2025-2026 school year. Please note, we follow the MCPS calendar. Service will be provided on 1/2 days.",
+            "registration_button_text": "Register for Kaizen Dojo"
+        },
+        "van_service": {
+            "title": "Van Service — Locations",
+            "description": "Convenient van service available from multiple school locations directly to Kaizen Dojo",
+            "locations": [
+                {
+                    "school_name": "Woodlin ES",
+                    "address": "",
+                    "is_new": false,
+                    "badge_text": "NEW FALL 2025"
+                },
+                {
+                    "school_name": "East Silver Spring ES",
+                    "address": "",
+                    "is_new": false,
+                    "badge_text": ""
+                },
+                {
+                    "school_name": "Sligo Creek ES",
+                    "address": "",
+                    "is_new": false,
+                    "badge_text": ""
+                }
+            ]
+        },
+        "service_cards": [
+            {
+                "icon": "fas fa-book-open",
+                "title": "Homework Time",
+                "description": "Students will have time to work on their homework assignments from school when they get back to Kaizen Dojo."
+            },
+            {
+                "icon": "fas fa-apple-alt",
+                "title": "Snack Time",
+                "description": "Snacks are provided as part of the Kaizen Dojo program. Please be sure to let our office team know about any allergies via email."
+            },
+            {
+                "icon": "fas fa-fist-raised",
+                "title": "Karate Instruction",
+                "description": "After homework time ends, students will participate in daily karate lessons! Instruction is geared towards the student's age and current belt rank."
+            }
+        ],
+        "accordion": {
+            "van_service": {
+                "title": "Van Service",
+                "notice": {
+                    "enabled": true,
+                    "title": "Limited Space Available",
+                    "message": "Space is limited! If you are interested in registering for Kaizen Dojo van service for Fall 2025, please contact us ASAP.",
+                    "contact_email": "coach.v@kaizenkarateusa.com"
+                }
+            },
+            "tuition_payment": {
+                "title": "Tuition and Payment Options",
+                "pricing": {
+                    "full_time": "$499",
+                    "part_time_4": "$460",
+                    "part_time_3": "$360",
+                    "part_time_2": "$250",
+                    "part_time_1": "$130",
+                    "drop_in": "$40"
+                },
+                "monthly_tuition": "",
+                "payment_schedule": "",
+                "payment_methods": ""
+            },
+            "security_safety": {
+                "title": "Security, Discipline and Safety",
+                "content": "<div style=\"color: #555; line-height: 1.6;\">\r\n<p style=\"margin-bottom: 2rem; font-size: 1.1rem; text-align: center;\">Creating a safe, protected, and respectful environment for all children and staff.</p>\r\n<div style=\"background: rgba(40, 167, 69, 0.1); border: 1px solid rgba(40, 167, 69, 0.3); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;\">\r\n<h4 style=\"color: #28a745; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;\">Our Safety Commitment</h4>\r\n<div style=\"background: rgba(255, 255, 255, 0.7); border-radius: 8px; padding: 1.5rem;\">\r\n<p style=\"margin: 0; font-size: 1rem; color: #333; text-align: center; font-weight: 600; line-height: 1.7;\">The goal of our program is to create an environment where children and staff feel <span style=\"color: #28a745; font-weight: bold;\">safe, protected, and respected</span>.</p>\r\n</div>\r\n</div>\r\n<div style=\"background: rgba(220, 53, 69, 0.08); border: 1px solid rgba(220, 53, 69, 0.2); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;\">\r\n<h4 style=\"color: #dc3545; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;\">Program Rules &amp; Expectations</h4>\r\n<div style=\"background: rgba(255, 255, 255, 0.6); border-radius: 8px; padding: 1.5rem;\">\r\n<p style=\"margin-bottom: 1rem; font-size: 0.95rem; color: #333; font-weight: 600;\">The following rules will be followed by all participants:</p>\r\n<ul style=\"list-style: none; padding: 0;\">\r\n<li>&bull; Follow all rules set forth by Kaizen Karate</li>\r\n<li>&bull; Follow directions given by staff</li>\r\n<li>&bull; Respect the rights, privacy, and personal space of others</li>\r\n<li>&bull; Stay in assigned areas under staff supervision</li>\r\n<li>&bull; Show respect for all property and equipment</li>\r\n<li>&bull; Use appropriate language at all times</li>\r\n<li>&bull; Use the restrooms appropriately</li>\r\n<li>&bull; No sharing or throwing food</li>\r\n<li>&bull; Clean up after eating and throw away trash</li>\r\n<li>&bull; No fighting, bullying, or throwing harmful objects</li>\r\n</ul>\r\n</div>\r\n</div>\r\n<div style=\"background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 12px; padding: 2rem;\">\r\n<h4 style=\"color: #ffc107; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;\">Consequences for Rule Violations</h4>\r\n<p style=\"margin-bottom: 1rem; font-size: 0.9rem; color: #333;\"><strong>Repeated Violations:</strong> May result in a child being suspended or no longer allowed to participate in the program.</p>\r\n<p style=\"margin: 0; font-size: 0.9rem; color: #333;\"><strong>Safety Endangerment:</strong> Behavior that endangers health and/or safety may result in immediate suspension and/or termination.</p>\r\n</div>\r\n</div>"
+            },
+            "contact_info": {
+                "title": "Contact Information",
+                "primary_contact_name": "Coach V",
+                "primary_contact_email": "coach.v@kaizenkarateusa.com",
+                "primary_contact_phone": "(301) 938-2711",
+                "secondary_contact_name": "",
+                "secondary_contact_email": "",
+                "office_hours": "Physical Address:\r\n9545 Georgia Ave\r\nSilver Spring, MD 20910\r\n(Near the beltway exits)"
+            }
+        }
+    }
+}
